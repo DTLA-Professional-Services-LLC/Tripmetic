@@ -1,0 +1,648 @@
+{
+  "@@locale": "en",
+  "addItineraryEnterTitle": "Please enter a title",
+  "addItineraryFieldLocation": "Location",
+  "addItineraryFieldNotes": "Notes / confirmation",
+  "addItineraryFieldTitle": "Title",
+  "addItineraryHintLocation": "Airport, hotel address…",
+  "addItineraryHintNotes": "Record locator, links…",
+  "addItineraryHintTitle": "Flight to Lisbon",
+  "addItinerarySave": "Save event",
+  "addItineraryTitle": "Add itinerary event",
+  "addPackingAddToList": "Add to list",
+  "addPackingEnterName": "Please enter an item name",
+  "addPackingFieldCategory": "Category",
+  "addPackingFieldItemName": "Item name",
+  "addPackingHint": "e.g. Power adapter",
+  "addPackingIcon": "Icon",
+  "addPackingQuantity": "Quantity",
+  "addPackingTitle": "Add packing item",
+  "announcementsLatest": "Latest updates",
+  "appTitle": "TRIPMETIC.app",
+  "budgetBaseCurrency": "BASE CURRENCY",
+  "budgetCategoryDialogHint": "e.g. Souvenirs",
+  "budgetCategoryNameExists": "Name already exists",
+  "budgetCategoryNameMax": "Max 40 characters",
+  "budgetDailyFood": "Daily food",
+  "budgetDestinationSearchHint": "Search country or currency code",
+  "budgetDestinationTitle": "Add destination",
+  "budgetDialogAdd": "Add",
+  "budgetDialogNewCategory": "New expense category",
+  "budgetDialogRemoveBody": "Remove \"{name}\" and its amount?",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetDialogRemoveTitle": "Remove category",
+  "budgetDialogRename": "Rename",
+  "budgetDialogRenameCategory": "Rename category",
+  "budgetEdit": "Edit budget",
+  "budgetExpenseDailyFood": "Daily Food",
+  "budgetExpenseEatingOut": "Eating Out",
+  "budgetExpenseEntertainment": "Entertainment",
+  "budgetExpenseFlights": "Flights",
+  "budgetExpenseGrocery": "Grocery",
+  "budgetExpenseHotels": "Hotels",
+  "budgetExpenseMisc": "Misc",
+  "budgetExpensePhoneService": "Phone Service",
+  "budgetExpenseShopping": "Shopping",
+  "budgetExpenseTourism": "Tourism",
+  "budgetExpenseTransportation": "Transportation",
+  "budgetExpenseTravelInsurance": "Travel Insurance",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3,000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "In your destinations",
+  "budgetNoCategories": "No expense categories yet",
+  "budgetOtherExpenses": "OTHER EXPENSES ({code})",
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetPerDayEstimate": "Per day (estimate)",
+  "budgetPerDayValue": "≈ {amount} / day",
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetRemainingAfter": "Remaining after expenses · {code}",
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetSave": "Save budget",
+  "budgetSpendingPower": "Spending power",
+  "budgetSpentVsBudget": "Spent vs budget",
+  "budgetTotalBudget": "TOTAL BUDGET ({code})",
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetTotalForTrip": "Total for trip ({code})",
+  "budgetTripDashboard": "dashboard",
+  "budgetTripLengthDays": "Trip length (days)",
+  "budgetTripTitle": "Trip budget",
+  "commonAdd": "Add",
+  "commonCancel": "Cancel",
+  "commonDelete": "Delete",
+  "commonOk": "OK",
+  "commonRemove": "Remove",
+  "commonRename": "Rename",
+  "commonSave": "Save",
+  "countryCountriesCount": "{count} countries",
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "countryPickerTitle": "Select country",
+  "countrySheetSearchHint": "Search country name or ISO code",
+  "countrySheetTitle": "Base country / region",
+  "cryptoHeader": "CRYPTO",
+  "cryptoMockPerUnit": "Mock ~{price} / unit",
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "cryptoPickerTitle": "Pick a coin",
+  "cryptoSheetTitle": "Select cryptocurrency",
+  "currencyPickerSearchHint": "Search ticker or name",
+  "currencyPickerTitle": "Pick a currency",
+  "currencySheetCountShown": "{shown} of {total} shown",
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "currencySheetSearchHint": "Search code, name, or numeric ISO",
+  "currencySheetTitle": "Select currency",
+  "exchangeBaseSuffix": " · Base",
+  "exchangeCouldNotLoad": "Could not load rates\n{error}",
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeHeader": "EXCHANGE",
+  "exchangeLastUpdated": "Last updated {mins} min ago",
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeLastUpdatedOffline": "Last updated {mins} min ago (Offline)",
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeResetOne": "Reset to 1 (USD base)",
+  "exchangeResetTooltip": "Reset amounts",
+  "exchangeResetZero": "Clear to 0",
+  "itineraryDayPrefix": "Day {day}: {date}",
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryEmpty": "No events yet.\nTap + to add flights, hotels, and plans.",
+  "itineraryHeader": "ITINERARY",
+  "itineraryHiveError": "Could not open saved itinerary data.\nYou can still try adding events — they may not persist.\n({error})",
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryOpenOnMap": "Open on map",
+  "mapAddToTrip": "Add to trip",
+  "mapClearRoute": "Clear route & guidance",
+  "mapClearTooltip": "Clear",
+  "mapDisplayCurrentViewport": "Current viewport",
+  "mapDisplaySavedSearch": "Saved search",
+  "mapDisplayTripDestination": "Trip destination",
+  "mapDownloadAll": "Download all",
+  "mapDownloadCurrentRegion": "Download Current Region for Offline Use",
+  "mapDownloadThisDestination": "Download this destination",
+  "mapDownloadedRegions": "Downloaded regions",
+  "mapDownloadingRegion": "Downloading region...",
+  "mapDownloadingTitle": "Downloading {title}...",
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapFromItinerary": "From your itinerary",
+  "mapItineraryEmptyHint": "Add itinerary destinations to pre-download them here.",
+  "mapLoadingRegions": "Loading offline regions…",
+  "mapLocatingQuery": "Locating {query}...",
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapMarkCategoryBody": "Choose how to label this offline pin.",
+  "mapMarkCategoryTitle": "Category for this mark",
+  "mapMarkFood": "Food",
+  "mapMarkHotel": "Hotel",
+  "mapMarkLandmark": "Landmark",
+  "mapMarkOther": "Other",
+  "mapNextInstruction": "Next instruction ({current}/{total})",
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "mapNoLocationSet": "No location set",
+  "mapNoRegionsYet": "You haven't downloaded any regions yet.",
+  "mapOfflineIntro": "Save the currently visible region, or pre-download your trip destinations so you can navigate when you're off-grid.",
+  "mapOfflineMapsTitle": "Offline maps",
+  "mapRefreshTooltip": "Refresh",
+  "mapRemovePinTooltip": "Remove pin",
+  "mapSaveOffline": "Save offline",
+  "mapSavePinToMap": "Save pin to map",
+  "mapSavedPinsBody": "Pins you saved from search. Tap delete to remove one from the map.",
+  "mapSavedPinsTitle": "Saved map pins",
+  "mapSearchHint": "Search a city, address, or landmark…",
+  "mapSnackAddedOfflineMark": "{title} added to your offline marks.",
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackArrived": "You have arrived.",
+  "mapSnackCouldNotFind": "Could not find \"{query}\".",
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDeleteFailed": "Delete failed: {error}",
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadFailed": "Offline download failed: {error}",
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadedEvent": "Downloaded \"{title}\".",
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackEventNoLocation": "\"{title}\" has no location set.",
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackFinishedBatch": "Finished downloading {count} itinerary region(s).",
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLoadRegionsFailed": "Could not load offline regions: {error}",
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLocationOff": "Location service is off. Enable it to start navigation.",
+  "mapSnackLocationPermission": "Location permission is required for turn-by-turn.",
+  "mapSnackMapNotReady": "Map is not ready yet. Please wait a moment.",
+  "mapSnackNavStartFail": "Unable to start navigation right now.",
+  "mapSnackNavStopped": "Navigation stopped.",
+  "mapSnackNoItineraryLocations": "No itinerary events have a location or map point to download.",
+  "mapSnackNoManeuver": "This step has no precise maneuver point.",
+  "mapSnackNoRoute": "Could not find a route; showing destination.",
+  "mapSnackRegionDownloaded": "Region downloaded successfully! You can now navigate offline.",
+  "mapSnackRemovedPin": "Removed saved pin.",
+  "mapSnackRemovedRegion": "Removed offline region \"{name}\".",
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackRouteCleared": "Route and guidance cleared.",
+  "mapSnackRoutingFailed": "Routing failed: {error}",
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackSearchFailed": "Search failed: {error}",
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapStartNavigation": "Start Navigation",
+  "mapStartingNav": "Starting navigation...",
+  "mapStopNavigation": "Stop Navigation",
+  "mapTravelDriving": "Driving",
+  "mapTravelWalking": "Walking",
+  "mapTurnByTurn": "Turn-by-turn ({mode})",
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCaptureFail": "Could not capture the mind map. Try again.",
+  "mindMapClearBody": "This removes all nodes and restores the demo mind map (centered example).",
+  "mindMapClearTitle": "Clear canvas?",
+  "mindMapClearTooltip": "Clear / Reset",
+  "mindMapCouldNotSave": "Could not save: {error}",
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCouldNotSaveType": "Could not save: {type}",
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapEmailShare": "Email / Share",
+  "mindMapEmptyNode": "Empty Node",
+  "mindMapHelpHint": "Pinch to zoom · drag canvas · drag cards · tap a card to edit · + adds a child",
+  "mindMapNodeAddLeftTooltip": "Add left child",
+  "mindMapNodeAddRightTooltip": "Add right child",
+  "mindMapNodeDeleteTooltip": "Delete node",
+  "mindMapNodeEditTitle": "Edit node",
+  "mindMapNodeHint": "Enter a short label",
+  "mindMapPhotoAccess": "Photo library access is required to save the image.",
+  "mindMapReset": "Reset",
+  "mindMapSavePhoto": "Save as photo",
+  "mindMapSavedPhotos": "Saved to Photos",
+  "mindMapShareCaptureFail": "Could not capture the mind map for sharing.",
+  "mindMapShareCompleted": "Share completed",
+  "mindMapShareFailed": "Share failed: {error}",
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapShareReady": "Image ready — pick an app to share",
+  "mindMapShareSheetClosed": "Share sheet closed",
+  "mindMapShareSubject": "Tripmetic — Mind map",
+  "mindMapShareText": "Mind map export from Tripmetic",
+  "mindMapTapToEdit": "Tap to edit",
+  "moreToolsHeader": "MORE TOOLS",
+  "moreToolsSubtitle": "Travel utilities",
+  "navCurrency": "Currency",
+  "navItinerary": "Itinerary",
+  "navMoreTools": "More tools",
+  "navOfflineMap": "Offline Map",
+  "packingCatClothing": "CLOTHING",
+  "packingCatDocuments": "DOCUMENTS",
+  "packingCatMedications": "MEDICATIONS",
+  "packingCatMisc": "MISC",
+  "packingCatReservations": "RESERVATIONS",
+  "packingEmpty": "Your list is empty.\nTap + to add items.",
+  "packingEmptyHidden": "Nothing left to pack — or turn off \"Hide completed\" to see done items.",
+  "packingHeader": "PACKING & LOGISTICS",
+  "packingHideCompleted": "Hide completed",
+  "packingHideCompletedSubtitle": "Completed items stay saved; only hidden from this view",
+  "packingStarterPassport": "Passport",
+  "packingStarterShirts": "Shirts",
+  "packingStarterSocks": "Socks",
+  "packingStarterTickets": "Flight tickets",
+  "packingStarterToothbrush": "Toothbrush",
+  "paywallDisabledBody": "RevenueCat paywall is temporarily disabled for UI review.",
+  "paywallDisabledTitle": "Paywall disabled",
+  "presentationDeleteBody": "Are you sure you want to remove this document from the vault?",
+  "presentationDeleteTitle": "Delete Document?",
+  "presentationImageLoadFail": "Failed to load image",
+  "proActive": "Active",
+  "proManageHintFree": "Unlock Pro features with a monthly subscription.",
+  "proManageHintPro": "Manage your subscription or restore purchases.",
+  "proManageSubscription": "Manage subscription",
+  "proName": "Tripmetic Pro",
+  "proPaywallError": "Paywall could not be shown. Check your RevenueCat offering.",
+  "proRestoreFailed": "Restore failed: {message}",
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "proTrialCta": "Start Your 3-Day Free Trial",
+  "proWelcome": "Welcome to Tripmetic Pro",
+  "schedulerAvailabilityGood": "Good",
+  "schedulerAvailabilityOffHours": "Off-hours",
+  "schedulerAvailabilityOk": "OK",
+  "schedulerBaseLocation": "Base location",
+  "schedulerBaseTooltip": "Date, time, and slider apply to the base clock ({zone}). Each city row shows the same instant in that zone.",
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "schedulerConvertedCities": "Converted cities",
+  "schedulerDayNext": "+1 Day",
+  "schedulerDayPrevious": "-1 Day",
+  "schedulerDaySame": "Same Day",
+  "schedulerMeetingTime": "Meeting time",
+  "schedulerSubtitle": "Meeting overlap",
+  "schedulerTitle": "Global scheduler",
+  "settingsAndInfo": "Settings & info",
+  "settingsContact": "Contact us",
+  "settingsCopyright": "© 2026 TRIPMETIC.app",
+  "settingsCouldNotOpenLink": "Could not open link",
+  "settingsHelpFaq": "Help & FAQ",
+  "settingsPrivacy": "Privacy policy",
+  "settingsSupportLegal": "Support & legal",
+  "settingsTerms": "Terms of use",
+  "sizeCatBelts": "Belts",
+  "sizeCatMensJeansCombo": "Men's jeans — W×L (US)",
+  "sizeCatMensJeansInseam": "Men's jeans — inseam (L)",
+  "sizeCatMensJeansWaist": "Men's jeans — waist (W)",
+  "sizeCatMensPants": "Men's Pants",
+  "sizeCatMensShirts": "Men's Shirts",
+  "sizeCatMensShoes": "Men's Shoes",
+  "sizeCatMensTshirts": "Men's T-shirts",
+  "sizeCatWomensBlouses": "Women's Blouses",
+  "sizeCatWomensDresses": "Women's Dresses",
+  "sizeCatWomensPants": "Women's Pants",
+  "sizeCatWomensShoes": "Women's Shoes",
+  "sizeCatWomensTshirts": "Women's T-shirts",
+  "sizeColumnPrimaryEu": "Primary: EU",
+  "sizeColumnPrimaryJp": "Primary: JP",
+  "sizeColumnPrimaryMixed": "Primary: mixed (EU→US→UK→JP)",
+  "sizeColumnPrimaryUk": "Primary: UK",
+  "sizeColumnPrimaryUs": "Primary: US",
+  "sizeConverterAppBarSubtitle": "Clothing & shoes",
+  "sizeConverterCategory": "Category",
+  "sizeConverterHeader": "CLOTHING & SHOES",
+  "sizeConverterTapToChange": "{code} · tap to change",
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "sizeConverterYourBaseSize": "Your base size (on the tag)",
+  "sizeConverterYourCountry": "Your country / region",
+  "sizeEquivalentSizesHeader": "EQUIVALENT SIZES",
+  "sizeHintBelts": "e.g. 32, 34, 85, 90",
+  "sizeHintMensJeansCombo": "e.g. 38x32 or 38×32",
+  "sizeHintMensJeansInseam": "e.g. 32 (inseam\") or 38x32 → uses inseam 32",
+  "sizeHintMensJeansWaist": "e.g. 38 (waist\") or 38x32 → uses waist 38",
+  "sizeHintMensPants": "e.g. 30, 32, 34 (waist\")",
+  "sizeHintMensShirts": "e.g. 15, 38, M",
+  "sizeHintMensShoes": "e.g. 6–14, 42, 27",
+  "sizeHintMensTshirts": "e.g. S, M, L, 48",
+  "sizeHintWomensBlouses": "e.g. 8, 38, M, XL",
+  "sizeHintWomensDresses": "e.g. 8, 38, M",
+  "sizeHintWomensPants": "e.g. 6, 10, 38, M",
+  "sizeHintWomensShoes": "e.g. 5–12, 39, 25",
+  "sizeHintWomensTshirts": "e.g. XS, M, 38",
+  "sizeNoMatchEmpty": "Enter the size printed on your garment or shoe.",
+  "sizeNoMatchRow": "No matching size row for this category. Try US, UK, EU, JP numbers, or a letter (S, M, L) where applicable.",
+  "sizeTipJeansCombo": "Example US 38×32: waist ≈ EU 48, JP waist tag often ~96–97 cm; inseam 32\" ≈ ~81 cm. Brands differ — use this as a starting point.",
+  "sizeTipJeansInseam": "Inseam is the inside-leg length in inches (e.g. 32). Japan may show ~81 cm for a 32\" inseam. Type 38×32 — we use 32 for inseam.",
+  "sizeTipJeansWaist": "One number on an Asian tag is often waist: either centimeters (38\" ≈ 96–97 cm) or US waist inches (38). Compare to a tape measure. You can type 38×32 here — we use 38 for waist.",
+  "timezonePickerEmpty": "No matches",
+  "timezonePickerHint": "Search IANA name (e.g. Europe, Tokyo)",
+  "timezonePickerTitle": "Pick a timezone",
+  "timezoneSheetCountZones": "{shown} of {total} zones",
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "timezoneSheetSearchHint": "Search IANA name (e.g. Europe, Tokyo)",
+  "timezoneSheetTitle": "Select timezone",
+  "tipAmount": "Tip amount",
+  "tipAppBarSubtitle": "Tip & bill",
+  "tipBillHint": "e.g. $1,250,000.00",
+  "tipCountryBrazil": "Brazil",
+  "tipCountryChina": "China",
+  "tipCountryColombia": "Colombia",
+  "tipCountryDominicanRepublic": "Dominican Republic",
+  "tipCountryEgypt": "Egypt",
+  "tipCountryMexico": "Mexico",
+  "tipCountrySpain": "Spain",
+  "tipCountryThailand": "Thailand",
+  "tipCountryUsa": "United States",
+  "tipCurrentCountry": "Current country",
+  "tipPeople": "People",
+  "tipPerPerson": "Amount per person",
+  "tipPercentHint": "Type tip % (e.g. 15 or 27.5)",
+  "tipPercentLabel": "Tip %",
+  "tipResults": "RESULTS",
+  "tipSmartHeader": "SMART TIP",
+  "tipTotalBill": "Total bill amount",
+  "tipTotalWithTip": "Total with tip",
+  "toolBrainstorm": "Brainstorm",
+  "toolBudget": "Budget",
+  "toolBudgetSubtitle": "Trip budget planning and expense tracking",
+  "toolBudgetTitle": "Budget",
+  "toolCrypto": "Crypto",
+  "toolCryptoSubtitle": "USD values across popular coins",
+  "toolCryptoTitle": "Crypto",
+  "toolDocumentVault": "Document Vault",
+  "toolMindMapSubtitle": "Ideas on an infinite canvas · offline",
+  "toolMindMapTitle": "Brainstorming mind map",
+  "toolPacking": "Packing",
+  "toolPackingSubtitle": "Smart packing checklists by trip",
+  "toolPackingTitle": "Packing",
+  "toolSchedulerSubtitle": "Dual time zones · jet lag planning",
+  "toolSchedulerTitle": "Time & date",
+  "toolSettingsAboutSubtitle": "Announcements, help, privacy & terms",
+  "toolSettingsAboutTitle": "Settings & about",
+  "toolSettingsInfo": "Settings & info",
+  "toolSizeSubtitle": "US · UK · EU · Japan (JP)",
+  "toolSizeTitle": "Clothing Size Converter",
+  "toolTimeDate": "Time & date",
+  "toolTipSubtitle": "Country tip norms · split up to 20 people",
+  "toolTipTitle": "Smart Tip & Bill Splitter",
+  "toolUnits": "Units",
+  "toolUnitsSubtitle": "Length, weight, temperature, volume",
+  "toolUnitsTitle": "Units",
+  "toolVaultSubtitle": "Offline storage for vital travel documents",
+  "toolVaultTitle": "Document Vault",
+  "unitAcres": "Acres",
+  "unitCategoryArea": "Area",
+  "unitCategoryDistance": "Distance",
+  "unitCategoryLength": "Length",
+  "unitCategoryTemperature": "Temperature",
+  "unitCategoryVolume": "Volume",
+  "unitCategoryWeight": "Weight",
+  "unitCelsius": "Celsius",
+  "unitCentimeters": "Centimeters",
+  "unitFahrenheit": "Fahrenheit",
+  "unitFeet": "Feet",
+  "unitGrams": "Grams",
+  "unitHectares": "Hectares",
+  "unitInches": "Inches",
+  "unitKilograms": "Kilograms",
+  "unitKilometers": "Kilometers",
+  "unitLiters": "Liters",
+  "unitMeters": "Meters",
+  "unitMiles": "Miles",
+  "unitMilliliters": "Milliliters",
+  "unitOunces": "Ounces",
+  "unitPounds": "Pounds",
+  "unitSquareCentimeters": "Square centimeters",
+  "unitSquareFeet": "Square feet",
+  "unitSquareInches": "Square inches",
+  "unitSquareKilometers": "Square kilometers",
+  "unitSquareMeters": "Square meters",
+  "unitSquareYards": "Square yards",
+  "unitUsFluidOunces": "US Fluid Ounces",
+  "unitUsGallons": "US Gallons",
+  "unitYards": "Yards",
+  "unitsHeader": "UNITS",
+  "vaultCategoryArrivalCard": "Arrival Card",
+  "vaultCategoryHotelReservation": "Hotel Reservation",
+  "vaultCategoryOther": "Other",
+  "vaultCategoryPassportCopy": "Passport Copy",
+  "vaultCategoryReturnFlight": "Return Flight",
+  "vaultCategoryVisa": "Visa",
+  "vaultDocumentTitle": "Document",
+  "vaultIntro": "Securely store vital travel documents for offline access and quick presentation at immigration.",
+  "vaultProcessFailed": "Failed to process document: {error}",
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultTapToUpload": "Tap to upload",
+  "vaultTapToView": "Tap to view",
+  "vaultVaultWord": "vault"
+}

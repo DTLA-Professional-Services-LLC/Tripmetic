@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tripmetic",
+  "private_key_id": "ea97ce797035431face1759e6c50cf1bb4f97162",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC90Usy6yxh5L7F\n+Xa6fEz0Z869rQOW9du07Ytc9GolVsT8FLxm1zPO6m4sX8UjeenXe9uc0EYqMTe5\nN1SKPWbKyaBlcozog8AdhiSgeS/nI5ZY0jd9zR0IpHfE9NsX16Az96LlzLxd6FuW\nswmpVuPi/AwNibsKo747ihUtuzJSn/4PnAcvEzS8hSWWQQJx5DwHmVgTR61pHacQ\nORsSDhQIToN6T//pWjYe+KuL5ZDOucvpFmMMVSKgS2vR7fPmvf1XZ4Sp9Vy2mfr2\nXFz2d+DOrXqCI2dbt2vJLF3YQwqN81nt91BFVwecSyNhwQ7eU7xrQQvlHcXr9F2h\nZDxQMCudAgMBAAECggEABiYghH6/ylAJqgohwXrDV2uBc/2Fzz8ZpevIBvPX+Guu\nJ+hYDhDMmdhYR1G25iZN3/AgNh09GKLNhk93ip7glJMhggfK7sFN2Ob+isBCP/+U\nID53E7kwRpZlVtkDu+r9QpG0EjOmqngbd29HUdgBu9mkXk/m4jpZsD4R35Bf2fNM\ngeXc6VE+2WjYRh5x67lhrVCTUF94a+BsHSDPun+yfAFiCRt/q3+bPRMhoTEhoE04\nrJYIUjFW08yT+Dnx7uxECJfr66h9Cm34OK6wuJoMWAxRmy20lRrBrXB0JUpUOryq\nDRUXPP6GJ1iIb+1OTi9QyVj9L+O0xNZq3OcwePHvtQKBgQDzyGdKpxQX75H4HAfP\nMhQ6DZx+s+m1nZd/5x6srv/8I887QS05YUuzbWiQ2Of5jDH4sX419mwGEFqaijXL\nveC8VrgC8mEXm6k6fWzhZRdjOVBkYDLJfsp94VPp8ZOFb8LOEgvc0DWDWIdYAlBQ\nZaeV+j2rAsp07cEc2Jb1QoXFNwKBgQDHVIvSNvHy4QD2X/hSOA8GWqpqFGPH4ZwZ\ntZe8PzCz9teLczFknhcajCMhxlAXoTUbeGIqZ9QBxqMRkzcc1zRxAxpIP8o1E9Mh\nV+f1M7X9wLGoV1Iyr8lDQWx1nsKhU58G4qfDwZwiAR6e0mNUx9JCGIgTuZS20iof\n8mWmii3/ywKBgQDMGavJB6s+AviN5kHvibj/hafROKXhxSgzEHhREU8GdaCptn67\nfKcZeO9D3iYRevvXgBrv6Pk19nk0y6QQiU9fv6bd6Lm7Pzrm2l3PM4jqLPEOqK+8\nnSfBTmaoBfaBkDljuB4waC11YyglWgKN3R365gC9bV+9l9THZtq0Slae7wKBgFji\ncpcCuVE81FkI4oqHROvociVrgjMXf6xXNZpT8zvMzsD4VQYxGMxVwTTGYeCnmi7t\nt5iBRCCmmwCzTNgnftMGNyoQh/KzLGqp8F1++aB11MLkbVr82BqNiffJG7EkwL0p\nRPYd16myJh1cY77ie/fNSKDDGHWNsgsc5AcnhuuRAoGAWtTQd73w8WFAQ7u+Cp3m\nJAIiH9yqld+/wBEo+MpSzlIaot3nmaOuGD6ThtfpbOppQ4njWCEqDv/YpbV1IPf4\nRxaQWmn1m5G35NF6ciIjwakzGyDTJJST0fAZy1iZAou4n/NdEYA01q+ilDV57g34\nrY6JcQY6mduHsJFsT1uQr90=\n-----END PRIVATE KEY-----\n",
+  "client_email": "revenuecat-billing@tripmetic.iam.gserviceaccount.com",
+  "client_id": "105820434926550255561",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/revenuecat-billing%40tripmetic.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

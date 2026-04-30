@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832744610341",
+    "project_id": "tripmetic",
+    "storage_bucket": "tripmetic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832744610341:android:6531aac1fb60ed12ccfdcc",
+        "android_client_info": {
+          "package_name": "com.tripmetic.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJG5SgX_u2yyMNSIWf72JRMIzZoTOAbkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

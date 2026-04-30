@@ -1,0 +1,648 @@
+{
+  "@@locale": "es",
+  "addItineraryEnterTitle": "Introduce un título",
+  "addItineraryFieldLocation": "Ubicación",
+  "addItineraryFieldNotes": "Notas / confirmación",
+  "addItineraryFieldTitle": "Título",
+  "addItineraryHintLocation": "Aeropuerto, dirección del hotel…",
+  "addItineraryHintNotes": "Localizador, enlaces…",
+  "addItineraryHintTitle": "Vuelo a Lisboa",
+  "addItinerarySave": "Guardar evento",
+  "addItineraryTitle": "Añadir evento al itinerario",
+  "addPackingAddToList": "Añadir a la lista",
+  "addPackingEnterName": "Introduce el nombre del artículo",
+  "addPackingFieldCategory": "Categoría",
+  "addPackingFieldItemName": "Nombre del artículo",
+  "addPackingHint": "p. ej. Adaptador de corriente",
+  "addPackingIcon": "Icono",
+  "addPackingQuantity": "Cantidad",
+  "addPackingTitle": "Añadir al equipaje",
+  "announcementsLatest": "Novedades",
+  "appTitle": "TRIPMETIC.app",
+  "budgetBaseCurrency": "DIVISA BASE",
+  "budgetCategoryDialogHint": "p. ej. Recuerdos",
+  "budgetCategoryNameExists": "El nombre ya existe",
+  "budgetCategoryNameMax": "Máximo 40 caracteres",
+  "budgetDailyFood": "Comida diaria",
+  "budgetDestinationSearchHint": "Buscar país o código de divisa",
+  "budgetDestinationTitle": "Añadir destino",
+  "budgetDialogAdd": "Añadir",
+  "budgetDialogNewCategory": "Nueva categoría de gasto",
+  "budgetDialogRemoveBody": "¿Eliminar \"{name}\" y su importe?",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetDialogRemoveTitle": "Eliminar categoría",
+  "budgetDialogRename": "Renombrar",
+  "budgetDialogRenameCategory": "Renombrar categoría",
+  "budgetEdit": "Editar presupuesto",
+  "budgetExpenseDailyFood": "Comida diaria",
+  "budgetExpenseEatingOut": "Comer fuera",
+  "budgetExpenseEntertainment": "Ocio",
+  "budgetExpenseFlights": "Vuelos",
+  "budgetExpenseGrocery": "Comestibles",
+  "budgetExpenseHotels": "Hoteles",
+  "budgetExpenseMisc": "Varios",
+  "budgetExpensePhoneService": "Telefonía",
+  "budgetExpenseShopping": "Compras",
+  "budgetExpenseTourism": "Turismo",
+  "budgetExpenseTransportation": "Transporte",
+  "budgetExpenseTravelInsurance": "Seguro de viaje",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3.000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "En tus destinos",
+  "budgetNoCategories": "Aún no hay categorías de gasto",
+  "budgetOtherExpenses": "OTROS GASTOS ({code})",
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetPerDayEstimate": "Por día (estimación)",
+  "budgetPerDayValue": "≈ {amount} / día",
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetRemainingAfter": "Restante tras gastos · {code}",
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetSave": "Guardar presupuesto",
+  "budgetSpendingPower": "Poder adquisitivo",
+  "budgetSpentVsBudget": "Gastado vs presupuesto",
+  "budgetTotalBudget": "PRESUPUESTO TOTAL ({code})",
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetTotalForTrip": "Total del viaje ({code})",
+  "budgetTripDashboard": "panel",
+  "budgetTripLengthDays": "Duración del viaje (días)",
+  "budgetTripTitle": "Presupuesto del viaje",
+  "commonAdd": "Añadir",
+  "commonCancel": "Cancelar",
+  "commonDelete": "Borrar",
+  "commonOk": "Vale",
+  "commonRemove": "Eliminar",
+  "commonRename": "Renombrar",
+  "commonSave": "Guardar",
+  "countryCountriesCount": "{count} países",
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "countryPickerTitle": "Seleccionar país",
+  "countrySheetSearchHint": "Buscar país o código ISO",
+  "countrySheetTitle": "País / región base",
+  "cryptoHeader": "CRIPTOS",
+  "cryptoMockPerUnit": "Simulación ~{price} / unidad",
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "cryptoPickerTitle": "Elegir moneda",
+  "cryptoSheetTitle": "Seleccionar criptomoneda",
+  "currencyPickerSearchHint": "Buscar ticker o nombre",
+  "currencyPickerTitle": "Elegir divisa",
+  "currencySheetCountShown": "{shown} de {total} mostradas",
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "currencySheetSearchHint": "Buscar código, nombre o ISO numérico",
+  "currencySheetTitle": "Seleccionar divisa",
+  "exchangeBaseSuffix": " · Base",
+  "exchangeCouldNotLoad": "No se pudieron cargar los tipos\n{error}",
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeHeader": "CAMBIO",
+  "exchangeLastUpdated": "Actualizado hace {mins} min",
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeLastUpdatedOffline": "Actualizado hace {mins} min (sin conexión)",
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeResetOne": "Restablecer a 1 (base USD)",
+  "exchangeResetTooltip": "Restablecer importes",
+  "exchangeResetZero": "Borrar a 0",
+  "itineraryDayPrefix": "Día {day}: {date}",
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryEmpty": "Aún no hay eventos.\nToca + para añadir vuelos, hoteles y planes.",
+  "itineraryHeader": "ITINERARIO",
+  "itineraryHiveError": "No se pudieron abrir los datos del itinerario guardado.\nAún puedes añadir eventos; es posible que no persistan.\n({error})",
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryOpenOnMap": "Abrir en el mapa",
+  "mapAddToTrip": "Añadir al viaje",
+  "mapClearRoute": "Borrar ruta y guía",
+  "mapClearTooltip": "Borrar",
+  "mapDisplayCurrentViewport": "Vista actual",
+  "mapDisplaySavedSearch": "Búsqueda guardada",
+  "mapDisplayTripDestination": "Destino del viaje",
+  "mapDownloadAll": "Descargar todo",
+  "mapDownloadCurrentRegion": "Descargar región actual para uso sin conexión",
+  "mapDownloadThisDestination": "Descargar este destino",
+  "mapDownloadedRegions": "Regiones descargadas",
+  "mapDownloadingRegion": "Descargando región...",
+  "mapDownloadingTitle": "Descargando {title}...",
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapFromItinerary": "Desde tu itinerario",
+  "mapItineraryEmptyHint": "Añade destinos al itinerario para pre-descargarlos aquí.",
+  "mapLoadingRegions": "Cargando regiones sin conexión…",
+  "mapLocatingQuery": "Localizando {query}...",
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapMarkCategoryBody": "Elige cómo etiquetar este pin sin conexión.",
+  "mapMarkCategoryTitle": "Categoría de este marcador",
+  "mapMarkFood": "Comida",
+  "mapMarkHotel": "Hotel",
+  "mapMarkLandmark": "Punto de interés",
+  "mapMarkOther": "Otro",
+  "mapNextInstruction": "Siguiente instrucción ({current}/{total})",
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "mapNoLocationSet": "Sin ubicación",
+  "mapNoRegionsYet": "Aún no has descargado ninguna región.",
+  "mapOfflineIntro": "Guarda la región visible o descarga destinos del viaje para navegar sin cobertura.",
+  "mapOfflineMapsTitle": "Mapas sin conexión",
+  "mapRefreshTooltip": "Actualizar",
+  "mapRemovePinTooltip": "Quitar marcador",
+  "mapSaveOffline": "Guardar sin conexión",
+  "mapSavePinToMap": "Guardar pin en el mapa",
+  "mapSavedPinsBody": "Marcadores guardados desde la búsqueda. Toca eliminar para quitar uno del mapa.",
+  "mapSavedPinsTitle": "Marcadores guardados",
+  "mapSearchHint": "Buscar ciudad, dirección o punto de interés…",
+  "mapSnackAddedOfflineMark": "{title} añadido a tus marcas sin conexión.",
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackArrived": "Has llegado.",
+  "mapSnackCouldNotFind": "No se encontró \"{query}\".",
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDeleteFailed": "Error al eliminar: {error}",
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadFailed": "Error al descargar sin conexión: {error}",
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadedEvent": "Descargado \"{title}\".",
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackEventNoLocation": "\"{title}\" no tiene ubicación.",
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackFinishedBatch": "Descarga finalizada: {count} región(es) del itinerario.",
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLoadRegionsFailed": "No se pudieron cargar regiones sin conexión: {error}",
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLocationOff": "El servicio de ubicación está desactivado. Actívalo para la navegación.",
+  "mapSnackLocationPermission": "Se requiere permiso de ubicación para giro a giro.",
+  "mapSnackMapNotReady": "El mapa aún no está listo. Espera un momento.",
+  "mapSnackNavStartFail": "No se puede iniciar la navegación ahora.",
+  "mapSnackNavStopped": "Navegación detenida.",
+  "mapSnackNoItineraryLocations": "Ningún evento del itinerario tiene ubicación o punto en el mapa para descargar.",
+  "mapSnackNoManeuver": "Este paso no tiene punto de maniobra preciso.",
+  "mapSnackNoRoute": "No hay ruta; mostrando destino.",
+  "mapSnackRegionDownloaded": "¡Región descargada! Ya puedes navegar sin conexión.",
+  "mapSnackRemovedPin": "Marcador eliminado.",
+  "mapSnackRemovedRegion": "Se eliminó la región sin conexión \"{name}\".",
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackRouteCleared": "Ruta y guía borradas.",
+  "mapSnackRoutingFailed": "Error al calcular la ruta: {error}",
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackSearchFailed": "Error en la búsqueda: {error}",
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapStartNavigation": "Iniciar navegación",
+  "mapStartingNav": "Iniciando navegación...",
+  "mapStopNavigation": "Detener navegación",
+  "mapTravelDriving": "En coche",
+  "mapTravelWalking": "A pie",
+  "mapTurnByTurn": "Giro a giro ({mode})",
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCaptureFail": "No se pudo capturar el mapa mental. Inténtalo de nuevo.",
+  "mindMapClearBody": "Elimina todos los nodos y restaura el mapa de demostración centrado.",
+  "mindMapClearTitle": "¿Borrar el lienzo?",
+  "mindMapClearTooltip": "Borrar / Restablecer",
+  "mindMapCouldNotSave": "No se pudo guardar: {error}",
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCouldNotSaveType": "No se pudo guardar: {type}",
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapEmailShare": "Correo / Compartir",
+  "mindMapEmptyNode": "Nodo vacío",
+  "mindMapHelpHint": "Pellizca para zoom · arrastra el lienzo · arrastra tarjetas · toca para editar · + añade hijo",
+  "mindMapNodeAddLeftTooltip": "Añadir hijo a la izquierda",
+  "mindMapNodeAddRightTooltip": "Añadir hijo a la derecha",
+  "mindMapNodeDeleteTooltip": "Eliminar nodo",
+  "mindMapNodeEditTitle": "Editar nodo",
+  "mindMapNodeHint": "Etiqueta breve",
+  "mindMapPhotoAccess": "Se necesita acceso a la galería para guardar la imagen.",
+  "mindMapReset": "Restablecer",
+  "mindMapSavePhoto": "Guardar como foto",
+  "mindMapSavedPhotos": "Guardado en Fotos",
+  "mindMapShareCaptureFail": "No se pudo capturar el mapa mental para compartir.",
+  "mindMapShareCompleted": "Compartido",
+  "mindMapShareFailed": "Error al compartir: {error}",
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapShareReady": "Imagen lista — elige una app para compartir",
+  "mindMapShareSheetClosed": "Hoja de compartir cerrada",
+  "mindMapShareSubject": "Tripmetic — Mapa mental",
+  "mindMapShareText": "Exportación de mapa mental desde Tripmetic",
+  "mindMapTapToEdit": "Toca para editar",
+  "moreToolsHeader": "MÁS HERRAMIENTAS",
+  "moreToolsSubtitle": "Utilidades de viaje",
+  "navCurrency": "Divisa",
+  "navItinerary": "Itinerario",
+  "navMoreTools": "Más herramientas",
+  "navOfflineMap": "Mapa sin conexión",
+  "packingCatClothing": "ROPA",
+  "packingCatDocuments": "DOCUMENTOS",
+  "packingCatMedications": "MEDICAMENTOS",
+  "packingCatMisc": "VARIOS",
+  "packingCatReservations": "RESERVAS",
+  "packingEmpty": "Tu lista está vacía.\nToca + para añadir artículos.",
+  "packingEmptyHidden": "No queda nada por empacar — o desactiva \"Ocultar completados\" para ver lo hecho.",
+  "packingHeader": "EQUIPAJE Y LOGÍSTICA",
+  "packingHideCompleted": "Ocultar completados",
+  "packingHideCompletedSubtitle": "Los completados se guardan; solo se ocultan aquí",
+  "packingStarterPassport": "Pasaporte",
+  "packingStarterShirts": "Camisas",
+  "packingStarterSocks": "Calcetines",
+  "packingStarterTickets": "Billetes de avión",
+  "packingStarterToothbrush": "Cepillo de dientes",
+  "paywallDisabledBody": "El paywall de RevenueCat está deshabilitado temporalmente para revisar la UI.",
+  "paywallDisabledTitle": "Paywall deshabilitado",
+  "presentationDeleteBody": "¿Seguro que quieres quitar este documento de la bóveda?",
+  "presentationDeleteTitle": "¿Eliminar documento?",
+  "presentationImageLoadFail": "No se pudo cargar la imagen",
+  "proActive": "Activo",
+  "proManageHintFree": "Desbloquea funciones Pro con una suscripción mensual.",
+  "proManageHintPro": "Gestiona tu suscripción o restaura compras.",
+  "proManageSubscription": "Gestionar suscripción",
+  "proName": "Tripmetic Pro",
+  "proPaywallError": "No se pudo mostrar el paywall. Revisa tu oferta en RevenueCat.",
+  "proRestoreFailed": "Error al restaurar: {message}",
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "proTrialCta": "Empieza tu prueba gratis de 3 días",
+  "proWelcome": "Bienvenido a Tripmetic Pro",
+  "schedulerAvailabilityGood": "Bueno",
+  "schedulerAvailabilityOffHours": "Fuera de horario",
+  "schedulerAvailabilityOk": "Aceptable",
+  "schedulerBaseLocation": "Ubicación base",
+  "schedulerBaseTooltip": "La fecha, la hora y el control se aplican al reloj base ({zone}). Cada fila muestra el mismo instante en esa zona.",
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "schedulerConvertedCities": "Ciudades convertidas",
+  "schedulerDayNext": "+1 día",
+  "schedulerDayPrevious": "-1 día",
+  "schedulerDaySame": "Mismo día",
+  "schedulerMeetingTime": "Hora de la reunión",
+  "schedulerSubtitle": "Solapamiento de reuniones",
+  "schedulerTitle": "Planificador global",
+  "settingsAndInfo": "Ajustes e información",
+  "settingsContact": "Contáctanos",
+  "settingsCopyright": "© 2026 TRIPMETIC.app",
+  "settingsCouldNotOpenLink": "No se pudo abrir el enlace",
+  "settingsHelpFaq": "Ayuda y preguntas frecuentes",
+  "settingsPrivacy": "Política de privacidad",
+  "settingsSupportLegal": "Soporte y legal",
+  "settingsTerms": "Términos de uso",
+  "sizeCatBelts": "Cinturones",
+  "sizeCatMensJeansCombo": "Vaqueros hombre — W×L (US)",
+  "sizeCatMensJeansInseam": "Vaqueros hombre — largo (L)",
+  "sizeCatMensJeansWaist": "Vaqueros hombre — cintura (W)",
+  "sizeCatMensPants": "Pantalones hombre",
+  "sizeCatMensShirts": "Camisas hombre",
+  "sizeCatMensShoes": "Calzado hombre",
+  "sizeCatMensTshirts": "Camisetas hombre",
+  "sizeCatWomensBlouses": "Blusas mujer",
+  "sizeCatWomensDresses": "Vestidos mujer",
+  "sizeCatWomensPants": "Pantalones mujer",
+  "sizeCatWomensShoes": "Calzado mujer",
+  "sizeCatWomensTshirts": "Camisetas mujer",
+  "sizeColumnPrimaryEu": "Principal: UE",
+  "sizeColumnPrimaryJp": "Principal: JP",
+  "sizeColumnPrimaryMixed": "Principal: mixto (UE→US→UK→JP)",
+  "sizeColumnPrimaryUk": "Principal: UK",
+  "sizeColumnPrimaryUs": "Principal: US",
+  "sizeConverterAppBarSubtitle": "Ropa y calzado",
+  "sizeConverterCategory": "Categoría",
+  "sizeConverterHeader": "ROPA Y CALZADO",
+  "sizeConverterTapToChange": "{code} · toca para cambiar",
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "sizeConverterYourBaseSize": "Tu talla base (en la etiqueta)",
+  "sizeConverterYourCountry": "Tu país / región",
+  "sizeEquivalentSizesHeader": "TALLAS EQUIVALENTES",
+  "sizeHintBelts": "p. ej. 32, 34, 85, 90",
+  "sizeHintMensJeansCombo": "p. ej. 38x32 o 38×32",
+  "sizeHintMensJeansInseam": "p. ej. 32 (largo\") o 38x32 → usa largo 32",
+  "sizeHintMensJeansWaist": "p. ej. 38 (cintura\") o 38x32 → usa cintura 38",
+  "sizeHintMensPants": "p. ej. 30, 32, 34 (cintura\")",
+  "sizeHintMensShirts": "p. ej. 15, 38, M",
+  "sizeHintMensShoes": "p. ej. 6–14, 42, 27",
+  "sizeHintMensTshirts": "p. ej. S, M, L, 48",
+  "sizeHintWomensBlouses": "p. ej. 8, 38, M, XL",
+  "sizeHintWomensDresses": "p. ej. 8, 38, M",
+  "sizeHintWomensPants": "p. ej. 6, 10, 38, M",
+  "sizeHintWomensShoes": "p. ej. 5–12, 39, 25",
+  "sizeHintWomensTshirts": "p. ej. XS, M, 38",
+  "sizeNoMatchEmpty": "Introduce la talla de la etiqueta de tu prenda o zapato.",
+  "sizeNoMatchRow": "No hay fila de tallas para esta categoría. Prueba números US, UK, UE, JP o letra (S, M, L) si aplica.",
+  "sizeTipJeansCombo": "Ejemplo US 38×32: cintura ≈ UE 48; etiqueta JP a menudo ~96–97 cm; largo 32\" ≈ ~81 cm. Las marcas varían: orientativo.",
+  "sizeTipJeansInseam": "Largo interior en pulgadas (p. ej. 32). Japón puede mostrar ~81 cm para 32\". Escribe 38×32; usamos 32 para largo.",
+  "sizeTipJeansWaist": "En etiquetas asiáticas un número suele ser cintura: centímetros (38\" ≈ 96–97 cm) o pulgadas US (38). Comprueba con cinta métrica. Puedes escribir 38×32; usamos 38 para cintura.",
+  "timezonePickerEmpty": "Sin coincidencias",
+  "timezonePickerHint": "Buscar nombre IANA (p. ej. Europe, Tokyo)",
+  "timezonePickerTitle": "Elegir zona horaria",
+  "timezoneSheetCountZones": "{shown} de {total} zonas",
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "timezoneSheetSearchHint": "Buscar nombre IANA (p. ej. Europe, Tokyo)",
+  "timezoneSheetTitle": "Seleccionar zona horaria",
+  "tipAmount": "Importe de propina",
+  "tipAppBarSubtitle": "Propina y cuenta",
+  "tipBillHint": "p. ej. 1.250.000,00 $",
+  "tipCountryBrazil": "Brasil",
+  "tipCountryChina": "China",
+  "tipCountryColombia": "Colombia",
+  "tipCountryDominicanRepublic": "República Dominicana",
+  "tipCountryEgypt": "Egipto",
+  "tipCountryMexico": "México",
+  "tipCountrySpain": "España",
+  "tipCountryThailand": "Tailandia",
+  "tipCountryUsa": "Estados Unidos",
+  "tipCurrentCountry": "País actual",
+  "tipPeople": "Personas",
+  "tipPerPerson": "Importe por persona",
+  "tipPercentHint": "Escribe la propina % (p. ej. 15 o 27,5)",
+  "tipPercentLabel": "Propina %",
+  "tipResults": "RESULTADOS",
+  "tipSmartHeader": "PROPINA INTELIGENTE",
+  "tipTotalBill": "Importe total de la cuenta",
+  "tipTotalWithTip": "Total con propina",
+  "toolBrainstorm": "Lluvia de ideas",
+  "toolBudget": "Presupuesto",
+  "toolBudgetSubtitle": "Planificación del presupuesto y seguimiento de gastos",
+  "toolBudgetTitle": "Presupuesto",
+  "toolCrypto": "Cripto",
+  "toolCryptoSubtitle": "Valores en USD de monedas populares",
+  "toolCryptoTitle": "Cripto",
+  "toolDocumentVault": "Bóveda de documentos",
+  "toolMindMapSubtitle": "Ideas en un lienzo infinito · sin conexión",
+  "toolMindMapTitle": "Mapa mental",
+  "toolPacking": "Equipaje",
+  "toolPackingSubtitle": "Listas de equipaje por viaje",
+  "toolPackingTitle": "Equipaje",
+  "toolSchedulerSubtitle": "Dos zonas horarias · jet lag",
+  "toolSchedulerTitle": "Hora y fecha",
+  "toolSettingsAboutSubtitle": "Avisos, ayuda, privacidad y términos",
+  "toolSettingsAboutTitle": "Ajustes y acerca de",
+  "toolSettingsInfo": "Ajustes e información",
+  "toolSizeSubtitle": "EE. UU. · Reino Unido · UE · Japón (JP)",
+  "toolSizeTitle": "Conversor de tallas de ropa",
+  "toolTimeDate": "Hora y fecha",
+  "toolTipSubtitle": "Normas por país · hasta 20 personas",
+  "toolTipTitle": "Propinas y división de cuenta",
+  "toolUnits": "Unidades",
+  "toolUnitsSubtitle": "Longitud, peso, temperatura, volumen",
+  "toolUnitsTitle": "Unidades",
+  "toolVaultSubtitle": "Almacenamiento sin conexión de documentos importantes",
+  "toolVaultTitle": "Bóveda de documentos",
+  "unitAcres": "Acres",
+  "unitCategoryArea": "Superficie",
+  "unitCategoryDistance": "Distancia",
+  "unitCategoryLength": "Longitud",
+  "unitCategoryTemperature": "Temperatura",
+  "unitCategoryVolume": "Volumen",
+  "unitCategoryWeight": "Peso",
+  "unitCelsius": "Celsius",
+  "unitCentimeters": "Centímetros",
+  "unitFahrenheit": "Fahrenheit",
+  "unitFeet": "Pies",
+  "unitGrams": "Gramos",
+  "unitHectares": "Hectáreas",
+  "unitInches": "Pulgadas",
+  "unitKilograms": "Kilogramos",
+  "unitKilometers": "Kilómetros",
+  "unitLiters": "Litros",
+  "unitMeters": "Metros",
+  "unitMiles": "Millas",
+  "unitMilliliters": "Mililitros",
+  "unitOunces": "Onzas",
+  "unitPounds": "Libras",
+  "unitSquareCentimeters": "Centímetros cuadrados",
+  "unitSquareFeet": "Pies cuadrados",
+  "unitSquareInches": "Pulgadas cuadradas",
+  "unitSquareKilometers": "Kilómetros cuadrados",
+  "unitSquareMeters": "Metros cuadrados",
+  "unitSquareYards": "Yardas cuadradas",
+  "unitUsFluidOunces": "Onzas líquidas US",
+  "unitUsGallons": "Galones US",
+  "unitYards": "Yardas",
+  "unitsHeader": "UNIDADES",
+  "vaultCategoryArrivalCard": "Tarjeta de llegada",
+  "vaultCategoryHotelReservation": "Reserva de hotel",
+  "vaultCategoryOther": "Otro",
+  "vaultCategoryPassportCopy": "Copia del pasaporte",
+  "vaultCategoryReturnFlight": "Vuelo de vuelta",
+  "vaultCategoryVisa": "Visado",
+  "vaultDocumentTitle": "Documento",
+  "vaultIntro": "Guarda documentos de viaje importantes sin conexión y preséntalos rápido en inmigración.",
+  "vaultProcessFailed": "Error al procesar el documento: {error}",
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultTapToUpload": "Toca para subir",
+  "vaultTapToView": "Toca para ver",
+  "vaultVaultWord": "bóveda"
+}
