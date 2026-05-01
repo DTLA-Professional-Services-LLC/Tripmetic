@@ -3,6 +3,16 @@
 # if your Default Workflow still requests IOS_APP_DEVELOPMENT.
 #
 # https://docs.codemagic.io/yaml-code-signing/signing-ios/
+# https://docs.codemagic.io/yaml-publishing/app-store-connect/
+#
+# Environment variables (Application or team group — mark secrets):
+#   REVENUECAT_IOS_PUBLIC_API_KEY     — RevenueCat public Apple SDK key (appl_...)
+#   APP_STORE_CONNECT_PRIVATE_KEY   — full .p8 text (App Store Connect API key, NOT IAP key)
+#   APP_STORE_CONNECT_KEY_IDENTIFIER — Key ID from App Store Connect → Users and Access → Keys
+#   APP_STORE_CONNECT_ISSUER_ID      — Issuer ID (same Keys page)
+#
+# Create the API key: App Store Connect → Users and Access → Integrations → App Store Connect API
+# → + → Name e.g. Codemagic → Access: App Manager → Generate → Download .p8 once.
 
 workflows:
   default-workflow:
@@ -22,9 +32,24 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios && pod install
+      # Internal TestFlight only (no external beta review). Remove the flag when you need
+      # external testers or App Store release builds from this workflow.
       - name: Set up code signing settings on Xcode project
-        script: xcode-project use-profiles
+        script: xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly": true}'
       - name: Flutter build IPA
-        script: flutter build ipa --release
+        script: |
+          set -e
+          if [ -z "${REVENUECAT_IOS_PUBLIC_API_KEY:-}" ]; then
+            echo "ERROR: Add REVENUECAT_IOS_PUBLIC_API_KEY in Codemagic (App env vars or variable group)." >&2
+            echo "Value = RevenueCat → Project → API keys → App Store / Apple (public key, starts with appl_)." >&2
+            exit 1
+          fi
+          flutter build ipa --release \
+            --dart-define=REVENUECAT_IOS_PUBLIC_API_KEY="$REVENUECAT_IOS_PUBLIC_API_KEY"
     artifacts:
       - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID

@@ -28,6 +28,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Tripmetic uses your location on the Offline Map tab to center the map on where you are and to bias search results to nearby places.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Tripmetic may use your location while you use the app so the offline map and nearby place features work reliably.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Tripmetic saves mind map exports to your photo library when you choose Save as photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
