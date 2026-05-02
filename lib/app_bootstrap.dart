@@ -19,12 +19,7 @@ import 'features/vault/application/vault_providers.dart';
 const _revenueCatGooglePlayPublicSdkKey = 'goog_TMvOXRhuUqLSLkxiJPGicxpIyRR';
 
 /// RevenueCat **public** SDK key for **Apple** (starts with `appl_`).
-/// Prefer `--dart-define=REVENUECAT_IOS_PUBLIC_API_KEY=appl_...` (e.g. Codemagic env var).
-/// For a quick device install without dart-define, you may paste the same `appl_` value here.
-const String _revenueCatApplePublicSdkKeyFromDefine = String.fromEnvironment(
-  'REVENUECAT_IOS_PUBLIC_API_KEY',
-);
-const String _revenueCatApplePublicSdkKeyFallback = '';
+const _revenueCatApplePublicSdkKey = 'appl_gUxCUkDxRbGwQHcDLLXNzUFRTmd';
 
 Future<void> _configureRevenueCat() async {
   if (kIsWeb) return;
@@ -37,20 +32,7 @@ Future<void> _configureRevenueCat() async {
       apiKey = _revenueCatGooglePlayPublicSdkKey;
       break;
     case TargetPlatform.iOS:
-      apiKey = _revenueCatApplePublicSdkKeyFromDefine.isNotEmpty
-          ? _revenueCatApplePublicSdkKeyFromDefine
-          : _revenueCatApplePublicSdkKeyFallback;
-      if (apiKey.isEmpty) {
-        throw FlutterError.fromParts(<DiagnosticsNode>[
-          ErrorSummary('RevenueCat Apple API key missing'),
-          ErrorDescription(
-            'Use your Apple **public** SDK key from RevenueCat (starts with appl_). '
-            'Pass --dart-define=REVENUECAT_IOS_PUBLIC_API_KEY=appl_... '
-            'or paste it into _revenueCatApplePublicSdkKeyFallback in lib/app_bootstrap.dart. '
-            'Configuring iOS with the Android (goog_...) key causes Error 23 and can fail store review.',
-          ),
-        ]);
-      }
+      apiKey = _revenueCatApplePublicSdkKey;
       break;
     default:
       return;
