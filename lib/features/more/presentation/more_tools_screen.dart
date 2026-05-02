@@ -19,9 +19,13 @@ class MoreToolsScreen extends ConsumerWidget {
     final l10n = context.l10n;
 
     return SafeArea(
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
-        children: [
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: ListView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
+          children: [
           const _TripmeticProSubscriptionCard(),
           const SizedBox(height: 14),
           Text(
@@ -39,6 +43,13 @@ class MoreToolsScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 14),
+          _ToolCard(
+            icon: Icons.route_outlined,
+            title: l10n.toolItineraryTitle,
+            subtitle: l10n.toolItinerarySubtitle,
+            onTap: () => navigateIfProRoute(context, '/itinerary'),
+          ),
+          const SizedBox(height: 10),
           _ToolCard(
             icon: Icons.account_balance_wallet_outlined,
             title: l10n.toolBudgetTitle,
@@ -109,6 +120,7 @@ class MoreToolsScreen extends ConsumerWidget {
             onTap: () => navigateIfProRoute(context, '/settings'),
           ),
         ],
+        ),
       ),
     );
   }

@@ -181,9 +181,13 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
         final minsStr = mins.toString();
 
         return SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
-            children: [
+          child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: ListView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
+              children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -257,6 +261,7 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
                   ),
                 ),
             ],
+            ),
           ),
         );
       },

@@ -104,7 +104,6 @@ class _MainShellState extends State<MainShell> {
     final l10n = context.l10n;
     final branchTitles = [
       l10n.navCurrency,
-      l10n.navItinerary,
       l10n.navOfflineMap,
       l10n.navMoreTools,
     ];
@@ -129,7 +128,11 @@ class _MainShellState extends State<MainShell> {
           ),
         ],
       ),
-      body: widget.navigationShell,
+      body: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: widget.navigationShell,
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: widget.navigationShell.currentIndex,
         onDestinationSelected: _onTabTapped,
@@ -144,14 +147,6 @@ class _MainShellState extends State<MainShell> {
               color: AppColors.accent,
             ),
             label: l10n.navCurrency,
-          ),
-          NavigationDestination(
-            icon: const Icon(
-              Icons.route_outlined,
-              color: AppColors.navIconUnselected,
-            ),
-            selectedIcon: const Icon(Icons.route, color: AppColors.accent),
-            label: l10n.navItinerary,
           ),
           NavigationDestination(
             icon: const Icon(Icons.map_outlined, color: AppColors.navIconUnselected),

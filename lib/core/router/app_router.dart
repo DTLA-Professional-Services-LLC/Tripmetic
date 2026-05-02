@@ -59,17 +59,7 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
               ),
             ],
           ),
-          // Index 1 — Itinerary
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/itinerary',
-                pageBuilder: (context, state) =>
-                    const NoTransitionPage<void>(child: ItineraryScreen()),
-              ),
-            ],
-          ),
-          // Index 2 — Offline Map
+          // Index 1 — Offline Map
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -79,7 +69,7 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
               ),
             ],
           ),
-          // Index 3 — More Tools (also the upgrade hub for non-Pro users).
+          // Index 2 — More Tools (also the upgrade hub for non-Pro users).
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -92,6 +82,14 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
         ],
       ),
       // Demoted from bottom nav — pushed full-screen from More Tools.
+      GoRoute(
+        path: '/itinerary',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.navItinerary,
+          child: const ItineraryScreen(),
+        ),
+      ),
       GoRoute(
         path: '/budget',
         parentNavigatorKey: rootNavigatorKey,

@@ -1976,6 +1976,18 @@ abstract class AppLocalizations {
   /// **'Budget'**
   String get toolBudgetTitle;
 
+  /// No description provided for @toolItinerarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Flights, hotels, and plans by day'**
+  String get toolItinerarySubtitle;
+
+  /// No description provided for @toolItineraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Itinerary'**
+  String get toolItineraryTitle;
+
   /// No description provided for @toolCrypto.
   ///
   /// In en, this message translates to:

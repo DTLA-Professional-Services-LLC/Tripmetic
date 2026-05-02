@@ -53,6 +53,7 @@ class ItineraryScreen extends ConsumerWidget {
         );
       } else {
         body = ListView.builder(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           padding: const EdgeInsets.fromLTRB(12, 12, 12, 88),
           itemCount: groups.length,
           itemBuilder: (context, gi) {

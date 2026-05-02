@@ -1048,6 +1048,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get toolBudgetTitle => 'Budget';
 
   @override
+  String get toolItinerarySubtitle => 'Flights, hotels, and plans by day';
+
+  @override
+  String get toolItineraryTitle => 'Itinerary';
+
+  @override
   String get toolCrypto => 'Crypto';
 
   @override

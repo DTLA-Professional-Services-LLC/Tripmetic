@@ -43,7 +43,11 @@ class FullscreenToolScaffold extends StatelessWidget {
           ),
           title: TripmeticAppBarTitle(subtitle: subtitle),
         ),
-        body: child,
+        body: GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: child,
+        ),
       ),
     );
   }

@@ -1468,6 +1468,7 @@ class _OfflineSheet extends StatelessWidget {
         ],
       ),
       child: ListView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         controller: scrollController,
         padding: const EdgeInsets.fromLTRB(16, 10, 16, 24),
         children: [
@@ -2650,6 +2651,7 @@ class _SearchSuggestions extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         clipBehavior: Clip.antiAlias,
         child: ListView.separated(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(vertical: 4),
           itemCount: suggestions.length,
