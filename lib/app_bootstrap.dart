@@ -1,12 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
 
 import 'core/constants/app_brand.dart';
+import 'core/subscription/revenue_cat_sdk_state.dart';
 import 'tripmetic_app.dart';
 import 'features/crypto/application/crypto_providers.dart';
 import 'features/currency/application/currency_providers.dart';
@@ -19,12 +21,12 @@ import 'features/vault/application/vault_providers.dart';
 const _revenueCatGooglePlayPublicSdkKey = 'goog_TMvOXRhuUqLSLkxiJPGicxpIyRR';
 
 /// RevenueCat **public** SDK key for **Apple** (starts with `appl_`).
-const _revenueCatApplePublicSdkKey = 'appl_gUxCUkDxRbGwQHcDLLXNzUFRTmd';
+const _revenueCatApplePublicSdkKey = 'appl_MMsoOEadRnZGIASFaNzmrOzOEwJ';
 
 Future<void> _configureRevenueCat() async {
   if (kIsWeb) return;
 
-  await Purchases.setLogLevel(kDebugMode ? LogLevel.debug : LogLevel.info);
+  revenueCatSdkConfigured = false;
 
   final String apiKey;
   switch (defaultTargetPlatform) {
@@ -38,7 +40,19 @@ Future<void> _configureRevenueCat() async {
       return;
   }
 
-  await Purchases.configure(PurchasesConfiguration(apiKey));
+  try {
+    await Purchases.setLogLevel(kDebugMode ? LogLevel.debug : LogLevel.info);
+    await Purchases.configure(PurchasesConfiguration(apiKey));
+    revenueCatSdkConfigured = true;
+  } on PlatformException catch (e, st) {
+    if (revenueCatShouldDegradeGracefully(e)) {
+      debugLogRevenueCatGraceful('configure (configurationError)', e, st);
+    } else {
+      debugLogRevenueCatGraceful('configure (PlatformException)', e, st);
+    }
+  } catch (e, st) {
+    debugLogRevenueCatGraceful('configure', e, st);
+  }
 }
 
 Future<void> _initializeAppServices(ProviderContainer container) async {

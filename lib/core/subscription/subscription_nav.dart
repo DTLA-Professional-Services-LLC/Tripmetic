@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
+import 'revenue_cat_sdk_state.dart';
 import 'tripmetic_pro_entitlement.dart';
 
 const Duration _kPurchasesNavTimeout = Duration(seconds: 8);
 
 /// GoRouter [location] gate (e.g. `/units`) — same entitlement rules as the main shell.
 Future<void> navigateIfProRoute(BuildContext context, String location) async {
+  if (!revenueCatSdkConfigured) {
+    if (context.mounted) context.push(location);
+    return;
+  }
   try {
     final customerInfo =
         await Purchases.getCustomerInfo().timeout(_kPurchasesNavTimeout);
@@ -26,6 +31,9 @@ Future<void> navigateIfProRoute(BuildContext context, String location) async {
 
 /// For bottom navigation and other flows that do not push a new [Widget].
 Future<bool> ensureProOrShowPaywall(BuildContext context) async {
+  if (!revenueCatSdkConfigured) {
+    return true;
+  }
   try {
     final customerInfo =
         await Purchases.getCustomerInfo().timeout(_kPurchasesNavTimeout);

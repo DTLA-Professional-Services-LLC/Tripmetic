@@ -45,7 +45,7 @@ workflows:
       - name: Flutter build IPA
         script: |
           set -e
-          flutter build ipa --release
+          flutter build ipa --release --dart-define=REVENUECAT_IOS_PUBLIC_API_KEY=appl_gUxCUkDxRbGwQHcDLLXNzUFRTmd
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
+import '../../core/subscription/revenue_cat_sdk_state.dart';
 import '../../core/subscription/tripmetic_pro_entitlement.dart';
 import '../../core/theme/app_colors.dart';
 import '../../l10n/l10n_helpers.dart';
@@ -34,6 +35,7 @@ class _MainShellState extends State<MainShell> {
   Future<void> _coldStartPaywallGate() async {
     if (_ranColdStartPaywallGate || !mounted) return;
     _ranColdStartPaywallGate = true;
+    if (!revenueCatSdkConfigured) return;
     try {
       final info = await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);
       if (!mounted) return;
@@ -49,6 +51,14 @@ class _MainShellState extends State<MainShell> {
     BuildContext context,
     Widget destinationScreen,
   ) async {
+    if (!revenueCatSdkConfigured) {
+      if (!context.mounted) return;
+      Navigator.of(
+        context,
+        rootNavigator: true,
+      ).push(MaterialPageRoute<void>(builder: (context) => destinationScreen));
+      return;
+    }
     try {
       final customerInfo =
           await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);
@@ -69,6 +79,10 @@ class _MainShellState extends State<MainShell> {
   }
 
   Future<void> _onTabTapped(int index) async {
+    if (!revenueCatSdkConfigured) {
+      widget.navigationShell.goBranch(index);
+      return;
+    }
     try {
       final customerInfo =
           await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);

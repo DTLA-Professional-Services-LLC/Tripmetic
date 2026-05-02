@@ -2,12 +2,27 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
+import 'revenue_cat_sdk_state.dart';
 import 'tripmetic_pro_entitlement.dart';
 
 const Duration _kCustomerInfoTimeout = Duration(seconds: 12);
 
+/// In-memory [CustomerInfo] used when RevenueCat is unavailable (e.g. configure failed).
+/// Entitlements are empty so the user is treated as non‑subscriber.
+final CustomerInfo revenueCatUnavailableCustomerInfo = CustomerInfo(
+  const EntitlementInfos({}, {}),
+  const {},
+  const [],
+  const [],
+  const [],
+  '1970-01-01T00:00:00.000Z',
+  r'$RCAnonymousID:unavailable',
+  const {},
+  '1970-01-01T00:00:00.000Z',
+);
+
 /// Latest [CustomerInfo]; updates when purchases restore or renew.
-/// [Purchases.configure] runs in `main()` before [runApp].
+/// [Purchases.configure] runs during app bootstrap.
 final customerInfoProvider = AsyncNotifierProvider<CustomerInfoNotifier, CustomerInfo>(
   CustomerInfoNotifier.new,
 );
@@ -18,6 +33,13 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
   @override
   Future<CustomerInfo> build() async {
     ref.onDispose(_teardown);
+
+    if (!revenueCatSdkConfigured) {
+      debugPrint(
+        'RevenueCat: SDK not configured — using offline free-tier customer state.',
+      );
+      return revenueCatUnavailableCustomerInfo;
+    }
 
     final initial = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
     _listener = (CustomerInfo info) {
@@ -36,15 +58,16 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
 
   /// Force-refresh from RevenueCat servers (e.g. after login).
   Future<void> sync() async {
+    if (!revenueCatSdkConfigured) {
+      state = AsyncData(revenueCatUnavailableCustomerInfo);
+      return;
+    }
     try {
       state = const AsyncLoading();
       final info = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
       state = AsyncData(info);
     } catch (e, st) {
-      assert(() {
-        debugPrint('sync customer info failed: $e\n$st');
-        return true;
-      }());
+      debugPrint('sync customer info failed: $e\n$st');
       state = AsyncError(e, st);
     }
   }

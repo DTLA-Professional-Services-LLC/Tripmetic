@@ -16,7 +16,7 @@ abstract final class TripmeticProEntitlement {
   static const String monthlyStoreProductId = 'tripmetic_pro_monthly';
 
   /// Older RevenueCat dashboards used this entitlement id for the same plan.
-  static const String legacyEntitlementId = 'Tripmatic Pro';
+  static const String legacyEntitlementId = 'Tripmetic Pro';
 
   /// True when the monthly entitlement is active or the monthly SKU is in
   /// [CustomerInfo.activeSubscriptions] (defensive for mis-synced metadata).

@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import 'package:purchases_ui_flutter/views/customer_center_view_method_handler.dart';
 
+import 'revenue_cat_sdk_state.dart';
 import 'tripmetic_pro_entitlement.dart';
 
 /// Single-plan offering: only the monthly SKU is forwarded to the paywall UI.
@@ -28,33 +30,54 @@ Offering _offeringMonthlyOnly(Offering source) {
 ///
 /// See: https://www.revenuecat.com/docs/tools/paywalls
 Future<PaywallResult> presentTripmeticPaywall() async {
+  if (!revenueCatSdkConfigured) {
+    debugPrint('RevenueCat: presentTripmeticPaywall skipped — SDK not configured.');
+    return PaywallResult.error;
+  }
   try {
     final offerings = await Purchases.getOfferings();
     final current = offerings.current;
     if (current == null) {
-      assert(() {
-        debugPrint(
-          'RevenueCat: no current offering — add an Offering in the dashboard and attach your paywall.',
-        );
-        return true;
-      }());
+      debugPrint(
+        'RevenueCat: no current offering — add an Offering in the dashboard and attach your paywall.',
+      );
       return PaywallResult.error;
     }
     return RevenueCatUI.presentPaywall(
       offering: _offeringMonthlyOnly(current),
     );
+  } on PlatformException catch (e, st) {
+    if (revenueCatShouldDegradeGracefully(e)) {
+      debugLogRevenueCatGraceful('getOfferings (configurationError)', e, st);
+    } else {
+      debugLogRevenueCatGraceful('getOfferings (PlatformException)', e, st);
+    }
+    return PaywallResult.error;
   } catch (e, st) {
-    assert(() {
-      debugPrint('presentTripmeticPaywall: $e\n$st');
-      return true;
-    }());
+    debugPrint('presentTripmeticPaywall: $e\n$st');
     return PaywallResult.error;
   }
 }
 
 /// Only shows the paywall if [TripmeticProEntitlement.id] is not active.
-Future<PaywallResult> presentTripmeticPaywallIfNeeded() {
-  return RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+Future<PaywallResult> presentTripmeticPaywallIfNeeded() async {
+  if (!revenueCatSdkConfigured) {
+    debugPrint('RevenueCat: presentPaywallIfNeeded skipped — SDK not configured.');
+    return PaywallResult.notPresented;
+  }
+  try {
+    return await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+  } on PlatformException catch (e, st) {
+    if (revenueCatShouldDegradeGracefully(e)) {
+      debugLogRevenueCatGraceful('presentPaywallIfNeeded (configurationError)', e, st);
+    } else {
+      debugLogRevenueCatGraceful('presentPaywallIfNeeded (PlatformException)', e, st);
+    }
+    return PaywallResult.error;
+  } catch (e, st) {
+    debugPrint('presentTripmeticPaywallIfNeeded: $e\n$st');
+    return PaywallResult.error;
+  }
 }
 
 /// Subscription management / restore / help — RevenueCat Customer Center.
@@ -64,15 +87,22 @@ Future<void> presentTripmeticCustomerCenter({
   CustomerCenterRestoreCompleted? onRestoreCompleted,
   CustomerCenterRestoreFailed? onRestoreFailed,
 }) async {
+  if (!revenueCatSdkConfigured) {
+    debugPrint('RevenueCat: Customer Center skipped — SDK not configured.');
+    return;
+  }
   try {
     await RevenueCatUI.presentCustomerCenter(
       onRestoreCompleted: onRestoreCompleted,
       onRestoreFailed: onRestoreFailed,
     );
+  } on PlatformException catch (e, st) {
+    if (revenueCatShouldDegradeGracefully(e)) {
+      debugLogRevenueCatGraceful('presentCustomerCenter (configurationError)', e, st);
+    } else {
+      debugLogRevenueCatGraceful('presentCustomerCenter (PlatformException)', e, st);
+    }
   } catch (e, st) {
-    assert(() {
-      debugPrint('presentTripmeticCustomerCenter: $e\n$st');
-      return true;
-    }());
+    debugPrint('presentTripmeticCustomerCenter: $e\n$st');
   }
 }
