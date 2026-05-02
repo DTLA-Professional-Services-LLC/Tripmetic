@@ -20,7 +20,6 @@ import '../../features/vault/presentation/vault_screen.dart';
 import '../../features/units/presentation/units_tab.dart';
 import '../../shared/widgets/fullscreen_tool_scaffold.dart';
 import '../../shared/widgets/main_shell.dart';
-import 'premium_route_guard.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -40,7 +39,6 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
     navigatorKey: rootNavigatorKey,
     initialLocation: '/currency',
     refreshListenable: notifier,
-    redirect: redirectPremiumTools,
     routes: [
       GoRoute(
         path: '/paywall',

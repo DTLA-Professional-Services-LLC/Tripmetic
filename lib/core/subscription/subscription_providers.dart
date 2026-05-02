@@ -4,6 +4,8 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 
 import 'tripmetic_pro_entitlement.dart';
 
+const Duration _kCustomerInfoTimeout = Duration(seconds: 12);
+
 /// Latest [CustomerInfo]; updates when purchases restore or renew.
 /// [Purchases.configure] runs in `main()` before [runApp].
 final customerInfoProvider = AsyncNotifierProvider<CustomerInfoNotifier, CustomerInfo>(
@@ -17,7 +19,7 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
   Future<CustomerInfo> build() async {
     ref.onDispose(_teardown);
 
-    final initial = await Purchases.getCustomerInfo();
+    final initial = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
     _listener = (CustomerInfo info) {
       state = AsyncData(info);
     };
@@ -36,7 +38,7 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
   Future<void> sync() async {
     try {
       state = const AsyncLoading();
-      final info = await Purchases.getCustomerInfo();
+      final info = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
       state = AsyncData(info);
     } catch (e, st) {
       assert(() {

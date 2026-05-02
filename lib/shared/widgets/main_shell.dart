@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
 import '../../core/subscription/tripmetic_pro_entitlement.dart';
 import '../../core/theme/app_colors.dart';
@@ -9,6 +8,8 @@ import '../../l10n/l10n_helpers.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import 'fullscreen_tool_scaffold.dart';
 import 'tripmetic_app_bar_title.dart';
+
+const Duration _kPurchasesNetworkTimeout = Duration(seconds: 8);
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key, required this.navigationShell});
@@ -20,54 +21,68 @@ class MainShell extends StatefulWidget {
 }
 
 class _MainShellState extends State<MainShell> {
+  bool _ranColdStartPaywallGate = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _coldStartPaywallGate());
+  }
+
+  /// After the first Flutter frame, send non‑subscribers to [/paywall]. This must not
+  /// run inside GoRouter.redirect (that blocks the native launch screen until complete).
+  Future<void> _coldStartPaywallGate() async {
+    if (_ranColdStartPaywallGate || !mounted) return;
+    _ranColdStartPaywallGate = true;
+    try {
+      final info = await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);
+      if (!mounted) return;
+      if (!TripmeticProEntitlement.isUnlocked(info)) {
+        context.go('/paywall');
+      }
+    } catch (e, st) {
+      debugPrint('Cold-start subscription gate skipped: $e\n$st');
+    }
+  }
+
   Future<void> _navigateIfPro(
     BuildContext context,
     Widget destinationScreen,
   ) async {
     try {
-      CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+      final customerInfo =
+          await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);
+
+      if (!context.mounted) return;
 
       if (TripmeticProEntitlement.isUnlocked(customerInfo)) {
-        if (context.mounted) {
-          Navigator.of(
-            context,
-            rootNavigator: true,
-          ).push(MaterialPageRoute(builder: (context) => destinationScreen));
-        }
-      } else {
-        await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
-        customerInfo = await Purchases.getCustomerInfo();
-        if (TripmeticProEntitlement.isUnlocked(customerInfo)) {
-          if (context.mounted) {
-            Navigator.of(
-              context,
-              rootNavigator: true,
-            ).push(MaterialPageRoute(builder: (context) => destinationScreen));
-          }
-        }
+        Navigator.of(
+          context,
+          rootNavigator: true,
+        ).push(MaterialPageRoute<void>(builder: (context) => destinationScreen));
+        return;
       }
-    } catch (e) {
-      debugPrint('Paywall error: $e');
-      await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+    } catch (e, st) {
+      debugPrint('Settings gate error: $e\n$st');
     }
+    if (context.mounted) context.go('/paywall');
   }
 
   Future<void> _onTabTapped(int index) async {
     try {
-      final CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+      final customerInfo =
+          await Purchases.getCustomerInfo().timeout(_kPurchasesNetworkTimeout);
       if (!mounted) return;
 
       if (TripmeticProEntitlement.isUnlocked(customerInfo)) {
-        // User is paid. Switch the tab.
         widget.navigationShell.goBranch(index);
-      } else {
-        // User is free. Do NOT switch the tab. Show the paywall.
-        await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+        return;
       }
-    } catch (e) {
-      debugPrint('Tab switch error: $e');
-      await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+    } catch (e, st) {
+      debugPrint('Tab switch error: $e\n$st');
     }
+    if (!mounted) return;
+    context.go('/paywall');
   }
 
   @override

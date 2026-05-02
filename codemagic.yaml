@@ -6,7 +6,6 @@
 # https://docs.codemagic.io/yaml-publishing/app-store-connect/
 #
 # Environment variables (Application or team group — mark secrets):
-#   REVENUECAT_IOS_PUBLIC_API_KEY     — RevenueCat public Apple SDK key (appl_...)
 #   APP_STORE_CONNECT_PRIVATE_KEY   — full .p8 text (App Store Connect API key, NOT IAP key)
 #   APP_STORE_CONNECT_KEY_IDENTIFIER — Key ID from App Store Connect → Users and Access → Keys
 #   APP_STORE_CONNECT_ISSUER_ID      — Issuer ID (same Keys page)
@@ -32,6 +31,13 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios && pod install
+      - name: Verify Firebase iOS config (optional)
+        script: |
+          set -e
+          if [ ! -f ios/Runner/GoogleService-Info.plist ]; then
+            echo "WARNING: ios/Runner/GoogleService-Info.plist is missing from the repo clone." >&2
+            echo "Firebase iOS may not initialize; add the file from Firebase Console or inject it in CI." >&2
+          fi
       # Internal TestFlight only (no external beta review). Remove the flag when you need
       # external testers or App Store release builds from this workflow.
       - name: Set up code signing settings on Xcode project
@@ -39,13 +45,7 @@ workflows:
       - name: Flutter build IPA
         script: |
           set -e
-          if [ -z "${REVENUECAT_IOS_PUBLIC_API_KEY:-}" ]; then
-            echo "ERROR: Add REVENUECAT_IOS_PUBLIC_API_KEY in Codemagic (App env vars or variable group)." >&2
-            echo "Value = RevenueCat → Project → API keys → App Store / Apple (public key, starts with appl_)." >&2
-            exit 1
-          fi
-          flutter build ipa --release \
-            --dart-define=REVENUECAT_IOS_PUBLIC_API_KEY="$REVENUECAT_IOS_PUBLIC_API_KEY"
+          flutter build ipa --release
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
