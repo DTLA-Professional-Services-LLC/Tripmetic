@@ -5,6 +5,7 @@ import '../../../l10n/l10n_helpers.dart';
 import '../application/availability.dart';
 import '../application/scheduler_logic.dart';
 import '../application/scheduler_notifier.dart';
+import '../application/scheduler_state.dart';
 import 'widgets/timezone_picker_sheet.dart';
 
 class SchedulerTab extends ConsumerStatefulWidget {
@@ -16,7 +17,7 @@ class SchedulerTab extends ConsumerStatefulWidget {
 
 class _SchedulerTabState extends ConsumerState<SchedulerTab> {
   Future<void> _pickBaseTimezone() async {
-    final s = ref.read(schedulerProvider);
+    final s = ref.read(schedulerProvider).requireValue;
     final picked = await showTimezonePickerSheet(
       context,
       selectedTimezoneId: s.baseTimezoneId,
@@ -26,7 +27,7 @@ class _SchedulerTabState extends ConsumerState<SchedulerTab> {
   }
 
   Future<void> _pickConvertedTimezone(int index) async {
-    final s = ref.read(schedulerProvider);
+    final s = ref.read(schedulerProvider).requireValue;
     final picked = await showTimezonePickerSheet(
       context,
       selectedTimezoneId: s.convertedTimezoneIds[index],
@@ -36,7 +37,7 @@ class _SchedulerTabState extends ConsumerState<SchedulerTab> {
   }
 
   Future<void> _pickDate() async {
-    final s = ref.read(schedulerProvider);
+    final s = ref.read(schedulerProvider).requireValue;
     final picked = await showDatePicker(
       context: context,
       initialDate: s.date,
@@ -50,7 +51,7 @@ class _SchedulerTabState extends ConsumerState<SchedulerTab> {
   }
 
   Future<void> _pickTime() async {
-    final s = ref.read(schedulerProvider);
+    final s = ref.read(schedulerProvider).requireValue;
     final picked = await showTimePicker(
       context: context,
       initialTime: s.timeOfDay,
@@ -63,7 +64,20 @@ class _SchedulerTabState extends ConsumerState<SchedulerTab> {
 
   @override
   Widget build(BuildContext context) {
-    final s = ref.watch(schedulerProvider);
+    final async = ref.watch(schedulerProvider);
+    return async.when(
+      skipLoadingOnReload: true,
+      data: (s) => _buildLoaded(context, s),
+      loading: () => const SafeArea(
+        child: Center(child: CircularProgressIndicator()),
+      ),
+      error: (e, _) => SafeArea(
+        child: Center(child: Text('$e')),
+      ),
+    );
+  }
+
+  Widget _buildLoaded(BuildContext context, SchedulerState s) {
     final computation = SchedulerComputation.compute(
       baseTimezoneId: s.baseTimezoneId,
       convertedTimezoneIds: s.convertedTimezoneIds,

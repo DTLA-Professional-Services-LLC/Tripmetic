@@ -26,6 +26,9 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<!-- U.S. export: exempt-only crypto (HTTPS/TLS). See Apple ITSAppUsesNonExemptEncryption. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Tripmetic uses your location on the Offline Map tab to center the map on where you are and to bias search results to nearby places.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

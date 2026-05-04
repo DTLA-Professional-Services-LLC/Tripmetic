@@ -16,9 +16,11 @@ import 'features/map/domain/saved_location.dart';
 import 'features/trip/application/trip_providers.dart';
 import 'features/mindmap/application/mind_map_providers.dart';
 import 'features/vault/application/vault_providers.dart';
+import 'features/scheduler/application/scheduler_notifier.dart';
+import 'features/scheduler/data/scheduler_prefs_store.dart';
 
 /// RevenueCat **public** SDK key for **Google Play** (RevenueCat → Project → API keys).
-const _revenueCatGooglePlayPublicSdkKey = 'goog_TMvOXRhuUqLSLkxiJPGicxpIyRR';
+const _revenueCatGooglePlayPublicSdkKey = 'goog_jwkBLnDKwsThQIxigLFAKMWuSGl';
 
 /// RevenueCat **public** SDK key for **Apple** (starts with `appl_`).
 const _revenueCatApplePublicSdkKey = 'appl_MMsoOEadRnZGIASFaNzmrOzOEwJ';
@@ -65,6 +67,9 @@ Future<void> _initializeAppServices(ProviderContainer container) async {
   }
   await Hive.openBox<SavedLocation>(kSavedLocationsBoxName);
   tz_data.initializeTimeZones();
+  await openSchedulerPrefsBox();
+  // Completes async scheduler load (Hive + JSON) before any widget reads the provider.
+  await container.read(schedulerProvider.future);
 
   await Future.wait([
     container.read(currencyRepositoryReadyProvider.future),
