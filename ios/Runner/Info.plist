@@ -41,8 +41,6 @@
 	<string>Tripmetic uses the camera only when you attach or capture a photo (e.g. from the document vault or file picker).</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Tripmetic uses the microphone only if you record a video attachment where the system requires this description.</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Tripmetic does not use this permission to track you across other companies apps or websites.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
