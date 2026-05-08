@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
+import '../../../core/subscription/revenue_cat_sdk_state.dart';
 import '../../../core/subscription/subscription_providers.dart';
+import '../../../l10n/l10n_helpers.dart';
 
 /// Full-screen RevenueCat paywall (dashboard → Paywalls). Shown on route `/paywall`.
 class PaywallScreen extends ConsumerWidget {
@@ -22,6 +24,9 @@ class PaywallScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    if (!revenueCatSdkConfigured) {
+      return _PaywallUnavailable(onClose: () => context.go('/currency'));
+    }
     return Scaffold(
       body: PaywallView(
         displayCloseButton: true,
@@ -40,6 +45,47 @@ class PaywallScreen extends ConsumerWidget {
             context.go('/currency');
           }
         },
+      ),
+    );
+  }
+}
+
+class _PaywallUnavailable extends StatelessWidget {
+  const _PaywallUnavailable({required this.onClose});
+
+  final VoidCallback onClose;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.info_outline_rounded, size: 36),
+              const SizedBox(height: 12),
+              Text(
+                l10n.paywallDisabledTitle,
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.paywallDisabledBody,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 18),
+              FilledButton(
+                onPressed: onClose,
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

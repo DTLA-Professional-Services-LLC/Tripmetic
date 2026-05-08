@@ -66,7 +66,9 @@ Future<PaywallResult> presentTripmeticPaywallIfNeeded() async {
     return PaywallResult.notPresented;
   }
   try {
-    return await RevenueCatUI.presentPaywallIfNeeded(TripmeticProEntitlement.id);
+    // Avoid hard-failing on entitlement-id drift in RevenueCat dashboard; we
+    // gate access elsewhere via CustomerInfo + isUnlocked().
+    return await presentTripmeticPaywall();
   } on PlatformException catch (e, st) {
     if (revenueCatShouldDegradeGracefully(e)) {
       debugLogRevenueCatGraceful('presentPaywallIfNeeded (configurationError)', e, st);

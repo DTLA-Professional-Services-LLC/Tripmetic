@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,21 +32,45 @@ Future<void> _configureRevenueCat() async {
 
   revenueCatSdkConfigured = false;
 
-  final String apiKey;
-  switch (defaultTargetPlatform) {
-    case TargetPlatform.android:
-      apiKey = _revenueCatGooglePlayPublicSdkKey;
-      break;
-    case TargetPlatform.iOS:
-      apiKey = _revenueCatApplePublicSdkKey;
-      break;
-    default:
-      return;
+  final bool isAndroid = Platform.isAndroid;
+  final bool isIos = Platform.isIOS;
+  if (!isAndroid && !isIos) {
+    return;
+  }
+
+  final String apiKey = isAndroid
+      ? _revenueCatGooglePlayPublicSdkKey.trim()
+      : _revenueCatApplePublicSdkKey.trim();
+
+  if (apiKey.isEmpty) {
+    debugLogRevenueCatGraceful(
+      'configure (missingApiKey)',
+      StateError('RevenueCat public API key is empty for platform.'),
+      StackTrace.current,
+    );
+    return;
+  }
+
+  if (isAndroid && !apiKey.startsWith('goog_')) {
+    debugLogRevenueCatGraceful(
+      'configure (unexpectedAndroidKeyPrefix)',
+      StateError('Android RevenueCat key must start with "goog_".'),
+      StackTrace.current,
+    );
+    return;
   }
 
   try {
     await Purchases.setLogLevel(kDebugMode ? LogLevel.debug : LogLevel.info);
     await Purchases.configure(PurchasesConfiguration(apiKey));
+    // Sanity-check the configuration once so we can gracefully disable Pro gates
+    // instead of surfacing RevenueCat "configurationError" popups at runtime.
+    final offerings = await Purchases.getOfferings();
+    debugPrint(
+      'RevenueCat bootstrap OK (${isAndroid ? 'android' : 'ios'}) '
+      'currentOffering=${offerings.current?.identifier ?? 'none'} '
+      'totalOfferings=${offerings.all.length}',
+    );
     revenueCatSdkConfigured = true;
   } on PlatformException catch (e, st) {
     if (revenueCatShouldDegradeGracefully(e)) {
@@ -58,6 +84,7 @@ Future<void> _configureRevenueCat() async {
 }
 
 Future<void> _initializeAppServices(ProviderContainer container) async {
+  // Fully await RevenueCat configure before app services/UI that read purchase state.
   await _configureRevenueCat();
 
   await Firebase.initializeApp();

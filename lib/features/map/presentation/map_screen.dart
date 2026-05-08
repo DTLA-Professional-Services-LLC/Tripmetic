@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 // Prefixed: geolocator exports `Position` and `LocationSettings` that collide
 // with mapbox_maps_flutter's own types of the same name.
@@ -96,6 +97,15 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   bool _isNavigationBooting = false;
   StreamSubscription<geo.Position>? _navigationSubscription;
 
+  /// Text-to-speech engine used for in-app turn-by-turn voice prompts.
+  /// Initialised lazily on first navigation start so app launch isn't slowed
+  /// by the TTS engine warm-up.
+  final FlutterTts _tts = FlutterTts();
+  bool _ttsReady = false;
+  // Tracks the index we last spoke so a state rebuild that doesn't change the
+  // current step won't repeat the prompt.
+  int? _lastSpokenStepIndex;
+
   // Route polyline styling — Tripmetic uses gold for brand, so the route
   // itself uses a high-contrast Mapbox-style blue for route visibility.
   static const int _routeLineColor = 0xFF1E88E5; // Material Blue 600
@@ -139,6 +149,9 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
     _navigationSubscription?.cancel();
     _searchController.dispose();
     _searchFocus.dispose();
+    // Best-effort: stop any in-flight utterance so it doesn't keep speaking
+    // after the screen is gone.
+    unawaited(_tts.stop());
     super.dispose();
   }
 
@@ -152,8 +165,90 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
     await _refreshRegions();
   }
 
+  Future<void> _enableLocationPuck() async {
+    final mapboxMap = _mapboxMap;
+    if (mapboxMap == null) return;
+    try {
+      await mapboxMap.location.updateSettings(
+        LocationComponentSettings(
+          enabled: true,
+          pulsingEnabled: true,
+          puckBearingEnabled: true,
+          puckBearing: PuckBearing.HEADING,
+        ),
+      );
+    } catch (_) {
+      // Best-effort only; map remains usable if the puck fails to initialize.
+    }
+  }
+
+  /// Warms the TTS engine so the first prompt isn't truncated. Sets a
+  /// natural-feeling speech rate (defaults are usually too fast on Android
+  /// and too slow on iOS), keeps the queue mode flushing so a new prompt
+  /// always replaces an in-flight one (no piled-up backlog when the user
+  /// chains maneuvers quickly).
+  Future<void> _initializeTts() async {
+    if (_ttsReady) return;
+    try {
+      await _tts.setLanguage('en-US');
+      await _tts.setPitch(1.0);
+      await _tts.setVolume(1.0);
+      // 0.5 sounds natural on iOS; on Android the same value still reads
+      // clearly without the rushed default rate. flutter_tts normalises the
+      // numeric range across platforms.
+      await _tts.setSpeechRate(0.5);
+      // QUEUE_FLUSH: replace in-flight utterance with the new one. This is
+      // the right behaviour for turn-by-turn — we never want a stale prompt
+      // to finish after the user has already passed the maneuver.
+      await _tts.awaitSpeakCompletion(false);
+      _ttsReady = true;
+    } catch (_) {
+      // Best-effort only: nav still works silently if the engine fails.
+      _ttsReady = false;
+    }
+  }
+
+  /// Speaks the instruction for [index] in [_routeSteps], guarding against
+  /// out-of-bounds access and de-duplicating against [_lastSpokenStepIndex]
+  /// so a UI rebuild on the same step doesn't repeat the prompt.
+  Future<void> _speakStep(int index) async {
+    if (!_ttsReady) await _initializeTts();
+    if (!_ttsReady) return;
+    if (index < 0 || index >= _routeSteps.length) return;
+    if (_lastSpokenStepIndex == index) return;
+    _lastSpokenStepIndex = index;
+    final instruction = _routeSteps[index].instruction.trim();
+    if (instruction.isEmpty) return;
+    try {
+      await _tts.stop();
+      await _tts.speak(instruction);
+    } catch (_) {
+      // Speech failures are non-fatal — the step list / banner still updates.
+    }
+  }
+
+  Future<void> _speakArrival() async {
+    if (!_ttsReady) await _initializeTts();
+    if (!_ttsReady) return;
+    try {
+      await _tts.stop();
+      await _tts.speak('You have arrived at your destination.');
+    } catch (_) {
+      // Non-fatal.
+    }
+  }
+
+  Future<void> _stopSpeaking() async {
+    try {
+      await _tts.stop();
+    } catch (_) {
+      // Non-fatal.
+    }
+  }
+
   void _onMapCreated(MapboxMap mapboxMap) {
     _mapboxMap = mapboxMap;
+    unawaited(_enableLocationPuck());
     // If the device location already resolved before the map was ready,
     // apply it now. Otherwise `_acquireDeviceLocation()` will do it when
     // `Geolocator.getCurrentPosition()` returns.
@@ -836,6 +931,10 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
         return;
       }
 
+      // Warm the TTS engine in parallel with location fix so the first
+      // prompt isn't delayed by the engine's cold-start.
+      unawaited(_initializeTts());
+
       await _navigationSubscription?.cancel();
       _navigationSubscription = geo.Geolocator.getPositionStream(
         locationSettings: const geo.LocationSettings(
@@ -845,10 +944,17 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       ).listen(_onNavigationPosition);
 
       if (!mounted) return;
+      // Reset the spoken-step memo so re-entering navigation always speaks
+      // the first prompt, even if it's the same index as the last session.
+      _lastSpokenStepIndex = null;
       setState(() {
         _isNavigationMode = true;
         _selectedRouteStepIndex ??= 0;
       });
+
+      // Speak the first maneuver immediately so the user gets audible
+      // guidance the moment they enter navigation mode.
+      unawaited(_speakStep(_selectedRouteStepIndex ?? 0));
 
       // Prime with one immediate fix so navigation starts instantly.
       final current = await geo.Geolocator.getCurrentPosition(
@@ -868,6 +974,10 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   Future<void> _stopNavigationMode({bool silent = false}) async {
     await _navigationSubscription?.cancel();
     _navigationSubscription = null;
+    // Cut any in-flight voice prompt so the user isn't talked at after they
+    // tapped Stop.
+    unawaited(_stopSpeaking());
+    _lastSpokenStepIndex = null;
     if (!mounted) return;
     setState(() {
       _isNavigationMode = false;
@@ -903,12 +1013,16 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
           setState(() => _selectedRouteStepIndex = _routeSteps.length - 1);
           _showSnack(context.l10n.mapSnackArrived);
         }
+        // Speak the arrival prompt before tearing the session down so the
+        // utterance isn't cut by `_stopSpeaking()` inside _stopNavigationMode.
+        await _speakArrival();
         await _stopNavigationMode(silent: true);
         return;
       }
       if (mounted) {
         setState(() => _selectedRouteStepIndex = next);
       }
+      unawaited(_speakStep(next));
     }
   }
 

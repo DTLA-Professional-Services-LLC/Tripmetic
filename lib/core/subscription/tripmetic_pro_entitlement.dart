@@ -1,29 +1,32 @@
 import 'package:purchases_flutter/purchases_flutter.dart';
 
-/// RevenueCat identifiers for the single monthly Tripmetic Pro plan.
+/// RevenueCat identifiers for Tripmetic Pro.
 ///
-/// [id] is used with [CustomerInfo.entitlements] and
-/// [RevenueCatUI.presentPaywallIfNeeded] — it must match the **Entitlement**
-/// identifier in RevenueCat exactly. Rename the entitlement to
-/// `tripmetic_pro_monthly` if it is still `Tripmatic Pro`, or change this
-/// constant to match your dashboard.
+/// [id] must match the **Entitlement** identifier in RevenueCat exactly
+/// (Product catalog → Entitlements). It is used by
+/// [RevenueCatUI.presentPaywallIfNeeded].
 ///
-/// [monthlyStoreProductId] is the Play/App Store product id for the monthly
-/// subscription (same string you use in RevenueCat → Products).
+/// [monthlyStoreProductId] is the Play / App Store **subscription product id**
+/// (same string as in each store and in RevenueCat → Products).
 abstract final class TripmeticProEntitlement {
-  static const String id = 'tripmetic_pro_monthly';
+  /// Entitlement identifier in RevenueCat (not the store product id).
+  static const String id = 'Tripmetic Pro';
 
   static const String monthlyStoreProductId = 'tripmetic_pro_monthly';
 
-  /// Older RevenueCat dashboards used this entitlement id for the same plan.
-  static const String legacyEntitlementId = 'Tripmetic Pro';
+  /// Alternate entitlement ids seen in past dashboard setups.
+  static const List<String> legacyEntitlementIds = [
+    'tripmetic_pro_monthly',
+    'Tripmatic Pro',
+    'tripmatic_pro_monthly',
+  ];
 
-  /// True when the monthly entitlement is active or the monthly SKU is in
-  /// [CustomerInfo.activeSubscriptions] (defensive for mis-synced metadata).
   static bool isUnlocked(CustomerInfo info) {
     if (info.entitlements.all[id]?.isActive == true) return true;
-    if (info.entitlements.all[legacyEntitlementId]?.isActive == true) {
-      return true;
+    for (final legacyId in legacyEntitlementIds) {
+      if (info.entitlements.all[legacyId]?.isActive == true) {
+        return true;
+      }
     }
     return info.activeSubscriptions.contains(monthlyStoreProductId);
   }

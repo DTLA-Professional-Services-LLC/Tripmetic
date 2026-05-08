@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
@@ -41,7 +42,17 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
       return revenueCatUnavailableCustomerInfo;
     }
 
-    final initial = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
+    final CustomerInfo initial;
+    try {
+      initial = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
+    } on PlatformException catch (e, st) {
+      if (revenueCatShouldDegradeGracefully(e)) {
+        debugLogRevenueCatGraceful('customerInfoProvider.build (configurationError)', e, st);
+        revenueCatSdkConfigured = false;
+        return revenueCatUnavailableCustomerInfo;
+      }
+      rethrow;
+    }
     _listener = (CustomerInfo info) {
       state = AsyncData(info);
     };
@@ -66,6 +77,15 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
       state = const AsyncLoading();
       final info = await Purchases.getCustomerInfo().timeout(_kCustomerInfoTimeout);
       state = AsyncData(info);
+    } on PlatformException catch (e, st) {
+      if (revenueCatShouldDegradeGracefully(e)) {
+        debugLogRevenueCatGraceful('customerInfoProvider.sync (configurationError)', e, st);
+        revenueCatSdkConfigured = false;
+        state = AsyncData(revenueCatUnavailableCustomerInfo);
+        return;
+      }
+      debugPrint('sync customer info failed: $e\n$st');
+      state = AsyncError(e, st);
     } catch (e, st) {
       debugPrint('sync customer info failed: $e\n$st');
       state = AsyncError(e, st);

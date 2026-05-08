@@ -38,10 +38,12 @@ workflows:
             echo "WARNING: ios/Runner/GoogleService-Info.plist is missing from the repo clone." >&2
             echo "Firebase iOS may not initialize; add the file from Firebase Console or inject it in CI." >&2
           fi
-      # Internal TestFlight only (no external beta review). Remove the flag when you need
-      # external testers or App Store release builds from this workflow.
+      # Do NOT set testFlightInternalTestingOnly:true here — that marks the IPA for
+      # internal TestFlight only and App Store Connect will reject attaching it to a
+      # store version (red Save / disabled Add for Review). Use a separate workflow
+      # with that flag only if you want internal-only builds.
       - name: Set up code signing settings on Xcode project
-        script: xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly": true}'
+        script: xcode-project use-profiles
       - name: Flutter build IPA
         script: |
           set -e

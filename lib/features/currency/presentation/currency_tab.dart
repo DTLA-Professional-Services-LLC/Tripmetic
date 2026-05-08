@@ -361,13 +361,18 @@ class _CurrencyCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  sym,
-                  style: labelStyle?.copyWith(fontSize: 14, color: cs.onSurfaceVariant),
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      sym,
+                      style: labelStyle?.copyWith(fontSize: 14, color: cs.onSurfaceVariant),
+                    ),
+                  ),
                 ),
-                const Spacer(),
-                SizedBox(
-                  width: isBase ? 150 : 128,
+                const SizedBox(width: 8),
+                Expanded(
                   child: TextField(
                     controller: controller,
                     focusNode: focusNode,

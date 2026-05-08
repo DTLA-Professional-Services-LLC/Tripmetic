@@ -13,7 +13,43 @@ pluginManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+            credentials {
+                username = "mapbox"
+                password = java.util.Properties().apply {
+                    val propsFile = File(rootDir, "local.properties")
+                    if (propsFile.exists()) propsFile.inputStream().use { load(it) }
+                }.getProperty("MAPBOX_DOWNLOADS_TOKEN", "")
+            }
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
         gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://storage.googleapis.com/download.flutter.io") }
+        maven { url = uri("https://plugins.gradle.org/m2") }
+        maven {
+            url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+            credentials {
+                username = "mapbox"
+                password = java.util.Properties().apply {
+                    val propsFile = File(rootDir, "local.properties")
+                    if (propsFile.exists()) propsFile.inputStream().use { load(it) }
+                }.getProperty("MAPBOX_DOWNLOADS_TOKEN", "")
+            }
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
     }
 }
 

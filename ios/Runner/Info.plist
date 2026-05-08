@@ -33,6 +33,8 @@
 	<string>Tripmetic uses your location on the Offline Map tab to center the map on where you are and to bias search results to nearby places.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Tripmetic may use your location while you use the app so the offline map and nearby place features work reliably.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Tripmetic uses your location during active navigation so voice directions continue while driving.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Tripmetic saves mind map exports to your photo library when you choose Save as photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -41,6 +43,11 @@
 	<string>Tripmetic uses the camera only when you attach or capture a photo (e.g. from the document vault or file picker).</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Tripmetic uses the microphone only if you record a video attachment where the system requires this description.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>audio</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
