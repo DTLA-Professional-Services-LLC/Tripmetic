@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/app_brand.dart';
-import '../../core/theme/app_colors.dart';
 
 /// App name shown at the top of every screen; optional [subtitle] for context.
 class TripmeticAppBarTitle extends StatelessWidget {
@@ -19,19 +18,23 @@ class TripmeticAppBarTitle extends StatelessWidget {
       children: [
         Text(
           AppBrand.wordmark,
-          style: theme.textTheme.titleMedium?.copyWith(
+          style: TextStyle(
             fontWeight: FontWeight.w800,
             letterSpacing: 0.6,
-            color: AppColors.accent,
+            fontSize: theme.textTheme.titleMedium?.fontSize ?? 18,
+            height: theme.textTheme.titleMedium?.height ?? 1.25,
+            color: cs.primary,
           ),
         ),
         if (subtitle != null && subtitle!.isNotEmpty) ...[
           const SizedBox(height: 2),
           Text(
             subtitle!,
-            style: theme.textTheme.labelSmall?.copyWith(
+            style: TextStyle(
               color: cs.onSurfaceVariant,
               fontWeight: FontWeight.w500,
+              fontSize: theme.textTheme.labelSmall?.fontSize ?? 11,
+              height: theme.textTheme.labelSmall?.height ?? 1.3,
             ),
           ),
         ],

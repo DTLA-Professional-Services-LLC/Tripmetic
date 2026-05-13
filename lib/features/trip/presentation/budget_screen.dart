@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,8 +8,11 @@ import 'package:sealed_currencies/sealed_currencies.dart';
 
 import '../../currency/application/currency_providers.dart';
 import '../../currency/domain/exchange_rate_snapshot.dart';
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/trip_providers.dart';
 import '../domain/trip_budget.dart';
 import '../domain/trip_budget_category_icons.dart';
@@ -46,6 +51,8 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
   /// Categories that were removed during the current editing session.
   /// Their keys are tracked so _saveBudget can call removeCategory.
   final Set<String> _removedCategories = {};
+
+  bool _ratesHeaderRefreshing = false;
 
   static final List<String> _allFiatCodes =
       FiatCurrency.listExtended.map((f) => f.code).toSet().toList()..sort();
@@ -90,6 +97,10 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
         _expenseControllers[k] = TextEditingController(text: _displayMoney(b.expenses[k] ?? 0));
       }
     }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      unawaited(ensureExchangeRatesFreshIfNeeded(ref));
+    });
   }
 
   void _syncControllersFromProvider() {
@@ -337,6 +348,7 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
   Widget build(BuildContext context) {
     final budget = ref.watch(tripBudgetProvider);
     final ratesAsync = ref.watch(exchangeRatesStreamProvider);
+    final isPro = ref.watch(isTripmeticProProvider);
     final theme = Theme.of(context);
     final l10n = context.l10n;
     final base = budget.baseCurrency;
@@ -362,9 +374,12 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
       fontWeight: FontWeight.w700,
     );
 
-    return ColoredBox(
-      color: _kCanvas,
-      child: SafeArea(
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.budget,
+      isPro: isPro,
+      child: ColoredBox(
+        color: _kCanvas,
+        child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -397,13 +412,58 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
                       color: AppColors.accent.withValues(alpha: 0.95),
                     ),
                   ),
+                  const Spacer(),
+                  IconButton(
+                    tooltip: l10n.exchangeRatesForceRefreshTooltip,
+                    onPressed: _ratesHeaderRefreshing
+                        ? null
+                        : () async {
+                            final messenger = ScaffoldMessenger.of(context);
+                            final okMsg = l10n.exchangeRatesRefreshedOk;
+                            final failMsg = l10n.exchangeRatesRefreshFailed;
+                            setState(() => _ratesHeaderRefreshing = true);
+                            try {
+                              await refreshExchangeRatesClearingCache(ref);
+                              if (!mounted) return;
+                              messenger.showSnackBar(
+                                SnackBar(content: Text(okMsg)),
+                              );
+                            } catch (_) {
+                              if (!mounted) return;
+                              messenger.showSnackBar(
+                                SnackBar(content: Text(failMsg)),
+                              );
+                            } finally {
+                              if (mounted) {
+                                setState(() => _ratesHeaderRefreshing = false);
+                              }
+                            }
+                          },
+                    icon: _ratesHeaderRefreshing
+                        ? const SizedBox(
+                            width: 22,
+                            height: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: AppColors.accent,
+                            ),
+                          )
+                        : Icon(
+                            Icons.sync_rounded,
+                            color: AppColors.accent.withValues(alpha: 0.95),
+                          ),
+                  ),
                 ],
               ),
             ),
             Expanded(
-              child: ListView(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                children: [
+              child: RefreshIndicator(
+                color: AppColors.accent,
+                onRefresh: () => refreshExchangeRatesClearingCache(ref),
+                child: ListView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                  children: [
                   _SummaryBentoCard(
                     remaining: remaining,
                     base: base,
@@ -612,8 +672,10 @@ class _BudgetScreenState extends ConsumerState<BudgetScreen> {
                 ],
               ),
             ),
+            ),
           ],
         ),
+      ),
       ),
     );
   }

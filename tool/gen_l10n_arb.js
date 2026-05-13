@@ -4,7 +4,7 @@ const path = require("path");
 
 const en = {
   "@@locale": "en",
-  appTitle: "TRIPMETIC.app",
+  appTitle: "Tripmetic.app",
   navCurrency: "Currency",
   navItinerary: "Itinerary",
   navOfflineMap: "Offline Map",
@@ -55,7 +55,7 @@ const en = {
   settingsContact: "Contact us",
   settingsPrivacy: "Privacy policy",
   settingsTerms: "Terms of use",
-  settingsCopyright: "© 2026 TRIPMETIC.app",
+  settingsCopyright: "© 2026 Tripmetic.app",
   settingsCouldNotOpenLink: "Could not open link",
   announcementsLatest: "Latest updates",
   exchangeHeader: "EXCHANGE",
@@ -529,7 +529,7 @@ const esOverrides = {
   settingsContact: "Contáctanos",
   settingsPrivacy: "Política de privacidad",
   settingsTerms: "Términos de uso",
-  settingsCopyright: "© 2026 TRIPMETIC.app",
+  settingsCopyright: "© 2026 Tripmetic.app",
   settingsCouldNotOpenLink: "No se pudo abrir el enlace",
   announcementsLatest: "Novedades",
   exchangeHeader: "CAMBIO",

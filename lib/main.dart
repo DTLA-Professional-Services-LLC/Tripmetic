@@ -36,7 +36,7 @@ void _presentStartupFailure(Object error, StackTrace stack) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'TRIPMETIC could not start',
+                  'Tripmetic could not start',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 12),
@@ -150,7 +150,7 @@ class _TripmeticLoaderState extends State<TripmeticLoader> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'TRIPMETIC',
+                'Tripmetic',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,

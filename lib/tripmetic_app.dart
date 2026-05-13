@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/constants/app_brand.dart';
+import 'core/locale/app_locale_provider.dart';
+import 'core/router/app_deep_link_listener.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'core/theme/theme_mode_provider.dart';
 import 'l10n/generated/app_localizations.dart';
 
 class TripmeticApp extends ConsumerWidget {
@@ -15,11 +18,23 @@ class TripmeticApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
+    final themeMode = ref.watch(themeModeProvider);
+    final localeOverride = ref.watch(appLocaleProvider).maybeWhen(
+          data: (v) => v,
+          orElse: () => null,
+        );
     return MaterialApp.router(
       title: applicationTitle,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.executive(),
+      themeMode: themeMode,
+      locale: localeOverride,
+      theme: AppTheme.executiveLight(),
+      darkTheme: AppTheme.executive(),
       routerConfig: router,
+      builder: (context, child) => AppDeepLinkListener(
+            router: router,
+            child: child ?? const SizedBox.shrink(),
+          ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       localeResolutionCallback: (locale, supported) {

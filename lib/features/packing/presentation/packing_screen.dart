@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/packing_providers.dart';
 import '../domain/packing_category.dart';
 import '../domain/packing_item.dart';
@@ -29,74 +32,80 @@ class PackingScreen extends ConsumerWidget {
       byCategory[c] = visible.where((e) => e.category == c).toList();
     }
 
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 4, 12, 0),
-                child: Text(
-                  l10n.packingHeader,
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.9,
+    final isPro = ref.watch(isTripmeticProProvider);
+
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.packing,
+      isPro: isPro,
+      child: Stack(
+        children: [
+          SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 4, 12, 0),
+                  child: Text(
+                    l10n.packingHeader,
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.9,
+                    ),
                   ),
                 ),
-              ),
-              SwitchListTile.adaptive(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
-                title: Text(
-                  l10n.packingHideCompleted,
-                  style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                SwitchListTile.adaptive(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+                  title: Text(
+                    l10n.packingHideCompleted,
+                    style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: Text(
+                    l10n.packingHideCompletedSubtitle,
+                    style: theme.textTheme.labelSmall?.copyWith(color: cs.onSurfaceVariant),
+                  ),
+                  value: hideDone,
+                  onChanged: (v) {
+                    ref.read(hideCompletedPackingProvider.notifier).state = v;
+                  },
                 ),
-                subtitle: Text(
-                  l10n.packingHideCompletedSubtitle,
-                  style: theme.textTheme.labelSmall?.copyWith(color: cs.onSurfaceVariant),
-                ),
-                value: hideDone,
-                onChanged: (v) {
-                  ref.read(hideCompletedPackingProvider.notifier).state = v;
-                },
-              ),
-              Expanded(
-                child: visible.isEmpty
-                    ? Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(24),
-                          child: Text(
-                            hideDone ? l10n.packingEmptyHidden : l10n.packingEmpty,
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.bodyLarge?.copyWith(color: cs.onSurfaceVariant),
+                Expanded(
+                  child: visible.isEmpty
+                      ? Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(24),
+                            child: Text(
+                              hideDone ? l10n.packingEmptyHidden : l10n.packingEmpty,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.bodyLarge?.copyWith(color: cs.onSurfaceVariant),
+                            ),
                           ),
+                        )
+                      : ListView(
+                          padding: const EdgeInsets.fromLTRB(12, 4, 12, 88),
+                          children: [
+                            for (final cat in PackingCategory.all)
+                              if ((byCategory[cat] ?? []).isNotEmpty)
+                                _CategorySection(
+                                  category: cat,
+                                  items: byCategory[cat]!,
+                                  categoryHeader: packingCategoryHeader(l10n, cat),
+                                ),
+                          ],
                         ),
-                      )
-                    : ListView(
-                        padding: const EdgeInsets.fromLTRB(12, 4, 12, 88),
-                        children: [
-                          for (final cat in PackingCategory.all)
-                            if ((byCategory[cat] ?? []).isNotEmpty)
-                              _CategorySection(
-                                category: cat,
-                                items: byCategory[cat]!,
-                                categoryHeader: packingCategoryHeader(l10n, cat),
-                              ),
-                        ],
-                      ),
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
-        ),
-        Positioned(
-          right: 16,
-          bottom: 16,
-          child: FloatingActionButton(
-            onPressed: () => showAddPackingItemSheet(context, ref),
-            child: const Icon(Icons.add),
+          Positioned(
+            right: 16,
+            bottom: 16,
+            child: FloatingActionButton(
+              onPressed: () => showAddPackingItemSheet(context, ref),
+              child: const Icon(Icons.add),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

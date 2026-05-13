@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
-
 import 'core/constants/app_brand.dart';
+import 'core/demo/apply_tripmetic_demo_seeds.dart';
 import 'core/subscription/revenue_cat_sdk_state.dart';
 import 'tripmetic_app.dart';
 import 'features/crypto/application/crypto_providers.dart';
@@ -18,6 +18,8 @@ import 'features/map/domain/saved_location.dart';
 import 'features/trip/application/trip_providers.dart';
 import 'features/mindmap/application/mind_map_providers.dart';
 import 'features/vault/application/vault_providers.dart';
+import 'features/bucket_list/application/bucket_list_provider.dart';
+import 'features/dual_clock/application/dual_clock_widget_service.dart';
 import 'features/scheduler/application/scheduler_notifier.dart';
 import 'features/scheduler/data/scheduler_prefs_store.dart';
 
@@ -84,6 +86,8 @@ Future<void> _configureRevenueCat() async {
 }
 
 Future<void> _initializeAppServices(ProviderContainer container) async {
+  await DualClockWidgetService.initIosAppGroup();
+
   // Fully await RevenueCat configure before app services/UI that read purchase state.
   await _configureRevenueCat();
 
@@ -104,7 +108,10 @@ Future<void> _initializeAppServices(ProviderContainer container) async {
     container.read(tripHiveStoreReadyProvider.future),
     container.read(mindMapHiveStoreReadyProvider.future),
     container.read(vaultHiveStoreReadyProvider.future),
+    container.read(bucketListHiveStoreReadyProvider.future),
   ]);
+
+  await applyTripmeticDemoSeeds(container);
 
   container.read(mindMapProvider);
 }

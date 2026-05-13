@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/crypto_providers.dart';
 import '../data/crypto_catalog.dart';
 import '../domain/crypto_format.dart';
@@ -130,6 +133,7 @@ class _CryptoTabState extends ConsumerState<CryptoTab> {
           updatedAt: DateTime.now().toUtc(),
           isOffline: true,
         );
+    final isPro = ref.watch(isTripmeticProProvider);
     final rates = snap.rates;
 
     ref.listen(cryptoRatesStreamProvider, (prev, next) {
@@ -148,8 +152,11 @@ class _CryptoTabState extends ConsumerState<CryptoTab> {
         ? l10n.exchangeLastUpdatedOffline(minsStr)
         : l10n.exchangeLastUpdated(minsStr);
 
-    return SafeArea(
-      child: ListView(
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.crypto,
+      isPro: isPro,
+      child: SafeArea(
+        child: ListView(
         padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
         children: [
           Row(
@@ -204,6 +211,7 @@ class _CryptoTabState extends ConsumerState<CryptoTab> {
               ),
             ),
         ],
+      ),
       ),
     );
   }

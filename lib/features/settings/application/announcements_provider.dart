@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 /// Shown when the announcements doc is missing, `html_content` is empty,
 /// or the stream errors (e.g. offline with no cache).
 const kFallbackAnnouncementsHtml =
-    "<p>Welcome to <b>TRIPMETIC</b>! Ensure you are connected to the internet to see our latest travel tips and app updates.</p>";
+    "<p>Welcome to <b>Tripmetic</b>! Ensure you are connected to the internet to see our latest travel tips and app updates.</p>";
 
 String _parseAnnouncementsHtml(DocumentSnapshot snap) {
   if (!snap.exists) return kFallbackAnnouncementsHtml;

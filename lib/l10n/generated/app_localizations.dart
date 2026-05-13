@@ -209,7 +209,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'TRIPMETIC.app'**
+  /// **'Tripmetic.app'**
   String get appTitle;
 
   /// No description provided for @budgetBaseCurrency.
@@ -1238,6 +1238,654 @@ abstract class AppLocalizations {
   /// **'Offline Map'**
   String get navOfflineMap;
 
+  /// No description provided for @navDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Dashboard'**
+  String get navDashboard;
+
+  /// No description provided for @navMoreMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get navMoreMenu;
+
+  /// No description provided for @navEditNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit navigation'**
+  String get navEditNavigation;
+
+  /// No description provided for @navDoneEditing.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get navDoneEditing;
+
+  /// No description provided for @navSelectSlotHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a slot, then tap a tool to assign it.'**
+  String get navSelectSlotHint;
+
+  /// No description provided for @navSavePins.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get navSavePins;
+
+  /// No description provided for @navPinnedSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned to bottom bar'**
+  String get navPinnedSectionTitle;
+
+  /// No description provided for @navAvailableSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Available features'**
+  String get navAvailableSectionTitle;
+
+  /// No description provided for @navEmptySlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty — add from available below'**
+  String get navEmptySlot;
+
+  /// No description provided for @navPinFullHint.
+  ///
+  /// In en, this message translates to:
+  /// **'All four slots are full. Remove one to add another.'**
+  String get navPinFullHint;
+
+  /// No description provided for @navEditPinnedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use − to free a slot, + to fill a slot, or drag to reorder. Save when all four are filled.'**
+  String get navEditPinnedHint;
+
+  /// No description provided for @navAddToPinned.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to bottom bar'**
+  String get navAddToPinned;
+
+  /// No description provided for @navRemoveFromPinned.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from bottom bar'**
+  String get navRemoveFromPinned;
+
+  /// No description provided for @navFeatureBadgeFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get navFeatureBadgeFree;
+
+  /// No description provided for @navFeatureBadgePro.
+  ///
+  /// In en, this message translates to:
+  /// **'PRO'**
+  String get navFeatureBadgePro;
+
+  /// No description provided for @moreMenuSectionFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free features'**
+  String get moreMenuSectionFree;
+
+  /// No description provided for @moreMenuSectionPro.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic Pro'**
+  String get moreMenuSectionPro;
+
+  /// No description provided for @proGlassTeaserTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic Pro Feature'**
+  String get proGlassTeaserTitle;
+
+  /// No description provided for @dashboardWorldExplorerSection.
+  ///
+  /// In en, this message translates to:
+  /// **'World Explorer'**
+  String get dashboardWorldExplorerSection;
+
+  /// No description provided for @dashboardWorldExplorerCountriesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Countries visited'**
+  String get dashboardWorldExplorerCountriesLabel;
+
+  /// No description provided for @dashboardWorldExplorerPercentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Of the world explored'**
+  String get dashboardWorldExplorerPercentLabel;
+
+  /// No description provided for @dashboardWorldExplorerPercentValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String dashboardWorldExplorerPercentValue(String percent);
+
+  /// No description provided for @bucketListDisplayNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get bucketListDisplayNameLabel;
+
+  /// No description provided for @bucketListAuthValidationDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get bucketListAuthValidationDisplayName;
+
+  /// No description provided for @authSignUpScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your Tripmetic account'**
+  String get authSignUpScreenTitle;
+
+  /// No description provided for @authSignUpScreenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional — only if you want cloud backup. You can keep using all tools on this device without signing up.'**
+  String get authSignUpScreenSubtitle;
+
+  /// No description provided for @authSignInScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to Tripmetic'**
+  String get authSignInScreenTitle;
+
+  /// No description provided for @authSignInScreenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional — for syncing your bucket list and cloud group trips. The rest of Tripmetic works without an account.'**
+  String get authSignInScreenSubtitle;
+
+  /// No description provided for @authForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get authForgotPassword;
+
+  /// No description provided for @authPasswordResetConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'If an account exists for that email, you will receive a link to reset your password.'**
+  String get authPasswordResetConfirmation;
+
+  /// No description provided for @authUnexpectedError.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get authUnexpectedError;
+
+  /// No description provided for @authBackupBulletBucketList.
+  ///
+  /// In en, this message translates to:
+  /// **'Bucket list destinations are saved to the cloud and merged when you sign in.'**
+  String get authBackupBulletBucketList;
+
+  /// No description provided for @authBackupBulletGroupTrips.
+  ///
+  /// In en, this message translates to:
+  /// **'Group trips you create or join are stored under your account.'**
+  String get authBackupBulletGroupTrips;
+
+  /// No description provided for @authBackupBulletMultiDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in on another device to restore your synced data.'**
+  String get authBackupBulletMultiDevice;
+
+  /// No description provided for @authLinkAlreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Sign in'**
+  String get authLinkAlreadyHaveAccount;
+
+  /// No description provided for @authLinkNeedAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Need an account? Create one'**
+  String get authLinkNeedAccount;
+
+  /// No description provided for @authFullSignUpCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Use full sign-up screen'**
+  String get authFullSignUpCta;
+
+  /// No description provided for @authFullSignInCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Use full sign-in screen'**
+  String get authFullSignInCta;
+
+  /// No description provided for @dashboardGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, {name}'**
+  String dashboardGreeting(String name);
+
+  /// No description provided for @dashboardGuestName.
+  ///
+  /// In en, this message translates to:
+  /// **'Traveler'**
+  String get dashboardGuestName;
+
+  /// No description provided for @dashboardWelcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan together, stay organized, and jump into tools in one tap.'**
+  String get dashboardWelcomeSubtitle;
+
+  /// No description provided for @dashboardPlanGroupTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan a new group trip'**
+  String get dashboardPlanGroupTrip;
+
+  /// No description provided for @dashboardAddBucketList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to bucket list'**
+  String get dashboardAddBucketList;
+
+  /// No description provided for @dashboardActiveTripSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Active trip snapshot'**
+  String get dashboardActiveTripSection;
+
+  /// No description provided for @dashboardNoUpcomingTripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No upcoming group trip'**
+  String get dashboardNoUpcomingTripTitle;
+
+  /// No description provided for @dashboardNoUpcomingTripBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When you plan with friends, your next trip summary appears here.'**
+  String get dashboardNoUpcomingTripBody;
+
+  /// No description provided for @dashboardQuickToolsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick tools'**
+  String get dashboardQuickToolsSection;
+
+  /// No description provided for @dashboardCountdownStartsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts in {days} days'**
+  String dashboardCountdownStartsIn(String days);
+
+  /// No description provided for @dashboardCountdownEndsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends in {days} days'**
+  String dashboardCountdownEndsIn(String days);
+
+  /// No description provided for @navDashboardBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your trip hub — open tools from the bar or the More menu.'**
+  String get navDashboardBody;
+
+  /// No description provided for @appSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'App settings'**
+  String get appSettings;
+
+  /// No description provided for @settingsSectionTripmeticPro.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic Pro'**
+  String get settingsSectionTripmeticPro;
+
+  /// No description provided for @settingsSubscriptionActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active subscription'**
+  String get settingsSubscriptionActive;
+
+  /// No description provided for @settingsSubscriptionFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free plan'**
+  String get settingsSubscriptionFree;
+
+  /// No description provided for @settingsManageBilling.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage billing'**
+  String get settingsManageBilling;
+
+  /// No description provided for @settingsTestModeSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test mode'**
+  String get settingsTestModeSectionTitle;
+
+  /// No description provided for @settingsTestModeProTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test as Tripmetic Pro'**
+  String get settingsTestModeProTitle;
+
+  /// No description provided for @settingsTestModeProSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Local override for testing; ignores RevenueCat.'**
+  String get settingsTestModeProSubtitle;
+
+  /// No description provided for @settingsTestModeProCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'When enabled, this device unlocks all Pro features locally. Intended for internal testing only — it does not change your real subscription.'**
+  String get settingsTestModeProCaption;
+
+  /// No description provided for @settingsUnitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Units of measurement'**
+  String get settingsUnitsTitle;
+
+  /// No description provided for @settingsLanguageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguageTitle;
+
+  /// No description provided for @settingsThemeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsThemeTitle;
+
+  /// No description provided for @settingsClockWidgetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clock widget'**
+  String get settingsClockWidgetTitle;
+
+  /// No description provided for @settingsThemeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
+
+  /// No description provided for @settingsThemeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// No description provided for @settingsThemeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// No description provided for @settingsLanguageSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get settingsLanguageSystem;
+
+  /// No description provided for @settingsLanguageEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get settingsLanguageEnglish;
+
+  /// No description provided for @settingsLanguageSpanish.
+  ///
+  /// In en, this message translates to:
+  /// **'Spanish'**
+  String get settingsLanguageSpanish;
+
+  /// No description provided for @settingsProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile & cloud sync'**
+  String get settingsProfileTitle;
+
+  /// No description provided for @settingsLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get settingsLogout;
+
+  /// No description provided for @settingsLogoutConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out of this account?'**
+  String get settingsLogoutConfirm;
+
+  /// No description provided for @settingsDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get settingsDeleteAccount;
+
+  /// No description provided for @settingsDeleteAccountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deletion is handled by support. You can log out below.'**
+  String get settingsDeleteAccountBody;
+
+  /// No description provided for @settingsSectionAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get settingsSectionAccount;
+
+  /// No description provided for @accountManagementListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage account'**
+  String get accountManagementListTitle;
+
+  /// No description provided for @accountManagementListSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update your name, email, and password'**
+  String get accountManagementListSubtitle;
+
+  /// No description provided for @accountManagementTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account management'**
+  String get accountManagementTitle;
+
+  /// No description provided for @accountSectionProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get accountSectionProfile;
+
+  /// No description provided for @accountSectionSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign-in'**
+  String get accountSectionSignIn;
+
+  /// No description provided for @accountFieldDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get accountFieldDisplayName;
+
+  /// No description provided for @accountFieldEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get accountFieldEmail;
+
+  /// No description provided for @accountFieldCurrentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current password'**
+  String get accountFieldCurrentPassword;
+
+  /// No description provided for @accountFieldNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New password'**
+  String get accountFieldNewPassword;
+
+  /// No description provided for @accountSaveName.
+  ///
+  /// In en, this message translates to:
+  /// **'Save name'**
+  String get accountSaveName;
+
+  /// No description provided for @accountChangeEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Send verification & change email'**
+  String get accountChangeEmail;
+
+  /// No description provided for @accountChangePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change password'**
+  String get accountChangePassword;
+
+  /// No description provided for @accountSignedOutMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You must be signed in to manage your account.'**
+  String get accountSignedOutMessage;
+
+  /// No description provided for @accountSignInCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get accountSignInCta;
+
+  /// No description provided for @accountNameSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Name updated'**
+  String get accountNameSaved;
+
+  /// No description provided for @accountEmailVerificationSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification link sent to {email}. Confirm it to switch your sign-in address.'**
+  String accountEmailVerificationSent(String email);
+
+  /// No description provided for @accountPasswordChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Password updated'**
+  String get accountPasswordChanged;
+
+  /// No description provided for @accountReauthRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'For security, sign in again to change your {field}.'**
+  String accountReauthRequired(String field);
+
+  /// No description provided for @accountFieldLabelEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'email'**
+  String get accountFieldLabelEmail;
+
+  /// No description provided for @accountFieldLabelPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'password'**
+  String get accountFieldLabelPassword;
+
+  /// No description provided for @accountErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update {field}: {error}'**
+  String accountErrorGeneric(String field, String error);
+
+  /// No description provided for @accountReauthAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in again'**
+  String get accountReauthAction;
+
+  /// No description provided for @accountValidationEmailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get accountValidationEmailRequired;
+
+  /// No description provided for @accountValidationEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email'**
+  String get accountValidationEmailInvalid;
+
+  /// No description provided for @accountValidationNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get accountValidationNameRequired;
+
+  /// No description provided for @accountValidationPasswordTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 8 characters'**
+  String get accountValidationPasswordTooShort;
+
+  /// No description provided for @accountCurrentEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Current email: {email}'**
+  String accountCurrentEmailLabel(String email);
+
+  /// No description provided for @proPaywallTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic Pro'**
+  String get proPaywallTitle;
+
+  /// No description provided for @proPaywallSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock offline maps, deep travel tools, and collaboration.'**
+  String get proPaywallSubtitle;
+
+  /// No description provided for @proPaywallBenefits.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline maps & region downloads\nItinerary, budget, vault & packing\nGroup planner & real-time sync'**
+  String get proPaywallBenefits;
+
+  /// No description provided for @proPaywallBullets.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline maps & region downloads|Itinerary, budget, vault & packing|Group planner & real-time sync'**
+  String get proPaywallBullets;
+
+  /// No description provided for @proPaywallUpgradeRevenueCat.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade via RevenueCat'**
+  String get proPaywallUpgradeRevenueCat;
+
+  /// No description provided for @upgradeNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade now'**
+  String get upgradeNow;
+
   /// No description provided for @packingCatClothing.
   ///
   /// In en, this message translates to:
@@ -1394,6 +2042,12 @@ abstract class AppLocalizations {
   /// **'Paywall could not be shown. Check your RevenueCat offering.'**
   String get proPaywallError;
 
+  /// No description provided for @proPaywallNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro is not configured in this build.'**
+  String get proPaywallNotConfigured;
+
   /// No description provided for @proRestoreFailed.
   ///
   /// In en, this message translates to:
@@ -1499,7 +2153,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsCopyright.
   ///
   /// In en, this message translates to:
-  /// **'© 2026 TRIPMETIC.app'**
+  /// **'© 2026 Tripmetic.app'**
   String get settingsCopyright;
 
   /// No description provided for @settingsCouldNotOpenLink.
@@ -1531,6 +2185,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms of use'**
   String get settingsTerms;
+
+  /// No description provided for @settingsMapboxAttributionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Map data (Mapbox)'**
+  String get settingsMapboxAttributionTitle;
+
+  /// No description provided for @settingsMapboxAttributionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic uses Mapbox maps. © Mapbox, © OpenStreetMap, and other data contributors. The on-map logo and attribution control are hidden in the app for a clearer layout and fewer accidental taps; this notice satisfies Mapbox display requirements.'**
+  String get settingsMapboxAttributionBody;
+
+  /// No description provided for @settingsMapboxAttributionMapboxLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Mapbox — About maps'**
+  String get settingsMapboxAttributionMapboxLink;
 
   /// No description provided for @sizeCatBelts.
   ///
@@ -1609,6 +2281,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Women\'s T-shirts'**
   String get sizeCatWomensTshirts;
+
+  /// No description provided for @sizeCatBoysShoes.
+  ///
+  /// In en, this message translates to:
+  /// **'Boys\' shoes (kids)'**
+  String get sizeCatBoysShoes;
+
+  /// No description provided for @sizeCatGirlsShoes.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls\' shoes (kids)'**
+  String get sizeCatGirlsShoes;
+
+  /// No description provided for @sizeCatBoysTshirts.
+  ///
+  /// In en, this message translates to:
+  /// **'Boys\' tops / T-shirts'**
+  String get sizeCatBoysTshirts;
+
+  /// No description provided for @sizeCatBoysPants.
+  ///
+  /// In en, this message translates to:
+  /// **'Boys\' pants'**
+  String get sizeCatBoysPants;
+
+  /// No description provided for @sizeCatGirlsTshirts.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls\' tops / T-shirts'**
+  String get sizeCatGirlsTshirts;
+
+  /// No description provided for @sizeCatGirlsPants.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls\' pants'**
+  String get sizeCatGirlsPants;
+
+  /// No description provided for @sizeCatGirlsDressesKids.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls\' dresses (kids)'**
+  String get sizeCatGirlsDressesKids;
 
   /// No description provided for @sizeColumnPrimaryEu.
   ///
@@ -1759,6 +2473,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'e.g. XS, M, 38'**
   String get sizeHintWomensTshirts;
+
+  /// No description provided for @sizeHintBoysShoes.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 11C, 3Y, 32, 21'**
+  String get sizeHintBoysShoes;
+
+  /// No description provided for @sizeHintGirlsShoes.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 10C, 2Y, 33, 20'**
+  String get sizeHintGirlsShoes;
+
+  /// No description provided for @sizeHintBoysTshirts.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 6, 8, M, XS'**
+  String get sizeHintBoysTshirts;
+
+  /// No description provided for @sizeHintBoysPants.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 6, 8, 10 (US kids)'**
+  String get sizeHintBoysPants;
+
+  /// No description provided for @sizeHintGirlsTshirts.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 6, 8, M, S'**
+  String get sizeHintGirlsTshirts;
+
+  /// No description provided for @sizeHintGirlsPants.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 6, 8, 10 (US kids)'**
+  String get sizeHintGirlsPants;
+
+  /// No description provided for @sizeHintGirlsDressesKids.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 4, 6, 8, 104'**
+  String get sizeHintGirlsDressesKids;
 
   /// No description provided for @sizeNoMatchEmpty.
   ///
@@ -2395,6 +3151,1180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'vault'**
   String get vaultVaultWord;
+
+  /// No description provided for @bucketListTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bucket list'**
+  String get bucketListTitle;
+
+  /// No description provided for @bucketListSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Places you’ve been, want to go, and what’s next.'**
+  String get bucketListSubtitle;
+
+  /// No description provided for @bucketListToolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dream destinations on a map and in lists'**
+  String get bucketListToolSubtitle;
+
+  /// No description provided for @bucketListViewModeList.
+  ///
+  /// In en, this message translates to:
+  /// **'List'**
+  String get bucketListViewModeList;
+
+  /// No description provided for @bucketListViewModeMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get bucketListViewModeMap;
+
+  /// No description provided for @bucketListCategoryBeen.
+  ///
+  /// In en, this message translates to:
+  /// **'Been'**
+  String get bucketListCategoryBeen;
+
+  /// No description provided for @bucketListCategoryWant.
+  ///
+  /// In en, this message translates to:
+  /// **'Want'**
+  String get bucketListCategoryWant;
+
+  /// No description provided for @bucketListCategoryLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Live'**
+  String get bucketListCategoryLive;
+
+  /// No description provided for @bucketListCategoryLived.
+  ///
+  /// In en, this message translates to:
+  /// **'Lived'**
+  String get bucketListCategoryLived;
+
+  /// No description provided for @bucketListCategoryUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get bucketListCategoryUpcoming;
+
+  /// No description provided for @bucketListDatesRange.
+  ///
+  /// In en, this message translates to:
+  /// **'{start} – {end}'**
+  String bucketListDatesRange(String start, String end);
+
+  /// No description provided for @bucketListDetailCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get bucketListDetailCategory;
+
+  /// No description provided for @bucketListDetailDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get bucketListDetailDates;
+
+  /// No description provided for @bucketListMapLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a marker for details'**
+  String get bucketListMapLegend;
+
+  /// No description provided for @bucketListShareMapWatermarkLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'TRIPMETIC'**
+  String get bucketListShareMapWatermarkLarge;
+
+  /// No description provided for @bucketListShareMapWatermarkUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'tripmetic.app'**
+  String get bucketListShareMapWatermarkUrl;
+
+  /// No description provided for @bucketListShareMapStatExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} explored {worldPercent}% of the world. Traveled more than {populationPercent}% of the world\'s population.'**
+  String bucketListShareMapStatExplore(
+    String name,
+    String worldPercent,
+    int populationPercent,
+  );
+
+  /// No description provided for @bucketListShareMapTravelerFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Rafael'**
+  String get bucketListShareMapTravelerFallback;
+
+  /// No description provided for @bucketListShareMapStatPopulation.
+  ///
+  /// In en, this message translates to:
+  /// **'Traveled more than {percent}% of the world\'s population'**
+  String bucketListShareMapStatPopulation(int percent);
+
+  /// No description provided for @bucketListShareMapCountriesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Countries'**
+  String get bucketListShareMapCountriesLabel;
+
+  /// No description provided for @bucketListShareMapCitiesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cities'**
+  String get bucketListShareMapCitiesLabel;
+
+  /// No description provided for @bucketListEmptyCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'No places in this category yet.'**
+  String get bucketListEmptyCategory;
+
+  /// No description provided for @bucketListTravelStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel stats'**
+  String get bucketListTravelStats;
+
+  /// No description provided for @bucketListStatWorld.
+  ///
+  /// In en, this message translates to:
+  /// **'World explored'**
+  String get bucketListStatWorld;
+
+  /// No description provided for @bucketListStatUs.
+  ///
+  /// In en, this message translates to:
+  /// **'U.S. explored'**
+  String get bucketListStatUs;
+
+  /// No description provided for @bucketListStatEurope.
+  ///
+  /// In en, this message translates to:
+  /// **'Europe explored'**
+  String get bucketListStatEurope;
+
+  /// No description provided for @bucketListStatAsia.
+  ///
+  /// In en, this message translates to:
+  /// **'Asia explored'**
+  String get bucketListStatAsia;
+
+  /// No description provided for @bucketListStatAfrica.
+  ///
+  /// In en, this message translates to:
+  /// **'Africa explored'**
+  String get bucketListStatAfrica;
+
+  /// No description provided for @bucketListStatRegionalCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Regional'**
+  String get bucketListStatRegionalCaption;
+
+  /// No description provided for @bucketListStatSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unique · of {total}'**
+  String bucketListStatSubtitle(int count, int total);
+
+  /// No description provided for @bucketListAddDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Add destination'**
+  String get bucketListAddDestination;
+
+  /// No description provided for @bucketListEditDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit destination'**
+  String get bucketListEditDestination;
+
+  /// No description provided for @bucketListSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get bucketListSave;
+
+  /// No description provided for @bucketListFieldCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get bucketListFieldCity;
+
+  /// No description provided for @bucketListFieldCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get bucketListFieldCountry;
+
+  /// No description provided for @bucketListFieldCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get bucketListFieldCategory;
+
+  /// No description provided for @bucketListFieldRegionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'State / province (optional)'**
+  String get bucketListFieldRegionHint;
+
+  /// No description provided for @bucketListFieldLatitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get bucketListFieldLatitude;
+
+  /// No description provided for @bucketListFieldLongitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get bucketListFieldLongitude;
+
+  /// No description provided for @bucketListFieldStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get bucketListFieldStart;
+
+  /// No description provided for @bucketListFieldEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get bucketListFieldEnd;
+
+  /// No description provided for @bucketListFieldTripDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip dates'**
+  String get bucketListFieldTripDates;
+
+  /// No description provided for @bucketListValidationRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required.'**
+  String get bucketListValidationRequired;
+
+  /// No description provided for @bucketListValidationNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid number.'**
+  String get bucketListValidationNumber;
+
+  /// No description provided for @bucketListValidationDates.
+  ///
+  /// In en, this message translates to:
+  /// **'End date must be on or after start date.'**
+  String get bucketListValidationDates;
+
+  /// No description provided for @bucketListGeocodeNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not find this location on the map. Please check the spelling.'**
+  String get bucketListGeocodeNotFound;
+
+  /// No description provided for @bucketListShareSummarySubject.
+  ///
+  /// In en, this message translates to:
+  /// **'My Tripmetic bucket list'**
+  String get bucketListShareSummarySubject;
+
+  /// No description provided for @bucketListShareTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Share list and map'**
+  String get bucketListShareTooltip;
+
+  /// No description provided for @bucketListShareFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not share: {error}'**
+  String bucketListShareFailed(String error);
+
+  /// No description provided for @bucketListShareNeedMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Map view before capturing the map image.'**
+  String get bucketListShareNeedMap;
+
+  /// No description provided for @bucketListDeleteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe to remove'**
+  String get bucketListDeleteHint;
+
+  /// No description provided for @bucketListTapEditHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to edit'**
+  String get bucketListTapEditHint;
+
+  /// No description provided for @bucketListCloudSyncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloud sync failed: {error}'**
+  String bucketListCloudSyncFailed(String error);
+
+  /// No description provided for @bucketListRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get bucketListRetry;
+
+  /// No description provided for @bucketListBackupTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup & register'**
+  String get bucketListBackupTooltip;
+
+  /// No description provided for @bucketListBackupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cloud backup'**
+  String get bucketListBackupTitle;
+
+  /// No description provided for @bucketListBackupGuestIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Tripmetic works fully without an account. Add one anytime if you want cloud backup for your bucket list and shared group trips.'**
+  String get bucketListBackupGuestIntro;
+
+  /// No description provided for @bucketListSignedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {email}'**
+  String bucketListSignedInAs(String email);
+
+  /// No description provided for @bucketListBackupEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get bucketListBackupEmail;
+
+  /// No description provided for @bucketListBackupPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get bucketListBackupPassword;
+
+  /// No description provided for @bucketListBackupConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get bucketListBackupConfirmPassword;
+
+  /// No description provided for @bucketListAuthTabSignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get bucketListAuthTabSignUp;
+
+  /// No description provided for @bucketListAuthPasswordMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match.'**
+  String get bucketListAuthPasswordMismatch;
+
+  /// No description provided for @bucketListRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account & backup'**
+  String get bucketListRegister;
+
+  /// No description provided for @bucketListSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get bucketListSignIn;
+
+  /// No description provided for @bucketListSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get bucketListSignOut;
+
+  /// No description provided for @bucketListBackupUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading to cloud…'**
+  String get bucketListBackupUploading;
+
+  /// No description provided for @bucketListAuthSuccessSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Successfully logged in!'**
+  String get bucketListAuthSuccessSignIn;
+
+  /// No description provided for @bucketListAuthSuccessSignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Account successfully created!'**
+  String get bucketListAuthSuccessSignUp;
+
+  /// No description provided for @signUpSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Account created. Welcome to Tripmetic!'**
+  String get signUpSuccessMessage;
+
+  /// No description provided for @signUpErrorEmailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is already registered. Try signing in.'**
+  String get signUpErrorEmailInUse;
+
+  /// No description provided for @signUpErrorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email.'**
+  String get signUpErrorInvalidEmail;
+
+  /// No description provided for @signUpErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too weak. Use at least 8 characters.'**
+  String get signUpErrorWeakPassword;
+
+  /// No description provided for @signUpErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not sign up: {message}'**
+  String signUpErrorGeneric(String message);
+
+  /// No description provided for @signUpErrorEmailInUseAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signUpErrorEmailInUseAction;
+
+  /// No description provided for @bucketListAuthFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not authenticate: {error}'**
+  String bucketListAuthFailed(String error);
+
+  /// No description provided for @groupPlannerNoExtraDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'No notes or links yet.'**
+  String get groupPlannerNoExtraDetails;
+
+  /// No description provided for @groupPlannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group planner'**
+  String get groupPlannerTitle;
+
+  /// No description provided for @groupPlannerToolTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group planner'**
+  String get groupPlannerToolTitle;
+
+  /// No description provided for @groupPlannerToolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan a trip together in real time'**
+  String get groupPlannerToolSubtitle;
+
+  /// No description provided for @groupPlannerLandingPlanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan a group trip'**
+  String get groupPlannerLandingPlanTitle;
+
+  /// No description provided for @groupPlannerLandingPlanSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a shared trip with destination, dates, and budget.'**
+  String get groupPlannerLandingPlanSubtitle;
+
+  /// No description provided for @groupPlannerLandingJoinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a group trip'**
+  String get groupPlannerLandingJoinTitle;
+
+  /// No description provided for @groupPlannerLandingJoinSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the trip code or link from your invitation.'**
+  String get groupPlannerLandingJoinSubtitle;
+
+  /// No description provided for @groupPlannerCreateTripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New group trip'**
+  String get groupPlannerCreateTripTitle;
+
+  /// No description provided for @groupPlannerSelectDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a trip date range.'**
+  String get groupPlannerSelectDates;
+
+  /// No description provided for @groupPlannerBudgetPerPersonOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Per person'**
+  String get groupPlannerBudgetPerPersonOption;
+
+  /// No description provided for @groupPlannerBudgetGroupOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Group total'**
+  String get groupPlannerBudgetGroupOption;
+
+  /// No description provided for @groupPlannerBudgetNoneOption.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get groupPlannerBudgetNoneOption;
+
+  /// No description provided for @groupPlannerBudgetAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget amount'**
+  String get groupPlannerBudgetAmountLabel;
+
+  /// No description provided for @groupPlannerOpenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a group trip'**
+  String get groupPlannerOpenTitle;
+
+  /// No description provided for @groupPlannerOpenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste the trip code from your invitation.'**
+  String get groupPlannerOpenSubtitle;
+
+  /// No description provided for @groupPlannerOpenTripCodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip code'**
+  String get groupPlannerOpenTripCodeLabel;
+
+  /// No description provided for @groupPlannerOpenHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Short code, trip ID, or invitation link'**
+  String get groupPlannerOpenHint;
+
+  /// No description provided for @groupPlannerOpenButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Open trip'**
+  String get groupPlannerOpenButton;
+
+  /// No description provided for @groupPlannerDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Destination'**
+  String get groupPlannerDestination;
+
+  /// No description provided for @groupPlannerDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get groupPlannerDates;
+
+  /// No description provided for @groupPlannerGroupSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Group size'**
+  String get groupPlannerGroupSize;
+
+  /// No description provided for @groupPlannerBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget'**
+  String get groupPlannerBudget;
+
+  /// No description provided for @groupPlannerBudgetPerPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Per person: {amount}'**
+  String groupPlannerBudgetPerPerson(String amount);
+
+  /// No description provided for @groupPlannerBudgetGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Group total: {amount}'**
+  String groupPlannerBudgetGroup(String amount);
+
+  /// No description provided for @groupPlannerBudgetNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No budget set'**
+  String get groupPlannerBudgetNone;
+
+  /// No description provided for @groupPlannerInviteMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Invite members'**
+  String get groupPlannerInviteMembers;
+
+  /// No description provided for @groupPlannerManageMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage members'**
+  String get groupPlannerManageMembers;
+
+  /// No description provided for @groupPlannerItinerary.
+  ///
+  /// In en, this message translates to:
+  /// **'Itinerary'**
+  String get groupPlannerItinerary;
+
+  /// No description provided for @groupPlannerNoActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'No activities yet.'**
+  String get groupPlannerNoActivities;
+
+  /// No description provided for @groupPlannerTripNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This trip could not be loaded.'**
+  String get groupPlannerTripNotFound;
+
+  /// No description provided for @groupPlannerSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in required'**
+  String get groupPlannerSignInTitle;
+
+  /// No description provided for @groupPlannerSignInBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in under Bucket list → Cloud backup to view shared trips.'**
+  String get groupPlannerSignInBody;
+
+  /// No description provided for @groupPlannerCreateTripSignInRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving a new group trip requires an account. Sign in to continue — other Tripmetic features work without one.'**
+  String get groupPlannerCreateTripSignInRequired;
+
+  /// No description provided for @groupPlannerMembersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get groupPlannerMembersTitle;
+
+  /// No description provided for @groupPlannerRoleAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin'**
+  String get groupPlannerRoleAdmin;
+
+  /// No description provided for @groupPlannerRoleCoPlanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Co-planner'**
+  String get groupPlannerRoleCoPlanner;
+
+  /// No description provided for @groupPlannerRoleViewOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'View-only'**
+  String get groupPlannerRoleViewOnly;
+
+  /// No description provided for @groupPlannerOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get groupPlannerOwner;
+
+  /// No description provided for @groupPlannerRemoveMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get groupPlannerRemoveMember;
+
+  /// No description provided for @groupPlannerRemoveMemberTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove member?'**
+  String get groupPlannerRemoveMemberTitle;
+
+  /// No description provided for @groupPlannerRemoveMemberBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {email} from this trip?'**
+  String groupPlannerRemoveMemberBody(String email);
+
+  /// No description provided for @groupPlannerCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get groupPlannerCancel;
+
+  /// No description provided for @groupPlannerNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get groupPlannerNotes;
+
+  /// No description provided for @groupPlannerOpenLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Open link'**
+  String get groupPlannerOpenLink;
+
+  /// No description provided for @groupPlannerNetVotes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}'**
+  String groupPlannerNetVotes(String count);
+
+  /// No description provided for @groupPlannerVoteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save vote: {error}'**
+  String groupPlannerVoteError(String error);
+
+  /// No description provided for @groupPlannerManageError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update members: {error}'**
+  String groupPlannerManageError(String error);
+
+  /// No description provided for @groupPlannerInviteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open share sheet: {error}'**
+  String groupPlannerInviteError(String error);
+
+  /// No description provided for @groupPlannerUnknownTripCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open trip: {error}'**
+  String groupPlannerUnknownTripCode(String error);
+
+  /// No description provided for @groupPlannerMyTripsSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your trips'**
+  String get groupPlannerMyTripsSectionTitle;
+
+  /// No description provided for @groupPlannerMyTripsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No trips yet. Create one above.'**
+  String get groupPlannerMyTripsEmpty;
+
+  /// No description provided for @groupPlannerExamplesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Example trips'**
+  String get groupPlannerExamplesTitle;
+
+  /// No description provided for @groupPlannerExamplesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample cards — create a trip above to add your own.'**
+  String get groupPlannerExamplesSubtitle;
+
+  /// No description provided for @groupPlannerExampleTapBody.
+  ///
+  /// In en, this message translates to:
+  /// **'These are samples only. Use “Plan a group trip” to create a real trip you can share.'**
+  String get groupPlannerExampleTapBody;
+
+  /// No description provided for @groupPlannerExampleLisbonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lisbon team offsite'**
+  String get groupPlannerExampleLisbonTitle;
+
+  /// No description provided for @groupPlannerExampleKyotoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Kyoto spring tour'**
+  String get groupPlannerExampleKyotoTitle;
+
+  /// No description provided for @groupPlannerAddActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Add activity'**
+  String get groupPlannerAddActivity;
+
+  /// No description provided for @groupPlannerActivityTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity title'**
+  String get groupPlannerActivityTitleLabel;
+
+  /// No description provided for @groupPlannerPeopleCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} people'**
+  String groupPlannerPeopleCount(String count);
+
+  /// No description provided for @groupPlannerEditActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit activity'**
+  String get groupPlannerEditActivity;
+
+  /// No description provided for @groupPlannerDeleteActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get groupPlannerDeleteActivity;
+
+  /// No description provided for @groupPlannerDeleteActivityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete activity?'**
+  String get groupPlannerDeleteActivityTitle;
+
+  /// No description provided for @groupPlannerDeleteActivityBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove \"{title}\" from the itinerary? This cannot be undone.'**
+  String groupPlannerDeleteActivityBody(String title);
+
+  /// No description provided for @groupPlannerActivityDeleteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete activity: {error}'**
+  String groupPlannerActivityDeleteError(String error);
+
+  /// No description provided for @groupPlannerActivityEditError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update activity: {error}'**
+  String groupPlannerActivityEditError(String error);
+
+  /// No description provided for @groupPlannerEditTripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit trip'**
+  String get groupPlannerEditTripTitle;
+
+  /// No description provided for @groupPlannerEditTripAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit trip'**
+  String get groupPlannerEditTripAction;
+
+  /// No description provided for @groupPlannerDeleteTripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete trip?'**
+  String get groupPlannerDeleteTripTitle;
+
+  /// No description provided for @groupPlannerDeleteTripBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently remove the trip \"{destination}\" and its itinerary for everyone? This cannot be undone.'**
+  String groupPlannerDeleteTripBody(String destination);
+
+  /// No description provided for @groupPlannerDeleteTripAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete trip'**
+  String get groupPlannerDeleteTripAction;
+
+  /// No description provided for @groupPlannerTripDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip removed.'**
+  String get groupPlannerTripDeleted;
+
+  /// No description provided for @groupPlannerTripDeleteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete trip: {error}'**
+  String groupPlannerTripDeleteError(String error);
+
+  /// No description provided for @groupPlannerTripUpdateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update trip: {error}'**
+  String groupPlannerTripUpdateError(String error);
+
+  /// No description provided for @widgetInstructionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual Clock Widget'**
+  String get widgetInstructionTitle;
+
+  /// No description provided for @widgetInstructionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your home and destination timezones directly from your Lock Screen or Home Screen.'**
+  String get widgetInstructionSubtitle;
+
+  /// No description provided for @widgetInstructionTabIos.
+  ///
+  /// In en, this message translates to:
+  /// **'iOS'**
+  String get widgetInstructionTabIos;
+
+  /// No description provided for @widgetInstructionTabAndroid.
+  ///
+  /// In en, this message translates to:
+  /// **'Android'**
+  String get widgetInstructionTabAndroid;
+
+  /// No description provided for @widgetInstructionIosStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Lock your phone and long-press the Lock Screen.'**
+  String get widgetInstructionIosStep1;
+
+  /// No description provided for @widgetInstructionIosStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"Customize\" and select \"Lock Screen\".'**
+  String get widgetInstructionIosStep2;
+
+  /// No description provided for @widgetInstructionIosStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"Add Widgets\".'**
+  String get widgetInstructionIosStep3;
+
+  /// No description provided for @widgetInstructionIosStep4.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll down, find Tripmetic, and add the Dual Clock widget.'**
+  String get widgetInstructionIosStep4;
+
+  /// No description provided for @widgetInstructionAndroidStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to your Home Screen and long-press an empty area.'**
+  String get widgetInstructionAndroidStep1;
+
+  /// No description provided for @widgetInstructionAndroidStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"Widgets\".'**
+  String get widgetInstructionAndroidStep2;
+
+  /// No description provided for @widgetInstructionAndroidStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll down to Tripmetic.'**
+  String get widgetInstructionAndroidStep3;
+
+  /// No description provided for @widgetInstructionAndroidStep4.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap and hold the Dual Clock widget, then drag it onto your screen.'**
+  String get widgetInstructionAndroidStep4;
+
+  /// No description provided for @widgetInstructionAndroidLockScreenHint.
+  ///
+  /// In en, this message translates to:
+  /// **'To see both clocks on the lock screen: open Settings → search for “lock screen” or “widgets”, and add Tripmetic there if your phone offers lock-screen widgets (not all devices do).'**
+  String get widgetInstructionAndroidLockScreenHint;
+
+  /// No description provided for @widgetInstructionConfigureCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure Widget Cities'**
+  String get widgetInstructionConfigureCta;
+
+  /// No description provided for @dualClockScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual Clock Widget'**
+  String get dualClockScreenTitle;
+
+  /// No description provided for @dualClockConfigTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure cities'**
+  String get dualClockConfigTitle;
+
+  /// No description provided for @dualClockConfigSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose two cities and timezones. Your selections sync to the Tripmetic home screen widget (Android) and lock screen widget (iOS).'**
+  String get dualClockConfigSubtitle;
+
+  /// No description provided for @dualClockCity1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'First city'**
+  String get dualClockCity1Label;
+
+  /// No description provided for @dualClockCity2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Second city'**
+  String get dualClockCity2Label;
+
+  /// No description provided for @dualClockSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save & update widget'**
+  String get dualClockSave;
+
+  /// No description provided for @dualClockSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Widget updated.'**
+  String get dualClockSaved;
+
+  /// No description provided for @dualClockSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save widget data. Please try again.'**
+  String get dualClockSaveError;
+
+  /// No description provided for @moreToolsDualClockBannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual Clock widget'**
+  String get moreToolsDualClockBannerTitle;
+
+  /// No description provided for @moreToolsDualClockBannerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See two timezones on your Lock Screen or Home Screen — tap to set up.'**
+  String get moreToolsDualClockBannerSubtitle;
+
+  /// No description provided for @moreToolsDualClockBannerCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up'**
+  String get moreToolsDualClockBannerCta;
+
+  /// No description provided for @settingsDualClockWidgetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual Clock widget'**
+  String get settingsDualClockWidgetTitle;
+
+  /// No description provided for @settingsDualClockWidgetSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the widget and choose your cities'**
+  String get settingsDualClockWidgetSubtitle;
+
+  /// No description provided for @widgetNewFeatureBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get widgetNewFeatureBadge;
+
+  /// No description provided for @globalNavAccountCloudSyncTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Account & cloud backup'**
+  String get globalNavAccountCloudSyncTooltip;
+
+  /// No description provided for @exchangeRatesForceRefreshTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Fetch latest exchange rates'**
+  String get exchangeRatesForceRefreshTooltip;
+
+  /// No description provided for @exchangeRatesRefreshedOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Exchange rates updated.'**
+  String get exchangeRatesRefreshedOk;
+
+  /// No description provided for @exchangeRatesRefreshFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not refresh exchange rates.'**
+  String get exchangeRatesRefreshFailed;
+
+  /// No description provided for @bucketListStatUsTerritories.
+  ///
+  /// In en, this message translates to:
+  /// **'U.S. territories'**
+  String get bucketListStatUsTerritories;
+
+  /// No description provided for @bucketListAuthErrUserNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No account found for this email.'**
+  String get bucketListAuthErrUserNotFound;
+
+  /// No description provided for @bucketListAuthErrWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect email or password.'**
+  String get bucketListAuthErrWrongPassword;
+
+  /// No description provided for @bucketListAuthErrEmailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already exists for this email.'**
+  String get bucketListAuthErrEmailInUse;
+
+  /// No description provided for @bucketListAuthErrInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email address.'**
+  String get bucketListAuthErrInvalidEmail;
+
+  /// No description provided for @bucketListAuthErrWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too weak.'**
+  String get bucketListAuthErrWeakPassword;
+
+  /// No description provided for @bucketListAuthErrUserDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This account has been disabled.'**
+  String get bucketListAuthErrUserDisabled;
+
+  /// No description provided for @bucketListAuthErrTooManyRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again later.'**
+  String get bucketListAuthErrTooManyRequests;
+
+  /// No description provided for @bucketListAuthErrOperationNotAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Email/password sign-in is not enabled.'**
+  String get bucketListAuthErrOperationNotAllowed;
+
+  /// No description provided for @bucketListAuthErrDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'{detail}'**
+  String bucketListAuthErrDetail(String detail);
+
+  /// No description provided for @bucketListAuthValidationInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email address.'**
+  String get bucketListAuthValidationInvalidEmail;
+
+  /// No description provided for @bucketListAuthValidationPasswordShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters.'**
+  String get bucketListAuthValidationPasswordShort;
+
+  /// No description provided for @bucketListAuthValidationPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password.'**
+  String get bucketListAuthValidationPasswordRequired;
 }
 
 class _AppLocalizationsDelegate

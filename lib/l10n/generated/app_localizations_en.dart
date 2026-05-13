@@ -63,7 +63,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get announcementsLatest => 'Latest updates';
 
   @override
-  String get appTitle => 'TRIPMETIC.app';
+  String get appTitle => 'Tripmetic.app';
 
   @override
   String get budgetBaseCurrency => 'BASE CURRENCY';
@@ -657,6 +657,365 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navOfflineMap => 'Offline Map';
 
   @override
+  String get navDashboard => 'Dashboard';
+
+  @override
+  String get navMoreMenu => 'More';
+
+  @override
+  String get navEditNavigation => 'Edit navigation';
+
+  @override
+  String get navDoneEditing => 'Done';
+
+  @override
+  String get navSelectSlotHint => 'Tap a slot, then tap a tool to assign it.';
+
+  @override
+  String get navSavePins => 'Save';
+
+  @override
+  String get navPinnedSectionTitle => 'Pinned to bottom bar';
+
+  @override
+  String get navAvailableSectionTitle => 'Available features';
+
+  @override
+  String get navEmptySlot => 'Empty — add from available below';
+
+  @override
+  String get navPinFullHint =>
+      'All four slots are full. Remove one to add another.';
+
+  @override
+  String get navEditPinnedHint =>
+      'Use − to free a slot, + to fill a slot, or drag to reorder. Save when all four are filled.';
+
+  @override
+  String get navAddToPinned => 'Add to bottom bar';
+
+  @override
+  String get navRemoveFromPinned => 'Remove from bottom bar';
+
+  @override
+  String get navFeatureBadgeFree => 'Free';
+
+  @override
+  String get navFeatureBadgePro => 'PRO';
+
+  @override
+  String get moreMenuSectionFree => 'Free features';
+
+  @override
+  String get moreMenuSectionPro => 'Tripmetic Pro';
+
+  @override
+  String get proGlassTeaserTitle => 'Tripmetic Pro Feature';
+
+  @override
+  String get dashboardWorldExplorerSection => 'World Explorer';
+
+  @override
+  String get dashboardWorldExplorerCountriesLabel => 'Countries visited';
+
+  @override
+  String get dashboardWorldExplorerPercentLabel => 'Of the world explored';
+
+  @override
+  String dashboardWorldExplorerPercentValue(String percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get bucketListDisplayNameLabel => 'Display name';
+
+  @override
+  String get bucketListAuthValidationDisplayName => 'Enter your name';
+
+  @override
+  String get authSignUpScreenTitle => 'Create your Tripmetic account';
+
+  @override
+  String get authSignUpScreenSubtitle =>
+      'Optional — only if you want cloud backup. You can keep using all tools on this device without signing up.';
+
+  @override
+  String get authSignInScreenTitle => 'Sign in to Tripmetic';
+
+  @override
+  String get authSignInScreenSubtitle =>
+      'Optional — for syncing your bucket list and cloud group trips. The rest of Tripmetic works without an account.';
+
+  @override
+  String get authForgotPassword => 'Forgot password?';
+
+  @override
+  String get authPasswordResetConfirmation =>
+      'If an account exists for that email, you will receive a link to reset your password.';
+
+  @override
+  String get authUnexpectedError => 'Something went wrong. Please try again.';
+
+  @override
+  String get authBackupBulletBucketList =>
+      'Bucket list destinations are saved to the cloud and merged when you sign in.';
+
+  @override
+  String get authBackupBulletGroupTrips =>
+      'Group trips you create or join are stored under your account.';
+
+  @override
+  String get authBackupBulletMultiDevice =>
+      'Sign in on another device to restore your synced data.';
+
+  @override
+  String get authLinkAlreadyHaveAccount => 'Already have an account? Sign in';
+
+  @override
+  String get authLinkNeedAccount => 'Need an account? Create one';
+
+  @override
+  String get authFullSignUpCta => 'Use full sign-up screen';
+
+  @override
+  String get authFullSignInCta => 'Use full sign-in screen';
+
+  @override
+  String dashboardGreeting(String name) {
+    return 'Hi, $name';
+  }
+
+  @override
+  String get dashboardGuestName => 'Traveler';
+
+  @override
+  String get dashboardWelcomeSubtitle =>
+      'Plan together, stay organized, and jump into tools in one tap.';
+
+  @override
+  String get dashboardPlanGroupTrip => 'Plan a new group trip';
+
+  @override
+  String get dashboardAddBucketList => 'Add to bucket list';
+
+  @override
+  String get dashboardActiveTripSection => 'Active trip snapshot';
+
+  @override
+  String get dashboardNoUpcomingTripTitle => 'No upcoming group trip';
+
+  @override
+  String get dashboardNoUpcomingTripBody =>
+      'When you plan with friends, your next trip summary appears here.';
+
+  @override
+  String get dashboardQuickToolsSection => 'Quick tools';
+
+  @override
+  String dashboardCountdownStartsIn(String days) {
+    return 'Starts in $days days';
+  }
+
+  @override
+  String dashboardCountdownEndsIn(String days) {
+    return 'Ends in $days days';
+  }
+
+  @override
+  String get navDashboardBody =>
+      'Your trip hub — open tools from the bar or the More menu.';
+
+  @override
+  String get appSettings => 'App settings';
+
+  @override
+  String get settingsSectionTripmeticPro => 'Tripmetic Pro';
+
+  @override
+  String get settingsSubscriptionActive => 'Active subscription';
+
+  @override
+  String get settingsSubscriptionFree => 'Free plan';
+
+  @override
+  String get settingsManageBilling => 'Manage billing';
+
+  @override
+  String get settingsTestModeSectionTitle => 'Test mode';
+
+  @override
+  String get settingsTestModeProTitle => 'Test as Tripmetic Pro';
+
+  @override
+  String get settingsTestModeProSubtitle =>
+      'Local override for testing; ignores RevenueCat.';
+
+  @override
+  String get settingsTestModeProCaption =>
+      'When enabled, this device unlocks all Pro features locally. Intended for internal testing only — it does not change your real subscription.';
+
+  @override
+  String get settingsUnitsTitle => 'Units of measurement';
+
+  @override
+  String get settingsLanguageTitle => 'Language';
+
+  @override
+  String get settingsThemeTitle => 'Theme';
+
+  @override
+  String get settingsClockWidgetTitle => 'Clock widget';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsLanguageSystem => 'System default';
+
+  @override
+  String get settingsLanguageEnglish => 'English';
+
+  @override
+  String get settingsLanguageSpanish => 'Spanish';
+
+  @override
+  String get settingsProfileTitle => 'Profile & cloud sync';
+
+  @override
+  String get settingsLogout => 'Log out';
+
+  @override
+  String get settingsLogoutConfirm => 'Log out of this account?';
+
+  @override
+  String get settingsDeleteAccount => 'Delete account';
+
+  @override
+  String get settingsDeleteAccountBody =>
+      'Account deletion is handled by support. You can log out below.';
+
+  @override
+  String get settingsSectionAccount => 'Account';
+
+  @override
+  String get accountManagementListTitle => 'Manage account';
+
+  @override
+  String get accountManagementListSubtitle =>
+      'Update your name, email, and password';
+
+  @override
+  String get accountManagementTitle => 'Account management';
+
+  @override
+  String get accountSectionProfile => 'Profile';
+
+  @override
+  String get accountSectionSignIn => 'Sign-in';
+
+  @override
+  String get accountFieldDisplayName => 'Display name';
+
+  @override
+  String get accountFieldEmail => 'Email';
+
+  @override
+  String get accountFieldCurrentPassword => 'Current password';
+
+  @override
+  String get accountFieldNewPassword => 'New password';
+
+  @override
+  String get accountSaveName => 'Save name';
+
+  @override
+  String get accountChangeEmail => 'Send verification & change email';
+
+  @override
+  String get accountChangePassword => 'Change password';
+
+  @override
+  String get accountSignedOutMessage =>
+      'You must be signed in to manage your account.';
+
+  @override
+  String get accountSignInCta => 'Sign in';
+
+  @override
+  String get accountNameSaved => 'Name updated';
+
+  @override
+  String accountEmailVerificationSent(String email) {
+    return 'Verification link sent to $email. Confirm it to switch your sign-in address.';
+  }
+
+  @override
+  String get accountPasswordChanged => 'Password updated';
+
+  @override
+  String accountReauthRequired(String field) {
+    return 'For security, sign in again to change your $field.';
+  }
+
+  @override
+  String get accountFieldLabelEmail => 'email';
+
+  @override
+  String get accountFieldLabelPassword => 'password';
+
+  @override
+  String accountErrorGeneric(String field, String error) {
+    return 'Could not update $field: $error';
+  }
+
+  @override
+  String get accountReauthAction => 'Sign in again';
+
+  @override
+  String get accountValidationEmailRequired => 'Enter your email';
+
+  @override
+  String get accountValidationEmailInvalid => 'Enter a valid email';
+
+  @override
+  String get accountValidationNameRequired => 'Enter your name';
+
+  @override
+  String get accountValidationPasswordTooShort => 'Use at least 8 characters';
+
+  @override
+  String accountCurrentEmailLabel(String email) {
+    return 'Current email: $email';
+  }
+
+  @override
+  String get proPaywallTitle => 'Tripmetic Pro';
+
+  @override
+  String get proPaywallSubtitle =>
+      'Unlock offline maps, deep travel tools, and collaboration.';
+
+  @override
+  String get proPaywallBenefits =>
+      'Offline maps & region downloads\nItinerary, budget, vault & packing\nGroup planner & real-time sync';
+
+  @override
+  String get proPaywallBullets =>
+      'Offline maps & region downloads|Itinerary, budget, vault & packing|Group planner & real-time sync';
+
+  @override
+  String get proPaywallUpgradeRevenueCat => 'Upgrade via RevenueCat';
+
+  @override
+  String get upgradeNow => 'Upgrade now';
+
+  @override
   String get packingCatClothing => 'CLOTHING';
 
   @override
@@ -742,6 +1101,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Paywall could not be shown. Check your RevenueCat offering.';
 
   @override
+  String get proPaywallNotConfigured => 'Pro is not configured in this build.';
+
+  @override
   String proRestoreFailed(String message) {
     return 'Restore failed: $message';
   }
@@ -797,7 +1159,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsContact => 'Contact us';
 
   @override
-  String get settingsCopyright => '© 2026 TRIPMETIC.app';
+  String get settingsCopyright => '© 2026 Tripmetic.app';
 
   @override
   String get settingsCouldNotOpenLink => 'Could not open link';
@@ -813,6 +1175,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsTerms => 'Terms of use';
+
+  @override
+  String get settingsMapboxAttributionTitle => 'Map data (Mapbox)';
+
+  @override
+  String get settingsMapboxAttributionBody =>
+      'Tripmetic uses Mapbox maps. © Mapbox, © OpenStreetMap, and other data contributors. The on-map logo and attribution control are hidden in the app for a clearer layout and fewer accidental taps; this notice satisfies Mapbox display requirements.';
+
+  @override
+  String get settingsMapboxAttributionMapboxLink => 'Mapbox — About maps';
 
   @override
   String get sizeCatBelts => 'Belts';
@@ -852,6 +1224,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sizeCatWomensTshirts => 'Women\'s T-shirts';
+
+  @override
+  String get sizeCatBoysShoes => 'Boys\' shoes (kids)';
+
+  @override
+  String get sizeCatGirlsShoes => 'Girls\' shoes (kids)';
+
+  @override
+  String get sizeCatBoysTshirts => 'Boys\' tops / T-shirts';
+
+  @override
+  String get sizeCatBoysPants => 'Boys\' pants';
+
+  @override
+  String get sizeCatGirlsTshirts => 'Girls\' tops / T-shirts';
+
+  @override
+  String get sizeCatGirlsPants => 'Girls\' pants';
+
+  @override
+  String get sizeCatGirlsDressesKids => 'Girls\' dresses (kids)';
 
   @override
   String get sizeColumnPrimaryEu => 'Primary: EU';
@@ -931,6 +1324,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sizeHintWomensTshirts => 'e.g. XS, M, 38';
+
+  @override
+  String get sizeHintBoysShoes => 'e.g. 11C, 3Y, 32, 21';
+
+  @override
+  String get sizeHintGirlsShoes => 'e.g. 10C, 2Y, 33, 20';
+
+  @override
+  String get sizeHintBoysTshirts => 'e.g. 6, 8, M, XS';
+
+  @override
+  String get sizeHintBoysPants => 'e.g. 6, 8, 10 (US kids)';
+
+  @override
+  String get sizeHintGirlsTshirts => 'e.g. 6, 8, M, S';
+
+  @override
+  String get sizeHintGirlsPants => 'e.g. 6, 8, 10 (US kids)';
+
+  @override
+  String get sizeHintGirlsDressesKids => 'e.g. 4, 6, 8, 104';
 
   @override
   String get sizeNoMatchEmpty =>
@@ -1260,4 +1674,674 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vaultVaultWord => 'vault';
+
+  @override
+  String get bucketListTitle => 'Bucket list';
+
+  @override
+  String get bucketListSubtitle =>
+      'Places you’ve been, want to go, and what’s next.';
+
+  @override
+  String get bucketListToolSubtitle =>
+      'Dream destinations on a map and in lists';
+
+  @override
+  String get bucketListViewModeList => 'List';
+
+  @override
+  String get bucketListViewModeMap => 'Map';
+
+  @override
+  String get bucketListCategoryBeen => 'Been';
+
+  @override
+  String get bucketListCategoryWant => 'Want';
+
+  @override
+  String get bucketListCategoryLive => 'Live';
+
+  @override
+  String get bucketListCategoryLived => 'Lived';
+
+  @override
+  String get bucketListCategoryUpcoming => 'Upcoming';
+
+  @override
+  String bucketListDatesRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String get bucketListDetailCategory => 'Category';
+
+  @override
+  String get bucketListDetailDates => 'Dates';
+
+  @override
+  String get bucketListMapLegend => 'Tap a marker for details';
+
+  @override
+  String get bucketListShareMapWatermarkLarge => 'TRIPMETIC';
+
+  @override
+  String get bucketListShareMapWatermarkUrl => 'tripmetic.app';
+
+  @override
+  String bucketListShareMapStatExplore(
+    String name,
+    String worldPercent,
+    int populationPercent,
+  ) {
+    return '$name explored $worldPercent% of the world. Traveled more than $populationPercent% of the world\'s population.';
+  }
+
+  @override
+  String get bucketListShareMapTravelerFallback => 'Rafael';
+
+  @override
+  String bucketListShareMapStatPopulation(int percent) {
+    return 'Traveled more than $percent% of the world\'s population';
+  }
+
+  @override
+  String get bucketListShareMapCountriesLabel => 'Countries';
+
+  @override
+  String get bucketListShareMapCitiesLabel => 'Cities';
+
+  @override
+  String get bucketListEmptyCategory => 'No places in this category yet.';
+
+  @override
+  String get bucketListTravelStats => 'Travel stats';
+
+  @override
+  String get bucketListStatWorld => 'World explored';
+
+  @override
+  String get bucketListStatUs => 'U.S. explored';
+
+  @override
+  String get bucketListStatEurope => 'Europe explored';
+
+  @override
+  String get bucketListStatAsia => 'Asia explored';
+
+  @override
+  String get bucketListStatAfrica => 'Africa explored';
+
+  @override
+  String get bucketListStatRegionalCaption => 'Regional';
+
+  @override
+  String bucketListStatSubtitle(int count, int total) {
+    return '$count unique · of $total';
+  }
+
+  @override
+  String get bucketListAddDestination => 'Add destination';
+
+  @override
+  String get bucketListEditDestination => 'Edit destination';
+
+  @override
+  String get bucketListSave => 'Save';
+
+  @override
+  String get bucketListFieldCity => 'City';
+
+  @override
+  String get bucketListFieldCountry => 'Country';
+
+  @override
+  String get bucketListFieldCategory => 'Category';
+
+  @override
+  String get bucketListFieldRegionHint => 'State / province (optional)';
+
+  @override
+  String get bucketListFieldLatitude => 'Latitude';
+
+  @override
+  String get bucketListFieldLongitude => 'Longitude';
+
+  @override
+  String get bucketListFieldStart => 'Start date';
+
+  @override
+  String get bucketListFieldEnd => 'End date';
+
+  @override
+  String get bucketListFieldTripDates => 'Trip dates';
+
+  @override
+  String get bucketListValidationRequired => 'This field is required.';
+
+  @override
+  String get bucketListValidationNumber => 'Enter a valid number.';
+
+  @override
+  String get bucketListValidationDates =>
+      'End date must be on or after start date.';
+
+  @override
+  String get bucketListGeocodeNotFound =>
+      'Could not find this location on the map. Please check the spelling.';
+
+  @override
+  String get bucketListShareSummarySubject => 'My Tripmetic bucket list';
+
+  @override
+  String get bucketListShareTooltip => 'Share list and map';
+
+  @override
+  String bucketListShareFailed(String error) {
+    return 'Could not share: $error';
+  }
+
+  @override
+  String get bucketListShareNeedMap =>
+      'Open Map view before capturing the map image.';
+
+  @override
+  String get bucketListDeleteHint => 'Swipe to remove';
+
+  @override
+  String get bucketListTapEditHint => 'Tap to edit';
+
+  @override
+  String bucketListCloudSyncFailed(String error) {
+    return 'Cloud sync failed: $error';
+  }
+
+  @override
+  String get bucketListRetry => 'Retry';
+
+  @override
+  String get bucketListBackupTooltip => 'Backup & register';
+
+  @override
+  String get bucketListBackupTitle => 'Cloud backup';
+
+  @override
+  String get bucketListBackupGuestIntro =>
+      'Tripmetic works fully without an account. Add one anytime if you want cloud backup for your bucket list and shared group trips.';
+
+  @override
+  String bucketListSignedInAs(String email) {
+    return 'Signed in as $email';
+  }
+
+  @override
+  String get bucketListBackupEmail => 'Email';
+
+  @override
+  String get bucketListBackupPassword => 'Password';
+
+  @override
+  String get bucketListBackupConfirmPassword => 'Confirm password';
+
+  @override
+  String get bucketListAuthTabSignUp => 'Sign up';
+
+  @override
+  String get bucketListAuthPasswordMismatch => 'Passwords do not match.';
+
+  @override
+  String get bucketListRegister => 'Create account & backup';
+
+  @override
+  String get bucketListSignIn => 'Sign in';
+
+  @override
+  String get bucketListSignOut => 'Sign out';
+
+  @override
+  String get bucketListBackupUploading => 'Uploading to cloud…';
+
+  @override
+  String get bucketListAuthSuccessSignIn => 'Successfully logged in!';
+
+  @override
+  String get bucketListAuthSuccessSignUp => 'Account successfully created!';
+
+  @override
+  String get signUpSuccessMessage => 'Account created. Welcome to Tripmetic!';
+
+  @override
+  String get signUpErrorEmailInUse =>
+      'This email is already registered. Try signing in.';
+
+  @override
+  String get signUpErrorInvalidEmail => 'Enter a valid email.';
+
+  @override
+  String get signUpErrorWeakPassword =>
+      'Password is too weak. Use at least 8 characters.';
+
+  @override
+  String signUpErrorGeneric(String message) {
+    return 'Could not sign up: $message';
+  }
+
+  @override
+  String get signUpErrorEmailInUseAction => 'Sign in';
+
+  @override
+  String bucketListAuthFailed(String error) {
+    return 'Could not authenticate: $error';
+  }
+
+  @override
+  String get groupPlannerNoExtraDetails => 'No notes or links yet.';
+
+  @override
+  String get groupPlannerTitle => 'Group planner';
+
+  @override
+  String get groupPlannerToolTitle => 'Group planner';
+
+  @override
+  String get groupPlannerToolSubtitle => 'Plan a trip together in real time';
+
+  @override
+  String get groupPlannerLandingPlanTitle => 'Plan a group trip';
+
+  @override
+  String get groupPlannerLandingPlanSubtitle =>
+      'Create a shared trip with destination, dates, and budget.';
+
+  @override
+  String get groupPlannerLandingJoinTitle => 'Join a group trip';
+
+  @override
+  String get groupPlannerLandingJoinSubtitle =>
+      'Enter the trip code or link from your invitation.';
+
+  @override
+  String get groupPlannerCreateTripTitle => 'New group trip';
+
+  @override
+  String get groupPlannerSelectDates => 'Select a trip date range.';
+
+  @override
+  String get groupPlannerBudgetPerPersonOption => 'Per person';
+
+  @override
+  String get groupPlannerBudgetGroupOption => 'Group total';
+
+  @override
+  String get groupPlannerBudgetNoneOption => 'None';
+
+  @override
+  String get groupPlannerBudgetAmountLabel => 'Budget amount';
+
+  @override
+  String get groupPlannerOpenTitle => 'Open a group trip';
+
+  @override
+  String get groupPlannerOpenSubtitle =>
+      'Paste the trip code from your invitation.';
+
+  @override
+  String get groupPlannerOpenTripCodeLabel => 'Trip code';
+
+  @override
+  String get groupPlannerOpenHint => 'Short code, trip ID, or invitation link';
+
+  @override
+  String get groupPlannerOpenButton => 'Open trip';
+
+  @override
+  String get groupPlannerDestination => 'Destination';
+
+  @override
+  String get groupPlannerDates => 'Dates';
+
+  @override
+  String get groupPlannerGroupSize => 'Group size';
+
+  @override
+  String get groupPlannerBudget => 'Budget';
+
+  @override
+  String groupPlannerBudgetPerPerson(String amount) {
+    return 'Per person: $amount';
+  }
+
+  @override
+  String groupPlannerBudgetGroup(String amount) {
+    return 'Group total: $amount';
+  }
+
+  @override
+  String get groupPlannerBudgetNone => 'No budget set';
+
+  @override
+  String get groupPlannerInviteMembers => 'Invite members';
+
+  @override
+  String get groupPlannerManageMembers => 'Manage members';
+
+  @override
+  String get groupPlannerItinerary => 'Itinerary';
+
+  @override
+  String get groupPlannerNoActivities => 'No activities yet.';
+
+  @override
+  String get groupPlannerTripNotFound => 'This trip could not be loaded.';
+
+  @override
+  String get groupPlannerSignInTitle => 'Sign in required';
+
+  @override
+  String get groupPlannerSignInBody =>
+      'Sign in under Bucket list → Cloud backup to view shared trips.';
+
+  @override
+  String get groupPlannerCreateTripSignInRequired =>
+      'Saving a new group trip requires an account. Sign in to continue — other Tripmetic features work without one.';
+
+  @override
+  String get groupPlannerMembersTitle => 'Members';
+
+  @override
+  String get groupPlannerRoleAdmin => 'Admin';
+
+  @override
+  String get groupPlannerRoleCoPlanner => 'Co-planner';
+
+  @override
+  String get groupPlannerRoleViewOnly => 'View-only';
+
+  @override
+  String get groupPlannerOwner => 'Owner';
+
+  @override
+  String get groupPlannerRemoveMember => 'Remove';
+
+  @override
+  String get groupPlannerRemoveMemberTitle => 'Remove member?';
+
+  @override
+  String groupPlannerRemoveMemberBody(String email) {
+    return 'Remove $email from this trip?';
+  }
+
+  @override
+  String get groupPlannerCancel => 'Cancel';
+
+  @override
+  String get groupPlannerNotes => 'Notes';
+
+  @override
+  String get groupPlannerOpenLink => 'Open link';
+
+  @override
+  String groupPlannerNetVotes(String count) {
+    return '$count';
+  }
+
+  @override
+  String groupPlannerVoteError(String error) {
+    return 'Could not save vote: $error';
+  }
+
+  @override
+  String groupPlannerManageError(String error) {
+    return 'Could not update members: $error';
+  }
+
+  @override
+  String groupPlannerInviteError(String error) {
+    return 'Could not open share sheet: $error';
+  }
+
+  @override
+  String groupPlannerUnknownTripCode(String error) {
+    return 'Could not open trip: $error';
+  }
+
+  @override
+  String get groupPlannerMyTripsSectionTitle => 'Your trips';
+
+  @override
+  String get groupPlannerMyTripsEmpty => 'No trips yet. Create one above.';
+
+  @override
+  String get groupPlannerExamplesTitle => 'Example trips';
+
+  @override
+  String get groupPlannerExamplesSubtitle =>
+      'Sample cards — create a trip above to add your own.';
+
+  @override
+  String get groupPlannerExampleTapBody =>
+      'These are samples only. Use “Plan a group trip” to create a real trip you can share.';
+
+  @override
+  String get groupPlannerExampleLisbonTitle => 'Lisbon team offsite';
+
+  @override
+  String get groupPlannerExampleKyotoTitle => 'Kyoto spring tour';
+
+  @override
+  String get groupPlannerAddActivity => 'Add activity';
+
+  @override
+  String get groupPlannerActivityTitleLabel => 'Activity title';
+
+  @override
+  String groupPlannerPeopleCount(String count) {
+    return '$count people';
+  }
+
+  @override
+  String get groupPlannerEditActivity => 'Edit activity';
+
+  @override
+  String get groupPlannerDeleteActivity => 'Delete';
+
+  @override
+  String get groupPlannerDeleteActivityTitle => 'Delete activity?';
+
+  @override
+  String groupPlannerDeleteActivityBody(String title) {
+    return 'Remove \"$title\" from the itinerary? This cannot be undone.';
+  }
+
+  @override
+  String groupPlannerActivityDeleteError(String error) {
+    return 'Could not delete activity: $error';
+  }
+
+  @override
+  String groupPlannerActivityEditError(String error) {
+    return 'Could not update activity: $error';
+  }
+
+  @override
+  String get groupPlannerEditTripTitle => 'Edit trip';
+
+  @override
+  String get groupPlannerEditTripAction => 'Edit trip';
+
+  @override
+  String get groupPlannerDeleteTripTitle => 'Delete trip?';
+
+  @override
+  String groupPlannerDeleteTripBody(String destination) {
+    return 'Permanently remove the trip \"$destination\" and its itinerary for everyone? This cannot be undone.';
+  }
+
+  @override
+  String get groupPlannerDeleteTripAction => 'Delete trip';
+
+  @override
+  String get groupPlannerTripDeleted => 'Trip removed.';
+
+  @override
+  String groupPlannerTripDeleteError(String error) {
+    return 'Could not delete trip: $error';
+  }
+
+  @override
+  String groupPlannerTripUpdateError(String error) {
+    return 'Could not update trip: $error';
+  }
+
+  @override
+  String get widgetInstructionTitle => 'Dual Clock Widget';
+
+  @override
+  String get widgetInstructionSubtitle =>
+      'Track your home and destination timezones directly from your Lock Screen or Home Screen.';
+
+  @override
+  String get widgetInstructionTabIos => 'iOS';
+
+  @override
+  String get widgetInstructionTabAndroid => 'Android';
+
+  @override
+  String get widgetInstructionIosStep1 =>
+      'Lock your phone and long-press the Lock Screen.';
+
+  @override
+  String get widgetInstructionIosStep2 =>
+      'Tap \"Customize\" and select \"Lock Screen\".';
+
+  @override
+  String get widgetInstructionIosStep3 => 'Tap \"Add Widgets\".';
+
+  @override
+  String get widgetInstructionIosStep4 =>
+      'Scroll down, find Tripmetic, and add the Dual Clock widget.';
+
+  @override
+  String get widgetInstructionAndroidStep1 =>
+      'Go to your Home Screen and long-press an empty area.';
+
+  @override
+  String get widgetInstructionAndroidStep2 => 'Tap \"Widgets\".';
+
+  @override
+  String get widgetInstructionAndroidStep3 => 'Scroll down to Tripmetic.';
+
+  @override
+  String get widgetInstructionAndroidStep4 =>
+      'Tap and hold the Dual Clock widget, then drag it onto your screen.';
+
+  @override
+  String get widgetInstructionAndroidLockScreenHint =>
+      'To see both clocks on the lock screen: open Settings → search for “lock screen” or “widgets”, and add Tripmetic there if your phone offers lock-screen widgets (not all devices do).';
+
+  @override
+  String get widgetInstructionConfigureCta => 'Configure Widget Cities';
+
+  @override
+  String get dualClockScreenTitle => 'Dual Clock Widget';
+
+  @override
+  String get dualClockConfigTitle => 'Configure cities';
+
+  @override
+  String get dualClockConfigSubtitle =>
+      'Choose two cities and timezones. Your selections sync to the Tripmetic home screen widget (Android) and lock screen widget (iOS).';
+
+  @override
+  String get dualClockCity1Label => 'First city';
+
+  @override
+  String get dualClockCity2Label => 'Second city';
+
+  @override
+  String get dualClockSave => 'Save & update widget';
+
+  @override
+  String get dualClockSaved => 'Widget updated.';
+
+  @override
+  String get dualClockSaveError =>
+      'Could not save widget data. Please try again.';
+
+  @override
+  String get moreToolsDualClockBannerTitle => 'Dual Clock widget';
+
+  @override
+  String get moreToolsDualClockBannerSubtitle =>
+      'See two timezones on your Lock Screen or Home Screen — tap to set up.';
+
+  @override
+  String get moreToolsDualClockBannerCta => 'Set up';
+
+  @override
+  String get settingsDualClockWidgetTitle => 'Dual Clock widget';
+
+  @override
+  String get settingsDualClockWidgetSubtitle =>
+      'Add the widget and choose your cities';
+
+  @override
+  String get widgetNewFeatureBadge => 'New';
+
+  @override
+  String get globalNavAccountCloudSyncTooltip => 'Account & cloud backup';
+
+  @override
+  String get exchangeRatesForceRefreshTooltip => 'Fetch latest exchange rates';
+
+  @override
+  String get exchangeRatesRefreshedOk => 'Exchange rates updated.';
+
+  @override
+  String get exchangeRatesRefreshFailed => 'Could not refresh exchange rates.';
+
+  @override
+  String get bucketListStatUsTerritories => 'U.S. territories';
+
+  @override
+  String get bucketListAuthErrUserNotFound =>
+      'No account found for this email.';
+
+  @override
+  String get bucketListAuthErrWrongPassword => 'Incorrect email or password.';
+
+  @override
+  String get bucketListAuthErrEmailInUse =>
+      'An account already exists for this email.';
+
+  @override
+  String get bucketListAuthErrInvalidEmail => 'Invalid email address.';
+
+  @override
+  String get bucketListAuthErrWeakPassword => 'Password is too weak.';
+
+  @override
+  String get bucketListAuthErrUserDisabled => 'This account has been disabled.';
+
+  @override
+  String get bucketListAuthErrTooManyRequests =>
+      'Too many attempts. Try again later.';
+
+  @override
+  String get bucketListAuthErrOperationNotAllowed =>
+      'Email/password sign-in is not enabled.';
+
+  @override
+  String bucketListAuthErrDetail(String detail) {
+    return '$detail';
+  }
+
+  @override
+  String get bucketListAuthValidationInvalidEmail => 'Invalid email address.';
+
+  @override
+  String get bucketListAuthValidationPasswordShort =>
+      'Password must be at least 6 characters.';
+
+  @override
+  String get bucketListAuthValidationPasswordRequired => 'Enter your password.';
 }

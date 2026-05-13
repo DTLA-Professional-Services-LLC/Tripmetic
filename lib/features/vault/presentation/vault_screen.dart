@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/vault_providers.dart';
 import 'presentation_mode_screen.dart';
 import 'vault_tile.dart';
@@ -25,6 +28,7 @@ class VaultScreen extends ConsumerWidget {
     final documents = ref.watch(vaultProvider);
     final theme = Theme.of(context);
     final l10n = context.l10n;
+    final isPro = ref.watch(isTripmeticProProvider);
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -36,8 +40,11 @@ class VaultScreen extends ConsumerWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: SafeArea(
-        child: Column(
+      body: ProGlassOverlay(
+        featureId: NavFeatureIds.vault,
+        isPro: isPro,
+        child: SafeArea(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
@@ -140,6 +147,7 @@ class VaultScreen extends ConsumerWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

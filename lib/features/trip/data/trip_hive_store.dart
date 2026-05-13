@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '../../../core/demo/tripmetic_demo_data.dart';
 import '../../packing/domain/packing_item.dart';
 import '../domain/itinerary_event.dart';
 import '../domain/trip_budget.dart';
@@ -10,6 +11,7 @@ const _kBoxName = 'tripmetic_trip';
 const _kBudgetKey = 'trip_budget_v1';
 const _kItineraryKey = 'itinerary_events_v1';
 const _kPackingKey = 'packing_list_v1';
+const _kTripDemoSeed = 'tripmetic_trip_demo_v1';
 
 class TripHiveStore {
   Box<dynamic>? _box;
@@ -123,5 +125,20 @@ class TripHiveStore {
       jsonEncode(items.map((e) => e.toJson()).toList()),
     );
     await _requireBox.flush();
+  }
+
+  /// First install only: sample itinerary + budget so tools are not empty.
+  Future<void> applyDemoSeedsIfNeeded() async {
+    if (_requireBox.get(_kTripDemoSeed) == true) return;
+    try {
+      if (!_requireBox.containsKey(_kItineraryKey)) {
+        await saveItinerary(tripmeticDemoItineraryEvents());
+      }
+      if (!_requireBox.containsKey(_kBudgetKey)) {
+        await saveBudget(tripmeticDemoTripBudget());
+      }
+    } finally {
+      await _requireBox.put(_kTripDemoSeed, true);
+    }
   }
 }

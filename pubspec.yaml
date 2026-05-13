@@ -1,5 +1,5 @@
 name: tripmetic
-description: "TRIPMETIC — travel tools, currency, itinerary, and budget."
+description: "Tripmetic — travel tools, currency, itinerary, and budget."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+34
+version: 2.0.0+37
 
 environment:
   sdk: ^3.11.4
@@ -48,7 +48,7 @@ dependencies:
   url_launcher: ^6.3.2
   flutter_html: ^3.0.0
   sealed_countries: ^3.1.0
-  share_plus: ^12.0.0
+  share_plus: ^12.0.2
   path_provider: ^2.1.5
   gal: ^2.3.2
   image: ^4.8.0
@@ -58,6 +58,13 @@ dependencies:
   flutter_pdfview: ^1.4.4
   path: ^1.9.1
   flutter_tts: ^4.2.5
+  screenshot: ^3.0.0
+  uuid: ^4.5.3
+  firebase_auth: ^6.4.0
+  geocoding: ^4.0.0
+  home_widget: ^0.9.1
+  app_links: ^6.4.0
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

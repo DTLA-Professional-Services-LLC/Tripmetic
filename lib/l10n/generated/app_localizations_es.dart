@@ -63,7 +63,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get announcementsLatest => 'Novedades';
 
   @override
-  String get appTitle => 'TRIPMETIC.app';
+  String get appTitle => 'Tripmetic.app';
 
   @override
   String get budgetBaseCurrency => 'DIVISA BASE';
@@ -660,6 +660,366 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navOfflineMap => 'Mapa sin conexión';
 
   @override
+  String get navDashboard => 'Panel';
+
+  @override
+  String get navMoreMenu => 'Más';
+
+  @override
+  String get navEditNavigation => 'Editar navegación';
+
+  @override
+  String get navDoneEditing => 'Listo';
+
+  @override
+  String get navSelectSlotHint =>
+      'Toca un hueco y luego una herramienta para asignarla.';
+
+  @override
+  String get navSavePins => 'Guardar';
+
+  @override
+  String get navPinnedSectionTitle => 'Anclado a la barra inferior';
+
+  @override
+  String get navAvailableSectionTitle => 'Funciones disponibles';
+
+  @override
+  String get navEmptySlot => 'Vacío — añade desde abajo';
+
+  @override
+  String get navPinFullHint =>
+      'Los cuatro huecos están llenos. Quita uno para añadir otro.';
+
+  @override
+  String get navEditPinnedHint =>
+      'Usa − para liberar un hueco, + para rellenarlo o arrastra para reordenar. Guarda cuando los cuatro estén llenos.';
+
+  @override
+  String get navAddToPinned => 'Añadir a la barra';
+
+  @override
+  String get navRemoveFromPinned => 'Quitar de la barra';
+
+  @override
+  String get navFeatureBadgeFree => 'Gratis';
+
+  @override
+  String get navFeatureBadgePro => 'PRO';
+
+  @override
+  String get moreMenuSectionFree => 'Funciones gratuitas';
+
+  @override
+  String get moreMenuSectionPro => 'Tripmetic Pro';
+
+  @override
+  String get proGlassTeaserTitle => 'Función Tripmetic Pro';
+
+  @override
+  String get dashboardWorldExplorerSection => 'Explorador mundial';
+
+  @override
+  String get dashboardWorldExplorerCountriesLabel => 'Países visitados';
+
+  @override
+  String get dashboardWorldExplorerPercentLabel => 'Del mundo explorado';
+
+  @override
+  String dashboardWorldExplorerPercentValue(String percent) {
+    return '$percent %';
+  }
+
+  @override
+  String get bucketListDisplayNameLabel => 'Nombre para mostrar';
+
+  @override
+  String get bucketListAuthValidationDisplayName => 'Introduce tu nombre';
+
+  @override
+  String get authSignUpScreenTitle => 'Crea tu cuenta Tripmetic';
+
+  @override
+  String get authSignUpScreenSubtitle =>
+      'Opcional: solo si quieres copia en la nube. Puedes usar todas las herramientas en este dispositivo sin registrarte.';
+
+  @override
+  String get authSignInScreenTitle => 'Iniciar sesión en Tripmetic';
+
+  @override
+  String get authSignInScreenSubtitle =>
+      'Opcional: para sincronizar tu lista y los viajes en grupo en la nube. El resto de Tripmetic funciona sin cuenta.';
+
+  @override
+  String get authForgotPassword => '¿Olvidaste la contraseña?';
+
+  @override
+  String get authPasswordResetConfirmation =>
+      'Si existe una cuenta con ese correo, recibirás un enlace para restablecer la contraseña.';
+
+  @override
+  String get authUnexpectedError => 'Algo salió mal. Inténtalo de nuevo.';
+
+  @override
+  String get authBackupBulletBucketList =>
+      'Los destinos de la lista se guardan en la nube y se combinan al iniciar sesión.';
+
+  @override
+  String get authBackupBulletGroupTrips =>
+      'Los viajes en grupo que creas o a los que te unes quedan asociados a tu cuenta.';
+
+  @override
+  String get authBackupBulletMultiDevice =>
+      'Inicia sesión en otro dispositivo para recuperar tus datos sincronizados.';
+
+  @override
+  String get authLinkAlreadyHaveAccount => '¿Ya tienes cuenta? Iniciar sesión';
+
+  @override
+  String get authLinkNeedAccount => '¿Necesitas cuenta? Crear una';
+
+  @override
+  String get authFullSignUpCta => 'Abrir registro completo';
+
+  @override
+  String get authFullSignInCta => 'Abrir inicio de sesión completo';
+
+  @override
+  String dashboardGreeting(String name) {
+    return 'Hola, $name';
+  }
+
+  @override
+  String get dashboardGuestName => 'Viajero';
+
+  @override
+  String get dashboardWelcomeSubtitle =>
+      'Planifica en grupo, mantén el orden y abre herramientas al instante.';
+
+  @override
+  String get dashboardPlanGroupTrip => 'Planificar un viaje en grupo';
+
+  @override
+  String get dashboardAddBucketList => 'Añadir a la lista de deseos';
+
+  @override
+  String get dashboardActiveTripSection => 'Tu próximo viaje';
+
+  @override
+  String get dashboardNoUpcomingTripTitle => 'Sin viaje en grupo próximo';
+
+  @override
+  String get dashboardNoUpcomingTripBody =>
+      'Cuando planifiques con amigos, aquí verás un resumen del viaje.';
+
+  @override
+  String get dashboardQuickToolsSection => 'Accesos rápidos';
+
+  @override
+  String dashboardCountdownStartsIn(String days) {
+    return 'Empieza en $days días';
+  }
+
+  @override
+  String dashboardCountdownEndsIn(String days) {
+    return 'Termina en $days días';
+  }
+
+  @override
+  String get navDashboardBody =>
+      'Tu centro del viaje: abre herramientas desde la barra o el menú Más.';
+
+  @override
+  String get appSettings => 'Ajustes de la app';
+
+  @override
+  String get settingsSectionTripmeticPro => 'Tripmetic Pro';
+
+  @override
+  String get settingsSubscriptionActive => 'Suscripción activa';
+
+  @override
+  String get settingsSubscriptionFree => 'Plan gratuito';
+
+  @override
+  String get settingsManageBilling => 'Gestionar facturación';
+
+  @override
+  String get settingsTestModeSectionTitle => 'Modo de prueba';
+
+  @override
+  String get settingsTestModeProTitle => 'Probar como Tripmetic Pro';
+
+  @override
+  String get settingsTestModeProSubtitle =>
+      'Anulación local para pruebas; ignora RevenueCat.';
+
+  @override
+  String get settingsTestModeProCaption =>
+      'Cuando está activado, este dispositivo desbloquea todas las funciones Pro de forma local. Solo para pruebas internas: no modifica tu suscripción real.';
+
+  @override
+  String get settingsUnitsTitle => 'Unidades de medida';
+
+  @override
+  String get settingsLanguageTitle => 'Idioma';
+
+  @override
+  String get settingsThemeTitle => 'Tema';
+
+  @override
+  String get settingsClockWidgetTitle => 'Widget de reloj';
+
+  @override
+  String get settingsThemeSystem => 'Sistema';
+
+  @override
+  String get settingsThemeLight => 'Claro';
+
+  @override
+  String get settingsThemeDark => 'Oscuro';
+
+  @override
+  String get settingsLanguageSystem => 'Predeterminado del sistema';
+
+  @override
+  String get settingsLanguageEnglish => 'Inglés';
+
+  @override
+  String get settingsLanguageSpanish => 'Español';
+
+  @override
+  String get settingsProfileTitle => 'Perfil y sincronización';
+
+  @override
+  String get settingsLogout => 'Cerrar sesión';
+
+  @override
+  String get settingsLogoutConfirm => '¿Cerrar sesión en esta cuenta?';
+
+  @override
+  String get settingsDeleteAccount => 'Eliminar cuenta';
+
+  @override
+  String get settingsDeleteAccountBody =>
+      'La eliminación de cuenta la gestiona el soporte. Puedes cerrar sesión abajo.';
+
+  @override
+  String get settingsSectionAccount => 'Cuenta';
+
+  @override
+  String get accountManagementListTitle => 'Gestionar cuenta';
+
+  @override
+  String get accountManagementListSubtitle =>
+      'Actualiza tu nombre, correo y contraseña';
+
+  @override
+  String get accountManagementTitle => 'Gestión de cuenta';
+
+  @override
+  String get accountSectionProfile => 'Perfil';
+
+  @override
+  String get accountSectionSignIn => 'Inicio de sesión';
+
+  @override
+  String get accountFieldDisplayName => 'Nombre para mostrar';
+
+  @override
+  String get accountFieldEmail => 'Correo electrónico';
+
+  @override
+  String get accountFieldCurrentPassword => 'Contraseña actual';
+
+  @override
+  String get accountFieldNewPassword => 'Nueva contraseña';
+
+  @override
+  String get accountSaveName => 'Guardar nombre';
+
+  @override
+  String get accountChangeEmail => 'Enviar verificación y cambiar correo';
+
+  @override
+  String get accountChangePassword => 'Cambiar contraseña';
+
+  @override
+  String get accountSignedOutMessage =>
+      'Debes iniciar sesión para gestionar tu cuenta.';
+
+  @override
+  String get accountSignInCta => 'Iniciar sesión';
+
+  @override
+  String get accountNameSaved => 'Nombre actualizado';
+
+  @override
+  String accountEmailVerificationSent(String email) {
+    return 'Enlace de verificación enviado a $email. Confírmalo para cambiar tu correo de acceso.';
+  }
+
+  @override
+  String get accountPasswordChanged => 'Contraseña actualizada';
+
+  @override
+  String accountReauthRequired(String field) {
+    return 'Por seguridad, vuelve a iniciar sesión para cambiar tu $field.';
+  }
+
+  @override
+  String get accountFieldLabelEmail => 'correo';
+
+  @override
+  String get accountFieldLabelPassword => 'contraseña';
+
+  @override
+  String accountErrorGeneric(String field, String error) {
+    return 'No se pudo actualizar $field: $error';
+  }
+
+  @override
+  String get accountReauthAction => 'Iniciar sesión de nuevo';
+
+  @override
+  String get accountValidationEmailRequired => 'Introduce tu correo';
+
+  @override
+  String get accountValidationEmailInvalid => 'Introduce un correo válido';
+
+  @override
+  String get accountValidationNameRequired => 'Introduce tu nombre';
+
+  @override
+  String get accountValidationPasswordTooShort => 'Usa al menos 8 caracteres';
+
+  @override
+  String accountCurrentEmailLabel(String email) {
+    return 'Correo actual: $email';
+  }
+
+  @override
+  String get proPaywallTitle => 'Tripmetic Pro';
+
+  @override
+  String get proPaywallSubtitle =>
+      'Desbloquea mapas sin conexión, herramientas avanzadas y colaboración.';
+
+  @override
+  String get proPaywallBenefits =>
+      'Mapas sin conexión y descargas de regiones\nItinerario, presupuesto, bóveda y equipaje\nPlanificador grupal y sincronización en tiempo real';
+
+  @override
+  String get proPaywallBullets =>
+      'Mapas sin conexión y descargas de regiones|Itinerario, presupuesto, bóveda y equipaje|Planificador grupal y sincronización en tiempo real';
+
+  @override
+  String get proPaywallUpgradeRevenueCat => 'Mejorar con RevenueCat';
+
+  @override
+  String get upgradeNow => 'Mejorar ahora';
+
+  @override
   String get packingCatClothing => 'ROPA';
 
   @override
@@ -745,6 +1105,10 @@ class AppLocalizationsEs extends AppLocalizations {
       'No se pudo mostrar el paywall. Revisa tu oferta en RevenueCat.';
 
   @override
+  String get proPaywallNotConfigured =>
+      'Pro no está configurado en esta versión.';
+
+  @override
   String proRestoreFailed(String message) {
     return 'Error al restaurar: $message';
   }
@@ -800,7 +1164,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsContact => 'Contáctanos';
 
   @override
-  String get settingsCopyright => '© 2026 TRIPMETIC.app';
+  String get settingsCopyright => '© 2026 Tripmetic.app';
 
   @override
   String get settingsCouldNotOpenLink => 'No se pudo abrir el enlace';
@@ -816,6 +1180,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settingsTerms => 'Términos de uso';
+
+  @override
+  String get settingsMapboxAttributionTitle => 'Datos del mapa (Mapbox)';
+
+  @override
+  String get settingsMapboxAttributionBody =>
+      'Tripmetic usa mapas de Mapbox. © Mapbox, © OpenStreetMap y otros colaboradores. El logo y el control de atribución en el mapa están ocultos para un diseño más claro y menos toques accidentales; este aviso cumple los requisitos de Mapbox.';
+
+  @override
+  String get settingsMapboxAttributionMapboxLink =>
+      'Mapbox — Acerca de los mapas';
 
   @override
   String get sizeCatBelts => 'Cinturones';
@@ -855,6 +1230,27 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sizeCatWomensTshirts => 'Camisetas mujer';
+
+  @override
+  String get sizeCatBoysShoes => 'Calzado niño';
+
+  @override
+  String get sizeCatGirlsShoes => 'Calzado niña';
+
+  @override
+  String get sizeCatBoysTshirts => 'Camisetas / tops niño';
+
+  @override
+  String get sizeCatBoysPants => 'Pantalones niño';
+
+  @override
+  String get sizeCatGirlsTshirts => 'Camisetas / tops niña';
+
+  @override
+  String get sizeCatGirlsPants => 'Pantalones niña';
+
+  @override
+  String get sizeCatGirlsDressesKids => 'Vestidos niña';
 
   @override
   String get sizeColumnPrimaryEu => 'Principal: UE';
@@ -934,6 +1330,27 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sizeHintWomensTshirts => 'p. ej. XS, M, 38';
+
+  @override
+  String get sizeHintBoysShoes => 'p. ej. 11C, 3Y, 32, 21';
+
+  @override
+  String get sizeHintGirlsShoes => 'p. ej. 10C, 2Y, 33, 20';
+
+  @override
+  String get sizeHintBoysTshirts => 'p. ej. 6, 8, M, XS';
+
+  @override
+  String get sizeHintBoysPants => 'p. ej. 6, 8, 10 (niño US)';
+
+  @override
+  String get sizeHintGirlsTshirts => 'p. ej. 6, 8, M, S';
+
+  @override
+  String get sizeHintGirlsPants => 'p. ej. 6, 8, 10 (niña US)';
+
+  @override
+  String get sizeHintGirlsDressesKids => 'p. ej. 4, 6, 8, 104';
 
   @override
   String get sizeNoMatchEmpty =>
@@ -1267,4 +1684,679 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get vaultVaultWord => 'bóveda';
+
+  @override
+  String get bucketListTitle => 'Lista de deseos';
+
+  @override
+  String get bucketListSubtitle =>
+      'Lugares donde has estado, quieres ir y lo que viene.';
+
+  @override
+  String get bucketListToolSubtitle => 'Destinos soñados en mapa y en listas';
+
+  @override
+  String get bucketListViewModeList => 'Lista';
+
+  @override
+  String get bucketListViewModeMap => 'Mapa';
+
+  @override
+  String get bucketListCategoryBeen => 'Visitado';
+
+  @override
+  String get bucketListCategoryWant => 'Deseo';
+
+  @override
+  String get bucketListCategoryLive => 'Vivo';
+
+  @override
+  String get bucketListCategoryLived => 'Viví';
+
+  @override
+  String get bucketListCategoryUpcoming => 'Próximo';
+
+  @override
+  String bucketListDatesRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String get bucketListDetailCategory => 'Categoría';
+
+  @override
+  String get bucketListDetailDates => 'Fechas';
+
+  @override
+  String get bucketListMapLegend => 'Toca un marcador para detalles';
+
+  @override
+  String get bucketListShareMapWatermarkLarge => 'TRIPMETIC';
+
+  @override
+  String get bucketListShareMapWatermarkUrl => 'tripmetic.app';
+
+  @override
+  String bucketListShareMapStatExplore(
+    String name,
+    String worldPercent,
+    int populationPercent,
+  ) {
+    return '$name ha explorado el $worldPercent% del mundo. Ha viajado más que el $populationPercent% de la población mundial.';
+  }
+
+  @override
+  String get bucketListShareMapTravelerFallback => 'Rafael';
+
+  @override
+  String bucketListShareMapStatPopulation(int percent) {
+    return 'Ha viajado más que el $percent% de la población mundial';
+  }
+
+  @override
+  String get bucketListShareMapCountriesLabel => 'Países';
+
+  @override
+  String get bucketListShareMapCitiesLabel => 'Ciudades';
+
+  @override
+  String get bucketListEmptyCategory => 'Aún no hay lugares en esta categoría.';
+
+  @override
+  String get bucketListTravelStats => 'Estadísticas de viaje';
+
+  @override
+  String get bucketListStatWorld => 'Mundo explorado';
+
+  @override
+  String get bucketListStatUs => 'EE. UU. explorados';
+
+  @override
+  String get bucketListStatEurope => 'Europa explorada';
+
+  @override
+  String get bucketListStatAsia => 'Asia explorada';
+
+  @override
+  String get bucketListStatAfrica => 'África explorada';
+
+  @override
+  String get bucketListStatRegionalCaption => 'Regional';
+
+  @override
+  String bucketListStatSubtitle(int count, int total) {
+    return '$count únicos · de $total';
+  }
+
+  @override
+  String get bucketListAddDestination => 'Añadir destino';
+
+  @override
+  String get bucketListEditDestination => 'Editar destino';
+
+  @override
+  String get bucketListSave => 'Guardar';
+
+  @override
+  String get bucketListFieldCity => 'Ciudad';
+
+  @override
+  String get bucketListFieldCountry => 'País';
+
+  @override
+  String get bucketListFieldCategory => 'Categoría';
+
+  @override
+  String get bucketListFieldRegionHint => 'Estado / provincia (opcional)';
+
+  @override
+  String get bucketListFieldLatitude => 'Latitud';
+
+  @override
+  String get bucketListFieldLongitude => 'Longitud';
+
+  @override
+  String get bucketListFieldStart => 'Fecha de inicio';
+
+  @override
+  String get bucketListFieldEnd => 'Fecha de fin';
+
+  @override
+  String get bucketListFieldTripDates => 'Fechas del viaje';
+
+  @override
+  String get bucketListValidationRequired => 'Este campo es obligatorio.';
+
+  @override
+  String get bucketListValidationNumber => 'Introduce un número válido.';
+
+  @override
+  String get bucketListValidationDates =>
+      'La fecha de fin debe ser igual o posterior a la de inicio.';
+
+  @override
+  String get bucketListGeocodeNotFound =>
+      'No se encontró esta ubicación en el mapa. Revisa la ortografía.';
+
+  @override
+  String get bucketListShareSummarySubject => 'Mi lista Tripmetic';
+
+  @override
+  String get bucketListShareTooltip => 'Compartir lista y mapa';
+
+  @override
+  String bucketListShareFailed(String error) {
+    return 'No se pudo compartir: $error';
+  }
+
+  @override
+  String get bucketListShareNeedMap =>
+      'Abre la vista Mapa antes de capturar la imagen del mapa.';
+
+  @override
+  String get bucketListDeleteHint => 'Desliza para eliminar';
+
+  @override
+  String get bucketListTapEditHint => 'Toca para editar';
+
+  @override
+  String bucketListCloudSyncFailed(String error) {
+    return 'Error de sincronización: $error';
+  }
+
+  @override
+  String get bucketListRetry => 'Reintentar';
+
+  @override
+  String get bucketListBackupTooltip => 'Copia y registro';
+
+  @override
+  String get bucketListBackupTitle => 'Copia en la nube';
+
+  @override
+  String get bucketListBackupGuestIntro =>
+      'Tripmetic funciona por completo sin cuenta. Añade una cuando quieras copia en la nube de tu lista y viajes en grupo compartidos.';
+
+  @override
+  String bucketListSignedInAs(String email) {
+    return 'Sesión: $email';
+  }
+
+  @override
+  String get bucketListBackupEmail => 'Correo';
+
+  @override
+  String get bucketListBackupPassword => 'Contraseña';
+
+  @override
+  String get bucketListBackupConfirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get bucketListAuthTabSignUp => 'Registrarse';
+
+  @override
+  String get bucketListAuthPasswordMismatch => 'Las contraseñas no coinciden.';
+
+  @override
+  String get bucketListRegister => 'Crear cuenta y respaldar';
+
+  @override
+  String get bucketListSignIn => 'Iniciar sesión';
+
+  @override
+  String get bucketListSignOut => 'Cerrar sesión';
+
+  @override
+  String get bucketListBackupUploading => 'Subiendo a la nube…';
+
+  @override
+  String get bucketListAuthSuccessSignIn => '¡Sesión iniciada correctamente!';
+
+  @override
+  String get bucketListAuthSuccessSignUp => '¡Cuenta creada correctamente!';
+
+  @override
+  String get signUpSuccessMessage => 'Cuenta creada. ¡Bienvenido a Tripmetic!';
+
+  @override
+  String get signUpErrorEmailInUse =>
+      'Este correo ya está registrado. Intenta iniciar sesión.';
+
+  @override
+  String get signUpErrorInvalidEmail => 'Introduce un correo válido.';
+
+  @override
+  String get signUpErrorWeakPassword =>
+      'La contraseña es demasiado débil. Usa al menos 8 caracteres.';
+
+  @override
+  String signUpErrorGeneric(String message) {
+    return 'No se pudo crear la cuenta: $message';
+  }
+
+  @override
+  String get signUpErrorEmailInUseAction => 'Iniciar sesión';
+
+  @override
+  String bucketListAuthFailed(String error) {
+    return 'No se pudo autenticar: $error';
+  }
+
+  @override
+  String get groupPlannerNoExtraDetails => 'Aún no hay notas ni enlaces.';
+
+  @override
+  String get groupPlannerTitle => 'Planificador de grupo';
+
+  @override
+  String get groupPlannerToolTitle => 'Planificador de grupo';
+
+  @override
+  String get groupPlannerToolSubtitle =>
+      'Planifica un viaje juntos en tiempo real';
+
+  @override
+  String get groupPlannerLandingPlanTitle => 'Planificar un viaje en grupo';
+
+  @override
+  String get groupPlannerLandingPlanSubtitle =>
+      'Crea un viaje compartido con destino, fechas y presupuesto.';
+
+  @override
+  String get groupPlannerLandingJoinTitle => 'Unirse a un viaje en grupo';
+
+  @override
+  String get groupPlannerLandingJoinSubtitle =>
+      'Introduce el código o enlace de la invitación.';
+
+  @override
+  String get groupPlannerCreateTripTitle => 'Nuevo viaje en grupo';
+
+  @override
+  String get groupPlannerSelectDates =>
+      'Selecciona el rango de fechas del viaje.';
+
+  @override
+  String get groupPlannerBudgetPerPersonOption => 'Por persona';
+
+  @override
+  String get groupPlannerBudgetGroupOption => 'Grupo';
+
+  @override
+  String get groupPlannerBudgetNoneOption => 'Ninguno';
+
+  @override
+  String get groupPlannerBudgetAmountLabel => 'Importe del presupuesto';
+
+  @override
+  String get groupPlannerOpenTitle => 'Abrir un viaje en grupo';
+
+  @override
+  String get groupPlannerOpenSubtitle => 'Pega el código de invitación.';
+
+  @override
+  String get groupPlannerOpenTripCodeLabel => 'Código de viaje';
+
+  @override
+  String get groupPlannerOpenHint =>
+      'Código corto, ID del viaje o enlace de invitación';
+
+  @override
+  String get groupPlannerOpenButton => 'Abrir viaje';
+
+  @override
+  String get groupPlannerDestination => 'Destino';
+
+  @override
+  String get groupPlannerDates => 'Fechas';
+
+  @override
+  String get groupPlannerGroupSize => 'Tamaño del grupo';
+
+  @override
+  String get groupPlannerBudget => 'Presupuesto';
+
+  @override
+  String groupPlannerBudgetPerPerson(String amount) {
+    return 'Por persona: $amount';
+  }
+
+  @override
+  String groupPlannerBudgetGroup(String amount) {
+    return 'Total del grupo: $amount';
+  }
+
+  @override
+  String get groupPlannerBudgetNone => 'Sin presupuesto';
+
+  @override
+  String get groupPlannerInviteMembers => 'Invitar miembros';
+
+  @override
+  String get groupPlannerManageMembers => 'Gestionar miembros';
+
+  @override
+  String get groupPlannerItinerary => 'Itinerario';
+
+  @override
+  String get groupPlannerNoActivities => 'Aún no hay actividades.';
+
+  @override
+  String get groupPlannerTripNotFound => 'No se pudo cargar este viaje.';
+
+  @override
+  String get groupPlannerSignInTitle => 'Inicia sesión';
+
+  @override
+  String get groupPlannerSignInBody =>
+      'Inicia sesión en Lista → Copia en la nube para ver viajes compartidos.';
+
+  @override
+  String get groupPlannerCreateTripSignInRequired =>
+      'Guardar un viaje en grupo nuevo requiere una cuenta. Inicia sesión para continuar — el resto de Tripmetic funciona sin cuenta.';
+
+  @override
+  String get groupPlannerMembersTitle => 'Miembros';
+
+  @override
+  String get groupPlannerRoleAdmin => 'Admin';
+
+  @override
+  String get groupPlannerRoleCoPlanner => 'Co-planificador';
+
+  @override
+  String get groupPlannerRoleViewOnly => 'Solo lectura';
+
+  @override
+  String get groupPlannerOwner => 'Propietario';
+
+  @override
+  String get groupPlannerRemoveMember => 'Eliminar';
+
+  @override
+  String get groupPlannerRemoveMemberTitle => '¿Eliminar miembro?';
+
+  @override
+  String groupPlannerRemoveMemberBody(String email) {
+    return '¿Quitar a $email de este viaje?';
+  }
+
+  @override
+  String get groupPlannerCancel => 'Cancelar';
+
+  @override
+  String get groupPlannerNotes => 'Notas';
+
+  @override
+  String get groupPlannerOpenLink => 'Abrir enlace';
+
+  @override
+  String groupPlannerNetVotes(String count) {
+    return '$count';
+  }
+
+  @override
+  String groupPlannerVoteError(String error) {
+    return 'No se pudo guardar el voto: $error';
+  }
+
+  @override
+  String groupPlannerManageError(String error) {
+    return 'No se pudo actualizar miembros: $error';
+  }
+
+  @override
+  String groupPlannerInviteError(String error) {
+    return 'No se pudo compartir: $error';
+  }
+
+  @override
+  String groupPlannerUnknownTripCode(String error) {
+    return 'No se pudo abrir el viaje: $error';
+  }
+
+  @override
+  String get groupPlannerMyTripsSectionTitle => 'Tus viajes';
+
+  @override
+  String get groupPlannerMyTripsEmpty => 'Aún no hay viajes. Crea uno arriba.';
+
+  @override
+  String get groupPlannerExamplesTitle => 'Ejemplos de viajes';
+
+  @override
+  String get groupPlannerExamplesSubtitle =>
+      'Tarjetas de muestra — crea un viaje arriba para añadir el tuyo.';
+
+  @override
+  String get groupPlannerExampleTapBody =>
+      'Son solo ejemplos. Usa «Planificar un viaje en grupo» para crear un viaje real que puedas compartir.';
+
+  @override
+  String get groupPlannerExampleLisbonTitle => 'Retiro de equipo en Lisboa';
+
+  @override
+  String get groupPlannerExampleKyotoTitle => 'Tour de primavera en Kioto';
+
+  @override
+  String get groupPlannerAddActivity => 'Añadir actividad';
+
+  @override
+  String get groupPlannerActivityTitleLabel => 'Título de la actividad';
+
+  @override
+  String groupPlannerPeopleCount(String count) {
+    return '$count personas';
+  }
+
+  @override
+  String get groupPlannerEditActivity => 'Editar actividad';
+
+  @override
+  String get groupPlannerDeleteActivity => 'Eliminar';
+
+  @override
+  String get groupPlannerDeleteActivityTitle => '¿Eliminar actividad?';
+
+  @override
+  String groupPlannerDeleteActivityBody(String title) {
+    return '¿Quitar «$title» del itinerario? No se puede deshacer.';
+  }
+
+  @override
+  String groupPlannerActivityDeleteError(String error) {
+    return 'No se pudo eliminar la actividad: $error';
+  }
+
+  @override
+  String groupPlannerActivityEditError(String error) {
+    return 'No se pudo actualizar la actividad: $error';
+  }
+
+  @override
+  String get groupPlannerEditTripTitle => 'Editar viaje';
+
+  @override
+  String get groupPlannerEditTripAction => 'Editar viaje';
+
+  @override
+  String get groupPlannerDeleteTripTitle => '¿Eliminar viaje?';
+
+  @override
+  String groupPlannerDeleteTripBody(String destination) {
+    return '¿Eliminar para siempre el viaje «$destination» y su itinerario para todos? No se puede deshacer.';
+  }
+
+  @override
+  String get groupPlannerDeleteTripAction => 'Eliminar viaje';
+
+  @override
+  String get groupPlannerTripDeleted => 'Viaje eliminado.';
+
+  @override
+  String groupPlannerTripDeleteError(String error) {
+    return 'No se pudo eliminar el viaje: $error';
+  }
+
+  @override
+  String groupPlannerTripUpdateError(String error) {
+    return 'No se pudo actualizar el viaje: $error';
+  }
+
+  @override
+  String get widgetInstructionTitle => 'Widget de doble reloj';
+
+  @override
+  String get widgetInstructionSubtitle =>
+      'Consulta tu ciudad de origen y destino desde la pantalla de bloqueo o la pantalla de inicio.';
+
+  @override
+  String get widgetInstructionTabIos => 'iOS';
+
+  @override
+  String get widgetInstructionTabAndroid => 'Android';
+
+  @override
+  String get widgetInstructionIosStep1 =>
+      'Bloquea el teléfono y mantén pulsada la pantalla de bloqueo.';
+
+  @override
+  String get widgetInstructionIosStep2 =>
+      'Toca \"Personalizar\" y elige \"Pantalla de bloqueo\".';
+
+  @override
+  String get widgetInstructionIosStep3 => 'Toca \"Añadir widgets\".';
+
+  @override
+  String get widgetInstructionIosStep4 =>
+      'Desplázate, busca Tripmetic y añade el widget de doble reloj.';
+
+  @override
+  String get widgetInstructionAndroidStep1 =>
+      'Ve a la pantalla de inicio y mantén pulsado un espacio vacío.';
+
+  @override
+  String get widgetInstructionAndroidStep2 => 'Toca \"Widgets\".';
+
+  @override
+  String get widgetInstructionAndroidStep3 => 'Desplázate hasta Tripmetic.';
+
+  @override
+  String get widgetInstructionAndroidStep4 =>
+      'Mantén pulsado el widget de doble reloj y arrástralo a la pantalla.';
+
+  @override
+  String get widgetInstructionAndroidLockScreenHint =>
+      'Para ver ambos relojes en la pantalla de bloqueo: abre Ajustes y busca “pantalla de bloqueo” o “widgets”; añade Tripmetic si tu móvil permite widgets en la pantalla de bloqueo (no todos lo permiten).';
+
+  @override
+  String get widgetInstructionConfigureCta => 'Configurar ciudades del widget';
+
+  @override
+  String get dualClockScreenTitle => 'Widget de doble reloj';
+
+  @override
+  String get dualClockConfigTitle => 'Configurar ciudades';
+
+  @override
+  String get dualClockConfigSubtitle =>
+      'Elige dos ciudades y zonas horarias. Se sincronizan con el widget de inicio (Android) y el de pantalla de bloqueo (iOS).';
+
+  @override
+  String get dualClockCity1Label => 'Primera ciudad';
+
+  @override
+  String get dualClockCity2Label => 'Segunda ciudad';
+
+  @override
+  String get dualClockSave => 'Guardar y actualizar widget';
+
+  @override
+  String get dualClockSaved => 'Widget actualizado.';
+
+  @override
+  String get dualClockSaveError =>
+      'No se pudieron guardar los datos. Inténtalo de nuevo.';
+
+  @override
+  String get moreToolsDualClockBannerTitle => 'Widget de doble reloj';
+
+  @override
+  String get moreToolsDualClockBannerSubtitle =>
+      'Dos zonas horarias en la pantalla de bloqueo o inicio — toca para configurar.';
+
+  @override
+  String get moreToolsDualClockBannerCta => 'Configurar';
+
+  @override
+  String get settingsDualClockWidgetTitle => 'Widget de doble reloj';
+
+  @override
+  String get settingsDualClockWidgetSubtitle =>
+      'Añade el widget y elige tus ciudades';
+
+  @override
+  String get widgetNewFeatureBadge => 'Novedad';
+
+  @override
+  String get globalNavAccountCloudSyncTooltip => 'Cuenta y copia en la nube';
+
+  @override
+  String get exchangeRatesForceRefreshTooltip =>
+      'Obtener tipos de cambio actualizados';
+
+  @override
+  String get exchangeRatesRefreshedOk => 'Tipos de cambio actualizados.';
+
+  @override
+  String get exchangeRatesRefreshFailed =>
+      'No se pudieron actualizar los tipos de cambio.';
+
+  @override
+  String get bucketListStatUsTerritories => 'Territorios de EE. UU.';
+
+  @override
+  String get bucketListAuthErrUserNotFound => 'No hay cuenta con este correo.';
+
+  @override
+  String get bucketListAuthErrWrongPassword =>
+      'Correo o contraseña incorrectos.';
+
+  @override
+  String get bucketListAuthErrEmailInUse =>
+      'Ya existe una cuenta con este correo.';
+
+  @override
+  String get bucketListAuthErrInvalidEmail => 'Correo no válido.';
+
+  @override
+  String get bucketListAuthErrWeakPassword =>
+      'La contraseña es demasiado débil.';
+
+  @override
+  String get bucketListAuthErrUserDisabled => 'Esta cuenta está desactivada.';
+
+  @override
+  String get bucketListAuthErrTooManyRequests =>
+      'Demasiados intentos. Prueba más tarde.';
+
+  @override
+  String get bucketListAuthErrOperationNotAllowed =>
+      'El inicio de sesión por correo no está habilitado.';
+
+  @override
+  String bucketListAuthErrDetail(String detail) {
+    return '$detail';
+  }
+
+  @override
+  String get bucketListAuthValidationInvalidEmail => 'Correo no válido.';
+
+  @override
+  String get bucketListAuthValidationPasswordShort =>
+      'La contraseña debe tener al menos 6 caracteres.';
+
+  @override
+  String get bucketListAuthValidationPasswordRequired =>
+      'Introduce tu contraseña.';
 }

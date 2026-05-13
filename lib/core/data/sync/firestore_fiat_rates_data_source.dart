@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:sealed_currencies/sealed_currencies.dart';
 
 import '../../../features/currency/domain/bundled_usd_rates.dart';
 import '../../../features/currency/domain/exchange_rate_snapshot.dart';
 import 'remote_rates_data_source.dart';
 
-void _swallowFirestoreStreamError(Object error, StackTrace stackTrace) {}
+void _logFirestoreStreamError(Object error, StackTrace stackTrace) {
+  debugPrint('FirestoreRemoteRatesDataSource watchRates: $error\n$stackTrace');
+}
 
 /// Listens to [fiat_rates/latest] and maps the `rates` field into [ExchangeRateSnapshot].
 ///
@@ -28,7 +31,21 @@ class FirestoreRemoteRatesDataSource implements RemoteRatesDataSource {
         .map(_mapDocument)
         .where((s) => s != null)
         .cast<ExchangeRateSnapshot>()
-        .handleError(_swallowFirestoreStreamError);
+        .handleError(_logFirestoreStreamError);
+  }
+
+  @override
+  Future<ExchangeRateSnapshot?> fetchLatest({bool forceServer = true}) async {
+    try {
+      final snap = await _db
+          .collection('fiat_rates')
+          .doc('latest')
+          .get(GetOptions(source: forceServer ? Source.server : Source.serverAndCache));
+      return _mapDocument(snap);
+    } catch (e, st) {
+      debugPrint('FirestoreRemoteRatesDataSource.fetchLatest: $e\n$st');
+      rethrow;
+    }
   }
 
   ExchangeRateSnapshot? _mapDocument(DocumentSnapshot<Map<String, dynamic>> snap) {

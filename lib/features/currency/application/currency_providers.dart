@@ -25,3 +25,18 @@ final exchangeRatesStreamProvider = StreamProvider<ExchangeRateSnapshot>((ref) {
   ref.watch(currencyRepositoryReadyProvider);
   return ref.watch(currencyRepositoryProvider).watchRates();
 });
+
+/// Pull-to-refresh / manual refresh — bypasses the 12-hour TTL.
+Future<void> refreshExchangeRates(WidgetRef ref) async {
+  await ref.read(currencyRepositoryProvider).refreshFromNetwork();
+}
+
+/// Deletes cached FX rows then forces a fresh server snapshot (fixes stale Hive TTL).
+Future<void> refreshExchangeRatesClearingCache(WidgetRef ref) async {
+  await ref.read(currencyRepositoryProvider).clearRateCacheAndRefresh();
+}
+
+/// Budget tab / long-running session — refresh only when Hive cache is older than TTL.
+Future<void> ensureExchangeRatesFreshIfNeeded(WidgetRef ref) async {
+  await ref.read(currencyRepositoryProvider).ensureFreshRatesIfNeeded();
+}

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/navigation/tripmetic_home_navigation.dart';
+import '../../../core/subscription/subscription_providers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../map/application/map_focus_provider.dart';
 import '../application/trip_providers.dart';
@@ -21,6 +24,7 @@ class ItineraryScreen extends ConsumerWidget {
     final cs = theme.colorScheme;
     final l10n = context.l10n;
     final hiveReady = ref.watch(tripHiveStoreReadyProvider);
+    final isPro = ref.watch(isTripmeticProProvider);
 
     Widget body;
     if (hiveReady.isLoading) {
@@ -91,7 +95,7 @@ class ItineraryScreen extends ConsumerWidget {
                               longitude: g.events[i].longitude!,
                               label: g.events[i].displayTitle,
                             );
-                            context.go('/offline-map');
+                            goTripmeticHome(context, ref, selectFeatureId: NavFeatureIds.offlineMap);
                           }
                         : null,
                   ),
@@ -102,38 +106,42 @@ class ItineraryScreen extends ConsumerWidget {
       }
     }
 
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
-                child: Text(
-                  l10n.itineraryHeader,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1.0,
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.itinerary,
+      isPro: isPro,
+      child: Stack(
+        children: [
+          SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
+                  child: Text(
+                    l10n.itineraryHeader,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.0,
+                    ),
                   ),
                 ),
-              ),
-              Expanded(child: body),
-            ],
-          ),
-        ),
-        if (!hiveReady.isLoading)
-          Positioned(
-            right: 16,
-            bottom: 16,
-            child: FloatingActionButton(
-              onPressed: hiveReady.hasError
-                  ? null
-                  : () => showAddItineraryEventSheet(context, ref),
-              child: const Icon(Icons.add),
+                Expanded(child: body),
+              ],
             ),
           ),
-      ],
+          if (!hiveReady.isLoading)
+            Positioned(
+              right: 16,
+              bottom: 16,
+              child: FloatingActionButton(
+                onPressed: hiveReady.hasError
+                    ? null
+                    : () => showAddItineraryEventSheet(context, ref),
+                child: const Icon(Icons.add),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

@@ -197,7 +197,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'TRIPMETIC.app'**
+  /// **'Tripmetic.app'**
   String get appTitle;
 
   /// No description provided for @budgetBaseCurrency.
@@ -1361,7 +1361,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsCopyright.
   ///
   /// In en, this message translates to:
-  /// **'© 2026 TRIPMETIC.app'**
+  /// **'© 2026 Tripmetic.app'**
   String get settingsCopyright;
 
   /// No description provided for @settingsCouldNotOpenLink.

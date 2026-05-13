@@ -17,7 +17,8 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "com.tripmetic.app"
-    compileSdk = flutter.compileSdkVersion
+    // Material Components 1.11+ and AGP 8.x expect at least compileSdk 34 for resource merging.
+    compileSdk = maxOf(34, flutter.compileSdkVersion)
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -86,5 +87,7 @@ flutter {
 // Native RevenueCat Android SDK — align with https://www.revenuecat.com/docs/getting-started/installation/android
 // The Flutter plugin also pulls purchases-hybrid-common; this line pins the billing SDK revision you asked for.
 dependencies {
+    // Required for Theme.MaterialComponents.* in res/values/styles.xml (NormalTheme).
+    implementation("com.google.android.material:material:1.12.0")
     implementation("com.revenuecat.purchases:purchases:10.1.2")
 }

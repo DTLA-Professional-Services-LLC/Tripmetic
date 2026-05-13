@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../../../shared/widgets/tripmetic_app_bar_title.dart';
 import '../application/size_converter_notifier.dart';
 import '../domain/size_conversion_data.dart';
@@ -58,6 +61,7 @@ class _SizeConverterScreenState extends ConsumerState<SizeConverterScreen> {
     final l10n = context.l10n;
     final row = s.resolvedRow;
     final entry = s.countryEntry;
+    final isPro = ref.watch(isTripmeticProProvider);
 
     ref.listen(sizeConverterProvider, (prev, next) {
       if (prev?.category != next.category) {
@@ -70,194 +74,203 @@ class _SizeConverterScreenState extends ConsumerState<SizeConverterScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: TripmeticAppBarTitle(subtitle: context.l10n.sizeConverterAppBarSubtitle),
+        title: TripmeticAppBarTitle(
+          subtitle: context.l10n.sizeConverterAppBarSubtitle,
+        ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
-        children: [
-          Text(
-            context.l10n.sizeConverterHeader,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.0,
+      body: ProGlassOverlay(
+        featureId: NavFeatureIds.sizeConverter,
+        isPro: isPro,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
+          children: [
+            Text(
+              context.l10n.sizeConverterHeader,
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.0,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          _Panel(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  context.l10n.sizeConverterCategory,
-                  style: theme.textTheme.labelMedium?.copyWith(
-                    color: cs.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Theme(
-                  data: Theme.of(context).copyWith(canvasColor: cs.surface),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<SizeCategory>(
-                      value: s.category,
-                      isExpanded: true,
-                      dropdownColor: cs.surface,
-                      borderRadius: BorderRadius.circular(12),
-                      icon: Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: cs.primary,
-                      ),
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        color: cs.onSurface,
-                      ),
-                      items: SizeCategory.values
-                          .map(
-                            (c) => DropdownMenuItem(
-                              value: c,
-                              child: Text(sizeCategoryDisplay(l10n, c)),
-                            ),
-                          )
-                          .toList(),
-                      onChanged: (c) {
-                        if (c != null) n.setCategory(c);
-                      },
-                    ),
-                  ),
-                ),
-                if (sizeCategorySizingTip(l10n, s.category) case final tip?) ...[
-                  const SizedBox(height: 10),
+            const SizedBox(height: 10),
+            _Panel(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
                   Text(
-                    tip,
-                    style: theme.textTheme.labelSmall?.copyWith(
+                    context.l10n.sizeConverterCategory,
+                    style: theme.textTheme.labelMedium?.copyWith(
                       color: cs.onSurfaceVariant,
-                      height: 1.4,
                     ),
                   ),
-                ],
-                const SizedBox(height: 16),
-                Text(
-                  l10n.sizeConverterYourCountry,
-                  style: theme.textTheme.labelMedium?.copyWith(
-                    color: cs.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    onTap: _pickCountry,
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 12,
-                      ),
-                      decoration: BoxDecoration(
-                        color: cs.surfaceContainerHighest,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: cs.primary.withValues(alpha: 0.65),
+                  const SizedBox(height: 8),
+                  Theme(
+                    data: Theme.of(context).copyWith(canvasColor: cs.surface),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<SizeCategory>(
+                        value: s.category,
+                        isExpanded: true,
+                        dropdownColor: cs.surface,
+                        borderRadius: BorderRadius.circular(12),
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          color: cs.primary,
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  entry?.name ?? s.countryAlpha2,
-                                  style: theme.textTheme.bodyLarge?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                if (entry != null)
-                                  Text(
-                                    l10n.sizeConverterTapToChange(entry.alpha2),
-                                    style: theme.textTheme.labelSmall?.copyWith(
-                                      color: cs.onSurfaceVariant,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ),
-                          Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: cs.primary,
-                          ),
-                        ],
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          color: cs.onSurface,
+                        ),
+                        items: SizeCategory.values
+                            .map(
+                              (c) => DropdownMenuItem(
+                                value: c,
+                                child: Text(sizeCategoryDisplay(l10n, c)),
+                              ),
+                            )
+                            .toList(),
+                        onChanged: (c) {
+                          if (c != null) n.setCategory(c);
+                        },
                       ),
                     ),
                   ),
-                ),
-                if (entry != null) ...[
-                  const SizedBox(height: 10),
-                  Text(
-                    entry.note,
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: cs.onSurfaceVariant,
-                      height: 1.35,
-                    ),
-                  ),
-                ],
-                const SizedBox(height: 16),
-                Text(
-                  l10n.sizeConverterYourBaseSize,
-                  style: theme.textTheme.labelMedium?.copyWith(
-                    color: cs.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                TextField(
-                  controller: _sizeController,
-                  focusNode: _sizeFocus,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: cs.onSurface,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: sizeCategorySizingTip(l10n, s.category),
-                    hintStyle: TextStyle(
-                      color: cs.onSurfaceVariant.withValues(alpha: 0.6),
-                    ),
-                    filled: true,
-                    fillColor: cs.surface,
-                    border: InputBorder.none,
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 14,
-                    ),
-                  ),
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(
-                      RegExp(
-                        r'''[0-9a-zA-Z.\s¼½⅓⅔'"/x\-–]''',
-                        caseSensitive: false,
+                  if (sizeCategorySizingTip(l10n, s.category)
+                      case final tip?) ...[
+                    const SizedBox(height: 10),
+                    Text(
+                      tip,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: cs.onSurfaceVariant,
+                        height: 1.4,
                       ),
                     ),
                   ],
-                  onChanged: n.setBaseSizeInput,
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  Text(
+                    l10n.sizeConverterYourCountry,
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: cs.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: _pickCountry,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 12,
+                        ),
+                        decoration: BoxDecoration(
+                          color: cs.surfaceContainerHighest,
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: cs.primary.withValues(alpha: 0.65),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    entry?.name ?? s.countryAlpha2,
+                                    style: theme.textTheme.bodyLarge?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  if (entry != null)
+                                    Text(
+                                      l10n.sizeConverterTapToChange(
+                                        entry.alpha2,
+                                      ),
+                                      style: theme.textTheme.labelSmall
+                                          ?.copyWith(
+                                            color: cs.onSurfaceVariant,
+                                          ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: cs.primary,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  if (entry != null) ...[
+                    const SizedBox(height: 10),
+                    Text(
+                      entry.note,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: cs.onSurfaceVariant,
+                        height: 1.35,
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 16),
+                  Text(
+                    l10n.sizeConverterYourBaseSize,
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: cs.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextField(
+                    controller: _sizeController,
+                    focusNode: _sizeFocus,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      color: cs.onSurface,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: sizeCategorySizingTip(l10n, s.category),
+                      hintStyle: TextStyle(
+                        color: cs.onSurfaceVariant.withValues(alpha: 0.6),
+                      ),
+                      filled: true,
+                      fillColor: cs.surface,
+                      border: InputBorder.none,
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 14,
+                      ),
+                    ),
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(
+                        RegExp(
+                          r'''[0-9a-zA-Z.\s¼½⅓⅔'"/x\-–]''',
+                          caseSensitive: false,
+                        ),
+                      ),
+                    ],
+                    onChanged: n.setBaseSizeInput,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 14),
-          if (row != null)
-            _SizeGrid(row: row)
-          else
-            _NoMatch(
-              message: s.baseSizeInput.trim().isEmpty
-                  ? l10n.sizeNoMatchEmpty
-                  : l10n.sizeNoMatchRow,
-            ),
-        ],
+            const SizedBox(height: 14),
+            if (row != null)
+              _SizeGrid(row: row)
+            else
+              _NoMatch(
+                message: s.baseSizeInput.trim().isEmpty
+                    ? l10n.sizeNoMatchEmpty
+                    : l10n.sizeNoMatchRow,
+              ),
+          ],
+        ),
       ),
     );
   }
-
 }
 
 class _Panel extends StatelessWidget {

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 
+import 'pro_test_override_provider.dart';
 import 'revenue_cat_sdk_state.dart';
 import 'tripmetic_pro_entitlement.dart';
 
@@ -94,7 +95,14 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
 }
 
 /// `true` when the **Tripmetic Pro** entitlement is active.
+///
+/// Honors the local [proTestOverrideProvider] first so internal testers can
+/// validate the Pro UX on a single device without a working RevenueCat
+/// configuration. When the override is off (default), behavior matches the
+/// previous RevenueCat-backed logic.
 final isTripmeticProProvider = Provider<bool>((ref) {
+  final override = ref.watch(proTestOverrideProvider).valueOrNull ?? false;
+  if (override) return true;
   final async = ref.watch(customerInfoProvider);
   return async.maybeWhen(
     data: (info) => TripmeticProEntitlement.isUnlocked(info),

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sealed_currencies/sealed_currencies.dart';
 
@@ -13,6 +14,9 @@ const _kUpdatedKey = 'exchange_rates_updated_ms';
 const _kSelectionKey = 'currency_selection_v1';
 const _kUsdAmountKey = 'currency_usd_amount_v1';
 
+/// Refresh Hive-backed rates when older than this (Firebase/Firestore pipeline).
+const Duration kExchangeRatesCacheTtl = Duration(hours: 12);
+
 /// Default slot order: base is first.
 const List<String> kDefaultCurrencySelection = [
   'USD',
@@ -23,8 +27,11 @@ const List<String> kDefaultCurrencySelection = [
   'MXN',
 ];
 
-/// Offline-first rates: Hive is the source of truth; [RemoteRatesDataSource]
-/// can push updates (e.g. Firestore) which are persisted locally.
+/// Offline-first rates: Hive holds snapshots; [RemoteRatesDataSource] streams updates.
+///
+/// - TTL: when Hive [exchange_rates_updated_ms] is older than [kExchangeRatesCacheTtl],
+///   a server read refreshes rates on [open] / [ensureFreshRatesIfNeeded].
+/// - Firestore cache snapshots (`isOffline`) do not overwrite Hive (prevents stale overlay).
 class CurrencyRepository {
   CurrencyRepository(this._remote);
 
@@ -39,16 +46,64 @@ class CurrencyRepository {
     yield* _controller.stream;
   }
 
+  bool _isHiveOlderThanTtl() {
+    final box = _box;
+    if (box == null) return false;
+    final updatedMs = box.get(_kUpdatedKey);
+    if (updatedMs is! int) return true;
+    final updated = DateTime.fromMillisecondsSinceEpoch(updatedMs, isUtc: true);
+    final age = DateTime.now().toUtc().difference(updated);
+    return age > kExchangeRatesCacheTtl;
+  }
+
+  Future<void> _revalidate({required bool ignoreTtl}) async {
+    if (_box == null) return;
+    if (!ignoreTtl && !_isHiveOlderThanTtl()) return;
+
+    try {
+      final snap = await _remote.fetchLatest(forceServer: true);
+      if (snap != null) {
+        await _persist(snap);
+        _controller.add(snap);
+      }
+    } catch (e, st) {
+      debugPrint(
+        'CurrencyRepository: failed to refresh rates from network (using cache): $e\n$st',
+      );
+    }
+  }
+
+  /// Called after app bootstrap / when opening tools — skips fetch if cache is fresh.
+  Future<void> ensureFreshRatesIfNeeded() => _revalidate(ignoreTtl: false);
+
+  /// Pull-to-refresh: always hits the server (TTL bypass).
+  Future<void> refreshFromNetwork() => _revalidate(ignoreTtl: true);
+
+  /// Clears persisted rate snapshot timestamps so the next fetch cannot reuse stale TTL logic,
+  /// then forces a network refresh (Firestore server read).
+  Future<void> clearRateCacheAndRefresh() async {
+    final box = _box;
+    if (box == null) return;
+    await box.delete(_kRatesKey);
+    await box.delete(_kUpdatedKey);
+    await _revalidate(ignoreTtl: true);
+  }
+
   Future<void> open() async {
     _box = await Hive.openBox<dynamic>(_kBoxName);
+
+    await _revalidate(ignoreTtl: false);
 
     await _remoteSub?.cancel();
     _remoteSub = _remote.watchRates().listen(
       (remote) async {
-        await _persist(remote);
+        if (!remote.isOffline) {
+          await _persist(remote);
+        }
         _controller.add(remote);
       },
-      onError: (Object _, StackTrace _) {
+      onError: (Object e, StackTrace st) {
+        debugPrint('CurrencyRepository watchRates stream error: $e\n$st');
         final cached = _readFromBox();
         if (cached != null) _controller.add(cached);
       },

@@ -1,25 +1,34 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../l10n/l10n_helpers.dart';
+import '../../features/account/presentation/account_management_screen.dart';
+import '../../features/navigation/presentation/main_screen.dart';
 import '../../features/paywall/presentation/paywall_screen.dart';
+import '../../features/bucket_list/presentation/bucket_list_screen.dart';
 import '../../features/crypto/presentation/crypto_tab.dart';
-import '../../features/currency/presentation/currency_tab.dart';
-import '../../features/map/presentation/map_screen.dart';
-import '../../features/more/presentation/more_tools_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/scheduler/presentation/scheduler_tab.dart';
 import '../../features/sizes/presentation/size_converter_screen.dart';
 import '../../features/mindmap/presentation/mind_map_screen.dart';
 import '../../features/tip/presentation/tip_calculator_screen.dart';
 import '../../features/packing/presentation/packing_screen.dart';
+import '../../features/currency/presentation/currency_tab.dart';
+import '../../features/map/presentation/map_screen.dart';
 import '../../features/trip/presentation/budget_screen.dart';
+import '../../features/group_planner/presentation/group_planner_create_trip_screen.dart';
+import '../../features/group_planner/presentation/group_planner_landing_screen.dart';
+import '../../features/group_planner/presentation/group_trip_route_screen.dart';
 import '../../features/trip/presentation/itinerary_screen.dart';
 import '../../features/vault/presentation/vault_screen.dart';
+import '../../features/dual_clock/presentation/dual_city_selection_screen.dart';
+import '../../features/dual_clock/presentation/widget_instruction_screen.dart';
 import '../../features/units/presentation/units_tab.dart';
+import '../../features/auth/presentation/sign_in_screen.dart';
+import '../../features/auth/presentation/sign_up_screen.dart';
 import '../../shared/widgets/fullscreen_tool_scaffold.dart';
-import '../../shared/widgets/main_shell.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -37,51 +46,69 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: '/currency',
+    initialLocation: '/',
     refreshListenable: notifier,
+    redirect: (context, state) {
+      final p = state.uri.path;
+      if (p == '/more') {
+        return '/';
+      }
+      if (p == '/sign-in' || p == '/sign-up') {
+        if (FirebaseAuth.instance.currentUser != null) {
+          return '/';
+        }
+      }
+      return null;
+    },
     routes: [
+      GoRoute(
+        path: '/sign-up',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const SignUpScreen(),
+      ),
+      GoRoute(
+        path: '/sign-in',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const SignInScreen(),
+      ),
       GoRoute(
         path: '/paywall',
         builder: (context, state) => const PaywallScreen(),
       ),
-      StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) {
-          return MainShell(navigationShell: navigationShell);
-        },
-        branches: [
-          // Index 0 — Currency
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/currency',
-                pageBuilder: (context, state) =>
-                    const NoTransitionPage<void>(child: CurrencyTab()),
-              ),
-            ],
-          ),
-          // Index 1 — Offline Map
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/offline-map',
-                pageBuilder: (context, state) =>
-                    const NoTransitionPage<void>(child: OfflineMapScreen()),
-              ),
-            ],
-          ),
-          // Index 2 — More Tools (also the upgrade hub for non-Pro users).
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/more',
-                pageBuilder: (context, state) =>
-                    const NoTransitionPage<void>(child: MoreToolsScreen()),
-              ),
-            ],
-          ),
-        ],
+      GoRoute(
+        path: '/',
+        pageBuilder: (context, state) =>
+            const NoTransitionPage<void>(child: MainScreen()),
       ),
-      // Demoted from bottom nav — pushed full-screen from More Tools.
+      GoRoute(
+        path: '/account',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.accountManagementTitle,
+          child: const AccountManagementScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/currency',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.navCurrency,
+          child: const CurrencyTab(),
+        ),
+      ),
+      GoRoute(
+        path: '/offline-map',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.navOfflineMap,
+          child: const OfflineMapScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/bucket-list',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const BucketListScreen(),
+      ),
       GoRoute(
         path: '/itinerary',
         parentNavigatorKey: rootNavigatorKey,
@@ -89,6 +116,36 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
           subtitle: context.l10n.navItinerary,
           child: const ItineraryScreen(),
         ),
+      ),
+      GoRoute(
+        path: '/group-planner',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.groupPlannerTitle,
+          hubActions: true,
+          child: const GroupPlannerLandingScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/group-planner/create',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.groupPlannerCreateTripTitle,
+          hubActions: true,
+          child: const GroupPlannerCreateTripScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/group-trip/:tripId',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final raw = state.pathParameters['tripId'] ?? '';
+          return FullscreenToolScaffold(
+            subtitle: context.l10n.groupPlannerTitle,
+            hubActions: true,
+            child: GroupTripRouteScreen(rawTripRef: raw),
+          );
+        },
       ),
       GoRoute(
         path: '/budget',
@@ -114,7 +171,6 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
           child: const PackingScreen(),
         ),
       ),
-      // Miscellaneous tool routes (unchanged).
       GoRoute(
         path: '/settings',
         parentNavigatorKey: rootNavigatorKey,
@@ -161,6 +217,22 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
         builder: (context, state) => FullscreenToolScaffold(
           subtitle: context.l10n.toolDocumentVault,
           child: const VaultScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/dual-clock-widget',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.dualClockScreenTitle,
+          child: const WidgetInstructionScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/dual-clock-widget/configure',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.dualClockConfigTitle,
+          child: const DualCitySelectionScreen(),
         ),
       ),
     ],

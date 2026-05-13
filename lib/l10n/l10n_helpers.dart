@@ -9,6 +9,7 @@ import '../features/tip/application/tip_calculator_state.dart';
 import '../features/trip/domain/trip_budget.dart';
 import '../features/units/domain/unit_category.dart';
 import '../features/units/domain/unit_conversion.dart';
+import '../core/navigation/nav_feature_ids.dart';
 import 'generated/app_localizations.dart';
 
 export 'generated/app_localizations.dart';
@@ -96,6 +97,13 @@ String sizeCategoryDisplay(AppLocalizations l, SizeCategory c) => switch (c) {
       SizeCategory.womensBlouses => l.sizeCatWomensBlouses,
       SizeCategory.mensTshirts => l.sizeCatMensTshirts,
       SizeCategory.womensTshirts => l.sizeCatWomensTshirts,
+      SizeCategory.boysShoes => l.sizeCatBoysShoes,
+      SizeCategory.girlsShoes => l.sizeCatGirlsShoes,
+      SizeCategory.boysTshirts => l.sizeCatBoysTshirts,
+      SizeCategory.boysPants => l.sizeCatBoysPants,
+      SizeCategory.girlsTshirts => l.sizeCatGirlsTshirts,
+      SizeCategory.girlsPants => l.sizeCatGirlsPants,
+      SizeCategory.girlsDressesKids => l.sizeCatGirlsDressesKids,
       SizeCategory.mensJeansWaist => l.sizeCatMensJeansWaist,
       SizeCategory.mensJeansInseam => l.sizeCatMensJeansInseam,
       SizeCategory.mensJeansCombo => l.sizeCatMensJeansCombo,
@@ -119,6 +127,13 @@ String sizeInputHint(AppLocalizations l, SizeCategory c) => switch (c) {
       SizeCategory.womensBlouses => l.sizeHintWomensBlouses,
       SizeCategory.mensTshirts => l.sizeHintMensTshirts,
       SizeCategory.womensTshirts => l.sizeHintWomensTshirts,
+      SizeCategory.boysShoes => l.sizeHintBoysShoes,
+      SizeCategory.girlsShoes => l.sizeHintGirlsShoes,
+      SizeCategory.boysTshirts => l.sizeHintBoysTshirts,
+      SizeCategory.boysPants => l.sizeHintBoysPants,
+      SizeCategory.girlsTshirts => l.sizeHintGirlsTshirts,
+      SizeCategory.girlsPants => l.sizeHintGirlsPants,
+      SizeCategory.girlsDressesKids => l.sizeHintGirlsDressesKids,
       SizeCategory.mensJeansWaist => l.sizeHintMensJeansWaist,
       SizeCategory.mensJeansInseam => l.sizeHintMensJeansInseam,
       SizeCategory.mensJeansCombo => l.sizeHintMensJeansCombo,
@@ -181,4 +196,46 @@ String schedulerDayRelationLabel(AppLocalizations l, DayRelation r) => switch (r
       DayRelation.same => l.schedulerDaySame,
       DayRelation.next => l.schedulerDayNext,
       DayRelation.previous => l.schedulerDayPrevious,
+    };
+
+String navFeatureTitle(AppLocalizations l, String id) => switch (id) {
+      NavFeatureIds.dashboard => l.navDashboard,
+      NavFeatureIds.itinerary => l.navItinerary,
+      NavFeatureIds.currency => l.navCurrency,
+      NavFeatureIds.offlineMap => l.navOfflineMap,
+      NavFeatureIds.bucketList => l.bucketListTitle,
+      NavFeatureIds.groupPlanner => l.groupPlannerToolTitle,
+      NavFeatureIds.budget => l.toolBudgetTitle,
+      NavFeatureIds.vault => l.toolVaultTitle,
+      NavFeatureIds.scheduler => l.toolSchedulerTitle,
+      NavFeatureIds.packing => l.toolPackingTitle,
+      NavFeatureIds.units => l.toolUnitsTitle,
+      NavFeatureIds.crypto => l.toolCryptoTitle,
+      NavFeatureIds.tipCalculator => l.toolTipTitle,
+      NavFeatureIds.sizeConverter => l.toolSizeTitle,
+      NavFeatureIds.mindMap => l.toolMindMapTitle,
+      NavFeatureIds.dualClock => l.dualClockScreenTitle,
+      NavFeatureIds.settings => l.toolSettingsInfo,
+      _ => id,
+    };
+
+String navFeatureSubtitle(AppLocalizations l, String id) => switch (id) {
+      NavFeatureIds.dashboard => l.navDashboardBody,
+      NavFeatureIds.itinerary => l.toolItinerarySubtitle,
+      NavFeatureIds.currency => l.moreToolsSubtitle,
+      NavFeatureIds.offlineMap => l.mapDownloadCurrentRegion,
+      NavFeatureIds.bucketList => l.bucketListToolSubtitle,
+      NavFeatureIds.groupPlanner => l.groupPlannerToolSubtitle,
+      NavFeatureIds.budget => l.toolBudgetSubtitle,
+      NavFeatureIds.vault => l.toolVaultSubtitle,
+      NavFeatureIds.scheduler => l.toolSchedulerSubtitle,
+      NavFeatureIds.packing => l.toolPackingSubtitle,
+      NavFeatureIds.units => l.toolUnitsSubtitle,
+      NavFeatureIds.crypto => l.toolCryptoSubtitle,
+      NavFeatureIds.tipCalculator => l.toolTipSubtitle,
+      NavFeatureIds.sizeConverter => l.toolSizeSubtitle,
+      NavFeatureIds.mindMap => l.toolMindMapSubtitle,
+      NavFeatureIds.dualClock => l.moreToolsDualClockBannerSubtitle,
+      NavFeatureIds.settings => l.toolSettingsAboutSubtitle,
+      _ => '',
     };

@@ -214,7 +214,7 @@ abstract final class UnitConversion {
 
   /// Reasonable display precision per category (not temperature: handled separately).
   static int fractionDigits(UnitCategory category, String unitId) {
-    if (category == UnitCategory.temperature) return 2;
+    if (category == UnitCategory.temperature) return 0;
     if (category == UnitCategory.length && unitId == UnitIds.inch) return 4;
     if (category == UnitCategory.weight && unitId == UnitIds.oz) return 4;
     if (category == UnitCategory.volume && (unitId == UnitIds.ml || unitId == UnitIds.flOz)) {
@@ -230,7 +230,7 @@ abstract final class UnitConversion {
   static String formatValue(UnitCategory category, String unitId, double v) {
     if (v.isNaN || v.isInfinite) return '';
     if (category == UnitCategory.temperature) {
-      return v.toStringAsFixed(2);
+      return v.round().toString();
     }
     final d = fractionDigits(category, unitId);
     var s = v.toStringAsFixed(d);

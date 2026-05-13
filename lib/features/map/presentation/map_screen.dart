@@ -3,14 +3,18 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 // Prefixed: geolocator exports `Position` and `LocationSettings` that collide
 // with mapbox_maps_flutter's own types of the same name.
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../../trip/application/trip_providers.dart';
 import '../../trip/domain/itinerary_event.dart';
 import '../../trip/presentation/widgets/add_itinerary_event_sheet.dart';
@@ -96,6 +100,12 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   bool _isNavigationBooting = false;
   StreamSubscription<geo.Position>? _navigationSubscription;
 
+  /// In-app turn-by-turn voice (Option D): Mapbox Directions steps + [flutter_tts],
+  /// driven by [geo.Geolocator] position stream — no separate navigation SDK.
+  final FlutterTts _tts = FlutterTts();
+  bool _ttsReady = false;
+  int? _lastSpokenStepIndex;
+
   // Route polyline styling — Tripmetic uses gold for brand, so the route
   // itself uses a high-contrast Mapbox-style blue for route visibility.
   static const int _routeLineColor = 0xFF1E88E5; // Material Blue 600
@@ -139,6 +149,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
     _navigationSubscription?.cancel();
     _searchController.dispose();
     _searchFocus.dispose();
+    unawaited(_tts.stop());
     super.dispose();
   }
 
@@ -152,8 +163,69 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
     await _refreshRegions();
   }
 
+  Future<void> _initializeTts() async {
+    if (_ttsReady) return;
+    try {
+      await _tts.setLanguage('en-US');
+      await _tts.setPitch(1.0);
+      await _tts.setVolume(1.0);
+      await _tts.setSpeechRate(0.5);
+      await _tts.awaitSpeakCompletion(false);
+      _ttsReady = true;
+    } catch (_) {
+      _ttsReady = false;
+    }
+  }
+
+  Future<void> _speakStep(int index) async {
+    if (!_ttsReady) await _initializeTts();
+    if (!_ttsReady) return;
+    if (index < 0 || index >= _routeSteps.length) return;
+    if (_lastSpokenStepIndex == index) return;
+    _lastSpokenStepIndex = index;
+    final instruction = _routeSteps[index].instruction.trim();
+    if (instruction.isEmpty) return;
+    try {
+      await _tts.stop();
+      await _tts.speak(instruction);
+    } catch (_) {}
+  }
+
+  Future<void> _speakArrival() async {
+    if (!_ttsReady) await _initializeTts();
+    if (!_ttsReady) return;
+    try {
+      await _tts.stop();
+      await _tts.speak('You have arrived at your destination.');
+    } catch (_) {}
+  }
+
+  Future<void> _stopSpeaking() async {
+    try {
+      await _tts.stop();
+    } catch (_) {}
+  }
+
+  Future<void> _applyMapboxOrnamentVisibility(MapboxMap map) async {
+    try {
+      await map.logo.updateSettings(LogoSettings(enabled: false));
+    } catch (_) {}
+    try {
+      await map.attribution.updateSettings(
+        AttributionSettings(enabled: false, clickable: false),
+      );
+    } catch (_) {}
+    try {
+      await map.compass.updateSettings(CompassSettings(enabled: false));
+    } catch (_) {}
+    try {
+      await map.scaleBar.updateSettings(ScaleBarSettings(enabled: false));
+    } catch (_) {}
+  }
+
   void _onMapCreated(MapboxMap mapboxMap) {
     _mapboxMap = mapboxMap;
+    unawaited(_applyMapboxOrnamentVisibility(mapboxMap));
     // If the device location already resolved before the map was ready,
     // apply it now. Otherwise `_acquireDeviceLocation()` will do it when
     // `Geolocator.getCurrentPosition()` returns.
@@ -836,6 +908,9 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
         return;
       }
 
+      unawaited(_initializeTts());
+      _lastSpokenStepIndex = null;
+
       await _navigationSubscription?.cancel();
       _navigationSubscription = geo.Geolocator.getPositionStream(
         locationSettings: const geo.LocationSettings(
@@ -849,6 +924,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
         _isNavigationMode = true;
         _selectedRouteStepIndex ??= 0;
       });
+
+      unawaited(_speakStep(_selectedRouteStepIndex ?? 0));
 
       // Prime with one immediate fix so navigation starts instantly.
       final current = await geo.Geolocator.getCurrentPosition(
@@ -868,6 +945,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   Future<void> _stopNavigationMode({bool silent = false}) async {
     await _navigationSubscription?.cancel();
     _navigationSubscription = null;
+    unawaited(_stopSpeaking());
+    _lastSpokenStepIndex = null;
     if (!mounted) return;
     setState(() {
       _isNavigationMode = false;
@@ -895,6 +974,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       lat,
       lng,
     );
+
     // Advance when user reaches the maneuver vicinity.
     if (metersAway <= 35) {
       final next = idx + 1;
@@ -903,12 +983,14 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
           setState(() => _selectedRouteStepIndex = _routeSteps.length - 1);
           _showSnack(context.l10n.mapSnackArrived);
         }
+        await _speakArrival();
         await _stopNavigationMode(silent: true);
         return;
       }
       if (mounted) {
         setState(() => _selectedRouteStepIndex = next);
       }
+      unawaited(_speakStep(next));
     }
   }
 
@@ -1242,7 +1324,10 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: Stack(
+      body: ProGlassOverlay(
+        featureId: NavFeatureIds.offlineMap,
+        isPro: ref.watch(isTripmeticProProvider),
+        child: Stack(
         children: [
           Positioned.fill(
             child: _mapboxReady
@@ -1380,6 +1465,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
               ),
             ),
         ],
+      ),
       ),
     );
   }

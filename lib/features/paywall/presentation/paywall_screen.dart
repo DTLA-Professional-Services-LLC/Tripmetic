@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/navigation/tripmetic_home_navigation.dart';
 import '../../../core/subscription/revenue_cat_sdk_state.dart';
 import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
@@ -18,14 +20,16 @@ class PaywallScreen extends ConsumerWidget {
     if (context.canPop()) {
       context.pop();
     } else {
-      context.go('/currency');
+      goTripmeticHome(context, ref, selectFeatureId: NavFeatureIds.currency);
     }
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (!revenueCatSdkConfigured) {
-      return _PaywallUnavailable(onClose: () => context.go('/currency'));
+      return _PaywallUnavailable(
+        onClose: () => goTripmeticHome(context, ref, selectFeatureId: NavFeatureIds.currency),
+      );
     }
     return Scaffold(
       body: PaywallView(
@@ -42,7 +46,7 @@ class PaywallScreen extends ConsumerWidget {
           if (context.canPop()) {
             context.pop();
           } else {
-            context.go('/currency');
+            goTripmeticHome(context, ref, selectFeatureId: NavFeatureIds.currency);
           }
         },
       ),

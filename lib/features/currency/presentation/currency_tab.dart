@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sealed_currencies/sealed_currencies.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/currency_providers.dart';
 import '../application/exchange_calculator.dart';
 import '../data/currency_repository.dart';
@@ -27,6 +30,7 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
   late List<String> _codes;
   double _usdAmount = 1;
   bool _suppress = false;
+  bool _ratesRefreshing = false;
 
   @override
   void initState() {
@@ -157,6 +161,7 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
   @override
   Widget build(BuildContext context) {
     final ratesAsync = ref.watch(exchangeRatesStreamProvider);
+    final isPro = ref.watch(isTripmeticProProvider);
 
     ref.listen<AsyncValue<ExchangeRateSnapshot>>(exchangeRatesStreamProvider, (prev, next) {
       next.whenData((snap) {
@@ -180,14 +185,20 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
         final l10n = context.l10n;
         final minsStr = mins.toString();
 
-        return SafeArea(
-          child: GestureDetector(
+        return ProGlassOverlay(
+          featureId: NavFeatureIds.currency,
+          isPro: isPro,
+          child: SafeArea(
+            child: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: ListView(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
-              children: [
+            child: RefreshIndicator(
+              onRefresh: () => refreshExchangeRatesClearingCache(ref),
+              child: ListView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
+                children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -199,6 +210,41 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
                         letterSpacing: 1.2,
                       ),
                     ),
+                  ),
+                  IconButton(
+                    tooltip: l10n.exchangeRatesForceRefreshTooltip,
+                    onPressed: _ratesRefreshing
+                        ? null
+                        : () async {
+                            final messenger = ScaffoldMessenger.of(context);
+                            final okMsg = l10n.exchangeRatesRefreshedOk;
+                            final failMsg = l10n.exchangeRatesRefreshFailed;
+                            setState(() => _ratesRefreshing = true);
+                            try {
+                              await refreshExchangeRatesClearingCache(ref);
+                              if (!mounted) return;
+                              messenger.showSnackBar(
+                                SnackBar(content: Text(okMsg)),
+                              );
+                            } catch (_) {
+                              if (!mounted) return;
+                              messenger.showSnackBar(
+                                SnackBar(content: Text(failMsg)),
+                              );
+                            } finally {
+                              if (mounted) setState(() => _ratesRefreshing = false);
+                            }
+                          },
+                    icon: _ratesRefreshing
+                        ? SizedBox(
+                            width: 22,
+                            height: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: cs.primary,
+                            ),
+                          )
+                        : Icon(Icons.sync_rounded, color: cs.primary, size: 22),
                   ),
                   PopupMenuButton<String>(
                     padding: EdgeInsets.zero,
@@ -261,7 +307,9 @@ class _CurrencyTabState extends ConsumerState<CurrencyTab> {
                   ),
                 ),
             ],
+              ),
             ),
+          ),
           ),
         );
       },

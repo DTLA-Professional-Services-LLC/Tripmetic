@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/availability.dart';
 import '../application/scheduler_logic.dart';
 import '../application/scheduler_notifier.dart';
@@ -65,14 +68,27 @@ class _SchedulerTabState extends ConsumerState<SchedulerTab> {
   @override
   Widget build(BuildContext context) {
     final async = ref.watch(schedulerProvider);
+    final isPro = ref.watch(isTripmeticProProvider);
     return async.when(
       skipLoadingOnReload: true,
-      data: (s) => _buildLoaded(context, s),
-      loading: () => const SafeArea(
-        child: Center(child: CircularProgressIndicator()),
+      data: (s) => ProGlassOverlay(
+        featureId: NavFeatureIds.scheduler,
+        isPro: isPro,
+        child: _buildLoaded(context, s),
       ),
-      error: (e, _) => SafeArea(
-        child: Center(child: Text('$e')),
+      loading: () => ProGlassOverlay(
+        featureId: NavFeatureIds.scheduler,
+        isPro: isPro,
+        child: const SafeArea(
+          child: Center(child: CircularProgressIndicator()),
+        ),
+      ),
+      error: (e, _) => ProGlassOverlay(
+        featureId: NavFeatureIds.scheduler,
+        isPro: isPro,
+        child: SafeArea(
+          child: Center(child: Text('$e')),
+        ),
       ),
     );
   }

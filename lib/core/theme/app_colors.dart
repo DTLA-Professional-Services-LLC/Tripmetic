@@ -20,6 +20,9 @@ abstract final class AppColors {
   /// Champagne gold — active states, primary actions, highlights.
   static const Color accent = Color(0xFFD4AF37);
 
+  /// Teal — always-free tools (settings, unit converter, dual clock), distinct from Pro gold.
+  static const Color freeTier = Color(0xFF5EEAD4);
+
   /// Subtle borders on navy UI.
   static const Color borderSubtle = Color(0xFF3D4F6B);
 

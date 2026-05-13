@@ -10,8 +10,11 @@ import 'package:gal/gal.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../../core/navigation/nav_feature_ids.dart';
+import '../../../core/subscription/subscription_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
+import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/mind_map_providers.dart';
 import '../domain/mind_map_layout.dart';
 import 'mind_map_png_export.dart';
@@ -295,10 +298,14 @@ class _MindMapScreenState extends ConsumerState<MindMapScreen> {
     final doc = ref.watch(mindMapProvider);
     final theme = Theme.of(context);
     final scaleInv = _inverseCanvasScale();
+    final isPro = ref.watch(isTripmeticProProvider);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.mindMap,
+      isPro: isPro,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
         Expanded(
           child: LayoutBuilder(
             builder: (context, constraints) {
@@ -482,6 +489,7 @@ class _MindMapScreenState extends ConsumerState<MindMapScreen> {
           ),
         ),
       ],
+    ),
     );
   }
 }

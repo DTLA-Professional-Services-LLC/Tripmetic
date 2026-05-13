@@ -10,6 +10,9 @@ import '../../../features/currency/domain/exchange_rate_snapshot.dart';
 abstract class RemoteRatesDataSource {
   /// Emits whenever remote data changes. The mock emits once on subscribe.
   Stream<ExchangeRateSnapshot> watchRates();
+
+  /// One-shot fetch (e.g. TTL refresh / pull-to-refresh). Use [forceServer] to bypass client cache.
+  Future<ExchangeRateSnapshot?> fetchLatest({bool forceServer = true});
 }
 
 /// Placeholder that does not call Firebase — suitable until `firebase_options.dart` exists.
@@ -21,5 +24,10 @@ class MockRemoteRatesDataSource implements RemoteRatesDataSource {
     yield ExchangeRateSnapshot.defaults();
     // Reserved: periodic refresh hook once Firestore is wired.
     await Future<void>.delayed(const Duration(days: 365));
+  }
+
+  @override
+  Future<ExchangeRateSnapshot?> fetchLatest({bool forceServer = true}) async {
+    return ExchangeRateSnapshot.defaults();
   }
 }

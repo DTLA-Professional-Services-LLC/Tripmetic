@@ -1,4 +1,4 @@
-// Generates TRIPMETIC launcher icons and splash assets (compass ring + chart + chain).
+// Generates Tripmetic launcher icons and splash assets (compass ring + chart + chain).
 // Run from project root: dart run tool/generate_brand_assets.dart
 
 import 'dart:io';

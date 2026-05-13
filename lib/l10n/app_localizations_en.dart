@@ -57,7 +57,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get announcementsLatest => 'Latest updates';
 
   @override
-  String get appTitle => 'TRIPMETIC.app';
+  String get appTitle => 'Tripmetic.app';
 
   @override
   String get budgetBaseCurrency => 'BASE CURRENCY';
@@ -719,7 +719,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsContact => 'Contact us';
 
   @override
-  String get settingsCopyright => '© 2026 TRIPMETIC.app';
+  String get settingsCopyright => '© 2026 Tripmetic.app';
 
   @override
   String get settingsCouldNotOpenLink => 'Could not open link';

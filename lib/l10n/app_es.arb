@@ -18,7 +18,7 @@
   "addPackingQuantity": "Cantidad",
   "addPackingTitle": "Añadir al equipaje",
   "announcementsLatest": "Novedades",
-  "appTitle": "TRIPMETIC.app",
+  "appTitle": "Tripmetic.app",
   "budgetBaseCurrency": "DIVISA BASE",
   "budgetCategoryDialogHint": "p. ej. Recuerdos",
   "budgetCategoryNameExists": "El nombre ya existe",
@@ -416,6 +416,163 @@
   "navItinerary": "Itinerario",
   "navMoreTools": "Más herramientas",
   "navOfflineMap": "Mapa sin conexión",
+  "navDashboard": "Panel",
+  "navMoreMenu": "Más",
+  "navEditNavigation": "Editar navegación",
+  "navDoneEditing": "Listo",
+  "navSelectSlotHint": "Toca un hueco y luego una herramienta para asignarla.",
+  "navSavePins": "Guardar",
+  "navPinnedSectionTitle": "Anclado a la barra inferior",
+  "navAvailableSectionTitle": "Funciones disponibles",
+  "navEmptySlot": "Vacío — añade desde abajo",
+  "navPinFullHint": "Los cuatro huecos están llenos. Quita uno para añadir otro.",
+  "navEditPinnedHint": "Usa − para liberar un hueco, + para rellenarlo o arrastra para reordenar. Guarda cuando los cuatro estén llenos.",
+  "navAddToPinned": "Añadir a la barra",
+  "navRemoveFromPinned": "Quitar de la barra",
+  "navFeatureBadgeFree": "Gratis",
+  "navFeatureBadgePro": "PRO",
+  "moreMenuSectionFree": "Funciones gratuitas",
+  "moreMenuSectionPro": "Tripmetic Pro",
+  "proGlassTeaserTitle": "Función Tripmetic Pro",
+  "dashboardWorldExplorerSection": "Explorador mundial",
+  "dashboardWorldExplorerCountriesLabel": "Países visitados",
+  "dashboardWorldExplorerPercentLabel": "Del mundo explorado",
+  "dashboardWorldExplorerPercentValue": "{percent} %",
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListDisplayNameLabel": "Nombre para mostrar",
+  "bucketListAuthValidationDisplayName": "Introduce tu nombre",
+  "authSignUpScreenTitle": "Crea tu cuenta Tripmetic",
+  "authSignUpScreenSubtitle": "Opcional: solo si quieres copia en la nube. Puedes usar todas las herramientas en este dispositivo sin registrarte.",
+  "authSignInScreenTitle": "Iniciar sesión en Tripmetic",
+  "authSignInScreenSubtitle": "Opcional: para sincronizar tu lista y los viajes en grupo en la nube. El resto de Tripmetic funciona sin cuenta.",
+  "authForgotPassword": "¿Olvidaste la contraseña?",
+  "authPasswordResetConfirmation": "Si existe una cuenta con ese correo, recibirás un enlace para restablecer la contraseña.",
+  "authUnexpectedError": "Algo salió mal. Inténtalo de nuevo.",
+  "authBackupBulletBucketList": "Los destinos de la lista se guardan en la nube y se combinan al iniciar sesión.",
+  "authBackupBulletGroupTrips": "Los viajes en grupo que creas o a los que te unes quedan asociados a tu cuenta.",
+  "authBackupBulletMultiDevice": "Inicia sesión en otro dispositivo para recuperar tus datos sincronizados.",
+  "authLinkAlreadyHaveAccount": "¿Ya tienes cuenta? Iniciar sesión",
+  "authLinkNeedAccount": "¿Necesitas cuenta? Crear una",
+  "authFullSignUpCta": "Abrir registro completo",
+  "authFullSignInCta": "Abrir inicio de sesión completo",
+  "dashboardGreeting": "Hola, {name}",
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardGuestName": "Viajero",
+  "dashboardWelcomeSubtitle": "Planifica en grupo, mantén el orden y abre herramientas al instante.",
+  "dashboardPlanGroupTrip": "Planificar un viaje en grupo",
+  "dashboardAddBucketList": "Añadir a la lista de deseos",
+  "dashboardActiveTripSection": "Tu próximo viaje",
+  "dashboardNoUpcomingTripTitle": "Sin viaje en grupo próximo",
+  "dashboardNoUpcomingTripBody": "Cuando planifiques con amigos, aquí verás un resumen del viaje.",
+  "dashboardQuickToolsSection": "Accesos rápidos",
+  "dashboardCountdownStartsIn": "Empieza en {days} días",
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardCountdownEndsIn": "Termina en {days} días",
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "navDashboardBody": "Tu centro del viaje: abre herramientas desde la barra o el menú Más.",
+  "appSettings": "Ajustes de la app",
+  "settingsSectionTripmeticPro": "Tripmetic Pro",
+  "settingsSubscriptionActive": "Suscripción activa",
+  "settingsSubscriptionFree": "Plan gratuito",
+  "settingsManageBilling": "Gestionar facturación",
+  "settingsTestModeSectionTitle": "Modo de prueba",
+  "settingsTestModeProTitle": "Probar como Tripmetic Pro",
+  "settingsTestModeProSubtitle": "Anulación local para pruebas; ignora RevenueCat.",
+  "settingsTestModeProCaption": "Cuando está activado, este dispositivo desbloquea todas las funciones Pro de forma local. Solo para pruebas internas: no modifica tu suscripción real.",
+  "settingsUnitsTitle": "Unidades de medida",
+  "settingsLanguageTitle": "Idioma",
+  "settingsThemeTitle": "Tema",
+  "settingsClockWidgetTitle": "Widget de reloj",
+  "settingsThemeSystem": "Sistema",
+  "settingsThemeLight": "Claro",
+  "settingsThemeDark": "Oscuro",
+  "settingsLanguageSystem": "Predeterminado del sistema",
+  "settingsLanguageEnglish": "Inglés",
+  "settingsLanguageSpanish": "Español",
+  "settingsProfileTitle": "Perfil y sincronización",
+  "settingsLogout": "Cerrar sesión",
+  "settingsLogoutConfirm": "¿Cerrar sesión en esta cuenta?",
+  "settingsDeleteAccount": "Eliminar cuenta",
+  "settingsDeleteAccountBody": "La eliminación de cuenta la gestiona el soporte. Puedes cerrar sesión abajo.",
+  "settingsSectionAccount": "Cuenta",
+  "accountManagementListTitle": "Gestionar cuenta",
+  "accountManagementListSubtitle": "Actualiza tu nombre, correo y contraseña",
+  "accountManagementTitle": "Gestión de cuenta",
+  "accountSectionProfile": "Perfil",
+  "accountSectionSignIn": "Inicio de sesión",
+  "accountFieldDisplayName": "Nombre para mostrar",
+  "accountFieldEmail": "Correo electrónico",
+  "accountFieldCurrentPassword": "Contraseña actual",
+  "accountFieldNewPassword": "Nueva contraseña",
+  "accountSaveName": "Guardar nombre",
+  "accountChangeEmail": "Enviar verificación y cambiar correo",
+  "accountChangePassword": "Cambiar contraseña",
+  "accountSignedOutMessage": "Debes iniciar sesión para gestionar tu cuenta.",
+  "accountSignInCta": "Iniciar sesión",
+  "accountNameSaved": "Nombre actualizado",
+  "accountEmailVerificationSent": "Enlace de verificación enviado a {email}. Confírmalo para cambiar tu correo de acceso.",
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+  "accountPasswordChanged": "Contraseña actualizada",
+  "accountReauthRequired": "Por seguridad, vuelve a iniciar sesión para cambiar tu {field}.",
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {"type": "String"}
+    }
+  },
+  "accountFieldLabelEmail": "correo",
+  "accountFieldLabelPassword": "contraseña",
+  "accountErrorGeneric": "No se pudo actualizar {field}: {error}",
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {"type": "String"},
+      "error": {"type": "String"}
+    }
+  },
+  "accountReauthAction": "Iniciar sesión de nuevo",
+  "accountValidationEmailRequired": "Introduce tu correo",
+  "accountValidationEmailInvalid": "Introduce un correo válido",
+  "accountValidationNameRequired": "Introduce tu nombre",
+  "accountValidationPasswordTooShort": "Usa al menos 8 caracteres",
+  "accountCurrentEmailLabel": "Correo actual: {email}",
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+  "proPaywallTitle": "Tripmetic Pro",
+  "proPaywallSubtitle": "Desbloquea mapas sin conexión, herramientas avanzadas y colaboración.",
+  "proPaywallBenefits": "Mapas sin conexión y descargas de regiones\nItinerario, presupuesto, bóveda y equipaje\nPlanificador grupal y sincronización en tiempo real",
+  "proPaywallBullets": "Mapas sin conexión y descargas de regiones|Itinerario, presupuesto, bóveda y equipaje|Planificador grupal y sincronización en tiempo real",
+  "proPaywallUpgradeRevenueCat": "Mejorar con RevenueCat",
+  "upgradeNow": "Mejorar ahora",
   "packingCatClothing": "ROPA",
   "packingCatDocuments": "DOCUMENTOS",
   "packingCatMedications": "MEDICAMENTOS",
@@ -442,6 +599,7 @@
   "proManageSubscription": "Gestionar suscripción",
   "proName": "Tripmetic Pro",
   "proPaywallError": "No se pudo mostrar el paywall. Revisa tu oferta en RevenueCat.",
+  "proPaywallNotConfigured": "Pro no está configurado en esta versión.",
   "proRestoreFailed": "Error al restaurar: {message}",
   "@proRestoreFailed": {
     "placeholders": {
@@ -473,12 +631,15 @@
   "schedulerTitle": "Planificador global",
   "settingsAndInfo": "Ajustes e información",
   "settingsContact": "Contáctanos",
-  "settingsCopyright": "© 2026 TRIPMETIC.app",
+  "settingsCopyright": "© 2026 Tripmetic.app",
   "settingsCouldNotOpenLink": "No se pudo abrir el enlace",
   "settingsHelpFaq": "Ayuda y preguntas frecuentes",
   "settingsPrivacy": "Política de privacidad",
   "settingsSupportLegal": "Soporte y legal",
   "settingsTerms": "Términos de uso",
+  "settingsMapboxAttributionTitle": "Datos del mapa (Mapbox)",
+  "settingsMapboxAttributionBody": "Tripmetic usa mapas de Mapbox. © Mapbox, © OpenStreetMap y otros colaboradores. El logo y el control de atribución en el mapa están ocultos para un diseño más claro y menos toques accidentales; este aviso cumple los requisitos de Mapbox.",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — Acerca de los mapas",
   "sizeCatBelts": "Cinturones",
   "sizeCatMensJeansCombo": "Vaqueros hombre — W×L (US)",
   "sizeCatMensJeansInseam": "Vaqueros hombre — largo (L)",
@@ -492,6 +653,13 @@
   "sizeCatWomensPants": "Pantalones mujer",
   "sizeCatWomensShoes": "Calzado mujer",
   "sizeCatWomensTshirts": "Camisetas mujer",
+  "sizeCatBoysShoes": "Calzado niño",
+  "sizeCatGirlsShoes": "Calzado niña",
+  "sizeCatBoysTshirts": "Camisetas / tops niño",
+  "sizeCatBoysPants": "Pantalones niño",
+  "sizeCatGirlsTshirts": "Camisetas / tops niña",
+  "sizeCatGirlsPants": "Pantalones niña",
+  "sizeCatGirlsDressesKids": "Vestidos niña",
   "sizeColumnPrimaryEu": "Principal: UE",
   "sizeColumnPrimaryJp": "Principal: JP",
   "sizeColumnPrimaryMixed": "Principal: mixto (UE→US→UK→JP)",
@@ -524,6 +692,13 @@
   "sizeHintWomensPants": "p. ej. 6, 10, 38, M",
   "sizeHintWomensShoes": "p. ej. 5–12, 39, 25",
   "sizeHintWomensTshirts": "p. ej. XS, M, 38",
+  "sizeHintBoysShoes": "p. ej. 11C, 3Y, 32, 21",
+  "sizeHintGirlsShoes": "p. ej. 10C, 2Y, 33, 20",
+  "sizeHintBoysTshirts": "p. ej. 6, 8, M, XS",
+  "sizeHintBoysPants": "p. ej. 6, 8, 10 (niño US)",
+  "sizeHintGirlsTshirts": "p. ej. 6, 8, M, S",
+  "sizeHintGirlsPants": "p. ej. 6, 8, 10 (niña US)",
+  "sizeHintGirlsDressesKids": "p. ej. 4, 6, 8, 104",
   "sizeNoMatchEmpty": "Introduce la talla de la etiqueta de tu prenda o zapato.",
   "sizeNoMatchRow": "No hay fila de tallas para esta categoría. Prueba números US, UK, UE, JP o letra (S, M, L) si aplica.",
   "sizeTipJeansCombo": "Ejemplo US 38×32: cintura ≈ UE 48; etiqueta JP a menudo ~96–97 cm; largo 32\" ≈ ~81 cm. Las marcas varían: orientativo.",
@@ -646,5 +821,329 @@
   },
   "vaultTapToUpload": "Toca para subir",
   "vaultTapToView": "Toca para ver",
-  "vaultVaultWord": "bóveda"
+  "vaultVaultWord": "bóveda",
+  "bucketListTitle": "Lista de deseos",
+  "bucketListSubtitle": "Lugares donde has estado, quieres ir y lo que viene.",
+  "bucketListToolSubtitle": "Destinos soñados en mapa y en listas",
+  "bucketListViewModeList": "Lista",
+  "bucketListViewModeMap": "Mapa",
+  "bucketListCategoryBeen": "Visitado",
+  "bucketListCategoryWant": "Deseo",
+  "bucketListCategoryLive": "Vivo",
+  "bucketListCategoryLived": "Viví",
+  "bucketListCategoryUpcoming": "Próximo",
+  "bucketListDatesRange": "{start} – {end}",
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {"type": "String"},
+      "end": {"type": "String"}
+    }
+  },
+  "bucketListDetailCategory": "Categoría",
+  "bucketListDetailDates": "Fechas",
+  "bucketListMapLegend": "Toca un marcador para detalles",
+  "bucketListShareMapWatermarkLarge": "TRIPMETIC",
+  "bucketListShareMapWatermarkUrl": "tripmetic.app",
+  "bucketListShareMapStatExplore": "{name} ha explorado el {worldPercent}% del mundo. Ha viajado más que el {populationPercent}% de la población mundial.",
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {"type": "String"},
+      "worldPercent": {"type": "String"},
+      "populationPercent": {"type": "int"}
+    }
+  },
+  "bucketListShareMapTravelerFallback": "Rafael",
+  "bucketListShareMapStatPopulation": "Ha viajado más que el {percent}% de la población mundial",
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "bucketListShareMapCountriesLabel": "Países",
+  "bucketListShareMapCitiesLabel": "Ciudades",
+  "bucketListEmptyCategory": "Aún no hay lugares en esta categoría.",
+  "bucketListTravelStats": "Estadísticas de viaje",
+  "bucketListStatWorld": "Mundo explorado",
+  "bucketListStatUs": "EE. UU. explorados",
+  "bucketListStatEurope": "Europa explorada",
+  "bucketListStatAsia": "Asia explorada",
+  "bucketListStatAfrica": "África explorada",
+  "bucketListStatRegionalCaption": "Regional",
+  "bucketListStatSubtitle": "{count} únicos · de {total}",
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "bucketListAddDestination": "Añadir destino",
+  "bucketListEditDestination": "Editar destino",
+  "bucketListSave": "Guardar",
+  "bucketListFieldCity": "Ciudad",
+  "bucketListFieldCountry": "País",
+  "bucketListFieldCategory": "Categoría",
+  "bucketListFieldRegionHint": "Estado / provincia (opcional)",
+  "bucketListFieldLatitude": "Latitud",
+  "bucketListFieldLongitude": "Longitud",
+  "bucketListFieldStart": "Fecha de inicio",
+  "bucketListFieldEnd": "Fecha de fin",
+  "bucketListFieldTripDates": "Fechas del viaje",
+  "bucketListValidationRequired": "Este campo es obligatorio.",
+  "bucketListValidationNumber": "Introduce un número válido.",
+  "bucketListValidationDates": "La fecha de fin debe ser igual o posterior a la de inicio.",
+  "bucketListGeocodeNotFound": "No se encontró esta ubicación en el mapa. Revisa la ortografía.",
+  "bucketListShareSummarySubject": "Mi lista Tripmetic",
+  "bucketListShareTooltip": "Compartir lista y mapa",
+  "bucketListShareFailed": "No se pudo compartir: {error}",
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "bucketListShareNeedMap": "Abre la vista Mapa antes de capturar la imagen del mapa.",
+  "bucketListDeleteHint": "Desliza para eliminar",
+  "bucketListTapEditHint": "Toca para editar",
+  "bucketListCloudSyncFailed": "Error de sincronización: {error}",
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "bucketListRetry": "Reintentar",
+  "bucketListBackupTooltip": "Copia y registro",
+  "bucketListBackupTitle": "Copia en la nube",
+  "bucketListBackupGuestIntro": "Tripmetic funciona por completo sin cuenta. Añade una cuando quieras copia en la nube de tu lista y viajes en grupo compartidos.",
+  "bucketListSignedInAs": "Sesión: {email}",
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+  "bucketListBackupEmail": "Correo",
+  "bucketListBackupPassword": "Contraseña",
+  "bucketListBackupConfirmPassword": "Confirmar contraseña",
+  "bucketListAuthTabSignUp": "Registrarse",
+  "bucketListAuthPasswordMismatch": "Las contraseñas no coinciden.",
+  "bucketListRegister": "Crear cuenta y respaldar",
+  "bucketListSignIn": "Iniciar sesión",
+  "bucketListSignOut": "Cerrar sesión",
+  "bucketListBackupUploading": "Subiendo a la nube…",
+  "bucketListAuthSuccessSignIn": "¡Sesión iniciada correctamente!",
+  "bucketListAuthSuccessSignUp": "¡Cuenta creada correctamente!",
+  "signUpSuccessMessage": "Cuenta creada. ¡Bienvenido a Tripmetic!",
+  "signUpErrorEmailInUse": "Este correo ya está registrado. Intenta iniciar sesión.",
+  "signUpErrorInvalidEmail": "Introduce un correo válido.",
+  "signUpErrorWeakPassword": "La contraseña es demasiado débil. Usa al menos 8 caracteres.",
+  "signUpErrorGeneric": "No se pudo crear la cuenta: {message}",
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {"type": "String"}
+    }
+  },
+  "signUpErrorEmailInUseAction": "Iniciar sesión",
+  "bucketListAuthFailed": "No se pudo autenticar: {error}",
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerNoExtraDetails": "Aún no hay notas ni enlaces.",
+  "groupPlannerTitle": "Planificador de grupo",
+  "groupPlannerToolTitle": "Planificador de grupo",
+  "groupPlannerToolSubtitle": "Planifica un viaje juntos en tiempo real",
+  "groupPlannerLandingPlanTitle": "Planificar un viaje en grupo",
+  "groupPlannerLandingPlanSubtitle": "Crea un viaje compartido con destino, fechas y presupuesto.",
+  "groupPlannerLandingJoinTitle": "Unirse a un viaje en grupo",
+  "groupPlannerLandingJoinSubtitle": "Introduce el código o enlace de la invitación.",
+  "groupPlannerCreateTripTitle": "Nuevo viaje en grupo",
+  "groupPlannerSelectDates": "Selecciona el rango de fechas del viaje.",
+  "groupPlannerBudgetPerPersonOption": "Por persona",
+  "groupPlannerBudgetGroupOption": "Grupo",
+  "groupPlannerBudgetNoneOption": "Ninguno",
+  "groupPlannerBudgetAmountLabel": "Importe del presupuesto",
+  "groupPlannerOpenTitle": "Abrir un viaje en grupo",
+  "groupPlannerOpenSubtitle": "Pega el código de invitación.",
+  "groupPlannerOpenTripCodeLabel": "Código de viaje",
+  "groupPlannerOpenHint": "Código corto, ID del viaje o enlace de invitación",
+  "groupPlannerOpenButton": "Abrir viaje",
+  "groupPlannerDestination": "Destino",
+  "groupPlannerDates": "Fechas",
+  "groupPlannerGroupSize": "Tamaño del grupo",
+  "groupPlannerBudget": "Presupuesto",
+  "groupPlannerBudgetPerPerson": "Por persona: {amount}",
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "groupPlannerBudgetGroup": "Total del grupo: {amount}",
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "groupPlannerBudgetNone": "Sin presupuesto",
+  "groupPlannerInviteMembers": "Invitar miembros",
+  "groupPlannerManageMembers": "Gestionar miembros",
+  "groupPlannerItinerary": "Itinerario",
+  "groupPlannerNoActivities": "Aún no hay actividades.",
+  "groupPlannerTripNotFound": "No se pudo cargar este viaje.",
+  "groupPlannerSignInTitle": "Inicia sesión",
+  "groupPlannerSignInBody": "Inicia sesión en Lista → Copia en la nube para ver viajes compartidos.",
+  "groupPlannerCreateTripSignInRequired": "Guardar un viaje en grupo nuevo requiere una cuenta. Inicia sesión para continuar — el resto de Tripmetic funciona sin cuenta.",
+  "groupPlannerMembersTitle": "Miembros",
+  "groupPlannerRoleAdmin": "Admin",
+  "groupPlannerRoleCoPlanner": "Co-planificador",
+  "groupPlannerRoleViewOnly": "Solo lectura",
+  "groupPlannerOwner": "Propietario",
+  "groupPlannerRemoveMember": "Eliminar",
+  "groupPlannerRemoveMemberTitle": "¿Eliminar miembro?",
+  "groupPlannerRemoveMemberBody": "¿Quitar a {email} de este viaje?",
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {"type": "String"}
+    }
+  },
+  "groupPlannerCancel": "Cancelar",
+  "groupPlannerNotes": "Notas",
+  "groupPlannerOpenLink": "Abrir enlace",
+  "groupPlannerNetVotes": "{count}",
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "groupPlannerVoteError": "No se pudo guardar el voto: {error}",
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerManageError": "No se pudo actualizar miembros: {error}",
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerInviteError": "No se pudo compartir: {error}",
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerUnknownTripCode": "No se pudo abrir el viaje: {error}",
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerMyTripsSectionTitle": "Tus viajes",
+  "groupPlannerMyTripsEmpty": "Aún no hay viajes. Crea uno arriba.",
+  "groupPlannerExamplesTitle": "Ejemplos de viajes",
+  "groupPlannerExamplesSubtitle": "Tarjetas de muestra — crea un viaje arriba para añadir el tuyo.",
+  "groupPlannerExampleTapBody": "Son solo ejemplos. Usa «Planificar un viaje en grupo» para crear un viaje real que puedas compartir.",
+  "groupPlannerExampleLisbonTitle": "Retiro de equipo en Lisboa",
+  "groupPlannerExampleKyotoTitle": "Tour de primavera en Kioto",
+  "groupPlannerAddActivity": "Añadir actividad",
+  "groupPlannerActivityTitleLabel": "Título de la actividad",
+  "groupPlannerPeopleCount": "{count} personas",
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "groupPlannerEditActivity": "Editar actividad",
+  "groupPlannerDeleteActivity": "Eliminar",
+  "groupPlannerDeleteActivityTitle": "¿Eliminar actividad?",
+  "groupPlannerDeleteActivityBody": "¿Quitar «{title}» del itinerario? No se puede deshacer.",
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "groupPlannerActivityDeleteError": "No se pudo eliminar la actividad: {error}",
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerActivityEditError": "No se pudo actualizar la actividad: {error}",
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerEditTripTitle": "Editar viaje",
+  "groupPlannerEditTripAction": "Editar viaje",
+  "groupPlannerDeleteTripTitle": "¿Eliminar viaje?",
+  "groupPlannerDeleteTripBody": "¿Eliminar para siempre el viaje «{destination}» y su itinerario para todos? No se puede deshacer.",
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {"type": "String"}
+    }
+  },
+  "groupPlannerDeleteTripAction": "Eliminar viaje",
+  "groupPlannerTripDeleted": "Viaje eliminado.",
+  "groupPlannerTripDeleteError": "No se pudo eliminar el viaje: {error}",
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "groupPlannerTripUpdateError": "No se pudo actualizar el viaje: {error}",
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "widgetInstructionTitle": "Widget de doble reloj",
+  "widgetInstructionSubtitle": "Consulta tu ciudad de origen y destino desde la pantalla de bloqueo o la pantalla de inicio.",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosStep1": "Bloquea el teléfono y mantén pulsada la pantalla de bloqueo.",
+  "widgetInstructionIosStep2": "Toca \"Personalizar\" y elige \"Pantalla de bloqueo\".",
+  "widgetInstructionIosStep3": "Toca \"Añadir widgets\".",
+  "widgetInstructionIosStep4": "Desplázate, busca Tripmetic y añade el widget de doble reloj.",
+  "widgetInstructionAndroidStep1": "Ve a la pantalla de inicio y mantén pulsado un espacio vacío.",
+  "widgetInstructionAndroidStep2": "Toca \"Widgets\".",
+  "widgetInstructionAndroidStep3": "Desplázate hasta Tripmetic.",
+  "widgetInstructionAndroidStep4": "Mantén pulsado el widget de doble reloj y arrástralo a la pantalla.",
+  "widgetInstructionAndroidLockScreenHint": "Para ver ambos relojes en la pantalla de bloqueo: abre Ajustes y busca “pantalla de bloqueo” o “widgets”; añade Tripmetic si tu móvil permite widgets en la pantalla de bloqueo (no todos lo permiten).",
+  "widgetInstructionConfigureCta": "Configurar ciudades del widget",
+  "dualClockScreenTitle": "Widget de doble reloj",
+  "dualClockConfigTitle": "Configurar ciudades",
+  "dualClockConfigSubtitle": "Elige dos ciudades y zonas horarias. Se sincronizan con el widget de inicio (Android) y el de pantalla de bloqueo (iOS).",
+  "dualClockCity1Label": "Primera ciudad",
+  "dualClockCity2Label": "Segunda ciudad",
+  "dualClockSave": "Guardar y actualizar widget",
+  "dualClockSaved": "Widget actualizado.",
+  "dualClockSaveError": "No se pudieron guardar los datos. Inténtalo de nuevo.",
+  "moreToolsDualClockBannerTitle": "Widget de doble reloj",
+  "moreToolsDualClockBannerSubtitle": "Dos zonas horarias en la pantalla de bloqueo o inicio — toca para configurar.",
+  "moreToolsDualClockBannerCta": "Configurar",
+  "settingsDualClockWidgetTitle": "Widget de doble reloj",
+  "settingsDualClockWidgetSubtitle": "Añade el widget y elige tus ciudades",
+  "widgetNewFeatureBadge": "Novedad",
+  "globalNavAccountCloudSyncTooltip": "Cuenta y copia en la nube",
+  "exchangeRatesForceRefreshTooltip": "Obtener tipos de cambio actualizados",
+  "exchangeRatesRefreshedOk": "Tipos de cambio actualizados.",
+  "exchangeRatesRefreshFailed": "No se pudieron actualizar los tipos de cambio.",
+  "bucketListStatUsTerritories": "Territorios de EE. UU.",
+  "bucketListAuthErrUserNotFound": "No hay cuenta con este correo.",
+  "bucketListAuthErrWrongPassword": "Correo o contraseña incorrectos.",
+  "bucketListAuthErrEmailInUse": "Ya existe una cuenta con este correo.",
+  "bucketListAuthErrInvalidEmail": "Correo no válido.",
+  "bucketListAuthErrWeakPassword": "La contraseña es demasiado débil.",
+  "bucketListAuthErrUserDisabled": "Esta cuenta está desactivada.",
+  "bucketListAuthErrTooManyRequests": "Demasiados intentos. Prueba más tarde.",
+  "bucketListAuthErrOperationNotAllowed": "El inicio de sesión por correo no está habilitado.",
+  "bucketListAuthErrDetail": "{detail}",
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {"type": "String"}
+    }
+  },
+  "bucketListAuthValidationInvalidEmail": "Correo no válido.",
+  "bucketListAuthValidationPasswordShort": "La contraseña debe tener al menos 6 caracteres.",
+  "bucketListAuthValidationPasswordRequired": "Introduce tu contraseña."
 }
