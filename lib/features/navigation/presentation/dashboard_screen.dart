@@ -136,7 +136,13 @@ class DashboardScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 16),
                   FilledButton.icon(
-                    onPressed: () => context.push('/group-planner/create'),
+                    onPressed: () {
+                      if (!isPro) {
+                        ProPaywallSheet.show(context);
+                        return;
+                      }
+                      context.push('/group-planner/create');
+                    },
                     icon: const Icon(Icons.groups_rounded),
                     label: Text(l10n.dashboardPlanGroupTrip),
                   ),
@@ -186,9 +192,9 @@ class DashboardScreen extends ConsumerWidget {
                       onTap: () {
                         // Free users must not bypass the Pro gate via the
                         // dashboard snapshot — surface the upsell sheet instead
-                        // of pushing the trip dashboard. The destination screen
-                        // also wraps itself in [ProGlassOverlay] as a belt &
-                        // braces defense (see [GroupTripDashboardScreen]).
+                        // of pushing the trip route. [GroupTripRouteScreen] wraps
+                        // the resolved trip UI in [ProGlassOverlay] as defense in
+                        // depth for deep links.
                         if (!isPro) {
                           ProPaywallSheet.show(context);
                           return;

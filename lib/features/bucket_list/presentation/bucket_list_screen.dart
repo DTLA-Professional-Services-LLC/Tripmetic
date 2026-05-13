@@ -20,6 +20,7 @@ import '../../../core/theme/theme_mode_provider.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/tripmetic_app_bar_title.dart';
 import '../../../shared/widgets/pro_glass_overlay.dart';
+import '../../paywall/presentation/pro_paywall_sheet.dart';
 import '../application/bucket_list_auth_providers.dart';
 import '../application/bucket_list_provider.dart';
 import '../domain/bucket_list_choropleth.dart';
@@ -387,11 +388,17 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                 IconButton(
                   tooltip: l10n.bucketListShareTooltip,
                   icon: const Icon(Icons.ios_share_rounded),
-                  onPressed: _shareBucketList,
+                  onPressed: () {
+                    if (!isPro) {
+                      ProPaywallSheet.show(context);
+                      return;
+                    }
+                    _shareBucketList();
+                  },
                 ),
               ],
             ),
-            floatingActionButton: _mode == _ViewMode.list
+            floatingActionButton: _mode == _ViewMode.list && isPro
                 ? FloatingActionButton(
                     backgroundColor: AppColors.accent,
                     foregroundColor: AppColors.onAccent,
@@ -450,6 +457,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                       child: switch (_mode) {
                         _ViewMode.list => _BucketListList(
                             destinations: destinations,
+                            allowEditing: isPro,
                             onEdit: (d) => showBucketDestinationEditor(
                               context,
                               existing: d,
@@ -672,11 +680,15 @@ class _BucketListList extends StatelessWidget {
     required this.destinations,
     required this.onEdit,
     required this.onDismissed,
+    required this.allowEditing,
   });
 
   final List<TravelDestination> destinations;
   final void Function(TravelDestination d) onEdit;
   final void Function(String id) onDismissed;
+
+  /// When false (free user), rows are read-only (no edit / swipe-delete).
+  final bool allowEditing;
 
   @override
   Widget build(BuildContext context) {
@@ -716,37 +728,25 @@ class _BucketListList extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              l10n.bucketListTapEditHint,
-              style: const TextStyle(
-                color: AppColors.textSecondary,
-                fontSize: 10,
+            if (allowEditing)
+              Text(
+                l10n.bucketListTapEditHint,
+                style: const TextStyle(
+                  color: AppColors.textSecondary,
+                  fontSize: 10,
+                ),
               ),
-            ),
           ],
         ),
       ),
-      Text(
-        l10n.bucketListDeleteHint,
-        style: const TextStyle(color: AppColors.textSecondary, fontSize: 10),
-      ),
-      const SizedBox(height: 6),
+      if (allowEditing)
+        Text(
+          l10n.bucketListDeleteHint,
+          style: const TextStyle(color: AppColors.textSecondary, fontSize: 10),
+        ),
+      if (allowEditing) const SizedBox(height: 6),
       ...items.map((d) {
-        return Dismissible(
-          key: ValueKey<String>(d.id),
-          direction: DismissDirection.endToStart,
-          background: Container(
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.only(right: 18),
-            margin: const EdgeInsets.only(bottom: 8),
-            decoration: BoxDecoration(
-              color: Colors.red.shade900.withValues(alpha: 0.85),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Icon(Icons.delete_outline_rounded, color: Colors.white),
-          ),
-          onDismissed: (_) => onDismissed(d.id),
-          child: Container(
+        final tile = Container(
             margin: const EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
               color: AppColors.surfaceContainer,
@@ -782,14 +782,34 @@ class _BucketListList extends StatelessWidget {
                       ),
                     )
                   : null,
-              trailing: IconButton(
-                icon: const Icon(Icons.edit_outlined, size: 20),
-                color: AppColors.accent,
-                onPressed: () => onEdit(d),
-              ),
-              onTap: () => onEdit(d),
+              trailing: allowEditing
+                  ? IconButton(
+                      icon: const Icon(Icons.edit_outlined, size: 20),
+                      color: AppColors.accent,
+                      onPressed: () => onEdit(d),
+                    )
+                  : null,
+              onTap: allowEditing ? () => onEdit(d) : null,
             ),
+          );
+        if (!allowEditing) {
+          return tile;
+        }
+        return Dismissible(
+          key: ValueKey<String>(d.id),
+          direction: DismissDirection.endToStart,
+          background: Container(
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.only(right: 18),
+            margin: const EdgeInsets.only(bottom: 8),
+            decoration: BoxDecoration(
+              color: Colors.red.shade900.withValues(alpha: 0.85),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Icon(Icons.delete_outline_rounded, color: Colors.white),
           ),
+          onDismissed: (_) => onDismissed(d.id),
+          child: tile,
         );
       }),
     ];

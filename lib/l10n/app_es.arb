@@ -842,7 +842,7 @@
   "bucketListDetailCategory": "Categoría",
   "bucketListDetailDates": "Fechas",
   "bucketListMapLegend": "Toca un marcador para detalles",
-  "bucketListShareMapWatermarkLarge": "TRIPMETIC",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
   "bucketListShareMapWatermarkUrl": "tripmetic.app",
   "bucketListShareMapStatExplore": "{name} ha explorado el {worldPercent}% del mundo. Ha viajado más que el {populationPercent}% de la población mundial.",
   "@bucketListShareMapStatExplore": {

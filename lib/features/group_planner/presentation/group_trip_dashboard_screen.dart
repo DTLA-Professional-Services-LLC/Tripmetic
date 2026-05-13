@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../../core/navigation/nav_feature_ids.dart';
-import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
-import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../../bucket_list/application/bucket_list_auth_providers.dart';
 import '../application/group_planner_providers.dart';
 import '../application/group_trip_service.dart';
@@ -58,7 +55,6 @@ class GroupTripDashboardScreen extends ConsumerWidget {
 
     final auth = ref.watch(firebaseAuthUserProvider);
     final uid = auth.valueOrNull?.uid;
-    final isPro = ref.watch(isTripmeticProProvider);
 
     final tripAsync = ref.watch(groupTripStreamProvider(tripId));
     final membersAsync = ref.watch(groupTripMembersStreamProvider(tripId));
@@ -66,19 +62,10 @@ class GroupTripDashboardScreen extends ConsumerWidget {
       groupTripActivitiesStreamProvider(tripId),
     );
 
-    // Soft paywall: every render path of this Pro screen is wrapped so free
-    // users who reach it (e.g. via a stale deep link or future regression in
-    // the dashboard) see the Tripmetic Pro lock — never raw trip content.
-    Widget gate(Widget body) => ProGlassOverlay(
-          featureId: NavFeatureIds.groupPlanner,
-          isPro: isPro,
-          child: body,
-        );
-
     if (tripAsync.isLoading ||
         membersAsync.isLoading ||
         activitiesAsync.isLoading) {
-      return gate(const Center(child: CircularProgressIndicator()));
+      return const Center(child: CircularProgressIndicator());
     }
 
     if (tripAsync.hasError ||
@@ -86,15 +73,13 @@ class GroupTripDashboardScreen extends ConsumerWidget {
         activitiesAsync.hasError) {
       final err =
           tripAsync.error ?? membersAsync.error ?? activitiesAsync.error;
-      return gate(
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Text(
-              '$err',
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge?.copyWith(color: cs.error),
-            ),
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            '$err',
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodyLarge?.copyWith(color: cs.error),
           ),
         ),
       );
@@ -105,51 +90,47 @@ class GroupTripDashboardScreen extends ConsumerWidget {
     final activities = activitiesAsync.value ?? const [];
 
     if (uid == null) {
-      return gate(
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.cloud_off_outlined,
-                  size: 48,
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.cloud_off_outlined,
+                size: 48,
+                color: cs.onSurfaceVariant,
+              ),
+              const SizedBox(height: 16),
+              Text(
+                l10n.groupPlannerSignInTitle,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.groupPlannerSignInBody,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: cs.onSurfaceVariant,
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  l10n.groupPlannerSignInTitle,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  l10n.groupPlannerSignInBody,
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: cs.onSurfaceVariant,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );
     }
 
     if (trip == null) {
-      return gate(
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Text(
-              l10n.groupPlannerTripNotFound,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                color: cs.onSurfaceVariant,
-              ),
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            l10n.groupPlannerTripNotFound,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              color: cs.onSurfaceVariant,
             ),
           ),
         ),
@@ -172,7 +153,7 @@ class GroupTripDashboardScreen extends ConsumerWidget {
     final canAddActivity =
         selfMember != null && selfMember.role.canPlanActivities;
 
-    return gate(Stack(
+    return Stack(
       clipBehavior: Clip.none,
       fit: StackFit.expand,
       children: [
@@ -340,7 +321,7 @@ class GroupTripDashboardScreen extends ConsumerWidget {
             ),
           ),
       ],
-    ));
+    );
   }
 }
 

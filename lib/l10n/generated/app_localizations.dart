@@ -3239,7 +3239,7 @@ abstract class AppLocalizations {
   /// No description provided for @bucketListShareMapWatermarkLarge.
   ///
   /// In en, this message translates to:
-  /// **'TRIPMETIC'**
+  /// **'Tripmetic'**
   String get bucketListShareMapWatermarkLarge;
 
   /// No description provided for @bucketListShareMapWatermarkUrl.

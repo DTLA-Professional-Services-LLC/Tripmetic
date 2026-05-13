@@ -1722,7 +1722,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bucketListMapLegend => 'Tap a marker for details';
 
   @override
-  String get bucketListShareMapWatermarkLarge => 'TRIPMETIC';
+  String get bucketListShareMapWatermarkLarge => 'Tripmetic';
 
   @override
   String get bucketListShareMapWatermarkUrl => 'tripmetic.app';
