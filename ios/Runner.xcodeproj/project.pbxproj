@@ -83,6 +83,7 @@
 		B7E8D4C12F9A000100000002 /* DualClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualClockWidget.swift; sourceTree = "<group>"; };
 		B7E8D4C12F9A000100000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7E8D4C12F9A000100000004 /* DualClockWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DualClockWidgetExtension.entitlements; sourceTree = "<group>"; };
+		B7E8D4C12F9A000100000021 /* Extension.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Extension.xcconfig; sourceTree = "<group>"; };
 		B7E8D4C12F9A000100000005 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +166,7 @@
 		B7E8D4C12F9A00010000000F /* DualClockWidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
+				B7E8D4C12F9A000100000021 /* Extension.xcconfig */,
 				B7E8D4C12F9A000100000002 /* DualClockWidget.swift */,
 				B7E8D4C12F9A000100000003 /* Info.plist */,
 				B7E8D4C12F9A000100000004 /* DualClockWidgetExtension.entitlements */,
@@ -693,7 +695,7 @@
 		};
 		B7E8D4C12F9A000100000011 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
+			baseConfigurationReference = B7E8D4C12F9A000100000021 /* Extension.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -710,6 +712,8 @@
 				INFOPLIST_FILE = DualClockWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dual Clock";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				OTHER_LDFLAGS = (
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +732,7 @@
 		};
 		B7E8D4C12F9A000100000012 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
+			baseConfigurationReference = B7E8D4C12F9A000100000021 /* Extension.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -745,6 +749,8 @@
 				INFOPLIST_FILE = DualClockWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dual Clock";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				OTHER_LDFLAGS = (
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,7 +768,7 @@
 		};
 		B7E8D4C12F9A000100000013 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
+			baseConfigurationReference = B7E8D4C12F9A000100000021 /* Extension.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -779,6 +785,8 @@
 				INFOPLIST_FILE = DualClockWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dual Clock";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				OTHER_LDFLAGS = (
+				);
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

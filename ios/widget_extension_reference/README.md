@@ -21,7 +21,11 @@ These Swift files are **not** built by Flutter automatically. Add a **Widget Ext
 4. **Widget kind**  
    - The struct `DualClockWidget` uses `kind = "DualClockWidget"`. This **must** match `HomeWidget.updateWidget(iOSName: 'DualClockWidget')` in Flutter.
 
-5. **Run**  
+5. **Build settings (critical)**  
+   - Do **not** set the extension target’s base configuration to Flutter’s `Debug.xcconfig` / `Release.xcconfig` (those can pull Flutter linker flags into the `.appex` and cause *Undefined symbol: \_Flutter…* link errors).  
+   - In this repo, `DualClockWidgetExtension/Extension.xcconfig` includes only `Generated.xcconfig` for version macros and clears `OTHER_LDFLAGS` so the widget stays **pure SwiftUI + WidgetKit**.
+
+6. **Run**  
    - Build the app, then on device: Lock Screen → Customize → Add Widgets → Tripmetic → Dual Clock.
 
 If `containerBackground(for: .widget)` produces availability errors, wrap it with `#available(iOSApplicationExtension 17.0, *)` or remove and rely on the default accessory background.
