@@ -39,7 +39,7 @@ private struct DualClockStyle {
 
     static func load(from defaults: UserDefaults?) -> DualClockStyle {
         let rawScale = Double(defaults?.string(forKey: DualClockKeys.fontScale) ?? "1.0") ?? 1.0
-        let fontScale = CGFloat(min(max(rawScale, 0.78), 1.55))
+        let fontScale = CGFloat(Swift.min(Swift.max(rawScale, 0.78), 2.0))
 
         let city = Color.argbHex(defaults?.string(forKey: DualClockKeys.cityColorHex)) ?? .primary
         let time = Color.argbHex(defaults?.string(forKey: DualClockKeys.timeColorHex)) ?? .primary
@@ -154,6 +154,14 @@ private enum DualClockFormatters {
         return f.string(from: date)
     }
 
+    /// Narrow accessory slot: shorter string than `EEE MMM d` to avoid ellipsis.
+    static func formatCompactDate(date: Date, timeZone: TimeZone) -> String {
+        let f = DateFormatter()
+        f.timeZone = timeZone
+        f.setLocalizedDateFormatFromTemplate("MMM d")
+        return f.string(from: date)
+    }
+
     static func shortCityLabel(_ name: String) -> String {
         let t = name.trimmingCharacters(in: .whitespacesAndNewlines)
         if t.isEmpty { return "—" }
@@ -171,32 +179,44 @@ struct DualClockAccessoryRectangularView: View {
         let defaults = UserDefaults(suiteName: kAppGroupId)
         let style = DualClockStyle.load(from: defaults)
         let s = style.fontScale
-        /// Base sizes tuned for accessoryRectangular; scale up for readability.
-        let cityPt = (12 * s).clamped(to: 10...19)
-        let timePt = (15 * s).clamped(to: 12...22)
-        let datePt = (10 * s).clamped(to: 9...16)
+        /// Larger bases + higher caps so the in-app slider can meaningfully exceed ~155%.
+        let cityPt = (14 * s).clamped(to: 11...32)
+        let timePt = (17 * s).clamped(to: 14...36)
+        let datePt = (12 * s).clamped(to: 10...24)
 
-        HStack(alignment: .top, spacing: 8 * s) {
-            locationColumn(
-                city: entry.city1,
-                tzId: entry.tz1,
-                at: entry.date,
-                style: style,
-                cityPt: cityPt,
-                timePt: timePt,
-                datePt: datePt,
-            )
-            locationColumn(
-                city: entry.city2,
-                tzId: entry.tz2,
-                at: entry.date,
-                style: style,
-                cityPt: cityPt,
-                timePt: timePt,
-                datePt: datePt,
-            )
+        let content = GeometryReader { geo in
+            let gap = max(4, 6 * s)
+            let half = max(1, (geo.size.width - gap) / 2)
+            HStack(alignment: .top, spacing: gap) {
+                locationColumn(
+                    city: entry.city1,
+                    tzId: entry.tz1,
+                    at: entry.date,
+                    style: style,
+                    cityPt: cityPt,
+                    timePt: timePt,
+                    datePt: datePt,
+                    columnMaxWidth: half,
+                )
+                locationColumn(
+                    city: entry.city2,
+                    tzId: entry.tz2,
+                    at: entry.date,
+                    style: style,
+                    cityPt: cityPt,
+                    timePt: timePt,
+                    datePt: datePt,
+                    columnMaxWidth: half,
+                )
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
-        .widgetAccentable()
+
+        if #available(iOSApplicationExtension 17.0, *) {
+            content.widgetAccentable(false)
+        } else {
+            content
+        }
     }
 
     @ViewBuilder
@@ -208,30 +228,32 @@ struct DualClockAccessoryRectangularView: View {
         cityPt: CGFloat,
         timePt: CGFloat,
         datePt: CGFloat,
+        columnMaxWidth: CGFloat,
     ) -> some View {
         let tz = TimeZone(identifier: tzId) ?? .current
-        VStack(alignment: .leading, spacing: 3) {
+        VStack(alignment: .leading, spacing: 2) {
             Text(city)
                 .font(.system(size: cityPt, weight: .semibold, design: .rounded))
                 .foregroundStyle(style.cityColor)
-                .lineLimit(1)
-                .minimumScaleFactor(0.82)
+                .lineLimit(2)
+                .minimumScaleFactor(0.32)
+                .multilineTextAlignment(.leading)
                 .shadowIf(style.useTextShadow)
             Text(DualClockFormatters.formatTime(date: date, timeZone: tz))
                 .font(.system(size: timePt, weight: .semibold, design: .rounded))
                 .foregroundStyle(style.timeColor)
                 .monospacedDigit()
                 .lineLimit(1)
-                .minimumScaleFactor(0.85)
+                .minimumScaleFactor(0.28)
                 .shadowIf(style.useTextShadow)
-            Text(DualClockFormatters.formatShortDate(date: date, timeZone: tz))
+            Text(DualClockFormatters.formatCompactDate(date: date, timeZone: tz))
                 .font(.system(size: datePt, weight: .medium, design: .rounded))
                 .foregroundStyle(style.dateColor)
                 .lineLimit(1)
-                .minimumScaleFactor(0.8)
+                .minimumScaleFactor(0.28)
                 .shadowIf(style.useTextShadow)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: columnMaxWidth, alignment: .leading)
     }
 }
 
@@ -244,20 +266,33 @@ struct DualClockAccessoryInlineView: View {
         let defaults = UserDefaults(suiteName: kAppGroupId)
         let style = DualClockStyle.load(from: defaults)
         let s = style.fontScale
-        let linePt = (11 * s).clamped(to: 10...17)
+        let linePt = (12 * s).clamped(to: 10...22)
         let tz1 = TimeZone(identifier: entry.tz1) ?? .current
         let tz2 = TimeZone(identifier: entry.tz2) ?? .current
         let t1 = DualClockFormatters.formatTime(date: entry.date, timeZone: tz1)
         let t2 = DualClockFormatters.formatTime(date: entry.date, timeZone: tz2)
         let c1 = DualClockFormatters.shortCityLabel(entry.city1)
         let c2 = DualClockFormatters.shortCityLabel(entry.city2)
-        Text("\(c1) \(t1)  ·  \(c2) \(t2)")
-            .font(.system(size: linePt, weight: .semibold, design: .rounded))
-            .foregroundStyle(style.timeColor)
-            .monospacedDigit()
-            .lineLimit(1)
-            .minimumScaleFactor(0.5)
-            .shadowIf(style.useTextShadow)
+        Group {
+            if #available(iOSApplicationExtension 17.0, *) {
+                Text("\(c1) \(t1)  ·  \(c2) \(t2)")
+                    .font(.system(size: linePt, weight: .semibold, design: .rounded))
+                    .foregroundStyle(style.timeColor)
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.45)
+                    .shadowIf(style.useTextShadow)
+                    .widgetAccentable(false)
+            } else {
+                Text("\(c1) \(t1)  ·  \(c2) \(t2)")
+                    .font(.system(size: linePt, weight: .semibold, design: .rounded))
+                    .foregroundStyle(style.timeColor)
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.45)
+                    .shadowIf(style.useTextShadow)
+            }
+        }
     }
 }
 

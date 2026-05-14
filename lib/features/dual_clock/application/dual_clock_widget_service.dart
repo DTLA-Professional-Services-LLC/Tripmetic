@@ -28,7 +28,7 @@ class DualClockWidgetService {
     String dateColorHex = 'auto',
     bool useTextShadow = true,
   }) async {
-    final fs = fontScale.clamp(0.78, 1.55);
+    final fs = fontScale.clamp(0.78, 2.0);
     await Future.wait<bool?>([
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city1Name, city1Name),
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city1Tz, city1Tz),

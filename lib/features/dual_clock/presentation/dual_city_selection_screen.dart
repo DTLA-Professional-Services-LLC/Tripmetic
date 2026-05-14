@@ -112,7 +112,7 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
     setState(() {
       _city1 = _presetOrStored(c1, z1, kDualClockDefaultCity1);
       _city2 = _presetOrStored(c2, z2, kDualClockDefaultCity2);
-      _fontScale = parsedFs.clamp(0.78, 1.55);
+      _fontScale = parsedFs.clamp(0.78, 2.0);
       _cityColor = _dualClockParseColorHex(cityHex);
       _timeColor = _dualClockParseColorHex(timeHex);
       _dateColor = _dualClockParseColorHex(dateHex);
@@ -252,7 +252,7 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
               Slider(
                 value: _fontScale,
                 min: 0.78,
-                max: 1.55,
+                max: 2.0,
                 divisions: 15,
                 label: '${(_fontScale * 100).round()}%',
                 onChanged: (v) => setState(() => _fontScale = v),
