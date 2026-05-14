@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../domain/vault_document.dart';
 
@@ -20,6 +19,7 @@ class VaultTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     final l10n = context.l10n;
     final hasDoc = document != null;
     
@@ -32,10 +32,10 @@ class VaultTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors.surface,
+              color: cs.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: hasDoc ? AppColors.accent.withValues(alpha: 0.5) : AppColors.borderSubtle,
+                color: hasDoc ? cs.primary.withValues(alpha: 0.55) : cs.outlineVariant,
                 width: hasDoc ? 1.5 : 1.0,
               ),
               boxShadow: [
@@ -57,7 +57,7 @@ class VaultTile extends StatelessWidget {
                   children: [
                     Icon(
                       iconData,
-                      color: hasDoc ? AppColors.accent : AppColors.textSecondary,
+                      color: hasDoc ? cs.primary : cs.onSurfaceVariant,
                       size: 28,
                     ),
                     if (hasDoc)
@@ -76,7 +76,7 @@ class VaultTile extends StatelessWidget {
                     else
                       Icon(
                         Icons.add_circle_outline_rounded,
-                        color: AppColors.textSecondary.withValues(alpha: 0.5),
+                        color: cs.onSurfaceVariant.withValues(alpha: 0.55),
                         size: 20,
                       ),
                   ],
@@ -88,7 +88,7 @@ class VaultTile extends StatelessWidget {
                     Text(
                       category,
                       style: theme.textTheme.titleMedium?.copyWith(
-                        color: AppColors.textPrimary,
+                        color: cs.onSurface,
                         fontWeight: FontWeight.w700,
                         fontSize: 15,
                       ),
@@ -99,7 +99,7 @@ class VaultTile extends StatelessWidget {
                     Text(
                       hasDoc ? l10n.vaultTapToView : l10n.vaultTapToUpload,
                       style: theme.textTheme.labelSmall?.copyWith(
-                        color: hasDoc ? AppColors.accent : AppColors.textSecondary,
+                        color: hasDoc ? cs.primary : cs.onSurfaceVariant,
                         fontWeight: hasDoc ? FontWeight.w600 : FontWeight.w500,
                       ),
                     ),

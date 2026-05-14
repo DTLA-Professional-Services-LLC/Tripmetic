@@ -4236,6 +4236,54 @@ abstract class AppLocalizations {
   /// **'Could not save widget data. Please try again.'**
   String get dualClockSaveError;
 
+  /// No description provided for @dualClockAppearanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lock screen widget (iOS)'**
+  String get dualClockAppearanceTitle;
+
+  /// No description provided for @dualClockAppearanceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Larger text and shadows help on photo wallpapers. Android home widget uses system colors.'**
+  String get dualClockAppearanceHint;
+
+  /// No description provided for @dualClockFontScaleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Text size'**
+  String get dualClockFontScaleLabel;
+
+  /// No description provided for @dualClockColorCity.
+  ///
+  /// In en, this message translates to:
+  /// **'City names'**
+  String get dualClockColorCity;
+
+  /// No description provided for @dualClockColorTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Times'**
+  String get dualClockColorTime;
+
+  /// No description provided for @dualClockColorDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get dualClockColorDate;
+
+  /// No description provided for @dualClockShadowLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Text shadow'**
+  String get dualClockShadowLabel;
+
+  /// No description provided for @dualClockShadowSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adds contrast on busy or photo wallpapers.'**
+  String get dualClockShadowSubtitle;
+
   /// No description provided for @moreToolsDualClockBannerTitle.
   ///
   /// In en, this message translates to:

@@ -7,7 +7,8 @@ These Swift files are **not** built by Flutter automatically. Add a **Widget Ext
 1. **App Group (Runner + widget extension)**  
    - Create/use identifier: `group.com.tripmetic.app`  
    - Enable **App Groups** on the main app target and on the widget extension.  
-   - Match Flutter: `DualClockWidgetService.iosAppGroupId` uses this group.
+   - Match Flutter: `DualClockWidgetService.iosAppGroupId` uses this group.  
+   - Optional style keys (written from Tripmetic → **Configure cities**): `dual_clock_font_scale`, `dual_clock_city_color`, `dual_clock_time_color`, `dual_clock_date_color` (`AARRGGBB` or `auto`), `dual_clock_use_text_shadow` (`1`/`0`).
 
 2. **New target**  
    - File → New → Target → **Widget Extension**  

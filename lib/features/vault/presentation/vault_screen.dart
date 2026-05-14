@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/navigation/nav_feature_ids.dart';
 import '../../../core/subscription/subscription_providers.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../application/vault_providers.dart';
@@ -27,16 +26,17 @@ class VaultScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final documents = ref.watch(vaultProvider);
     final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     final l10n = context.l10n;
     final isPro = ref.watch(isTripmeticProProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded, color: AppColors.textPrimary),
+          icon: Icon(Icons.arrow_back_rounded, color: theme.colorScheme.onSurface),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -55,7 +55,7 @@ class VaultScreen extends ConsumerWidget {
                     width: 4,
                     height: 22,
                     decoration: BoxDecoration(
-                      color: AppColors.accent,
+                      color: cs.primary,
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -65,7 +65,7 @@ class VaultScreen extends ConsumerWidget {
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w800,
                       letterSpacing: 0.4,
-                      color: AppColors.textPrimary,
+                      color: cs.onSurface,
                     ),
                   ),
                   const SizedBox(width: 6),
@@ -73,7 +73,7 @@ class VaultScreen extends ConsumerWidget {
                     l10n.vaultVaultWord,
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500,
-                      color: AppColors.accent.withValues(alpha: 0.95),
+                      color: cs.primary.withValues(alpha: 0.95),
                     ),
                   ),
                 ],
@@ -83,7 +83,7 @@ class VaultScreen extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(
                 l10n.vaultIntro,
-                style: theme.textTheme.bodyMedium?.copyWith(color: AppColors.textSecondary),
+                style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurfaceVariant),
               ),
             ),
             Expanded(

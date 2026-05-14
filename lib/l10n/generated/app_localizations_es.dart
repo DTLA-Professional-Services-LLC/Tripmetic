@@ -2309,6 +2309,32 @@ class AppLocalizationsEs extends AppLocalizations {
       'No se pudieron guardar los datos. Inténtalo de nuevo.';
 
   @override
+  String get dualClockAppearanceTitle => 'Widget de pantalla de bloqueo (iOS)';
+
+  @override
+  String get dualClockAppearanceHint =>
+      'Texto más grande y sombras ayudan con fondos de foto. El widget de inicio en Android usa colores del sistema.';
+
+  @override
+  String get dualClockFontScaleLabel => 'Tamaño del texto';
+
+  @override
+  String get dualClockColorCity => 'Nombres de ciudad';
+
+  @override
+  String get dualClockColorTime => 'Horas';
+
+  @override
+  String get dualClockColorDate => 'Fechas';
+
+  @override
+  String get dualClockShadowLabel => 'Sombra del texto';
+
+  @override
+  String get dualClockShadowSubtitle =>
+      'Mejora el contraste con fondos con foto o muy cargados.';
+
+  @override
   String get moreToolsDualClockBannerTitle => 'Widget de doble reloj';
 
   @override

@@ -2297,6 +2297,32 @@ class AppLocalizationsEn extends AppLocalizations {
       'Could not save widget data. Please try again.';
 
   @override
+  String get dualClockAppearanceTitle => 'Lock screen widget (iOS)';
+
+  @override
+  String get dualClockAppearanceHint =>
+      'Larger text and shadows help on photo wallpapers. Android home widget uses system colors.';
+
+  @override
+  String get dualClockFontScaleLabel => 'Text size';
+
+  @override
+  String get dualClockColorCity => 'City names';
+
+  @override
+  String get dualClockColorTime => 'Times';
+
+  @override
+  String get dualClockColorDate => 'Dates';
+
+  @override
+  String get dualClockShadowLabel => 'Text shadow';
+
+  @override
+  String get dualClockShadowSubtitle =>
+      'Adds contrast on busy or photo wallpapers.';
+
+  @override
   String get moreToolsDualClockBannerTitle => 'Dual Clock widget';
 
   @override

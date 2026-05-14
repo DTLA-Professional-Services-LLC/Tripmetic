@@ -22,12 +22,29 @@ class DualClockWidgetService {
     required String city1Tz,
     required String city2Name,
     required String city2Tz,
+    double fontScale = 1.0,
+    String cityColorHex = 'auto',
+    String timeColorHex = 'auto',
+    String dateColorHex = 'auto',
+    bool useTextShadow = true,
   }) async {
+    final fs = fontScale.clamp(0.78, 1.55);
     await Future.wait<bool?>([
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city1Name, city1Name),
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city1Tz, city1Tz),
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city2Name, city2Name),
       HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.city2Tz, city2Tz),
+      HomeWidget.saveWidgetData<String>(
+        DualClockWidgetKeys.fontScale,
+        fs.toStringAsFixed(2),
+      ),
+      HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.cityColorHex, cityColorHex),
+      HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.timeColorHex, timeColorHex),
+      HomeWidget.saveWidgetData<String>(DualClockWidgetKeys.dateColorHex, dateColorHex),
+      HomeWidget.saveWidgetData<String>(
+        DualClockWidgetKeys.useTextShadow,
+        useTextShadow ? '1' : '0',
+      ),
     ]);
     await HomeWidget.updateWidget(
       qualifiedAndroidName: 'com.tripmetic.app.DualClockWidgetProvider',

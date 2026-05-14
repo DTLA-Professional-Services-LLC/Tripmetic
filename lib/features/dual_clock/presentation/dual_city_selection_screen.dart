@@ -8,6 +8,37 @@ import '../data/dual_city_presets.dart';
 import '../domain/dual_city_preset.dart';
 import '../domain/dual_clock_widget_keys.dart';
 
+String _dualClockColorToHex(Color c) {
+  final a = ((c.a * 255.0).round()).clamp(0, 255);
+  final r = ((c.r * 255.0).round()).clamp(0, 255);
+  final g = ((c.g * 255.0).round()).clamp(0, 255);
+  final b = ((c.b * 255.0).round()).clamp(0, 255);
+  final v = ((a & 0xff) << 24) | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff);
+  return v.toRadixString(16).padLeft(8, '0');
+}
+
+Color? _dualClockParseColorHex(String? raw) {
+  if (raw == null) return null;
+  final t = raw.trim();
+  if (t.isEmpty || t.toLowerCase() == 'auto') return null;
+  var h = t;
+  if (h.startsWith('#')) h = h.substring(1);
+  final v = int.tryParse(h, radix: 16);
+  if (v == null) return null;
+  if (h.length <= 6) return Color(0xFF000000 | v);
+  return Color(v);
+}
+
+/// First chip is Auto (null); rest are fixed presets for lock-screen legibility.
+const List<Color?> kDualClockColorPresets = <Color?>[
+  null,
+  Color(0xFFFFFFFF),
+  Color(0xFFD4AF37),
+  Color(0xFF5EEAD4),
+  Color(0xFFFFB74D),
+  Color(0xFFCFD8DC),
+];
+
 class DualCitySelectionScreen extends StatefulWidget {
   const DualCitySelectionScreen({super.key});
 
@@ -21,6 +52,12 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
 
   DualCityPreset? _city1;
   DualCityPreset? _city2;
+
+  double _fontScale = 1.0;
+  Color? _cityColor;
+  Color? _timeColor;
+  Color? _dateColor;
+  bool _useTextShadow = true;
 
   @override
   void initState() {
@@ -47,12 +84,40 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
       DualClockWidgetKeys.city2Tz,
       defaultValue: d2.timezoneId,
     );
+    final fsRaw = await HomeWidget.getWidgetData<String>(
+      DualClockWidgetKeys.fontScale,
+      defaultValue: '1.0',
+    );
+    final cityHex = await HomeWidget.getWidgetData<String>(
+      DualClockWidgetKeys.cityColorHex,
+      defaultValue: 'auto',
+    );
+    final timeHex = await HomeWidget.getWidgetData<String>(
+      DualClockWidgetKeys.timeColorHex,
+      defaultValue: 'auto',
+    );
+    final dateHex = await HomeWidget.getWidgetData<String>(
+      DualClockWidgetKeys.dateColorHex,
+      defaultValue: 'auto',
+    );
+    final shadowRaw = await HomeWidget.getWidgetData<String>(
+      DualClockWidgetKeys.useTextShadow,
+      defaultValue: '1',
+    );
 
     if (!mounted) return;
+
+    final parsedFs = double.tryParse(fsRaw ?? '1.0') ?? 1.0;
 
     setState(() {
       _city1 = _presetOrStored(c1, z1, kDualClockDefaultCity1);
       _city2 = _presetOrStored(c2, z2, kDualClockDefaultCity2);
+      _fontScale = parsedFs.clamp(0.78, 1.55);
+      _cityColor = _dualClockParseColorHex(cityHex);
+      _timeColor = _dualClockParseColorHex(timeHex);
+      _dateColor = _dualClockParseColorHex(dateHex);
+      _useTextShadow =
+          (shadowRaw ?? '1') != '0' && (shadowRaw ?? '1').toLowerCase() != 'false';
       _loading = false;
     });
   }
@@ -91,6 +156,11 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
         city1Tz: p1.timezoneId,
         city2Name: p2.label,
         city2Tz: p2.timezoneId,
+        fontScale: _fontScale,
+        cityColorHex: _cityColor == null ? 'auto' : _dualClockColorToHex(_cityColor!),
+        timeColorHex: _timeColor == null ? 'auto' : _dualClockColorToHex(_timeColor!),
+        dateColorHex: _dateColor == null ? 'auto' : _dualClockColorToHex(_dateColor!),
+        useTextShadow: _useTextShadow,
       );
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -159,6 +229,63 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
                   if (v != null) setState(() => _city2 = v);
                 },
               ),
+              const SizedBox(height: 24),
+              Text(
+                l10n.dualClockAppearanceTitle,
+                style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                l10n.dualClockAppearanceHint,
+                style: theme.textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(child: Text(l10n.dualClockFontScaleLabel)),
+                  Text(
+                    '${(_fontScale * 100).round()}%',
+                    style: theme.textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+              Slider(
+                value: _fontScale,
+                min: 0.78,
+                max: 1.55,
+                divisions: 15,
+                label: '${(_fontScale * 100).round()}%',
+                onChanged: (v) => setState(() => _fontScale = v),
+              ),
+              const SizedBox(height: 8),
+              _DualClockColorRow(
+                label: l10n.dualClockColorCity,
+                selected: _cityColor,
+                onChanged: (c) => setState(() => _cityColor = c),
+              ),
+              const SizedBox(height: 12),
+              _DualClockColorRow(
+                label: l10n.dualClockColorTime,
+                selected: _timeColor,
+                onChanged: (c) => setState(() => _timeColor = c),
+              ),
+              const SizedBox(height: 12),
+              _DualClockColorRow(
+                label: l10n.dualClockColorDate,
+                selected: _dateColor,
+                onChanged: (c) => setState(() => _dateColor = c),
+              ),
+              const SizedBox(height: 8),
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l10n.dualClockShadowLabel),
+                subtitle: Text(
+                  l10n.dualClockShadowSubtitle,
+                  style: theme.textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
+                ),
+                value: _useTextShadow,
+                onChanged: (v) => setState(() => _useTextShadow = v),
+              ),
               const SizedBox(height: 28),
               FilledButton(
                 onPressed: _saving ? null : _save,
@@ -174,6 +301,71 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
           ),
         );
       },
+    );
+  }
+}
+
+class _DualClockColorRow extends StatelessWidget {
+  const _DualClockColorRow({
+    required this.label,
+    required this.selected,
+    required this.onChanged,
+  });
+
+  final String label;
+  final Color? selected;
+  final ValueChanged<Color?> onChanged;
+
+  bool _matchesPreset(Color? preset) {
+    if (preset == null && selected == null) return true;
+    if (preset == null || selected == null) return false;
+    return _dualClockColorToHex(preset) == _dualClockColorToHex(selected!);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600)),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: [
+            for (final preset in kDualClockColorPresets)
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  customBorder: const CircleBorder(),
+                  onTap: () => onChanged(preset),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 160),
+                    width: 34,
+                    height: 34,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: _matchesPreset(preset) ? cs.primary : cs.outlineVariant,
+                        width: _matchesPreset(preset) ? 2.5 : 1,
+                      ),
+                      color: preset ?? cs.surfaceContainerHighest,
+                    ),
+                    child: preset == null
+                        ? Icon(
+                            Icons.auto_awesome_rounded,
+                            size: 18,
+                            color: cs.onSurfaceVariant,
+                          )
+                        : null,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ],
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../domain/vault_document.dart';
 
@@ -65,22 +64,34 @@ class PresentationModeScreen extends StatelessWidget {
                     onPressed: () async {
                       final confirm = await showDialog<bool>(
                         context: context,
-                        builder: (ctx) => AlertDialog(
-                          backgroundColor: AppColors.surface,
-                          title: Text(l10n.presentationDeleteTitle, style: const TextStyle(color: Colors.white)),
-                          content: Text(l10n.presentationDeleteBody, style: const TextStyle(color: AppColors.textSecondary)),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(ctx, false),
-                              child: Text(l10n.commonCancel, style: const TextStyle(color: AppColors.textSecondary)),
+                        builder: (ctx) {
+                          final cs = Theme.of(ctx).colorScheme;
+                          return AlertDialog(
+                            backgroundColor: cs.surfaceContainerHighest,
+                            title: Text(
+                              l10n.presentationDeleteTitle,
+                              style: TextStyle(color: cs.onSurface),
                             ),
-                            FilledButton(
-                              style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
-                              onPressed: () => Navigator.pop(ctx, true),
-                              child: Text(l10n.commonDelete),
+                            content: Text(
+                              l10n.presentationDeleteBody,
+                              style: TextStyle(color: cs.onSurfaceVariant),
                             ),
-                          ],
-                        ),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(ctx, false),
+                                child: Text(
+                                  l10n.commonCancel,
+                                  style: TextStyle(color: cs.onSurfaceVariant),
+                                ),
+                              ),
+                              FilledButton(
+                                style: FilledButton.styleFrom(backgroundColor: Colors.redAccent),
+                                onPressed: () => Navigator.pop(ctx, true),
+                                child: Text(l10n.commonDelete),
+                              ),
+                            ],
+                          );
+                        },
                       );
                       if (confirm == true && context.mounted) {
                         Navigator.pop(context, 'delete');
