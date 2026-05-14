@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image/image.dart' as img;
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -19,6 +20,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/theme_mode_provider.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/tripmetic_app_bar_title.dart';
+import '../../../shared/widgets/tripmetic_hub_app_bar_actions.dart';
 import '../../../shared/widgets/pro_glass_overlay.dart';
 import '../../paywall/presentation/pro_paywall_sheet.dart';
 import '../application/bucket_list_auth_providers.dart';
@@ -83,6 +85,35 @@ class BucketListMapSnapshotBridge {
   Future<Uint8List?> Function()? snapshot;
 }
 
+/// iOS: Mapbox is a platform view — [Screenshot] misses the map. We capture the
+/// map via [MapboxMap.snapshot] and Flutter overlays separately, then merge.
+Uint8List? _compositeBucketListSharePng(Uint8List? mapPng, Uint8List? overlayPng) {
+  if (mapPng != null &&
+      mapPng.isNotEmpty &&
+      overlayPng != null &&
+      overlayPng.isNotEmpty) {
+    try {
+      final base = img.decodePng(mapPng);
+      final top = img.decodePng(overlayPng);
+      if (base != null && top != null) {
+        final stretched = top.width == base.width && top.height == base.height
+            ? top
+            : img.copyResize(
+                top,
+                width: base.width,
+                height: base.height,
+                interpolation: img.Interpolation.linear,
+              );
+        img.compositeImage(base, stretched, dstX: 0, dstY: 0);
+        return Uint8List.fromList(img.encodePng(base));
+      }
+    } catch (_) {}
+  }
+  if (mapPng != null && mapPng.isNotEmpty) return mapPng;
+  if (overlayPng != null && overlayPng.isNotEmpty) return overlayPng;
+  return null;
+}
+
 class BucketListScreen extends ConsumerStatefulWidget {
   const BucketListScreen({super.key});
 
@@ -95,6 +126,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
   final BucketListMapSnapshotBridge _mapSnapshotBridge =
       BucketListMapSnapshotBridge();
   final ScreenshotController _screenshotController = ScreenshotController();
+  final ScreenshotController _overlayScreenshotController =
+      ScreenshotController();
 
   /// True while the share PNG is being captured. Used to hide the
   /// "Tap a marker for details" legend so it does not appear in the export.
@@ -120,21 +153,44 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
 
     Uint8List? png;
 
+    final dpr = MediaQuery.devicePixelRatioOf(context);
+
     if (mounted) setState(() => _capturingShareImage = true);
-    // Let the next frame paint with the legend hidden before snapping.
-    await WidgetsBinding.instance.endOfFrame;
-
     try {
-      png = await _screenshotController.capture(pixelRatio: 2);
-    } catch (_) {}
+      await WidgetsBinding.instance.endOfFrame;
+      if (!mounted) return;
 
-    if (png == null || png.isEmpty) {
       try {
-        png = await _mapSnapshotBridge.snapshot?.call();
+        if (Platform.isIOS) {
+          Uint8List? mapPng;
+          try {
+            mapPng = await _mapSnapshotBridge.snapshot?.call();
+          } catch (_) {}
+          Uint8List? overlayPng;
+          try {
+            overlayPng =
+                await _overlayScreenshotController.capture(pixelRatio: dpr);
+          } catch (_) {}
+          png = _compositeBucketListSharePng(mapPng, overlayPng);
+          if (png == null || png.isEmpty) {
+            try {
+              png = await _mapSnapshotBridge.snapshot?.call();
+            } catch (_) {}
+          }
+        } else {
+          try {
+            png = await _screenshotController.capture(pixelRatio: dpr);
+          } catch (_) {}
+          if (png == null || png.isEmpty) {
+            try {
+              png = await _mapSnapshotBridge.snapshot?.call();
+            } catch (_) {}
+          }
+        }
       } catch (_) {}
+    } finally {
+      if (mounted) setState(() => _capturingShareImage = false);
     }
-
-    if (mounted) setState(() => _capturingShareImage = false);
 
     try {
       if (png != null && png.isNotEmpty) {
@@ -258,7 +314,6 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final themeMode = ref.watch(themeModeProvider);
     final bucketAsync = ref.watch(bucketListProvider);
     final isPro = ref.watch(isTripmeticProProvider);
 
@@ -276,20 +331,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
               onPressed: _onBackPressed,
             ),
             title: TripmeticAppBarTitle(subtitle: l10n.bucketListTitle),
-            actions: [
-              IconButton(
-                tooltip: themeMode == ThemeMode.dark
-                    ? 'Light mode'
-                    : 'Dark mode',
-                icon: Icon(
-                  themeMode == ThemeMode.dark
-                      ? Icons.light_mode_outlined
-                      : Icons.dark_mode_outlined,
-                ),
-                onPressed: () =>
-                    ref.read(themeModeProvider.notifier).toggle(),
-              ),
-            ],
+            actions: tripmeticHubAppBarActions(context, ref),
           ),
           body: ProGlassOverlay(
             featureId: NavFeatureIds.bucketList,
@@ -313,20 +355,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
               onPressed: _onBackPressed,
             ),
             title: TripmeticAppBarTitle(subtitle: l10n.bucketListTitle),
-            actions: [
-              IconButton(
-                tooltip: themeMode == ThemeMode.dark
-                    ? 'Light mode'
-                    : 'Dark mode',
-                icon: Icon(
-                  themeMode == ThemeMode.dark
-                      ? Icons.light_mode_outlined
-                      : Icons.dark_mode_outlined,
-                ),
-                onPressed: () =>
-                    ref.read(themeModeProvider.notifier).toggle(),
-              ),
-            ],
+            actions: tripmeticHubAppBarActions(context, ref),
           ),
           body: ProGlassOverlay(
             featureId: NavFeatureIds.bucketList,
@@ -373,18 +402,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
               ),
               title: TripmeticAppBarTitle(subtitle: l10n.bucketListTitle),
               actions: [
-                IconButton(
-                  tooltip: themeMode == ThemeMode.dark
-                      ? 'Light mode'
-                      : 'Dark mode',
-                  icon: Icon(
-                    themeMode == ThemeMode.dark
-                        ? Icons.light_mode_outlined
-                        : Icons.dark_mode_outlined,
-                  ),
-                  onPressed: () =>
-                      ref.read(themeModeProvider.notifier).toggle(),
-                ),
+                ...tripmeticHubAppBarActions(context, ref),
                 IconButton(
                   tooltip: l10n.bucketListShareTooltip,
                   icon: const Icon(Icons.ios_share_rounded),
@@ -471,8 +489,11 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                             styleUri: mapStyleUri,
                             token: kBucketListMapboxPublicToken,
                             screenshotController: _screenshotController,
+                            overlayScreenshotController:
+                                _overlayScreenshotController,
                             snapshotBridge: _mapSnapshotBridge,
                             showLegend: !_capturingShareImage,
+                            useSimpleGlassForExport: _capturingShareImage,
                             onMarkerTap: (d) =>
                                 _showDestinationSheet(context, d),
                           ),
@@ -822,20 +843,27 @@ class _BucketListMap extends StatefulWidget {
     required this.styleUri,
     required this.token,
     required this.screenshotController,
+    required this.overlayScreenshotController,
     required this.snapshotBridge,
     required this.onMarkerTap,
     this.showLegend = true,
+    this.useSimpleGlassForExport = false,
   });
 
   final List<TravelDestination> destinations;
   final String styleUri;
   final String token;
   final ScreenshotController screenshotController;
+  final ScreenshotController overlayScreenshotController;
   final BucketListMapSnapshotBridge snapshotBridge;
   final void Function(TravelDestination d) onMarkerTap;
 
   /// Hide the "Tap a marker for details" banner during share image capture.
   final bool showLegend;
+
+  /// Avoid [BackdropFilter] during export — it does not layer correctly for
+  /// overlay-only captures used on iOS with [MapboxMap.snapshot].
+  final bool useSimpleGlassForExport;
 
   @override
   State<_BucketListMap> createState() => _BucketListMapState();
@@ -1094,40 +1122,80 @@ class _BucketListMapState extends State<_BucketListMap> {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Screenshot(
-          controller: widget.screenshotController,
-          child: RepaintBoundary(
-            child: Stack(
-              fit: StackFit.expand,
-              clipBehavior: Clip.hardEdge,
-              children: [
-                Positioned.fill(
-                  child: MapWidget(
-                    key: ValueKey(widget.styleUri),
-                    styleUri: widget.styleUri,
-                    // ignore: deprecated_member_use — Mapbox SDK; migrate when viewport API is adopted project-wide.
-                    cameraOptions: CameraOptions(
-                      center: Point(coordinates: Position(0, 20)),
-                      zoom: 1.2,
-                      bearing: 0,
-                      pitch: 0,
+        if (Platform.isIOS)
+          Stack(
+            fit: StackFit.expand,
+            clipBehavior: Clip.hardEdge,
+            children: [
+              Positioned.fill(
+                child: MapWidget(
+                  key: ValueKey(widget.styleUri),
+                  styleUri: widget.styleUri,
+                  // ignore: deprecated_member_use — Mapbox SDK; migrate when viewport API is adopted project-wide.
+                  cameraOptions: CameraOptions(
+                    center: Point(coordinates: Position(0, 20)),
+                    zoom: 1.2,
+                    bearing: 0,
+                    pitch: 0,
+                  ),
+                  onMapCreated: (map) {
+                    unawaited(_onMapCreated(map));
+                  },
+                  onStyleLoadedListener: (_) {
+                    final m = _map;
+                    if (m != null) unawaited(_onStyleLoaded(m));
+                  },
+                ),
+              ),
+              Positioned.fill(
+                child: Screenshot(
+                  controller: widget.overlayScreenshotController,
+                  child: RepaintBoundary(
+                    child: _BucketListMapShareOverlays(
+                      useSimpleGlassForExport: widget.useSimpleGlassForExport,
                     ),
-                    onMapCreated: (map) {
-                      unawaited(_onMapCreated(map));
-                    },
-                    onStyleLoadedListener: (_) {
-                      final m = _map;
-                      if (m != null) unawaited(_onStyleLoaded(m));
-                    },
                   ),
                 ),
-                Positioned.fill(
-                  child: _BucketListMapShareOverlays(),
-                ),
-              ],
+              ),
+            ],
+          )
+        else
+          Screenshot(
+            controller: widget.screenshotController,
+            child: RepaintBoundary(
+              child: Stack(
+                fit: StackFit.expand,
+                clipBehavior: Clip.hardEdge,
+                children: [
+                  Positioned.fill(
+                    child: MapWidget(
+                      key: ValueKey(widget.styleUri),
+                      styleUri: widget.styleUri,
+                      // ignore: deprecated_member_use — Mapbox SDK; migrate when viewport API is adopted project-wide.
+                      cameraOptions: CameraOptions(
+                        center: Point(coordinates: Position(0, 20)),
+                        zoom: 1.2,
+                        bearing: 0,
+                        pitch: 0,
+                      ),
+                      onMapCreated: (map) {
+                        unawaited(_onMapCreated(map));
+                      },
+                      onStyleLoadedListener: (_) {
+                        final m = _map;
+                        if (m != null) unawaited(_onStyleLoaded(m));
+                      },
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: _BucketListMapShareOverlays(
+                      useSimpleGlassForExport: widget.useSimpleGlassForExport,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
         if (widget.showLegend)
           Positioned(
             left: 12,
@@ -1169,7 +1237,9 @@ class _BucketListMapState extends State<_BucketListMap> {
 /// Share stats + watermarks; non-interactive so gestures reach the map.
 /// Captured by [Screenshot] / [RepaintBoundary] when sharing.
 class _BucketListMapShareOverlays extends ConsumerWidget {
-  const _BucketListMapShareOverlays();
+  const _BucketListMapShareOverlays({this.useSimpleGlassForExport = false});
+
+  final bool useSimpleGlassForExport;
 
   static const _gold = Color(0xFFE6C35C);
 
@@ -1189,6 +1259,67 @@ class _BucketListMapShareOverlays extends ConsumerWidget {
     // requiring an app restart.
     final authUser = ref.watch(firebaseAuthUserProvider).valueOrNull;
     final displayName = _shareMapDisplayName(authUser);
+
+    final framedStats = DecoratedBox(
+      decoration: BoxDecoration(
+        color: const Color(0xD9000000),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: _gold.withValues(alpha: 0.45)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 12, 14, 10),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              l10n.bucketListShareMapStatExplore(
+                displayName,
+                worldPct,
+                populationPct,
+              ),
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: Colors.white.withValues(alpha: 0.92),
+                height: 1.25,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(
+                  child: _ShareStatNumber(
+                    value: '$visitedCountries',
+                    caption: l10n.bucketListShareMapCountriesLabel,
+                  ),
+                ),
+                Container(
+                  width: 1,
+                  height: 44,
+                  color: Colors.white.withValues(alpha: 0.2),
+                ),
+                Expanded(
+                  child: _ShareStatNumber(
+                    value: '$visitedCities',
+                    caption: l10n.bucketListShareMapCitiesLabel,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              l10n.bucketListShareMapWatermarkUrl,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: Colors.white.withValues(alpha: 0.65),
+                letterSpacing: 0.6,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
 
     return IgnorePointer(
       child: Stack(
@@ -1231,69 +1362,12 @@ class _BucketListMapShareOverlays extends ConsumerWidget {
             bottom: 8,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(14),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: const Color(0xD9000000),
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: _gold.withValues(alpha: 0.45)),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(14, 12, 14, 10),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          l10n.bucketListShareMapStatExplore(
-                            displayName,
-                            worldPct,
-                            populationPct,
-                          ),
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: Colors.white.withValues(alpha: 0.92),
-                            height: 1.25,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: _ShareStatNumber(
-                                value: '$visitedCountries',
-                                caption: l10n.bucketListShareMapCountriesLabel,
-                              ),
-                            ),
-                            Container(
-                              width: 1,
-                              height: 44,
-                              color: Colors.white.withValues(alpha: 0.2),
-                            ),
-                            Expanded(
-                              child: _ShareStatNumber(
-                                value: '$visitedCities',
-                                caption: l10n.bucketListShareMapCitiesLabel,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          l10n.bucketListShareMapWatermarkUrl,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.labelSmall?.copyWith(
-                            color: Colors.white.withValues(alpha: 0.65),
-                            letterSpacing: 0.6,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
+              child: useSimpleGlassForExport
+                  ? framedStats
+                  : BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+                      child: framedStats,
                     ),
-                  ),
-                ),
-              ),
             ),
           ),
         ],

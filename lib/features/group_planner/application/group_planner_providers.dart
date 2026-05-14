@@ -232,7 +232,19 @@ final groupTripActivitiesStreamProvider =
         data['id'] = d.id;
         return TripActivity.fromJson(data);
       }).toList();
-      list.sort((a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()));
+      list.sort((a, b) {
+        final ta = a.scheduledAt;
+        final tb = b.scheduledAt;
+        if (ta != null && tb != null) {
+          final c = ta.compareTo(tb);
+          if (c != 0) return c;
+        } else if (ta != null) {
+          return -1;
+        } else if (tb != null) {
+          return 1;
+        }
+        return a.title.toLowerCase().compareTo(b.title.toLowerCase());
+      });
       return List<TripActivity>.unmodifiable(list);
     });
   },

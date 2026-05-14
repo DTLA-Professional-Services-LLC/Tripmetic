@@ -46,6 +46,7 @@ class MainScreen extends ConsumerWidget {
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Scaffold(
             appBar: AppBar(
+              centerTitle: true,
               title: TripmeticAppBarTitle(subtitle: titles[tabIndex]),
               actions: tripmeticHubAppBarActions(context, ref),
             ),

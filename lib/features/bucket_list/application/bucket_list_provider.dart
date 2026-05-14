@@ -59,7 +59,9 @@ class BucketListNotifier extends AsyncNotifier<List<TravelDestination>> {
   }
 
   Future<List<TravelDestination>> _fetchRemote(String userId) async {
-    final snap = await _bucketCol(userId).get();
+    final snap = await _bucketCol(userId)
+        .get(const GetOptions(source: Source.serverAndCache))
+        .timeout(const Duration(seconds: 20));
     return snap.docs
         .map(BucketListFirestoreMapper.fromSnapshot)
         .whereType<TravelDestination>()
@@ -111,10 +113,19 @@ class BucketListNotifier extends AsyncNotifier<List<TravelDestination>> {
 
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      final remote = await _fetchRemote(user.uid);
-      list = mergeBucketListById(list, remote);
-      await _persistLocal(list);
-      await _pushAllRemote(user.uid, list);
+      try {
+        final remote = await _fetchRemote(user.uid);
+        list = mergeBucketListById(list, remote);
+        await _persistLocal(list);
+        try {
+          await _pushAllRemote(user.uid, list)
+              .timeout(const Duration(seconds: 45));
+        } catch (_) {
+          // Offline or write failure — local copy is already saved.
+        }
+      } catch (_) {
+        // Offline, timeout, or permission: keep Hive snapshot only.
+      }
     }
 
     return _sorted(list);

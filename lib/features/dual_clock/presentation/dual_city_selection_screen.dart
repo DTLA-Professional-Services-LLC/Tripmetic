@@ -120,86 +120,196 @@ class _DualCitySelectionScreenState extends State<DualCitySelectionScreen> {
     final p1 = _city1!;
     final p2 = _city2!;
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            l10n.dualClockConfigSubtitle,
-            style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurfaceVariant),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            l10n.dualClockCity1Label,
-            style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 8),
-          InputDecorator(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-              contentPadding: const EdgeInsetsDirectional.only(start: 12, end: 8),
-            ),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<DualCityPreset>(
+    return LayoutBuilder(
+      builder: (context, _) {
+        final itemH = (MediaQuery.sizeOf(context).shortestSide * 0.19).clamp(64.0, 80.0);
+        final menuMaxH = MediaQuery.sizeOf(context).height * 0.45;
+        final fieldMinH = (MediaQuery.sizeOf(context).shortestSide * 0.16).clamp(52.0, 68.0);
+
+        return SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                l10n.dualClockConfigSubtitle,
+                style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurfaceVariant),
+              ),
+              const SizedBox(height: 20),
+              _CityTimezoneDropdown(
+                label: l10n.dualClockCity1Label,
                 value: p1,
-                isExpanded: true,
-                items: _dropdownItems(p1)
-                    .map(
-                      (e) => DropdownMenuItem<DualCityPreset>(
-                        value: e,
-                        child: Text('${e.label} (${e.timezoneId})'),
-                      ),
-                    )
-                    .toList(),
+                items: _dropdownItems(p1),
+                fieldMinHeight: fieldMinH,
+                menuItemHeight: itemH,
+                menuMaxHeight: menuMaxH,
                 onChanged: (v) {
                   if (v != null) setState(() => _city1 = v);
                 },
               ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            l10n.dualClockCity2Label,
-            style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 8),
-          InputDecorator(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-              contentPadding: const EdgeInsetsDirectional.only(start: 12, end: 8),
-            ),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<DualCityPreset>(
+              const SizedBox(height: 20),
+              _CityTimezoneDropdown(
+                label: l10n.dualClockCity2Label,
                 value: p2,
-                isExpanded: true,
-                items: _dropdownItems(p2)
-                    .map(
-                      (e) => DropdownMenuItem<DualCityPreset>(
-                        value: e,
-                        child: Text('${e.label} (${e.timezoneId})'),
-                      ),
-                    )
-                    .toList(),
+                items: _dropdownItems(p2),
+                fieldMinHeight: fieldMinH,
+                menuItemHeight: itemH,
+                menuMaxHeight: menuMaxH,
                 onChanged: (v) {
                   if (v != null) setState(() => _city2 = v);
                 },
               ),
+              const SizedBox(height: 28),
+              FilledButton(
+                onPressed: _saving ? null : _save,
+                child: _saving
+                    ? const SizedBox(
+                        height: 22,
+                        width: 22,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Text(l10n.dualClockSave),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _CityTimezoneDropdown extends StatelessWidget {
+  const _CityTimezoneDropdown({
+    required this.label,
+    required this.value,
+    required this.items,
+    required this.onChanged,
+    required this.fieldMinHeight,
+    required this.menuItemHeight,
+    required this.menuMaxHeight,
+  });
+
+  final String label;
+  final DualCityPreset value;
+  final List<DualCityPreset> items;
+  final ValueChanged<DualCityPreset?> onChanged;
+  final double fieldMinHeight;
+  final double menuItemHeight;
+  final double menuMaxHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+
+    final labelStyle = theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600);
+    final fieldPrimary = theme.textTheme.bodyMedium?.copyWith(
+      fontSize: 14,
+      height: 1.22,
+      fontWeight: FontWeight.w600,
+    );
+    final fieldSecondary = theme.textTheme.bodySmall?.copyWith(
+      fontSize: 12,
+      height: 1.2,
+      color: cs.onSurfaceVariant,
+      fontWeight: FontWeight.w400,
+    );
+    final menuCityStyle = theme.textTheme.bodySmall?.copyWith(
+      fontSize: 13,
+      height: 1.2,
+      fontWeight: FontWeight.w600,
+    );
+    final menuTzStyle = theme.textTheme.bodySmall?.copyWith(
+      fontSize: 11.5,
+      height: 1.15,
+      color: cs.onSurfaceVariant,
+      fontWeight: FontWeight.w400,
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(label, style: labelStyle),
+        const SizedBox(height: 8),
+        InputDecorator(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            contentPadding: const EdgeInsetsDirectional.only(start: 14, end: 10, top: 12, bottom: 12),
+            isDense: false,
+          ),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: fieldMinHeight),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<DualCityPreset>(
+                value: value,
+                isExpanded: true,
+                borderRadius: BorderRadius.circular(12),
+                menuMaxHeight: menuMaxHeight,
+                itemHeight: menuItemHeight,
+                icon: Icon(Icons.keyboard_arrow_down_rounded, color: cs.onSurfaceVariant),
+                style: fieldPrimary,
+                selectedItemBuilder: (context) {
+                  return items.map((e) {
+                    return Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            e.label,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: fieldPrimary,
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            e.timezoneId,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: fieldSecondary,
+                          ),
+                        ],
+                      ),
+                    );
+                  }).toList();
+                },
+                items: items
+                    .map(
+                      (e) => DropdownMenuItem<DualCityPreset>(
+                        value: e,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 6),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                e.label,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: menuCityStyle,
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                e.timezoneId,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: menuTzStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
+                onChanged: onChanged,
+              ),
             ),
           ),
-          const SizedBox(height: 28),
-          FilledButton(
-            onPressed: _saving ? null : _save,
-            child: _saving
-                ? const SizedBox(
-                    height: 22,
-                    width: 22,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : Text(l10n.dualClockSave),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

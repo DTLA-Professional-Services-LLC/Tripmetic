@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/tripmetic_app_bar_title.dart';
+import '../../../shared/widgets/tripmetic_hub_app_bar_actions.dart';
 import '../application/post_auth_sync.dart';
 
 /// Full-screen registration: display name, email, password — then cloud sync
@@ -131,27 +134,31 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
       );
       await credential.user?.updateDisplayName(displayName);
       await credential.user?.reload();
-      await syncUserCloudDataAfterLogin(ref);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: const Color(0xFF2E7D32),
-          content: Text(
-            l10n.signUpSuccessMessage,
-            style: const TextStyle(color: Colors.white),
-          ),
-        ),
-      );
-      context.pop();
     } on FirebaseAuthException catch (e) {
       if (!mounted) return;
       _handleAuthException(e);
+      return;
     } catch (e) {
       if (!mounted) return;
       _showError(l10n.signUpErrorGeneric(e.toString()));
+      return;
     } finally {
       if (mounted) setState(() => _busy = false);
     }
+
+    if (!mounted) return;
+    unawaited(syncUserCloudDataAfterLogin(ref));
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: const Color(0xFF2E7D32),
+        content: Text(
+          l10n.signUpSuccessMessage,
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+    context.pop();
   }
 
   @override
@@ -162,11 +169,13 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
         title: TripmeticAppBarTitle(subtitle: l10n.authSignUpScreenTitle),
+        actions: tripmeticHubAppBarActions(context, ref),
       ),
       body: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),

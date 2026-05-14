@@ -167,14 +167,23 @@ struct DualClockWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: DualClockProvider()) { entry in
-            DualClockWidgetEntryView(entry: entry)
-                .containerBackground(for: .widget) {
-                    AccessoryWidgetBackground()
-                }
+            dualClockRoot(entry: entry)
         }
         .configurationDisplayName("Dual Clock")
         .description("Two cities with live time and date.")
         .supportedFamilies([.accessoryRectangular, .accessoryInline])
+    }
+
+    @ViewBuilder
+    private func dualClockRoot(entry: DualClockEntry) -> some View {
+        if #available(iOSApplicationExtension 17.0, *) {
+            DualClockWidgetEntryView(entry: entry)
+                .containerBackground(for: .widget) {
+                    AccessoryWidgetBackground()
+                }
+        } else {
+            DualClockWidgetEntryView(entry: entry)
+        }
     }
 }
 

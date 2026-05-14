@@ -18,7 +18,7 @@ class FullscreenToolScaffold extends ConsumerWidget {
     super.key,
     required this.subtitle,
     required this.child,
-    this.hubActions = false,
+    this.hubActions = true,
     @Deprecated(
       'ProGlassOverlay must be applied inside each feature, not at the router shell. '
       'This parameter is ignored and will be removed.',
@@ -54,6 +54,7 @@ class FullscreenToolScaffold extends ConsumerWidget {
       },
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_rounded),
             onPressed: () {

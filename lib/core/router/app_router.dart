@@ -122,7 +122,6 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => FullscreenToolScaffold(
           subtitle: context.l10n.groupPlannerTitle,
-          hubActions: true,
           child: const GroupPlannerLandingScreen(),
         ),
       ),
@@ -131,7 +130,6 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => FullscreenToolScaffold(
           subtitle: context.l10n.groupPlannerCreateTripTitle,
-          hubActions: true,
           child: const GroupPlannerCreateTripScreen(),
         ),
       ),
@@ -142,7 +140,6 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
           final raw = state.pathParameters['tripId'] ?? '';
           return FullscreenToolScaffold(
             subtitle: context.l10n.groupPlannerTitle,
-            hubActions: true,
             child: GroupTripRouteScreen(rawTripRef: raw),
           );
         },
@@ -196,7 +193,10 @@ GoRouter createAppRouter(Ref ref, RouterNotifier notifier) {
       GoRoute(
         path: '/tip-calculator',
         parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const TipCalculatorScreen(),
+        builder: (context, state) => FullscreenToolScaffold(
+          subtitle: context.l10n.tipAppBarSubtitle,
+          child: const TipCalculatorScreen(),
+        ),
       ),
       GoRoute(
         path: '/size-converter',

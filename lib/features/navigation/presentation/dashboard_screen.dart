@@ -11,6 +11,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../bucket_list/application/bucket_list_auth_providers.dart';
 import '../../bucket_list/application/bucket_list_provider.dart';
+import '../../bucket_list/domain/travel_destination.dart';
 import '../../bucket_list/domain/travel_metrics.dart';
 import '../../group_planner/domain/group_trip.dart';
 import '../../paywall/presentation/pro_paywall_sheet.dart';
@@ -88,6 +89,84 @@ class DashboardScreen extends ConsumerWidget {
       return l10n.dashboardCountdownEndsIn('$days');
     }
     return '';
+  }
+
+  static Widget _worldExplorerCard(
+    ThemeData theme,
+    ColorScheme cs,
+    AppLocalizations l10n,
+    List<TravelDestination> list,
+  ) {
+    final metrics = TravelExplorationMetrics.fromDestinations(list);
+    final visited = metrics.uniqueCountriesVisited;
+    final pct = metrics.worldExploredPercent;
+    final pctLabel =
+        pct >= 10 ? pct.toStringAsFixed(0) : pct.toStringAsFixed(1);
+    return Card(
+      elevation: 0,
+      color: cs.surfaceContainerHighest.withValues(alpha: 0.35),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+        side: BorderSide(color: cs.primary.withValues(alpha: 0.28)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  '$visited',
+                  style: theme.textTheme.displaySmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: cs.primary,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 4),
+                    child: Text(
+                      l10n.dashboardWorldExplorerCountriesLabel,
+                      style: theme.textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: cs.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  l10n.dashboardWorldExplorerPercentValue(pctLabel),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.accent,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              l10n.dashboardWorldExplorerPercentLabel,
+              style: theme.textTheme.labelMedium?.copyWith(
+                color: cs.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 14),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: pct / 100.0,
+                minHeight: 10,
+                backgroundColor: cs.surfaceContainerHighest,
+                color: AppColors.accent,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -364,87 +443,14 @@ class DashboardScreen extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
             sliver: SliverToBoxAdapter(
               child: bucketAsync.when(
-                data: (list) {
-                  final metrics = TravelExplorationMetrics.fromDestinations(list);
-                  final visited = metrics.uniqueCountriesVisited;
-                  final pct = metrics.worldExploredPercent;
-                  final pctLabel = pct >= 10
-                      ? pct.toStringAsFixed(0)
-                      : pct.toStringAsFixed(1);
-                  return Card(
-                    elevation: 0,
-                    color: cs.surfaceContainerHighest.withValues(alpha: 0.35),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                      side: BorderSide(color: cs.primary.withValues(alpha: 0.28)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                '$visited',
-                                style: theme.textTheme.displaySmall?.copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: cs.primary,
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 4),
-                                  child: Text(
-                                    l10n.dashboardWorldExplorerCountriesLabel,
-                                    style: theme.textTheme.titleSmall?.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color: cs.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                l10n.dashboardWorldExplorerPercentValue(pctLabel),
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColors.accent,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            l10n.dashboardWorldExplorerPercentLabel,
-                            style: theme.textTheme.labelMedium?.copyWith(
-                              color: cs.onSurfaceVariant,
-                            ),
-                          ),
-                          const SizedBox(height: 14),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: LinearProgressIndicator(
-                              value: pct / 100.0,
-                              minHeight: 10,
-                              backgroundColor: cs.surfaceContainerHighest,
-                              color: AppColors.accent,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
+                data: (list) =>
+                    _worldExplorerCard(theme, cs, l10n, list),
                 loading: () => const Padding(
                   padding: EdgeInsets.symmetric(vertical: 24),
                   child: Center(child: CircularProgressIndicator()),
                 ),
-                error: (e, _) => Text(
-                  e.toString(),
-                  style: theme.textTheme.bodySmall?.copyWith(color: cs.error),
-                ),
+                error: (_, _) =>
+                    _worldExplorerCard(theme, cs, l10n, const []),
               ),
             ),
           ),

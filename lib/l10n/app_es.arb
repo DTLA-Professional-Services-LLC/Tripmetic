@@ -104,6 +104,7 @@
   "commonRemove": "Eliminar",
   "commonRename": "Renombrar",
   "commonSave": "Guardar",
+  "commonKeyboardDone": "Listo",
   "countryCountriesCount": "{count} países",
   "@countryCountriesCount": {
     "placeholders": {
@@ -986,6 +987,8 @@
   "groupPlannerInviteMembers": "Invitar miembros",
   "groupPlannerManageMembers": "Gestionar miembros",
   "groupPlannerItinerary": "Itinerario",
+  "groupPlannerItineraryEditorHint": "Como administrador o coordinador del viaje, puedes añadir actividades y cambiar el calendario.",
+  "groupPlannerItineraryViewerHint": "Solo lectura: vota en las actividades propuestas con pulgar arriba o abajo. Solo los administradores y coordinadores del viaje pueden añadir o cambiar elementos.",
   "groupPlannerNoActivities": "Aún no hay actividades.",
   "groupPlannerTripNotFound": "No se pudo cargar este viaje.",
   "groupPlannerSignInTitle": "Inicia sesión",
@@ -993,7 +996,7 @@
   "groupPlannerCreateTripSignInRequired": "Guardar un viaje en grupo nuevo requiere una cuenta. Inicia sesión para continuar — el resto de Tripmetic funciona sin cuenta.",
   "groupPlannerMembersTitle": "Miembros",
   "groupPlannerRoleAdmin": "Admin",
-  "groupPlannerRoleCoPlanner": "Co-planificador",
+  "groupPlannerRoleCoPlanner": "Coordinador del viaje",
   "groupPlannerRoleViewOnly": "Solo lectura",
   "groupPlannerOwner": "Propietario",
   "groupPlannerRemoveMember": "Eliminar",
@@ -1046,6 +1049,11 @@
   "groupPlannerExampleKyotoTitle": "Tour de primavera en Kioto",
   "groupPlannerAddActivity": "Añadir actividad",
   "groupPlannerActivityTitleLabel": "Título de la actividad",
+  "groupPlannerActivityWhenLabel": "Fecha y hora",
+  "groupPlannerActivityTripDateRangeHelp": "Elige un día dentro del viaje y una hora. Quien pueda editar el itinerario puede cambiarlo después.",
+  "groupPlannerActivityDateOutOfRange": "Esa fecha está fuera del viaje. Elige un día entre el inicio y el fin del viaje.",
+  "groupPlannerActivityTitleRequired": "Escribe un título para la actividad.",
+  "groupPlannerActivityDateUnset": "Sin fecha — toca Editar para programar.",
   "groupPlannerPeopleCount": "{count} personas",
   "@groupPlannerPeopleCount": {
     "placeholders": {

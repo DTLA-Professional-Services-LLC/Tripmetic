@@ -21,7 +21,8 @@ enum TripMemberRole {
     }
   }
 
-  /// Members who may add or edit planner content (not view-only).
+  /// Trip admins and trip coordinators may edit the itinerary; view-only
+  /// members can vote but not add, edit, or delete activities.
   bool get canPlanActivities =>
       this == TripMemberRole.admin || this == TripMemberRole.coPlanner;
 }

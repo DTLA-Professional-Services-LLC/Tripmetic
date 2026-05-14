@@ -228,6 +228,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get commonSave => 'Guardar';
 
   @override
+  String get commonKeyboardDone => 'Listo';
+
+  @override
   String countryCountriesCount(String count) {
     return '$count países';
   }
@@ -2039,6 +2042,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get groupPlannerItinerary => 'Itinerario';
 
   @override
+  String get groupPlannerItineraryEditorHint =>
+      'Como administrador o coordinador del viaje, puedes añadir actividades y cambiar el calendario.';
+
+  @override
+  String get groupPlannerItineraryViewerHint =>
+      'Solo lectura: vota en las actividades propuestas con pulgar arriba o abajo. Solo los administradores y coordinadores del viaje pueden añadir o cambiar elementos.';
+
+  @override
   String get groupPlannerNoActivities => 'Aún no hay actividades.';
 
   @override
@@ -2062,7 +2073,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get groupPlannerRoleAdmin => 'Admin';
 
   @override
-  String get groupPlannerRoleCoPlanner => 'Co-planificador';
+  String get groupPlannerRoleCoPlanner => 'Coordinador del viaje';
 
   @override
   String get groupPlannerRoleViewOnly => 'Solo lectura';
@@ -2143,6 +2154,25 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get groupPlannerActivityTitleLabel => 'Título de la actividad';
+
+  @override
+  String get groupPlannerActivityWhenLabel => 'Fecha y hora';
+
+  @override
+  String get groupPlannerActivityTripDateRangeHelp =>
+      'Elige un día dentro del viaje y una hora. Quien pueda editar el itinerario puede cambiarlo después.';
+
+  @override
+  String get groupPlannerActivityDateOutOfRange =>
+      'Esa fecha está fuera del viaje. Elige un día entre el inicio y el fin del viaje.';
+
+  @override
+  String get groupPlannerActivityTitleRequired =>
+      'Escribe un título para la actividad.';
+
+  @override
+  String get groupPlannerActivityDateUnset =>
+      'Sin fecha — toca Editar para programar.';
 
   @override
   String groupPlannerPeopleCount(String count) {

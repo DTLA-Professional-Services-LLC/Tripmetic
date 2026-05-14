@@ -104,6 +104,7 @@
   "commonRemove": "Remove",
   "commonRename": "Rename",
   "commonSave": "Save",
+  "commonKeyboardDone": "Done",
   "countryCountriesCount": "{count} countries",
   "@countryCountriesCount": {
     "placeholders": {
@@ -986,6 +987,8 @@
   "groupPlannerInviteMembers": "Invite members",
   "groupPlannerManageMembers": "Manage members",
   "groupPlannerItinerary": "Itinerary",
+  "groupPlannerItineraryEditorHint": "As a trip admin or trip coordinator, you can add activities and change the schedule.",
+  "groupPlannerItineraryViewerHint": "Read-only: vote on suggested activities with thumbs up or down. Only trip admins and trip coordinators can add or change items.",
   "groupPlannerNoActivities": "No activities yet.",
   "groupPlannerTripNotFound": "This trip could not be loaded.",
   "groupPlannerSignInTitle": "Sign in required",
@@ -993,7 +996,7 @@
   "groupPlannerCreateTripSignInRequired": "Saving a new group trip requires an account. Sign in to continue — other Tripmetic features work without one.",
   "groupPlannerMembersTitle": "Members",
   "groupPlannerRoleAdmin": "Admin",
-  "groupPlannerRoleCoPlanner": "Co-planner",
+  "groupPlannerRoleCoPlanner": "Trip coordinator",
   "groupPlannerRoleViewOnly": "View-only",
   "groupPlannerOwner": "Owner",
   "groupPlannerRemoveMember": "Remove",
@@ -1046,6 +1049,11 @@
   "groupPlannerExampleKyotoTitle": "Kyoto spring tour",
   "groupPlannerAddActivity": "Add activity",
   "groupPlannerActivityTitleLabel": "Activity title",
+  "groupPlannerActivityWhenLabel": "Date & time",
+  "groupPlannerActivityTripDateRangeHelp": "Pick a day on your trip, then a time. Anyone who can edit the itinerary can change this later.",
+  "groupPlannerActivityDateOutOfRange": "That date is outside this trip. Choose a day between the trip start and end.",
+  "groupPlannerActivityTitleRequired": "Enter an activity title.",
+  "groupPlannerActivityDateUnset": "Date not set — tap Edit to schedule.",
   "groupPlannerPeopleCount": "{count} people",
   "@groupPlannerPeopleCount": {
     "placeholders": {

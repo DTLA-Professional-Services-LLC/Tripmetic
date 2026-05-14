@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../core/navigation/nav_feature_ids.dart';
 import '../../../core/subscription/subscription_providers.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/pro_glass_overlay.dart';
-import '../../../shared/widgets/tripmetic_app_bar_title.dart';
 import '../application/tip_calculator_notifier.dart';
 import '../application/tip_calculator_state.dart';
 import '../domain/tip_amount_format.dart';
@@ -81,21 +79,13 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
       }
     });
 
-    return Scaffold(
-      appBar: AppBar(
-        title: TripmeticAppBarTitle(subtitle: l10n.tipAppBarSubtitle),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded),
-          onPressed: () => context.pop(),
-        ),
-      ),
-      body: ProGlassOverlay(
-        featureId: NavFeatureIds.tipCalculator,
-        isPro: isPro,
-        child: ListView(
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
-          children: [
+    return ProGlassOverlay(
+      featureId: NavFeatureIds.tipCalculator,
+      isPro: isPro,
+      child: ListView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
+        children: [
             Text(
               l10n.tipSmartHeader,
               style: theme.textTheme.titleMedium?.copyWith(
@@ -289,7 +279,6 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
             _ResultsPanel(s: s, l10n: l10n),
           ],
         ),
-      ),
     );
   }
 }

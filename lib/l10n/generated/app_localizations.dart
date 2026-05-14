@@ -512,6 +512,12 @@ abstract class AppLocalizations {
   /// **'Save'**
   String get commonSave;
 
+  /// No description provided for @commonKeyboardDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get commonKeyboardDone;
+
   /// No description provided for @countryCountriesCount.
   ///
   /// In en, this message translates to:
@@ -3786,6 +3792,18 @@ abstract class AppLocalizations {
   /// **'Itinerary'**
   String get groupPlannerItinerary;
 
+  /// No description provided for @groupPlannerItineraryEditorHint.
+  ///
+  /// In en, this message translates to:
+  /// **'As a trip admin or trip coordinator, you can add activities and change the schedule.'**
+  String get groupPlannerItineraryEditorHint;
+
+  /// No description provided for @groupPlannerItineraryViewerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Read-only: vote on suggested activities with thumbs up or down. Only trip admins and trip coordinators can add or change items.'**
+  String get groupPlannerItineraryViewerHint;
+
   /// No description provided for @groupPlannerNoActivities.
   ///
   /// In en, this message translates to:
@@ -3831,7 +3849,7 @@ abstract class AppLocalizations {
   /// No description provided for @groupPlannerRoleCoPlanner.
   ///
   /// In en, this message translates to:
-  /// **'Co-planner'**
+  /// **'Trip coordinator'**
   String get groupPlannerRoleCoPlanner;
 
   /// No description provided for @groupPlannerRoleViewOnly.
@@ -3965,6 +3983,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Activity title'**
   String get groupPlannerActivityTitleLabel;
+
+  /// No description provided for @groupPlannerActivityWhenLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date & time'**
+  String get groupPlannerActivityWhenLabel;
+
+  /// No description provided for @groupPlannerActivityTripDateRangeHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a day on your trip, then a time. Anyone who can edit the itinerary can change this later.'**
+  String get groupPlannerActivityTripDateRangeHelp;
+
+  /// No description provided for @groupPlannerActivityDateOutOfRange.
+  ///
+  /// In en, this message translates to:
+  /// **'That date is outside this trip. Choose a day between the trip start and end.'**
+  String get groupPlannerActivityDateOutOfRange;
+
+  /// No description provided for @groupPlannerActivityTitleRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an activity title.'**
+  String get groupPlannerActivityTitleRequired;
+
+  /// No description provided for @groupPlannerActivityDateUnset.
+  ///
+  /// In en, this message translates to:
+  /// **'Date not set — tap Edit to schedule.'**
+  String get groupPlannerActivityDateUnset;
 
   /// No description provided for @groupPlannerPeopleCount.
   ///

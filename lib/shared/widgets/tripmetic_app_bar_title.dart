@@ -18,6 +18,9 @@ class TripmeticAppBarTitle extends StatelessWidget {
       children: [
         Text(
           AppBrand.wordmark,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.w800,
             letterSpacing: 0.6,
@@ -30,6 +33,9 @@ class TripmeticAppBarTitle extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             subtitle!,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: cs.onSurfaceVariant,
               fontWeight: FontWeight.w500,

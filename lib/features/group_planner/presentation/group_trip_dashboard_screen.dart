@@ -12,6 +12,7 @@ import '../domain/trip_activity.dart';
 import '../domain/trip_member.dart';
 import '../domain/trip_member_role.dart';
 import 'widgets/group_activity_card.dart';
+import 'widgets/group_activity_editor_sheet.dart';
 import 'widgets/manage_members_sheet.dart';
 
 /// Live dashboard: trip summary, invite / manage members, activity feed with voting.
@@ -251,12 +252,28 @@ class GroupTripDashboardScreen extends ConsumerWidget {
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
               sliver: SliverToBoxAdapter(
-                child: Text(
-                  l10n.groupPlannerItinerary,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.groupPlannerItinerary,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    if (selfMember != null) ...[
+                      const SizedBox(height: 6),
+                      Text(
+                        canAddActivity
+                            ? l10n.groupPlannerItineraryEditorHint
+                            : l10n.groupPlannerItineraryViewerHint,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: cs.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ),
             ),
@@ -286,12 +303,11 @@ class GroupTripDashboardScreen extends ConsumerWidget {
                       currentUserId: selfMember != null ? uid : null,
                       canManageItinerary: canAddActivity,
                       onEditActivity: canAddActivity
-                          ? (act) => _showEditActivityDialog(
-                                context,
-                                ref,
-                                tripId,
-                                act,
-                                l10n,
+                          ? (act) => showGroupActivityEditorSheet(
+                                context: context,
+                                tripId: tripId,
+                                trip: trip,
+                                existing: act,
                               )
                           : null,
                       onDeleteActivity: canAddActivity
@@ -314,198 +330,18 @@ class GroupTripDashboardScreen extends ConsumerWidget {
             right: 16,
             bottom: 16,
             child: FloatingActionButton(
-              onPressed: () =>
-                  _showAddActivityDialog(context, ref, tripId, l10n),
+              onPressed: () => showGroupActivityEditorSheet(
+                context: context,
+                tripId: tripId,
+                trip: trip,
+                existing: null,
+              ),
               tooltip: l10n.groupPlannerAddActivity,
               child: const Icon(Icons.add_rounded),
             ),
           ),
       ],
     );
-  }
-}
-
-Future<void> _showAddActivityDialog(
-  BuildContext context,
-  WidgetRef ref,
-  String tripId,
-  AppLocalizations l10n,
-) async {
-  final titleCtrl = TextEditingController();
-  final notesCtrl = TextEditingController();
-  final linkCtrl = TextEditingController();
-  try {
-    final submit = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.groupPlannerAddActivity),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: titleCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerActivityTitleLabel,
-                  border: const OutlineInputBorder(),
-                ),
-                textInputAction: TextInputAction.next,
-                autofocus: true,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: notesCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerNotes,
-                  border: const OutlineInputBorder(),
-                ),
-                maxLines: 3,
-                textInputAction: TextInputAction.next,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: linkCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerOpenLink,
-                  border: const OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.url,
-                textInputAction: TextInputAction.done,
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(l10n.groupPlannerCancel),
-          ),
-          FilledButton(
-            onPressed: () {
-              if (titleCtrl.text.trim().isEmpty) return;
-              Navigator.pop(ctx, true);
-            },
-            child: Text(l10n.commonSave),
-          ),
-        ],
-      ),
-    );
-    if (submit != true || !context.mounted) return;
-    await ref
-        .read(groupTripServiceProvider)
-        .addActivity(
-          tripId: tripId,
-          title: titleCtrl.text,
-          notes: notesCtrl.text,
-          link: linkCtrl.text.trim().isEmpty ? null : linkCtrl.text.trim(),
-        );
-  } on GroupPlannerException catch (e) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(e.message)));
-    }
-  } catch (e) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$e')));
-    }
-  } finally {
-    titleCtrl.dispose();
-    notesCtrl.dispose();
-    linkCtrl.dispose();
-  }
-}
-
-Future<void> _showEditActivityDialog(
-  BuildContext context,
-  WidgetRef ref,
-  String tripId,
-  TripActivity activity,
-  AppLocalizations l10n,
-) async {
-  final titleCtrl = TextEditingController(text: activity.title);
-  final notesCtrl = TextEditingController(text: activity.notes);
-  final linkCtrl = TextEditingController(text: activity.link ?? '');
-  try {
-    final submit = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.groupPlannerEditActivity),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: titleCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerActivityTitleLabel,
-                  border: const OutlineInputBorder(),
-                ),
-                textInputAction: TextInputAction.next,
-                autofocus: true,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: notesCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerNotes,
-                  border: const OutlineInputBorder(),
-                ),
-                maxLines: 3,
-                textInputAction: TextInputAction.next,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: linkCtrl,
-                decoration: InputDecoration(
-                  labelText: l10n.groupPlannerOpenLink,
-                  border: const OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.url,
-                textInputAction: TextInputAction.done,
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(l10n.groupPlannerCancel),
-          ),
-          FilledButton(
-            onPressed: () {
-              if (titleCtrl.text.trim().isEmpty) return;
-              Navigator.pop(ctx, true);
-            },
-            child: Text(l10n.commonSave),
-          ),
-        ],
-      ),
-    );
-    if (submit != true || !context.mounted) return;
-    await ref.read(groupTripServiceProvider).updateActivity(
-          tripId: tripId,
-          activityId: activity.id,
-          title: titleCtrl.text,
-          notes: notesCtrl.text,
-          link: linkCtrl.text.trim().isEmpty ? null : linkCtrl.text.trim(),
-        );
-  } on GroupPlannerException catch (e) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(e.message)));
-    }
-  } catch (e) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.groupPlannerActivityEditError('$e'))),
-      );
-    }
-  } finally {
-    titleCtrl.dispose();
-    notesCtrl.dispose();
-    linkCtrl.dispose();
   }
 }
 

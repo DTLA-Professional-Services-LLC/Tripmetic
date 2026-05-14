@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' show DateUtils;
 import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
 
@@ -354,9 +355,21 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
     });
   }
 
+  void _assertScheduledWithinTrip(DateTime scheduled, GroupTrip trip) {
+    final day = DateUtils.dateOnly(scheduled.toLocal());
+    final start = DateUtils.dateOnly(trip.startDate.toLocal());
+    final end = DateUtils.dateOnly(trip.endDate.toLocal());
+    if (day.isBefore(start) || day.isAfter(end)) {
+      throw GroupPlannerException(
+        'Activity date must fall between the trip start and end dates.',
+      );
+    }
+  }
+
   Future<void> addActivity({
     required String tripId,
     required String title,
+    required DateTime scheduledAt,
     String notes = '',
     String? link,
   }) async {
@@ -366,8 +379,19 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
       throw GroupPlannerException('You are not a member of this trip.');
     }
     if (!member.role.canPlanActivities) {
-      throw GroupPlannerException('View-only members cannot add activities.');
+      throw GroupPlannerException(
+        'Only trip admins and trip coordinators can add activities.',
+      );
     }
+
+    final tripSnap = await _tripRef(tripId).get();
+    if (!tripSnap.exists || tripSnap.data() == null) {
+      throw GroupPlannerException('Trip not found.');
+    }
+    final tripData = Map<String, dynamic>.from(tripSnap.data()!);
+    tripData['id'] = tripSnap.id;
+    final trip = GroupTrip.fromJson(tripData);
+    _assertScheduledWithinTrip(scheduledAt, trip);
 
     final activityId = _uuid.v4();
     final activity = TripActivity(
@@ -377,6 +401,7 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
       link: link?.trim().isNotEmpty == true ? link!.trim() : null,
       plannedByUserId: user.uid,
       votes: const <String, int>{},
+      scheduledAt: scheduledAt,
     );
 
     await _activitiesCol(tripId).doc(activityId).set(activity.toJson());
@@ -406,6 +431,7 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
     required String tripId,
     required String activityId,
     required String title,
+    required DateTime scheduledAt,
     String notes = '',
     String? link,
   }) async {
@@ -415,12 +441,24 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
       throw GroupPlannerException('You are not a member of this trip.');
     }
     if (!member.role.canPlanActivities) {
-      throw GroupPlannerException('View-only members cannot edit activities.');
+      throw GroupPlannerException(
+        'Only trip admins and trip coordinators can edit activities.',
+      );
     }
+
+    final tripSnap = await _tripRef(tripId).get();
+    if (!tripSnap.exists || tripSnap.data() == null) {
+      throw GroupPlannerException('Trip not found.');
+    }
+    final tripData = Map<String, dynamic>.from(tripSnap.data()!);
+    tripData['id'] = tripSnap.id;
+    final trip = GroupTrip.fromJson(tripData);
+    _assertScheduledWithinTrip(scheduledAt, trip);
 
     final payload = <String, dynamic>{
       'title': title.trim(),
       'notes': notes.trim(),
+      'scheduledAt': Timestamp.fromDate(scheduledAt.toUtc()),
     };
     if (link == null || link.trim().isEmpty) {
       payload['link'] = FieldValue.delete();
@@ -440,7 +478,9 @@ Get Tripmetic — Android: ${GroupTripPaths.androidPlayStoreUrl}''';
       throw GroupPlannerException('You are not a member of this trip.');
     }
     if (!member.role.canPlanActivities) {
-      throw GroupPlannerException('View-only members cannot delete activities.');
+      throw GroupPlannerException(
+        'Only trip admins and trip coordinators can delete activities.',
+      );
     }
     await _activitiesCol(tripId).doc(activityId).delete();
   }

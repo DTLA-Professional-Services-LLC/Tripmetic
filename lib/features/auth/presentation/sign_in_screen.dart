@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/l10n_helpers.dart';
 import '../../../shared/widgets/tripmetic_app_bar_title.dart';
+import '../../../shared/widgets/tripmetic_hub_app_bar_actions.dart';
 import '../application/firebase_auth_error_message.dart';
 import '../application/post_auth_sync.dart';
 
@@ -112,28 +115,35 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
 
     setState(() => _busy = true);
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-      await syncUserCloudDataAfterLogin(ref);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: const Color(0xFF2E7D32),
-          content: Text(
-            l10n.bucketListAuthSuccessSignIn,
-            style: const TextStyle(color: Colors.white),
-          ),
-        ),
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
       );
-      context.pop();
     } on FirebaseAuthException catch (e) {
       if (!mounted) return;
       _showError(l10n.bucketListAuthFailed(firebaseAuthErrorMessage(e, l10n)));
+      return;
     } catch (_) {
       if (!mounted) return;
       _showError(l10n.authUnexpectedError);
+      return;
     } finally {
       if (mounted) setState(() => _busy = false);
     }
+
+    if (!mounted) return;
+    unawaited(syncUserCloudDataAfterLogin(ref));
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: const Color(0xFF2E7D32),
+        content: Text(
+          l10n.bucketListAuthSuccessSignIn,
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+    context.pop();
   }
 
   @override
@@ -145,11 +155,13 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
         title: TripmeticAppBarTitle(subtitle: l10n.authSignInScreenTitle),
+        actions: tripmeticHubAppBarActions(context, ref),
       ),
       body: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),

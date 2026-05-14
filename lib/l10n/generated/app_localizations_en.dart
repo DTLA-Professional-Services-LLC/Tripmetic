@@ -228,6 +228,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonSave => 'Save';
 
   @override
+  String get commonKeyboardDone => 'Done';
+
+  @override
   String countryCountriesCount(String count) {
     return '$count countries';
   }
@@ -2028,6 +2031,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get groupPlannerItinerary => 'Itinerary';
 
   @override
+  String get groupPlannerItineraryEditorHint =>
+      'As a trip admin or trip coordinator, you can add activities and change the schedule.';
+
+  @override
+  String get groupPlannerItineraryViewerHint =>
+      'Read-only: vote on suggested activities with thumbs up or down. Only trip admins and trip coordinators can add or change items.';
+
+  @override
   String get groupPlannerNoActivities => 'No activities yet.';
 
   @override
@@ -2051,7 +2062,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get groupPlannerRoleAdmin => 'Admin';
 
   @override
-  String get groupPlannerRoleCoPlanner => 'Co-planner';
+  String get groupPlannerRoleCoPlanner => 'Trip coordinator';
 
   @override
   String get groupPlannerRoleViewOnly => 'View-only';
@@ -2132,6 +2143,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get groupPlannerActivityTitleLabel => 'Activity title';
+
+  @override
+  String get groupPlannerActivityWhenLabel => 'Date & time';
+
+  @override
+  String get groupPlannerActivityTripDateRangeHelp =>
+      'Pick a day on your trip, then a time. Anyone who can edit the itinerary can change this later.';
+
+  @override
+  String get groupPlannerActivityDateOutOfRange =>
+      'That date is outside this trip. Choose a day between the trip start and end.';
+
+  @override
+  String get groupPlannerActivityTitleRequired => 'Enter an activity title.';
+
+  @override
+  String get groupPlannerActivityDateUnset =>
+      'Date not set — tap Edit to schedule.';
 
   @override
   String groupPlannerPeopleCount(String count) {

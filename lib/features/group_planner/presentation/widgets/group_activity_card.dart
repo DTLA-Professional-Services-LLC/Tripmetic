@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../l10n/l10n_helpers.dart';
@@ -79,6 +80,12 @@ class _GroupActivityCardState extends ConsumerState<GroupActivityCard> {
     final accent = parseTripPlannerHexColor(planner?.colorCode);
     final plannerEmail = planner?.email ?? widget.activity.plannedByUserId;
 
+    final localeTag = Localizations.localeOf(context).toLanguageTag();
+    final sch = widget.activity.scheduledAt;
+    final whenText = sch != null
+        ? '${DateFormat.yMMMd(localeTag).format(sch.toLocal())} · ${DateFormat.jm(localeTag).format(sch.toLocal())}'
+        : l10n.groupPlannerActivityDateUnset;
+
     final myVote = _myVote;
     final showManageMenu = widget.canManageItinerary &&
         (widget.onEditActivity != null || widget.onDeleteActivity != null);
@@ -120,6 +127,16 @@ class _GroupActivityCardState extends ConsumerState<GroupActivityCard> {
                                   plannerEmail,
                                   style: theme.textTheme.labelSmall?.copyWith(
                                     color: cs.onSurfaceVariant,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  whenText,
+                                  style: theme.textTheme.labelSmall?.copyWith(
+                                    color: sch != null
+                                        ? cs.primary
+                                        : cs.onSurfaceVariant,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
