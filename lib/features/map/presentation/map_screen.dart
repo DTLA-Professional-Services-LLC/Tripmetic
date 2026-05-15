@@ -74,6 +74,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   /// screen lifetime. Any subsequent user pan / search flyTo is respected.
   bool _cameraCenteredOnDevice = false;
 
+  bool _isCenteringOnLocation = false;
+
   // Search-bar state.
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _searchFocus = FocusNode();
@@ -242,52 +244,64 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   /// and schedules a camera centering on it. All failure modes (service
   /// off, permission denied, timeout, device has no GPS) silently fall
   /// through — the map keeps its default view.
-  Future<void> _acquireDeviceLocation() async {
+  Future<geo.Position?> _fetchDevicePosition({
+    bool requestPermission = true,
+    bool showErrors = false,
+  }) async {
+    if (!await geo.Geolocator.isLocationServiceEnabled()) {
+      if (showErrors && mounted) {
+        _showSnack(context.l10n.mapSnackLocationOff);
+      }
+      return null;
+    }
+
+    var permission = await geo.Geolocator.checkPermission();
+    if (permission == geo.LocationPermission.denied && requestPermission) {
+      permission = await geo.Geolocator.requestPermission();
+    }
+    if (permission != geo.LocationPermission.whileInUse &&
+        permission != geo.LocationPermission.always) {
+      if (showErrors && mounted) {
+        _showSnack(context.l10n.mapSnackLocationDeniedForMap);
+      }
+      return null;
+    }
+
     try {
-      if (!await geo.Geolocator.isLocationServiceEnabled()) return;
-
-      var permission = await geo.Geolocator.checkPermission();
-      if (permission == geo.LocationPermission.denied) {
-        permission = await geo.Geolocator.requestPermission();
-      }
-      if (permission != geo.LocationPermission.whileInUse &&
-          permission != geo.LocationPermission.always) {
-        return;
-      }
-
-      final position = await geo.Geolocator.getCurrentPosition(
+      return await geo.Geolocator.getCurrentPosition(
         locationSettings: const geo.LocationSettings(
-          // Medium accuracy is plenty for a city-scale initial centering
-          // and returns faster than `high`. The Mapbox proximity bias
-          // only needs a few-km precision to work correctly.
           accuracy: geo.LocationAccuracy.medium,
-          timeLimit: Duration(seconds: 8),
+          timeLimit: Duration(seconds: 12),
         ),
       );
-
-      if (!mounted) return;
-      _pendingDeviceLocation = position;
-
-      // Map controller might not be ready yet; `_onMapCreated` will pick
-      // this up on first callback in that case.
-      if (_mapboxMap != null && !_cameraCenteredOnDevice) {
-        await _applyDeviceLocationToCamera();
-      }
     } catch (_) {
-      // Opportunistic — stay on the default view on any failure.
+      if (showErrors && mounted) {
+        _showSnack(context.l10n.mapSnackLocateFail);
+      }
+      return null;
     }
   }
 
-  /// Instantly moves the camera to the user's resolved position at a
-  /// city-scale zoom. Uses `flyTo` with a quick animation so the transition
-  /// is still perceptible to the user but feels immediate.
-  Future<void> _applyDeviceLocationToCamera() async {
-    final mapboxMap = _mapboxMap;
-    final position = _pendingDeviceLocation;
-    if (mapboxMap == null || position == null || _cameraCenteredOnDevice) {
-      return;
+  Future<void> _acquireDeviceLocation() async {
+    final position = await _fetchDevicePosition();
+    if (!mounted || position == null) return;
+
+    _pendingDeviceLocation = position;
+    if (_mapboxMap != null && !_cameraCenteredOnDevice) {
+      await _flyToDevicePosition(position, markAutoCentered: true);
     }
-    _cameraCenteredOnDevice = true;
+  }
+
+  /// Moves the camera to [position] at city-scale zoom.
+  Future<void> _flyToDevicePosition(
+    geo.Position position, {
+    bool markAutoCentered = false,
+  }) async {
+    final mapboxMap = _mapboxMap;
+    if (mapboxMap == null) return;
+    if (markAutoCentered && _cameraCenteredOnDevice) return;
+
+    if (markAutoCentered) _cameraCenteredOnDevice = true;
 
     try {
       await mapboxMap.flyTo(
@@ -297,10 +311,35 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
           ),
           zoom: 13,
         ),
-        MapAnimationOptions(duration: 600),
+        MapAnimationOptions(duration: markAutoCentered ? 600 : 800),
       );
     } catch (_) {
       // Camera move can fail on hot-restart boundary; keep quiet.
+    }
+  }
+
+  Future<void> _applyDeviceLocationToCamera() async {
+    final position = _pendingDeviceLocation;
+    if (position == null || _cameraCenteredOnDevice) return;
+    await _flyToDevicePosition(position, markAutoCentered: true);
+  }
+
+  Future<void> _goToMyLocation() async {
+    if (!_mapboxReady || _mapboxMap == null) {
+      _showSnack(context.l10n.mapSnackMapNotReady);
+      return;
+    }
+    if (_isCenteringOnLocation) return;
+
+    setState(() => _isCenteringOnLocation = true);
+    try {
+      final position = await _fetchDevicePosition(showErrors: true);
+      if (!mounted || position == null) return;
+
+      _pendingDeviceLocation = position;
+      await _flyToDevicePosition(position);
+    } finally {
+      if (mounted) setState(() => _isCenteringOnLocation = false);
     }
   }
 
@@ -1407,6 +1446,19 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
               ),
             ),
           ),
+          if (_mapboxReady)
+            Positioned(
+              right: 12,
+              bottom: 120,
+              child: SafeArea(
+                top: false,
+                child: _MapMyLocationButton(
+                  isLoading: _isCenteringOnLocation,
+                  tooltip: context.l10n.mapLocateMeTooltip,
+                  onPressed: _goToMyLocation,
+                ),
+              ),
+            ),
           DraggableScrollableSheet(
             initialChildSize: 0.2,
             minChildSize: 0.1,
@@ -2933,6 +2985,73 @@ class _ProfileButton extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Floating control to re-center the map on the user's GPS position.
+class _MapMyLocationButton extends StatelessWidget {
+  const _MapMyLocationButton({
+    required this.isLoading,
+    required this.tooltip,
+    required this.onPressed,
+  });
+
+  final bool isLoading;
+  final String tooltip;
+  final VoidCallback onPressed;
+
+  static const Color _arrowBlue = Color(0xFF1E88E5);
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final ring = isDark
+        ? Colors.white.withValues(alpha: 0.9)
+        : Colors.white.withValues(alpha: 0.95);
+    final fill = _arrowBlue.withValues(alpha: isDark ? 0.82 : 0.88);
+
+    return Material(
+      color: Colors.transparent,
+      elevation: 4,
+      shadowColor: Colors.black.withValues(alpha: 0.35),
+      shape: const CircleBorder(),
+      child: Tooltip(
+        message: tooltip,
+        child: InkWell(
+          customBorder: const CircleBorder(),
+          onTap: isLoading ? null : onPressed,
+          child: Ink(
+            width: 46,
+            height: 46,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: fill,
+              border: Border.all(color: ring, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.22),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: isLoading
+                ? Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: ring,
+                    ),
+                  )
+                : Icon(
+                    Icons.navigation_rounded,
+                    color: ring,
+                    size: 24,
+                  ),
           ),
         ),
       ),

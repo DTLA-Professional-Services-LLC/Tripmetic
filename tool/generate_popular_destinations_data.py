@@ -388,11 +388,15 @@ def main() -> None:
 
     for rid, name, cities in REGIONS:
         assert len(cities) == 50, f"{name} has {len(cities)} cities, expected 50"
+        sorted_cities = sorted(
+            cities,
+            key=lambda c: (c[1].casefold(), c[0].casefold()),
+        )
         lines.append("  PopularDestinationRegion(")
         lines.append(f"    id: '{rid}',")
         lines.append(f"    name: '{name}',")
         lines.append("    cities: <PopularDestinationCity>[")
-        for c in cities:
+        for c in sorted_cities:
             lines.append(emit_city(*c))
         lines.append("    ],")
         lines.append("  ),")

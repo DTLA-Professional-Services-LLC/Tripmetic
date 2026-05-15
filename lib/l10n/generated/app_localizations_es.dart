@@ -490,6 +490,17 @@ class AppLocalizationsEs extends AppLocalizations {
       'Se requiere permiso de ubicación para giro a giro.';
 
   @override
+  String get mapSnackLocationDeniedForMap =>
+      'Se requiere permiso de ubicación para centrar el mapa en ti.';
+
+  @override
+  String get mapSnackLocateFail =>
+      'No se pudo obtener tu ubicación en este momento.';
+
+  @override
+  String get mapLocateMeTooltip => 'Ir a mi ubicación';
+
+  @override
   String get mapSnackMapNotReady =>
       'El mapa aún no está listo. Espera un momento.';
 

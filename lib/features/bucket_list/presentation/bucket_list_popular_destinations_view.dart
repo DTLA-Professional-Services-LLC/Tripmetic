@@ -26,7 +26,7 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final liveDestinations = ref.watch(bucketListProvider).maybeWhen(
+    final syncedDestinations = ref.watch(bucketListProvider).maybeWhen(
           data: (list) => list,
           orElse: () => destinations,
         );
@@ -45,7 +45,7 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
         ...kPopularDestinationRegions.map(
           (region) => _RegionExpansion(
             region: region,
-            destinations: liveDestinations,
+            destinations: syncedDestinations,
             allowEditing: allowEditing,
           ),
         ),
@@ -145,12 +145,6 @@ class _PopularCityRow extends ConsumerWidget {
       country: city.country,
       category: TravelDestinationCategory.been,
     );
-    final live = notifier.findDestination(
-      list: list,
-      city: city.city,
-      country: city.country,
-      category: TravelDestinationCategory.live,
-    );
     final lived = notifier.findDestination(
       list: list,
       city: city.city,
@@ -189,84 +183,61 @@ class _PopularCityRow extends ConsumerWidget {
               ],
             ),
           ),
-          Flexible(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              reverse: true,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  _CategoryToggle(
-                    label: l10n.bucketListCategoryBeen,
-                    icon: Icons.check_circle_outline_rounded,
-                    activeIcon: Icons.check_circle_rounded,
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _CategoryToggle(
+                label: l10n.bucketListCategoryBeen,
+                icon: Icons.check_circle_outline_rounded,
+                activeIcon: Icons.check_circle_rounded,
+                category: TravelDestinationCategory.been,
+                isActive: been != null,
+                enabled: allowEditing,
+                onPressed: () => unawaited(
+                  notifier.toggleDestinationCategory(
+                    city: city.city,
+                    country: city.country,
+                    latitude: city.latitude,
+                    longitude: city.longitude,
                     category: TravelDestinationCategory.been,
-                    isActive: been != null,
-                    enabled: allowEditing,
-                    onPressed: () => unawaited(
-                      notifier.toggleDestinationCategory(
-                        city: city.city,
-                        country: city.country,
-                        latitude: city.latitude,
-                        longitude: city.longitude,
-                        category: TravelDestinationCategory.been,
-                      ),
-                    ),
                   ),
-                  _CategoryToggle(
-                    label: l10n.bucketListCategoryLive,
-                    icon: Icons.apartment_outlined,
-                    activeIcon: Icons.apartment,
-                    category: TravelDestinationCategory.live,
-                    isActive: live != null,
-                    enabled: allowEditing,
-                    onPressed: () => unawaited(
-                      notifier.toggleDestinationCategory(
-                        city: city.city,
-                        country: city.country,
-                        latitude: city.latitude,
-                        longitude: city.longitude,
-                        category: TravelDestinationCategory.live,
-                      ),
-                    ),
-                  ),
-                  _CategoryToggle(
-                    label: l10n.bucketListCategoryLived,
-                    icon: Icons.home_outlined,
-                    activeIcon: Icons.home_rounded,
-                    category: TravelDestinationCategory.lived,
-                    isActive: lived != null,
-                    enabled: allowEditing,
-                    onPressed: () => unawaited(
-                      notifier.toggleDestinationCategory(
-                        city: city.city,
-                        country: city.country,
-                        latitude: city.latitude,
-                        longitude: city.longitude,
-                        category: TravelDestinationCategory.lived,
-                      ),
-                    ),
-                  ),
-                  _CategoryToggle(
-                    label: l10n.bucketListCategoryWant,
-                    icon: Icons.favorite_border_rounded,
-                    activeIcon: Icons.favorite_rounded,
-                    category: TravelDestinationCategory.want,
-                    isActive: want != null,
-                    enabled: allowEditing,
-                    onPressed: () => unawaited(
-                      notifier.toggleDestinationCategory(
-                        city: city.city,
-                        country: city.country,
-                        latitude: city.latitude,
-                        longitude: city.longitude,
-                        category: TravelDestinationCategory.want,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
+              _CategoryToggle(
+                label: l10n.bucketListCategoryLived,
+                icon: Icons.home_outlined,
+                activeIcon: Icons.home_rounded,
+                category: TravelDestinationCategory.lived,
+                isActive: lived != null,
+                enabled: allowEditing,
+                onPressed: () => unawaited(
+                  notifier.toggleDestinationCategory(
+                    city: city.city,
+                    country: city.country,
+                    latitude: city.latitude,
+                    longitude: city.longitude,
+                    category: TravelDestinationCategory.lived,
+                  ),
+                ),
+              ),
+              _CategoryToggle(
+                label: l10n.bucketListCategoryWant,
+                icon: Icons.favorite_border_rounded,
+                activeIcon: Icons.favorite_rounded,
+                category: TravelDestinationCategory.want,
+                isActive: want != null,
+                enabled: allowEditing,
+                onPressed: () => unawaited(
+                  notifier.toggleDestinationCategory(
+                    city: city.city,
+                    country: city.country,
+                    latitude: city.latitude,
+                    longitude: city.longitude,
+                    category: TravelDestinationCategory.want,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

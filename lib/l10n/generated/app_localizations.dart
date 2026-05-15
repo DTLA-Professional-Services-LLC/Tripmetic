@@ -944,6 +944,24 @@ abstract class AppLocalizations {
   /// **'Location permission is required for turn-by-turn.'**
   String get mapSnackLocationPermission;
 
+  /// No description provided for @mapSnackLocationDeniedForMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is required to center the map on you.'**
+  String get mapSnackLocationDeniedForMap;
+
+  /// No description provided for @mapSnackLocateFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to get your location right now.'**
+  String get mapSnackLocateFail;
+
+  /// No description provided for @mapLocateMeTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to my location'**
+  String get mapLocateMeTooltip;
+
   /// No description provided for @mapSnackMapNotReady.
   ///
   /// In en, this message translates to:

@@ -489,6 +489,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Location permission is required for turn-by-turn.';
 
   @override
+  String get mapSnackLocationDeniedForMap =>
+      'Location permission is required to center the map on you.';
+
+  @override
+  String get mapSnackLocateFail => 'Unable to get your location right now.';
+
+  @override
+  String get mapLocateMeTooltip => 'Go to my location';
+
+  @override
   String get mapSnackMapNotReady =>
       'Map is not ready yet. Please wait a moment.';
 
