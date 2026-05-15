@@ -9,6 +9,9 @@ const String kProTestOverrideKey = 'tripmetic_test_pro_override';
 /// regardless of RevenueCat state. Surfaced via the Settings screen so
 /// internal testers can validate the Pro UX on a single phone even when
 /// RevenueCat isn't configured (build 36 ships without it).
+///
+/// **Release builds:** disabled entirely (no UI, no persistence writes, no
+/// effect on [isTripmeticProProvider]) so store builds cannot unlock Pro locally.
 final proTestOverrideProvider =
     AsyncNotifierProvider<ProTestOverrideNotifier, bool>(
   ProTestOverrideNotifier.new,
@@ -17,6 +20,9 @@ final proTestOverrideProvider =
 class ProTestOverrideNotifier extends AsyncNotifier<bool> {
   @override
   Future<bool> build() async {
+    if (kReleaseMode) {
+      return false;
+    }
     try {
       final prefs = await SharedPreferences.getInstance();
       return prefs.getBool(kProTestOverrideKey) ?? false;
@@ -30,6 +36,9 @@ class ProTestOverrideNotifier extends AsyncNotifier<bool> {
   /// Listeners (e.g. [isTripmeticProProvider]) react synchronously so all
   /// gated screens refresh as soon as the toggle flips.
   Future<void> setOverride(bool value) async {
+    if (kReleaseMode) {
+      return;
+    }
     state = AsyncData(value);
     try {
       final prefs = await SharedPreferences.getInstance();

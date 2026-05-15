@@ -99,9 +99,11 @@ class CustomerInfoNotifier extends AsyncNotifier<CustomerInfo> {
 /// Honors the local [proTestOverrideProvider] first so internal testers can
 /// validate the Pro UX on a single device without a working RevenueCat
 /// configuration. When the override is off (default), behavior matches the
-/// previous RevenueCat-backed logic.
+/// previous RevenueCat-backed logic. Release builds never honor the override.
 final isTripmeticProProvider = Provider<bool>((ref) {
-  final override = ref.watch(proTestOverrideProvider).valueOrNull ?? false;
+  final override = kReleaseMode
+      ? false
+      : (ref.watch(proTestOverrideProvider).valueOrNull ?? false);
   if (override) return true;
   final async = ref.watch(customerInfoProvider);
   return async.maybeWhen(

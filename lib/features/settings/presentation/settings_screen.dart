@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -47,8 +48,6 @@ class SettingsScreen extends ConsumerWidget {
     final isPro = ref.watch(isTripmeticProProvider);
     final themeMode = ref.watch(themeModeProvider);
     final localeAsync = ref.watch(appLocaleProvider);
-    final proOverrideAsync = ref.watch(proTestOverrideProvider);
-    final proOverride = proOverrideAsync.valueOrNull ?? false;
 
     final htmlStyle = {
       'body': Style(
@@ -295,42 +294,60 @@ class SettingsScreen extends ConsumerWidget {
                               icon: const Icon(Icons.lock_open_rounded, size: 18),
                               label: Text(l10n.upgradeNow),
                             ),
-                          const Divider(height: 20),
-                          Text(
-                            l10n.settingsTestModeSectionTitle,
-                            style: theme.textTheme.labelSmall?.copyWith(
-                              color: cs.onSurfaceVariant,
-                              letterSpacing: 0.8,
+                          if (!kReleaseMode)
+                            Consumer(
+                              builder: (context, ref, _) {
+                                final proOverrideAsync =
+                                    ref.watch(proTestOverrideProvider);
+                                final proOverride =
+                                    proOverrideAsync.valueOrNull ?? false;
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    const Divider(height: 20),
+                                    Text(
+                                      l10n.settingsTestModeSectionTitle,
+                                      style: theme.textTheme.labelSmall?.copyWith(
+                                        color: cs.onSurfaceVariant,
+                                        letterSpacing: 0.8,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    SwitchListTile(
+                                      contentPadding: EdgeInsets.zero,
+                                      value: proOverride,
+                                      onChanged: proOverrideAsync.isLoading
+                                          ? null
+                                          : (v) {
+                                              ref
+                                                  .read(
+                                                    proTestOverrideProvider
+                                                        .notifier,
+                                                  )
+                                                  .setOverride(v);
+                                            },
+                                      title: Text(l10n.settingsTestModeProTitle),
+                                      subtitle:
+                                          Text(l10n.settingsTestModeProSubtitle),
+                                      secondary: Icon(
+                                        Icons.science_outlined,
+                                        color: cs.primary,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 4),
+                                      child: Text(
+                                        l10n.settingsTestModeProCaption,
+                                        style: theme.textTheme.bodySmall?.copyWith(
+                                          color: cs.onSurfaceVariant,
+                                          height: 1.35,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
-                          ),
-                          const SizedBox(height: 4),
-                          SwitchListTile(
-                            contentPadding: EdgeInsets.zero,
-                            value: proOverride,
-                            onChanged: proOverrideAsync.isLoading
-                                ? null
-                                : (v) {
-                                    ref
-                                        .read(proTestOverrideProvider.notifier)
-                                        .setOverride(v);
-                                  },
-                            title: Text(l10n.settingsTestModeProTitle),
-                            subtitle: Text(l10n.settingsTestModeProSubtitle),
-                            secondary: Icon(
-                              Icons.science_outlined,
-                              color: cs.primary,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 4),
-                            child: Text(
-                              l10n.settingsTestModeProCaption,
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: cs.onSurfaceVariant,
-                                height: 1.35,
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                     ),
