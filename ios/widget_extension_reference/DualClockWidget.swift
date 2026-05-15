@@ -201,32 +201,22 @@ struct DualClockAccessoryRectangularView: View {
     var entry: DualClockEntry
 
     var body: some View {
-        let style = DualClockAccessoryStyle.load(from: UserDefaults(suiteName: kAppGroupId))
-        let s = style.fontScale
-        let cityPt = (16 * s).clamped(to: 12...36)
-        let timePt = (20 * s).clamped(to: 16...42)
-        let datePt = (13 * s).clamped(to: 11...28)
-
         HStack(alignment: .top, spacing: 0) {
             accessoryColumn(
                 city: entry.city1,
                 tzId: entry.tz1,
                 at: entry.date,
-                cityPt: cityPt,
-                timePt: timePt,
-                datePt: datePt,
                 columnAlignment: .leading,
             )
-            Spacer(minLength: 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer(minLength: 4)
             accessoryColumn(
                 city: entry.city2,
                 tzId: entry.tz2,
                 at: entry.date,
-                cityPt: cityPt,
-                timePt: timePt,
-                datePt: datePt,
                 columnAlignment: .trailing,
             )
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
@@ -236,34 +226,25 @@ struct DualClockAccessoryRectangularView: View {
         city: String,
         tzId: String,
         at date: Date,
-        cityPt: CGFloat,
-        timePt: CGFloat,
-        datePt: CGFloat,
         columnAlignment: HorizontalAlignment,
     ) -> some View {
         let tz = TimeZone(identifier: tzId) ?? .current
-        let vAlignment: Alignment = columnAlignment == .leading ? .leading : .trailing
-        let textAlign: TextAlignment = columnAlignment == .leading ? .leading : .trailing
 
-        VStack(alignment: columnAlignment, spacing: 0) {
+        VStack(alignment: columnAlignment, spacing: 2) {
             Text(city)
-                .font(.system(size: cityPt, weight: .semibold, design: .rounded))
-                .lineLimit(2)
-                .minimumScaleFactor(0.4)
-                .multilineTextAlignment(textAlign)
-            Spacer(minLength: 0)
+                .font(.system(size: 12, weight: .semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.3)
             Text(DualClockFormatters.formatTime(date: date, timeZone: tz))
-                .font(.system(size: timePt, weight: .semibold, design: .rounded))
+                .font(.system(size: 16, weight: .bold))
                 .monospacedDigit()
                 .lineLimit(1)
-                .minimumScaleFactor(0.4)
-            Spacer(minLength: 0)
+                .minimumScaleFactor(0.3)
             Text(DualClockFormatters.formatCompactDate(date: date, timeZone: tz))
-                .font(.system(size: datePt, weight: .medium, design: .rounded))
+                .font(.system(size: 12, weight: .semibold))
                 .lineLimit(1)
-                .minimumScaleFactor(0.4)
+                .minimumScaleFactor(0.3)
         }
-        .frame(maxHeight: .infinity, alignment: vAlignment)
     }
 }
 
