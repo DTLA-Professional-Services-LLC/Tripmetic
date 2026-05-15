@@ -32,6 +32,21 @@ abstract final class BucketListCategoryColors {
   static Color categoryColor(TravelDestinationCategory c) =>
       Color(categoryArgb(c));
 
+  /// Map-marker colors tuned for legibility on light cards (e.g. Popular tab toggles).
+  static Color readableOnSurface(
+    TravelDestinationCategory c,
+    Brightness brightness,
+  ) {
+    if (brightness == Brightness.dark) return categoryColor(c);
+    return switch (c) {
+      TravelDestinationCategory.been => const Color(0xFF2E7D32),
+      TravelDestinationCategory.want => const Color(0xFFB8860B),
+      TravelDestinationCategory.live => const Color(0xFF1565C0),
+      TravelDestinationCategory.lived => const Color(0xFF6A1B9A),
+      TravelDestinationCategory.upcoming => const Color(0xFFE65100),
+    };
+  }
+
   /// Mapbox style-spec `rgba(...)` for choropleth fills from category ARGB.
   static String categoryFillRgba(TravelDestinationCategory c,
           {double alpha = 0.45}) =>

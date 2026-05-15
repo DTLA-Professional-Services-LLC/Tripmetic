@@ -39,4 +39,10 @@ abstract final class AppColors {
 
   /// Text/icons on gold-filled controls.
   static const Color onAccent = Color(0xFF0B132B);
+
+  /// Champagne on dark surfaces; darker bronze for text/icons on light backgrounds.
+  static Color accentOnSurface(Brightness brightness) =>
+      brightness == Brightness.light
+          ? const Color(0xFF6B5420)
+          : accent;
 }

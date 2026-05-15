@@ -23,6 +23,7 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
+    final cs = theme.colorScheme;
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
@@ -30,7 +31,7 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
         Text(
           l10n.bucketListPopularHint,
           style: theme.textTheme.bodySmall?.copyWith(
-            color: AppColors.textSecondary,
+            color: cs.onSurface,
             height: 1.35,
           ),
         ),
@@ -61,45 +62,50 @@ class _RegionExpansion extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    final accentIcon = AppColors.accentOnSurface(theme.brightness);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
-      color: AppColors.surface,
-      elevation: 0,
+      color: cs.surfaceContainerHighest,
+      elevation: theme.cardTheme.elevation ?? 0,
+      shadowColor: theme.shadowColor,
+      surfaceTintColor: Colors.transparent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: AppColors.accent.withValues(alpha: 0.25)),
+        side: BorderSide(color: cs.outline.withValues(alpha: 0.45)),
       ),
       clipBehavior: Clip.antiAlias,
-      child: Theme(
-        data: theme.copyWith(dividerColor: Colors.transparent),
-        child: ExpansionTile(
-          initiallyExpanded: false,
-          tilePadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-          childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-          title: Text(
-            region.name,
-            style: theme.textTheme.titleSmall?.copyWith(
-              color: AppColors.textPrimary,
-              fontWeight: FontWeight.w700,
-            ),
+      child: ExpansionTile(
+        initiallyExpanded: false,
+        collapsedTextColor: cs.onSurface,
+        textColor: cs.onSurface,
+        collapsedIconColor: cs.onSurfaceVariant,
+        iconColor: accentIcon,
+        tilePadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+        title: Text(
+          region.name,
+          style: theme.textTheme.titleSmall?.copyWith(
+            color: cs.onSurface,
+            fontWeight: FontWeight.w700,
           ),
-          subtitle: Text(
-            '${region.cities.length} cities',
-            style: theme.textTheme.labelSmall?.copyWith(
-              color: AppColors.textSecondary,
-            ),
-          ),
-          children: region.cities
-              .map(
-                (city) => _PopularCityRow(
-                  city: city,
-                  destinations: destinations,
-                  allowEditing: allowEditing,
-                ),
-              )
-              .toList(),
         ),
+        subtitle: Text(
+          '${region.cities.length} cities',
+          style: theme.textTheme.labelSmall?.copyWith(
+            color: cs.onSurfaceVariant,
+          ),
+        ),
+        children: region.cities
+            .map(
+              (city) => _PopularCityRow(
+                city: city,
+                destinations: destinations,
+                allowEditing: allowEditing,
+              ),
+            )
+            .toList(),
       ),
     );
   }
@@ -121,6 +127,7 @@ class _PopularCityRow extends ConsumerWidget {
     final l10n = context.l10n;
     final notifier = ref.read(bucketListProvider.notifier);
     final theme = Theme.of(context);
+    final cs = theme.colorScheme;
 
     final been = notifier.findDestination(
       list: destinations,
@@ -153,14 +160,14 @@ class _PopularCityRow extends ConsumerWidget {
                 Text(
                   city.city,
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.textPrimary,
+                    color: cs.onSurface,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(
                   city.country,
                   style: theme.textTheme.labelSmall?.copyWith(
-                    color: AppColors.textSecondary,
+                    color: cs.onSurfaceVariant,
                   ),
                 ),
               ],
@@ -170,9 +177,7 @@ class _PopularCityRow extends ConsumerWidget {
             label: l10n.bucketListCategoryBeen,
             icon: Icons.check_circle_outline_rounded,
             activeIcon: Icons.check_circle_rounded,
-            color: BucketListCategoryColors.categoryColor(
-              TravelDestinationCategory.been,
-            ),
+            category: TravelDestinationCategory.been,
             isActive: been != null,
             enabled: allowEditing,
             onPressed: () => notifier.toggleDestinationCategory(
@@ -187,9 +192,7 @@ class _PopularCityRow extends ConsumerWidget {
             label: l10n.bucketListCategoryLived,
             icon: Icons.home_outlined,
             activeIcon: Icons.home_rounded,
-            color: BucketListCategoryColors.categoryColor(
-              TravelDestinationCategory.lived,
-            ),
+            category: TravelDestinationCategory.lived,
             isActive: lived != null,
             enabled: allowEditing,
             onPressed: () => notifier.toggleDestinationCategory(
@@ -204,9 +207,7 @@ class _PopularCityRow extends ConsumerWidget {
             label: l10n.bucketListCategoryWant,
             icon: Icons.favorite_border_rounded,
             activeIcon: Icons.favorite_rounded,
-            color: BucketListCategoryColors.categoryColor(
-              TravelDestinationCategory.want,
-            ),
+            category: TravelDestinationCategory.want,
             isActive: want != null,
             enabled: allowEditing,
             onPressed: () => notifier.toggleDestinationCategory(
@@ -228,7 +229,7 @@ class _CategoryToggle extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.activeIcon,
-    required this.color,
+    required this.category,
     required this.isActive,
     required this.enabled,
     required this.onPressed,
@@ -237,7 +238,7 @@ class _CategoryToggle extends StatelessWidget {
   final String label;
   final IconData icon;
   final IconData activeIcon;
-  final Color color;
+  final TravelDestinationCategory category;
   final bool isActive;
   final bool enabled;
   final VoidCallback onPressed;
@@ -245,8 +246,13 @@ class _CategoryToggle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final fg = isActive ? color : AppColors.textSecondary;
-    final bg = isActive ? color.withValues(alpha: 0.18) : Colors.transparent;
+    final cs = theme.colorScheme;
+    final accent = BucketListCategoryColors.readableOnSurface(
+      category,
+      theme.brightness,
+    );
+    final fg = isActive ? accent : cs.onSurfaceVariant;
+    final bg = isActive ? accent.withValues(alpha: 0.16) : Colors.transparent;
 
     return Padding(
       padding: const EdgeInsets.only(left: 4),

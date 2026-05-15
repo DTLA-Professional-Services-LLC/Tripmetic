@@ -230,9 +230,11 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
 
   void _showDestinationSheet(BuildContext context, TravelDestination d) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     showModalBottomSheet<void>(
       context: context,
-      backgroundColor: AppColors.surface,
+      backgroundColor: cs.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
@@ -244,9 +246,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
           children: [
             Text(
               d.displayName,
-              style: const TextStyle(
-                color: AppColors.textPrimary,
-                fontSize: 18,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: cs.onSurface,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -258,9 +259,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                   width: 88,
                   child: Text(
                     l10n.bucketListDetailCategory,
-                    style: const TextStyle(
-                      color: AppColors.textSecondary,
-                      fontSize: 12,
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: cs.onSurfaceVariant,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -268,9 +268,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                 Expanded(
                   child: Text(
                     categoryLabel(l10n, d.category),
-                    style: const TextStyle(
-                      color: AppColors.textPrimary,
-                      fontSize: 14,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: cs.onSurface,
                     ),
                   ),
                 ),
@@ -287,9 +286,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                     width: 88,
                     child: Text(
                       l10n.bucketListDetailDates,
-                      style: const TextStyle(
-                        color: AppColors.textSecondary,
-                        fontSize: 12,
+                      style: theme.textTheme.labelMedium?.copyWith(
+                        color: cs.onSurfaceVariant,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -301,9 +299,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                         d.endDate!.toLocal(),
                         Localizations.localeOf(ctx).toLanguageTag(),
                       ),
-                      style: const TextStyle(
-                        color: AppColors.textPrimary,
-                        fontSize: 14,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: cs.onSurface,
                       ),
                     ),
                   ),
@@ -329,7 +326,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
           if (!didPop) unawaited(_onBackPressed());
         },
         child: Scaffold(
-          backgroundColor: AppColors.background,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: AppBar(
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_rounded),
@@ -341,8 +338,10 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
           body: ProGlassOverlay(
             featureId: NavFeatureIds.bucketList,
             isPro: isPro,
-            child: const Center(
-              child: CircularProgressIndicator(color: AppColors.accent),
+            child: Center(
+              child: CircularProgressIndicator(
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
           ),
         ),
@@ -353,7 +352,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
           if (!didPop) unawaited(_onBackPressed());
         },
         child: Scaffold(
-          backgroundColor: AppColors.background,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: AppBar(
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_rounded),
@@ -374,7 +373,9 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                     Text(
                       l10n.bucketListCloudSyncFailed('$e'),
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: AppColors.textPrimary),
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurface,
+                          ),
                     ),
                     const SizedBox(height: 16),
                     FilledButton(
@@ -399,7 +400,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
             if (!didPop) unawaited(_onBackPressed());
           },
           child: Scaffold(
-            backgroundColor: AppColors.background,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             appBar: AppBar(
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back_rounded),
@@ -423,8 +424,6 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
             ),
             floatingActionButton: _mode == _ViewMode.list && isPro
                 ? FloatingActionButton(
-                    backgroundColor: AppColors.accent,
-                    foregroundColor: AppColors.onAccent,
                     onPressed: () => showBucketDestinationEditor(context),
                     child: const Icon(Icons.add_location_alt_rounded),
                   )
@@ -444,7 +443,9 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                       child: Text(
                         l10n.bucketListSubtitle,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppColors.textSecondary,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
                             ),
                       ),
                     ),
@@ -542,15 +543,22 @@ class _TravelStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     final worldPct = metrics.worldExploredPercent.clamp(0, 100);
+    final accentText = AppColors.accentOnSurface(theme.brightness);
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: AppColors.surfaceContainer,
+        color: cs.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: AppColors.borderSubtle),
+        border: Border.all(color: cs.outline.withValues(alpha: 0.45)),
       ),
       child: ExpansionTile(
         initiallyExpanded: false,
+        collapsedTextColor: cs.onSurface,
+        textColor: cs.onSurface,
+        collapsedIconColor: cs.onSurfaceVariant,
+        iconColor: accentText,
         tilePadding: const EdgeInsets.fromLTRB(14, 4, 14, 4),
         childrenPadding:
             const EdgeInsets.only(left: 14, right: 14, bottom: 14),
@@ -558,10 +566,9 @@ class _TravelStatsCard extends StatelessWidget {
         collapsedShape: const Border(),
         title: Text(
           l10n.bucketListStatWorld,
-          style: const TextStyle(
-            color: AppColors.textPrimary,
+          style: theme.textTheme.titleSmall?.copyWith(
+            color: cs.onSurface,
             fontWeight: FontWeight.w700,
-            fontSize: 15,
           ),
         ),
         subtitle: Padding(
@@ -577,18 +584,16 @@ class _TravelStatsCard extends StatelessWidget {
                         metrics.uniqueCountriesVisited,
                         TravelExplorationMetrics.kWorldCountryDenominator,
                       ),
-                      style: const TextStyle(
-                        color: AppColors.textSecondary,
-                        fontSize: 11,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: cs.onSurfaceVariant,
                       ),
                     ),
                   ),
                   Text(
                     '${worldPct.toStringAsFixed(1)}%',
-                    style: const TextStyle(
-                      color: AppColors.accent,
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: cs.primary,
                       fontWeight: FontWeight.w700,
-                      fontSize: 13,
                     ),
                   ),
                 ],
@@ -599,9 +604,8 @@ class _TravelStatsCard extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: worldPct / 100,
                   minHeight: 6,
-                  backgroundColor: AppColors.surface,
-                  valueColor:
-                      const AlwaysStoppedAnimation<Color>(AppColors.accent),
+                  backgroundColor: cs.surface,
+                  color: cs.primary,
                 ),
               ),
             ],
@@ -668,6 +672,9 @@ class _TravelStatsCard extends StatelessWidget {
     required double value,
     required String subtitle,
   }) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    final accentText = AppColors.accentOnSurface(theme.brightness);
     final pct = value.clamp(0, 100);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -677,19 +684,17 @@ class _TravelStatsCard extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: const TextStyle(
-                  color: AppColors.textPrimary,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: cs.onSurface,
                   fontWeight: FontWeight.w600,
-                  fontSize: 13,
                 ),
               ),
             ),
             Text(
               '${pct.toStringAsFixed(1)}%',
-              style: const TextStyle(
-                color: AppColors.accent,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: accentText,
                 fontWeight: FontWeight.w700,
-                fontSize: 13,
               ),
             ),
           ],
@@ -700,16 +705,15 @@ class _TravelStatsCard extends StatelessWidget {
           child: LinearProgressIndicator(
             value: pct / 100,
             minHeight: 6,
-            backgroundColor: AppColors.surface,
-            valueColor: const AlwaysStoppedAnimation<Color>(AppColors.accent),
+            backgroundColor: cs.surface,
+            color: accentText,
           ),
         ),
         const SizedBox(height: 2),
         Text(
           subtitle,
-          style: const TextStyle(
-            color: AppColors.textSecondary,
-            fontSize: 11,
+          style: theme.textTheme.labelSmall?.copyWith(
+            color: cs.onSurfaceVariant,
           ),
         ),
       ],
@@ -751,6 +755,9 @@ class _BucketListList extends StatelessWidget {
     TravelDestinationCategory cat,
     List<TravelDestination> all,
   ) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    final accentText = AppColors.accentOnSurface(theme.brightness);
     final items = all.where((e) => e.category == cat).toList(growable: false);
     if (items.isEmpty) return [];
 
@@ -762,9 +769,8 @@ class _BucketListList extends StatelessWidget {
             Expanded(
               child: Text(
                 categoryLabel(l10n, cat).toUpperCase(),
-                style: const TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 11,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: cs.onSurfaceVariant,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0.9,
                 ),
@@ -773,8 +779,8 @@ class _BucketListList extends StatelessWidget {
             if (allowEditing)
               Text(
                 l10n.bucketListTapEditHint,
-                style: const TextStyle(
-                  color: AppColors.textSecondary,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: cs.onSurfaceVariant,
                   fontSize: 10,
                 ),
               ),
@@ -784,16 +790,19 @@ class _BucketListList extends StatelessWidget {
       if (allowEditing)
         Text(
           l10n.bucketListDeleteHint,
-          style: const TextStyle(color: AppColors.textSecondary, fontSize: 10),
+          style: theme.textTheme.labelSmall?.copyWith(
+            color: cs.onSurfaceVariant,
+            fontSize: 10,
+          ),
         ),
       if (allowEditing) const SizedBox(height: 6),
       ...items.map((d) {
         final tile = Container(
             margin: const EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
-              color: AppColors.surfaceContainer,
+              color: cs.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppColors.borderSubtle),
+              border: Border.all(color: cs.outline.withValues(alpha: 0.45)),
             ),
             child: ListTile(
               contentPadding:
@@ -804,8 +813,8 @@ class _BucketListList extends StatelessWidget {
               ),
               title: Text(
                 d.displayName,
-                style: const TextStyle(
-                  color: AppColors.textPrimary,
+                style: theme.textTheme.titleSmall?.copyWith(
+                  color: cs.onSurface,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -818,16 +827,15 @@ class _BucketListList extends StatelessWidget {
                         d.endDate!.toLocal(),
                         Localizations.localeOf(context).toLanguageTag(),
                       ),
-                      style: const TextStyle(
-                        color: AppColors.textSecondary,
-                        fontSize: 12.5,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: cs.onSurfaceVariant,
                       ),
                     )
                   : null,
               trailing: allowEditing
                   ? IconButton(
                       icon: const Icon(Icons.edit_outlined, size: 20),
-                      color: AppColors.accent,
+                      color: accentText,
                       onPressed: () => onEdit(d),
                     )
                   : null,
@@ -1135,8 +1143,10 @@ class _BucketListMapState extends State<_BucketListMap> {
     final l10n = context.l10n;
 
     if (!_mapboxReady) {
-      return const Center(
-        child: CircularProgressIndicator(color: AppColors.accent),
+      return Center(
+        child: CircularProgressIndicator(
+          color: Theme.of(context).colorScheme.primary,
+        ),
       );
     }
 
@@ -1222,32 +1232,44 @@ class _BucketListMapState extends State<_BucketListMap> {
             left: 12,
             right: 12,
             bottom: 12,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: AppColors.surface.withValues(alpha: 0.92),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppColors.borderSubtle),
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                child: Row(
-                  children: [
-                    const Icon(Icons.info_outline_rounded,
-                        size: 18, color: AppColors.textSecondary),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        l10n.bucketListMapLegend,
-                        style: const TextStyle(
-                          color: AppColors.textSecondary,
-                          fontSize: 12,
-                        ),
-                      ),
+            child: Builder(
+              builder: (context) {
+                final cs = Theme.of(context).colorScheme;
+                return DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: cs.surface.withValues(alpha: 0.92),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: cs.outline.withValues(alpha: 0.45),
                     ),
-                  ],
-                ),
-              ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 8,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.info_outline_rounded,
+                          size: 18,
+                          color: cs.onSurfaceVariant,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            l10n.bucketListMapLegend,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(color: cs.onSurfaceVariant),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
       ],

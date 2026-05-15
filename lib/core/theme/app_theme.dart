@@ -127,17 +127,65 @@ abstract final class AppTheme {
         showCheckmark: true,
         checkmarkColor: AppColors.accent,
       ),
-      textTheme: const TextTheme(
+      listTileTheme: ListTileThemeData(
+        iconColor: scheme.onSurfaceVariant,
+        textColor: scheme.onSurface,
+        titleTextStyle: TextStyle(
+          color: scheme.onSurface,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+        subtitleTextStyle: TextStyle(
+          color: scheme.onSurfaceVariant,
+          fontSize: 13,
+        ),
+      ),
+      expansionTileTheme: ExpansionTileThemeData(
+        collapsedTextColor: scheme.onSurface,
+        textColor: scheme.onSurface,
+        collapsedIconColor: scheme.onSurfaceVariant,
+        iconColor: AppColors.accent,
+        backgroundColor: Colors.transparent,
+      ),
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) return scheme.onPrimary;
+            return scheme.onSurface;
+          }),
+          backgroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) return scheme.primary;
+            return scheme.surfaceContainerHighest;
+          }),
+          side: WidgetStateProperty.all(
+            BorderSide(color: scheme.outline.withValues(alpha: 0.55)),
+          ),
+        ),
+      ),
+      textTheme: TextTheme(
         headlineSmall: TextStyle(
-          color: AppColors.textPrimary,
+          color: scheme.onSurface,
           fontWeight: FontWeight.w700,
           letterSpacing: 0.6,
         ),
-        titleMedium: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600),
-        titleLarge: TextStyle(color: AppColors.textPrimary, fontWeight: FontWeight.w600),
-        bodyLarge: TextStyle(color: AppColors.textPrimary),
-        bodyMedium: TextStyle(color: AppColors.textSecondary),
-        labelLarge: TextStyle(color: AppColors.textSecondary, fontSize: 12),
+        titleLarge: TextStyle(
+          color: scheme.onSurface,
+          fontWeight: FontWeight.w600,
+        ),
+        titleMedium: TextStyle(
+          color: scheme.onSurface,
+          fontWeight: FontWeight.w600,
+        ),
+        titleSmall: TextStyle(
+          color: scheme.onSurface,
+          fontWeight: FontWeight.w600,
+        ),
+        bodyLarge: TextStyle(color: scheme.onSurface),
+        bodyMedium: TextStyle(color: scheme.onSurfaceVariant),
+        bodySmall: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
+        labelLarge: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
+        labelMedium: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
+        labelSmall: TextStyle(color: scheme.onSurfaceVariant, fontSize: 11),
       ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: AppColors.accent,
@@ -280,6 +328,41 @@ abstract final class AppTheme {
         showCheckmark: true,
         checkmarkColor: AppColors.accent,
       ),
+      listTileTheme: ListTileThemeData(
+        iconColor: scheme.onSurfaceVariant,
+        textColor: scheme.onSurface,
+        titleTextStyle: TextStyle(
+          color: scheme.onSurface,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+        subtitleTextStyle: TextStyle(
+          color: scheme.onSurfaceVariant,
+          fontSize: 13,
+        ),
+      ),
+      expansionTileTheme: ExpansionTileThemeData(
+        collapsedTextColor: scheme.onSurface,
+        textColor: scheme.onSurface,
+        collapsedIconColor: scheme.onSurfaceVariant,
+        iconColor: AppColors.accentOnSurface(Brightness.light),
+        backgroundColor: Colors.transparent,
+      ),
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) return scheme.onPrimary;
+            return scheme.onSurface;
+          }),
+          backgroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) return scheme.primary;
+            return scheme.surfaceContainerHighest;
+          }),
+          side: WidgetStateProperty.all(
+            BorderSide(color: scheme.outline.withValues(alpha: 0.55)),
+          ),
+        ),
+      ),
       textTheme: TextTheme(
         headlineSmall: TextStyle(
           color: scheme.onSurface,
@@ -291,6 +374,7 @@ abstract final class AppTheme {
         titleSmall: TextStyle(color: scheme.onSurface, fontWeight: FontWeight.w600),
         bodyLarge: TextStyle(color: scheme.onSurface),
         bodyMedium: TextStyle(color: scheme.onSurfaceVariant),
+        bodySmall: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
         labelLarge: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
         labelMedium: TextStyle(color: scheme.onSurfaceVariant, fontSize: 12),
         labelSmall: TextStyle(color: scheme.onSurfaceVariant, fontSize: 11),
