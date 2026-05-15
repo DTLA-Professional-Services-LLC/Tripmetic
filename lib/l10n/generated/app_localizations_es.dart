@@ -2247,19 +2247,41 @@ class AppLocalizationsEs extends AppLocalizations {
   String get widgetInstructionTabAndroid => 'Android';
 
   @override
-  String get widgetInstructionIosStep1 =>
-      'Bloquea el teléfono y mantén pulsada la pantalla de bloqueo.';
+  String get widgetInstructionIosLockScreenTitle => 'Pantalla de bloqueo';
 
   @override
-  String get widgetInstructionIosStep2 =>
-      'Toca \"Personalizar\" y elige \"Pantalla de bloqueo\".';
+  String get widgetInstructionIosLockScreenStep1 =>
+      'Mantén pulsada la pantalla de bloqueo y toca \"Personalizar\".';
 
   @override
-  String get widgetInstructionIosStep3 => 'Toca \"Añadir widgets\".';
+  String get widgetInstructionIosLockScreenStep2 =>
+      'Selecciona la vista previa de \"Pantalla de bloqueo\".';
 
   @override
-  String get widgetInstructionIosStep4 =>
-      'Desplázate, busca Tripmetic y añade el widget de doble reloj.';
+  String get widgetInstructionIosLockScreenStep3 =>
+      'Toca el área de widgets justo debajo de la hora.';
+
+  @override
+  String get widgetInstructionIosLockScreenStep4 =>
+      'Desplázate, selecciona Tripmetic y tócalo para añadir el widget.';
+
+  @override
+  String get widgetInstructionIosHomeScreenTitle => 'Pantalla de inicio';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep1 =>
+      'Mantén pulsado un espacio vacío en la pantalla de inicio.';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep2 =>
+      'Toca el icono + en la esquina superior izquierda.';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep3 => 'Busca \"Tripmetic\".';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep4 =>
+      'Elige el tamaño del widget que prefieras y toca \"Añadir widget\".';
 
   @override
   String get widgetInstructionAndroidStep1 =>

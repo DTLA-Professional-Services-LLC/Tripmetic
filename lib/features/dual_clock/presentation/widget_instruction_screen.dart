@@ -20,21 +20,6 @@ class _WidgetInstructionScreenState extends State<WidgetInstructionScreen> {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
 
-    final steps = _platformSegment == 0
-        ? [
-            l10n.widgetInstructionIosStep1,
-            l10n.widgetInstructionIosStep2,
-            l10n.widgetInstructionIosStep3,
-            l10n.widgetInstructionIosStep4,
-          ]
-        : [
-            l10n.widgetInstructionAndroidStep1,
-            l10n.widgetInstructionAndroidStep2,
-            l10n.widgetInstructionAndroidStep3,
-            l10n.widgetInstructionAndroidStep4,
-            l10n.widgetInstructionAndroidLockScreenHint,
-          ];
-
     return Column(
       children: [
         Expanded(
@@ -90,35 +75,36 @@ class _WidgetInstructionScreenState extends State<WidgetInstructionScreen> {
                   },
                 ),
                 const SizedBox(height: 24),
-                ...List.generate(steps.length, (i) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 14),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CircleAvatar(
-                          radius: 16,
-                          backgroundColor: cs.primary.withValues(alpha: 0.15),
-                          foregroundColor: cs.primary,
-                          child: Text(
-                            '${i + 1}',
-                            style: theme.textTheme.labelLarge?.copyWith(
-                              fontWeight: FontWeight.w800,
-                              color: cs.primary,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            steps[i],
-                            style: theme.textTheme.bodyLarge?.copyWith(height: 1.4),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+                if (_platformSegment == 0) ...[
+                  _InstructionSection(
+                    title: l10n.widgetInstructionIosLockScreenTitle,
+                    steps: [
+                      l10n.widgetInstructionIosLockScreenStep1,
+                      l10n.widgetInstructionIosLockScreenStep2,
+                      l10n.widgetInstructionIosLockScreenStep3,
+                      l10n.widgetInstructionIosLockScreenStep4,
+                    ],
+                  ),
+                  const SizedBox(height: 28),
+                  _InstructionSection(
+                    title: l10n.widgetInstructionIosHomeScreenTitle,
+                    steps: [
+                      l10n.widgetInstructionIosHomeScreenStep1,
+                      l10n.widgetInstructionIosHomeScreenStep2,
+                      l10n.widgetInstructionIosHomeScreenStep3,
+                      l10n.widgetInstructionIosHomeScreenStep4,
+                    ],
+                  ),
+                ] else
+                  _InstructionSection(
+                    steps: [
+                      l10n.widgetInstructionAndroidStep1,
+                      l10n.widgetInstructionAndroidStep2,
+                      l10n.widgetInstructionAndroidStep3,
+                      l10n.widgetInstructionAndroidStep4,
+                      l10n.widgetInstructionAndroidLockScreenHint,
+                    ],
+                  ),
               ],
             ),
           ),
@@ -145,6 +131,67 @@ class _WidgetInstructionScreenState extends State<WidgetInstructionScreen> {
             ),
           ),
         ),
+      ],
+    );
+  }
+}
+
+class _InstructionSection extends StatelessWidget {
+  const _InstructionSection({
+    required this.steps,
+    this.title,
+  });
+
+  final String? title;
+  final List<String> steps;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (title != null) ...[
+          Text(
+            title!,
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w800,
+              color: cs.primary,
+            ),
+          ),
+          const SizedBox(height: 12),
+        ],
+        ...List.generate(steps.length, (i) {
+          return Padding(
+            padding: EdgeInsets.only(bottom: i < steps.length - 1 ? 14 : 0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 16,
+                  backgroundColor: cs.primary.withValues(alpha: 0.15),
+                  foregroundColor: cs.primary,
+                  child: Text(
+                    '${i + 1}',
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      color: cs.primary,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    steps[i],
+                    style: theme.textTheme.bodyLarge?.copyWith(height: 1.4),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }),
       ],
     );
   }

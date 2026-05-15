@@ -4128,29 +4128,65 @@ abstract class AppLocalizations {
   /// **'Android'**
   String get widgetInstructionTabAndroid;
 
-  /// No description provided for @widgetInstructionIosStep1.
+  /// No description provided for @widgetInstructionIosLockScreenTitle.
   ///
   /// In en, this message translates to:
-  /// **'Lock your phone and long-press the Lock Screen.'**
-  String get widgetInstructionIosStep1;
+  /// **'Lock Screen'**
+  String get widgetInstructionIosLockScreenTitle;
 
-  /// No description provided for @widgetInstructionIosStep2.
+  /// No description provided for @widgetInstructionIosLockScreenStep1.
   ///
   /// In en, this message translates to:
-  /// **'Tap \"Customize\" and select \"Lock Screen\".'**
-  String get widgetInstructionIosStep2;
+  /// **'Long-press your Lock Screen and tap \'Customize\'.'**
+  String get widgetInstructionIosLockScreenStep1;
 
-  /// No description provided for @widgetInstructionIosStep3.
+  /// No description provided for @widgetInstructionIosLockScreenStep2.
   ///
   /// In en, this message translates to:
-  /// **'Tap \"Add Widgets\".'**
-  String get widgetInstructionIosStep3;
+  /// **'Select the \'Lock Screen\' preview.'**
+  String get widgetInstructionIosLockScreenStep2;
 
-  /// No description provided for @widgetInstructionIosStep4.
+  /// No description provided for @widgetInstructionIosLockScreenStep3.
   ///
   /// In en, this message translates to:
-  /// **'Scroll down, find Tripmetic, and add the Dual Clock widget.'**
-  String get widgetInstructionIosStep4;
+  /// **'Tap the widget area directly below the time.'**
+  String get widgetInstructionIosLockScreenStep3;
+
+  /// No description provided for @widgetInstructionIosLockScreenStep4.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll down, select Tripmetic, and tap to add the widget.'**
+  String get widgetInstructionIosLockScreenStep4;
+
+  /// No description provided for @widgetInstructionIosHomeScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Home Screen'**
+  String get widgetInstructionIosHomeScreenTitle;
+
+  /// No description provided for @widgetInstructionIosHomeScreenStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-press an empty space on your Home Screen.'**
+  String get widgetInstructionIosHomeScreenStep1;
+
+  /// No description provided for @widgetInstructionIosHomeScreenStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the + icon in the top-left corner.'**
+  String get widgetInstructionIosHomeScreenStep2;
+
+  /// No description provided for @widgetInstructionIosHomeScreenStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for \'Tripmetic\'.'**
+  String get widgetInstructionIosHomeScreenStep3;
+
+  /// No description provided for @widgetInstructionIosHomeScreenStep4.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your preferred widget size and tap \'Add Widget\'.'**
+  String get widgetInstructionIosHomeScreenStep4;
 
   /// No description provided for @widgetInstructionAndroidStep1.
   ///

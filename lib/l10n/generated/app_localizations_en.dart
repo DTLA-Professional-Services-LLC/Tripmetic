@@ -2235,19 +2235,41 @@ class AppLocalizationsEn extends AppLocalizations {
   String get widgetInstructionTabAndroid => 'Android';
 
   @override
-  String get widgetInstructionIosStep1 =>
-      'Lock your phone and long-press the Lock Screen.';
+  String get widgetInstructionIosLockScreenTitle => 'Lock Screen';
 
   @override
-  String get widgetInstructionIosStep2 =>
-      'Tap \"Customize\" and select \"Lock Screen\".';
+  String get widgetInstructionIosLockScreenStep1 =>
+      'Long-press your Lock Screen and tap \'Customize\'.';
 
   @override
-  String get widgetInstructionIosStep3 => 'Tap \"Add Widgets\".';
+  String get widgetInstructionIosLockScreenStep2 =>
+      'Select the \'Lock Screen\' preview.';
 
   @override
-  String get widgetInstructionIosStep4 =>
-      'Scroll down, find Tripmetic, and add the Dual Clock widget.';
+  String get widgetInstructionIosLockScreenStep3 =>
+      'Tap the widget area directly below the time.';
+
+  @override
+  String get widgetInstructionIosLockScreenStep4 =>
+      'Scroll down, select Tripmetic, and tap to add the widget.';
+
+  @override
+  String get widgetInstructionIosHomeScreenTitle => 'Home Screen';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep1 =>
+      'Long-press an empty space on your Home Screen.';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep2 =>
+      'Tap the + icon in the top-left corner.';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep3 => 'Search for \'Tripmetic\'.';
+
+  @override
+  String get widgetInstructionIosHomeScreenStep4 =>
+      'Select your preferred widget size and tap \'Add Widget\'.';
 
   @override
   String get widgetInstructionAndroidStep1 =>

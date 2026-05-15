@@ -28,27 +28,40 @@ struct DualClockEntry: TimelineEntry {
     let tz2: String
 }
 
-// MARK: - Style (App Group)
+// MARK: - Styles
 
-private struct DualClockStyle {
+/// Lock-screen accessories: system vibrancy only (no custom hex colors).
+private struct DualClockAccessoryStyle {
+    let fontScale: CGFloat
+
+    static func load(from defaults: UserDefaults?) -> DualClockAccessoryStyle {
+        let rawScale = Double(defaults?.string(forKey: DualClockKeys.fontScale) ?? "1.0") ?? 1.0
+        let fontScale = CGFloat(Swift.min(Swift.max(rawScale, 0.78), 2.0))
+        return DualClockAccessoryStyle(fontScale: fontScale)
+    }
+}
+
+/// Home Screen widgets: custom colors + optional text shadow from App Group.
+private struct DualClockHomeStyle {
     let fontScale: CGFloat
     let cityColor: Color
     let timeColor: Color
     let dateColor: Color
     let useTextShadow: Bool
 
-    static func load(from defaults: UserDefaults?) -> DualClockStyle {
+    static func load(from defaults: UserDefaults?) -> DualClockHomeStyle {
         let rawScale = Double(defaults?.string(forKey: DualClockKeys.fontScale) ?? "1.0") ?? 1.0
         let fontScale = CGFloat(Swift.min(Swift.max(rawScale, 0.78), 2.0))
 
-        let city = Color.argbHex(defaults?.string(forKey: DualClockKeys.cityColorHex)) ?? .primary
-        let time = Color.argbHex(defaults?.string(forKey: DualClockKeys.timeColorHex)) ?? .primary
-        let date = Color.argbHex(defaults?.string(forKey: DualClockKeys.dateColorHex)) ?? .secondary
+        let city = Color.argbHex(defaults?.string(forKey: DualClockKeys.cityColorHex)) ?? .white
+        let time = Color.argbHex(defaults?.string(forKey: DualClockKeys.timeColorHex)) ?? .white
+        let date = Color.argbHex(defaults?.string(forKey: DualClockKeys.dateColorHex))
+            ?? Color.white.opacity(0.82)
 
         let shadowRaw = defaults?.string(forKey: DualClockKeys.useTextShadow) ?? "1"
         let useTextShadow = shadowRaw != "0" && shadowRaw.lowercased() != "false"
 
-        return DualClockStyle(
+        return DualClockHomeStyle(
             fontScale: fontScale,
             cityColor: city,
             timeColor: time,
@@ -59,7 +72,7 @@ private struct DualClockStyle {
 }
 
 private extension Color {
-    /// Accepts `RRGGBB`, `#RRGGBB`, `AARRGGBB`, or `#AARRGGBB`. Empty / invalid → nil (caller uses default).
+    /// Accepts `RRGGBB`, `#RRGGBB`, `AARRGGBB`, or `#AARRGGBB`. Empty / `auto` → nil.
     static func argbHex(_ raw: String?) -> Color? {
         guard var s = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty else { return nil }
         if s.lowercased() == "auto" { return nil }
@@ -110,8 +123,6 @@ struct DualClockProvider: TimelineProvider {
         let now = Date()
         let startOfMinute = calendar.date(from: calendar.dateComponents([.year, .month, .day, .hour, .minute], from: now)) ?? now
 
-        /// One entry per minute so the system advances the clock without relying on
-        /// `TimelineView(.periodic)` inside extensions (often frozen on the lock screen).
         let horizonMinutes = 240
         var entries: [DualClockEntry] = []
         entries.reserveCapacity(horizonMinutes)
@@ -147,18 +158,17 @@ private enum DualClockFormatters {
         return f.string(from: date)
     }
 
-    static func formatShortDate(date: Date, timeZone: TimeZone) -> String {
-        let f = DateFormatter()
-        f.timeZone = timeZone
-        f.setLocalizedDateFormatFromTemplate("EEE MMM d")
-        return f.string(from: date)
-    }
-
-    /// Narrow accessory slot: shorter string than `EEE MMM d` to avoid ellipsis.
     static func formatCompactDate(date: Date, timeZone: TimeZone) -> String {
         let f = DateFormatter()
         f.timeZone = timeZone
         f.setLocalizedDateFormatFromTemplate("MMM d")
+        return f.string(from: date)
+    }
+
+    static func formatHomeDate(date: Date, timeZone: TimeZone) -> String {
+        let f = DateFormatter()
+        f.timeZone = timeZone
+        f.setLocalizedDateFormatFromTemplate("EEE, MMM d")
         return f.string(from: date)
     }
 
@@ -170,101 +180,98 @@ private enum DualClockFormatters {
     }
 }
 
-// MARK: - Rectangular (lock screen + larger accessory slots)
+// MARK: - Home Screen background
+
+private struct DualClockHomeBackground: View {
+    var body: some View {
+        LinearGradient(
+            colors: [
+                Color(red: 0.06, green: 0.12, blue: 0.22),
+                Color(red: 0.04, green: 0.08, blue: 0.16),
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing,
+        )
+    }
+}
+
+// MARK: - Lock screen (accessory families)
 
 struct DualClockAccessoryRectangularView: View {
     var entry: DualClockEntry
 
     var body: some View {
-        let defaults = UserDefaults(suiteName: kAppGroupId)
-        let style = DualClockStyle.load(from: defaults)
+        let style = DualClockAccessoryStyle.load(from: UserDefaults(suiteName: kAppGroupId))
         let s = style.fontScale
-        /// Larger bases + higher caps so the in-app slider can meaningfully exceed ~155%.
-        let cityPt = (14 * s).clamped(to: 11...32)
-        let timePt = (17 * s).clamped(to: 14...36)
-        let datePt = (12 * s).clamped(to: 10...24)
+        let cityPt = (16 * s).clamped(to: 12...36)
+        let timePt = (20 * s).clamped(to: 16...42)
+        let datePt = (13 * s).clamped(to: 11...28)
 
-        let content = GeometryReader { geo in
-            let gap = max(4, 6 * s)
-            let half = max(1, (geo.size.width - gap) / 2)
-            HStack(alignment: .top, spacing: gap) {
-                locationColumn(
-                    city: entry.city1,
-                    tzId: entry.tz1,
-                    at: entry.date,
-                    style: style,
-                    cityPt: cityPt,
-                    timePt: timePt,
-                    datePt: datePt,
-                    columnMaxWidth: half,
-                )
-                locationColumn(
-                    city: entry.city2,
-                    tzId: entry.tz2,
-                    at: entry.date,
-                    style: style,
-                    cityPt: cityPt,
-                    timePt: timePt,
-                    datePt: datePt,
-                    columnMaxWidth: half,
-                )
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        HStack(alignment: .top, spacing: 0) {
+            accessoryColumn(
+                city: entry.city1,
+                tzId: entry.tz1,
+                at: entry.date,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                columnAlignment: .leading,
+            )
+            Spacer(minLength: 8)
+            accessoryColumn(
+                city: entry.city2,
+                tzId: entry.tz2,
+                at: entry.date,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                columnAlignment: .trailing,
+            )
         }
-
-        if #available(iOSApplicationExtension 17.0, *) {
-            content.widgetAccentable(false)
-        } else {
-            content
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 
     @ViewBuilder
-    private func locationColumn(
+    private func accessoryColumn(
         city: String,
         tzId: String,
         at date: Date,
-        style: DualClockStyle,
         cityPt: CGFloat,
         timePt: CGFloat,
         datePt: CGFloat,
-        columnMaxWidth: CGFloat,
+        columnAlignment: HorizontalAlignment,
     ) -> some View {
         let tz = TimeZone(identifier: tzId) ?? .current
-        VStack(alignment: .leading, spacing: 2) {
+        let vAlignment: Alignment = columnAlignment == .leading ? .leading : .trailing
+        let textAlign: TextAlignment = columnAlignment == .leading ? .leading : .trailing
+
+        VStack(alignment: columnAlignment, spacing: 0) {
             Text(city)
                 .font(.system(size: cityPt, weight: .semibold, design: .rounded))
-                .foregroundStyle(style.cityColor)
                 .lineLimit(2)
-                .minimumScaleFactor(0.32)
-                .multilineTextAlignment(.leading)
-                .shadowIf(style.useTextShadow)
+                .minimumScaleFactor(0.4)
+                .multilineTextAlignment(textAlign)
+            Spacer(minLength: 0)
             Text(DualClockFormatters.formatTime(date: date, timeZone: tz))
                 .font(.system(size: timePt, weight: .semibold, design: .rounded))
-                .foregroundStyle(style.timeColor)
                 .monospacedDigit()
                 .lineLimit(1)
-                .minimumScaleFactor(0.28)
-                .shadowIf(style.useTextShadow)
+                .minimumScaleFactor(0.4)
+            Spacer(minLength: 0)
             Text(DualClockFormatters.formatCompactDate(date: date, timeZone: tz))
                 .font(.system(size: datePt, weight: .medium, design: .rounded))
-                .foregroundStyle(style.dateColor)
                 .lineLimit(1)
-                .minimumScaleFactor(0.28)
-                .shadowIf(style.useTextShadow)
+                .minimumScaleFactor(0.4)
         }
-        .frame(maxWidth: columnMaxWidth, alignment: .leading)
+        .frame(maxHeight: .infinity, alignment: vAlignment)
     }
 }
-
-// MARK: - Inline (lock screen / Dynamic Island accessory line)
 
 struct DualClockAccessoryInlineView: View {
     var entry: DualClockEntry
 
     var body: some View {
-        let defaults = UserDefaults(suiteName: kAppGroupId)
-        let style = DualClockStyle.load(from: defaults)
+        let style = DualClockAccessoryStyle.load(from: UserDefaults(suiteName: kAppGroupId))
         let s = style.fontScale
         let linePt = (12 * s).clamped(to: 10...22)
         let tz1 = TimeZone(identifier: entry.tz1) ?? .current
@@ -273,44 +280,135 @@ struct DualClockAccessoryInlineView: View {
         let t2 = DualClockFormatters.formatTime(date: entry.date, timeZone: tz2)
         let c1 = DualClockFormatters.shortCityLabel(entry.city1)
         let c2 = DualClockFormatters.shortCityLabel(entry.city2)
-        Group {
-            if #available(iOSApplicationExtension 17.0, *) {
-                Text("\(c1) \(t1)  ·  \(c2) \(t2)")
-                    .font(.system(size: linePt, weight: .semibold, design: .rounded))
-                    .foregroundStyle(style.timeColor)
-                    .monospacedDigit()
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.45)
-                    .shadowIf(style.useTextShadow)
-                    .widgetAccentable(false)
-            } else {
-                Text("\(c1) \(t1)  ·  \(c2) \(t2)")
-                    .font(.system(size: linePt, weight: .semibold, design: .rounded))
-                    .foregroundStyle(style.timeColor)
-                    .monospacedDigit()
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.45)
-                    .shadowIf(style.useTextShadow)
-            }
-        }
+        Text("\(c1) \(t1)  ·  \(c2) \(t2)")
+            .font(.system(size: linePt, weight: .semibold, design: .rounded))
+            .monospacedDigit()
+            .lineLimit(1)
+            .minimumScaleFactor(0.4)
     }
 }
 
-private extension View {
-    @ViewBuilder
-    func shadowIf(_ on: Bool) -> some View {
-        if on {
-            self.shadow(color: .black.opacity(0.62), radius: 1.2, x: 0, y: 1)
-        } else {
-            self
+// MARK: - Home Screen (system families)
+
+struct DualClockSystemMediumView: View {
+    var entry: DualClockEntry
+
+    var body: some View {
+        let style = DualClockHomeStyle.load(from: UserDefaults(suiteName: kAppGroupId))
+        let s = style.fontScale
+        let cityPt = (15 * s).clamped(to: 12...22)
+        let timePt = (24 * s).clamped(to: 18...34)
+        let datePt = (12 * s).clamped(to: 10...18)
+
+        HStack(alignment: .top, spacing: 12) {
+            homeCityColumn(
+                city: entry.city1,
+                tzId: entry.tz1,
+                at: entry.date,
+                style: style,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                alignment: .leading,
+            )
+            homeCityColumn(
+                city: entry.city2,
+                tzId: entry.tz2,
+                at: entry.date,
+                style: style,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                alignment: .trailing,
+            )
         }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
-private extension CGFloat {
-    func clamped(to range: ClosedRange<CGFloat>) -> CGFloat {
-        Swift.min(Swift.max(self, range.lowerBound), range.upperBound)
+struct DualClockSystemSmallView: View {
+    var entry: DualClockEntry
+
+    var body: some View {
+        let style = DualClockHomeStyle.load(from: UserDefaults(suiteName: kAppGroupId))
+        let s = style.fontScale
+        let cityPt = (12 * s).clamped(to: 10...17)
+        let timePt = (18 * s).clamped(to: 14...26)
+        let datePt = (10 * s).clamped(to: 9...14)
+
+        VStack(alignment: .leading, spacing: 0) {
+            homeCityColumn(
+                city: entry.city1,
+                tzId: entry.tz1,
+                at: entry.date,
+                style: style,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                alignment: .leading,
+            )
+            Spacer(minLength: 4)
+            Rectangle()
+                .fill(Color.white.opacity(0.18))
+                .frame(height: 1)
+            Spacer(minLength: 4)
+            homeCityColumn(
+                city: entry.city2,
+                tzId: entry.tz2,
+                at: entry.date,
+                style: style,
+                cityPt: cityPt,
+                timePt: timePt,
+                datePt: datePt,
+                alignment: .leading,
+            )
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
+}
+
+@ViewBuilder
+private func homeCityColumn(
+    city: String,
+    tzId: String,
+    at date: Date,
+    style: DualClockHomeStyle,
+    cityPt: CGFloat,
+    timePt: CGFloat,
+    datePt: CGFloat,
+    alignment: HorizontalAlignment,
+) -> some View {
+    let tz = TimeZone(identifier: tzId) ?? .current
+    let hAlign: Alignment = alignment == .leading ? .leading : .trailing
+    let textAlign: TextAlignment = alignment == .leading ? .leading : .trailing
+
+    VStack(alignment: alignment, spacing: 3) {
+        Text(city)
+            .font(.system(size: cityPt, weight: .semibold, design: .rounded))
+            .foregroundStyle(style.cityColor)
+            .lineLimit(2)
+            .minimumScaleFactor(0.4)
+            .multilineTextAlignment(textAlign)
+            .shadowIf(style.useTextShadow)
+        Text(DualClockFormatters.formatTime(date: date, timeZone: tz))
+            .font(.system(size: timePt, weight: .bold, design: .rounded))
+            .foregroundStyle(style.timeColor)
+            .monospacedDigit()
+            .lineLimit(1)
+            .minimumScaleFactor(0.4)
+            .shadowIf(style.useTextShadow)
+        Text(DualClockFormatters.formatHomeDate(date: date, timeZone: tz))
+            .font(.system(size: datePt, weight: .medium, design: .rounded))
+            .foregroundStyle(style.dateColor)
+            .lineLimit(1)
+            .minimumScaleFactor(0.4)
+            .shadowIf(style.useTextShadow)
+    }
+    .frame(maxWidth: .infinity, alignment: hAlign)
 }
 
 // MARK: - Router by widget family
@@ -320,12 +418,59 @@ struct DualClockWidgetEntryView: View {
     var entry: DualClockEntry
 
     var body: some View {
+        if isAccessoryFamily(family) {
+            accessoryContent
+        } else {
+            homeScreenContent
+        }
+    }
+
+    @ViewBuilder
+    private var accessoryContent: some View {
         switch family {
         case .accessoryInline:
             DualClockAccessoryInlineView(entry: entry)
         default:
             DualClockAccessoryRectangularView(entry: entry)
         }
+    }
+
+    @ViewBuilder
+    private var homeScreenContent: some View {
+        switch family {
+        case .systemMedium:
+            DualClockSystemMediumView(entry: entry)
+        case .systemSmall:
+            DualClockSystemSmallView(entry: entry)
+        default:
+            DualClockSystemMediumView(entry: entry)
+        }
+    }
+}
+
+private func isAccessoryFamily(_ family: WidgetFamily) -> Bool {
+    switch family {
+    case .accessoryInline, .accessoryRectangular, .accessoryCircular:
+        return true
+    default:
+        return false
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func shadowIf(_ on: Bool) -> some View {
+        if on {
+            self.shadow(color: .black.opacity(0.45), radius: 1.5, x: 0, y: 1)
+        } else {
+            self
+        }
+    }
+}
+
+private extension CGFloat {
+    func clamped(to range: ClosedRange<CGFloat>) -> CGFloat {
+        Swift.min(Swift.max(self, range.lowerBound), range.upperBound)
     }
 }
 
@@ -341,18 +486,38 @@ struct DualClockWidget: Widget {
         }
         .configurationDisplayName("Dual Clock")
         .description("Two cities with live time and date.")
-        .supportedFamilies([.accessoryRectangular, .accessoryInline])
+        .supportedFamilies([
+            .accessoryRectangular,
+            .accessoryInline,
+            .systemSmall,
+            .systemMedium,
+        ])
     }
 
     @ViewBuilder
     private func dualClockRoot(entry: DualClockEntry) -> some View {
+        DualClockWidgetEntryView(entry: entry)
+            .modifier(DualClockContainerBackgroundModifier())
+    }
+}
+
+/// Applies the correct WidgetKit container background per family (accessory vs home).
+private struct DualClockContainerBackgroundModifier: ViewModifier {
+    @Environment(\.widgetFamily) private var family
+
+    func body(content: Content) -> some View {
         if #available(iOSApplicationExtension 17.0, *) {
-            DualClockWidgetEntryView(entry: entry)
-                .containerBackground(for: .widget) {
+            if isAccessoryFamily(family) {
+                content.containerBackground(for: .widget) {
                     AccessoryWidgetBackground()
                 }
+            } else {
+                content.containerBackground(for: .widget) {
+                    DualClockHomeBackground()
+                }
+            }
         } else {
-            DualClockWidgetEntryView(entry: entry)
+            content
         }
     }
 }
