@@ -1,12 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:uuid/uuid.dart';
 
 import '../data/bucket_list_firestore_mapper.dart';
 import '../data/bucket_list_hive_store.dart';
 import '../domain/bucket_list_merge.dart';
 import '../domain/travel_destination.dart';
+import '../domain/us_state_from_coordinates.dart';
 import 'bucket_list_auth_providers.dart';
 
 final bucketListHiveStoreProvider = Provider<BucketListHiveStore>((ref) {
@@ -206,6 +208,23 @@ class BucketListNotifier extends AsyncNotifier<List<TravelDestination>> {
     return null;
   }
 
+  Future<String?> _resolveUsStateForCoordinates(
+    double latitude,
+    double longitude,
+  ) async {
+    try {
+      final marks = await placemarkFromCoordinates(latitude, longitude);
+      if (marks.isNotEmpty) {
+        final admin = marks.first.administrativeArea;
+        final fromAdmin = resolveUsStateFromAdminArea(admin);
+        if (fromAdmin != null) return fromAdmin;
+      }
+    } catch (_) {
+      // Offline or platform geocoder unavailable — fall back below.
+    }
+    return inferUsStateFromCoordinates(latitude, longitude);
+  }
+
   /// Toggles a city on/off for [category] using the same persistence as the editor sheet.
   Future<void> toggleDestinationCategory({
     required String city,
@@ -225,11 +244,19 @@ class BucketListNotifier extends AsyncNotifier<List<TravelDestination>> {
       await deleteDestination(existing.id);
       return;
     }
+
+    final countryTrim = country.trim();
+    String? state;
+    if (destinationCountryIsUnitedStates(countryTrim)) {
+      state = await _resolveUsStateForCoordinates(latitude, longitude);
+    }
+
     await addDestination(
       TravelDestination(
         id: newId(),
         city: city.trim(),
-        country: country.trim(),
+        country: countryTrim,
+        state: state,
         latitude: latitude,
         longitude: longitude,
         category: category,

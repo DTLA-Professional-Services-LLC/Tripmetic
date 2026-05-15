@@ -8,39 +8,48 @@ class TripmeticAppBarTitle extends StatelessWidget {
 
   final String? subtitle;
 
+  /// Room for wordmark + optional subtitle without vertical clipping.
+  static const double toolbarHeightWithSubtitle = 64;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          AppBrand.wordmark,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            letterSpacing: 0.6,
-            fontSize: theme.textTheme.titleMedium?.fontSize ?? 18,
-            height: theme.textTheme.titleMedium?.height ?? 1.25,
-            color: cs.primary,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.center,
+          child: Text(
+            AppBrand.wordmark,
+            maxLines: 1,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.w800,
+              letterSpacing: 0.35,
+              fontSize: theme.textTheme.titleMedium?.fontSize ?? 18,
+              height: 1.15,
+              color: cs.primary,
+            ),
           ),
         ),
         if (subtitle != null && subtitle!.isNotEmpty) ...[
           const SizedBox(height: 2),
-          Text(
-            subtitle!,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: cs.onSurfaceVariant,
-              fontWeight: FontWeight.w500,
-              fontSize: theme.textTheme.labelSmall?.fontSize ?? 11,
-              height: theme.textTheme.labelSmall?.height ?? 1.3,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.center,
+            child: Text(
+              subtitle!,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: cs.onSurfaceVariant,
+                fontWeight: FontWeight.w500,
+                fontSize: theme.textTheme.labelSmall?.fontSize ?? 11,
+                height: 1.2,
+              ),
             ),
           ),
         ],

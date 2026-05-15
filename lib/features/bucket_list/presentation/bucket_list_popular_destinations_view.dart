@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,6 +26,10 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    final liveDestinations = ref.watch(bucketListProvider).maybeWhen(
+          data: (list) => list,
+          orElse: () => destinations,
+        );
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
@@ -39,7 +45,7 @@ class BucketListPopularDestinationsView extends ConsumerWidget {
         ...kPopularDestinationRegions.map(
           (region) => _RegionExpansion(
             region: region,
-            destinations: destinations,
+            destinations: liveDestinations,
             allowEditing: allowEditing,
           ),
         ),
@@ -128,21 +134,31 @@ class _PopularCityRow extends ConsumerWidget {
     final notifier = ref.read(bucketListProvider.notifier);
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    final list = ref.watch(bucketListProvider).maybeWhen(
+          data: (d) => d,
+          orElse: () => destinations,
+        );
 
     final been = notifier.findDestination(
-      list: destinations,
+      list: list,
       city: city.city,
       country: city.country,
       category: TravelDestinationCategory.been,
     );
+    final live = notifier.findDestination(
+      list: list,
+      city: city.city,
+      country: city.country,
+      category: TravelDestinationCategory.live,
+    );
     final lived = notifier.findDestination(
-      list: destinations,
+      list: list,
       city: city.city,
       country: city.country,
       category: TravelDestinationCategory.lived,
     );
     final want = notifier.findDestination(
-      list: destinations,
+      list: list,
       city: city.city,
       country: city.country,
       category: TravelDestinationCategory.want,
@@ -173,49 +189,83 @@ class _PopularCityRow extends ConsumerWidget {
               ],
             ),
           ),
-          _CategoryToggle(
-            label: l10n.bucketListCategoryBeen,
-            icon: Icons.check_circle_outline_rounded,
-            activeIcon: Icons.check_circle_rounded,
-            category: TravelDestinationCategory.been,
-            isActive: been != null,
-            enabled: allowEditing,
-            onPressed: () => notifier.toggleDestinationCategory(
-              city: city.city,
-              country: city.country,
-              latitude: city.latitude,
-              longitude: city.longitude,
-              category: TravelDestinationCategory.been,
-            ),
-          ),
-          _CategoryToggle(
-            label: l10n.bucketListCategoryLived,
-            icon: Icons.home_outlined,
-            activeIcon: Icons.home_rounded,
-            category: TravelDestinationCategory.lived,
-            isActive: lived != null,
-            enabled: allowEditing,
-            onPressed: () => notifier.toggleDestinationCategory(
-              city: city.city,
-              country: city.country,
-              latitude: city.latitude,
-              longitude: city.longitude,
-              category: TravelDestinationCategory.lived,
-            ),
-          ),
-          _CategoryToggle(
-            label: l10n.bucketListCategoryWant,
-            icon: Icons.favorite_border_rounded,
-            activeIcon: Icons.favorite_rounded,
-            category: TravelDestinationCategory.want,
-            isActive: want != null,
-            enabled: allowEditing,
-            onPressed: () => notifier.toggleDestinationCategory(
-              city: city.city,
-              country: city.country,
-              latitude: city.latitude,
-              longitude: city.longitude,
-              category: TravelDestinationCategory.want,
+          Flexible(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              reverse: true,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _CategoryToggle(
+                    label: l10n.bucketListCategoryBeen,
+                    icon: Icons.check_circle_outline_rounded,
+                    activeIcon: Icons.check_circle_rounded,
+                    category: TravelDestinationCategory.been,
+                    isActive: been != null,
+                    enabled: allowEditing,
+                    onPressed: () => unawaited(
+                      notifier.toggleDestinationCategory(
+                        city: city.city,
+                        country: city.country,
+                        latitude: city.latitude,
+                        longitude: city.longitude,
+                        category: TravelDestinationCategory.been,
+                      ),
+                    ),
+                  ),
+                  _CategoryToggle(
+                    label: l10n.bucketListCategoryLive,
+                    icon: Icons.apartment_outlined,
+                    activeIcon: Icons.apartment,
+                    category: TravelDestinationCategory.live,
+                    isActive: live != null,
+                    enabled: allowEditing,
+                    onPressed: () => unawaited(
+                      notifier.toggleDestinationCategory(
+                        city: city.city,
+                        country: city.country,
+                        latitude: city.latitude,
+                        longitude: city.longitude,
+                        category: TravelDestinationCategory.live,
+                      ),
+                    ),
+                  ),
+                  _CategoryToggle(
+                    label: l10n.bucketListCategoryLived,
+                    icon: Icons.home_outlined,
+                    activeIcon: Icons.home_rounded,
+                    category: TravelDestinationCategory.lived,
+                    isActive: lived != null,
+                    enabled: allowEditing,
+                    onPressed: () => unawaited(
+                      notifier.toggleDestinationCategory(
+                        city: city.city,
+                        country: city.country,
+                        latitude: city.latitude,
+                        longitude: city.longitude,
+                        category: TravelDestinationCategory.lived,
+                      ),
+                    ),
+                  ),
+                  _CategoryToggle(
+                    label: l10n.bucketListCategoryWant,
+                    icon: Icons.favorite_border_rounded,
+                    activeIcon: Icons.favorite_rounded,
+                    category: TravelDestinationCategory.want,
+                    isActive: want != null,
+                    enabled: allowEditing,
+                    onPressed: () => unawaited(
+                      notifier.toggleDestinationCategory(
+                        city: city.city,
+                        country: city.country,
+                        latitude: city.latitude,
+                        longitude: city.longitude,
+                        category: TravelDestinationCategory.want,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -257,7 +307,7 @@ class _CategoryToggle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 4),
       child: SizedBox(
-        width: 52,
+        width: 48,
         child: Material(
           color: bg,
           borderRadius: BorderRadius.circular(8),

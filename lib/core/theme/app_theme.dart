@@ -36,6 +36,8 @@ abstract final class AppTheme {
         foregroundColor: AppColors.appBarForeground,
         elevation: 0,
         centerTitle: true,
+        toolbarHeight: 64,
+        titleSpacing: 8,
         scrolledUnderElevation: 2,
         surfaceTintColor: Colors.transparent,
         systemOverlayStyle: SystemUiOverlayStyle(
@@ -226,6 +228,8 @@ abstract final class AppTheme {
         foregroundColor: scheme.onSurface,
         elevation: 0,
         centerTitle: true,
+        toolbarHeight: 64,
+        titleSpacing: 8,
         scrolledUnderElevation: 2,
         surfaceTintColor: Colors.transparent,
         titleTextStyle: TextStyle(

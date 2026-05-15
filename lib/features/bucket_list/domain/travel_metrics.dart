@@ -1,5 +1,6 @@
 import 'bucket_list_geo.dart';
 import 'travel_destination.dart';
+import 'us_state_from_coordinates.dart';
 
 class TravelExplorationMetrics {
   TravelExplorationMetrics({
@@ -120,6 +121,9 @@ class TravelExplorationMetrics {
     if (fromState != null && fromState.isNotEmpty) {
       final key = resolveUsStateKey(fromState);
       if (key != null) return key;
+    }
+    if (isUnitedStatesCountry(d.country)) {
+      return inferUsStateFromCoordinates(d.latitude, d.longitude);
     }
     return null;
   }

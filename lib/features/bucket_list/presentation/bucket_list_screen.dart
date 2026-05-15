@@ -328,6 +328,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
         child: Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: AppBar(
+            centerTitle: true,
+            toolbarHeight: TripmeticAppBarTitle.toolbarHeightWithSubtitle,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_rounded),
               onPressed: _onBackPressed,
@@ -354,6 +356,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
         child: Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: AppBar(
+            centerTitle: true,
+            toolbarHeight: TripmeticAppBarTitle.toolbarHeightWithSubtitle,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_rounded),
               onPressed: _onBackPressed,
@@ -402,6 +406,8 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
           child: Scaffold(
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             appBar: AppBar(
+              centerTitle: true,
+              toolbarHeight: TripmeticAppBarTitle.toolbarHeightWithSubtitle,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back_rounded),
                 onPressed: _onBackPressed,

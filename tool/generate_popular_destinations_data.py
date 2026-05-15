@@ -55,8 +55,8 @@ NORTH_AMERICA = [
     ("Savannah", "United States", 32.0809, -81.0912),
     ("Charleston", "United States", 32.7765, -79.9311),
     ("Sedona", "United States", 34.8697, -111.7610),
-    ("Banff", "Canada", 51.1784, -115.5708),
-    ("Whistler", "Canada", 50.1163, -122.9574),
+    ("Roatán", "Honduras", 16.3230, -86.5520),
+    ("Santo Domingo", "Dominican Republic", 18.4861, -69.9312),
 ]
 
 SOUTH_AMERICA = [
@@ -161,8 +161,8 @@ EUROPE = [
     ("Riga", "Latvia", 56.9496, 24.1052),
     ("Vilnius", "Lithuania", 54.6872, 25.2797),
     ("Bucharest", "Romania", 44.4268, 26.1025),
-    ("Sofia", "Bulgaria", 42.6977, 23.3219),
     ("Belgrade", "Serbia", 44.7866, 20.4489),
+    ("Tbilisi", "Georgia", 41.7151, 44.8271),
 ]
 
 ASIA = [
@@ -196,8 +196,8 @@ ASIA = [
     ("Maldives", "Maldives", 3.2028, 73.2207),
     ("Cappadocia", "Turkey", 38.6431, 34.8289),
     ("Busan", "South Korea", 35.1796, 129.0756),
-    ("Tel Aviv", "Israel", 32.0853, 34.7818),
-    ("Jerusalem", "Israel", 31.7683, 35.2137),
+    ("Udaipur", "India", 24.5854, 73.7125),
+    ("Almaty", "Kazakhstan", 43.2220, 76.8512),
     ("Petra", "Jordan", 30.3285, 35.4444),
     ("Doha", "Qatar", 25.2854, 51.5310),
     ("Abu Dhabi", "United Arab Emirates", 24.4539, 54.3773),
@@ -206,7 +206,7 @@ ASIA = [
     ("Tashkent", "Uzbekistan", 41.2995, 69.2401),
     ("Samarkand", "Uzbekistan", 39.6542, 66.9597),
     ("Baku", "Azerbaijan", 40.4093, 49.8671),
-    ("Tbilisi", "Georgia", 41.7151, 44.8271),
+    ("Bishkek", "Kyrgyzstan", 42.8746, 74.5698),
     ("Yerevan", "Armenia", 40.1792, 44.4991),
     ("Ulaanbaatar", "Mongolia", 47.8864, 106.9057),
     ("Phnom Penh", "Cambodia", 11.5564, 104.9282),
