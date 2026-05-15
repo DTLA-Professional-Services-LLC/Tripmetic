@@ -1414,7 +1414,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tipCountryEgypt => 'Egypt';
 
   @override
+  String get tipCountryFrance => 'France';
+
+  @override
+  String get tipCountryGermany => 'Germany';
+
+  @override
+  String get tipCountryHongKong => 'Hong Kong';
+
+  @override
+  String get tipCountryIndonesia => 'Indonesia';
+
+  @override
+  String get tipCountryItaly => 'Italy';
+
+  @override
+  String get tipCountryJapan => 'Japan';
+
+  @override
   String get tipCountryMexico => 'Mexico';
+
+  @override
+  String get tipCountryMorocco => 'Morocco';
+
+  @override
+  String get tipCountryPortugal => 'Portugal';
+
+  @override
+  String get tipCountrySingapore => 'Singapore';
 
   @override
   String get tipCountrySpain => 'Spain';
@@ -1423,7 +1450,39 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tipCountryThailand => 'Thailand';
 
   @override
+  String get tipCountryTurkey => 'Turkey';
+
+  @override
+  String get tipCountryUae => 'United Arab Emirates (Dubai)';
+
+  @override
+  String get tipCountryUnitedKingdom => 'United Kingdom';
+
+  @override
   String get tipCountryUsa => 'United States';
+
+  @override
+  String get tipZeroReasonChina =>
+      'Tipping is not customary in mainland China and can be declined or seen as odd in many places.';
+
+  @override
+  String get tipZeroReasonFrance =>
+      'Restaurant bills usually include a 15% service charge (service compris). Extra tipping is optional for exceptional service.';
+
+  @override
+  String get tipZeroReasonGeneric =>
+      'A 0% tip is typical here. You can still add a tip for outstanding service.';
+
+  @override
+  String get tipZeroReasonJapan =>
+      'Tipping is not practiced in Japan and can cause confusion or offense.';
+
+  @override
+  String get tipZeroReasonSingapore =>
+      'Tipping is not expected; many venues add a 10% service charge to the bill.';
+
+  @override
+  String get tipZeroReasonTitle => 'Why 0%?';
 
   @override
   String get tipCurrentCountry => 'Current country';
@@ -1694,6 +1753,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bucketListViewModeMap => 'Map';
+
+  @override
+  String get bucketListViewModePopular => 'Popular';
+
+  @override
+  String get bucketListPopularHint =>
+      'Been, Live, and Lived update your map and list. Want and Upcoming are list-only and never appear on the map.';
 
   @override
   String get bucketListCategoryBeen => 'Been';

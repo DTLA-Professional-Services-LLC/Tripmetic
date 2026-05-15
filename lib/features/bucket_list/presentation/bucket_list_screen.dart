@@ -29,8 +29,13 @@ import '../domain/bucket_list_choropleth.dart';
 import '../domain/travel_destination.dart';
 import '../domain/travel_metrics.dart';
 import 'bucket_list_editor_sheet.dart';
+import 'bucket_list_popular_destinations_view.dart';
 import 'bucket_list_share_format.dart';
 import 'bucket_list_ui_helpers.dart';
+
+/// Destinations that appear on the map (been / live / lived only).
+List<TravelDestination> _destinationsOnMap(List<TravelDestination> all) =>
+    all.where(TravelExplorationMetrics.countsTowardExploration).toList();
 
 /// Must match [OfflineMapScreen] — Mapbox public token for map views.
 const String kBucketListMapboxPublicToken =
@@ -38,7 +43,7 @@ const String kBucketListMapboxPublicToken =
 
 int _markerArgb(TravelDestinationCategory c) => switch (c) {
       TravelDestinationCategory.been => 0xFF4CAF50,
-      TravelDestinationCategory.want => 0xFFFFC107,
+      TravelDestinationCategory.want => 0xFFFFA000,
       TravelDestinationCategory.live => 0xFF2196F3,
       TravelDestinationCategory.lived => 0xFF9C27B0,
       TravelDestinationCategory.upcoming => 0xFFFF9800,
@@ -463,6 +468,11 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                             label: Text(l10n.bucketListViewModeMap),
                             icon: const Icon(Icons.map_rounded, size: 18),
                           ),
+                          ButtonSegment<_ViewMode>(
+                            value: _ViewMode.popular,
+                            label: Text(l10n.bucketListViewModePopular),
+                            icon: const Icon(Icons.explore_rounded, size: 18),
+                          ),
                         ],
                         selected: <_ViewMode>{_mode},
                         onSelectionChanged: (s) {
@@ -472,8 +482,14 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                     ),
                     const SizedBox(height: 8),
                     Expanded(
-                      child: switch (_mode) {
-                        _ViewMode.list => _BucketListList(
+                      child: IndexedStack(
+                        index: switch (_mode) {
+                          _ViewMode.list => 0,
+                          _ViewMode.map => 1,
+                          _ViewMode.popular => 2,
+                        },
+                        children: [
+                          _BucketListList(
                             destinations: destinations,
                             allowEditing: isPro,
                             onEdit: (d) => showBucketDestinationEditor(
@@ -484,7 +500,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                                 .read(bucketListProvider.notifier)
                                 .deleteDestination(id),
                           ),
-                        _ViewMode.map => _BucketListMap(
+                          _BucketListMap(
                             destinations: destinations,
                             styleUri: mapStyleUri,
                             token: kBucketListMapboxPublicToken,
@@ -497,7 +513,12 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
                             onMarkerTap: (d) =>
                                 _showDestinationSheet(context, d),
                           ),
-                      },
+                          BucketListPopularDestinationsView(
+                            destinations: destinations,
+                            allowEditing: isPro,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -511,7 +532,7 @@ class _BucketListScreenState extends ConsumerState<BucketListScreen> {
   }
 }
 
-enum _ViewMode { list, map }
+enum _ViewMode { list, map, popular }
 
 class _TravelStatsCard extends StatelessWidget {
   const _TravelStatsCard({required this.metrics});
@@ -1004,7 +1025,7 @@ class _BucketListMapState extends State<_BucketListMap> {
   }
 
   Future<void> _loadAnnotations(MapboxMap map) async {
-    final list = widget.destinations;
+    final list = _destinationsOnMap(widget.destinations);
     _pointManager ??= await map.annotations.createPointAnnotationManager();
     final mgr = _pointManager!;
     await mgr.deleteAll();
@@ -1016,7 +1037,7 @@ class _BucketListMapState extends State<_BucketListMap> {
       onTap: (PointAnnotation ann) {
         final raw = ann.customData?['destinationId'];
         if (raw is! String) return;
-        for (final d in widget.destinations) {
+        for (final d in list) {
           if (d.id == raw) {
             widget.onMarkerTap(d);
             return;

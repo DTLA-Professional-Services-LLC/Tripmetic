@@ -1,6 +1,6 @@
 /// Cultural baseline for default tip % (user can override with slider).
 ///
-/// [TipCountry.values] order is alphabetical by [displayName] (dropdown list).
+/// [TipCountry.values] order is alphabetical by localized display name (dropdown).
 /// Default selection is [TipCountry.usa].
 enum TipCountry {
   brazil,
@@ -8,25 +8,25 @@ enum TipCountry {
   colombia,
   dominicanRepublic,
   egypt,
+  france,
+  germany,
+  hongKong,
+  indonesia,
+  italy,
+  japan,
   mexico,
+  morocco,
+  portugal,
+  singapore,
   spain,
   thailand,
+  turkey,
+  uae,
+  unitedKingdom,
   usa,
 }
 
 extension TipCountryX on TipCountry {
-  String get displayName => switch (this) {
-        TipCountry.brazil => 'Brazil',
-        TipCountry.china => 'China',
-        TipCountry.colombia => 'Colombia',
-        TipCountry.dominicanRepublic => 'Dominican Republic',
-        TipCountry.egypt => 'Egypt',
-        TipCountry.mexico => 'Mexico',
-        TipCountry.spain => 'Spain',
-        TipCountry.thailand => 'Thailand',
-        TipCountry.usa => 'United States',
-      };
-
   /// Default tip % for the country (slider / field allow 0–100).
   double get defaultTipPercent => switch (this) {
         TipCountry.brazil => 10,
@@ -34,11 +34,25 @@ extension TipCountryX on TipCountry {
         TipCountry.colombia => 10,
         TipCountry.dominicanRepublic => 10,
         TipCountry.egypt => 12,
+        TipCountry.france => 0,
+        TipCountry.germany => 10,
+        TipCountry.hongKong => 10,
+        TipCountry.indonesia => 10,
+        TipCountry.italy => 10,
+        TipCountry.japan => 0,
         TipCountry.mexico => 15,
+        TipCountry.morocco => 10,
+        TipCountry.portugal => 10,
+        TipCountry.singapore => 0,
         TipCountry.spain => 10,
         TipCountry.thailand => 10,
+        TipCountry.turkey => 10,
+        TipCountry.uae => 10,
+        TipCountry.unitedKingdom => 12,
         TipCountry.usa => 20,
       };
+
+  bool get hasZeroTipDefault => defaultTipPercent == 0;
 }
 
 class TipCalculatorState {

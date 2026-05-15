@@ -2636,11 +2636,65 @@ abstract class AppLocalizations {
   /// **'Egypt'**
   String get tipCountryEgypt;
 
+  /// No description provided for @tipCountryFrance.
+  ///
+  /// In en, this message translates to:
+  /// **'France'**
+  String get tipCountryFrance;
+
+  /// No description provided for @tipCountryGermany.
+  ///
+  /// In en, this message translates to:
+  /// **'Germany'**
+  String get tipCountryGermany;
+
+  /// No description provided for @tipCountryHongKong.
+  ///
+  /// In en, this message translates to:
+  /// **'Hong Kong'**
+  String get tipCountryHongKong;
+
+  /// No description provided for @tipCountryIndonesia.
+  ///
+  /// In en, this message translates to:
+  /// **'Indonesia'**
+  String get tipCountryIndonesia;
+
+  /// No description provided for @tipCountryItaly.
+  ///
+  /// In en, this message translates to:
+  /// **'Italy'**
+  String get tipCountryItaly;
+
+  /// No description provided for @tipCountryJapan.
+  ///
+  /// In en, this message translates to:
+  /// **'Japan'**
+  String get tipCountryJapan;
+
   /// No description provided for @tipCountryMexico.
   ///
   /// In en, this message translates to:
   /// **'Mexico'**
   String get tipCountryMexico;
+
+  /// No description provided for @tipCountryMorocco.
+  ///
+  /// In en, this message translates to:
+  /// **'Morocco'**
+  String get tipCountryMorocco;
+
+  /// No description provided for @tipCountryPortugal.
+  ///
+  /// In en, this message translates to:
+  /// **'Portugal'**
+  String get tipCountryPortugal;
+
+  /// No description provided for @tipCountrySingapore.
+  ///
+  /// In en, this message translates to:
+  /// **'Singapore'**
+  String get tipCountrySingapore;
 
   /// No description provided for @tipCountrySpain.
   ///
@@ -2654,11 +2708,65 @@ abstract class AppLocalizations {
   /// **'Thailand'**
   String get tipCountryThailand;
 
+  /// No description provided for @tipCountryTurkey.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkey'**
+  String get tipCountryTurkey;
+
+  /// No description provided for @tipCountryUae.
+  ///
+  /// In en, this message translates to:
+  /// **'United Arab Emirates (Dubai)'**
+  String get tipCountryUae;
+
+  /// No description provided for @tipCountryUnitedKingdom.
+  ///
+  /// In en, this message translates to:
+  /// **'United Kingdom'**
+  String get tipCountryUnitedKingdom;
+
   /// No description provided for @tipCountryUsa.
   ///
   /// In en, this message translates to:
   /// **'United States'**
   String get tipCountryUsa;
+
+  /// No description provided for @tipZeroReasonChina.
+  ///
+  /// In en, this message translates to:
+  /// **'Tipping is not customary in mainland China and can be declined or seen as odd in many places.'**
+  String get tipZeroReasonChina;
+
+  /// No description provided for @tipZeroReasonFrance.
+  ///
+  /// In en, this message translates to:
+  /// **'Restaurant bills usually include a 15% service charge (service compris). Extra tipping is optional for exceptional service.'**
+  String get tipZeroReasonFrance;
+
+  /// No description provided for @tipZeroReasonGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'A 0% tip is typical here. You can still add a tip for outstanding service.'**
+  String get tipZeroReasonGeneric;
+
+  /// No description provided for @tipZeroReasonJapan.
+  ///
+  /// In en, this message translates to:
+  /// **'Tipping is not practiced in Japan and can cause confusion or offense.'**
+  String get tipZeroReasonJapan;
+
+  /// No description provided for @tipZeroReasonSingapore.
+  ///
+  /// In en, this message translates to:
+  /// **'Tipping is not expected; many venues add a 10% service charge to the bill.'**
+  String get tipZeroReasonSingapore;
+
+  /// No description provided for @tipZeroReasonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why 0%?'**
+  String get tipZeroReasonTitle;
 
   /// No description provided for @tipCurrentCountry.
   ///
@@ -3187,6 +3295,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Map'**
   String get bucketListViewModeMap;
+
+  /// No description provided for @bucketListViewModePopular.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular'**
+  String get bucketListViewModePopular;
+
+  /// No description provided for @bucketListPopularHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Been, Live, and Lived update your map and list. Want and Upcoming are list-only and never appear on the map.'**
+  String get bucketListPopularHint;
 
   /// No description provided for @bucketListCategoryBeen.
   ///

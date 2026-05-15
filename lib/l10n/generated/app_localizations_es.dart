@@ -1421,7 +1421,34 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tipCountryEgypt => 'Egipto';
 
   @override
+  String get tipCountryFrance => 'Francia';
+
+  @override
+  String get tipCountryGermany => 'Alemania';
+
+  @override
+  String get tipCountryHongKong => 'Hong Kong';
+
+  @override
+  String get tipCountryIndonesia => 'Indonesia';
+
+  @override
+  String get tipCountryItaly => 'Italia';
+
+  @override
+  String get tipCountryJapan => 'Japón';
+
+  @override
   String get tipCountryMexico => 'México';
+
+  @override
+  String get tipCountryMorocco => 'Marruecos';
+
+  @override
+  String get tipCountryPortugal => 'Portugal';
+
+  @override
+  String get tipCountrySingapore => 'Singapur';
 
   @override
   String get tipCountrySpain => 'España';
@@ -1430,7 +1457,39 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tipCountryThailand => 'Tailandia';
 
   @override
+  String get tipCountryTurkey => 'Turquía';
+
+  @override
+  String get tipCountryUae => 'Emiratos Árabes Unidos (Dubái)';
+
+  @override
+  String get tipCountryUnitedKingdom => 'Reino Unido';
+
+  @override
   String get tipCountryUsa => 'Estados Unidos';
+
+  @override
+  String get tipZeroReasonChina =>
+      'La propina no es habitual en China continental y en muchos lugares puede rechazarse o resultar extraña.';
+
+  @override
+  String get tipZeroReasonFrance =>
+      'En restaurantes suele incluirse un 15% de servicio (service compris). La propina extra es opcional por un servicio excepcional.';
+
+  @override
+  String get tipZeroReasonGeneric =>
+      'Aquí lo habitual es 0% de propina. Puedes añadir algo si el servicio fue excelente.';
+
+  @override
+  String get tipZeroReasonJapan =>
+      'En Japón no se deja propina y puede causar confusión u ofender.';
+
+  @override
+  String get tipZeroReasonSingapore =>
+      'No se espera propina; muchos locales añaden un 10% de servicio a la cuenta.';
+
+  @override
+  String get tipZeroReasonTitle => '¿Por qué 0%?';
 
   @override
   String get tipCurrentCountry => 'País actual';
@@ -1703,6 +1762,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get bucketListViewModeMap => 'Mapa';
+
+  @override
+  String get bucketListViewModePopular => 'Populares';
+
+  @override
+  String get bucketListPopularHint =>
+      'Visitado, Vivo y Viví actualizan el mapa y la lista. Deseo y Próximo solo están en la lista — nunca en el mapa.';
 
   @override
   String get bucketListCategoryBeen => 'Visitado';

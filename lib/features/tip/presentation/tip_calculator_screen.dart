@@ -72,6 +72,7 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
     final cs = theme.colorScheme;
     final l10n = context.l10n;
     final isPro = ref.watch(isTripmeticProProvider);
+    final zeroReason = tipCountryZeroReason(l10n, s.country);
 
     ref.listen(tipCalculatorProvider, (prev, next) {
       if (prev?.tipPercent != next.tipPercent && !_tipFocus.hasFocus) {
@@ -84,156 +85,164 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
       isPro: isPro,
       child: ListView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
+        padding: const EdgeInsets.fromLTRB(12, 4, 12, 12),
         children: [
-            Text(
-              l10n.tipSmartHeader,
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.0,
-              ),
-            ),
-            const SizedBox(height: 10),
-            _Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    l10n.tipCurrentCountry,
-                    style: theme.textTheme.labelMedium?.copyWith(
-                      color: cs.onSurfaceVariant,
+          _Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  l10n.tipCurrentCountry,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: cs.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    canvasColor: cs.surface,
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<TipCountry>(
+                      value: s.country,
+                      isExpanded: true,
+                      isDense: true,
+                      dropdownColor: cs.surface,
+                      borderRadius: BorderRadius.circular(12),
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: cs.primary,
+                        size: 22,
+                      ),
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: cs.onSurface,
+                      ),
+                      items: TipCountry.values
+                          .map(
+                            (c) => DropdownMenuItem(
+                              value: c,
+                              child: Text(
+                                '${tipCountryLabel(l10n, c)} (${c.defaultTipPercent.toStringAsFixed(0)}%)',
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (c) {
+                        if (c != null) n.setCountry(c);
+                      },
                     ),
                   ),
+                ),
+                if (zeroReason != null) ...[
                   const SizedBox(height: 8),
-                  Theme(
-                    data: Theme.of(context).copyWith(
-                      canvasColor: cs.surface,
-                      highlightColor: cs.primary.withValues(alpha: 0.08),
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<TipCountry>(
-                        value: s.country,
-                        isExpanded: true,
-                        dropdownColor: cs.surface,
-                        borderRadius: BorderRadius.circular(12),
-                        icon: Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: cs.primary,
-                        ),
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: cs.onSurface,
-                        ),
-                        items: TipCountry.values
-                            .map(
-                              (c) => DropdownMenuItem(
-                                value: c,
-                                child: Text(
-                                  '${tipCountryLabel(l10n, c)} (${c.defaultTipPercent.toStringAsFixed(0)}%)',
-                                ),
-                              ),
-                            )
-                            .toList(),
-                        onChanged: (c) {
-                          if (c != null) n.setCountry(c);
-                        },
-                      ),
-                    ),
+                  _ZeroTipNote(
+                    title: l10n.tipZeroReasonTitle,
+                    body: zeroReason,
                   ),
                 ],
-              ),
+              ],
             ),
-            const SizedBox(height: 10),
-            _Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    l10n.tipTotalBill,
-                    style: theme.textTheme.labelMedium?.copyWith(
-                      color: cs.onSurfaceVariant,
-                    ),
+          ),
+          const SizedBox(height: 8),
+          _Card(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  l10n.tipTotalBill,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: cs.onSurfaceVariant,
                   ),
-                  const SizedBox(height: 8),
-                  Focus(
-                    onFocusChange: (hasFocus) {
-                      if (!hasFocus) _formatBillFieldOnBlur();
-                    },
-                    child: TextField(
-                      controller: _billController,
-                      focusNode: _billFocus,
-                      keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true,
-                      ),
-                      textInputAction: TextInputAction.done,
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9.,$]')),
-                      ],
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        color: cs.onSurface,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      decoration: InputDecoration(
-                        hintText: l10n.tipBillHint,
-                        hintStyle: TextStyle(
-                          color: cs.onSurfaceVariant.withValues(alpha: 0.6),
-                        ),
-                        filled: true,
-                        fillColor: cs.surface,
-                        border: InputBorder.none,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 14,
-                        ),
-                      ),
-                      onChanged: (t) {
-                        if (t.trim().isEmpty) {
-                          n.setBillAmount(0);
-                          return;
-                        }
-                        final v = parseBillInput(t);
-                        if (v != null) n.setBillAmount(v);
-                      },
-                      onEditingComplete: _formatBillFieldOnBlur,
-                      onSubmitted: (_) => FocusScope.of(context).unfocus(),
-                      onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                ),
+                const SizedBox(height: 4),
+                Focus(
+                  onFocusChange: (hasFocus) {
+                    if (!hasFocus) _formatBillFieldOnBlur();
+                  },
+                  child: TextField(
+                    controller: _billController,
+                    focusNode: _billFocus,
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: true,
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Text(
-                        l10n.tipPercentLabel,
-                        style: theme.textTheme.labelMedium?.copyWith(
-                          color: cs.onSurfaceVariant,
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        '${_formatTipPercent(s.tipPercent)}%',
-                        style: theme.textTheme.labelLarge?.copyWith(
-                          color: cs.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
+                    textInputAction: TextInputAction.done,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9.,$]')),
                     ],
-                  ),
-                  const SizedBox(height: 6),
-                  _TipPercentField(
-                    hintText: l10n.tipPercentHint,
-                    controller: _tipController,
-                    focusNode: _tipFocus,
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      color: cs.onSurface,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: l10n.tipBillHint,
+                      isDense: true,
+                      hintStyle: TextStyle(
+                        color: cs.onSurfaceVariant.withValues(alpha: 0.6),
+                        fontSize: 14,
+                      ),
+                      filled: true,
+                      fillColor: cs.surface,
+                      border: InputBorder.none,
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
+                    ),
                     onChanged: (t) {
-                      final raw = t.trim().replaceAll(',', '');
-                      if (raw.isEmpty) {
-                        n.setTipPercent(0);
+                      if (t.trim().isEmpty) {
+                        n.setBillAmount(0);
                         return;
                       }
-                      final v = double.tryParse(raw);
-                      if (v != null) n.setTipPercent(v);
+                      final v = parseBillInput(t);
+                      if (v != null) n.setBillAmount(v);
                     },
+                    onEditingComplete: _formatBillFieldOnBlur,
+                    onSubmitted: (_) => FocusScope.of(context).unfocus(),
+                    onTapOutside: (_) => FocusScope.of(context).unfocus(),
                   ),
-                  const SizedBox(height: 16),
-                  Slider(
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text(
+                      l10n.tipPercentLabel,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: cs.onSurfaceVariant,
+                      ),
+                    ),
+                    const Spacer(),
+                    Text(
+                      '${_formatTipPercent(s.tipPercent)}%',
+                      style: theme.textTheme.labelMedium?.copyWith(
+                        color: cs.primary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                _TipPercentField(
+                  hintText: l10n.tipPercentHint,
+                  controller: _tipController,
+                  focusNode: _tipFocus,
+                  onChanged: (t) {
+                    final raw = t.trim().replaceAll(',', '');
+                    if (raw.isEmpty) {
+                      n.setTipPercent(0);
+                      return;
+                    }
+                    final v = double.tryParse(raw);
+                    if (v != null) n.setTipPercent(v);
+                  },
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    trackHeight: 3,
+                    thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 7),
+                    overlayShape: const RoundSliderOverlayShape(overlayRadius: 14),
+                  ),
+                  child: Slider(
                     value: s.tipPercent.round().clamp(0, 100).toDouble(),
                     min: 0,
                     max: 100,
@@ -245,26 +254,32 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
                       _tipController.text = _formatTipPercent(whole);
                     },
                   ),
-                  const SizedBox(height: 8),
-                  Row(
-                    children: [
-                      Text(
-                        l10n.tipPeople,
-                        style: theme.textTheme.labelMedium?.copyWith(
-                          color: cs.onSurfaceVariant,
-                        ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      l10n.tipPeople,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: cs.onSurfaceVariant,
                       ),
-                      const Spacer(),
-                      Text(
-                        '${s.people}',
-                        style: theme.textTheme.labelLarge?.copyWith(
-                          color: cs.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    ),
+                    const Spacer(),
+                    Text(
+                      '${s.people}',
+                      style: theme.textTheme.labelMedium?.copyWith(
+                        color: cs.primary,
+                        fontWeight: FontWeight.w700,
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    trackHeight: 3,
+                    thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 7),
+                    overlayShape: const RoundSliderOverlayShape(overlayRadius: 14),
                   ),
-                  Slider(
+                  child: Slider(
                     value: s.people.toDouble(),
                     min: 1,
                     max: 20,
@@ -272,13 +287,55 @@ class _TipCalculatorScreenState extends ConsumerState<TipCalculatorScreen> {
                     label: '${s.people}',
                     onChanged: (v) => n.setPeople(v.round()),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            const SizedBox(height: 12),
-            _ResultsPanel(s: s, l10n: l10n),
-          ],
-        ),
+          ),
+          const SizedBox(height: 8),
+          _ResultsPanel(s: s, l10n: l10n),
+        ],
+      ),
+    );
+  }
+}
+
+class _ZeroTipNote extends StatelessWidget {
+  const _ZeroTipNote({required this.title, required this.body});
+
+  final String title;
+  final String body;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+        color: cs.primaryContainer.withValues(alpha: 0.35),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: cs.primary.withValues(alpha: 0.25)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: theme.textTheme.labelMedium?.copyWith(
+              color: cs.primary,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            body,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: cs.onSurfaceVariant,
+              height: 1.3,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -306,15 +363,19 @@ class _TipPercentField extends StatelessWidget {
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
       textInputAction: TextInputAction.done,
       inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]'))],
-      style: theme.textTheme.titleMedium?.copyWith(
+      style: theme.textTheme.titleSmall?.copyWith(
         color: cs.onSurface,
         fontWeight: FontWeight.w600,
       ),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: cs.onSurfaceVariant.withValues(alpha: 0.6)),
+        isDense: true,
+        hintStyle: TextStyle(
+          color: cs.onSurfaceVariant.withValues(alpha: 0.6),
+          fontSize: 14,
+        ),
         suffixText: '%',
-        suffixStyle: theme.textTheme.titleMedium?.copyWith(
+        suffixStyle: theme.textTheme.titleSmall?.copyWith(
           color: cs.primary,
           fontWeight: FontWeight.w700,
         ),
@@ -322,8 +383,8 @@ class _TipPercentField extends StatelessWidget {
         fillColor: cs.surface,
         border: InputBorder.none,
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 14,
-          vertical: 14,
+          horizontal: 12,
+          vertical: 10,
         ),
       ),
       onChanged: onChanged,
@@ -342,7 +403,7 @@ class _Card extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     return Container(
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: cs.surface,
         borderRadius: BorderRadius.circular(12),
@@ -365,18 +426,11 @@ class _ResultsPanel extends StatelessWidget {
     final cs = theme.colorScheme;
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: cs.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: cs.primary.withValues(alpha: 0.55)),
-        boxShadow: [
-          BoxShadow(
-            color: cs.primary.withValues(alpha: 0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -386,22 +440,22 @@ class _ResultsPanel extends StatelessWidget {
             textAlign: TextAlign.center,
             style: theme.textTheme.labelSmall?.copyWith(
               color: cs.onSurfaceVariant,
-              letterSpacing: 1.2,
+              letterSpacing: 1.0,
             ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 8),
           _ResultLine(
             label: l10n.tipAmount,
             value: formatUsdAmount(s.tipAmount),
             large: false,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 6),
           _ResultLine(
             label: l10n.tipTotalWithTip,
             value: formatUsdAmount(s.totalWithTip),
             large: true,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 6),
           _ResultLine(
             label: l10n.tipPerPerson,
             value: formatUsdAmount(s.amountPerPerson),
@@ -436,7 +490,7 @@ class _ResultLine extends StatelessWidget {
         Expanded(
           child: Text(
             label,
-            style: theme.textTheme.labelLarge?.copyWith(
+            style: theme.textTheme.labelMedium?.copyWith(
               color: cs.onSurfaceVariant,
             ),
           ),
@@ -444,12 +498,11 @@ class _ResultLine extends StatelessWidget {
         Text(
           value,
           style: large
-              ? theme.textTheme.headlineSmall?.copyWith(
+              ? theme.textTheme.titleLarge?.copyWith(
                   color: cs.primary,
                   fontWeight: FontWeight.w800,
-                  fontSize: 26,
                 )
-              : theme.textTheme.titleMedium?.copyWith(
+              : theme.textTheme.titleSmall?.copyWith(
                   color: cs.onSurface,
                   fontWeight: FontWeight.w700,
                 ),

@@ -15,6 +15,7 @@ String _choroplethCountryKey(TravelDestination d) => d.country.trim();
 /// [`match`, [`get`, `name_en`, …], …, transparent].
 ///
 /// Only [TravelDestinationCategory.been], [.live], and [.lived] contribute.
+/// [TravelDestinationCategory.want] and [.upcoming] are list-only (not on map).
 /// Fallback is fully transparent so the basemap remains visible.
 ///
 /// Colors use [BucketListCategoryColors] (`been` green, `live` blue, `lived` purple).

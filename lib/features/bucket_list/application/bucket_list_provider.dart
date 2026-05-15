@@ -186,4 +186,54 @@ class BucketListNotifier extends AsyncNotifier<List<TravelDestination>> {
       await _deleteRemote(user.uid, id);
     }
   }
+
+  /// Matches [city] + [country] (case-insensitive) for a single [category].
+  TravelDestination? findDestination({
+    required List<TravelDestination> list,
+    required String city,
+    required String country,
+    required TravelDestinationCategory category,
+  }) {
+    final c = city.trim().toLowerCase();
+    final co = country.trim().toLowerCase();
+    for (final d in list) {
+      if (d.category != category) continue;
+      if (d.city.trim().toLowerCase() == c &&
+          d.country.trim().toLowerCase() == co) {
+        return d;
+      }
+    }
+    return null;
+  }
+
+  /// Toggles a city on/off for [category] using the same persistence as the editor sheet.
+  Future<void> toggleDestinationCategory({
+    required String city,
+    required String country,
+    required double latitude,
+    required double longitude,
+    required TravelDestinationCategory category,
+  }) async {
+    final current = _currentOrHive();
+    final existing = findDestination(
+      list: current,
+      city: city,
+      country: country,
+      category: category,
+    );
+    if (existing != null) {
+      await deleteDestination(existing.id);
+      return;
+    }
+    await addDestination(
+      TravelDestination(
+        id: newId(),
+        city: city.trim(),
+        country: country.trim(),
+        latitude: latitude,
+        longitude: longitude,
+        category: category,
+      ),
+    );
+  }
 }

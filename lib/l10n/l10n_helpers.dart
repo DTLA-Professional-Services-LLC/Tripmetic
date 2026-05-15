@@ -42,11 +42,35 @@ String tipCountryLabel(AppLocalizations l, TipCountry c) => switch (c) {
       TipCountry.colombia => l.tipCountryColombia,
       TipCountry.dominicanRepublic => l.tipCountryDominicanRepublic,
       TipCountry.egypt => l.tipCountryEgypt,
+      TipCountry.france => l.tipCountryFrance,
+      TipCountry.germany => l.tipCountryGermany,
+      TipCountry.hongKong => l.tipCountryHongKong,
+      TipCountry.indonesia => l.tipCountryIndonesia,
+      TipCountry.italy => l.tipCountryItaly,
+      TipCountry.japan => l.tipCountryJapan,
       TipCountry.mexico => l.tipCountryMexico,
+      TipCountry.morocco => l.tipCountryMorocco,
+      TipCountry.portugal => l.tipCountryPortugal,
+      TipCountry.singapore => l.tipCountrySingapore,
       TipCountry.spain => l.tipCountrySpain,
       TipCountry.thailand => l.tipCountryThailand,
+      TipCountry.turkey => l.tipCountryTurkey,
+      TipCountry.uae => l.tipCountryUae,
+      TipCountry.unitedKingdom => l.tipCountryUnitedKingdom,
       TipCountry.usa => l.tipCountryUsa,
     };
+
+/// Localized note when a country's customary tip is 0%.
+String? tipCountryZeroReason(AppLocalizations l, TipCountry c) {
+  if (!c.hasZeroTipDefault) return null;
+  return switch (c) {
+    TipCountry.china => l.tipZeroReasonChina,
+    TipCountry.france => l.tipZeroReasonFrance,
+    TipCountry.japan => l.tipZeroReasonJapan,
+    TipCountry.singapore => l.tipZeroReasonSingapore,
+    _ => l.tipZeroReasonGeneric,
+  };
+}
 
 String unitCategoryTitle(AppLocalizations l, UnitCategory category) => switch (category) {
       UnitCategory.length => l.unitCategoryLength,
