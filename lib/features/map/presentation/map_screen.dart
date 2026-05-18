@@ -398,16 +398,17 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   /// Downloads the tile region for whatever the camera is currently framing.
   Future<void> _downloadCurrentRegion() async {
     if (_isDownloading) return;
+    final l10n = context.l10n;
     final mapboxMap = _mapboxMap;
     if (mapboxMap == null) {
-      _showSnack(context.l10n.mapSnackMapNotReady);
+      _showSnack(l10n.mapSnackMapNotReady);
       return;
     }
 
     setState(() {
       _isDownloading = true;
       _downloadProgress = 0.0;
-      _downloadLabel = context.l10n.mapDownloadingRegion;
+      _downloadLabel = l10n.mapDownloadingRegion;
     });
 
     try {
@@ -426,7 +427,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
 
       await _downloadRegionInternal(
         regionId: _currentRegionId,
-        displayName: context.l10n.mapDisplayCurrentViewport,
+        displayName: l10n.mapDisplayCurrentViewport,
         swLng: sw.lng.toDouble(),
         swLat: sw.lat.toDouble(),
         neLng: ne.lng.toDouble(),
@@ -434,11 +435,11 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       );
 
       if (!mounted) return;
-      _showSnack(context.l10n.mapSnackRegionDownloaded);
+      _showSnack(l10n.mapSnackRegionDownloaded);
       await _refreshRegions();
     } catch (error) {
       if (!mounted) return;
-      _showSnack(context.l10n.mapSnackDownloadFailed('$error'));
+      _showSnack(l10n.mapSnackDownloadFailed('$error'));
     } finally {
       if (mounted) setState(() => _isDownloading = false);
     }
@@ -734,9 +735,10 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
   /// and fit the camera to its bounds. Falls back to a plain flyTo when the
   /// Directions API returns nothing routable.
   Future<void> _selectPlace(GeocodedPlace place) async {
+    final l10n = context.l10n;
     final mapboxMap = _mapboxMap;
     if (mapboxMap == null) {
-      _showSnack(context.l10n.mapSnackMapNotReady);
+      _showSnack(l10n.mapSnackMapNotReady);
       return;
     }
 
@@ -791,7 +793,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
           ),
           MapAnimationOptions(duration: 1200),
         );
-        _showSnack(context.l10n.mapSnackNoRoute);
+        if (!mounted) return;
+        _showSnack(l10n.mapSnackNoRoute);
         return;
       }
 
@@ -805,7 +808,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       await _fitCameraToRoute(route);
     } catch (error) {
       if (!mounted) return;
-      _showSnack(context.l10n.mapSnackRoutingFailed('$error'));
+      _showSnack(l10n.mapSnackRoutingFailed('$error'));
     } finally {
       if (mounted) setState(() => _isRouting = false);
     }
@@ -931,10 +934,12 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
     if (_isNavigationMode || _isNavigationBooting || _routeSteps.isEmpty) {
       return;
     }
+    final l10n = context.l10n;
     setState(() => _isNavigationBooting = true);
     try {
       if (!await geo.Geolocator.isLocationServiceEnabled()) {
-        _showSnack(context.l10n.mapSnackLocationOff);
+        if (!mounted) return;
+        _showSnack(l10n.mapSnackLocationOff);
         return;
       }
       var permission = await geo.Geolocator.checkPermission();
@@ -943,7 +948,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       }
       if (permission != geo.LocationPermission.whileInUse &&
           permission != geo.LocationPermission.always) {
-        _showSnack(context.l10n.mapSnackLocationPermission);
+        if (!mounted) return;
+        _showSnack(l10n.mapSnackLocationPermission);
         return;
       }
 
@@ -975,7 +981,8 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
       );
       await _onNavigationPosition(current);
     } catch (_) {
-      _showSnack(context.l10n.mapSnackNavStartFail);
+      if (!mounted) return;
+      _showSnack(l10n.mapSnackNavStartFail);
     } finally {
       if (mounted) setState(() => _isNavigationBooting = false);
     }
@@ -1373,6 +1380,7 @@ class _OfflineMapScreenState extends ConsumerState<OfflineMapScreen> {
                 ? MapWidget(
                     key: const ValueKey('offline_map_widget'),
                     styleUri: _styleUri,
+                    // ignore: deprecated_member_use — Mapbox SDK; migrate when viewport API is adopted project-wide.
                     cameraOptions: CameraOptions(
                       center: Point(coordinates: Position(-73.9857, 40.7484)),
                       zoom: 11,

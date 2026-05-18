@@ -75,37 +75,29 @@ class SettingsScreen extends ConsumerWidget {
         showDragHandle: true,
         builder: (ctx) {
           return SafeArea(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                RadioListTile<Locale?>(
-                  title: Text(l10n.settingsLanguageSystem),
-                  value: null,
-                  groupValue: current,
-                  onChanged: (v) async {
-                    await ref.read(appLocaleProvider.notifier).setLocale(v);
-                    if (ctx.mounted) Navigator.pop(ctx);
-                  },
-                ),
-                RadioListTile<Locale?>(
-                  title: Text(l10n.settingsLanguageEnglish),
-                  value: const Locale('en'),
-                  groupValue: current,
-                  onChanged: (v) async {
-                    await ref.read(appLocaleProvider.notifier).setLocale(v);
-                    if (ctx.mounted) Navigator.pop(ctx);
-                  },
-                ),
-                RadioListTile<Locale?>(
-                  title: Text(l10n.settingsLanguageSpanish),
-                  value: const Locale('es'),
-                  groupValue: current,
-                  onChanged: (v) async {
-                    await ref.read(appLocaleProvider.notifier).setLocale(v);
-                    if (ctx.mounted) Navigator.pop(ctx);
-                  },
-                ),
-              ],
+            child: RadioGroup<Locale?>(
+              groupValue: current,
+              onChanged: (v) async {
+                await ref.read(appLocaleProvider.notifier).setLocale(v);
+                if (ctx.mounted) Navigator.pop(ctx);
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RadioListTile<Locale?>(
+                    title: Text(l10n.settingsLanguageSystem),
+                    value: null,
+                  ),
+                  RadioListTile<Locale?>(
+                    title: Text(l10n.settingsLanguageEnglish),
+                    value: const Locale('en'),
+                  ),
+                  RadioListTile<Locale?>(
+                    title: Text(l10n.settingsLanguageSpanish),
+                    value: const Locale('es'),
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -118,40 +110,30 @@ class SettingsScreen extends ConsumerWidget {
         showDragHandle: true,
         builder: (ctx) {
           return SafeArea(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                RadioListTile<ThemeMode>(
-                  title: Text(l10n.settingsThemeSystem),
-                  value: ThemeMode.system,
-                  groupValue: themeMode,
-                  onChanged: (v) {
-                    if (v == null) return;
-                    ref.read(themeModeProvider.notifier).setTheme(v);
-                    Navigator.pop(ctx);
-                  },
-                ),
-                RadioListTile<ThemeMode>(
-                  title: Text(l10n.settingsThemeLight),
-                  value: ThemeMode.light,
-                  groupValue: themeMode,
-                  onChanged: (v) {
-                    if (v == null) return;
-                    ref.read(themeModeProvider.notifier).setTheme(v);
-                    Navigator.pop(ctx);
-                  },
-                ),
-                RadioListTile<ThemeMode>(
-                  title: Text(l10n.settingsThemeDark),
-                  value: ThemeMode.dark,
-                  groupValue: themeMode,
-                  onChanged: (v) {
-                    if (v == null) return;
-                    ref.read(themeModeProvider.notifier).setTheme(v);
-                    Navigator.pop(ctx);
-                  },
-                ),
-              ],
+            child: RadioGroup<ThemeMode>(
+              groupValue: themeMode,
+              onChanged: (v) {
+                if (v == null) return;
+                ref.read(themeModeProvider.notifier).setTheme(v);
+                Navigator.pop(ctx);
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RadioListTile<ThemeMode>(
+                    title: Text(l10n.settingsThemeSystem),
+                    value: ThemeMode.system,
+                  ),
+                  RadioListTile<ThemeMode>(
+                    title: Text(l10n.settingsThemeLight),
+                    value: ThemeMode.light,
+                  ),
+                  RadioListTile<ThemeMode>(
+                    title: Text(l10n.settingsThemeDark),
+                    value: ThemeMode.dark,
+                  ),
+                ],
+              ),
             ),
           );
         },

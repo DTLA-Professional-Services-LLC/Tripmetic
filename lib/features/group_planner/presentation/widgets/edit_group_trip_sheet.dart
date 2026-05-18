@@ -185,7 +185,7 @@ class _EditGroupTripSheetBodyState extends ConsumerState<_EditGroupTripSheetBody
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<TripBudgetType>(
-            value: _budgetType,
+            initialValue: _budgetType,
             decoration: InputDecoration(
               labelText: l10n.groupPlannerBudget,
               border: const OutlineInputBorder(),
