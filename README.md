@@ -1,14 +1,67 @@
 # Tripmetic
 
+<p align="center">
+  <img src="website/tripmetic-app-1920x1080px-images-065/1.png" alt="Tripmetic — convert currencies offline with live exchange rates" width="100%" />
+</p>
+
 [![Flutter](https://img.shields.io/badge/Flutter-3.44.0-02569B?logo=flutter&logoColor=white)](https://docs.flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-3.12.0-0175C2?logo=dart&logoColor=white)](https://dart.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-22-5FA04E?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2F6F5E.svg)](LICENSE)
-[![Secret scan](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml)
+[![Secret scan](https://github.com/DTLA-Professional-Services-LLC/Tripmetic/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/DTLA-Professional-Services-LLC/Tripmetic/actions/workflows/secret-scan.yml)
 
 **Tripmetic** is a Flutter travel companion with live currency tools, offline maps, multi-country budgets, packing lists, a global time scheduler, document vault, and group planning.
 
 **Tripmetic Pro** is an auto-renewing monthly subscription (with a 3-day free trial where eligible) that unlocks premium tools. A small set of features remains free — see [Free vs Pro](#free-vs-pro).
+
+## Key features
+
+A quick look at what Tripmetic can do — every screen below ships in the open-source app.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/2.png" alt="Tripmetic Document Vault screen" width="48%" />
+      <br /><br />
+      <strong>Document Vault</strong><br />
+      <sub>Store visas, passports, and travel documents for secure, offline access.</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/3.png" alt="Tripmetic bucket list and trip planner screen" width="48%" />
+      <br /><br />
+      <strong>Bucket List &amp; Trip Planner</strong><br />
+      <sub>Track where you have been and the destinations still on your list.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/4.png" alt="Tripmetic trip planner with popular destinations" width="48%" />
+      <br /><br />
+      <strong>Trip Planner</strong><br />
+      <sub>Turn wanderlust into an actionable plan with popular destinations.</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/5.png" alt="Tripmetic bucket list map view" width="48%" />
+      <br /><br />
+      <strong>Bucket List Map</strong><br />
+      <sub>Map your journey and see how much of the world you have explored.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/6.png" alt="Tripmetic group planner with itinerary and budget" width="48%" />
+      <br /><br />
+      <strong>Group Trips, Itinerary &amp; Budget</strong><br />
+      <sub>Sync itineraries, share plans, and keep group budgets in sync.</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="website/tripmetic-app-1920x1080px-images-065/10.png" alt="Tripmetic offline map with downloadable regions" width="48%" />
+      <br /><br />
+      <strong>Offline Maps</strong><br />
+      <sub>Download regions ahead of time and navigate without Wi-Fi.</sub>
+    </td>
+  </tr>
+</table>
 
 ## Open source
 
@@ -16,12 +69,12 @@ Tripmetic is an **open-source project maintained and released by [DTLA Professio
 
 If you fork this project, please retain this attribution. The upstream project and its trademark are not granted by the license — see [License](#license).
 
-### Maintainer & business details
+### Maintained & Released By
 
 - **Maintained & Released by:** [DTLA Professional Services, LLC](https://dtlaprofessionalservices.com/)
 - **Address:** 770 S Grand Ave, Los Angeles, CA 90017
 - **Business Contact:** [info&#64;dtlaprofessionalservices.com](mailto:info%40dtlaprofessionalservices.com) | [(213) 444-2224](tel:+12134442224)
-- **Affiliated Brands:** [Key Forecasts (keyforecasts.com)](https://keyforecasts.com) · [LeadRM (leadrm.app)](https://leadrm.app) · [PayXT (payxt.app)](https://payxt.app)
+- **Affiliated Brands:** [Key Forecasts (keyforecasts.com)](https://keyforecasts.com)
 
 ## Features
 
@@ -88,6 +141,8 @@ Strings live in `lib/l10n/app_*.arb`. Generated code is in `lib/l10n/generated/`
 | Backend | **Firebase** (Auth, Firestore) where enabled |
 | Exchange rates | Firestore `fiat_rates/latest` with **Frankfurter** API fallback |
 | Location | **geolocator** |
+| Web app | **Next.js 16** (React 19, Tailwind CSS) in `webapp/` |
+| Cloud Functions | **Node.js 22** + TypeScript (`firebase-functions`) in `functions/` |
 
 ## Prerequisites
 
@@ -98,13 +153,23 @@ Strings live in `lib/l10n/app_*.arb`. Generated code is in `lib/l10n/generated/`
 
 Optional service accounts unlock the full feature set: Mapbox access tokens, RevenueCat products, and a Firebase project. The app still builds without them, with the affected features disabled.
 
-### Clone and install
+### Quickstart
+
+**Tech stack:** **Flutter** (mobile & desktop) · **Next.js** (web app) · **Node.js 22**.
 
 ```bash
-git clone https://github.com/ralf206/tripmetic.git
-cd tripmetic
+# 1. Clone the repository
+git clone https://github.com/DTLA-Professional-Services-LLC/Tripmetic.git
+cd Tripmetic
+
+# 2. Install Flutter dependencies
 flutter pub get
+
+# 3. Create your local environment file (git-ignored — never commit it)
+cp .env.example .env
 ```
+
+Fill in `.env` with **local test values only**, then pass the values to the app with `--dart-define` — see [Configuration](#configuration).
 
 For web app or Cloud Functions work, install the locked Node dependencies:
 
@@ -115,7 +180,7 @@ npm ci --prefix functions
 
 ### Configure local environments
 
-Create local environment files and fill them with **local test values only**:
+The quickstart above covers the minimum. To set up every local environment file, create them and fill them with **local test values only**:
 
 ```bash
 cp .env.example .env
@@ -241,7 +306,14 @@ Admin email addresses are intentionally not stored in the repository. See
 
 ### Security requirements
 
-- **Never commit API keys, service account JSON files, or production secrets.**
+> [!IMPORTANT]
+> **Strict security notice — no secrets, credentials, or private keys in commits.**
+> Never commit API keys, access tokens, service account JSON, signing keystores,
+> private keys, or `.env` files. The **pre-commit hook** and the GitHub
+> **Secret scan** workflow are active on every push and pull request; a detected
+> credential fails the check and blocks the merge.
+
+- **Never commit API keys, service account JSON files, private keys, or production secrets.**
 - Ensure pre-commit secret scans pass before submitting pull requests.
 - **PR checks enforce zero vulnerabilities and passing test suites.**
 
