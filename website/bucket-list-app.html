@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5JX5ZVKNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S5JX5ZVKNB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket Map App: Track Countries Visited on a Travel Map | Tripmetic</title>
+    <meta name="description" content="Interactive bucket map for travelers. Pin Been, Lived &amp; Want destinations, see world-explored %, and track countries visited offline. Free on iOS &amp; Android.">
+    <link rel="canonical" href="https://tripmetic.app/bucket-list-app">
+    <meta name="theme-color" content="#0B1F3A">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tripmetic">
+    <meta property="og:title" content="Bucket Map App: Track Countries Visited on a Travel Map | Tripmetic">
+    <meta property="og:description" content="Interactive bucket map for travelers. Pin Been, Lived &amp; Want destinations, see world-explored %, and track countries visited offline. Free on iOS &amp; Android.">
+    <meta property="og:url" content="https://tripmetic.app/bucket-list-app">
+    <meta property="og:image" content="https://tripmetic.app/logo/og-image.png">
+    <meta property="og:image:alt" content="Tripmetic app logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bucket Map App: Track Countries Visited on a Travel Map | Tripmetic">
+    <meta name="twitter:description" content="Interactive bucket map for travelers. Pin Been, Lived &amp; Want destinations, see world-explored %, and track countries visited offline. Free on iOS &amp; Android.">
+    <meta name="twitter:image" content="https://tripmetic.app/logo/og-image.png">
+
+    <meta name="keywords" content="bucket map, travel bucket list map, countries visited tracker, interactive travel map, travel bucket list app, world explored percentage">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" sizes="any" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="shortcut icon" type="image/png" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="apple-touch-icon" href="logo/tripmetic-logo-new-app-01-1188x1188px.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Tripmetic Bucket List and Travel Tracker",
+          "description": "A complete guide to managing your travel history, tracking your world exploration percentage, and discovering new destinations.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Navigate the Hub",
+              "text": "Switch between the List, Map, and Popular tabs to manage your travel data from different perspectives."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Add Destinations Manually",
+              "text": "Use the custom entry tool to add specific cities, categorize them as Been, Lived, Want, or Upcoming, and set dates."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Use the Popular Tab",
+              "text": "Quickly populate your map by expanding regional continent menus and toggling your status on the world's top 50 cities."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Review the Map & Stats",
+              "text": "Check your 'World explored' percentage and view your physical footprint on the map—which strictly renders places you have actually been or lived."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why don't the places I 'Want' to go appear on the map?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tripmetic maps act as a strict record of reality. We intentionally filter out 'Want' and 'Upcoming' destinations so your map remains a pristine, accurate footprint of where you have actually stepped foot or lived."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the world explored percentage update automatically?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every time you tag a new city as 'Been' or 'Lived', the app calculates your unique countries visited against the global total (195) and updates your exploration percentage in real-time."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I access my bucket list and map without Wi-Fi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Your bucket list data and regional map tiles are cached securely on your device, allowing you to review your travels and add new goals while entirely off-grid."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the bucket map a separate app?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The bucket map is built into Tripmetic—the free travel app that also includes a smart currency converter, dual clock widget, multi-country budgets, packing lists, and more."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .page-header { background-color: var(--navy); color: white; padding: 60px 0 40px; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold); }
+        .page-header p { color: #b0b8d1; font-size: 1.1rem; max-width: 640px; margin: 0 auto; }
+        .header-download { margin-top: 28px; }
+        .header-download-label { color: #d0d6e8; font-size: 0.95rem; margin-bottom: 12px; }
+        .store-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+        .store-row .apple-badge { height: 44px; width: auto; }
+        .store-row .google-badge { height: 64px; width: auto; margin: -10px 0; }
+        .related-tools { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--light-gray); }
+        .related-tools h2 { border-bottom: none; margin-top: 0; }
+        .related-tools ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 20px; }
+        .related-tools a { color: var(--teal); font-weight: 600; }
+
+        .content-box { background: white; padding: 60px; margin: -20px auto 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .content-box h2 { color: var(--navy); font-size: 1.6rem; margin: 40px 0 15px; border-bottom: 2px solid var(--light-gray); padding-bottom: 10px; }
+        .content-box h2:first-of-type { margin-top: 0; }
+        .content-box p { margin-bottom: 15px; }
+        .content-box ul, .content-box ol { margin-bottom: 20px; padding-left: 20px; }
+        .content-box li { margin-bottom: 10px; }
+        
+        .step-block { background: rgba(2, 136, 209, 0.05); border: 1px solid rgba(2, 136, 209, 0.15); padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+        .step-block h3 { margin-top: 0; color: var(--navy); display: flex; align-items: center; margin-bottom: 15px; }
+        .step-block h3 span { background: var(--teal); color: white; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; margin-right: 15px; font-size: 1rem; }
+
+        .guide-image-container { text-align: center; margin: 30px 0; }
+        .guide-img { 
+            max-width: 280px; 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: auto; 
+            object-fit: contain;
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+            border: 1px solid rgba(0,0,0,0.05); 
+            cursor: pointer; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            background-color: #f5f5f5; 
+        }
+        .guide-img:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); border-color: var(--gold); }
+        .guide-caption { font-size: 0.9rem; color: #666; margin-top: 15px; font-style: italic; }
+
+        .alert-box { background-color: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        
+        .faq-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--light-gray); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; color: var(--navy); font-size: 1.1rem; margin-bottom: 8px; }
+
+        .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(11, 19, 43, 0.95); backdrop-filter: blur(5px); }
+        .lightbox-content { margin: auto; display: block; max-height: 85vh; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); animation: zoomIn 0.3s ease; }
+        .close-btn { position: absolute; top: 20px; right: 35px; color: var(--white); font-size: 50px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .close-btn:hover, .close-btn:focus { color: var(--gold); }
+
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 36px 0 28px; }
+            .page-header h1 { font-size: clamp(1.55rem, 6vw, 2rem); }
+            .content-box { padding: 24px 16px; margin-top: 0; border-radius: 0; box-shadow: none; }
+            .step-block { padding: 20px 16px; }
+            .guide-img, .guide-img.guide-img-wide { max-width: min(100%, 360px); }
+            .store-row { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-placeholder"></div>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Bucket Map — Your Travel Bucket List on a Map</h1>
+            <p>Pin Been, Lived &amp; Want destinations. Track countries visited and world-explored % in the Tripmetic travel app.</p>
+            <div class="header-download">
+                <p class="header-download-label">Download Tripmetic free — build your bucket map on iOS &amp; Android</p>
+                <div class="store-row">
+                    <a href="https://apps.apple.com/us/app/tripmetic/id6765632920" target="_blank" rel="noopener noreferrer">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&amp;h=7e7b68fad19738b5649a1bfb78ff46e9" alt="Download on the App Store" class="apple-badge" width="148" height="44" loading="lazy" decoding="async">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.tripmetic.app" target="_blank" rel="noopener noreferrer">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="google-badge" width="155" height="64" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-box">
+
+            <h2>What is a bucket map?</h2>
+            <p>A <strong>bucket map</strong> is a travel bucket list visualized on a world map—not a scattered notes list. In Tripmetic, you pin destinations as Been, Lived, or Want, then see your real footprint on an interactive map with countries-visited stats and a world-explored percentage.</p>
+            
+            <p>Your travel history is more than names on a notepad. The Tripmetic bucket map turns that history into a clear visual record you can update offline—ideal before flights, in Airplane Mode, or between destinations.</p>
+            
+            <p>From gamified exploration stats to custom destination categories, here’s how to track the countries you’ve visited and plan where you’ll go next.</p>
+
+            <div class="step-block">
+                <h3><span>1</span> The Dashboard & Travel Stats</h3>
+                <p>When you open the Bucket List feature, you are greeted by your personal exploration dashboard. At the top, the <strong>World Explored</strong> progress bar calculates your exact travel stats by comparing your unique visited countries against the global total of 195. Expand this section to see a detailed percentage breakdown by continent (e.g., Europe Explored, Asia Explored).</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-world-explored.webp" alt="Tripmetic bucket map dashboard showing World Explored progress at 7.2 percent with List Map and Popular tabs" class="guide-img" width="550" height="1050" loading="eager" decoding="async" fetchpriority="high">
+                    <div class="guide-caption">Click to expand: Your personal World Explored statistics and percentage breakdown.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>2</span> Managing Your Lists</h3>
+                <p>Use the <strong>List</strong> tab to view and edit all your saved destinations. The interface neatly organizes your entries into intuitive categories: <em>Upcoming</em> (planned trips with dates), <em>Been</em> (places you've visited), <em>Lived</em> (cities you've called home), and <em>Want</em> (future aspirations).</p>
+                <p>To edit a trip, tap the pencil icon. If your plans change or you entered a city by mistake, simply swipe left on the location card to instantly remove it from your records.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-want-list.webp" alt="Tripmetic travel bucket list Want section with destinations like Bali Beijing Dubai and Hong Kong" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Organizing destinations by Lived, Been, Upcoming, and Want.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>3</span> Discover with the 'Popular' Tab</h3>
+                <p>Don't want to type out every single city you've visited manually? Tap over to the <strong>Popular</strong> tab. This discovery engine groups the top 50 global destinations into neat, expandable continent folders (North America, Europe, Asia, etc.).</p>
+                <p>Simply tap a region to expand it, and use the quick-action icons on the right side of the city name to instantly mark it as <em>Been</em>, <em>Lived</em>, or <em>Want</em>. Your lists and map will update instantly in the background.</p>
+
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-popular-continents.webp" alt="Tripmetic Popular destinations tab listing United States cities with Been Lived and Want status toggles" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Exploring destinations by continent in the Popular tab.</div>
+                </div>
+
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-popular-toggles.webp" alt="Tripmetic Popular cities list in dark mode with quick toggles for Been Lived and Want on cities like Singapore Seoul and Bangkok" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Using the quick-toggle icons to instantly update your status.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>4</span> Adding Custom Destinations</h3>
+                <p>If you visited a remote village or a city not listed in the Popular tab, simply tap the floating action button (the yellow map pin with a plus sign) in the bottom right corner of the List tab. Here, you can type the specific City and Country, select your desired category, and hit save to add it to your personal database.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-list-categories.webp" alt="Tripmetic bucket list expanded regional travel stats and Upcoming section with add destination button" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Manually logging custom cities into your travel footprint.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>5</span> The Map: A Strict Record of Reality</h3>
+                <p>Switch to the <strong>Map</strong> tab to view a stunning, interactive globe populated with your travel history. Tripmetic maps are designed with a strict philosophy: <em>they are a record of reality, not wishful thinking.</em></p>
+                <p>When you look at your map, you will only see pins for places you have marked as <strong>Been</strong>, <strong>Live</strong>, or <strong>Lived</strong>. Destinations categorized as <em>Want</em> or <em>Upcoming</em> are intentionally filtered out to ensure your map remains a pristine, accurate representation of where you have actually stepped foot.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/bucket-map-view.webp" alt="Tripmetic interactive bucket map dark mode showing visited countries cities count and world explored percentage" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: The interactive map showing your physical footprint.</div>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <strong>Pro Tip:</strong> As a premium digital nomad bucket list planner, Tripmetic saves all your coordinates and lists locally. You can browse your stats, toggle popular cities, and review your map pins while at cruising altitude or entirely off-grid without needing a cellular connection.
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Why don't the places I 'Want' to go appear on the map?</div>
+                <p>We believe your map should be a satisfying visual reward for your actual travels. We intentionally filter out 'Want' and 'Upcoming' destinations so the map doesn't become cluttered with aspirations. It remains a strict, accurate footprint of reality.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does the world explored percentage update automatically?</div>
+                <p>Yes. Every time you tag a new, unique country as 'Been' or 'Lived', the app's internal calculator measures it against the global total of 195 recognized countries and updates your progress bar in real-time.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I access my bucket list and map without Wi-Fi?</div>
+                <p>Absolutely. Tripmetic is designed to track countries visited offline. Your bucket list data, toggles, and base map tiles are cached securely on your device, allowing you to interact with your travel history anywhere in the world.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is the bucket map a separate app?</div>
+                <p>No. The bucket map is built into Tripmetic—the free travel app that also includes a smart currency converter, dual clock widget, multi-country budgets, packing lists, and more. Download once and use every tool.</p>
+            </div>
+
+            <div class="related-tools">
+                <h2>More in the Tripmetic travel app</h2>
+                <ul>
+                    <li><a href="/currency-calculator">Currency Calculator</a></li>
+                    <li><a href="/smart-currency-converter">Smart Currency Converter</a></li>
+                    <li><a href="/clock-widget">Dual Clock Widget</a></li>
+                    <li><a href="/multi-country-budget">Multi-Country Budgets</a></li>
+                    <li><a href="/features">All features</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="expandedImg" loading="lazy" decoding="async">
+    </div>
+
+    <script>
+        var modalBox = document.getElementById("imageLightbox");
+        var modalImg = document.getElementById("expandedImg");
+        var images = document.querySelectorAll(".guide-img");
+        
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modalBox.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        span.onclick = function() { 
+            modalBox.style.display = "none";
+        }
+
+        modalBox.onclick = function(e) {
+            if (e.target !== modalImg) {
+                modalBox.style.display = "none";
+            }
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Fetch the Top Menu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading menu:', error));
+
+        // Fetch the Footer (which contains the Modal)
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+
+                // Activate the Modal logic ONLY after footer is loaded
+                const downloadModal = document.getElementById('downloadModal');
+                if (downloadModal) {
+                    const closeBtn = downloadModal.querySelector('.close-modal');
+
+                    // Listen for clicks on ANY link that points to #download
+                    document.body.addEventListener('click', function(e) {
+                        const downloadLink = e.target.closest('a[href="#download"]');
+                        if (downloadLink) {
+                            e.preventDefault();
+                            downloadModal.style.display = 'flex';
+                        }
+                    });
+
+                    // Close the modal when the "X" is clicked
+                    closeBtn.addEventListener('click', function() {
+                        downloadModal.style.display = 'none';
+                    });
+
+                    // Close the modal when clicking the dark background outside the box
+                    window.addEventListener('click', function(e) {
+                        if (e.target === downloadModal) {
+                            downloadModal.style.display = 'none';
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+<script src="/site.js" defer></script>
+</body>
+</html>

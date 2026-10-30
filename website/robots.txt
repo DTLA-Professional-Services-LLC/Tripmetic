@@ -1,0 +1,48 @@
+# Tripmetic — https://tripmetic.app
+User-agent: *
+Allow: /
+Disallow: /.well-known/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /menu
+Disallow: /footer
+Disallow: /404
+Disallow: /_not-found
+
+# Prefer apex host (non-www) and clean URLs in sitemap
+Host: https://tripmetic.app
+
+# AI / LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://tripmetic.app/sitemap.xml
+LLMs-Txt: https://tripmetic.app/llms.txt

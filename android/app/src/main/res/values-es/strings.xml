@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tripmetic</string>
+    <string name="widget_dual_clock_description">Reloj doble — dos zonas horarias de un vistazo.</string>
+    <string name="widget_dual_clock_city1_hint">Ciudad 1</string>
+    <string name="widget_dual_clock_city2_hint">Ciudad 2</string>
+    <string name="widget_dual_clock_time_placeholder">--:--</string>
+    <string name="widget_dual_clock_date_placeholder">—</string>
+    <string name="widget_currency_description">Convertidor de divisas — tipos de cambio en la pantalla de inicio.</string>
+    <string name="widget_currency_brand">Tripmetic</string>
+    <string name="widget_currency_refresh">↻ Actualizar</string>
+    <string name="widget_currency_change">Cambiar</string>
+    <string name="widget_currency_setup_hint">Abre Tripmetic para elegir divisas</string>
+</resources>

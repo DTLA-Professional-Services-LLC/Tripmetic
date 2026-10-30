@@ -1,0 +1,1335 @@
+{
+  "@@locale": "ja",
+  "@@context": "Tripmetic 旅行アプリの UI。中括弧のプレースホルダーを正確に保持します (例: {name}、{code})。ブランド名 Tripmetic、RevenueCat、Android、iOS、Google Play、ISO の通貨コード (USD、EUR) は、文字列が十分に説明できるものでない限り、翻訳しないでください。",
+  "addItineraryEnterTitle": "タイトルを入力してください",
+  "addItineraryFieldLocation": "位置",
+  "addItineraryFieldNotes": "注意事項・確認事項",
+  "addItineraryFieldTitle": "タイトル",
+  "addItineraryHintLocation": "空港、ホテルの住所…",
+  "addItineraryHintNotes": "レコードロケーター、リンク…",
+  "addItineraryHintTitle": "リスボン行きのフライト",
+  "addItinerarySave": "イベントの保存",
+  "addItineraryTitle": "旅程イベントを追加",
+  "addPackingAddToList": "リストに追加",
+  "addPackingEnterName": "項目名を入力してください",
+  "addPackingFieldCategory": "カテゴリ",
+  "addPackingFieldItemName": "項目名",
+  "addPackingHint": "例えば電源アダプター",
+  "addPackingIcon": "アイコン",
+  "addPackingQuantity": "量",
+  "addPackingTitle": "梱包アイテムの追加",
+  "announcementsLatest": "最新のアップデート",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "基本通貨",
+  "budgetCategoryDialogHint": "例えばお土産",
+  "budgetCategoryNameExists": "名前はすでに存在します",
+  "budgetCategoryNameMax": "最大40文字",
+  "budgetDailyFood": "毎日の食事",
+  "budgetDestinationSearchHint": "国または通貨コードを検索する",
+  "budgetDestinationTitle": "目的地を追加",
+  "budgetDialogAdd": "追加",
+  "budgetDialogNewCategory": "新しい経費カテゴリ",
+  "budgetDialogRemoveBody": "「{name}」とその金額を削除しますか?",
+  "budgetDialogRemoveTitle": "カテゴリを削除する",
+  "budgetDialogRename": "名前の変更",
+  "budgetDialogRenameCategory": "カテゴリの名前を変更",
+  "budgetEdit": "予算を編集する",
+  "budgetExpenseDailyFood": "毎日の食事",
+  "budgetExpenseEatingOut": "外食",
+  "budgetExpenseEntertainment": "エンターテインメント",
+  "budgetExpenseFlights": "フライト",
+  "budgetExpenseGrocery": "食料品",
+  "budgetExpenseHotels": "ホテル",
+  "budgetExpenseMisc": "その他",
+  "budgetExpensePhoneService": "電話サービス",
+  "budgetExpenseShopping": "買い物",
+  "budgetExpenseTourism": "観光",
+  "budgetExpenseTransportation": "交通機関",
+  "budgetExpenseTravelInsurance": "旅行保険",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3,000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "目的地で",
+  "budgetNoCategories": "まだ経費カテゴリがありません",
+  "budgetOtherExpenses": "その他の出費 ({code})",
+  "budgetPerDayEstimate": "1日あたり（目安）",
+  "budgetPerDayValue": "≈ {amount} / 日",
+  "budgetRemainingAfter": "経費を引いた残り · {code}",
+  "budgetSave": "予算を節約する",
+  "budgetSpendingPower": "消費力",
+  "budgetSpentVsBudget": "支出と予算",
+  "budgetTotalBudget": "総予算 ({code})",
+  "budgetTotalForTrip": "旅行の合計 ({code})",
+  "budgetTripDashboard": "ダッシュボード",
+  "budgetTripLengthDays": "旅行期間 (日数)",
+  "budgetTripTitle": "旅行の予算",
+  "commonAdd": "追加",
+  "commonCancel": "キャンセル",
+  "commonDelete": "消去",
+  "commonOk": "わかりました",
+  "commonRemove": "取り除く",
+  "commonRename": "名前の変更",
+  "commonSave": "保存",
+  "commonKeyboardDone": "終わり",
+  "countryCountriesCount": "{count} か国",
+  "countryPickerTitle": "国を選択してください",
+  "countrySheetSearchHint": "国名またはISOコードを検索",
+  "countrySheetTitle": "拠点となる国・地域",
+  "cryptoHeader": "暗号",
+  "cryptoMockPerUnit": "モック ~{price} / ユニット",
+  "cryptoPickerTitle": "コインを選ぶ",
+  "cryptoSheetTitle": "暗号通貨を選択してください",
+  "currencyPickerSearchHint": "ティッカーまたは名前を検索",
+  "currencyPickerTitle": "通貨を選択してください",
+  "currencySheetCountShown": "{shown}/{total} を表示",
+  "currencySheetSearchHint": "コード、名前、または数値 ISO を検索します",
+  "currencySheetTitle": "通貨を選択してください",
+  "exchangeBaseSuffix": "・ベース",
+  "exchangeCouldNotLoad": "レートを読み込めませんでした\n{error}",
+  "exchangeHeader": "交換",
+  "exchangeLastUpdated": "最終更新日 {mins} 分前",
+  "exchangeLastUpdatedOffline": "最終更新日 {mins} 分前 (オフライン)",
+  "exchangeResetOne": "1 にリセット (USD ベース)",
+  "exchangeResetTooltip": "金額をリセットする",
+  "exchangeResetZero": "0までクリア",
+  "itineraryDayPrefix": "{day} 日: {date}",
+  "itineraryEmpty": "まだイベントはありません。\n+ をタップして、フライト、ホテル、プランを追加します。",
+  "itineraryHeader": "旅程",
+  "itineraryHiveError": "保存された旅程データを開けませんでした。\nイベントを追加してみることはできますが、持続しない可能性があります。\n({error})",
+  "itineraryOpenOnMap": "地図上で開く",
+  "mapAddToTrip": "旅行に追加",
+  "mapClearRoute": "明確なルートと案内",
+  "mapClearTooltip": "クリア",
+  "mapDisplayCurrentViewport": "現在のビューポート",
+  "mapDisplaySavedSearch": "保存された検索",
+  "mapDisplayTripDestination": "旅行先",
+  "mapDownloadAll": "すべてダウンロード",
+  "mapDownloadCurrentRegion": "オフラインで使用するために現在のリージョンをダウンロード",
+  "mapDownloadThisDestination": "この宛先をダウンロード",
+  "mapDownloadedRegions": "ダウンロードされた地域",
+  "mapDownloadingRegion": "地域をダウンロード中...",
+  "mapDownloadingTitle": "{title} をダウンロードしています...",
+  "mapFromItinerary": "旅程から",
+  "mapItineraryEmptyHint": "ここで旅程の目的地を追加して事前ダウンロードします。",
+  "mapLoadingRegions": "オフライン リージョンをロード中…",
+  "mapLocatingQuery": "{query} を探しています...",
+  "mapMarkCategoryBody": "このオフライン ピンにラベルを付ける方法を選択します。",
+  "mapMarkCategoryTitle": "このマークのカテゴリ",
+  "mapMarkFood": "食べ物",
+  "mapMarkHotel": "ホテル",
+  "mapMarkLandmark": "ランドマーク",
+  "mapMarkOther": "他の",
+  "mapNextInstruction": "次の命令 ({current}/{total})",
+  "mapNoLocationSet": "場所が設定されていません",
+  "mapNoRegionsYet": "まだリージョンをダウンロードしていません。",
+  "mapOfflineIntro": "現在表示されている地域を保存するか、旅行の目的地を事前にダウンロードして、オフグリッドの場所でも移動できるようにします。",
+  "mapOfflineMapsTitle": "オフラインマップ",
+  "mapRefreshTooltip": "リフレッシュ",
+  "mapRemovePinTooltip": "ピンを外す",
+  "mapSaveOffline": "オフラインで保存",
+  "mapSavePinToMap": "ピンをマップに保存",
+  "mapSavedPinsBody": "検索から保存したピン。マップから 1 つを削除するには、「削除」をタップします。",
+  "mapSavedPinsTitle": "保存されたマップピン",
+  "mapSearchHint": "都市、住所、ランドマークを検索します…",
+  "mapSnackAddedOfflineMark": "{title} がオフライン マークに追加されました。",
+  "mapSnackArrived": "到着しました。",
+  "mapSnackCouldNotFind": "「{query}」が見つかりませんでした。",
+  "mapSnackDeleteFailed": "削除に失敗しました: {error}",
+  "mapSnackDownloadFailed": "オフライン ダウンロードに失敗しました: {error}",
+  "mapSnackDownloadedEvent": "「{title}」をダウンロードしました。",
+  "mapSnackEventNoLocation": "「{title}」には場所が設定されていません。",
+  "mapSnackFinishedBatch": "{count} 旅程地域のダウンロードが完了しました。",
+  "mapSnackLoadRegionsFailed": "オフライン領域をロードできませんでした: {error}",
+  "mapSnackLocationOff": "位置情報サービスがオフになっています。ナビゲーションを開始するには有効にします。",
+  "mapSnackLocationPermission": "ターンバイターンでは位置情報の許可が必要です。",
+  "mapSnackLocationDeniedForMap": "地図を自分の中心に配置するには、位置情報の許可が必要です。",
+  "mapSnackLocateFail": "現在位置情報を取得できません。",
+  "mapLocateMeTooltip": "私の場所に行く",
+  "mapSnackMapNotReady": "地図はまだ準備ができていません。しばらくお待ちください。",
+  "mapSnackNavStartFail": "現在ナビゲーションを開始できません。",
+  "mapSnackNavStopped": "ナビゲーションが停止しました。",
+  "mapSnackNoItineraryLocations": "旅程イベントには、ダウンロードする場所やマップ ポイントがありません。",
+  "mapSnackNoManeuver": "このステップには正確な操作ポイントがありません。",
+  "mapSnackNoRoute": "ルートが見つかりませんでした。目的地を示しています。",
+  "mapSnackRegionDownloaded": "リージョンが正常にダウンロードされました。オフラインでナビゲートできるようになりました。",
+  "mapSnackRemovedPin": "保存されているピンを削除しました。",
+  "mapSnackRemovedRegion": "オフライン領域「{name}」が削除されました。",
+  "mapSnackRouteCleared": "ルートと案内がクリアされました。",
+  "mapSnackRoutingFailed": "ルーティングが失敗しました: {error}",
+  "mapSnackSearchFailed": "検索に失敗しました: {error}",
+  "mapStartNavigation": "ナビゲーションの開始",
+  "mapStartingNav": "ナビゲーションを開始しています...",
+  "mapStopNavigation": "ナビゲーションを停止する",
+  "mapTravelDriving": "運転",
+  "mapTravelWalking": "ウォーキング",
+  "mapTurnByTurn": "ターンバイターン ({mode})",
+  "mindMapCaptureFail": "マインドマップをキャプチャできませんでした。もう一度やり直してください。",
+  "mindMapClearBody": "これにより、すべてのノードが削除され、デモのマインド マップ (中央の例) が復元されます。",
+  "mindMapClearTitle": "透明なキャンバス？",
+  "mindMapClearTooltip": "クリア/リセット",
+  "mindMapCouldNotSave": "保存できませんでした: {error}",
+  "mindMapCouldNotSaveType": "保存できませんでした: {type}",
+  "mindMapEmailShare": "メールで送信/共有",
+  "mindMapEmptyNode": "空のノード",
+  "mindMapHelpHint": "ピンチしてズーム · キャンバスをドラッグ · カードをドラッグ · カードをタップして編集 · + 子を追加",
+  "mindMapNodeAddLeftTooltip": "左の子を追加",
+  "mindMapNodeAddRightTooltip": "右の子を追加",
+  "mindMapNodeDeleteTooltip": "ノードの削除",
+  "mindMapNodeEditTitle": "ノードの編集",
+  "mindMapNodeHint": "短いラベルを入力してください",
+  "mindMapPhotoAccess": "画像を保存するにはフォトライブラリへのアクセスが必要です。",
+  "mindMapReset": "リセット",
+  "mindMapSavePhoto": "写真として保存",
+  "mindMapSavedPhotos": "写真に保存しました",
+  "mindMapShareCaptureFail": "共有するマインド マップをキャプチャできませんでした。",
+  "mindMapShareCompleted": "共有完了",
+  "mindMapShareFailed": "共有に失敗しました: {error}",
+  "mindMapShareReady": "画像の準備ができました — 共有するアプリを選択してください",
+  "mindMapShareSheetClosed": "共有シートを閉じました",
+  "mindMapShareSubject": "Tripmetic — マインドマップ",
+  "mindMapShareText": "Tripmetic からのマインド マップのエクスポート",
+  "mindMapTapToEdit": "タップして編集",
+  "moreToolsHeader": "その他のツール",
+  "moreToolsSubtitle": "旅行公益事業",
+  "navCurrency": "通貨",
+  "navItinerary": "旅程",
+  "navMoreTools": "その他のツール",
+  "navOfflineMap": "オフラインマップ",
+  "navDashboard": "ダッシュボード",
+  "navMoreMenu": "もっと",
+  "navEditNavigation": "ナビゲーションの編集",
+  "navDoneEditing": "終わり",
+  "navSelectSlotHint": "スロットをタップし、次にツールをタップして割り当てます。",
+  "navSavePins": "保存",
+  "navPinnedSectionTitle": "一番下のバーに固定されています",
+  "navAvailableSectionTitle": "利用可能な機能",
+  "navEmptySlot": "空 — 以下の利用可能なものから追加します",
+  "navPinFullHint": "4 つのスロットがすべて埋まっています。 1 つを削除して別のものを追加します。",
+  "navEditPinnedHint": "−を使用してスロットを解放するか、+を使用してスロットを埋めるか、ドラッグして順序を変更します。 4つすべてが埋まったら保存します。",
+  "navAddToPinned": "一番下のバーに追加",
+  "navRemoveFromPinned": "下部バーから削除",
+  "navFeatureBadgeFree": "無料",
+  "navFeatureBadgePro": "プロ",
+  "moreMenuSectionFree": "無料機能",
+  "moreMenuSectionPro": "Tripmetic プロ",
+  "ourAppsMenuTitle": "私たちのアプリ",
+  "ourAppsMenuSubtitle": "p1.do チームのその他のソフトウェア",
+  "ourAppsScreenTitle": "私たちのアプリ",
+  "ourAppsIntro": "p1.do チームのソフトウェア - ライブアプリをタップしてサイトを開きます。ストリーム CRM は近日公開予定です。",
+  "ourAppsBadgeLive": "公開中",
+  "ourAppsBadgeSoon": "近日公開",
+  "ourAppsBadgeThisApp": "このアプリ",
+  "ourAppsViewOnline": "p1.do ですべてを表示",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "ウェブ・モバイル",
+  "ourAppsPlatformWebTabletMobile": "ウェブ・タブレット・モバイル",
+  "ourAppsTravelRecapTagline": "AI 旅行ルートと写真の要約",
+  "ourAppsTravelRecapSummary": "インタラクティブな地図上で複数の目的地を巡る旅行を計画し、AI でルートを生成し、目的地を追加して、写真から洗練された旅行の要約をエクスポートします。",
+  "ourAppsP1doTagline": "プロフィール内のリンクと作成者 CRM",
+  "ourAppsP1doSummary": "月額料金に加えて利益の追加カットなしで、CRM 件の見込み客 (さらに Premium Selling 件と予約) を獲得するクリエイター向けのリンクインバイオ。",
+  "ourAppsDockTxtTagline": "macOS エッジ固定スクラッチパッドと正確な差分",
+  "ourAppsDockTxtSummary": "プレーンテキストのスクラッチパッド作業、空白のサニタイズ、JSON の整形、および文字レベルの差分のための無料のネイティブ macOS フローティング ドロワー。",
+  "ourAppsTripmeticTagline": "世界的な旅行ツールキットと予算プランナー",
+  "ourAppsTripmeticSummary": "バケット リスト、オフライン マップ、グループ旅程、複数国の予算、タイムゾーン ウィジェット、パッキング リスト、コンバーターを 1 つのダッシュボードで管理できます。",
+  "ourAppsPayxtTagline": "数秒で請求書をテキストで支払う",
+  "ourAppsPayxtSummary": "モバイル専門家向けの Stripe および PayPal を利用したチェックアウト リンクを使用して、テキスト メッセージを安全な支払い済み請求書に変換します。",
+  "ourAppsPermitMobileTagline": "リフォーム業者向けの建築許可トラッカー",
+  "ourAppsPermitMobileSummary": "市のポータルサイトからの番号、住所、承認の更新など、自治体の建築許可ステータスを現場から監視します。",
+  "ourAppsTrackkrTagline": "アパートの区画管理",
+  "ourAppsTrackkrSummary": "受信パッケージを数秒で記録し、電子メール (およびオプションの SMS) でテナントに通知し、永久無料の基本プランで無制限のユニットを管理します。",
+  "ourAppsKeyForecastsTagline": "HVAC リーダー用のフラクショナル コントローラー",
+  "ourAppsKeyForecastsSummary": "HVAC と建設に関するエグゼクティブ財務インテリジェンス - 人件費計算、季節キャッシュ フロー予測、スケール対応レポート。",
+  "ourAppsStreamCrmTagline": "TikTok ライブギフト追跡と寄付者 CRM",
+  "ourAppsStreamCrmSummary": "TikTok ライブ ギフトをリアルタイムで追跡し、寄付者の支出と収益を分離し、寄付者のプロフィールを使用してトップ サポーターを育成します。",
+  "proGlassTeaserTitle": "Tripmetic プロの機能",
+  "dashboardWorldExplorerSection": "ワールドエクスプローラー",
+  "dashboardWorldExplorerCountriesLabel": "訪問国",
+  "dashboardWorldExplorerPercentLabel": "探索された世界の",
+  "dashboardWorldExplorerPercentValue": "{percent}%",
+  "bucketListDisplayNameLabel": "表示名",
+  "bucketListMapUnavailable": "Mapbox アクセストークンが未設定のため、地図を表示できません。",
+  "bucketListAuthValidationDisplayName": "あなたの名前を入力してください",
+  "authSignUpScreenTitle": "Tripmetic アカウントを作成してください",
+  "authSignUpScreenSubtitle": "オプション — クラウドバックアップが必要な場合のみ。サインアップせずに、このデバイス上のすべてのツールを引き続き使用できます。",
+  "authSignInScreenTitle": "Tripmetic にサインインする",
+  "authSignInScreenSubtitle": "オプション — バケット リストとクラウド グループ旅行を同期します。残りの Tripmetic はアカウントなしで動作します。",
+  "authForgotPassword": "パスワードをお忘れですか？",
+  "authPasswordResetConfirmation": "そのメールのアカウントが存在する場合は、パスワードをリセットするためのリンクが届きます。",
+  "authUnexpectedError": "何か問題が発生しました。もう一度試してください。",
+  "authBackupBulletBucketList": "バケット リストの宛先はクラウドに保存され、サインイン時に結合されます。",
+  "authBackupBulletGroupTrips": "作成または参加したグループ旅行は、アカウントに保存されます。",
+  "authBackupBulletMultiDevice": "同期されたデータを復元するには、別のデバイスにサインインします。",
+  "authLinkAlreadyHaveAccount": "すでにアカウントをお持ちですか?サインイン",
+  "authLinkNeedAccount": "アカウントが必要ですか?作成する",
+  "authFullSignUpCta": "フルサインアップ画面を使用する",
+  "authFullSignInCta": "フルサインイン画面を使用する",
+  "dashboardGreeting": "こんにちは、{name}",
+  "dashboardGuestName": "旅行者",
+  "dashboardWelcomeSubtitle": "一緒に計画を立て、整理整頓し、ワンタップでツールにアクセスできます。",
+  "dashboardPlanGroupTrip": "新しいグループ旅行を計画する",
+  "dashboardAddBucketList": "バケットリストに追加",
+  "dashboardActiveTripSection": "アクティブな旅行のスナップショット",
+  "dashboardNoUpcomingTripTitle": "今後の団体旅行は予定しておりません",
+  "dashboardNoUpcomingTripBody": "友達と計画を立てるとき、次の旅行の概要がここに表示されます。",
+  "dashboardQuickToolsSection": "クイックツール",
+  "dashboardCountdownStartsIn": "{days}日後に開始",
+  "dashboardCountdownEndsIn": "{days}日後に終了します",
+  "navDashboardBody": "あなたの旅行ハブ — バーまたは [その他] メニューからツールを開きます。",
+  "appSettings": "アプリの設定",
+  "settingsSectionTripmeticPro": "Tripmetic プロ",
+  "settingsSubscriptionActive": "アクティブなサブスクリプション",
+  "settingsSubscriptionLifetime": "生涯アクセス",
+  "settingsSubscriptionFree": "無料プラン",
+  "settingsManageBilling": "請求の管理",
+  "settingsTestModeSectionTitle": "テストモード",
+  "settingsTestModeProTitle": "Tripmetic Pro としてテストする",
+  "settingsTestModeProSubtitle": "テスト用のローカルオーバーライド。 RevenueCat を無視します。",
+  "settingsTestModeProCaption": "有効にすると、このデバイスはすべての Pro 機能をローカルでロック解除します。内部テストのみを目的としています。実際のサブスクリプションは変更されません。",
+  "settingsUnitsTitle": "測定単位",
+  "settingsLanguageTitle": "言語",
+  "settingsThemeTitle": "テーマ",
+  "settingsClockWidgetTitle": "時計ウィジェット",
+  "settingsCurrencyWidgetTitle": "通貨ウィジェット",
+  "settingsCurrencyWidgetSubtitle": "ホーム画面とロック画面: 基本通貨の 1、20、100",
+  "settingsThemeSystem": "システム",
+  "settingsThemeLight": "ライト",
+  "settingsThemeDark": "暗い",
+  "settingsLanguageSystem": "システムのデフォルト",
+  "settingsLanguageEnglish": "英語",
+  "settingsLanguageSpanish": "スペイン語",
+  "settingsProfileTitle": "プロファイルとクラウド同期",
+  "settingsLogout": "ログアウト",
+  "settingsLogoutConfirm": "このアカウントからログアウトしますか?",
+  "settingsDeleteAccount": "アカウントを削除する",
+  "settingsDeleteAccountBody": "アカウントの削除はサポートが対応します。以下からログアウトできます。",
+  "settingsSectionAccount": "アカウント",
+  "accountManagementListTitle": "アカウントの管理",
+  "accountManagementListSubtitle": "名前、メールアドレス、パスワードを更新してください",
+  "accountManagementTitle": "アカウント管理",
+  "accountSectionProfile": "プロフィール",
+  "accountSectionSignIn": "サインイン",
+  "accountFieldDisplayName": "表示名",
+  "accountFieldEmail": "電子メール",
+  "accountFieldCurrentPassword": "現在のパスワード",
+  "accountFieldNewPassword": "新しいパスワード",
+  "accountSaveName": "名前を保存する",
+  "accountChangeEmail": "確認メールを送信してメールアドレスを変更する",
+  "accountChangePassword": "パスワードを変更する",
+  "accountSignedOutMessage": "アカウントを管理するにはサインインする必要があります。",
+  "accountSignInCta": "サインイン",
+  "accountNameSaved": "名前を更新しました",
+  "accountEmailVerificationSent": "確認リンクが {email} に送信されました。確認してサインイン アドレスを切り替えます。",
+  "accountPasswordChanged": "パスワードが更新されました",
+  "accountReauthRequired": "セキュリティのため、再度サインインして {field} を変更してください。",
+  "accountFieldLabelEmail": "電子メール",
+  "accountFieldLabelPassword": "パスワード",
+  "accountErrorGeneric": "{field} を更新できませんでした: {error}",
+  "accountReauthAction": "再度サインインしてください",
+  "accountValidationEmailRequired": "メールアドレスを入力してください",
+  "accountValidationEmailInvalid": "有効なメールアドレスを入力してください",
+  "accountValidationNameRequired": "あなたの名前を入力してください",
+  "accountValidationPasswordTooShort": "少なくとも 8 文字を使用してください",
+  "accountCurrentEmailLabel": "現在のメールアドレス: {email}",
+  "proPaywallTitle": "Tripmetic プロ",
+  "proPaywallSubtitle": "オフライン マップ、詳細な旅行ツール、コラボレーションを利用可能にします。",
+  "proPaywallBenefits": "オフラインマップと地域のダウンロード\n旅程、予算、保管、梱包\nグループプランナーとリアルタイム同期",
+  "proPaywallBullets": "オフラインマップと地域のダウンロード|旅程、予算、保管、梱包|グループプランナーとリアルタイム同期",
+  "proPaywallUpgradeRevenueCat": "RevenueCat 経由でアップグレードする",
+  "upgradeNow": "今すぐアップグレードしてください",
+  "packingCatClothing": "衣服",
+  "packingCatDocuments": "書類",
+  "packingCatMedications": "薬",
+  "packingCatMisc": "その他",
+  "packingCatReservations": "予約",
+  "packingEmpty": "あなたのリストは空です。\n「＋」をタップして項目を追加します。",
+  "packingEmptyHidden": "梱包するものは何も残っていない - 完了した項目を表示するには、「完了済みを非表示」をオフにします。",
+  "packingHeader": "梱包と物流",
+  "packingHideCompleted": "非表示完了",
+  "packingHideCompletedSubtitle": "完了したアイテムは保存されたままになります。このビューからのみ隠されています",
+  "packingStarterPassport": "パスポート",
+  "packingStarterShirts": "シャツ",
+  "packingStarterSocks": "ソックス",
+  "packingStarterTickets": "航空券",
+  "packingStarterToothbrush": "歯ブラシ",
+  "paywallDisabledBody": "RevenueCat ペイウォールは UI レビューのため一時的に無効になっています。",
+  "paywallDisabledTitle": "ペイウォールが無効になっています",
+  "presentationDeleteBody": "このドキュメントをボールトから削除してもよろしいですか?",
+  "presentationDeleteTitle": "ドキュメントを削除しますか?",
+  "presentationImageLoadFail": "画像のロードに失敗しました",
+  "proActive": "アクティブ",
+  "proManageHintFree": "毎月のサブスクリプションで Pro 機能のロックを解除します。",
+  "proManageHintPro": "サブスクリプションを管理したり、購入を復元したりできます。",
+  "proManageSubscription": "サブスクリプションの管理",
+  "proName": "Tripmetic プロ",
+  "proPaywallError": "ペイウォールを表示できませんでした。 RevenueCat のサービスを確認してください。",
+  "proPaywallNotConfigured": "このインストールではサブスクリプションは利用できません。 Pro にアップグレードするには、Google Play から Tripmetic をインストールします。",
+  "proRestoreFailed": "復元に失敗しました: {message}",
+  "proTrialCta": "3 日間の無料トライアルを開始する",
+  "proWelcome": "Tripmetic プロへようこそ",
+  "schedulerAvailabilityGood": "良い",
+  "schedulerAvailabilityOffHours": "時間外",
+  "schedulerAvailabilityOk": "わかりました",
+  "schedulerBaseLocation": "拠点の場所",
+  "schedulerBaseTooltip": "日付、時刻、およびスライダーは基本クロック ({zone}) に適用されます。各都市の行は、そのゾーンの同じ瞬間を示します。",
+  "schedulerConvertedCities": "変換された都市",
+  "schedulerDayNext": "+1日",
+  "schedulerDayPrevious": "-1日",
+  "schedulerDaySame": "同日",
+  "schedulerMeetingTime": "集合時間",
+  "schedulerSubtitle": "会議の重複",
+  "schedulerTitle": "グローバルスケジューラ",
+  "settingsAndInfo": "設定と情報",
+  "settingsContact": "お問い合わせ",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "リンクを開けませんでした",
+  "settingsHelpFaq": "ヘルプとよくある質問",
+  "settingsPrivacy": "プライバシーポリシー",
+  "settingsSupportLegal": "サポートと法務",
+  "settingsTerms": "利用規約",
+  "settingsMapboxAttributionTitle": "地図データ（Mapbox）",
+  "settingsMapboxAttributionBody": "Tripmetic は Mapbox マップを使用します。 © Mapbox、© OpenStreetMap、およびその他のデータ提供者。マップ上のロゴと帰属コントロールはアプリ内で非表示になるため、レイアウトがより明確になり、誤ってタップする回数が減ります。この通知は Mapbox の表示要件を満たしています。",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — マップについて",
+  "sizeCatBelts": "ベルト",
+  "sizeCatMensJeansCombo": "メンズ ジーンズ — W×L (US)",
+  "sizeCatMensJeansInseam": "メンズ ジーンズ - 股下 (L)",
+  "sizeCatMensJeansWaist": "メンズジーンズ - ウエスト(W)",
+  "sizeCatMensPants": "メンズパンツ",
+  "sizeCatMensShirts": "メンズシャツ",
+  "sizeCatMensShoes": "紳士靴",
+  "sizeCatMensTshirts": "メンズTシャツ",
+  "sizeCatWomensBlouses": "レディースブラウス",
+  "sizeCatWomensDresses": "レディースドレス",
+  "sizeCatWomensPants": "レディースパンツ",
+  "sizeCatWomensShoes": "婦人靴",
+  "sizeCatWomensTshirts": "レディースTシャツ",
+  "sizeCatBoysShoes": "男児靴（子供用）",
+  "sizeCatGirlsShoes": "女児靴（子供用）",
+  "sizeCatBoysTshirts": "ボーイズトップス/Tシャツ",
+  "sizeCatBoysPants": "男の子用パンツ",
+  "sizeCatGirlsTshirts": "ガールズトップス/Tシャツ",
+  "sizeCatGirlsPants": "女子パンツ",
+  "sizeCatGirlsDressesKids": "女児ドレス（子供）",
+  "sizeColumnPrimaryEu": "主な: EU",
+  "sizeColumnPrimaryJp": "プライマリー: 日本",
+  "sizeColumnPrimaryMixed": "プライマリー: 混合 (EU→米国→英国→日本)",
+  "sizeColumnPrimaryUk": "プライマリー: 英国",
+  "sizeColumnPrimaryUs": "プライマリー: 米国",
+  "sizeConverterAppBarSubtitle": "衣類と靴",
+  "sizeConverterCategory": "カテゴリ",
+  "sizeConverterHeader": "衣服と靴",
+  "sizeConverterTapToChange": "{code} · タップして変更します",
+  "sizeConverterYourBaseSize": "基本サイズ（タグに記載）",
+  "sizeConverterYourCountry": "あなたの国/地域",
+  "sizeEquivalentSizesHeader": "同等のサイズ",
+  "sizeHintBelts": "例えば32、34、85、90",
+  "sizeHintMensJeansCombo": "例えば38×32または38×32",
+  "sizeHintMensJeansInseam": "例えば32 (股下\") または 38x32 → 股下 32 を使用",
+  "sizeHintMensJeansWaist": "例えば38 (ウエスト\") または 38x32 → ウエスト 38 を使用します",
+  "sizeHintMensPants": "例えば30、32、34 (ウエスト\")",
+  "sizeHintMensShirts": "例えば15、38、M",
+  "sizeHintMensShoes": "例えば6–14、42、27",
+  "sizeHintMensTshirts": "例えばS、M、L、48",
+  "sizeHintWomensBlouses": "例えば8、38、M、XL",
+  "sizeHintWomensDresses": "例えば8、38、M",
+  "sizeHintWomensPants": "例えば6、10、38、M",
+  "sizeHintWomensShoes": "例えば5～12、39、25",
+  "sizeHintWomensTshirts": "例えばXS、M、38",
+  "sizeHintBoysShoes": "例えば11C、3Y、32、21",
+  "sizeHintGirlsShoes": "例えば10C、2Y、33、20",
+  "sizeHintBoysTshirts": "例えば6、8、M、XS",
+  "sizeHintBoysPants": "例えば6、8、10 (米国の子供)",
+  "sizeHintGirlsTshirts": "例えば6、8、M、S",
+  "sizeHintGirlsPants": "例えば6、8、10 (米国の子供)",
+  "sizeHintGirlsDressesKids": "例えば4、6、8、104",
+  "sizeNoMatchEmpty": "衣服または靴に記載されているサイズを入力してください。",
+  "sizeNoMatchRow": "このカテゴリに一致するサイズの行はありません。該当する場合は、米国、英国、EU、JP の番号、または文字 (S、M、L) を試してください。",
+  "sizeTipJeansCombo": "例 US 38×32: ウエスト ≈ EU 48、JP ウエストタグは多くの場合 ~96 ～ 97 cm。股下 32\" ≈ ~81 cm。ブランドによって異なります。これを開始点として使用してください。",
+  "sizeTipJeansInseam": "股下は脚の内側の長さをインチ単位で表します (例: 32)。日本では股下 32 インチの場合、約 81 cm と表示される場合があります。 38×32 と入力します — 股下には 32 を使用します。",
+  "sizeTipJeansWaist": "アジアのタグに記載されている数字の 1 つは、多くの場合ウエストです。センチメートル (38 インチ ≈ 96 ～ 97 cm) または米国のウエスト インチ (38) のいずれかです。巻尺と比較してください。ここでは 38×32 と入力できます。ウエストには 38 を使用します。",
+  "timezonePickerEmpty": "一致しません",
+  "timezonePickerHint": "IANA 名を検索 (例: ヨーロッパ、東京)",
+  "timezonePickerTitle": "タイムゾーンを選択してください",
+  "timezoneSheetCountZones": "{shown}/{total} ゾーン",
+  "timezoneSheetSearchHint": "IANA 名を検索 (例: ヨーロッパ、東京)",
+  "timezoneSheetTitle": "タイムゾーンの選択",
+  "tipAmount": "チップの金額",
+  "tipAppBarSubtitle": "チップと請求書",
+  "tipBillHint": "例えば$1,250,000.00",
+  "tipCountryBrazil": "ブラジル",
+  "tipCountryChina": "中国",
+  "tipCountryColombia": "コロンビア",
+  "tipCountryDominicanRepublic": "ドミニカ共和国",
+  "tipCountryEgypt": "エジプト",
+  "tipCountryFrance": "フランス",
+  "tipCountryGermany": "ドイツ",
+  "tipCountryHongKong": "香港",
+  "tipCountryIndonesia": "インドネシア",
+  "tipCountryItaly": "イタリア",
+  "tipCountryJapan": "日本",
+  "tipCountryMexico": "メキシコ",
+  "tipCountryMorocco": "モロッコ",
+  "tipCountryPortugal": "ポルトガル",
+  "tipCountrySingapore": "シンガポール",
+  "tipCountrySpain": "スペイン",
+  "tipCountryThailand": "タイ",
+  "tipCountryTurkey": "七面鳥",
+  "tipCountryUae": "アラブ首長国連邦 (ドバイ)",
+  "tipCountryUnitedKingdom": "イギリス",
+  "tipCountryUsa": "米国",
+  "tipZeroReasonChina": "中国本土ではチップの習慣はなく、多くの場所で断られたり、奇妙に思われたりすることがあります。",
+  "tipZeroReasonFrance": "レストランの請求書には通常 15% のサービス料 (サービス料) が含まれます。優れたサービスを提供する場合、追加のチップはオプションです。",
+  "tipZeroReasonJapan": "日本ではチップは習慣化されていないため、混乱や不快感を引き起こす可能性があります。",
+  "tipZeroReasonSingapore": "チップは期待されていません。多くの会場では、請求書に 10% のサービス料が追加されます。",
+  "tipZeroReasonGeneric": "ここでは 0% のチップが一般的です。優れたサービスに対してチップを追加することもできます。",
+  "tipZeroReasonTitle": "なぜ 0% なのでしょうか?",
+  "tipCurrentCountry": "現在の国",
+  "tipPeople": "人々",
+  "tipPerPerson": "お一人様あたりの金額",
+  "tipPercentHint": "チップ % を入力します (例: 15 または 27.5)",
+  "tipPercentLabel": "ヒント ％",
+  "tipResults": "結果",
+  "tipSmartHeader": "スマートなヒント",
+  "tipTotalBill": "請求総額",
+  "tipTotalWithTip": "チップ込みの合計",
+  "toolBrainstorm": "ブレーンストーミング",
+  "toolBudget": "予算",
+  "toolBudgetSubtitle": "旅行予算の計画と経費の追跡",
+  "toolBudgetTitle": "予算",
+  "toolItinerarySubtitle": "航空券、ホテル、日別プラン",
+  "toolItineraryTitle": "旅程",
+  "toolCrypto": "暗号",
+  "toolCryptoSubtitle": "人気のあるコイン全体の USD 値",
+  "toolCryptoTitle": "暗号",
+  "toolDocumentVault": "文書保管庫",
+  "toolMindMapSubtitle": "無限のキャンバス上のアイデア・オフライン",
+  "toolMindMapTitle": "ブレーンストーミングのマインドマップ",
+  "toolPacking": "パッキング",
+  "toolPackingSubtitle": "旅行ごとのスマートパッキングチェックリスト",
+  "toolPackingTitle": "パッキング",
+  "toolSchedulerSubtitle": "デュアルタイムゾーン・時差ボケ対策",
+  "toolSchedulerTitle": "時刻と日付",
+  "toolSettingsAboutSubtitle": "お知らせ、ヘルプ、プライバシー、規約",
+  "toolSettingsAboutTitle": "設定と概要",
+  "toolSettingsInfo": "設定と情報",
+  "toolSizeSubtitle": "米国・英国・EU・日本（JP）",
+  "toolSizeTitle": "衣類のサイズコンバーター",
+  "toolTimeDate": "時刻と日付",
+  "toolTipSubtitle": "カントリーチップの基準・最大20人までに分割",
+  "toolTipTitle": "スマートチップ&紙幣スプリッター",
+  "toolUnits": "単位",
+  "toolUnitsSubtitle": "長さ、重さ、温度、体積",
+  "toolUnitsTitle": "単位",
+  "toolVaultSubtitle": "重要な旅行書類をオフラインで保管",
+  "toolVaultTitle": "文書保管庫",
+  "unitAcres": "エーカー",
+  "unitCategoryArea": "エリア",
+  "unitCategoryDistance": "距離",
+  "unitCategoryLength": "長さ",
+  "unitCategoryTemperature": "温度",
+  "unitCategoryVolume": "音量",
+  "unitCategoryWeight": "重さ",
+  "unitCelsius": "摂氏",
+  "unitCentimeters": "センチメートル",
+  "unitFahrenheit": "華氏",
+  "unitFeet": "足",
+  "unitGrams": "グラム",
+  "unitHectares": "ヘクタール",
+  "unitInches": "インチ",
+  "unitKilograms": "キログラム",
+  "unitKilometers": "キロメートル",
+  "unitLiters": "リットル",
+  "unitMeters": "メートル",
+  "unitMiles": "マイル",
+  "unitMilliliters": "ミリリットル",
+  "unitOunces": "オンス",
+  "unitPounds": "ポンド",
+  "unitSquareCentimeters": "平方センチメートル",
+  "unitSquareFeet": "平方フィート",
+  "unitSquareInches": "平方インチ",
+  "unitSquareKilometers": "平方キロメートル",
+  "unitSquareMeters": "平方メートル",
+  "unitSquareYards": "平方ヤード",
+  "unitUsFluidOunces": "米国液量オンス",
+  "unitUsGallons": "米ガロン",
+  "unitYards": "ヤード",
+  "unitsHeader": "単位",
+  "vaultCategoryArrivalCard": "到着カード",
+  "vaultCategoryHotelReservation": "ホテル予約",
+  "vaultCategoryOther": "他の",
+  "vaultCategoryPassportCopy": "パスポートのコピー",
+  "vaultCategoryReturnFlight": "復路",
+  "vaultCategoryVisa": "ビザ",
+  "vaultDocumentTitle": "書類",
+  "vaultIntro": "重要な旅行書類を安全に保管し、オフラインでアクセスして入国審査ですぐに提示できるようにします。",
+  "vaultProcessFailed": "ドキュメントの処理に失敗しました: {error}",
+  "vaultTapToUpload": "タップしてアップロード",
+  "vaultTapToView": "タップして表示",
+  "vaultVaultWord": "金庫室",
+  "bucketListTitle": "バケットリスト",
+  "bucketListSubtitle": "行ったことのある場所、行きたい場所、そしてこれからのこと。",
+  "bucketListToolSubtitle": "夢の目的地を地図とリストで表示",
+  "bucketListViewModeList": "リスト",
+  "bucketListViewModeMap": "地図",
+  "bucketListViewModePopular": "人気のある",
+  "bucketListPopularHint": "Been、Live、Lived はマップとリストを更新します。 Want と Upcoming はリストのみであり、マップ上には表示されません。",
+  "bucketListCategoryBeen": "された",
+  "bucketListCategoryWant": "欲しい",
+  "bucketListCategoryLive": "ライブ",
+  "bucketListCategoryLived": "住んでいた",
+  "bucketListCategoryUpcoming": "今後の予定",
+  "bucketListDatesRange": "{start} – {end}",
+  "bucketListDetailCategory": "カテゴリ",
+  "bucketListDetailDates": "日付",
+  "bucketListMapLegend": "マーカーをタップすると詳細が表示されます",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "トリメティック.app",
+  "bucketListShareMapStatExplore": "{name} は世界の {worldPercent}% を探検しました。世界人口の{populationPercent}%以上が旅行しました。",
+  "bucketListShareMapTravelerFallback": "ラファエル",
+  "bucketListShareMapStatPopulation": "世界人口の{percent}%以上が旅行しました",
+  "bucketListShareMapCountriesLabel": "国",
+  "bucketListShareMapCitiesLabel": "都市",
+  "bucketListEmptyCategory": "このカテゴリにはまだ場所がありません。",
+  "bucketListTravelStats": "旅行統計",
+  "bucketListStatWorld": "探検した世界",
+  "bucketListStatUs": "米国が探検した",
+  "bucketListStatEurope": "探検したヨーロッパ",
+  "bucketListStatAsia": "探検したアジア",
+  "bucketListStatAfrica": "アフリカを探検しました",
+  "bucketListStatRegionalCaption": "地域別",
+  "bucketListStatSubtitle": "{count} ユニーク · {total}",
+  "bucketListAddDestination": "目的地を追加",
+  "bucketListEditDestination": "目的地を編集する",
+  "bucketListSave": "保存",
+  "bucketListFieldCity": "市",
+  "bucketListFieldCountry": "国",
+  "bucketListFieldCategory": "カテゴリ",
+  "bucketListFieldRegionHint": "州/県 (オプション)",
+  "bucketListFieldLatitude": "緯度",
+  "bucketListFieldLongitude": "経度",
+  "bucketListFieldStart": "開始日",
+  "bucketListFieldEnd": "終了日",
+  "bucketListFieldTripDates": "旅行日程",
+  "bucketListValidationRequired": "この項目は必須です。",
+  "bucketListValidationNumber": "有効な番号を入力してください。",
+  "bucketListValidationDates": "終了日は開始日以降である必要があります。",
+  "bucketListGeocodeNotFound": "地図上でこの場所が見つかりませんでした。スペルを確認してください。",
+  "bucketListShareSummarySubject": "私のTripmeticやりたいことリスト",
+  "bucketListShareTooltip": "リストとマップを共有する",
+  "bucketListShareFailed": "共有できませんでした: {error}",
+  "bucketListShareNeedMap": "マップ画像をキャプチャする前に、マップ ビューを開きます。",
+  "bucketListDeleteHint": "スワイプして削除します",
+  "bucketListTapEditHint": "タップして編集",
+  "bucketListCloudSyncFailed": "クラウド同期に失敗しました: {error}",
+  "bucketListRetry": "リトライ",
+  "bucketListBackupTooltip": "バックアップと登録",
+  "bucketListBackupTitle": "クラウドバックアップ",
+  "bucketListBackupGuestIntro": "Tripmetic はアカウントがなくても完全に動作します。やりたいことリストや共有グループ旅行のクラウドバックアップが必要な場合は、いつでも追加できます。",
+  "bucketListSignedInAs": "{email} としてサインインしています",
+  "bucketListBackupEmail": "電子メール",
+  "bucketListBackupPassword": "パスワード",
+  "bucketListBackupConfirmPassword": "パスワードを認証する",
+  "bucketListAuthTabSignUp": "サインアップ",
+  "bucketListAuthPasswordMismatch": "パスワードが一致しません。",
+  "bucketListRegister": "アカウントの作成とバックアップ",
+  "bucketListSignIn": "サインイン",
+  "bucketListSignOut": "サインアウト",
+  "bucketListBackupUploading": "クラウドにアップロード中…",
+  "bucketListAuthSuccessSignIn": "ログインに成功しました!",
+  "bucketListAuthSuccessSignUp": "アカウントが正常に作成されました!",
+  "signUpSuccessMessage": "アカウントが作成されました。 Tripmetic へようこそ!",
+  "signUpErrorEmailInUse": "このEメールはすでに登録されています。サインインしてみてください。",
+  "signUpErrorInvalidEmail": "有効な電子メールを入力してください。",
+  "signUpErrorWeakPassword": "パスワードが弱すぎます。少なくとも 8 文字を使用してください。",
+  "signUpErrorGeneric": "サインアップできませんでした: {message}",
+  "signUpErrorEmailInUseAction": "サインイン",
+  "bucketListAuthFailed": "認証できませんでした: {error}",
+  "groupPlannerNoExtraDetails": "まだメモやリンクはありません。",
+  "groupPlannerTitle": "グループプランナー",
+  "groupPlannerToolTitle": "グループプランナー",
+  "groupPlannerToolSubtitle": "リアルタイムで一緒に旅行を計画する",
+  "groupPlannerLandingPlanTitle": "グループ旅行を計画する",
+  "groupPlannerLandingPlanSubtitle": "目的地、日付、予算を指定して共有旅行を作成します。",
+  "groupPlannerLandingJoinTitle": "グループ旅行に参加する",
+  "groupPlannerLandingJoinSubtitle": "旅行コードまたは招待状のリンクを入力します。",
+  "groupPlannerCreateTripTitle": "新しいグループ旅行",
+  "groupPlannerSelectDates": "旅行の日付範囲を選択します。",
+  "groupPlannerBudgetPerPersonOption": "お一人様あたり",
+  "groupPlannerBudgetGroupOption": "グループ合計",
+  "groupPlannerBudgetNoneOption": "なし",
+  "groupPlannerBudgetAmountLabel": "予算額",
+  "groupPlannerOpenTitle": "グループ旅行を開く",
+  "groupPlannerOpenSubtitle": "招待状にある旅行コードを貼り付けます。",
+  "groupPlannerOpenTripCodeLabel": "トリップコード",
+  "groupPlannerOpenHint": "ショートコード、旅行ID、または招待リンク",
+  "groupPlannerOpenButton": "オープントリップ",
+  "groupPlannerDestination": "行き先",
+  "groupPlannerDates": "日付",
+  "groupPlannerGroupSize": "グループの規模",
+  "groupPlannerBudget": "予算",
+  "groupPlannerBudgetPerPerson": "1 人あたり: {amount}",
+  "groupPlannerBudgetGroup": "グループ合計: {amount}",
+  "groupPlannerBudgetNone": "予算は設定されていません",
+  "groupPlannerInviteMembers": "メンバーを招待する",
+  "groupPlannerManageMembers": "メンバーを管理する",
+  "groupPlannerItinerary": "旅程",
+  "groupPlannerItineraryEditorHint": "旅行管理者または旅行コーディネーターは、アクティビティを追加したり、スケジュールを変更したりできます。",
+  "groupPlannerItineraryViewerHint": "読み取り専用: 提案されたアクティビティに賛成または反対で投票します。旅行管理者と旅行コーディネーターのみが項目を追加または変更できます。",
+  "groupPlannerNoActivities": "まだアクティビティはありません。",
+  "groupPlannerTripNotFound": "この旅行を読み込むことができませんでした。",
+  "groupPlannerSignInTitle": "サインインが必要です",
+  "groupPlannerSignInBody": "共有旅行を表示するには、「バケット リスト」→「クラウド バックアップ」でサインインします。",
+  "groupPlannerCreateTripSignInRequired": "新しいグループ旅行を保存するにはアカウントが必要です。続行するにはサインインしてください。他の Tripmetic 機能はサインインなしでも動作します。",
+  "groupPlannerMembersTitle": "メンバー",
+  "groupPlannerRoleAdmin": "管理者",
+  "groupPlannerRoleCoPlanner": "旅行コーディネーター",
+  "groupPlannerRoleViewOnly": "表示専用",
+  "groupPlannerOwner": "所有者",
+  "groupPlannerRemoveMember": "取り除く",
+  "groupPlannerRemoveMemberTitle": "メンバーを削除しますか?",
+  "groupPlannerRemoveMemberBody": "{email} をこの旅行から削除しますか?",
+  "groupPlannerCancel": "キャンセル",
+  "groupPlannerNotes": "注意事項",
+  "groupPlannerOpenLink": "リンクを開く",
+  "groupPlannerNetVotes": "{count}",
+  "groupPlannerVoteError": "投票を保存できませんでした: {error}",
+  "groupPlannerManageError": "メンバーを更新できませんでした: {error}",
+  "groupPlannerInviteError": "共有シートを開けませんでした: {error}",
+  "groupPlannerUnknownTripCode": "旅行を開けませんでした: {error}",
+  "groupPlannerMyTripsSectionTitle": "あなたの旅行",
+  "groupPlannerMyTripsEmpty": "まだ旅行はありません。上に作成します。",
+  "groupPlannerExamplesTitle": "旅行の例",
+  "groupPlannerExamplesSubtitle": "サンプル カード — 上で旅行を作成し、独自のカードを追加します。",
+  "groupPlannerExampleTapBody": "これらはサンプルのみです。 「グループ旅行を計画する」を使用して、共有できる実際の旅行を作成します。",
+  "groupPlannerExampleLisbonTitle": "リスボンチームはオフサイト",
+  "groupPlannerExampleKyotoTitle": "春の京都ツアー",
+  "groupPlannerAddActivity": "アクティビティの追加",
+  "groupPlannerActivityTitleLabel": "活動タイトル",
+  "groupPlannerActivityWhenLabel": "日付と時刻",
+  "groupPlannerActivityTripDateRangeHelp": "旅行の日を選択し、時間を選択します。旅程を編集できる人は、後でこれを変更できます。",
+  "groupPlannerActivityDateOutOfRange": "その日付は今回の旅行の範囲外です。旅行の開始日と終了日の間の日を選択してください。",
+  "groupPlannerActivityTitleRequired": "アクティビティのタイトルを入力します。",
+  "groupPlannerActivityDateUnset": "日付が設定されていません — [編集] をタップしてスケジュールを設定します。",
+  "groupPlannerPeopleCount": "{count}人",
+  "groupPlannerEditActivity": "アクティビティの編集",
+  "groupPlannerDeleteActivity": "消去",
+  "groupPlannerDeleteActivityTitle": "アクティビティを削除しますか?",
+  "groupPlannerDeleteActivityBody": "旅程から「{title}」を削除しますか?これを元に戻すことはできません。",
+  "groupPlannerActivityDeleteError": "アクティビティを削除できませんでした: {error}",
+  "groupPlannerActivityEditError": "アクティビティを更新できませんでした: {error}",
+  "groupPlannerEditTripTitle": "旅行を編集する",
+  "groupPlannerEditTripAction": "旅行を編集する",
+  "groupPlannerDeleteTripTitle": "旅行を削除しますか?",
+  "groupPlannerDeleteTripBody": "旅行「{destination}」とその旅程を全員に対して完全に削除しますか?これを元に戻すことはできません。",
+  "groupPlannerDeleteTripAction": "旅行の削除",
+  "groupPlannerTripDeleted": "トリップが削除されました。",
+  "groupPlannerTripDeleteError": "旅行を削除できませんでした: {error}",
+  "groupPlannerTripUpdateError": "旅行を更新できませんでした: {error}",
+  "widgetInstructionTitle": "デュアルクロックウィジェット",
+  "widgetInstructionSubtitle": "ロック画面またはホーム画面から自宅と目的地のタイムゾーンを直接追跡します。",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "ロック画面",
+  "widgetInstructionIosLockScreenStep1": "ロック画面を長押しして「カスタマイズ」をタップします。",
+  "widgetInstructionIosLockScreenStep2": "「ロック画面」プレビューを選択します。",
+  "widgetInstructionIosLockScreenStep3": "時刻のすぐ下のウィジェットエリアをタップします。",
+  "widgetInstructionIosLockScreenStep4": "下にスクロールして Tripmetic を選択し、タップしてウィジェットを追加します。",
+  "widgetInstructionIosHomeScreenTitle": "ホーム画面",
+  "widgetInstructionIosHomeScreenStep1": "ホーム画面の空きスペースを長押しします。",
+  "widgetInstructionIosHomeScreenStep2": "左上隅にある + アイコンをタップします。",
+  "widgetInstructionIosHomeScreenStep3": "「Tripmetic」を検索します。",
+  "widgetInstructionIosHomeScreenStep4": "好みのウィジェットサイズを選択し、「ウィジェットを追加」をタップします。",
+  "widgetInstructionAndroidStep1": "ホーム画面に移動し、空いている領域を長押しします。",
+  "widgetInstructionAndroidStep2": "「ウィジェット」をタップします。",
+  "widgetInstructionAndroidStep3": "Tripmetic まで下にスクロールします。",
+  "widgetInstructionAndroidStep4": "デュアル時計ウィジェットをタップしたままにして、画面上にドラッグします。",
+  "widgetInstructionAndroidLockScreenHint": "ロック画面で両方の時計を表示するには、「設定」を開き、「ロック画面」または「ウィジェット」を検索し、携帯電話がロック画面ウィジェットを提供している場合はそこに Tripmetic を追加します (すべてのデバイスが提供しているわけではありません)。",
+  "widgetInstructionConfigureCta": "ウィジェット都市の構成",
+  "currencyWidgetInstructionTitle": "通貨換算ウィジェット",
+  "currencyWidgetInstructionSubtitle": "基本通貨とターゲット通貨を Android ホーム画面に固定します。 Tripmetic でコンバータを使用するたびにレートが同期されます。",
+  "currencyWidgetInstructionAndroidTitle": "ホーム画面に追加",
+  "currencyWidgetInstructionAndroidStep1": "通貨ツールを一度開き、最初の 2 つの通貨 (ベースとターゲット) を設定します。",
+  "currencyWidgetInstructionAndroidStep2": "ホーム画面に移動し、何もない領域を長押しします。",
+  "currencyWidgetInstructionAndroidStep3": "[ウィジェット] をタップし、Tripmetic までスクロールして、[通貨換算] を選択します。",
+  "currencyWidgetInstructionAndroidStep4": "ウィジェットをホーム画面にドラッグするか、ランチャーがサポートしている場合は「追加」をタップします。",
+  "currencyWidgetInstructionUsageTitle": "ウィジェットの使用",
+  "currencyWidgetInstructionUsageStep1": "[変更] (またはウィジェット本体) をタップして、Tripmetic で通貨の選択を開きます。",
+  "currencyWidgetInstructionUsageStep2": "↻ [更新] をタップして、バックグラウンドでウィジェットのレートを更新します (アプリは開きません)。",
+  "currencyWidgetInstructionUsageStep3": "アプリで通貨または値を編集すると、金額が自動的に更新されます。",
+  "currencyWidgetInstructionPinCta": "ホーム画面にウィジェットを追加する",
+  "currencyWidgetInstructionOpenCurrencyCta": "ウィジェットの通貨を変更する",
+  "currencyWidgetInstructionIosHint": "通貨のホーム画面ウィジェットは Android で利用できます。 iPhone では、アプリ内通貨ツールを使用します。",
+  "currencyWidgetPinUnsupported": "ランチャーは、アプリからのこのウィジェットの追加をサポートしていません。ホーム画面を長押しして、代わりに [ウィジェット] を選択します。",
+  "currencyWidgetPinFailed": "ウィジェットピッカーを開けませんでした。ホーム画面からウィジェットを手動で追加します。",
+  "dualClockScreenTitle": "デュアルクロックウィジェット",
+  "dualClockConfigTitle": "都市を構成する",
+  "dualClockConfigSubtitle": "2 つの都市とタイムゾーンを選択します。選択内容は、Tripmetic ホーム画面ウィジェット (Android) およびロック画面ウィジェット (iOS) に同期されます。",
+  "dualClockCity1Label": "最初の都市",
+  "dualClockCity2Label": "第二の都市",
+  "dualClockSave": "ウィジェットの保存と更新",
+  "dualClockSaved": "ウィジェットが更新されました。",
+  "dualClockSaveError": "ウィジェットデータを保存できませんでした。もう一度試してください。",
+  "dualClockAppearanceTitle": "ウィジェットの外観",
+  "dualClockAppearanceHint": "テキストのサイズ、色、ホーム画面の背景をカスタマイズします。ロック画面ではフォント サイズ (およびシステムが許可する色) が使用されます。",
+  "dualClockFontScaleLabel": "文字サイズ",
+  "dualClockColorCity": "都市名",
+  "dualClockColorTime": "回",
+  "dualClockColorDate": "日付",
+  "dualClockColorBackground": "家の背景",
+  "dualClockShadowLabel": "テキストシャドウ",
+  "dualClockShadowSubtitle": "忙しい壁紙や写真の壁紙にコントラストを加えます。",
+  "moreToolsDualClockBannerTitle": "デュアルクロックウィジェット",
+  "moreToolsDualClockBannerSubtitle": "ロック画面またはホーム画面で 2 つのタイムゾーンを表示します。タップして設定します。",
+  "moreToolsDualClockBannerCta": "設定",
+  "settingsDualClockWidgetTitle": "デュアルクロックウィジェット",
+  "settingsDualClockWidgetSubtitle": "ウィジェットを追加して都市を選択してください",
+  "widgetNewFeatureBadge": "新しい",
+  "globalNavAccountCloudSyncTooltip": "アカウントとクラウドのバックアップ",
+  "exchangeRatesForceRefreshTooltip": "最新の為替レートを取得する",
+  "exchangeRatesRefreshedOk": "為替レートが更新されました。",
+  "exchangeRatesRefreshFailed": "為替レートを更新できませんでした。",
+  "bucketListStatUsTerritories": "米国の領土",
+  "bucketListAuthErrUserNotFound": "このメールのアカウントは見つかりませんでした。",
+  "bucketListAuthErrWrongPassword": "メールアドレスまたはパスワードが間違っています。",
+  "bucketListAuthErrEmailInUse": "このメールのアカウントはすでに存在します。",
+  "bucketListAuthErrInvalidEmail": "メールアドレスが無効です。",
+  "bucketListAuthErrWeakPassword": "パスワードが弱すぎます。",
+  "bucketListAuthErrUserDisabled": "このアカウントは無効になっています。",
+  "bucketListAuthErrTooManyRequests": "試行回数が多すぎます。後でもう一度試してください。",
+  "bucketListAuthErrOperationNotAllowed": "電子メール/パスワードによるサインインが有効になっていません。",
+  "bucketListAuthErrDetail": "{detail}",
+  "bucketListAuthValidationInvalidEmail": "メールアドレスが無効です。",
+  "bucketListAuthValidationPasswordShort": "パスワードは6文字以上である必要があります。",
+  "bucketListAuthValidationPasswordRequired": "パスワードを入力してください。",
+  "currencyWidgetAppearanceTitle": "外観",
+  "currencyWidgetAppearanceHint": "フォント サイズ、テキストの色、ホーム画面の背景をカスタマイズします。ホーム ウィジェットは固定サイズを維持するため、大きなフォントは自動的に調整され、すべての行が表示されたままになります。ロック画面ではフォント サイズ (およびシステムが許可する色) が使用されます。",
+  "currencyWidgetFontScaleLabel": "フォントサイズ",
+  "currencyWidgetColorPrimary": "主なテキスト (金額 / ベース)",
+  "currencyWidgetColorAccent": "アクセントテキスト（ペア/ラダーラベル）",
+  "currencyWidgetColorCaption": "キャプションテキスト（レートライン）",
+  "currencyWidgetColorBackground": "家の背景",
+  "currencyWidgetSaveAppearance": "外観の保存",
+  "currencyWidgetAppearanceSaved": "通貨ウィジェットの外観が保存されました",
+  "currencyWidgetAppearanceSaveFailed": "ウィジェットの外観を保存できませんでした",
+  "currencyWidgetInstructionIosTitle": "iPhone",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalForTrip": {
+    "description": "Budget summary line; {code} is a currency code such as USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}

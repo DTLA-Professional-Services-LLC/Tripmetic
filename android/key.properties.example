@@ -1,0 +1,20 @@
+# Copy this file to key.properties in the same folder (android/) and fill in real values.
+# Never commit key.properties or your .jks file.
+#
+# storeFile is relative to the android/ directory (e.g. upload-keystore.jks next to this file).
+#
+# You can skip this file entirely and supply the same values as Gradle properties
+# or environment variables instead (this is what CI should do):
+#
+#   export ORG_GRADLE_PROJECT_storeFile=/path/to/upload-keystore.jks
+#   export ORG_GRADLE_PROJECT_storePassword=…
+#   export ORG_GRADLE_PROJECT_keyAlias=upload
+#   export ORG_GRADLE_PROJECT_keyPassword=…
+#
+# With neither this file nor the environment variables set, release builds fall
+# back to the debug keystore (fine locally, never valid for store uploads).
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=upload
+storeFile=upload-keystore.jks

@@ -1,0 +1,261 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local",
+        ".env",
+        ".env.*"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "website",
+    "ignore": [
+      "firebase.json",
+      "**/node_modules/**",
+      "**/.DS_Store",
+      "**/.git/**",
+      "tripmetic-app-1920x1080px-images-065/**",
+      "Tripmetic-Travel-To-1786286453136.render/**",
+      "_crop_preview/**",
+      "screenshots/**/*.mp4",
+      "screenshots/**/*.pdf",
+      "screenshots/**/*.PDF"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+      {
+        "source": "/.well-known/apple-app-site-association",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/.well-known/assetlinks.json",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/robots.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/llms.txt",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "/_next/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          },
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "/admin/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "/menu",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "/footer",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=604800,immutable"
+          }
+        ]
+      },
+      {
+        "source": "/screenshots/optimized/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "regex": "^/https:/+(?:www\\.)?tripmetic\\.app/(?P<path>.*)$",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "regex": "^/http:/+(?:www\\.)?tripmetic\\.app/(?P<path>.*)$",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "regex": "^/https%3A/+(?:www\\.)?tripmetic\\.app/(?P<path>.*)$",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "regex": "^/http%3A/+(?:www\\.)?tripmetic\\.app/(?P<path>.*)$",
+        "destination": "/:path",
+        "type": 301
+      },
+      { "source": "/https:/**", "destination": "/", "type": 301 },
+      { "source": "/http:/**", "destination": "/", "type": 301 },
+      { "source": "/https%3A/**", "destination": "/", "type": 301 },
+      { "source": "/http%3A/**", "destination": "/", "type": 301 },
+      { "source": "/index.html", "destination": "/", "type": 301 },
+      { "source": "/es/index.html", "destination": "/es", "type": 301 },
+      { "source": "/group-trip/index.html", "destination": "/group-trip", "type": 301 },
+      { "source": "/privacy.html", "destination": "/privacy", "type": 301 },
+      { "source": "/disclaimer.html", "destination": "/disclaimer", "type": 301 },
+      { "source": "/delete-account.html", "destination": "/delete-account", "type": 301 },
+      { "source": "/terms.html", "destination": "/terms", "type": 301 },
+      { "source": "/refund.html", "destination": "/refund", "type": 301 },
+      { "source": "/pci-compliance.html", "destination": "/pci-compliance", "type": 301 },
+      { "source": "/document-vault.html", "destination": "/document-vault", "type": 301 },
+      { "source": "/global-meeting-scheduler.html", "destination": "/global-meeting-scheduler", "type": 301 },
+      { "source": "/features.html", "destination": "/features", "type": 301 },
+      { "source": "/about.html", "destination": "/about", "type": 301 },
+      { "source": "/contact.html", "destination": "/contact", "type": 301 },
+      { "source": "/demo.html", "destination": "/demo", "type": 301 },
+      { "source": "/support.html", "destination": "/support", "type": 301 },
+      { "source": "/introductory-offer.html", "destination": "/introductory-offer", "type": 301 },
+      { "source": "/pricing.html", "destination": "/pricing", "type": 301 },
+      { "source": "/multi-country-budget.html", "destination": "/multi-country-budget", "type": 301 },
+      { "source": "/bill-splitter-smart-gratuity.html", "destination": "/bill-splitter-smart-gratuity", "type": 301 },
+      { "source": "/cryptocurrency-converter.html", "destination": "/cryptocurrency-converter", "type": 301 },
+      { "source": "/bucket-list-app.html", "destination": "/bucket-list-app", "type": 301 },
+      { "source": "/brainstorming-mind-map.html", "destination": "/brainstorming-mind-map", "type": 301 },
+      { "source": "/clock-widget.html", "destination": "/clock-widget", "type": 301 },
+      { "source": "/group-trip-planner.html", "destination": "/group-trip-planner", "type": 301 },
+      { "source": "/international-size-converter.html", "destination": "/international-size-converter", "type": 301 },
+      { "source": "/packing-list.html", "destination": "/packing-list", "type": 301 },
+      { "source": "/smart-currency-converter.html", "destination": "/smart-currency-converter", "type": 301 },
+      { "source": "/unit-converter.html", "destination": "/unit-converter", "type": 301 },
+      { "source": "/offline-map-guide.html", "destination": "/offline-map-guide", "type": 301 },
+      { "source": "/404", "destination": "/", "type": 301 },
+      { "source": "/_not-found", "destination": "/", "type": 301 },
+      { "source": "/_not-found/**", "destination": "/", "type": 301 }
+    ],
+    "rewrites": [
+      { "source": "/redeem", "destination": "/redeem/index.html" },
+      { "source": "/admin", "destination": "/admin/index.html" },
+      { "source": "/currency-calculator", "destination": "/currency-calculator/index.html" },
+      { "source": "/currency-calculator/", "destination": "/currency-calculator/index.html" }
+    ],
+    "predeploy": [
+      "npm --prefix webapp run build",
+      "node scripts/sync-webapp-to-website.js"
+    ]
+  }
+}

@@ -1,0 +1,1335 @@
+{
+  "@@locale": "ko",
+  "@@context": "Tripmetic 여행 앱 UI. 중괄호 자리 표시자를 정확하게 유지합니다(예: {name}, {code}). 문자열이 완전히 설명되지 않는 한 브랜드 이름 Tripmetic, RevenueCat, Android, iOS, Google Play 및 ISO 통화 코드(USD, EUR)를 번역되지 않은 상태로 유지합니다.",
+  "addItineraryEnterTitle": "제목을 입력하세요",
+  "addItineraryFieldLocation": "위치",
+  "addItineraryFieldNotes": "주의사항/확인",
+  "addItineraryFieldTitle": "제목",
+  "addItineraryHintLocation": "공항, 호텔 주소…",
+  "addItineraryHintNotes": "기록 찾기, 링크…",
+  "addItineraryHintTitle": "리스본행 비행기",
+  "addItinerarySave": "이벤트 저장",
+  "addItineraryTitle": "여행일정 추가",
+  "addPackingAddToList": "목록에 추가",
+  "addPackingEnterName": "항목 이름을 입력하세요.",
+  "addPackingFieldCategory": "범주",
+  "addPackingFieldItemName": "품목 이름",
+  "addPackingHint": "예를 들어 전원 어댑터",
+  "addPackingIcon": "상",
+  "addPackingQuantity": "수량",
+  "addPackingTitle": "포장 품목 추가",
+  "announcementsLatest": "최신 업데이트",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "기본 통화",
+  "budgetCategoryDialogHint": "예를 들어 기념품",
+  "budgetCategoryNameExists": "이름이 이미 존재합니다.",
+  "budgetCategoryNameMax": "최대 40자",
+  "budgetDailyFood": "매일의 음식",
+  "budgetDestinationSearchHint": "국가 또는 통화 코드 검색",
+  "budgetDestinationTitle": "목적지 추가",
+  "budgetDialogAdd": "추가하다",
+  "budgetDialogNewCategory": "새로운 비용 카테고리",
+  "budgetDialogRemoveBody": "'{name}' 및 해당 금액을 삭제하시겠습니까?",
+  "budgetDialogRemoveTitle": "카테고리 삭제",
+  "budgetDialogRename": "이름 바꾸기",
+  "budgetDialogRenameCategory": "카테고리 이름 바꾸기",
+  "budgetEdit": "예산 수정",
+  "budgetExpenseDailyFood": "매일의 음식",
+  "budgetExpenseEatingOut": "외식",
+  "budgetExpenseEntertainment": "오락",
+  "budgetExpenseFlights": "항공편",
+  "budgetExpenseGrocery": "식료품점",
+  "budgetExpenseHotels": "호텔",
+  "budgetExpenseMisc": "기타",
+  "budgetExpensePhoneService": "전화 서비스",
+  "budgetExpenseShopping": "쇼핑",
+  "budgetExpenseTourism": "관광 여행",
+  "budgetExpenseTransportation": "운송",
+  "budgetExpenseTravelInsurance": "여행 보험",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3,000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "목적지에서",
+  "budgetNoCategories": "아직 비용 카테고리가 없습니다.",
+  "budgetOtherExpenses": "기타 비용({code})",
+  "budgetPerDayEstimate": "하루당(추정)",
+  "budgetPerDayValue": "≒ {amount}/일",
+  "budgetRemainingAfter": "지출 후 남은 금액 · {code}",
+  "budgetSave": "예산 절약",
+  "budgetSpendingPower": "소비력",
+  "budgetSpentVsBudget": "지출과 예산",
+  "budgetTotalBudget": "총 예산({code})",
+  "budgetTotalForTrip": "여행 총액({code})",
+  "budgetTripDashboard": "계기반",
+  "budgetTripLengthDays": "여행 기간(일)",
+  "budgetTripTitle": "여행 예산",
+  "commonAdd": "추가하다",
+  "commonCancel": "취소",
+  "commonDelete": "삭제",
+  "commonOk": "좋아요",
+  "commonRemove": "제거하다",
+  "commonRename": "이름 바꾸기",
+  "commonSave": "구하다",
+  "commonKeyboardDone": "완료",
+  "countryCountriesCount": "{count} 국가",
+  "countryPickerTitle": "국가 선택",
+  "countrySheetSearchHint": "국가 이름 또는 ISO 코드 검색",
+  "countrySheetTitle": "기본 국가/지역",
+  "cryptoHeader": "암호화폐",
+  "cryptoMockPerUnit": "모의 ~{price}/단위",
+  "cryptoPickerTitle": "동전을 골라보세요",
+  "cryptoSheetTitle": "암호화폐 선택",
+  "currencyPickerSearchHint": "종목 또는 이름 검색",
+  "currencyPickerTitle": "통화를 선택하세요",
+  "currencySheetCountShown": "{total} 중 {shown} 표시됨",
+  "currencySheetSearchHint": "검색 코드, 이름 또는 숫자 ISO",
+  "currencySheetTitle": "통화 선택",
+  "exchangeBaseSuffix": "· 베이스",
+  "exchangeCouldNotLoad": "요금을 로드할 수 없습니다.\n{error}",
+  "exchangeHeader": "교환",
+  "exchangeLastUpdated": "마지막 업데이트: {mins}분 전",
+  "exchangeLastUpdatedOffline": "마지막 업데이트: {mins}분 전(오프라인)",
+  "exchangeResetOne": "1로 재설정(USD 기본)",
+  "exchangeResetTooltip": "금액 재설정",
+  "exchangeResetZero": "0으로 클리어",
+  "itineraryDayPrefix": "{day}일: {date}",
+  "itineraryEmpty": "아직 이벤트가 없습니다.\n항공편, 호텔, 계획을 추가하려면 +를 탭하세요.",
+  "itineraryHeader": "여행일정",
+  "itineraryHiveError": "저장된 여행일정 데이터를 열 수 없습니다.\n여전히 이벤트를 추가해 볼 수 있습니다. 이벤트가 지속되지 않을 수도 있습니다.\n({error})",
+  "itineraryOpenOnMap": "지도에서 열기",
+  "mapAddToTrip": "여행에 추가",
+  "mapClearRoute": "명확한 경로 및 안내",
+  "mapClearTooltip": "분명한",
+  "mapDisplayCurrentViewport": "현재 뷰포트",
+  "mapDisplaySavedSearch": "저장된 검색",
+  "mapDisplayTripDestination": "여행 목적지",
+  "mapDownloadAll": "모두 다운로드",
+  "mapDownloadCurrentRegion": "오프라인 사용을 위해 현재 지역 다운로드",
+  "mapDownloadThisDestination": "이 목적지를 다운로드하세요",
+  "mapDownloadedRegions": "다운로드된 지역",
+  "mapDownloadingRegion": "지역 다운로드 중...",
+  "mapDownloadingTitle": "{title} 다운로드 중...",
+  "mapFromItinerary": "여행 일정에서",
+  "mapItineraryEmptyHint": "여행 일정 목적지를 추가하여 여기에서 미리 다운로드하세요.",
+  "mapLoadingRegions": "오프라인 지역 로드 중…",
+  "mapLocatingQuery": "{query} 찾는 중...",
+  "mapMarkCategoryBody": "이 오프라인 핀에 라벨을 지정하는 방법을 선택하세요.",
+  "mapMarkCategoryTitle": "이 마크의 카테고리",
+  "mapMarkFood": "음식",
+  "mapMarkHotel": "호텔",
+  "mapMarkLandmark": "경계표",
+  "mapMarkOther": "다른",
+  "mapNextInstruction": "다음 명령({current}/{total})",
+  "mapNoLocationSet": "설정된 위치 없음",
+  "mapNoRegionsYet": "아직 다운로드한 지역이 없습니다.",
+  "mapOfflineIntro": "현재 표시되는 지역을 저장하거나 여행 목적지를 미리 다운로드하여 외부에서도 탐색할 수 있습니다.",
+  "mapOfflineMapsTitle": "오프라인 지도",
+  "mapRefreshTooltip": "새로 고치다",
+  "mapRemovePinTooltip": "핀 제거",
+  "mapSaveOffline": "오프라인으로 저장",
+  "mapSavePinToMap": "지도에 핀 저장",
+  "mapSavedPinsBody": "검색에서 저장한 핀입니다. 지도에서 하나를 제거하려면 삭제를 탭하세요.",
+  "mapSavedPinsTitle": "저장된 지도 핀",
+  "mapSearchHint": "도시, 주소, 랜드마크를 검색하세요…",
+  "mapSnackAddedOfflineMark": "{title}이(가) 오프라인 표시에 추가되었습니다.",
+  "mapSnackArrived": "당신은 도착했습니다.",
+  "mapSnackCouldNotFind": "\"{query}\"을(를) 찾을 수 없습니다.",
+  "mapSnackDeleteFailed": "삭제 실패: {error}",
+  "mapSnackDownloadFailed": "오프라인 다운로드 실패: {error}",
+  "mapSnackDownloadedEvent": "'{title}'을(를) 다운로드했습니다.",
+  "mapSnackEventNoLocation": "\"{title}\"에는 설정된 위치가 없습니다.",
+  "mapSnackFinishedBatch": "{count} 여행 일정 지역 다운로드가 완료되었습니다.",
+  "mapSnackLoadRegionsFailed": "오프라인 지역을 로드할 수 없습니다: {error}",
+  "mapSnackLocationOff": "위치 서비스가 꺼져 있습니다. 탐색을 시작하려면 활성화하세요.",
+  "mapSnackLocationPermission": "턴바이턴을 위해서는 위치 권한이 필요합니다.",
+  "mapSnackLocationDeniedForMap": "지도 중앙에 위치를 지정하려면 위치 권한이 필요합니다.",
+  "mapSnackLocateFail": "지금은 위치를 확인할 수 없습니다.",
+  "mapLocateMeTooltip": "내 위치로 이동",
+  "mapSnackMapNotReady": "지도가 아직 준비되지 않았습니다. 잠시만 기다려주세요.",
+  "mapSnackNavStartFail": "지금은 내비게이션을 시작할 수 없습니다.",
+  "mapSnackNavStopped": "내비게이션이 중지되었습니다.",
+  "mapSnackNoItineraryLocations": "여행 일정 이벤트에는 다운로드할 위치나 지도 지점이 없습니다.",
+  "mapSnackNoManeuver": "이 단계에는 정확한 기동 지점이 없습니다.",
+  "mapSnackNoRoute": "경로를 찾을 수 없습니다. 목적지를 보여줍니다.",
+  "mapSnackRegionDownloaded": "지역이 성공적으로 다운로드되었습니다! 이제 오프라인으로 탐색할 수 있습니다.",
+  "mapSnackRemovedPin": "저장된 핀을 제거했습니다.",
+  "mapSnackRemovedRegion": "오프라인 지역 '{name}'을(를) 삭제했습니다.",
+  "mapSnackRouteCleared": "경로 및 안내가 삭제되었습니다.",
+  "mapSnackRoutingFailed": "라우팅 실패: {error}",
+  "mapSnackSearchFailed": "검색 실패: {error}",
+  "mapStartNavigation": "내비게이션 시작",
+  "mapStartingNav": "내비게이션 시작 중...",
+  "mapStopNavigation": "탐색 중지",
+  "mapTravelDriving": "운전",
+  "mapTravelWalking": "걷는",
+  "mapTurnByTurn": "턴바이턴({mode})",
+  "mindMapCaptureFail": "마인드맵을 캡쳐하지 못했습니다. 다시 시도해 보세요.",
+  "mindMapClearBody": "이렇게 하면 모든 노드가 제거되고 데모 마인드 맵(가운데 예)이 복원됩니다.",
+  "mindMapClearTitle": "캔버스를 지우시겠습니까?",
+  "mindMapClearTooltip": "지우기 / 재설정",
+  "mindMapCouldNotSave": "저장할 수 없습니다: {error}",
+  "mindMapCouldNotSaveType": "저장할 수 없습니다: {type}",
+  "mindMapEmailShare": "이메일 / 공유",
+  "mindMapEmptyNode": "빈 노드",
+  "mindMapHelpHint": "핀치하여 확대/축소 · 캔버스 드래그 · 카드 드래그 · 카드를 탭하여 편집 · + 어린이 추가",
+  "mindMapNodeAddLeftTooltip": "왼쪽 자식 추가",
+  "mindMapNodeAddRightTooltip": "오른쪽 자식 추가",
+  "mindMapNodeDeleteTooltip": "노드 삭제",
+  "mindMapNodeEditTitle": "노드 편집",
+  "mindMapNodeHint": "짧은 라벨을 입력하세요.",
+  "mindMapPhotoAccess": "이미지를 저장하려면 사진 라이브러리 접근 권한이 필요합니다.",
+  "mindMapReset": "다시 놓기",
+  "mindMapSavePhoto": "사진으로 저장",
+  "mindMapSavedPhotos": "포토에 저장됨",
+  "mindMapShareCaptureFail": "공유할 마인드맵을 캡쳐하지 못했습니다.",
+  "mindMapShareCompleted": "공유 완료",
+  "mindMapShareFailed": "공유 실패: {error}",
+  "mindMapShareReady": "이미지 준비됨 - 공유할 앱을 선택하세요",
+  "mindMapShareSheetClosed": "공유 시트가 닫혔습니다.",
+  "mindMapShareSubject": "Tripmetic — 마인드맵",
+  "mindMapShareText": "Tripmetic에서 마인드맵 내보내기",
+  "mindMapTapToEdit": "수정하려면 탭하세요.",
+  "moreToolsHeader": "더 많은 도구",
+  "moreToolsSubtitle": "여행 유틸리티",
+  "navCurrency": "통화",
+  "navItinerary": "여행일정",
+  "navMoreTools": "더 많은 도구",
+  "navOfflineMap": "오프라인 지도",
+  "navDashboard": "계기반",
+  "navMoreMenu": "더",
+  "navEditNavigation": "탐색 수정",
+  "navDoneEditing": "완료",
+  "navSelectSlotHint": "슬롯을 탭한 다음 도구를 탭하여 할당하세요.",
+  "navSavePins": "구하다",
+  "navPinnedSectionTitle": "하단바에 고정됨",
+  "navAvailableSectionTitle": "사용 가능한 기능",
+  "navEmptySlot": "비어 있음 - 아래에서 추가 가능",
+  "navPinFullHint": "슬롯 4개가 모두 꽉 찼습니다. 다른 하나를 추가하려면 하나를 제거하세요.",
+  "navEditPinnedHint": "슬롯을 비우려면 −를 사용하고, 슬롯을 채우려면 +를 사용하고, 순서를 변경하려면 드래그하세요. 4개가 모두 채워지면 저장하세요.",
+  "navAddToPinned": "하단바에 추가",
+  "navRemoveFromPinned": "하단바에서 제거",
+  "navFeatureBadgeFree": "무료",
+  "navFeatureBadgePro": "찬성",
+  "moreMenuSectionFree": "무료 기능",
+  "moreMenuSectionPro": "Tripmetic 프로",
+  "ourAppsMenuTitle": "우리의 앱",
+  "ourAppsMenuSubtitle": "p1.do 팀의 추가 소프트웨어",
+  "ourAppsScreenTitle": "우리의 앱",
+  "ourAppsIntro": "p1.do 팀의 소프트웨어 - 라이브 앱을 탭하여 해당 사이트를 엽니다. 스트림 CRM이 곧 출시될 예정입니다.",
+  "ourAppsBadgeLive": "출시됨",
+  "ourAppsBadgeSoon": "곧 출시 예정",
+  "ourAppsBadgeThisApp": "이 앱",
+  "ourAppsViewOnline": "p1.do에서 모두 보기",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "웹 · 모바일",
+  "ourAppsPlatformWebTabletMobile": "웹 · 태블릿 · 모바일",
+  "ourAppsTravelRecapTagline": "AI 여행 경로 및 사진 요약",
+  "ourAppsTravelRecapSummary": "대화형 지도에서 다지점 여행을 계획하고, AI을 사용하여 경로를 생성하고, 목적지를 추가하고, 사진에서 세련된 여행 요약을 내보냅니다.",
+  "ourAppsP1doTagline": "약력 및 제작자 CRM",
+  "ourAppsP1doSummary": "월 수수료 외에 추가 수익을 삭감하지 않고도 CRM 리드와 Premium Selling 및 약속 예약을 확보하는 제작자를 위한 약력 링크입니다.",
+  "ourAppsDockTxtTagline": "macOS 가장자리 고정 스크래치패드 및 정확한 차이",
+  "ourAppsDockTxtSummary": "일반 텍스트 스크래치 패드 작업, 공백 삭제, JSON 꾸미기 및 문자 수준 차이를 위한 무료 기본 macOS 플로팅 서랍입니다.",
+  "ourAppsTripmeticTagline": "글로벌 여행 툴킷 및 예산 플래너",
+  "ourAppsTripmeticSummary": "버킷 목록, 오프라인 지도, 그룹 여행 일정, 다국적 예산, 시간대 위젯, 포장 목록 및 변환기를 위한 단일 대시보드입니다.",
+  "ourAppsPayxtTagline": "몇 초 만에 텍스트-결제 송장",
+  "ourAppsPayxtSummary": "모바일 전문가를 위한 Stripe 및 PayPal 기반 체크아웃 링크를 사용하여 문자 메시지를 안전한 유료 송장으로 바꿔보세요.",
+  "ourAppsPermitMobileTagline": "리모델링 업체를 위한 건축 허가 추적기",
+  "ourAppsPermitMobileSummary": "작업 현장에서 도시 건축 허가 상태(시 포털의 번호, 주소 및 승인 업데이트)를 모니터링합니다.",
+  "ourAppsTrackkrTagline": "아파트 필지관리",
+  "ourAppsTrackkrSummary": "들어오는 패키지를 몇 초 만에 기록하고, 이메일(선택 사항 SMS)로 테넌트에게 알리고, 영구 무료 기본 계획에 따라 무제한 단위를 관리하세요.",
+  "ourAppsKeyForecastsTagline": "HVAC 지시선에 대한 분수 제어기",
+  "ourAppsKeyForecastsSummary": "HVAC 및 건설에 대한 실무 재무 인텔리전스 - 작업 원가 계산, 계절별 현금 흐름 예측 및 확장 가능한 보고.",
+  "ourAppsStreamCrmTagline": "TikTok 실시간 선물 추적 및 기부자 CRM",
+  "ourAppsStreamCrmSummary": "TikTok 라이브 선물을 실시간으로 추적하고, 수입에서 선물 지출을 분리하고, 기부자 프로필을 통해 최고의 후원자를 육성하세요.",
+  "proGlassTeaserTitle": "Tripmetic 프로 기능",
+  "dashboardWorldExplorerSection": "월드 익스플로러",
+  "dashboardWorldExplorerCountriesLabel": "방문한 국가",
+  "dashboardWorldExplorerPercentLabel": "탐험된 세계의",
+  "dashboardWorldExplorerPercentValue": "{percent}%",
+  "bucketListDisplayNameLabel": "표시 이름",
+  "bucketListMapUnavailable": "Mapbox 액세스 토큰이 구성되지 않아 지도를 표시할 수 없습니다.",
+  "bucketListAuthValidationDisplayName": "이름을 입력하세요",
+  "authSignUpScreenTitle": "Tripmetic 계정을 만드세요",
+  "authSignUpScreenSubtitle": "선택 사항 - 클라우드 백업을 원하는 경우에만 해당됩니다. 가입하지 않고도 이 기기의 모든 도구를 계속 사용할 수 있습니다.",
+  "authSignInScreenTitle": "Tripmetic에 로그인",
+  "authSignInScreenSubtitle": "선택 사항 - 버킷 목록과 클라우드 그룹 여행을 동기화합니다. 나머지 Tripmetic은 계정 없이 작동합니다.",
+  "authForgotPassword": "비밀번호를 잊으셨나요?",
+  "authPasswordResetConfirmation": "해당 이메일에 대한 계정이 존재하는 경우 비밀번호를 재설정할 수 있는 링크를 받게 됩니다.",
+  "authUnexpectedError": "문제가 발생했습니다. 다시 시도해 주세요.",
+  "authBackupBulletBucketList": "버킷리스트 목적지는 클라우드에 저장되어 로그인 시 병합됩니다.",
+  "authBackupBulletGroupTrips": "귀하가 생성하거나 참여하는 그룹 여행은 귀하의 계정에 저장됩니다.",
+  "authBackupBulletMultiDevice": "동기화된 데이터를 복원하려면 다른 기기에 로그인하세요.",
+  "authLinkAlreadyHaveAccount": "이미 계정이 있나요? 로그인",
+  "authLinkNeedAccount": "계정이 필요하십니까? 하나 만들기",
+  "authFullSignUpCta": "전체 가입 화면 사용",
+  "authFullSignInCta": "전체 로그인 화면 사용",
+  "dashboardGreeting": "안녕하세요, {name}",
+  "dashboardGuestName": "여행자",
+  "dashboardWelcomeSubtitle": "탭 한 번으로 함께 계획하고 체계적으로 정리하고 도구를 사용할 수 있습니다.",
+  "dashboardPlanGroupTrip": "새로운 단체 여행을 계획해보세요",
+  "dashboardAddBucketList": "버킷리스트에 추가",
+  "dashboardActiveTripSection": "활성 여행 스냅샷",
+  "dashboardNoUpcomingTripTitle": "예정된 단체 여행이 없습니다.",
+  "dashboardNoUpcomingTripBody": "친구와 함께 계획을 세울 때 다음 여행 요약이 여기에 표시됩니다.",
+  "dashboardQuickToolsSection": "빠른 도구",
+  "dashboardCountdownStartsIn": "{days}일 후에 시작됩니다.",
+  "dashboardCountdownEndsIn": "{days}일 후에 종료됩니다.",
+  "navDashboardBody": "여행 허브 — 바 또는 추가 메뉴에서 도구를 엽니다.",
+  "appSettings": "앱 설정",
+  "settingsSectionTripmeticPro": "Tripmetic 프로",
+  "settingsSubscriptionActive": "활성 구독",
+  "settingsSubscriptionLifetime": "평생 이용 가능",
+  "settingsSubscriptionFree": "무료 플랜",
+  "settingsManageBilling": "청구 관리",
+  "settingsTestModeSectionTitle": "테스트 모드",
+  "settingsTestModeProTitle": "Tripmetic Pro로 테스트",
+  "settingsTestModeProSubtitle": "테스트를 위한 로컬 재정의 RevenueCat을 무시합니다.",
+  "settingsTestModeProCaption": "활성화되면 이 장치는 모든 Pro 기능을 로컬로 잠금 해제합니다. 내부 테스트용으로만 사용되며 실제 구독에는 영향을 주지 않습니다.",
+  "settingsUnitsTitle": "측정 단위",
+  "settingsLanguageTitle": "언어",
+  "settingsThemeTitle": "주제",
+  "settingsClockWidgetTitle": "시계 위젯",
+  "settingsCurrencyWidgetTitle": "통화 위젯",
+  "settingsCurrencyWidgetSubtitle": "홈 및 잠금 화면: 기본 통화의 1, 20, 100",
+  "settingsThemeSystem": "체계",
+  "settingsThemeLight": "빛",
+  "settingsThemeDark": "어두운",
+  "settingsLanguageSystem": "시스템 기본값",
+  "settingsLanguageEnglish": "영어",
+  "settingsLanguageSpanish": "스페인 사람",
+  "settingsProfileTitle": "프로필 및 클라우드 동기화",
+  "settingsLogout": "로그아웃",
+  "settingsLogoutConfirm": "이 계정에서 로그아웃하시겠습니까?",
+  "settingsDeleteAccount": "계정 삭제",
+  "settingsDeleteAccountBody": "계정 삭제는 지원팀에서 처리합니다. 아래에서 로그아웃할 수 있습니다.",
+  "settingsSectionAccount": "계정",
+  "accountManagementListTitle": "계정 관리",
+  "accountManagementListSubtitle": "이름, 이메일, 비밀번호 업데이트",
+  "accountManagementTitle": "계정 관리",
+  "accountSectionProfile": "윤곽",
+  "accountSectionSignIn": "로그인",
+  "accountFieldDisplayName": "표시 이름",
+  "accountFieldEmail": "이메일",
+  "accountFieldCurrentPassword": "현재 비밀번호",
+  "accountFieldNewPassword": "새 비밀번호",
+  "accountSaveName": "이름 저장",
+  "accountChangeEmail": "확인 보내기 및 이메일 변경",
+  "accountChangePassword": "비밀번호 변경",
+  "accountSignedOutMessage": "계정을 관리하려면 로그인해야 합니다.",
+  "accountSignInCta": "로그인",
+  "accountNameSaved": "이름이 업데이트되었습니다.",
+  "accountEmailVerificationSent": "{email}(으)로 확인 링크가 전송되었습니다. 로그인 주소를 변경하려면 확인하세요.",
+  "accountPasswordChanged": "비밀번호가 업데이트되었습니다.",
+  "accountReauthRequired": "보안을 위해 다시 로그인하여 {field}을(를) 변경하세요.",
+  "accountFieldLabelEmail": "이메일",
+  "accountFieldLabelPassword": "비밀번호",
+  "accountErrorGeneric": "{field}을(를) 업데이트할 수 없습니다: {error}",
+  "accountReauthAction": "다시 로그인",
+  "accountValidationEmailRequired": "이메일을 입력하세요",
+  "accountValidationEmailInvalid": "유효한 이메일을 입력하세요",
+  "accountValidationNameRequired": "이름을 입력하세요",
+  "accountValidationPasswordTooShort": "8자 이상 사용하세요.",
+  "accountCurrentEmailLabel": "현재 이메일: {email}",
+  "proPaywallTitle": "Tripmetic 프로",
+  "proPaywallSubtitle": "오프라인 지도, 심도 있는 여행 도구 및 공동작업을 잠금 해제하세요.",
+  "proPaywallBenefits": "오프라인 지도 및 지역 다운로드\n일정, 예산, 보관 및 포장\n그룹 플래너 및 실시간 동기화",
+  "proPaywallBullets": "오프라인 지도 및 지역 다운로드|일정, 예산, 보관 및 포장|그룹 플래너 및 실시간 동기화",
+  "proPaywallUpgradeRevenueCat": "RevenueCat을(를) 통해 업그레이드",
+  "upgradeNow": "지금 업그레이드",
+  "packingCatClothing": "의류",
+  "packingCatDocuments": "서류",
+  "packingCatMedications": "약물",
+  "packingCatMisc": "기타",
+  "packingCatReservations": "전세",
+  "packingEmpty": "귀하의 목록이 비어 있습니다.\n항목을 추가하려면 +를 탭하세요.",
+  "packingEmptyHidden": "짐을 꾸릴 것이 더 이상 없습니다. 또는 완료된 항목을 보려면 \"완료된 항목 숨기기\"를 끄십시오.",
+  "packingHeader": "포장 및 물류",
+  "packingHideCompleted": "숨기기 완료",
+  "packingHideCompletedSubtitle": "완료된 항목은 계속 저장됩니다. 이 보기에서만 숨겨집니다.",
+  "packingStarterPassport": "여권",
+  "packingStarterShirts": "셔츠",
+  "packingStarterSocks": "양말",
+  "packingStarterTickets": "항공권",
+  "packingStarterToothbrush": "칫솔",
+  "paywallDisabledBody": "RevenueCat UI 검토를 위해 페이월이 일시적으로 비활성화되었습니다.",
+  "paywallDisabledTitle": "페이월이 비활성화되었습니다.",
+  "presentationDeleteBody": "정말로 이 문서를 Vault에서 제거하시겠습니까?",
+  "presentationDeleteTitle": "문서를 삭제하시겠습니까?",
+  "presentationImageLoadFail": "이미지를 로드하지 못했습니다.",
+  "proActive": "활동적인",
+  "proManageHintFree": "월간 구독으로 Pro 기능을 잠금 해제하세요.",
+  "proManageHintPro": "구독을 관리하거나 구매를 복원하세요.",
+  "proManageSubscription": "구독 관리",
+  "proName": "Tripmetic 프로",
+  "proPaywallError": "페이월을 표시할 수 없습니다. RevenueCat 제품을 확인하세요.",
+  "proPaywallNotConfigured": "이 설치에서는 구독을 사용할 수 없습니다. Pro로 업그레이드하려면 Google Play에서 Tripmetic을 설치하세요.",
+  "proRestoreFailed": "복원 실패: {message}",
+  "proTrialCta": "3일 무료 평가판을 시작하세요",
+  "proWelcome": "Tripmetic Pro에 오신 것을 환영합니다.",
+  "schedulerAvailabilityGood": "좋은",
+  "schedulerAvailabilityOffHours": "근무 외 시간",
+  "schedulerAvailabilityOk": "좋아요",
+  "schedulerBaseLocation": "기본 위치",
+  "schedulerBaseTooltip": "날짜, 시간 및 슬라이더는 기본 시계({zone})에 적용됩니다. 각 도시 행은 해당 구역에서 동일한 순간을 표시합니다.",
+  "schedulerConvertedCities": "변환된 도시",
+  "schedulerDayNext": "+1일",
+  "schedulerDayPrevious": "-1일",
+  "schedulerDaySame": "같은 날",
+  "schedulerMeetingTime": "집합 시간",
+  "schedulerSubtitle": "회의 중복",
+  "schedulerTitle": "글로벌 스케줄러",
+  "settingsAndInfo": "설정 및 정보",
+  "settingsContact": "문의하기",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "링크를 열 수 없습니다.",
+  "settingsHelpFaq": "도움말 및 FAQ",
+  "settingsPrivacy": "개인 정보 보호 정책",
+  "settingsSupportLegal": "지원 및 법률",
+  "settingsTerms": "이용약관",
+  "settingsMapboxAttributionTitle": "지도 데이터(Mapbox)",
+  "settingsMapboxAttributionBody": "Tripmetic은 Mapbox 맵을 사용합니다. © Mapbox, © OpenStreetMap 및 기타 데이터 기여자. 더 명확한 레이아웃과 실수로 인한 탭을 줄이기 위해 지도 상의 로고와 속성 컨트롤이 앱에 숨겨져 있습니다. 이 공지는 Mapbox 표시 요구 사항을 충족합니다.",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — 지도 정보",
+  "sizeCatBelts": "벨트",
+  "sizeCatMensJeansCombo": "남성용 청바지 - W×L(미국)",
+  "sizeCatMensJeansInseam": "남성용 청바지 - 밑아래(L)",
+  "sizeCatMensJeansWaist": "남성용 청바지 - 허리(W)",
+  "sizeCatMensPants": "남성 바지",
+  "sizeCatMensShirts": "남성 셔츠",
+  "sizeCatMensShoes": "남성 신발",
+  "sizeCatMensTshirts": "남성 티셔츠",
+  "sizeCatWomensBlouses": "여성용 블라우스",
+  "sizeCatWomensDresses": "여성 드레스",
+  "sizeCatWomensPants": "여성용 바지",
+  "sizeCatWomensShoes": "여성 신발",
+  "sizeCatWomensTshirts": "여성용 티셔츠",
+  "sizeCatBoysShoes": "남아 신발(키즈)",
+  "sizeCatGirlsShoes": "여아 신발 (아동용)",
+  "sizeCatBoysTshirts": "남아 상의/티셔츠",
+  "sizeCatBoysPants": "남아용 바지",
+  "sizeCatGirlsTshirts": "여아상의 / 티셔츠",
+  "sizeCatGirlsPants": "여아 바지",
+  "sizeCatGirlsDressesKids": "여아 드레스(아동)",
+  "sizeColumnPrimaryEu": "기본: EU",
+  "sizeColumnPrimaryJp": "기본: 일본",
+  "sizeColumnPrimaryMixed": "기본: 혼합(EU→US→UK→JP)",
+  "sizeColumnPrimaryUk": "기본: 영국",
+  "sizeColumnPrimaryUs": "기본: 미국",
+  "sizeConverterAppBarSubtitle": "의류 및 신발",
+  "sizeConverterCategory": "범주",
+  "sizeConverterHeader": "의류 및 신발",
+  "sizeConverterTapToChange": "{code} · 변경하려면 탭하세요.",
+  "sizeConverterYourBaseSize": "기본 크기(태그에 있음)",
+  "sizeConverterYourCountry": "귀하의 국가/지역",
+  "sizeEquivalentSizesHeader": "동등한 크기",
+  "sizeHintBelts": "예를 들어 32, 34, 85, 90",
+  "sizeHintMensJeansCombo": "예를 들어 38x32 또는 38×32",
+  "sizeHintMensJeansInseam": "예를 들어 32(밑아래\") 또는 38x32 → 밑아래 32 사용",
+  "sizeHintMensJeansWaist": "예를 들어 38(허리\") 또는 38x32 → 허리 38 사용",
+  "sizeHintMensPants": "예를 들어 30, 32, 34 (허리\")",
+  "sizeHintMensShirts": "예를 들어 15, 38, 남",
+  "sizeHintMensShoes": "예를 들어 6~14, 42, 27",
+  "sizeHintMensTshirts": "예를 들어 S, M, L, 48",
+  "sizeHintWomensBlouses": "예를 들어 8, 38, M, XL",
+  "sizeHintWomensDresses": "예를 들어 8, 38, 남",
+  "sizeHintWomensPants": "예를 들어 6, 10, 38, 남",
+  "sizeHintWomensShoes": "예를 들어 5~12, 39, 25",
+  "sizeHintWomensTshirts": "예를 들어 XS, M, 38",
+  "sizeHintBoysShoes": "예를 들어 11C, 3Y, 32, 21",
+  "sizeHintGirlsShoes": "예를 들어 10C, 2Y, 33, 20",
+  "sizeHintBoysTshirts": "예를 들어 6, 8, M, XS",
+  "sizeHintBoysPants": "예를 들어 6, 8, 10(미국 어린이)",
+  "sizeHintGirlsTshirts": "예를 들어 6, 8, 남, 에스",
+  "sizeHintGirlsPants": "예를 들어 6, 8, 10(미국 어린이)",
+  "sizeHintGirlsDressesKids": "예를 들어 4, 6, 8, 104",
+  "sizeNoMatchEmpty": "의류나 신발에 인쇄된 사이즈를 입력하세요.",
+  "sizeNoMatchRow": "이 카테고리에 일치하는 크기 행이 없습니다. 해당하는 경우 미국, 영국, EU, JP 번호 또는 문자(S, M, L)를 사용해 보세요.",
+  "sizeTipJeansCombo": "예 US 38×32: 허리 ≒ EU 48, JP 허리 태그는 종종 ~96–97cm; 안쪽 솔기 32\" ≒ ~81cm. 브랜드마다 다르므로 이를 출발점으로 사용하세요.",
+  "sizeTipJeansInseam": "안쪽 솔기는 다리 안쪽 길이(인치)입니다(예: 32). 일본에서는 32인치 안쪽 솔기에 ~81cm가 표시될 수 있습니다. 38×32를 입력하세요. 우리는 안쪽 솔기에 32를 사용합니다.",
+  "sizeTipJeansWaist": "아시아 태그에 있는 숫자 중 하나는 허리를 나타내는 경우가 많습니다. 즉, 센티미터(38\" ≒ 96–97cm) 또는 미국 허리 인치(38)입니다. 줄자와 비교해 보세요. 여기에 38×32를 입력할 수 있습니다. 여기서는 허리에 38을 사용합니다.",
+  "timezonePickerEmpty": "일치하는 항목 없음",
+  "timezonePickerHint": "IANA 이름 검색(예: 유럽, 도쿄)",
+  "timezonePickerTitle": "시간대 선택",
+  "timezoneSheetCountZones": "{total} 영역 중 {shown}",
+  "timezoneSheetSearchHint": "IANA 이름 검색(예: 유럽, 도쿄)",
+  "timezoneSheetTitle": "시간대 선택",
+  "tipAmount": "팁 금액",
+  "tipAppBarSubtitle": "팁 및 청구서",
+  "tipBillHint": "예를 들어 $1,250,000.00",
+  "tipCountryBrazil": "브라질",
+  "tipCountryChina": "중국",
+  "tipCountryColombia": "콜롬비아",
+  "tipCountryDominicanRepublic": "도미니카 공화국",
+  "tipCountryEgypt": "이집트",
+  "tipCountryFrance": "프랑스",
+  "tipCountryGermany": "독일",
+  "tipCountryHongKong": "홍콩",
+  "tipCountryIndonesia": "인도네시아 공화국",
+  "tipCountryItaly": "이탈리아",
+  "tipCountryJapan": "일본",
+  "tipCountryMexico": "멕시코",
+  "tipCountryMorocco": "모로코 가죽",
+  "tipCountryPortugal": "포르투갈",
+  "tipCountrySingapore": "싱가포르",
+  "tipCountrySpain": "스페인",
+  "tipCountryThailand": "태국",
+  "tipCountryTurkey": "칠면조",
+  "tipCountryUae": "아랍에미리트(두바이)",
+  "tipCountryUnitedKingdom": "영국",
+  "tipCountryUsa": "미국",
+  "tipZeroReasonChina": "팁을 주는 것은 중국 본토에서는 관례가 아니며 많은 곳에서 거부되거나 이상하게 보일 수 있습니다.",
+  "tipZeroReasonFrance": "레스토랑 청구서에는 일반적으로 15%의 서비스 요금이 포함됩니다(서비스 구성). 탁월한 서비스를 위해 추가 팁은 선택 사항입니다.",
+  "tipZeroReasonJapan": "일본에서는 팁을 주는 행위가 시행되지 않으며 혼란이나 불쾌감을 줄 수 있습니다.",
+  "tipZeroReasonSingapore": "팁은 예상되지 않습니다. 많은 장소에서는 청구서에 10%의 봉사료를 추가합니다.",
+  "tipZeroReasonGeneric": "여기서는 0% 팁이 일반적입니다. 뛰어난 서비스에 대한 팁을 추가할 수 있습니다.",
+  "tipZeroReasonTitle": "왜 0%인가요?",
+  "tipCurrentCountry": "현재 국가",
+  "tipPeople": "사람들",
+  "tipPerPerson": "1인당 금액",
+  "tipPercentHint": "팁 %(예: 15 또는 27.5)를 입력하세요.",
+  "tipPercentLabel": "팁 %",
+  "tipResults": "결과",
+  "tipSmartHeader": "스마트팁",
+  "tipTotalBill": "총 청구금액",
+  "tipTotalWithTip": "팁 포함 합계",
+  "toolBrainstorm": "영감",
+  "toolBudget": "예산",
+  "toolBudgetSubtitle": "여행 예산 계획 및 비용 추적",
+  "toolBudgetTitle": "예산",
+  "toolItinerarySubtitle": "날짜별 항공편, 호텔, 계획",
+  "toolItineraryTitle": "여행일정",
+  "toolCrypto": "암호화폐",
+  "toolCryptoSubtitle": "USD 인기 코인의 가치",
+  "toolCryptoTitle": "암호화폐",
+  "toolDocumentVault": "문서 금고",
+  "toolMindMapSubtitle": "무한한 캔버스에 담긴 아이디어 · 오프라인",
+  "toolMindMapTitle": "브레인스토밍 마인드맵",
+  "toolPacking": "포장",
+  "toolPackingSubtitle": "여행별 스마트 짐 꾸리기 체크리스트",
+  "toolPackingTitle": "포장",
+  "toolSchedulerSubtitle": "이중 시간대 · 시차 계획",
+  "toolSchedulerTitle": "시간 및 날짜",
+  "toolSettingsAboutSubtitle": "공지사항, 도움말, 개인정보 보호 및 약관",
+  "toolSettingsAboutTitle": "설정 및 정보",
+  "toolSettingsInfo": "설정 및 정보",
+  "toolSizeSubtitle": "미국·영국·EU·일본(JP)",
+  "toolSizeTitle": "의류 사이즈 변환기",
+  "toolTimeDate": "시간 및 날짜",
+  "toolTipSubtitle": "국가 팁 규범 · 최대 20명으로 분할",
+  "toolTipTitle": "스마트 팁 및 청구서 분배기",
+  "toolUnits": "단위",
+  "toolUnitsSubtitle": "길이, 무게, 온도, 부피",
+  "toolUnitsTitle": "단위",
+  "toolVaultSubtitle": "중요한 여행 서류를 위한 오프라인 저장 공간",
+  "toolVaultTitle": "문서 금고",
+  "unitAcres": "에이커",
+  "unitCategoryArea": "영역",
+  "unitCategoryDistance": "거리",
+  "unitCategoryLength": "길이",
+  "unitCategoryTemperature": "온도",
+  "unitCategoryVolume": "용량",
+  "unitCategoryWeight": "무게",
+  "unitCelsius": "섭씨",
+  "unitCentimeters": "센티미터",
+  "unitFahrenheit": "화씨",
+  "unitFeet": "피트",
+  "unitGrams": "그램",
+  "unitHectares": "헥타르",
+  "unitInches": "신장",
+  "unitKilograms": "킬로그램",
+  "unitKilometers": "킬로미터",
+  "unitLiters": "리터",
+  "unitMeters": "미터",
+  "unitMiles": "마일리지",
+  "unitMilliliters": "밀리리터",
+  "unitOunces": "온스",
+  "unitPounds": "파운드",
+  "unitSquareCentimeters": "평방센티미터",
+  "unitSquareFeet": "평방피트",
+  "unitSquareInches": "평방인치",
+  "unitSquareKilometers": "평방킬로미터",
+  "unitSquareMeters": "평방미터",
+  "unitSquareYards": "평방야드",
+  "unitUsFluidOunces": "미국 액량 온스",
+  "unitUsGallons": "미국 갤런",
+  "unitYards": "야드",
+  "unitsHeader": "단위",
+  "vaultCategoryArrivalCard": "도착 카드",
+  "vaultCategoryHotelReservation": "호텔 예약",
+  "vaultCategoryOther": "다른",
+  "vaultCategoryPassportCopy": "여권 사본",
+  "vaultCategoryReturnFlight": "귀국 항공편",
+  "vaultCategoryVisa": "비자",
+  "vaultDocumentTitle": "문서",
+  "vaultIntro": "출입국 관리소에서 오프라인으로 액세스하고 빠르게 제출할 수 있도록 중요한 여행 문서를 안전하게 저장하세요.",
+  "vaultProcessFailed": "문서 처리 실패: {error}",
+  "vaultTapToUpload": "업로드하려면 탭하세요.",
+  "vaultTapToView": "보려면 탭하세요.",
+  "vaultVaultWord": "둥근 천장",
+  "bucketListTitle": "버킷리스트",
+  "bucketListSubtitle": "가본 곳, 가고 싶은 곳, 앞으로 할 일.",
+  "bucketListToolSubtitle": "지도와 목록에 있는 꿈의 목적지",
+  "bucketListViewModeList": "목록",
+  "bucketListViewModeMap": "지도",
+  "bucketListViewModePopular": "인기 있는",
+  "bucketListPopularHint": "Been, Live 및 Lived가 지도와 목록을 업데이트합니다. Want 및 Upcoming은 목록으로만 표시되며 지도에는 표시되지 않습니다.",
+  "bucketListCategoryBeen": "계속 ~ 이다",
+  "bucketListCategoryWant": "원하다",
+  "bucketListCategoryLive": "살다",
+  "bucketListCategoryLived": "살았다",
+  "bucketListCategoryUpcoming": "예정",
+  "bucketListDatesRange": "{start} – {end}",
+  "bucketListDetailCategory": "범주",
+  "bucketListDetailDates": "날짜",
+  "bucketListMapLegend": "자세한 내용을 보려면 아이콘을 탭하세요.",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "tripmetic.app",
+  "bucketListShareMapStatExplore": "{name}은 세계의 {worldPercent}%를 탐험했습니다. 세계 인구의 {populationPercent}% 이상을 여행했습니다.",
+  "bucketListShareMapTravelerFallback": "라파엘",
+  "bucketListShareMapStatPopulation": "세계 인구의 {percent}% 이상을 여행했습니다.",
+  "bucketListShareMapCountriesLabel": "국가",
+  "bucketListShareMapCitiesLabel": "도시",
+  "bucketListEmptyCategory": "이 카테고리에는 아직 장소가 없습니다.",
+  "bucketListTravelStats": "여행 통계",
+  "bucketListStatWorld": "탐험된 세계",
+  "bucketListStatUs": "미국 탐험",
+  "bucketListStatEurope": "유럽을 탐험했다",
+  "bucketListStatAsia": "아시아 탐험",
+  "bucketListStatAfrica": "아프리카 탐험",
+  "bucketListStatRegionalCaption": "지역",
+  "bucketListStatSubtitle": "{count} 고유 · {total} 중",
+  "bucketListAddDestination": "목적지 추가",
+  "bucketListEditDestination": "목적지 수정",
+  "bucketListSave": "구하다",
+  "bucketListFieldCity": "도시",
+  "bucketListFieldCountry": "국가",
+  "bucketListFieldCategory": "범주",
+  "bucketListFieldRegionHint": "주/도(선택사항)",
+  "bucketListFieldLatitude": "위도",
+  "bucketListFieldLongitude": "경도",
+  "bucketListFieldStart": "시작일",
+  "bucketListFieldEnd": "종료일",
+  "bucketListFieldTripDates": "여행 날짜",
+  "bucketListValidationRequired": "이 필드는 필수입니다.",
+  "bucketListValidationNumber": "유효한 숫자를 입력하세요.",
+  "bucketListValidationDates": "종료일은 시작일 또는 그 이후여야 합니다.",
+  "bucketListGeocodeNotFound": "지도에서 이 위치를 찾을 수 없습니다. 철자를 확인해주세요.",
+  "bucketListShareSummarySubject": "나의 Tripmetic 버킷리스트",
+  "bucketListShareTooltip": "목록 및 지도 공유",
+  "bucketListShareFailed": "공유할 수 없음: {error}",
+  "bucketListShareNeedMap": "지도 이미지를 캡처하기 전에 지도 보기를 엽니다.",
+  "bucketListDeleteHint": "스와이프하여 삭제",
+  "bucketListTapEditHint": "수정하려면 탭하세요.",
+  "bucketListCloudSyncFailed": "클라우드 동기화 실패: {error}",
+  "bucketListRetry": "다시 해 보다",
+  "bucketListBackupTooltip": "백업 및 등록",
+  "bucketListBackupTitle": "클라우드 백업",
+  "bucketListBackupGuestIntro": "Tripmetic은 계정 없이도 완벽하게 작동합니다. 버킷리스트와 공유 그룹 여행을 위한 클라우드 백업이 필요하다면 언제든지 추가하세요.",
+  "bucketListSignedInAs": "{email}(으)로 로그인됨",
+  "bucketListBackupEmail": "이메일",
+  "bucketListBackupPassword": "비밀번호",
+  "bucketListBackupConfirmPassword": "비밀번호 확인",
+  "bucketListAuthTabSignUp": "가입",
+  "bucketListAuthPasswordMismatch": "비밀번호가 일치하지 않습니다.",
+  "bucketListRegister": "계정 생성 및 백업",
+  "bucketListSignIn": "로그인",
+  "bucketListSignOut": "로그아웃",
+  "bucketListBackupUploading": "클라우드에 업로드 중…",
+  "bucketListAuthSuccessSignIn": "성공적으로 로그인되었습니다!",
+  "bucketListAuthSuccessSignUp": "계정이 성공적으로 생성되었습니다!",
+  "signUpSuccessMessage": "계정이 생성되었습니다. Tripmetic에 오신 것을 환영합니다!",
+  "signUpErrorEmailInUse": "이 이메일은 이미 등록되어 있습니다. 로그인해 보세요.",
+  "signUpErrorInvalidEmail": "유효한 이메일을 입력하세요.",
+  "signUpErrorWeakPassword": "비밀번호가 너무 취약합니다. 8자 이상을 사용하세요.",
+  "signUpErrorGeneric": "가입할 수 없음: {message}",
+  "signUpErrorEmailInUseAction": "로그인",
+  "bucketListAuthFailed": "인증할 수 없습니다: {error}",
+  "groupPlannerNoExtraDetails": "아직 메모나 링크가 없습니다.",
+  "groupPlannerTitle": "그룹 플래너",
+  "groupPlannerToolTitle": "그룹 플래너",
+  "groupPlannerToolSubtitle": "실시간으로 함께 여행을 계획해보세요",
+  "groupPlannerLandingPlanTitle": "단체 여행 계획하기",
+  "groupPlannerLandingPlanSubtitle": "목적지, 날짜, 예산이 포함된 공유 여행을 만드세요.",
+  "groupPlannerLandingJoinTitle": "단체 여행에 참여하세요",
+  "groupPlannerLandingJoinSubtitle": "초대장에 있는 여행 코드나 링크를 입력하세요.",
+  "groupPlannerCreateTripTitle": "새로운 단체 여행",
+  "groupPlannerSelectDates": "여행 날짜 범위를 선택하세요.",
+  "groupPlannerBudgetPerPersonOption": "1인당",
+  "groupPlannerBudgetGroupOption": "그룹 합계",
+  "groupPlannerBudgetNoneOption": "없음",
+  "groupPlannerBudgetAmountLabel": "예산 금액",
+  "groupPlannerOpenTitle": "단체 여행 열기",
+  "groupPlannerOpenSubtitle": "초대장에 있는 여행 코드를 붙여넣으세요.",
+  "groupPlannerOpenTripCodeLabel": "여행 코드",
+  "groupPlannerOpenHint": "단축 코드, 여행 ID 또는 초대 링크",
+  "groupPlannerOpenButton": "오픈트립",
+  "groupPlannerDestination": "목적지",
+  "groupPlannerDates": "날짜",
+  "groupPlannerGroupSize": "그룹 규모",
+  "groupPlannerBudget": "예산",
+  "groupPlannerBudgetPerPerson": "1인당: {amount}",
+  "groupPlannerBudgetGroup": "그룹 합계: {amount}",
+  "groupPlannerBudgetNone": "예산이 설정되지 않았습니다.",
+  "groupPlannerInviteMembers": "회원 초대",
+  "groupPlannerManageMembers": "회원 관리",
+  "groupPlannerItinerary": "여행일정",
+  "groupPlannerItineraryEditorHint": "여행 관리자 또는 여행 코디네이터는 활동을 추가하고 일정을 변경할 수 있습니다.",
+  "groupPlannerItineraryViewerHint": "읽기 전용: 엄지손가락을 위 또는 아래로 표시하여 추천 활동에 투표합니다. 여행 관리자와 여행 코디네이터만 항목을 추가하거나 변경할 수 있습니다.",
+  "groupPlannerNoActivities": "아직 활동이 없습니다.",
+  "groupPlannerTripNotFound": "이 여행을 로드할 수 없습니다.",
+  "groupPlannerSignInTitle": "로그인이 필요합니다",
+  "groupPlannerSignInBody": "버킷리스트 → 클라우드 백업에서 로그인하시면 공유된 여행을 보실 수 있습니다.",
+  "groupPlannerCreateTripSignInRequired": "새로운 단체 여행을 저장하려면 계정이 필요합니다. 계속하려면 로그인하세요. 다른 Tripmetic 기능은 로그인 없이도 작동합니다.",
+  "groupPlannerMembersTitle": "회원",
+  "groupPlannerRoleAdmin": "관리자",
+  "groupPlannerRoleCoPlanner": "여행 코디네이터",
+  "groupPlannerRoleViewOnly": "보기 전용",
+  "groupPlannerOwner": "소유자",
+  "groupPlannerRemoveMember": "제거하다",
+  "groupPlannerRemoveMemberTitle": "구성원을 삭제하시겠습니까?",
+  "groupPlannerRemoveMemberBody": "이 여행에서 {email}을(를) 삭제하시겠습니까?",
+  "groupPlannerCancel": "취소",
+  "groupPlannerNotes": "메모",
+  "groupPlannerOpenLink": "링크 열기",
+  "groupPlannerNetVotes": "{count}",
+  "groupPlannerVoteError": "투표를 저장할 수 없습니다: {error}",
+  "groupPlannerManageError": "회원을 업데이트할 수 없습니다: {error}",
+  "groupPlannerInviteError": "공유 시트를 열 수 없습니다: {error}",
+  "groupPlannerUnknownTripCode": "여행을 열 수 없습니다: {error}",
+  "groupPlannerMyTripsSectionTitle": "당신의 여행",
+  "groupPlannerMyTripsEmpty": "아직 여행이 없습니다. 위에서 하나를 만듭니다.",
+  "groupPlannerExamplesTitle": "여행 예시",
+  "groupPlannerExamplesSubtitle": "샘플 카드 - 위에서 여행을 만들어 나만의 여행을 추가하세요.",
+  "groupPlannerExampleTapBody": "이는 샘플일 뿐입니다. '단체 여행 계획하기'를 이용해 공유할 수 있는 실제 여행을 만들어보세요.",
+  "groupPlannerExampleLisbonTitle": "리스본 팀 오프사이트",
+  "groupPlannerExampleKyotoTitle": "교토 봄 여행",
+  "groupPlannerAddActivity": "활동 추가",
+  "groupPlannerActivityTitleLabel": "활동 제목",
+  "groupPlannerActivityWhenLabel": "날짜 및 시간",
+  "groupPlannerActivityTripDateRangeHelp": "여행 날짜를 정하고 시간을 정하세요. 여행 일정을 편집할 수 있는 사람은 누구나 나중에 이를 변경할 수 있습니다.",
+  "groupPlannerActivityDateOutOfRange": "해당 날짜는 이번 여행이 아닌 날짜입니다. 여행 시작일과 종료일 사이의 날짜를 선택하세요.",
+  "groupPlannerActivityTitleRequired": "활동 제목을 입력하세요.",
+  "groupPlannerActivityDateUnset": "날짜가 설정되지 않았습니다. 일정을 예약하려면 편집을 탭하세요.",
+  "groupPlannerPeopleCount": "{count}명",
+  "groupPlannerEditActivity": "활동 수정",
+  "groupPlannerDeleteActivity": "삭제",
+  "groupPlannerDeleteActivityTitle": "활동을 삭제하시겠습니까?",
+  "groupPlannerDeleteActivityBody": "여행 일정에서 \"{title}\"을(를) 제거하시겠습니까? 이 작업은 취소할 수 없습니다.",
+  "groupPlannerActivityDeleteError": "활동을 삭제할 수 없습니다: {error}",
+  "groupPlannerActivityEditError": "활동을 업데이트할 수 없습니다: {error}",
+  "groupPlannerEditTripTitle": "여행 수정",
+  "groupPlannerEditTripAction": "여행 수정",
+  "groupPlannerDeleteTripTitle": "여행을 삭제하시겠습니까?",
+  "groupPlannerDeleteTripBody": "모든 사람의 '{destination}' 여행 및 여행 일정을 영구적으로 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+  "groupPlannerDeleteTripAction": "여행 삭제",
+  "groupPlannerTripDeleted": "여행이 삭제되었습니다.",
+  "groupPlannerTripDeleteError": "여행을 삭제할 수 없습니다: {error}",
+  "groupPlannerTripUpdateError": "여행을 업데이트할 수 없습니다: {error}",
+  "widgetInstructionTitle": "듀얼 시계 위젯",
+  "widgetInstructionSubtitle": "잠금 화면이나 홈 화면에서 집과 목적지 시간대를 직접 추적하세요.",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "잠금 화면",
+  "widgetInstructionIosLockScreenStep1": "잠금 화면을 길게 누르고 '사용자 지정'을 탭하세요.",
+  "widgetInstructionIosLockScreenStep2": "'잠금 ​​화면' 미리보기를 선택하세요.",
+  "widgetInstructionIosLockScreenStep3": "시간 바로 아래의 위젯 영역을 탭하세요.",
+  "widgetInstructionIosLockScreenStep4": "아래로 스크롤하여 Tripmetic을 선택하고 탭하여 위젯을 추가하세요.",
+  "widgetInstructionIosHomeScreenTitle": "홈 화면",
+  "widgetInstructionIosHomeScreenStep1": "홈 화면의 빈 공간을 길게 누르세요.",
+  "widgetInstructionIosHomeScreenStep2": "왼쪽 상단에 있는 + 아이콘을 탭하세요.",
+  "widgetInstructionIosHomeScreenStep3": "'Tripmetic'을 검색하세요.",
+  "widgetInstructionIosHomeScreenStep4": "원하는 위젯 크기를 선택하고 '위젯 추가'를 탭하세요.",
+  "widgetInstructionAndroidStep1": "홈 화면으로 이동하여 빈 공간을 길게 누르세요.",
+  "widgetInstructionAndroidStep2": "\"위젯\"을 탭하세요.",
+  "widgetInstructionAndroidStep3": "Tripmetic까지 아래로 스크롤합니다.",
+  "widgetInstructionAndroidStep4": "듀얼 시계 위젯을 길게 누른 후 화면으로 드래그하세요.",
+  "widgetInstructionAndroidLockScreenHint": "잠금 화면에서 두 시계를 모두 보려면 설정을 열고 → '잠금 화면' 또는 '위젯'을 검색하고 휴대전화에서 잠금 화면 위젯을 제공하는 경우(일부 기기에서는 그렇지 않음) Tripmetic을 추가하세요.",
+  "widgetInstructionConfigureCta": "위젯 도시 구성",
+  "currencyWidgetInstructionTitle": "환율 계산기 위젯",
+  "currencyWidgetInstructionSubtitle": "기본 통화와 목표 통화를 Android 홈 화면에 고정하세요. Tripmetic에서 변환기를 사용할 때마다 요금이 동기화됩니다.",
+  "currencyWidgetInstructionAndroidTitle": "홈 화면에 추가",
+  "currencyWidgetInstructionAndroidStep1": "통화 도구를 한 번 열고 처음 두 통화(기본 및 목표)를 설정하세요.",
+  "currencyWidgetInstructionAndroidStep2": "홈 화면으로 이동하여 빈 공간을 길게 누르세요.",
+  "currencyWidgetInstructionAndroidStep3": "'위젯'을 탭하고 Tripmetic으로 스크롤한 다음 '통화 변환기'를 선택하세요.",
+  "currencyWidgetInstructionAndroidStep4": "위젯을 홈 화면으로 드래그하거나, 런처에서 지원하는 경우 추가를 탭하세요.",
+  "currencyWidgetInstructionUsageTitle": "위젯 사용",
+  "currencyWidgetInstructionUsageStep1": "Tripmetic에서 통화 선택을 열려면 변경(또는 위젯 본문)을 탭하세요.",
+  "currencyWidgetInstructionUsageStep2": "↻ 새로 고침을 눌러 백그라운드 위젯의 요율을 업데이트하세요(앱은 열리지 않습니다).",
+  "currencyWidgetInstructionUsageStep3": "앱에서 통화나 가치를 편집하면 금액이 자동으로 업데이트됩니다.",
+  "currencyWidgetInstructionPinCta": "홈 화면에 위젯 추가",
+  "currencyWidgetInstructionOpenCurrencyCta": "위젯 통화 변경",
+  "currencyWidgetInstructionIosHint": "통화 홈 화면 위젯은 Android에서 사용할 수 있습니다. iPhone에서는 앱 내 통화 도구를 사용하세요.",
+  "currencyWidgetPinUnsupported": "귀하의 런처는 앱에서 이 위젯을 추가하는 것을 지원하지 않습니다. 홈 화면을 길게 누르고 대신 위젯을 선택하세요.",
+  "currencyWidgetPinFailed": "위젯 선택기를 열 수 없습니다. 홈 화면에서 위젯을 수동으로 추가하세요.",
+  "dualClockScreenTitle": "듀얼 시계 위젯",
+  "dualClockConfigTitle": "도시 구성",
+  "dualClockConfigSubtitle": "두 개의 도시와 시간대를 선택하세요. 선택 사항은 Tripmetic 홈 화면 위젯(Android) 및 잠금 화면 위젯(iOS)에 동기화됩니다.",
+  "dualClockCity1Label": "첫 번째 도시",
+  "dualClockCity2Label": "두 번째 도시",
+  "dualClockSave": "위젯 저장 및 업데이트",
+  "dualClockSaved": "위젯이 업데이트되었습니다.",
+  "dualClockSaveError": "위젯 데이터를 저장할 수 없습니다. 다시 시도해 주세요.",
+  "dualClockAppearanceTitle": "위젯 모양",
+  "dualClockAppearanceHint": "텍스트 크기, 색상, 홈 화면 배경을 사용자 정의하세요. 잠금 화면에서는 글꼴 크기(및 시스템에서 허용하는 색상)를 사용합니다.",
+  "dualClockFontScaleLabel": "텍스트 크기",
+  "dualClockColorCity": "도시 이름",
+  "dualClockColorTime": "타임스",
+  "dualClockColorDate": "날짜",
+  "dualClockColorBackground": "홈 배경",
+  "dualClockShadowLabel": "텍스트 그림자",
+  "dualClockShadowSubtitle": "바쁘거나 사진이 있는 배경화면에 대비를 추가합니다.",
+  "moreToolsDualClockBannerTitle": "듀얼 시계 위젯",
+  "moreToolsDualClockBannerSubtitle": "잠금 화면이나 홈 화면에서 두 가지 시간대를 확인하세요. 탭하여 설정하세요.",
+  "moreToolsDualClockBannerCta": "설정",
+  "settingsDualClockWidgetTitle": "듀얼 시계 위젯",
+  "settingsDualClockWidgetSubtitle": "위젯을 추가하고 도시를 선택하세요",
+  "widgetNewFeatureBadge": "새로운",
+  "globalNavAccountCloudSyncTooltip": "계정 및 클라우드 백업",
+  "exchangeRatesForceRefreshTooltip": "최신 환율 가져오기",
+  "exchangeRatesRefreshedOk": "환율이 업데이트되었습니다.",
+  "exchangeRatesRefreshFailed": "환율을 새로고침할 수 없습니다.",
+  "bucketListStatUsTerritories": "미국 영토",
+  "bucketListAuthErrUserNotFound": "이 이메일에 대한 계정을 찾을 수 없습니다.",
+  "bucketListAuthErrWrongPassword": "이메일이나 비밀번호가 잘못되었습니다.",
+  "bucketListAuthErrEmailInUse": "이 이메일에 대한 계정이 이미 존재합니다.",
+  "bucketListAuthErrInvalidEmail": "이메일 주소가 잘못되었습니다.",
+  "bucketListAuthErrWeakPassword": "비밀번호가 너무 취약합니다.",
+  "bucketListAuthErrUserDisabled": "이 계정은 비활성화되었습니다.",
+  "bucketListAuthErrTooManyRequests": "시도 횟수가 너무 많습니다. 나중에 다시 시도하세요.",
+  "bucketListAuthErrOperationNotAllowed": "이메일/비밀번호 로그인이 활성화되지 않았습니다.",
+  "bucketListAuthErrDetail": "{detail}",
+  "bucketListAuthValidationInvalidEmail": "이메일 주소가 잘못되었습니다.",
+  "bucketListAuthValidationPasswordShort": "비밀번호는 6자 이상이어야 합니다.",
+  "bucketListAuthValidationPasswordRequired": "비밀번호를 입력하세요.",
+  "currencyWidgetAppearanceTitle": "모습",
+  "currencyWidgetAppearanceHint": "글꼴 크기, 텍스트 색상, 홈 화면 배경을 사용자 정의하세요. 홈 위젯은 고정된 크기를 유지하므로 큰 글꼴은 자동으로 맞춰져 모든 행이 계속 표시됩니다. 잠금 화면에서는 글꼴 크기(및 시스템에서 허용하는 색상)를 사용합니다.",
+  "currencyWidgetFontScaleLabel": "글꼴 크기",
+  "currencyWidgetColorPrimary": "기본 텍스트(금액/기본)",
+  "currencyWidgetColorAccent": "악센트 텍스트(쌍/사다리 라벨)",
+  "currencyWidgetColorCaption": "캡션 텍스트(요율 표시줄)",
+  "currencyWidgetColorBackground": "홈 배경",
+  "currencyWidgetSaveAppearance": "외모 저장",
+  "currencyWidgetAppearanceSaved": "통화 위젯 모양이 저장되었습니다.",
+  "currencyWidgetAppearanceSaveFailed": "위젯 모양을 저장할 수 없습니다.",
+  "currencyWidgetInstructionIosTitle": "iPhone",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalForTrip": {
+    "description": "Budget summary line; {code} is a currency code such as USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}

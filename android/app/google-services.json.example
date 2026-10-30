@@ -1,0 +1,37 @@
+{
+  "_comment": [
+    "TEMPLATE ONLY — mock values, safe to commit.",
+    "Copy to `google-services.json` and replace every `YOUR_…` value with the",
+    "real ones from Firebase Console → Project settings → Your apps → Android.",
+    "Optionally supply them as --dart-define values instead (see",
+    "lib/core/config/firebase_config.dart). The real google-services.json is",
+    "git-ignored and must never be committed."
+  ],
+  "project_info": {
+    "project_number": "YOUR_FIREBASE_PROJECT_NUMBER",
+    "project_id": "YOUR_FIREBASE_PROJECT_ID",
+    "storage_bucket": "YOUR_FIREBASE_STORAGE_BUCKET"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "YOUR_FIREBASE_MOBILESDK_APP_ID",
+        "android_client_info": {
+          "package_name": "com.tripmetic.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "YOUR_FIREBASE_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

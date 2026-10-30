@@ -1,0 +1,183 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# Firebase / secrets — never commit service accounts or local env
+*-firebase-adminsdk-*.json
+serviceAccount*.json
+**/serviceAccount*.json
+tripmetic-*.json
+appsumo_codes.csv
+scripts/node_modules/
+website/_next/
+website/redeem/
+website/admin/
+website/404.html
+
+# ─────────────────────────────────────────────────────────────────────
+# Environment files (.env / *.env / .env.*) — keep secrets local.
+# Every documented template (*.example) stays committable.
+# ─────────────────────────────────────────────────────────────────────
+.env
+.env.*
+**/.env
+**/.env.*
+*.env
+*.env.*
+# …but always keep the example templates.
+!.env.example
+!**/.env.example
+!**/.env.*.example
+
+# ─────────────────────────────────────────────────────────────────────
+# Firebase platform configuration.
+#
+# These files carry the Firebase API key, project number, app id and
+# storage bucket. The real ones are created locally from the matching
+# *.example template (scripts/setup_local_config.sh) or injected in CI.
+# ─────────────────────────────────────────────────────────────────────
+**/google-services.json
+**/GoogleService-Info.plist
+**/firebase_options.dart
+# …keep the templates.
+!**/google-services.json.example
+!**/GoogleService-Info.plist.example
+!**/firebase_options.dart.example
+
+# Apple App Store Connect / In-App Purchase API keys and signing material.
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.certSigningRequest
+App Store Connect-errors.pdf
+
+# Android signing material
+*.jks
+*.keystore
+*.pem
+
+# Build outputs that embed the signing identity / config
+*.ipa
+*.apk
+*.aab
+*.app.zip
+*.dSYM.zip
+Runner.app/
+Runner.app.dSYM/
+*.xcarchive
+
+# ─────────────────────────────────────────────────────────────────────
+# Android build output & signing material
+# ─────────────────────────────────────────────────────────────────────
+# Gradle / build directories
+/android/.gradle/
+/android/build/
+/android/app/build/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+/android/app/.cxx/
+/android/local.properties
+/android/key.properties
+/android/captures/
+/android/*.jks
+/android/*.keystore
+
+# Gradle/Android local properties anywhere in the tree
+local.properties
+**/local.properties
+
+# ─────────────────────────────────────────────────────────────────────
+# iOS build output & signing material
+# ─────────────────────────────────────────────────────────────────────
+/ios/build/
+/ios/Pods/
+/ios/.symlinks/
+/ios/Flutter/ephemeral/
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/flutter_export_environment.sh
+/ios/DerivedData/
+/ios/*.ipa
+/ios/*.dSYM
+/ios/*.xcarchive
+**/xcuserdata/
+**/xcscmblueprints/
+**/*.mobileprovision
+**/*.provisionprofile
+**/Pods/
+**/DerivedData/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Local Python virtualenvs used by the tooling scripts
+.venv-l10n/
+.venv-icons/
+.venv-tools/
+.tools-venv/
+.img-venv/
+.venv/
+
+# Local build / export output
+/webapp/out/
+/webapp/.next/
+/website/currency-calculator/
+/website/*.render/
+/website/screenshots/ScreenRecording_*.MP4
+/website/__next.*.txt
+/functions/lib/
+/.firebase/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+firestore-debug.log
+firebase-debug.log
+
+# Credential-bearing local configuration (templates use *.example)
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist
+/webapp/.env.local
+
+# Local Git hook installation target
+/.git-local/

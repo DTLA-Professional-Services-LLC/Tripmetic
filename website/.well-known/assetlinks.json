@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.tripmetic.app",
+    "sha256_cert_fingerprints": [
+      "58:54:19:D4:99:1B:77:5F:23:65:5B:00:C6:F5:40:3F:0E:CE:04:81:11:62:C0:55:74:59:8E:4B:CF:D5:99:C6"
+    ]
+  }
+}]

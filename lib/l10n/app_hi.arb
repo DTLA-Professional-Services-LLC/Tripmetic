@@ -1,0 +1,1335 @@
+{
+  "@@locale": "hi",
+  "@@context": "Tripmetic यात्रा ऐप यूआई। घुंघराले-ब्रेस प्लेसहोल्डर्स को बिल्कुल सुरक्षित रखें (जैसे {name}, {code})। ब्रांड नाम Tripmetic, RevenueCat, Android, iOS, Google Play, और ISO मुद्रा कोड (USD, EUR) को अअनुवादित रखें जब तक कि स्ट्रिंग पूरी तरह से व्याख्यात्मक न हो।",
+  "addItineraryEnterTitle": "कृपया एक शीर्षक दर्ज करें",
+  "addItineraryFieldLocation": "जगह",
+  "addItineraryFieldNotes": "टिप्पणियाँ/पुष्टि",
+  "addItineraryFieldTitle": "शीर्षक",
+  "addItineraryHintLocation": "हवाई अड्डा, होटल का पता...",
+  "addItineraryHintNotes": "रिकॉर्ड लोकेटर, लिंक...",
+  "addItineraryHintTitle": "लिस्बन के लिए उड़ान",
+  "addItinerarySave": "ईवेंट सहेजें",
+  "addItineraryTitle": "यात्रा कार्यक्रम जोड़ें",
+  "addPackingAddToList": "सूची में शामिल",
+  "addPackingEnterName": "कृपया एक आइटम का नाम दर्ज करें",
+  "addPackingFieldCategory": "वर्ग",
+  "addPackingFieldItemName": "आइटम नाम",
+  "addPackingHint": "जैसे बिजली अनुकूलक",
+  "addPackingIcon": "आइकन",
+  "addPackingQuantity": "मात्रा",
+  "addPackingTitle": "पैकिंग आइटम जोड़ें",
+  "announcementsLatest": "नवीनतम अपडेट",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "आधार मुद्रा",
+  "budgetCategoryDialogHint": "जैसे स्मृति चिन्ह",
+  "budgetCategoryNameExists": "नाम पहले से मौजूद है",
+  "budgetCategoryNameMax": "अधिकतम 40 अक्षर",
+  "budgetDailyFood": "रोज़ का खाना",
+  "budgetDestinationSearchHint": "देश या मुद्रा कोड खोजें",
+  "budgetDestinationTitle": "गंतव्य जोड़ें",
+  "budgetDialogAdd": "जोड़ना",
+  "budgetDialogNewCategory": "नई व्यय श्रेणी",
+  "budgetDialogRemoveBody": "\"{name}\" और उसकी मात्रा हटाएँ?",
+  "budgetDialogRemoveTitle": "श्रेणी हटाएँ",
+  "budgetDialogRename": "नाम बदलें",
+  "budgetDialogRenameCategory": "श्रेणी का नाम बदलें",
+  "budgetEdit": "बजट संपादित करें",
+  "budgetExpenseDailyFood": "रोज़ का खाना",
+  "budgetExpenseEatingOut": "बाहर खाना",
+  "budgetExpenseEntertainment": "मनोरंजन",
+  "budgetExpenseFlights": "टिकट",
+  "budgetExpenseGrocery": "किराना",
+  "budgetExpenseHotels": "होटल",
+  "budgetExpenseMisc": "विविध",
+  "budgetExpensePhoneService": "फ़ोन सेवा",
+  "budgetExpenseShopping": "खरीदारी",
+  "budgetExpenseTourism": "पर्यटन",
+  "budgetExpenseTransportation": "परिवहन",
+  "budgetExpenseTravelInsurance": "यात्रा बीमा",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3,000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "आपके गंतव्यों में",
+  "budgetNoCategories": "अभी तक कोई व्यय श्रेणियां नहीं",
+  "budgetOtherExpenses": "अन्य व्यय ({code})",
+  "budgetPerDayEstimate": "प्रति दिन (अनुमान)",
+  "budgetPerDayValue": "≈ {amount} / दिन",
+  "budgetRemainingAfter": "खर्च के बाद शेष · {code}",
+  "budgetSave": "बजट बचाएं",
+  "budgetSpendingPower": "खर्च करने की शक्ति",
+  "budgetSpentVsBudget": "खर्च बनाम बजट",
+  "budgetTotalBudget": "कुल बजट ({code})",
+  "budgetTotalForTrip": "यात्रा के लिए कुल ({code})",
+  "budgetTripDashboard": "डैशबोर्ड",
+  "budgetTripLengthDays": "यात्रा की लंबाई (दिन)",
+  "budgetTripTitle": "यात्रा बजट",
+  "commonAdd": "जोड़ना",
+  "commonCancel": "रद्द करना",
+  "commonDelete": "मिटाना",
+  "commonOk": "ठीक है",
+  "commonRemove": "निकालना",
+  "commonRename": "नाम बदलें",
+  "commonSave": "बचाना",
+  "commonKeyboardDone": "हो गया",
+  "countryCountriesCount": "{count} देश",
+  "countryPickerTitle": "देश चुनें",
+  "countrySheetSearchHint": "देश का नाम या ISO कोड खोजें",
+  "countrySheetTitle": "आधार देश/क्षेत्र",
+  "cryptoHeader": "क्रिप्टो",
+  "cryptoMockPerUnit": "मॉक ~{price} / यूनिट",
+  "cryptoPickerTitle": "एक सिक्का उठाओ",
+  "cryptoSheetTitle": "क्रिप्टोकरेंसी चुनें",
+  "currencyPickerSearchHint": "टिकर या नाम खोजें",
+  "currencyPickerTitle": "एक मुद्रा चुनें",
+  "currencySheetCountShown": "{total} में से {shown} दिखाया गया है",
+  "currencySheetSearchHint": "खोज कोड, नाम, या संख्यात्मक ISO",
+  "currencySheetTitle": "मुद्रा चुनें",
+  "exchangeBaseSuffix": "· आधार",
+  "exchangeCouldNotLoad": "दरें लोड नहीं की जा सकीं\n{error}",
+  "exchangeHeader": "अदला-बदली",
+  "exchangeLastUpdated": "अंतिम अद्यतन {mins} मिनट पहले",
+  "exchangeLastUpdatedOffline": "अंतिम अद्यतन {mins} मिनट पहले (ऑफ़लाइन)",
+  "exchangeResetOne": "1 पर रीसेट करें (USD आधार)",
+  "exchangeResetTooltip": "मात्राएँ रीसेट करें",
+  "exchangeResetZero": "0 पर साफ़ करें",
+  "itineraryDayPrefix": "दिन {day}: {date}",
+  "itineraryEmpty": "अभी तक कोई इवेंट नहीं.\nउड़ानें, होटल और योजनाएं जोड़ने के लिए + टैप करें।",
+  "itineraryHeader": "यात्रा कार्यक्रम",
+  "itineraryHiveError": "सहेजे गए यात्रा कार्यक्रम डेटा को नहीं खोला जा सका.\nआप अभी भी ईवेंट जोड़ने का प्रयास कर सकते हैं - हो सकता है कि वे बने न रहें।\n({error})",
+  "itineraryOpenOnMap": "मानचित्र पर खोलें",
+  "mapAddToTrip": "यात्रा में जोड़ें",
+  "mapClearRoute": "स्पष्ट मार्ग एवं मार्गदर्शन",
+  "mapClearTooltip": "स्पष्ट",
+  "mapDisplayCurrentViewport": "वर्तमान व्यूपोर्ट",
+  "mapDisplaySavedSearch": "सहेजी गई खोज",
+  "mapDisplayTripDestination": "यात्रा गंतव्य",
+  "mapDownloadAll": "सभी डाउनलोड करें",
+  "mapDownloadCurrentRegion": "ऑफ़लाइन उपयोग के लिए वर्तमान क्षेत्र डाउनलोड करें",
+  "mapDownloadThisDestination": "इस गंतव्य को डाउनलोड करें",
+  "mapDownloadedRegions": "डाउनलोड किए गए क्षेत्र",
+  "mapDownloadingRegion": "क्षेत्र डाउनलोड हो रहा है...",
+  "mapDownloadingTitle": "डाउनलोड हो रहा है {title}...",
+  "mapFromItinerary": "आपके यात्रा कार्यक्रम से",
+  "mapItineraryEmptyHint": "उन्हें यहां पहले से डाउनलोड करने के लिए यात्रा कार्यक्रम गंतव्य जोड़ें।",
+  "mapLoadingRegions": "ऑफ़लाइन क्षेत्र लोड हो रहे हैं...",
+  "mapLocatingQuery": "{query}...का पता लगाया जा रहा है",
+  "mapMarkCategoryBody": "इस ऑफ़लाइन पिन को लेबल करने का तरीका चुनें.",
+  "mapMarkCategoryTitle": "इस चिह्न के लिए श्रेणी",
+  "mapMarkFood": "खाना",
+  "mapMarkHotel": "होटल",
+  "mapMarkLandmark": "सीमाचिह्न",
+  "mapMarkOther": "अन्य",
+  "mapNextInstruction": "अगला निर्देश ({current}/{total})",
+  "mapNoLocationSet": "कोई स्थान निर्धारित नहीं",
+  "mapNoRegionsYet": "आपने अभी तक कोई क्षेत्र डाउनलोड नहीं किया है.",
+  "mapOfflineIntro": "वर्तमान में दृश्यमान क्षेत्र को सहेजें, या अपने यात्रा गंतव्यों को पहले से डाउनलोड करें ताकि आप ऑफ-ग्रिड होने पर नेविगेट कर सकें।",
+  "mapOfflineMapsTitle": "ऑफ़लाइन मानचित्र",
+  "mapRefreshTooltip": "ताज़ा करना",
+  "mapRemovePinTooltip": "पिन हटाओ",
+  "mapSaveOffline": "ऑफ़लाइन सहेजें",
+  "mapSavePinToMap": "मानचित्र पर पिन सहेजें",
+  "mapSavedPinsBody": "आपके द्वारा खोज से सहेजे गए पिन. मानचित्र से किसी को हटाने के लिए हटाएँ टैप करें।",
+  "mapSavedPinsTitle": "सहेजे गए मानचित्र पिन",
+  "mapSearchHint": "कोई शहर, पता, या मील का पत्थर खोजें...",
+  "mapSnackAddedOfflineMark": "{title} आपके ऑफ़लाइन अंकों में जोड़ा गया।",
+  "mapSnackArrived": "आप पहूंच गए हैं।",
+  "mapSnackCouldNotFind": "\"{query}\" नहीं मिल सका।",
+  "mapSnackDeleteFailed": "हटाना विफल: {error}",
+  "mapSnackDownloadFailed": "ऑफ़लाइन डाउनलोड विफल: {error}",
+  "mapSnackDownloadedEvent": "\"{title}\" डाउनलोड किया गया।",
+  "mapSnackEventNoLocation": "\"{title}\" का कोई स्थान निर्धारित नहीं है।",
+  "mapSnackFinishedBatch": "{count} यात्रा कार्यक्रम क्षेत्र(क्षेत्रों) को डाउनलोड करना समाप्त हो गया।",
+  "mapSnackLoadRegionsFailed": "ऑफ़लाइन क्षेत्र लोड नहीं किया जा सका: {error}",
+  "mapSnackLocationOff": "स्थान सेवा बंद है. नेविगेशन प्रारंभ करने के लिए इसे सक्षम करें.",
+  "mapSnackLocationPermission": "बारी-बारी से स्थान की अनुमति आवश्यक है।",
+  "mapSnackLocationDeniedForMap": "मानचित्र को आप पर केन्द्रित करने के लिए स्थान अनुमति की आवश्यकता है।",
+  "mapSnackLocateFail": "अभी आपका स्थान प्राप्त करने में असमर्थ.",
+  "mapLocateMeTooltip": "मेरे स्थान पर जाएँ",
+  "mapSnackMapNotReady": "अभी तक नक्शा तैयार नहीं हुआ है. कृपया कुछ देर इंतज़ार करें।",
+  "mapSnackNavStartFail": "अभी नेविगेशन प्रारंभ करने में असमर्थ.",
+  "mapSnackNavStopped": "नेविगेशन बंद हो गया.",
+  "mapSnackNoItineraryLocations": "किसी भी यात्रा कार्यक्रम में डाउनलोड करने के लिए कोई स्थान या मानचित्र बिंदु नहीं है।",
+  "mapSnackNoManeuver": "इस चरण का कोई सटीक पैंतरेबाज़ी बिंदु नहीं है।",
+  "mapSnackNoRoute": "कोई मार्ग नहीं मिल सका; गंतव्य दिखा रहा है.",
+  "mapSnackRegionDownloaded": "क्षेत्र सफलतापूर्वक डाउनलोड हो गया! अब आप ऑफ़लाइन नेविगेट कर सकते हैं.",
+  "mapSnackRemovedPin": "सहेजा गया पिन हटा दिया गया.",
+  "mapSnackRemovedRegion": "ऑफ़लाइन क्षेत्र \"{name}\" हटा दिया गया।",
+  "mapSnackRouteCleared": "मार्ग और मार्गदर्शन साफ़ कर दिया गया.",
+  "mapSnackRoutingFailed": "रूटिंग विफल: {error}",
+  "mapSnackSearchFailed": "खोज विफल: {error}",
+  "mapStartNavigation": "नेविगेशन प्रारंभ करें",
+  "mapStartingNav": "नेविगेशन प्रारंभ हो रहा है...",
+  "mapStopNavigation": "नेविगेशन बंद करो",
+  "mapTravelDriving": "ड्राइविंग",
+  "mapTravelWalking": "चलना",
+  "mapTurnByTurn": "बारी-बारी ({mode})",
+  "mindMapCaptureFail": "माइंड मैप कैप्चर नहीं किया जा सका. पुनः प्रयास करें।",
+  "mindMapClearBody": "यह सभी नोड्स को हटा देता है और डेमो माइंड मैप (केंद्रित उदाहरण) को पुनर्स्थापित करता है।",
+  "mindMapClearTitle": "साफ़ कैनवास?",
+  "mindMapClearTooltip": "साफ़/रीसेट करें",
+  "mindMapCouldNotSave": "सहेजा नहीं जा सका: {error}",
+  "mindMapCouldNotSaveType": "सहेजा नहीं जा सका: {type}",
+  "mindMapEmailShare": "ईमेल / साझा करें",
+  "mindMapEmptyNode": "खाली नोड",
+  "mindMapHelpHint": "ज़ूम करने के लिए पिंच करें · कैनवास खींचें · कार्ड खींचें · संपादित करने के लिए कार्ड टैप करें · + एक बच्चा जोड़ें",
+  "mindMapNodeAddLeftTooltip": "बायां बच्चा जोड़ें",
+  "mindMapNodeAddRightTooltip": "सही बच्चा जोड़ें",
+  "mindMapNodeDeleteTooltip": "नोड हटाएँ",
+  "mindMapNodeEditTitle": "नोड संपादित करें",
+  "mindMapNodeHint": "एक संक्षिप्त लेबल दर्ज करें",
+  "mindMapPhotoAccess": "छवि को सहेजने के लिए फोटो लाइब्रेरी का उपयोग आवश्यक है।",
+  "mindMapReset": "रीसेट करें",
+  "mindMapSavePhoto": "फोटो के रूप में सहेजें",
+  "mindMapSavedPhotos": "फ़ोटो में सहेजा गया",
+  "mindMapShareCaptureFail": "साझा करने के लिए माइंड मैप कैप्चर नहीं किया जा सका.",
+  "mindMapShareCompleted": "शेयर पूरा हुआ",
+  "mindMapShareFailed": "साझा करना विफल: {error}",
+  "mindMapShareReady": "छवि तैयार - साझा करने के लिए एक ऐप चुनें",
+  "mindMapShareSheetClosed": "शेयर शीट बंद",
+  "mindMapShareSubject": "Tripmetic - माइंड मैप",
+  "mindMapShareText": "Tripmetic से माइंड मैप निर्यात",
+  "mindMapTapToEdit": "संपादित करने के लिए टैप करें",
+  "moreToolsHeader": "अधिक उपकरण",
+  "moreToolsSubtitle": "यात्रा उपयोगिताएँ",
+  "navCurrency": "मुद्रा",
+  "navItinerary": "यात्रा कार्यक्रम",
+  "navMoreTools": "अधिक उपकरण",
+  "navOfflineMap": "ऑफ़लाइन मानचित्र",
+  "navDashboard": "डैशबोर्ड",
+  "navMoreMenu": "अधिक",
+  "navEditNavigation": "नेविगेशन संपादित करें",
+  "navDoneEditing": "हो गया",
+  "navSelectSlotHint": "किसी स्लॉट पर टैप करें, फिर किसी टूल को असाइन करने के लिए उस पर टैप करें।",
+  "navSavePins": "बचाना",
+  "navPinnedSectionTitle": "निचली पट्टी पर पिन किया गया",
+  "navAvailableSectionTitle": "उपलब्ध सुविधाएँ",
+  "navEmptySlot": "खाली - नीचे उपलब्ध में से जोड़ें",
+  "navPinFullHint": "चारों स्लॉट फुल हैं। एक को हटाकर दूसरा जोड़ें.",
+  "navEditPinnedHint": "उपयोग करें - एक स्लॉट खाली करने के लिए, + एक स्लॉट भरने के लिए, या पुन: व्यवस्थित करने के लिए खींचें। जब चारों भर जाएं तो बचा लें।",
+  "navAddToPinned": "निचली पट्टी में जोड़ें",
+  "navRemoveFromPinned": "निचली पट्टी से हटाएँ",
+  "navFeatureBadgeFree": "मुक्त",
+  "navFeatureBadgePro": "प्रो",
+  "moreMenuSectionFree": "निःशुल्क सुविधाएँ",
+  "moreMenuSectionPro": "Tripmetic प्रो",
+  "ourAppsMenuTitle": "हमारे ऐप्स",
+  "ourAppsMenuSubtitle": "P1.do टीम से अधिक सॉफ़्टवेयर",
+  "ourAppsScreenTitle": "हमारे ऐप्स",
+  "ourAppsIntro": "p1.do टीम का सॉफ़्टवेयर—किसी लाइव ऐप की साइट खोलने के लिए उस पर टैप करें। स्ट्रीम सीआरएम जल्द ही आ रहा है।",
+  "ourAppsBadgeLive": "उपलब्ध",
+  "ourAppsBadgeSoon": "जल्द आ रहा है",
+  "ourAppsBadgeThisApp": "यह ऐप",
+  "ourAppsViewOnline": "सभी को p1.do पर देखें",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "वेब · मोबाइल",
+  "ourAppsPlatformWebTabletMobile": "वेब · टेबलेट · ​​मोबाइल",
+  "ourAppsTravelRecapTagline": "AI यात्रा मार्ग और फोटो पुनर्कथन",
+  "ourAppsTravelRecapSummary": "एक इंटरैक्टिव मानचित्र पर मल्टी-स्टॉप यात्राओं की योजना बनाएं, AI के साथ मार्ग बनाएं, गंतव्य जोड़ें, और अपनी तस्वीरों से परिष्कृत यात्रा सारांश निर्यात करें।",
+  "ourAppsP1doTagline": "लिंक-इन-बायो और निर्माता CRM",
+  "ourAppsP1doSummary": "उन क्रिएटर्स के लिए लिंक-इन-बायो, जो मासिक शुल्क के अलावा आपके लाभ में अतिरिक्त कटौती किए बिना CRM लीड—प्लस Premium Selling और अपॉइंटमेंट बुकिंग—पर कब्जा करते हैं।",
+  "ourAppsDockTxtTagline": "macOS एज-पिन वाला स्क्रैचपैड और सटीक अंतर",
+  "ourAppsDockTxtSummary": "सादे-पाठ स्क्रैचपैड कार्य, व्हाइटस्पेस सैनिटाइजिंग, JSON सुंदरीकरण और चरित्र-स्तर के अंतर के लिए एक निःशुल्क देशी macOS फ़्लोटिंग ड्रॉअर।",
+  "ourAppsTripmeticTagline": "वैश्विक यात्रा टूलकिट और बजट योजनाकार",
+  "ourAppsTripmeticSummary": "बकेट सूचियों, ऑफ़लाइन मानचित्रों, समूह यात्रा कार्यक्रम, बहु-देशीय बजट, समयक्षेत्र विजेट, पैकिंग सूचियाँ और कन्वर्टर्स के लिए एक डैशबोर्ड।",
+  "ourAppsPayxtTagline": "टेक्स्ट-टू-पे इनवॉइस सेकंड में",
+  "ourAppsPayxtSummary": "मोबाइल पेशेवरों के लिए Stripe- और PayPal-संचालित चेकआउट लिंक के साथ एक टेक्स्ट संदेश को सुरक्षित भुगतान चालान में बदलें।",
+  "ourAppsPermitMobileTagline": "रीमॉडलर के लिए बिल्डिंग परमिट ट्रैकर",
+  "ourAppsPermitMobileSummary": "कार्य स्थल से नगरपालिका भवन परमिट की स्थिति की निगरानी करें - शहर के पोर्टलों से संख्याएं, पते और अनुमोदन अपडेट।",
+  "ourAppsTrackkrTagline": "अपार्टमेंट पार्सल प्रबंधन",
+  "ourAppsTrackkrSummary": "आने वाले पैकेजों को सेकंडों में लॉग करें, किरायेदारों को ईमेल द्वारा सूचित करें (और वैकल्पिक SMS), और फ्री-फॉरएवर बेस प्लान पर असीमित इकाइयों का प्रबंधन करें।",
+  "ourAppsKeyForecastsTagline": "HVAC नेताओं के लिए भिन्नात्मक नियंत्रक",
+  "ourAppsKeyForecastsSummary": "HVAC और निर्माण के लिए कार्यकारी वित्तीय बुद्धिमत्ता - कार्य लागत, मौसमी नकदी प्रवाह पूर्वानुमान और स्केल-तैयार रिपोर्टिंग।",
+  "ourAppsStreamCrmTagline": "TikTok लाइव उपहार ट्रैकिंग और दाता CRM",
+  "ourAppsStreamCrmSummary": "वास्तविक समय में TikTok लाइव उपहारों को ट्रैक करें, अपनी कमाई से उपहार देने वाले के खर्च को अलग करें, और दाता प्रोफाइल के साथ शीर्ष समर्थकों का पोषण करें।",
+  "proGlassTeaserTitle": "Tripmetic प्रो फ़ीचर",
+  "dashboardWorldExplorerSection": "विश्व अन्वेषक",
+  "dashboardWorldExplorerCountriesLabel": "देशों का दौरा किया",
+  "dashboardWorldExplorerPercentLabel": "दुनिया की खोज की",
+  "dashboardWorldExplorerPercentValue": "{percent}%",
+  "bucketListDisplayNameLabel": "प्रदर्शित होने वाला नाम",
+  "bucketListMapUnavailable": "कोई Mapbox एक्सेस टोकन कॉन्फ़िगर नहीं किया गया, इसलिए मैप उपलब्ध नहीं है।",
+  "bucketListAuthValidationDisplayName": "अपना नाम दर्ज करें",
+  "authSignUpScreenTitle": "अपना Tripmetic खाता बनाएं",
+  "authSignUpScreenSubtitle": "वैकल्पिक - केवल यदि आप क्लाउड बैकअप चाहते हैं। आप साइन अप किए बिना इस डिवाइस पर सभी टूल का उपयोग करना जारी रख सकते हैं।",
+  "authSignInScreenTitle": "Tripmetic में साइन इन करें",
+  "authSignInScreenSubtitle": "वैकल्पिक - आपकी बकेट सूची और क्लाउड समूह यात्राओं को समन्वयित करने के लिए। बाकी Tripmetic बिना किसी खाते के काम करता है।",
+  "authForgotPassword": "पासवर्ड भूल गए?",
+  "authPasswordResetConfirmation": "यदि उस ईमेल के लिए कोई खाता मौजूद है, तो आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक प्राप्त होगा।",
+  "authUnexpectedError": "कुछ गलत हो गया। कृपया पुन: प्रयास करें।",
+  "authBackupBulletBucketList": "जब आप साइन इन करते हैं तो बकेट सूची गंतव्यों को क्लाउड पर सहेजा जाता है और मर्ज कर दिया जाता है।",
+  "authBackupBulletGroupTrips": "आपके द्वारा बनाई गई या शामिल होने वाली समूह यात्राएं आपके खाते के अंतर्गत संग्रहीत की जाती हैं।",
+  "authBackupBulletMultiDevice": "अपने सिंक किए गए डेटा को पुनर्स्थापित करने के लिए किसी अन्य डिवाइस पर साइन इन करें।",
+  "authLinkAlreadyHaveAccount": "क्या आपके पास पहले से एक खाता मौजूद है? दाखिल करना",
+  "authLinkNeedAccount": "एक खाता चाहिए? एक तैयार करें",
+  "authFullSignUpCta": "पूर्ण साइन-अप स्क्रीन का उपयोग करें",
+  "authFullSignInCta": "पूर्ण साइन-इन स्क्रीन का उपयोग करें",
+  "dashboardGreeting": "नमस्ते, {name}",
+  "dashboardGuestName": "यात्री",
+  "dashboardWelcomeSubtitle": "एक साथ योजना बनाएं, व्यवस्थित रहें, और एक ही टैप में टूल में कूद पड़ें।",
+  "dashboardPlanGroupTrip": "एक नई समूह यात्रा की योजना बनाएं",
+  "dashboardAddBucketList": "बकेट सूची में जोड़ें",
+  "dashboardActiveTripSection": "सक्रिय यात्रा स्नैपशॉट",
+  "dashboardNoUpcomingTripTitle": "कोई आगामी समूह यात्रा नहीं",
+  "dashboardNoUpcomingTripBody": "जब आप दोस्तों के साथ योजना बनाते हैं, तो आपकी अगली यात्रा का सारांश यहां दिखाई देता है।",
+  "dashboardQuickToolsSection": "त्वरित उपकरण",
+  "dashboardCountdownStartsIn": "{days} दिनों में प्रारंभ होता है",
+  "dashboardCountdownEndsIn": "{days} दिनों में समाप्त होता है",
+  "navDashboardBody": "आपका ट्रिप हब - बार या मोर मेनू से टूल खोलें।",
+  "appSettings": "ऐप सेटिंग",
+  "settingsSectionTripmeticPro": "Tripmetic प्रो",
+  "settingsSubscriptionActive": "सक्रिय सदस्यता",
+  "settingsSubscriptionLifetime": "आजीवन पहुंच",
+  "settingsSubscriptionFree": "निःशुल्क योजना",
+  "settingsManageBilling": "बिलिंग प्रबंधित करें",
+  "settingsTestModeSectionTitle": "परीक्षण मोड",
+  "settingsTestModeProTitle": "Tripmetic प्रो के रूप में परीक्षण करें",
+  "settingsTestModeProSubtitle": "परीक्षण के लिए स्थानीय ओवरराइड; RevenueCat को अनदेखा करता है।",
+  "settingsTestModeProCaption": "सक्षम होने पर, यह डिवाइस स्थानीय रूप से सभी प्रो सुविधाओं को अनलॉक करता है। केवल आंतरिक परीक्षण के लिए लक्षित - यह आपकी वास्तविक सदस्यता को नहीं बदलता है।",
+  "settingsUnitsTitle": "माप की इकाइयां",
+  "settingsLanguageTitle": "भाषा",
+  "settingsThemeTitle": "विषय",
+  "settingsClockWidgetTitle": "घड़ी विजेट",
+  "settingsCurrencyWidgetTitle": "मुद्रा विजेट",
+  "settingsCurrencyWidgetSubtitle": "होम और लॉक स्क्रीन: आपकी आधार मुद्रा का 1, 20, 100",
+  "settingsThemeSystem": "प्रणाली",
+  "settingsThemeLight": "रोशनी",
+  "settingsThemeDark": "अँधेरा",
+  "settingsLanguageSystem": "प्रणालीगत चूक",
+  "settingsLanguageEnglish": "अंग्रेज़ी",
+  "settingsLanguageSpanish": "स्पैनिश",
+  "settingsProfileTitle": "प्रोफ़ाइल और क्लाउड सिंक",
+  "settingsLogout": "लॉग आउट",
+  "settingsLogoutConfirm": "इस खाते से लॉग आउट हो जाएं?",
+  "settingsDeleteAccount": "खाता हटा दो",
+  "settingsDeleteAccountBody": "खाता विलोपन को समर्थन द्वारा नियंत्रित किया जाता है। आप नीचे लॉग आउट कर सकते हैं.",
+  "settingsSectionAccount": "खाता",
+  "accountManagementListTitle": "खाते का प्रबंधन करें",
+  "accountManagementListSubtitle": "अपना नाम, ईमेल और पासवर्ड अपडेट करें",
+  "accountManagementTitle": "खाता प्रबंधन",
+  "accountSectionProfile": "प्रोफ़ाइल",
+  "accountSectionSignIn": "दाखिल करना",
+  "accountFieldDisplayName": "प्रदर्शित होने वाला नाम",
+  "accountFieldEmail": "ईमेल",
+  "accountFieldCurrentPassword": "वर्तमान पासवर्ड",
+  "accountFieldNewPassword": "नया पासवर्ड",
+  "accountSaveName": "नाम सहेजें",
+  "accountChangeEmail": "सत्यापन भेजें और ईमेल बदलें",
+  "accountChangePassword": "पासवर्ड बदलें",
+  "accountSignedOutMessage": "अपना खाता प्रबंधित करने के लिए आपको साइन इन होना होगा.",
+  "accountSignInCta": "दाखिल करना",
+  "accountNameSaved": "नाम अपडेट किया गया",
+  "accountEmailVerificationSent": "सत्यापन लिंक {email} पर भेजा गया। अपना साइन-इन पता बदलने के लिए इसकी पुष्टि करें।",
+  "accountPasswordChanged": "पासवर्ड अपडेट किया गया",
+  "accountReauthRequired": "सुरक्षा के लिए, अपना {field} बदलने के लिए फिर से साइन इन करें।",
+  "accountFieldLabelEmail": "ईमेल",
+  "accountFieldLabelPassword": "पासवर्ड",
+  "accountErrorGeneric": "{field} को अपडेट नहीं किया जा सका: {error}",
+  "accountReauthAction": "पुनः साइन इन करें",
+  "accountValidationEmailRequired": "अपना ईमेल दर्ज करें",
+  "accountValidationEmailInvalid": "एक वैध ईमेल दर्ज करें",
+  "accountValidationNameRequired": "अपना नाम दर्ज करें",
+  "accountValidationPasswordTooShort": "कम से कम 8 अक्षरों का प्रयोग करें",
+  "accountCurrentEmailLabel": "वर्तमान ईमेल: {email}",
+  "proPaywallTitle": "Tripmetic प्रो",
+  "proPaywallSubtitle": "ऑफ़लाइन मानचित्र, गहन यात्रा उपकरण और सहयोग अनलॉक करें।",
+  "proPaywallBenefits": "ऑफ़लाइन मानचित्र और क्षेत्र डाउनलोड\nयात्रा कार्यक्रम, बजट, तिजोरी और पैकिंग\nसमूह योजनाकार और वास्तविक समय सिंक",
+  "proPaywallBullets": "ऑफ़लाइन मानचित्र और क्षेत्र डाउनलोड|यात्रा कार्यक्रम, बजट, तिजोरी और पैकिंग|समूह योजनाकार और वास्तविक समय सिंक",
+  "proPaywallUpgradeRevenueCat": "RevenueCat के माध्यम से अपग्रेड करें",
+  "upgradeNow": "अभी अपग्रेड करें",
+  "packingCatClothing": "वस्त्र",
+  "packingCatDocuments": "दस्तावेजों",
+  "packingCatMedications": "दवाओं",
+  "packingCatMisc": "विविध",
+  "packingCatReservations": "आरक्षण",
+  "packingEmpty": "आपकी सूची खाली है.\nआइटम जोड़ने के लिए + टैप करें.",
+  "packingEmptyHidden": "पैक करने के लिए कुछ भी नहीं बचा है - या तैयार आइटम देखने के लिए \"पूरा छुपाएं\" बंद करें।",
+  "packingHeader": "पैकिंग एवं रसद",
+  "packingHideCompleted": "छिपाना पूरा हुआ",
+  "packingHideCompletedSubtitle": "पूर्ण आइटम सहेजे जाते हैं; केवल इस दृश्य से छिपा हुआ है",
+  "packingStarterPassport": "पासपोर्ट",
+  "packingStarterShirts": "शर्ट",
+  "packingStarterSocks": "मोज़े",
+  "packingStarterTickets": "उड़ान के टिकट",
+  "packingStarterToothbrush": "टूथब्रश",
+  "paywallDisabledBody": "RevenueCat पेवॉल यूआई समीक्षा के लिए अस्थायी रूप से अक्षम है।",
+  "paywallDisabledTitle": "पेवॉल अक्षम",
+  "presentationDeleteBody": "क्या आप वाकई इस दस्तावेज़ को तिजोरी से हटाना चाहते हैं?",
+  "presentationDeleteTitle": "दस्तावेज़ हटाएँ?",
+  "presentationImageLoadFail": "छवि लोड करने में विफल",
+  "proActive": "सक्रिय",
+  "proManageHintFree": "मासिक सदस्यता के साथ प्रो सुविधाओं को अनलॉक करें।",
+  "proManageHintPro": "अपनी सदस्यता प्रबंधित करें या खरीदारी बहाल करें।",
+  "proManageSubscription": "सदस्यता प्रबंधित करें",
+  "proName": "Tripmetic प्रो",
+  "proPaywallError": "पेवॉल नहीं दिखाया जा सका. अपनी RevenueCat पेशकश जांचें।",
+  "proPaywallNotConfigured": "इस इंस्टाल में सदस्यताएँ उपलब्ध नहीं हैं. प्रो में अपग्रेड करने के लिए Google Play से Tripmetic इंस्टॉल करें।",
+  "proRestoreFailed": "पुनर्स्थापना विफल: {message}",
+  "proTrialCta": "अपना 3-दिवसीय निःशुल्क परीक्षण प्रारंभ करें",
+  "proWelcome": "Tripmetic प्रो में आपका स्वागत है",
+  "schedulerAvailabilityGood": "अच्छा",
+  "schedulerAvailabilityOffHours": "छुट्टी का समय",
+  "schedulerAvailabilityOk": "ठीक है",
+  "schedulerBaseLocation": "आधार स्थान",
+  "schedulerBaseTooltip": "दिनांक, समय और स्लाइडर बेस घड़ी ({zone}) पर लागू होते हैं। प्रत्येक शहर पंक्ति उस क्षेत्र में एक ही क्षण दिखाती है।",
+  "schedulerConvertedCities": "परिवर्तित शहर",
+  "schedulerDayNext": "+1 दिन",
+  "schedulerDayPrevious": "-1 दिन",
+  "schedulerDaySame": "एक ही दिन",
+  "schedulerMeetingTime": "बैठक का समय",
+  "schedulerSubtitle": "मीटिंग ओवरलैप",
+  "schedulerTitle": "वैश्विक अनुसूचक",
+  "settingsAndInfo": "सेटिंग्स और जानकारी",
+  "settingsContact": "हमसे संपर्क करें",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "लिंक नहीं खुल सका",
+  "settingsHelpFaq": "सहायता एवं अक्सर पूछे जाने वाले प्रश्न",
+  "settingsPrivacy": "गोपनीयता नीति",
+  "settingsSupportLegal": "समर्थन एवं कानूनी",
+  "settingsTerms": "उपयोग की शर्तें",
+  "settingsMapboxAttributionTitle": "मानचित्र डेटा (मैपबॉक्स)",
+  "settingsMapboxAttributionBody": "Tripmetic मैपबॉक्स मानचित्रों का उपयोग करता है। © मैपबॉक्स, © ओपनस्ट्रीटमैप, और अन्य डेटा योगदानकर्ता। स्पष्ट लेआउट और कम आकस्मिक टैप के लिए ऑन-मैप लोगो और एट्रिब्यूशन नियंत्रण ऐप में छिपा हुआ है; यह नोटिस मैपबॉक्स प्रदर्शन आवश्यकताओं को पूरा करता है।",
+  "settingsMapboxAttributionMapboxLink": "मैपबॉक्स - मानचित्रों के बारे में",
+  "sizeCatBelts": "बेल्ट",
+  "sizeCatMensJeansCombo": "पुरुषों की जींस - W×L (यूएस)",
+  "sizeCatMensJeansInseam": "पुरुषों की जींस - इनसीम (एल)",
+  "sizeCatMensJeansWaist": "पुरुषों की जींस - कमर (डब्ल्यू)",
+  "sizeCatMensPants": "पुरुषों की पैंट",
+  "sizeCatMensShirts": "पुरुषों की शर्ट",
+  "sizeCatMensShoes": "पुरुषों के जूते",
+  "sizeCatMensTshirts": "पुरुषों की टी-शर्ट",
+  "sizeCatWomensBlouses": "महिलाओं के ब्लाउज",
+  "sizeCatWomensDresses": "महिलाओं के कपड़े",
+  "sizeCatWomensPants": "महिलाओं की पैंट",
+  "sizeCatWomensShoes": "महिलाओं के जूते",
+  "sizeCatWomensTshirts": "महिलाओं की टी-शर्ट",
+  "sizeCatBoysShoes": "लड़कों के जूते (बच्चे)",
+  "sizeCatGirlsShoes": "लड़कियों के जूते (बच्चों के)",
+  "sizeCatBoysTshirts": "लड़कों के टॉप/टी-शर्ट",
+  "sizeCatBoysPants": "लड़कों की पैंट",
+  "sizeCatGirlsTshirts": "लड़कियों के टॉप/टी-शर्ट",
+  "sizeCatGirlsPants": "लड़कियों की पैंट",
+  "sizeCatGirlsDressesKids": "लड़कियों के कपड़े (बच्चों)",
+  "sizeColumnPrimaryEu": "प्राथमिक: ईयू",
+  "sizeColumnPrimaryJp": "प्राथमिक: जेपी",
+  "sizeColumnPrimaryMixed": "प्राथमिक: मिश्रित (ईयू→यूएस→यूके→जेपी)",
+  "sizeColumnPrimaryUk": "प्राथमिक: यूके",
+  "sizeColumnPrimaryUs": "प्राथमिक: यू.एस",
+  "sizeConverterAppBarSubtitle": "कपड़े और जूते",
+  "sizeConverterCategory": "वर्ग",
+  "sizeConverterHeader": "कपड़े और जूते",
+  "sizeConverterTapToChange": "{code} · बदलने के लिए टैप करें",
+  "sizeConverterYourBaseSize": "आपका आधार आकार (टैग पर)",
+  "sizeConverterYourCountry": "आपका देश/क्षेत्र",
+  "sizeEquivalentSizesHeader": "समतुल्य आकार",
+  "sizeHintBelts": "जैसे 32, 34, 85, 90",
+  "sizeHintMensJeansCombo": "जैसे 38x32 या 38x32",
+  "sizeHintMensJeansInseam": "जैसे 32 (इनसीम\") या 38x32 → इनसीम 32 का उपयोग करता है",
+  "sizeHintMensJeansWaist": "जैसे 38 (कमर\") या 38x32 → कमर 38 का उपयोग करता है",
+  "sizeHintMensPants": "जैसे 30, 32, 34 (कमर\")",
+  "sizeHintMensShirts": "जैसे 15, 38, M",
+  "sizeHintMensShoes": "जैसे 6-14, 42, 27",
+  "sizeHintMensTshirts": "जैसे एस, एम, एल, 48",
+  "sizeHintWomensBlouses": "जैसे 8, 38, एम, एक्सएल",
+  "sizeHintWomensDresses": "जैसे 8, 38, एम",
+  "sizeHintWomensPants": "जैसे 6, 10, 38, एम",
+  "sizeHintWomensShoes": "जैसे 5-12, 39, 25",
+  "sizeHintWomensTshirts": "जैसे एक्सएस, एम, 38",
+  "sizeHintBoysShoes": "जैसे 11सी, 3वाई, 32, 21",
+  "sizeHintGirlsShoes": "जैसे 10सी, 2वाई, 33, 20",
+  "sizeHintBoysTshirts": "जैसे 6, 8, एम, एक्सएस",
+  "sizeHintBoysPants": "जैसे 6, 8, 10 (अमेरिकी बच्चे)",
+  "sizeHintGirlsTshirts": "जैसे 6, 8, एम, एस",
+  "sizeHintGirlsPants": "जैसे 6, 8, 10 (अमेरिकी बच्चे)",
+  "sizeHintGirlsDressesKids": "जैसे 4, 6, 8, 104",
+  "sizeNoMatchEmpty": "अपने परिधान या जूते पर मुद्रित आकार दर्ज करें।",
+  "sizeNoMatchRow": "इस श्रेणी के लिए कोई मेल खाने वाली आकार पंक्ति नहीं. जहां लागू हो वहां यूएस, यूके, ईयू, जेपी नंबर या कोई अक्षर (एस, एम, एल) आज़माएं।",
+  "sizeTipJeansCombo": "उदाहरण यूएस 38×32: कमर ≈ ईयू 48, जेपी कमर टैग अक्सर ~96-97 सेमी; इनसीम 32\" ≈ ~81 सेमी। ब्रांड अलग-अलग हैं - इसे शुरुआती बिंदु के रूप में उपयोग करें।",
+  "sizeTipJeansInseam": "इनसीम पैर के अंदर की लंबाई इंच में है (जैसे 32)। जापान 32\" इनसीम के लिए ~81 सेमी दिखा सकता है। टाइप 38×32 - हम इनसीम के लिए 32 का उपयोग करते हैं।",
+  "sizeTipJeansWaist": "एशियाई टैग पर एक नंबर अक्सर कमर होता है: या तो सेंटीमीटर (38\" ≈ 96-97 सेमी) या यूएस कमर इंच (38)। एक टेप माप से तुलना करें। आप यहां 38×32 टाइप कर सकते हैं - हम कमर के लिए 38 का उपयोग करते हैं।",
+  "timezonePickerEmpty": "कोई मेल नहीं",
+  "timezonePickerHint": "IANA नाम खोजें (उदा. यूरोप, टोक्यो)",
+  "timezonePickerTitle": "एक समयक्षेत्र चुनें",
+  "timezoneSheetCountZones": "{total} क्षेत्रों में से {shown}",
+  "timezoneSheetSearchHint": "IANA नाम खोजें (उदा. यूरोप, टोक्यो)",
+  "timezoneSheetTitle": "समयक्षेत्र चुनें",
+  "tipAmount": "टिप राशि",
+  "tipAppBarSubtitle": "टिप एवं बिल",
+  "tipBillHint": "जैसे $1,250,000.00",
+  "tipCountryBrazil": "ब्राज़िल",
+  "tipCountryChina": "चीन",
+  "tipCountryColombia": "कोलंबिया",
+  "tipCountryDominicanRepublic": "डोमिनिकन गणराज्य",
+  "tipCountryEgypt": "मिस्र",
+  "tipCountryFrance": "फ्रांस",
+  "tipCountryGermany": "जर्मनी",
+  "tipCountryHongKong": "हांगकांग",
+  "tipCountryIndonesia": "इंडोनेशिया",
+  "tipCountryItaly": "इटली",
+  "tipCountryJapan": "जापान",
+  "tipCountryMexico": "मेक्सिको",
+  "tipCountryMorocco": "मोरक्को",
+  "tipCountryPortugal": "पुर्तगाल",
+  "tipCountrySingapore": "सिंगापुर",
+  "tipCountrySpain": "स्पेन",
+  "tipCountryThailand": "थाईलैंड",
+  "tipCountryTurkey": "टर्की",
+  "tipCountryUae": "संयुक्त अरब अमीरात (दुबई)",
+  "tipCountryUnitedKingdom": "यूनाइटेड किंगडम",
+  "tipCountryUsa": "संयुक्त राज्य अमेरिका",
+  "tipZeroReasonChina": "टिपिंग मुख्य भूमि चीन में प्रथागत नहीं है और कई स्थानों पर इसे अस्वीकार किया जा सकता है या अजीब रूप में देखा जा सकता है।",
+  "tipZeroReasonFrance": "रेस्तरां बिल में आमतौर पर 15% सेवा शुल्क (सेवा सम्मिलित) शामिल होता है। असाधारण सेवा के लिए अतिरिक्त टिपिंग वैकल्पिक है।",
+  "tipZeroReasonJapan": "जापान में टिपिंग का अभ्यास नहीं किया जाता है और इससे भ्रम या अपराध हो सकता है।",
+  "tipZeroReasonSingapore": "टिपिंग अपेक्षित नहीं है; कई स्थान बिल में 10% सेवा शुल्क जोड़ते हैं।",
+  "tipZeroReasonGeneric": "यहां 0% टिप सामान्य है। आप अभी भी उत्कृष्ट सेवा के लिए टिप जोड़ सकते हैं।",
+  "tipZeroReasonTitle": "0% क्यों?",
+  "tipCurrentCountry": "वर्तमान देश",
+  "tipPeople": "लोग",
+  "tipPerPerson": "प्रति व्यक्ति राशि",
+  "tipPercentHint": "टाइप टिप % (उदा. 15 या 27.5)",
+  "tipPercentLabel": "बख्शीश %",
+  "tipResults": "परिणाम",
+  "tipSmartHeader": "स्मार्ट टिप",
+  "tipTotalBill": "कुल बिल राशि",
+  "tipTotalWithTip": "टिप सहित कुल",
+  "toolBrainstorm": "मंथन",
+  "toolBudget": "बजट",
+  "toolBudgetSubtitle": "यात्रा बजट योजना और व्यय ट्रैकिंग",
+  "toolBudgetTitle": "बजट",
+  "toolItinerarySubtitle": "दिन के हिसाब से उड़ानें, होटल और योजनाएँ",
+  "toolItineraryTitle": "यात्रा कार्यक्रम",
+  "toolCrypto": "क्रिप्टो",
+  "toolCryptoSubtitle": "लोकप्रिय सिक्कों में USD मान",
+  "toolCryptoTitle": "क्रिप्टो",
+  "toolDocumentVault": "दस्तावेज़ तिजोरी",
+  "toolMindMapSubtitle": "अनंत कैनवास पर विचार · ऑफ़लाइन",
+  "toolMindMapTitle": "विचार-मंथन मन मानचित्र",
+  "toolPacking": "पैकिंग",
+  "toolPackingSubtitle": "यात्रा के अनुसार स्मार्ट पैकिंग चेकलिस्ट",
+  "toolPackingTitle": "पैकिंग",
+  "toolSchedulerSubtitle": "दोहरे समय क्षेत्र · जेट लैग योजना",
+  "toolSchedulerTitle": "समय और तारीख",
+  "toolSettingsAboutSubtitle": "घोषणाएँ, सहायता, गोपनीयता और शर्तें",
+  "toolSettingsAboutTitle": "सेटिंग्स और उसके बारे में",
+  "toolSettingsInfo": "सेटिंग्स और जानकारी",
+  "toolSizeSubtitle": "यूएस · यूके · ईयू · जापान (जेपी)",
+  "toolSizeTitle": "कपड़ों का आकार परिवर्तक",
+  "toolTimeDate": "समय और तारीख",
+  "toolTipSubtitle": "देश टिप मानदंड · 20 लोगों तक विभाजित",
+  "toolTipTitle": "स्मार्ट टिप और बिल स्प्लिटर",
+  "toolUnits": "इकाइयों",
+  "toolUnitsSubtitle": "लंबाई, वजन, तापमान, आयतन",
+  "toolUnitsTitle": "इकाइयों",
+  "toolVaultSubtitle": "महत्वपूर्ण यात्रा दस्तावेज़ों के लिए ऑफ़लाइन भंडारण",
+  "toolVaultTitle": "दस्तावेज़ तिजोरी",
+  "unitAcres": "एकड़",
+  "unitCategoryArea": "क्षेत्र",
+  "unitCategoryDistance": "दूरी",
+  "unitCategoryLength": "लंबाई",
+  "unitCategoryTemperature": "तापमान",
+  "unitCategoryVolume": "आयतन",
+  "unitCategoryWeight": "वज़न",
+  "unitCelsius": "सेल्सीयस",
+  "unitCentimeters": "सेंटीमीटर",
+  "unitFahrenheit": "फ़ारेनहाइट",
+  "unitFeet": "पैर",
+  "unitGrams": "ग्राम",
+  "unitHectares": "हेक्टेयर",
+  "unitInches": "इंच",
+  "unitKilograms": "किलोग्राम",
+  "unitKilometers": "किलोमीटर",
+  "unitLiters": "लीटर",
+  "unitMeters": "मीटर की दूरी पर",
+  "unitMiles": "मील",
+  "unitMilliliters": "मिलीलीटर",
+  "unitOunces": "औंस",
+  "unitPounds": "पाउंड",
+  "unitSquareCentimeters": "वर्ग सेंटीमीटर",
+  "unitSquareFeet": "वर्ग फुट",
+  "unitSquareInches": "वर्ग इंच",
+  "unitSquareKilometers": "वर्ग किलोमीटर",
+  "unitSquareMeters": "वर्ग मीटर",
+  "unitSquareYards": "वर्ग गज",
+  "unitUsFluidOunces": "यूएस द्रव औंस",
+  "unitUsGallons": "यूएस गैलन",
+  "unitYards": "गज",
+  "unitsHeader": "इकाइयां",
+  "vaultCategoryArrivalCard": "आगमन कार्ड",
+  "vaultCategoryHotelReservation": "होटल आरक्षण",
+  "vaultCategoryOther": "अन्य",
+  "vaultCategoryPassportCopy": "पासपोर्ट कॉपी",
+  "vaultCategoryReturnFlight": "वापसी का हवाई सफर",
+  "vaultCategoryVisa": "वीज़ा",
+  "vaultDocumentTitle": "दस्तावेज़",
+  "vaultIntro": "ऑफ़लाइन पहुंच और आव्रजन पर त्वरित प्रस्तुति के लिए महत्वपूर्ण यात्रा दस्तावेजों को सुरक्षित रूप से संग्रहीत करें।",
+  "vaultProcessFailed": "दस्तावेज़ संसाधित करने में विफल: {error}",
+  "vaultTapToUpload": "अपलोड करने के लिए टैप करें",
+  "vaultTapToView": "देखने के लिए टैप करें",
+  "vaultVaultWord": "मेहराब",
+  "bucketListTitle": "बकेट लिस्ट",
+  "bucketListSubtitle": "वे स्थान जहाँ आप जा चुके हैं, जाना चाहते हैं और आगे क्या है।",
+  "bucketListToolSubtitle": "मानचित्र पर और सूचियों में सपनों के गंतव्य",
+  "bucketListViewModeList": "सूची",
+  "bucketListViewModeMap": "मानचित्र",
+  "bucketListViewModePopular": "लोकप्रिय",
+  "bucketListPopularHint": "बीन, लिव, एंड लिव्ड अपने मानचित्र और सूची को अपडेट करें। वांछित और आगामी केवल सूची में हैं और कभी भी मानचित्र पर दिखाई नहीं देते हैं।",
+  "bucketListCategoryBeen": "गया",
+  "bucketListCategoryWant": "चाहना",
+  "bucketListCategoryLive": "रहना",
+  "bucketListCategoryLived": "रहते थे",
+  "bucketListCategoryUpcoming": "आगामी",
+  "bucketListDatesRange": "{start} – {end}",
+  "bucketListDetailCategory": "वर्ग",
+  "bucketListDetailDates": "खजूर",
+  "bucketListMapLegend": "विवरण के लिए मार्कर टैप करें",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "ट्रिपमेटिक.ऐप",
+  "bucketListShareMapStatExplore": "{name} ने विश्व का {worldPercent}% भाग खोजा। दुनिया की {populationPercent}% से अधिक आबादी ने यात्रा की।",
+  "bucketListShareMapTravelerFallback": "राफेल",
+  "bucketListShareMapStatPopulation": "दुनिया की {percent}% से अधिक आबादी ने यात्रा की",
+  "bucketListShareMapCountriesLabel": "देशों",
+  "bucketListShareMapCitiesLabel": "शहर",
+  "bucketListEmptyCategory": "इस श्रेणी में अभी तक कोई स्थान नहीं है.",
+  "bucketListTravelStats": "यात्रा आँकड़े",
+  "bucketListStatWorld": "दुनिया का पता लगाया",
+  "bucketListStatUs": "यू.एस. ने खोजबीन की",
+  "bucketListStatEurope": "यूरोप का अन्वेषण किया गया",
+  "bucketListStatAsia": "एशिया का अन्वेषण किया गया",
+  "bucketListStatAfrica": "अफ़्रीका का अन्वेषण किया गया",
+  "bucketListStatRegionalCaption": "क्षेत्रीय",
+  "bucketListStatSubtitle": "{count} अद्वितीय · {total} में से",
+  "bucketListAddDestination": "गंतव्य जोड़ें",
+  "bucketListEditDestination": "गंतव्य संपादित करें",
+  "bucketListSave": "बचाना",
+  "bucketListFieldCity": "शहर",
+  "bucketListFieldCountry": "देश",
+  "bucketListFieldCategory": "वर्ग",
+  "bucketListFieldRegionHint": "राज्य/प्रांत (वैकल्पिक)",
+  "bucketListFieldLatitude": "अक्षांश",
+  "bucketListFieldLongitude": "देशान्तर",
+  "bucketListFieldStart": "आरंभ करने की तिथि",
+  "bucketListFieldEnd": "अंतिम तिथि",
+  "bucketListFieldTripDates": "यात्रा की तारीखें",
+  "bucketListValidationRequired": "यह फ़ील्ड आवश्यक है.",
+  "bucketListValidationNumber": "एक वैध संख्या दर्ज करें.",
+  "bucketListValidationDates": "समाप्ति तिथि आरंभ तिथि पर या उसके बाद की होनी चाहिए.",
+  "bucketListGeocodeNotFound": "मानचित्र पर यह स्थान नहीं मिल सका. कृपया वर्तनी जांचें.",
+  "bucketListShareSummarySubject": "मेरी Tripmetic बकेट सूची",
+  "bucketListShareTooltip": "सूची और मानचित्र साझा करें",
+  "bucketListShareFailed": "साझा नहीं किया जा सका: {error}",
+  "bucketListShareNeedMap": "मानचित्र छवि कैप्चर करने से पहले मानचित्र दृश्य खोलें।",
+  "bucketListDeleteHint": "हटाने के लिए स्वाइप करें",
+  "bucketListTapEditHint": "संपादित करने के लिए टैप करें",
+  "bucketListCloudSyncFailed": "क्लाउड सिंक विफल: {error}",
+  "bucketListRetry": "पुन: प्रयास करें",
+  "bucketListBackupTooltip": "बैकअप और रजिस्टर करें",
+  "bucketListBackupTitle": "मेघ बैकअप",
+  "bucketListBackupGuestIntro": "Tripmetic बिना किसी खाते के पूरी तरह से काम करता है। यदि आप अपनी बकेट सूची और साझा समूह यात्राओं के लिए क्लाउड बैकअप चाहते हैं तो किसी भी समय एक जोड़ें।",
+  "bucketListSignedInAs": "{email} के रूप में साइन इन किया गया",
+  "bucketListBackupEmail": "ईमेल",
+  "bucketListBackupPassword": "पासवर्ड",
+  "bucketListBackupConfirmPassword": "पासवर्ड की पुष्टि कीजिये",
+  "bucketListAuthTabSignUp": "साइन अप करें",
+  "bucketListAuthPasswordMismatch": "सांकेतिक शब्द मेल नहीं खाते।",
+  "bucketListRegister": "खाता बनाएं और बैकअप लें",
+  "bucketListSignIn": "दाखिल करना",
+  "bucketListSignOut": "साइन आउट",
+  "bucketListBackupUploading": "क्लाउड पर अपलोड हो रहा है...",
+  "bucketListAuthSuccessSignIn": "सफलतापूर्वक लॉग इन किया गया!",
+  "bucketListAuthSuccessSignUp": "खाता सफलतापूर्वक बनाया गया!",
+  "signUpSuccessMessage": "खाता बनाया गया. Tripmetic में आपका स्वागत है!",
+  "signUpErrorEmailInUse": "यह ईमेल पहले से ही पंजीकृत है. साइन इन करने का प्रयास करें.",
+  "signUpErrorInvalidEmail": "एक वैध ईमेल दर्ज करें.",
+  "signUpErrorWeakPassword": "पासवर्ड बहुत कमजोर है। कम से कम 8 अक्षरों का प्रयोग करें.",
+  "signUpErrorGeneric": "साइन अप नहीं किया जा सका: {message}",
+  "signUpErrorEmailInUseAction": "दाखिल करना",
+  "bucketListAuthFailed": "प्रमाणित नहीं किया जा सका: {error}",
+  "groupPlannerNoExtraDetails": "अभी तक कोई नोट या लिंक नहीं.",
+  "groupPlannerTitle": "समूह योजनाकार",
+  "groupPlannerToolTitle": "समूह योजनाकार",
+  "groupPlannerToolSubtitle": "वास्तविक समय में एक साथ यात्रा की योजना बनाएं",
+  "groupPlannerLandingPlanTitle": "समूह यात्रा की योजना बनाएं",
+  "groupPlannerLandingPlanSubtitle": "गंतव्य, तिथियों और बजट के साथ एक साझा यात्रा बनाएं।",
+  "groupPlannerLandingJoinTitle": "एक समूह यात्रा में शामिल हों",
+  "groupPlannerLandingJoinSubtitle": "अपने निमंत्रण से यात्रा कोड या लिंक दर्ज करें।",
+  "groupPlannerCreateTripTitle": "नई समूह यात्रा",
+  "groupPlannerSelectDates": "यात्रा दिनांक सीमा चुनें.",
+  "groupPlannerBudgetPerPersonOption": "प्रति व्यक्ति",
+  "groupPlannerBudgetGroupOption": "समूह कुल",
+  "groupPlannerBudgetNoneOption": "कोई नहीं",
+  "groupPlannerBudgetAmountLabel": "कुल बज़ट",
+  "groupPlannerOpenTitle": "एक समूह यात्रा खोलें",
+  "groupPlannerOpenSubtitle": "अपने निमंत्रण से यात्रा कोड चिपकाएँ।",
+  "groupPlannerOpenTripCodeLabel": "यात्रा कोड",
+  "groupPlannerOpenHint": "संक्षिप्त कोड, यात्रा आईडी, या निमंत्रण लिंक",
+  "groupPlannerOpenButton": "खुली यात्रा",
+  "groupPlannerDestination": "गंतव्य",
+  "groupPlannerDates": "खजूर",
+  "groupPlannerGroupSize": "समूह का आकार",
+  "groupPlannerBudget": "बजट",
+  "groupPlannerBudgetPerPerson": "प्रति व्यक्ति: {amount}",
+  "groupPlannerBudgetGroup": "समूह कुल: {amount}",
+  "groupPlannerBudgetNone": "कोई बजट निर्धारित नहीं",
+  "groupPlannerInviteMembers": "सदस्यों को आमंत्रित करो",
+  "groupPlannerManageMembers": "सदस्यों को प्रबंधित करें",
+  "groupPlannerItinerary": "यात्रा कार्यक्रम",
+  "groupPlannerItineraryEditorHint": "एक यात्रा व्यवस्थापक या यात्रा समन्वयक के रूप में, आप गतिविधियाँ जोड़ सकते हैं और शेड्यूल बदल सकते हैं।",
+  "groupPlannerItineraryViewerHint": "केवल पढ़ने के लिए: सुझाई गई गतिविधियों पर अंगूठे ऊपर या नीचे करके वोट करें। केवल यात्रा व्यवस्थापक और यात्रा समन्वयक ही आइटम जोड़ या बदल सकते हैं।",
+  "groupPlannerNoActivities": "अभी तक कोई गतिविधि नहीं.",
+  "groupPlannerTripNotFound": "यह यात्रा लोड नहीं की जा सकी.",
+  "groupPlannerSignInTitle": "साइन इन आवश्यक",
+  "groupPlannerSignInBody": "साझा यात्राएँ देखने के लिए बकेट लिस्ट → क्लाउड बैकअप के अंतर्गत साइन इन करें।",
+  "groupPlannerCreateTripSignInRequired": "नई समूह यात्रा को सहेजने के लिए एक खाते की आवश्यकता होती है। जारी रखने के लिए साइन इन करें - अन्य Tripmetic सुविधाएँ इसके बिना काम करती हैं।",
+  "groupPlannerMembersTitle": "सदस्यों",
+  "groupPlannerRoleAdmin": "व्यवस्थापक",
+  "groupPlannerRoleCoPlanner": "यात्रा संयोजक",
+  "groupPlannerRoleViewOnly": "केवल देखने के लिए",
+  "groupPlannerOwner": "मालिक",
+  "groupPlannerRemoveMember": "निकालना",
+  "groupPlannerRemoveMemberTitle": "सदस्य निकालें?",
+  "groupPlannerRemoveMemberBody": "इस यात्रा से {email} हटाएं?",
+  "groupPlannerCancel": "रद्द करना",
+  "groupPlannerNotes": "टिप्पणियाँ",
+  "groupPlannerOpenLink": "खुला लिंक",
+  "groupPlannerNetVotes": "{count}",
+  "groupPlannerVoteError": "वोट सहेजा नहीं जा सका: {error}",
+  "groupPlannerManageError": "सदस्यों को अपडेट नहीं किया जा सका: {error}",
+  "groupPlannerInviteError": "शेयर शीट नहीं खुल सकी: {error}",
+  "groupPlannerUnknownTripCode": "यात्रा नहीं खोली जा सकी: {error}",
+  "groupPlannerMyTripsSectionTitle": "आपकी यात्राएँ",
+  "groupPlannerMyTripsEmpty": "अभी तक कोई यात्रा नहीं. ऊपर एक बनाएं.",
+  "groupPlannerExamplesTitle": "उदाहरण यात्राएँ",
+  "groupPlannerExamplesSubtitle": "नमूना कार्ड - अपना खुद का कार्ड जोड़ने के लिए ऊपर एक यात्रा बनाएं।",
+  "groupPlannerExampleTapBody": "ये तो सिर्फ नमूने हैं. एक वास्तविक यात्रा बनाने के लिए \"समूह यात्रा की योजना बनाएं\" का उपयोग करें जिसे आप साझा कर सकते हैं।",
+  "groupPlannerExampleLisbonTitle": "लिस्बन टीम ऑफसाइट",
+  "groupPlannerExampleKyotoTitle": "क्योटो वसंत यात्रा",
+  "groupPlannerAddActivity": "गतिविधि जोड़ें",
+  "groupPlannerActivityTitleLabel": "गतिविधि शीर्षक",
+  "groupPlannerActivityWhenLabel": "दिनांक समय",
+  "groupPlannerActivityTripDateRangeHelp": "अपनी यात्रा के लिए एक दिन चुनें, फिर एक समय। जो कोई भी यात्रा कार्यक्रम को संपादित कर सकता है वह बाद में इसे बदल सकता है।",
+  "groupPlannerActivityDateOutOfRange": "वह तारीख इस यात्रा से बाहर है. यात्रा आरंभ और समाप्ति के बीच एक दिन चुनें।",
+  "groupPlannerActivityTitleRequired": "एक गतिविधि शीर्षक दर्ज करें.",
+  "groupPlannerActivityDateUnset": "तिथि निर्धारित नहीं है - शेड्यूल करने के लिए संपादित करें पर टैप करें।",
+  "groupPlannerPeopleCount": "{count} लोग",
+  "groupPlannerEditActivity": "गतिविधि संपादित करें",
+  "groupPlannerDeleteActivity": "मिटाना",
+  "groupPlannerDeleteActivityTitle": "गतिविधि हटाएँ?",
+  "groupPlannerDeleteActivityBody": "यात्रा कार्यक्रम से \"{title}\" हटाएं? इसे असंपादित नहीं किया जा सकता है।",
+  "groupPlannerActivityDeleteError": "गतिविधि हटाई नहीं जा सकी: {error}",
+  "groupPlannerActivityEditError": "गतिविधि अपडेट नहीं की जा सकी: {error}",
+  "groupPlannerEditTripTitle": "यात्रा संपादित करें",
+  "groupPlannerEditTripAction": "यात्रा संपादित करें",
+  "groupPlannerDeleteTripTitle": "यात्रा हटाएं?",
+  "groupPlannerDeleteTripBody": "सभी के लिए यात्रा \"{destination}\" और उसके यात्रा कार्यक्रम को स्थायी रूप से हटा दें? इसे असंपादित नहीं किया जा सकता है।",
+  "groupPlannerDeleteTripAction": "यात्रा हटाएँ",
+  "groupPlannerTripDeleted": "यात्रा हटा दी गई.",
+  "groupPlannerTripDeleteError": "यात्रा हटाई नहीं जा सकी: {error}",
+  "groupPlannerTripUpdateError": "यात्रा अपडेट नहीं की जा सकी: {error}",
+  "widgetInstructionTitle": "दोहरी घड़ी विजेट",
+  "widgetInstructionSubtitle": "अपने लॉक स्क्रीन या होम स्क्रीन से सीधे अपने घर और गंतव्य समय क्षेत्र को ट्रैक करें।",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "लॉक स्क्रीन",
+  "widgetInstructionIosLockScreenStep1": "अपनी लॉक स्क्रीन को देर तक दबाकर रखें और 'कस्टमाइज़' पर टैप करें।",
+  "widgetInstructionIosLockScreenStep2": "'लॉक स्क्रीन' पूर्वावलोकन चुनें.",
+  "widgetInstructionIosLockScreenStep3": "समय के ठीक नीचे विजेट क्षेत्र पर टैप करें।",
+  "widgetInstructionIosLockScreenStep4": "नीचे स्क्रॉल करें, Tripmetic चुनें, और विजेट जोड़ने के लिए टैप करें।",
+  "widgetInstructionIosHomeScreenTitle": "होम स्क्रीन",
+  "widgetInstructionIosHomeScreenStep1": "अपनी होम स्क्रीन पर किसी खाली जगह को देर तक दबाकर रखें।",
+  "widgetInstructionIosHomeScreenStep2": "ऊपरी-बाएँ कोने में + आइकन पर टैप करें।",
+  "widgetInstructionIosHomeScreenStep3": "'Tripmetic' खोजें।",
+  "widgetInstructionIosHomeScreenStep4": "अपना पसंदीदा विजेट आकार चुनें और 'विजेट जोड़ें' पर टैप करें।",
+  "widgetInstructionAndroidStep1": "अपनी होम स्क्रीन पर जाएं और एक खाली क्षेत्र को देर तक दबाएं।",
+  "widgetInstructionAndroidStep2": "\"विजेट\" टैप करें।",
+  "widgetInstructionAndroidStep3": "Tripmetic तक नीचे स्क्रॉल करें.",
+  "widgetInstructionAndroidStep4": "डुअल क्लॉक विजेट को टैप करके रखें, फिर उसे अपनी स्क्रीन पर खींचें।",
+  "widgetInstructionAndroidLockScreenHint": "लॉक स्क्रीन पर दोनों घड़ियों को देखने के लिए: सेटिंग्स खोलें → \"लॉक स्क्रीन\" या \"विजेट्स\" खोजें, और यदि आपका फोन लॉक-स्क्रीन विजेट प्रदान करता है तो वहां Tripmetic जोड़ें (सभी डिवाइस ऐसा नहीं करते हैं)।",
+  "widgetInstructionConfigureCta": "विजेट शहर कॉन्फ़िगर करें",
+  "currencyWidgetInstructionTitle": "मुद्रा परिवर्तक विजेट",
+  "currencyWidgetInstructionSubtitle": "अपने आधार और लक्ष्य मुद्राओं को अपने Android होम स्क्रीन पर पिन करें। जब भी आप Tripmetic में कनवर्टर का उपयोग करते हैं तो दरें सिंक हो जाती हैं।",
+  "currencyWidgetInstructionAndroidTitle": "होम स्क्रीन में शामिल करें",
+  "currencyWidgetInstructionAndroidStep1": "करेंसी टूल को एक बार खोलें और अपनी पहली दो मुद्राएं (आधार और लक्ष्य) सेट करें।",
+  "currencyWidgetInstructionAndroidStep2": "अपनी होम स्क्रीन पर जाएं और एक खाली क्षेत्र को देर तक दबाएं।",
+  "currencyWidgetInstructionAndroidStep3": "\"विजेट्स\" पर टैप करें, Tripmetic तक स्क्रॉल करें और \"मुद्रा परिवर्तक\" चुनें।",
+  "currencyWidgetInstructionAndroidStep4": "विजेट को अपनी होम स्क्रीन पर खींचें, या यदि आपका लॉन्चर इसका समर्थन करता है तो जोड़ें पर टैप करें।",
+  "currencyWidgetInstructionUsageTitle": "विजेट का उपयोग करना",
+  "currencyWidgetInstructionUsageStep1": "Tripmetic में मुद्रा चयन खोलने के लिए चेंज (या विजेट बॉडी) पर टैप करें।",
+  "currencyWidgetInstructionUsageStep2": "पृष्ठभूमि में विजेट पर दरें अपडेट करने के लिए ↻ रीफ्रेश टैप करें (ऐप नहीं खुलता है)।",
+  "currencyWidgetInstructionUsageStep3": "जब आप ऐप में मुद्राओं या मूल्यों को संपादित करते हैं तो राशियाँ स्वचालित रूप से अपडेट हो जाती हैं।",
+  "currencyWidgetInstructionPinCta": "होम स्क्रीन पर विजेट जोड़ें",
+  "currencyWidgetInstructionOpenCurrencyCta": "विजेट मुद्राएँ बदलें",
+  "currencyWidgetInstructionIosHint": "मुद्रा होम-स्क्रीन विजेट Android पर उपलब्ध है। iPhone पर, इन-ऐप करेंसी टूल का उपयोग करें।",
+  "currencyWidgetPinUnsupported": "आपका लॉन्चर ऐप से इस विजेट को जोड़ने का समर्थन नहीं करता है। अपनी होम स्क्रीन को देर तक दबाकर रखें और इसके बजाय विजेट चुनें।",
+  "currencyWidgetPinFailed": "विजेट पिकर नहीं खोल सका. अपनी होम स्क्रीन से विजेट को मैन्युअल रूप से जोड़ें।",
+  "dualClockScreenTitle": "दोहरी घड़ी विजेट",
+  "dualClockConfigTitle": "शहरों को कॉन्फ़िगर करें",
+  "dualClockConfigSubtitle": "दो शहर और समय क्षेत्र चुनें. आपके चयन Tripmetic होम स्क्रीन विजेट (Android) और लॉक स्क्रीन विजेट (iOS) से समन्वयित होते हैं।",
+  "dualClockCity1Label": "पहला शहर",
+  "dualClockCity2Label": "दूसरा शहर",
+  "dualClockSave": "विजेट सहेजें और अपडेट करें",
+  "dualClockSaved": "विजेट अद्यतन किया गया.",
+  "dualClockSaveError": "विजेट डेटा सहेजा नहीं जा सका. कृपया पुन: प्रयास करें।",
+  "dualClockAppearanceTitle": "विजेट उपस्थिति",
+  "dualClockAppearanceHint": "टेक्स्ट का आकार, रंग और होम-स्क्रीन पृष्ठभूमि अनुकूलित करें। लॉक स्क्रीन फ़ॉन्ट आकार (और रंग जहां सिस्टम अनुमति देता है) का उपयोग करता है।",
+  "dualClockFontScaleLabel": "टेक्स्ट का साइज़",
+  "dualClockColorCity": "शहर के नाम",
+  "dualClockColorTime": "टाइम्स",
+  "dualClockColorDate": "खजूर",
+  "dualClockColorBackground": "घरेलू पृष्ठभूमि",
+  "dualClockShadowLabel": "पाठ छाया",
+  "dualClockShadowSubtitle": "व्यस्त या फोटो वॉलपेपर पर कंट्रास्ट जोड़ता है।",
+  "moreToolsDualClockBannerTitle": "दोहरी घड़ी विजेट",
+  "moreToolsDualClockBannerSubtitle": "अपनी लॉक स्क्रीन या होम स्क्रीन पर दो टाइमज़ोन देखें - सेट अप करने के लिए टैप करें।",
+  "moreToolsDualClockBannerCta": "स्थापित करना",
+  "settingsDualClockWidgetTitle": "दोहरी घड़ी विजेट",
+  "settingsDualClockWidgetSubtitle": "विजेट जोड़ें और अपने शहर चुनें",
+  "widgetNewFeatureBadge": "नया",
+  "globalNavAccountCloudSyncTooltip": "खाता और क्लाउड बैकअप",
+  "exchangeRatesForceRefreshTooltip": "नवीनतम विनिमय दरें प्राप्त करें",
+  "exchangeRatesRefreshedOk": "विनिमय दरें अद्यतन की गईं.",
+  "exchangeRatesRefreshFailed": "विनिमय दरों को ताज़ा नहीं किया जा सका.",
+  "bucketListStatUsTerritories": "अमेरिकी क्षेत्र",
+  "bucketListAuthErrUserNotFound": "इस ईमेल के लिए कोई खाता नहीं मिला.",
+  "bucketListAuthErrWrongPassword": "गलत ईमेल या पासवर्ड।",
+  "bucketListAuthErrEmailInUse": "इस ईमेल के लिए एक खाता पहले से मौजूद है.",
+  "bucketListAuthErrInvalidEmail": "अमान्य ईमेल पता।",
+  "bucketListAuthErrWeakPassword": "पासवर्ड बहुत कमजोर है।",
+  "bucketListAuthErrUserDisabled": "यह खाता बंद कर दिया गया है।",
+  "bucketListAuthErrTooManyRequests": "बहुत अधिक प्रयास. बाद में पुन: प्रयास।",
+  "bucketListAuthErrOperationNotAllowed": "ईमेल/पासवर्ड साइन-इन सक्षम नहीं है.",
+  "bucketListAuthErrDetail": "{detail}",
+  "bucketListAuthValidationInvalidEmail": "अमान्य ईमेल पता।",
+  "bucketListAuthValidationPasswordShort": "पासवर्ड कम से कम 6 अंकों का होना चाहिए।",
+  "bucketListAuthValidationPasswordRequired": "अपना कूटशब्द भरें।",
+  "currencyWidgetAppearanceTitle": "उपस्थिति",
+  "currencyWidgetAppearanceHint": "फ़ॉन्ट आकार, टेक्स्ट रंग और होम-स्क्रीन पृष्ठभूमि अनुकूलित करें। होम विजेट एक निश्चित आकार रखते हैं, इसलिए बड़े फ़ॉन्ट स्वचालित रूप से फिट होते हैं ताकि सभी पंक्तियाँ दृश्यमान रहें। लॉक स्क्रीन फ़ॉन्ट आकार (और रंग जहां सिस्टम अनुमति देता है) का उपयोग करता है।",
+  "currencyWidgetFontScaleLabel": "फ़ॉन्ट आकार",
+  "currencyWidgetColorPrimary": "प्राथमिक पाठ (राशि/आधार)",
+  "currencyWidgetColorAccent": "एक्सेंट टेक्स्ट (जोड़ी/सीढ़ी लेबल)",
+  "currencyWidgetColorCaption": "कैप्शन टेक्स्ट (रेट लाइन)",
+  "currencyWidgetColorBackground": "घरेलू पृष्ठभूमि",
+  "currencyWidgetSaveAppearance": "उपस्थिति सहेजें",
+  "currencyWidgetAppearanceSaved": "मुद्रा विजेट उपस्थिति सहेजी गई",
+  "currencyWidgetAppearanceSaveFailed": "विजेट स्वरूप सहेजा नहीं जा सका",
+  "currencyWidgetInstructionIosTitle": "iPhone",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalForTrip": {
+    "description": "Budget summary line; {code} is a currency code such as USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}

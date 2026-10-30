@@ -1,0 +1,1335 @@
+{
+  "@@locale": "ar",
+  "@@context": "Tripmetic واجهة مستخدم تطبيق السفر. احتفظ بالعناصر النائبة للأقواس المتعرجة تمامًا (مثل {name}، {code}). احتفظ بأسماء العلامات التجارية Tripmetic، RevenueCat، Android، iOS، Google Play، وISO رموز العملات (USD، EUR) غير مترجمة ما لم تكن السلسلة توضيحية بالكامل.",
+  "addItineraryEnterTitle": "الرجاء إدخال عنوان",
+  "addItineraryFieldLocation": "موقع",
+  "addItineraryFieldNotes": "ملاحظات / تأكيد",
+  "addItineraryFieldTitle": "عنوان",
+  "addItineraryHintLocation": "المطار، عنوان الفندق…",
+  "addItineraryHintNotes": "سجل محدد، وصلات...",
+  "addItineraryHintTitle": "رحلة إلى لشبونة",
+  "addItinerarySave": "حفظ الحدث",
+  "addItineraryTitle": "أضف حدث خط سير الرحلة",
+  "addPackingAddToList": "أضف إلى القائمة",
+  "addPackingEnterName": "الرجاء إدخال اسم العنصر",
+  "addPackingFieldCategory": "فئة",
+  "addPackingFieldItemName": "اسم العنصر",
+  "addPackingHint": "على سبيل المثال محول الطاقة",
+  "addPackingIcon": "رمز",
+  "addPackingQuantity": "كمية",
+  "addPackingTitle": "إضافة عنصر التعبئة",
+  "announcementsLatest": "آخر التحديثات",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "العملة الأساسية",
+  "budgetCategoryDialogHint": "على سبيل المثال الهدايا التذكارية",
+  "budgetCategoryNameExists": "الاسم موجود بالفعل",
+  "budgetCategoryNameMax": "الحد الأقصى 40 حرفًا",
+  "budgetDailyFood": "الطعام اليومي",
+  "budgetDestinationSearchHint": "البحث عن رمز البلد أو العملة",
+  "budgetDestinationTitle": "أضف الوجهة",
+  "budgetDialogAdd": "يضيف",
+  "budgetDialogNewCategory": "فئة النفقات الجديدة",
+  "budgetDialogRemoveBody": "هل تريد إزالة \"{name}\" ومبلغه؟",
+  "budgetDialogRemoveTitle": "إزالة الفئة",
+  "budgetDialogRename": "إعادة تسمية",
+  "budgetDialogRenameCategory": "إعادة تسمية الفئة",
+  "budgetEdit": "تحرير الميزانية",
+  "budgetExpenseDailyFood": "الغذاء اليومي",
+  "budgetExpenseEatingOut": "تناول الطعام بالخارج",
+  "budgetExpenseEntertainment": "ترفيه",
+  "budgetExpenseFlights": "الرحلات الجوية",
+  "budgetExpenseGrocery": "خضروات",
+  "budgetExpenseHotels": "الفنادق",
+  "budgetExpenseMisc": "متنوعات",
+  "budgetExpensePhoneService": "خدمة الهاتف",
+  "budgetExpenseShopping": "التسوق",
+  "budgetExpenseTourism": "السياحة",
+  "budgetExpenseTransportation": "مواصلات",
+  "budgetExpenseTravelInsurance": "تأمين السفر",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "في وجهاتك",
+  "budgetNoCategories": "لا توجد فئات النفقات حتى الآن",
+  "budgetOtherExpenses": "مصاريف أخرى ({code})",
+  "budgetPerDayEstimate": "في اليوم (تقديري)",
+  "budgetPerDayValue": "≈ {amount} / يوم",
+  "budgetRemainingAfter": "المتبقي بعد النفقات · {code}",
+  "budgetSave": "حفظ الميزانية",
+  "budgetSpendingPower": "قوة الإنفاق",
+  "budgetSpentVsBudget": "الإنفاق مقابل الميزانية",
+  "budgetTotalBudget": "إجمالي الميزانية ({code})",
+  "budgetTotalForTrip": "إجمالي الرحلة ({code})",
+  "budgetTripDashboard": "لوحة القيادة",
+  "budgetTripLengthDays": "مدة الرحلة (أيام)",
+  "budgetTripTitle": "ميزانية الرحلة",
+  "commonAdd": "يضيف",
+  "commonCancel": "يلغي",
+  "commonDelete": "يمسح",
+  "commonOk": "نعم",
+  "commonRemove": "يزيل",
+  "commonRename": "إعادة تسمية",
+  "commonSave": "يحفظ",
+  "commonKeyboardDone": "منتهي",
+  "countryCountriesCount": "{count} البلدان",
+  "countryPickerTitle": "اختر البلد",
+  "countrySheetSearchHint": "ابحث عن اسم البلد أو رمز ISO",
+  "countrySheetTitle": "البلد/المنطقة الأساسية",
+  "cryptoHeader": "تشفير",
+  "cryptoMockPerUnit": "وهمية ~{price} / وحدة",
+  "cryptoPickerTitle": "اختر عملة معدنية",
+  "cryptoSheetTitle": "حدد العملة المشفرة",
+  "currencyPickerSearchHint": "بحث في شريط أو اسم",
+  "currencyPickerTitle": "اختر عملة",
+  "currencySheetCountShown": "{shown} من {total} معروض",
+  "currencySheetSearchHint": "رمز البحث أو الاسم أو الرقم ISO",
+  "currencySheetTitle": "اختر العملة",
+  "exchangeBaseSuffix": "· قاعدة",
+  "exchangeCouldNotLoad": "تعذر تحميل الأسعار\n{error}",
+  "exchangeHeader": "تبادل",
+  "exchangeLastUpdated": "تم آخر تحديث منذ {mins} دقيقة",
+  "exchangeLastUpdatedOffline": "تم آخر تحديث منذ {mins} دقيقة (غير متصل)",
+  "exchangeResetOne": "إعادة التعيين إلى 1 (قاعدة USD)",
+  "exchangeResetTooltip": "إعادة تعيين المبالغ",
+  "exchangeResetZero": "واضح إلى 0",
+  "itineraryDayPrefix": "اليوم {day}: {date}",
+  "itineraryEmpty": "لا توجد أحداث حتى الآن.\nاضغط على + لإضافة رحلات الطيران والفنادق والخطط.",
+  "itineraryHeader": "خط سير الرحلة",
+  "itineraryHiveError": "تعذر فتح بيانات خط سير الرحلة المحفوظة.\nلا يزال بإمكانك محاولة إضافة الأحداث - فقد لا تستمر.\n({error})",
+  "itineraryOpenOnMap": "فتح على الخريطة",
+  "mapAddToTrip": "أضف إلى الرحلة",
+  "mapClearRoute": "مسح الطريق والتوجيه",
+  "mapClearTooltip": "واضح",
+  "mapDisplayCurrentViewport": "إطار العرض الحالي",
+  "mapDisplaySavedSearch": "البحث المحفوظ",
+  "mapDisplayTripDestination": "وجهة الرحلة",
+  "mapDownloadAll": "تحميل الكل",
+  "mapDownloadCurrentRegion": "قم بتنزيل المنطقة الحالية للاستخدام دون اتصال بالإنترنت",
+  "mapDownloadThisDestination": "قم بتنزيل هذه الوجهة",
+  "mapDownloadedRegions": "المناطق التي تم تنزيلها",
+  "mapDownloadingRegion": "جارٍ تنزيل المنطقة...",
+  "mapDownloadingTitle": "جاري التحميل {title}...",
+  "mapFromItinerary": "من خط سير الرحلة الخاص بك",
+  "mapItineraryEmptyHint": "أضف وجهات خط سير الرحلة لتنزيلها مسبقًا هنا.",
+  "mapLoadingRegions": "جارٍ تحميل المناطق غير المتصلة…",
+  "mapLocatingQuery": "تحديد موقع {query}...",
+  "mapMarkCategoryBody": "اختر كيفية تسمية هذا الدبوس غير المتصل بالإنترنت.",
+  "mapMarkCategoryTitle": "الفئة لهذه العلامة",
+  "mapMarkFood": "طعام",
+  "mapMarkHotel": "الفندق",
+  "mapMarkLandmark": "معلم",
+  "mapMarkOther": "آخر",
+  "mapNextInstruction": "التعليمات التالية ({current}/{total})",
+  "mapNoLocationSet": "لم يتم تحديد الموقع",
+  "mapNoRegionsYet": "لم تقم بتنزيل أي مناطق بعد.",
+  "mapOfflineIntro": "احفظ المنطقة المرئية حاليًا، أو قم بتنزيل وجهات رحلتك مسبقًا حتى تتمكن من التنقل عندما تكون خارج الشبكة.",
+  "mapOfflineMapsTitle": "خرائط دون اتصال",
+  "mapRefreshTooltip": "ينعش",
+  "mapRemovePinTooltip": "إزالة الدبوس",
+  "mapSaveOffline": "حفظ دون اتصال",
+  "mapSavePinToMap": "حفظ الدبوس على الخريطة",
+  "mapSavedPinsBody": "الدبابيس التي قمت بحفظها من البحث. اضغط على \"حذف\" لإزالة واحدة من الخريطة.",
+  "mapSavedPinsTitle": "دبابيس الخريطة المحفوظة",
+  "mapSearchHint": "ابحث عن مدينة أو عنوان أو معلم...",
+  "mapSnackAddedOfflineMark": "تمت إضافة {title} إلى علامات عدم الاتصال بالإنترنت.",
+  "mapSnackArrived": "لقد وصلت.",
+  "mapSnackCouldNotFind": "تعذر العثور على \"{query}\".",
+  "mapSnackDeleteFailed": "فشل الحذف: {error}",
+  "mapSnackDownloadFailed": "فشل التنزيل دون اتصال: {error}",
+  "mapSnackDownloadedEvent": "تم تنزيل \"{title}\".",
+  "mapSnackEventNoLocation": "\"{title}\" لم يتم تحديد موقع له.",
+  "mapSnackFinishedBatch": "تم الانتهاء من تنزيل منطقة (مناطق) خط سير الرحلة {count}.",
+  "mapSnackLoadRegionsFailed": "تعذر تحميل المناطق غير المتصلة بالإنترنت: {error}",
+  "mapSnackLocationOff": "خدمة تحديد الموقع متوقفة. قم بتمكينه لبدء التنقل.",
+  "mapSnackLocationPermission": "مطلوب إذن الموقع منعطف بمنعطف.",
+  "mapSnackLocationDeniedForMap": "مطلوب إذن الموقع لتوسيط الخريطة عليك.",
+  "mapSnackLocateFail": "غير قادر على الحصول على موقعك الآن.",
+  "mapLocateMeTooltip": "اذهب إلى موقعي",
+  "mapSnackMapNotReady": "الخريطة ليست جاهزة بعد. من فضلك انتظر لحظة.",
+  "mapSnackNavStartFail": "غير قادر على بدء التنقل الآن.",
+  "mapSnackNavStopped": "توقفت الملاحة.",
+  "mapSnackNoItineraryLocations": "لا يوجد لأحداث خط سير الرحلة موقع أو نقطة خريطة لتنزيلها.",
+  "mapSnackNoManeuver": "هذه الخطوة ليس لها نقطة مناورة دقيقة.",
+  "mapSnackNoRoute": "تعذر العثور على الطريق؛ تظهر الوجهة.",
+  "mapSnackRegionDownloaded": "تم تنزيل المنطقة بنجاح! يمكنك الآن التنقل دون اتصال بالإنترنت.",
+  "mapSnackRemovedPin": "تمت إزالة الدبوس المحفوظ.",
+  "mapSnackRemovedRegion": "تمت إزالة المنطقة غير المتصلة بالإنترنت \"{name}\".",
+  "mapSnackRouteCleared": "تم محو المسار والإرشاد.",
+  "mapSnackRoutingFailed": "فشل التوجيه: {error}",
+  "mapSnackSearchFailed": "فشل البحث: {error}",
+  "mapStartNavigation": "ابدأ التنقل",
+  "mapStartingNav": "جارٍ بدء التنقل...",
+  "mapStopNavigation": "إيقاف الملاحة",
+  "mapTravelDriving": "القيادة",
+  "mapTravelWalking": "المشي",
+  "mapTurnByTurn": "خطوة بخطوة ({mode})",
+  "mindMapCaptureFail": "لا يمكن التقاط الخريطة الذهنية. حاول ثانية.",
+  "mindMapClearBody": "يؤدي هذا إلى إزالة جميع العقد واستعادة الخريطة الذهنية التجريبية (المثال المركزي).",
+  "mindMapClearTitle": "قماش واضح؟",
+  "mindMapClearTooltip": "مسح / إعادة تعيين",
+  "mindMapCouldNotSave": "لا يمكن حفظ: {error}",
+  "mindMapCouldNotSaveType": "لا يمكن حفظ: {type}",
+  "mindMapEmailShare": "البريد الإلكتروني / حصة",
+  "mindMapEmptyNode": "عقدة فارغة",
+  "mindMapHelpHint": "قرصة للتكبير · اسحب اللوحة القماشية · اسحب البطاقات · اضغط على البطاقة لتحريرها · + إضافة طفل",
+  "mindMapNodeAddLeftTooltip": "إضافة الطفل الأيسر",
+  "mindMapNodeAddRightTooltip": "أضف الطفل المناسب",
+  "mindMapNodeDeleteTooltip": "حذف العقدة",
+  "mindMapNodeEditTitle": "تحرير العقدة",
+  "mindMapNodeHint": "أدخل تسمية قصيرة",
+  "mindMapPhotoAccess": "مطلوب الوصول إلى مكتبة الصور لحفظ الصورة.",
+  "mindMapReset": "إعادة ضبط",
+  "mindMapSavePhoto": "حفظ كصورة",
+  "mindMapSavedPhotos": "تم الحفظ في الصور",
+  "mindMapShareCaptureFail": "لا يمكن التقاط الخريطة الذهنية للمشاركة.",
+  "mindMapShareCompleted": "اكتملت المشاركة",
+  "mindMapShareFailed": "فشلت المشاركة: {error}",
+  "mindMapShareReady": "الصورة جاهزة — اختر تطبيقًا لمشاركته",
+  "mindMapShareSheetClosed": "ورقة المشاركة مغلقة",
+  "mindMapShareSubject": "Tripmetic — الخريطة الذهنية",
+  "mindMapShareText": "تصدير الخريطة الذهنية من Tripmetic",
+  "mindMapTapToEdit": "انقر للتحرير",
+  "moreToolsHeader": "المزيد من الأدوات",
+  "moreToolsSubtitle": "مرافق السفر",
+  "navCurrency": "عملة",
+  "navItinerary": "خط سير الرحلة",
+  "navMoreTools": "المزيد من الأدوات",
+  "navOfflineMap": "خريطة غير متصل",
+  "navDashboard": "لوحة القيادة",
+  "navMoreMenu": "أكثر",
+  "navEditNavigation": "تحرير الملاحة",
+  "navDoneEditing": "منتهي",
+  "navSelectSlotHint": "اضغط على إحدى الفتحات، ثم اضغط على أداة لتعيينها.",
+  "navSavePins": "يحفظ",
+  "navPinnedSectionTitle": "مثبت في الشريط السفلي",
+  "navAvailableSectionTitle": "الميزات المتاحة",
+  "navEmptySlot": "فارغ - أضف مما هو متاح أدناه",
+  "navPinFullHint": "جميع الفتحات الأربع ممتلئة. قم بإزالة واحد لإضافة آخر.",
+  "navEditPinnedHint": "استخدم - لتحرير إحدى الفتحات، أو + لملء إحدى الفتحات، أو اسحب لإعادة الترتيب. احفظ عندما تمتلئ الأربعة.",
+  "navAddToPinned": "أضف إلى الشريط السفلي",
+  "navRemoveFromPinned": "إزالة من الشريط السفلي",
+  "navFeatureBadgeFree": "حر",
+  "navFeatureBadgePro": "للمحترفين",
+  "moreMenuSectionFree": "ميزات مجانية",
+  "moreMenuSectionPro": "Tripmetic برو",
+  "ourAppsMenuTitle": "تطبيقاتنا",
+  "ourAppsMenuSubtitle": "المزيد من البرامج من فريق p1.do",
+  "ourAppsScreenTitle": "تطبيقاتنا",
+  "ourAppsIntro": "برنامج من فريق p1.do — انقر فوق تطبيق مباشر لفتح موقعه. ستريم CRM قريبا.",
+  "ourAppsBadgeLive": "متاح",
+  "ourAppsBadgeSoon": "قريباً",
+  "ourAppsBadgeThisApp": "هذا التطبيق",
+  "ourAppsViewOnline": "عرض الكل على p1.do",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "الويب · الجوال",
+  "ourAppsPlatformWebTabletMobile": "الويب · الكمبيوتر اللوحي · الهاتف المحمول",
+  "ourAppsTravelRecapTagline": "AI طرق السفر وملخصات الصور",
+  "ourAppsTravelRecapSummary": "خطط لرحلات متعددة التوقفات على خريطة تفاعلية، وقم بإنشاء مسارات باستخدام AI، وأضف الوجهات، وقم بتصدير ملخصات السفر المصقولة من صورك.",
+  "ourAppsP1doTagline": "الرابط في السيرة الذاتية والمنشئ CRM",
+  "ourAppsP1doSummary": "رابط في السيرة الذاتية لمنشئي المحتوى الذين يجذبون CRM عملاء محتملين - بالإضافة إلى Premium Selling وحجز المواعيد - دون خصم إضافي من أرباحك بالإضافة إلى الرسوم الشهرية.",
+  "ourAppsDockTxtTagline": "macOS لوحة مسودة مثبتة على الحافة وفرق دقيق",
+  "ourAppsDockTxtSummary": "درج عائم أصلي مجاني macOS للعمل على مسودة النص العادي، وتعقيم المسافات البيضاء، وتجميل JSON، والاختلافات على مستوى الأحرف.",
+  "ourAppsTripmeticTagline": "مجموعة أدوات السفر العالمية ومخطط الميزانية",
+  "ourAppsTripmeticSummary": "لوحة تحكم واحدة لقوائم المجموعات، والخرائط غير المتصلة بالإنترنت، وخطوط سير الرحلات الجماعية، وميزانيات البلدان المتعددة، وعناصر واجهة مستخدم المنطقة الزمنية، وقوائم التعبئة، والمحولات.",
+  "ourAppsPayxtTagline": "الفواتير النصية للدفع في ثوان",
+  "ourAppsPayxtSummary": "يمكنك تحويل رسالة نصية إلى فاتورة مدفوعة آمنة باستخدام روابط الدفع التي تدعم Stripe وPayPal لمحترفي الهاتف المحمول.",
+  "ourAppsPermitMobileTagline": "تعقب تصريح البناء للمعيدين",
+  "ourAppsPermitMobileSummary": "راقب حالة تصريح البناء التابع للبلدية من موقع العمل — الأرقام والعناوين وتحديثات الموافقة من بوابات المدينة.",
+  "ourAppsTrackkrTagline": "إدارة قطع الشقق",
+  "ourAppsTrackkrSummary": "قم بتسجيل الحزم الواردة في ثوانٍ، وقم بإخطار المستأجرين عبر البريد الإلكتروني (وSMS الاختياري)، وقم بإدارة وحدات غير محدودة في خطة أساسية مجانية إلى الأبد.",
+  "ourAppsKeyForecastsTagline": "وحدة التحكم الجزئية لقادة HVAC",
+  "ourAppsKeyForecastsSummary": "المعلومات المالية التنفيذية لـ HVAC والبناء - تكلفة الوظائف، والتنبؤ بالتدفق النقدي الموسمي، وإعداد التقارير الجاهزة للقياس.",
+  "ourAppsStreamCrmTagline": "TikTok التتبع المباشر للهدايا والمتبرعين CRM",
+  "ourAppsStreamCrmSummary": "تتبع الهدايا المباشرة TikTok في الوقت الفعلي، وافصل إنفاق المانحين عن أرباحك، وقم برعاية كبار الداعمين من خلال الملفات الشخصية للمانحين.",
+  "proGlassTeaserTitle": "Tripmetic الميزة الاحترافية",
+  "dashboardWorldExplorerSection": "مستكشف العالم",
+  "dashboardWorldExplorerCountriesLabel": "البلدان التي تمت زيارتها",
+  "dashboardWorldExplorerPercentLabel": "من العالم استكشاف",
+  "dashboardWorldExplorerPercentValue": "{percent}%",
+  "bucketListDisplayNameLabel": "اسم العرض",
+  "bucketListMapUnavailable": "الخريطة غير متاحة لأنه لم يتم إعداد رمز وصول Mapbox.",
+  "bucketListAuthValidationDisplayName": "أدخل اسمك",
+  "authSignUpScreenTitle": "قم بإنشاء حساب Tripmetic الخاص بك",
+  "authSignUpScreenSubtitle": "اختياري - فقط إذا كنت تريد النسخ الاحتياطي السحابي. يمكنك الاستمرار في استخدام جميع الأدوات الموجودة على هذا الجهاز دون الاشتراك.",
+  "authSignInScreenTitle": "تسجيل الدخول إلى Tripmetic",
+  "authSignInScreenSubtitle": "اختياري — لمزامنة قائمة المجموعة الخاصة بك ورحلات المجموعة السحابية. بقية Tripmetic تعمل بدون حساب.",
+  "authForgotPassword": "هل نسيت كلمة السر؟",
+  "authPasswordResetConfirmation": "إذا كان هناك حساب لهذا البريد الإلكتروني، فسوف تتلقى رابطًا لإعادة تعيين كلمة المرور الخاصة بك.",
+  "authUnexpectedError": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+  "authBackupBulletBucketList": "يتم حفظ وجهات قائمة المجموعة في السحابة ويتم دمجها عند تسجيل الدخول.",
+  "authBackupBulletGroupTrips": "يتم تخزين الرحلات الجماعية التي تقوم بإنشائها أو الانضمام إليها ضمن حسابك.",
+  "authBackupBulletMultiDevice": "قم بتسجيل الدخول على جهاز آخر لاستعادة بياناتك المتزامنة.",
+  "authLinkAlreadyHaveAccount": "هل لديك حساب بالفعل؟ تسجيل الدخول",
+  "authLinkNeedAccount": "هل تحتاج إلى حساب؟ قم بإنشاء واحدة",
+  "authFullSignUpCta": "استخدم شاشة التسجيل الكاملة",
+  "authFullSignInCta": "استخدم شاشة تسجيل الدخول الكاملة",
+  "dashboardGreeting": "مرحبًا، {name}",
+  "dashboardGuestName": "مسافر",
+  "dashboardWelcomeSubtitle": "خططوا معًا، وحافظوا على تنظيمكم، واستخدموا الأدوات بنقرة واحدة.",
+  "dashboardPlanGroupTrip": "خطط لرحلة جماعية جديدة",
+  "dashboardAddBucketList": "إضافة إلى قائمة دلو",
+  "dashboardActiveTripSection": "لقطة الرحلة النشطة",
+  "dashboardNoUpcomingTripTitle": "لا توجد رحلة جماعية قادمة",
+  "dashboardNoUpcomingTripBody": "عندما تخطط مع الأصدقاء، يظهر ملخص رحلتك القادمة هنا.",
+  "dashboardQuickToolsSection": "أدوات سريعة",
+  "dashboardCountdownStartsIn": "يبدأ خلال {days} من الأيام",
+  "dashboardCountdownEndsIn": "ينتهي خلال {days} من الأيام",
+  "navDashboardBody": "مركز رحلتك — افتح الأدوات من الشريط أو قائمة المزيد.",
+  "appSettings": "إعدادات التطبيق",
+  "settingsSectionTripmeticPro": "Tripmetic برو",
+  "settingsSubscriptionActive": "الاشتراك النشط",
+  "settingsSubscriptionLifetime": "الوصول مدى الحياة",
+  "settingsSubscriptionFree": "خطة مجانية",
+  "settingsManageBilling": "إدارة الفواتير",
+  "settingsTestModeSectionTitle": "وضع الاختبار",
+  "settingsTestModeProTitle": "اختبر كـ Tripmetic Pro",
+  "settingsTestModeProSubtitle": "التجاوز المحلي للاختبار؛ يتجاهل RevenueCat.",
+  "settingsTestModeProCaption": "عند التمكين، يفتح هذا الجهاز جميع ميزات Pro محليًا. مخصص للاختبار الداخلي فقط، ولا يغير اشتراكك الحقيقي.",
+  "settingsUnitsTitle": "وحدات القياس",
+  "settingsLanguageTitle": "لغة",
+  "settingsThemeTitle": "سمة",
+  "settingsClockWidgetTitle": "القطعة على مدار الساعة",
+  "settingsCurrencyWidgetTitle": "القطعة العملة",
+  "settingsCurrencyWidgetSubtitle": "الشاشة الرئيسية وشاشة القفل: 1، 20، 100 من عملتك الأساسية",
+  "settingsThemeSystem": "نظام",
+  "settingsThemeLight": "ضوء",
+  "settingsThemeDark": "مظلم",
+  "settingsLanguageSystem": "الافتراضي للنظام",
+  "settingsLanguageEnglish": "إنجليزي",
+  "settingsLanguageSpanish": "الأسبانية",
+  "settingsProfileTitle": "الملف الشخصي والمزامنة السحابية",
+  "settingsLogout": "تسجيل الخروج",
+  "settingsLogoutConfirm": "تسجيل الخروج من هذا الحساب؟",
+  "settingsDeleteAccount": "حذف الحساب",
+  "settingsDeleteAccountBody": "تتم معالجة حذف الحساب عن طريق الدعم. يمكنك تسجيل الخروج أدناه.",
+  "settingsSectionAccount": "حساب",
+  "accountManagementListTitle": "إدارة الحساب",
+  "accountManagementListSubtitle": "قم بتحديث اسمك والبريد الإلكتروني وكلمة المرور",
+  "accountManagementTitle": "إدارة الحساب",
+  "accountSectionProfile": "حساب تعريفي",
+  "accountSectionSignIn": "تسجيل الدخول",
+  "accountFieldDisplayName": "اسم العرض",
+  "accountFieldEmail": "بريد إلكتروني",
+  "accountFieldCurrentPassword": "كلمة المرور الحالية",
+  "accountFieldNewPassword": "كلمة المرور الجديدة",
+  "accountSaveName": "حفظ الاسم",
+  "accountChangeEmail": "إرسال التحقق وتغيير البريد الإلكتروني",
+  "accountChangePassword": "تغيير كلمة المرور",
+  "accountSignedOutMessage": "يجب عليك تسجيل الدخول لإدارة حسابك.",
+  "accountSignInCta": "تسجيل الدخول",
+  "accountNameSaved": "تم تحديث الاسم",
+  "accountEmailVerificationSent": "تم إرسال رابط التحقق إلى {email}. قم بتأكيده لتبديل عنوان تسجيل الدخول الخاص بك.",
+  "accountPasswordChanged": "تم تحديث كلمة المرور",
+  "accountReauthRequired": "لدواعي الأمان، قم بتسجيل الدخول مرة أخرى لتغيير {field} الخاص بك.",
+  "accountFieldLabelEmail": "بريد إلكتروني",
+  "accountFieldLabelPassword": "كلمة المرور",
+  "accountErrorGeneric": "تعذر تحديث {field}: {error}",
+  "accountReauthAction": "قم بتسجيل الدخول مرة أخرى",
+  "accountValidationEmailRequired": "أدخل بريدك الإلكتروني",
+  "accountValidationEmailInvalid": "أدخل بريدًا إلكترونيًا صالحًا",
+  "accountValidationNameRequired": "أدخل اسمك",
+  "accountValidationPasswordTooShort": "استخدم 8 أحرف على الأقل",
+  "accountCurrentEmailLabel": "البريد الإلكتروني الحالي: {email}",
+  "proPaywallTitle": "Tripmetic برو",
+  "proPaywallSubtitle": "افتح الخرائط غير المتصلة بالإنترنت وأدوات السفر العميقة والتعاون.",
+  "proPaywallBenefits": "خرائط دون اتصال وتنزيلات المنطقة\nخط سير الرحلة والميزانية والقبو والتعبئة\nمخطط المجموعة والمزامنة في الوقت الحقيقي",
+  "proPaywallBullets": "خرائط دون اتصال وتنزيلات المنطقة|خط سير الرحلة والميزانية والقبو والتعبئة|مخطط المجموعة والمزامنة في الوقت الحقيقي",
+  "proPaywallUpgradeRevenueCat": "الترقية عبر RevenueCat",
+  "upgradeNow": "قم بالترقية الآن",
+  "packingCatClothing": "ملابس",
+  "packingCatDocuments": "وثائق",
+  "packingCatMedications": "الأدوية",
+  "packingCatMisc": "متفرقات",
+  "packingCatReservations": "الحجوزات",
+  "packingEmpty": "قائمتك فارغة.\nاضغط على + لإضافة عناصر.",
+  "packingEmptyHidden": "لم يتبق شيء لحزمه - أو قم بإيقاف تشغيل \"إخفاء المكتمل\" لرؤية العناصر المكتملة.",
+  "packingHeader": "التعبئة والخدمات اللوجستية",
+  "packingHideCompleted": "تم إخفاء",
+  "packingHideCompletedSubtitle": "تظل العناصر المكتملة محفوظة؛ مخفية فقط من هذا الرأي",
+  "packingStarterPassport": "جواز سفر",
+  "packingStarterShirts": "قمصان",
+  "packingStarterSocks": "الجوارب",
+  "packingStarterTickets": "تذاكر الطيران",
+  "packingStarterToothbrush": "فرشاة الأسنان",
+  "paywallDisabledBody": "تم تعطيل نظام حظر الاشتراك غير المدفوع مؤقتًا لمراجعة واجهة المستخدم RevenueCat.",
+  "paywallDisabledTitle": "تم تعطيل نظام حظر الاشتراك غير المدفوع",
+  "presentationDeleteBody": "هل أنت متأكد أنك تريد إزالة هذا المستند من المخزن؟",
+  "presentationDeleteTitle": "هل تريد حذف المستند؟",
+  "presentationImageLoadFail": "فشل تحميل الصورة",
+  "proActive": "نشيط",
+  "proManageHintFree": "افتح ميزات Pro من خلال اشتراك شهري.",
+  "proManageHintPro": "إدارة اشتراكك أو استعادة المشتريات.",
+  "proManageSubscription": "إدارة الاشتراك",
+  "proName": "Tripmetic برو",
+  "proPaywallError": "لا يمكن إظهار نظام Paywall. تحقق من عرض RevenueCat الخاص بك.",
+  "proPaywallNotConfigured": "الاشتراكات غير متوفرة في هذا التثبيت. قم بتثبيت Tripmetic من Google Play للترقية إلى Pro.",
+  "proRestoreFailed": "فشلت الاستعادة: {message}",
+  "proTrialCta": "ابدأ تجربتك المجانية لمدة 3 أيام",
+  "proWelcome": "مرحبًا بك في Tripmetic Pro",
+  "schedulerAvailabilityGood": "جيد",
+  "schedulerAvailabilityOffHours": "خارج ساعات العمل",
+  "schedulerAvailabilityOk": "نعم",
+  "schedulerBaseLocation": "الموقع الأساسي",
+  "schedulerBaseTooltip": "ينطبق التاريخ والوقت وشريط التمرير على الساعة الأساسية ({zone}). يُظهر كل صف مدينة نفس اللحظة في تلك المنطقة.",
+  "schedulerConvertedCities": "المدن المحولة",
+  "schedulerDayNext": "+1 يوم",
+  "schedulerDayPrevious": "-1 يوم",
+  "schedulerDaySame": "نفس اليوم",
+  "schedulerMeetingTime": "وقت الاجتماع",
+  "schedulerSubtitle": "تداخل الاجتماع",
+  "schedulerTitle": "جدولة العالمية",
+  "settingsAndInfo": "الإعدادات والمعلومات",
+  "settingsContact": "اتصل بنا",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "لا يمكن فتح الرابط",
+  "settingsHelpFaq": "المساعدة والأسئلة الشائعة",
+  "settingsPrivacy": "سياسة الخصوصية",
+  "settingsSupportLegal": "الدعم والقانوني",
+  "settingsTerms": "شروط الاستخدام",
+  "settingsMapboxAttributionTitle": "بيانات الخريطة (Mapbox)",
+  "settingsMapboxAttributionBody": "Tripmetic يستخدم خرائط Mapbox. © Mapbox، © OpenStreetMap، وغيرهم من المساهمين في البيانات. يتم إخفاء الشعار الموجود على الخريطة والتحكم في الإسناد في التطبيق للحصول على تخطيط أكثر وضوحًا وعدد أقل من النقرات غير المقصودة؛ يلبي هذا الإشعار متطلبات عرض Mapbox.",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — حول الخرائط",
+  "sizeCatBelts": "أحزمة",
+  "sizeCatMensJeansCombo": "جينز للرجال - W×L (الولايات المتحدة)",
+  "sizeCatMensJeansInseam": "جينز رجالي — درزة داخلية (L)",
+  "sizeCatMensJeansWaist": "الجينز الرجالي – الخصر (W)",
+  "sizeCatMensPants": "السراويل الرجالية",
+  "sizeCatMensShirts": "قمصان رجالية",
+  "sizeCatMensShoes": "أحذية رجالية",
+  "sizeCatMensTshirts": "قمصان رجالية",
+  "sizeCatWomensBlouses": "البلوزات النسائية",
+  "sizeCatWomensDresses": "فساتين نسائية",
+  "sizeCatWomensPants": "السراويل النسائية",
+  "sizeCatWomensShoes": "أحذية نسائية",
+  "sizeCatWomensTshirts": "قمصان نسائية",
+  "sizeCatBoysShoes": "أحذية الأولاد (أطفال)",
+  "sizeCatGirlsShoes": "أحذية البنات (الاطفال)",
+  "sizeCatBoysTshirts": "قمصان/قمصان للأولاد",
+  "sizeCatBoysPants": "سراويل الأولاد",
+  "sizeCatGirlsTshirts": "بلايز / تيشيرتات بناتي",
+  "sizeCatGirlsPants": "سروال البنات",
+  "sizeCatGirlsDressesKids": "فساتين بنات (اطفال)",
+  "sizeColumnPrimaryEu": "الابتدائية: الاتحاد الأوروبي",
+  "sizeColumnPrimaryJp": "الابتدائية: جي بي",
+  "sizeColumnPrimaryMixed": "الأساسي: مختلط (الاتحاد الأوروبي → الولايات المتحدة → المملكة المتحدة → اليابان)",
+  "sizeColumnPrimaryUk": "الابتدائية: المملكة المتحدة",
+  "sizeColumnPrimaryUs": "الابتدائية: الولايات المتحدة",
+  "sizeConverterAppBarSubtitle": "الملابس والأحذية",
+  "sizeConverterCategory": "فئة",
+  "sizeConverterHeader": "الملابس والأحذية",
+  "sizeConverterTapToChange": "{code} · اضغط للتغيير",
+  "sizeConverterYourBaseSize": "الحجم الأساسي الخاص بك (على العلامة)",
+  "sizeConverterYourCountry": "بلدك / منطقتك",
+  "sizeEquivalentSizesHeader": "أحجام متساوية",
+  "sizeHintBelts": "على سبيل المثال 32، 34، 85، 90",
+  "sizeHintMensJeansCombo": "على سبيل المثال 38x32 أو 38x32",
+  "sizeHintMensJeansInseam": "على سبيل المثال 32 (درزة داخلية\") أو 38x32 → يستخدم درزة داخلية 32",
+  "sizeHintMensJeansWaist": "على سبيل المثال 38 (الخصر\") أو 38x32 → يستخدم الخصر 38",
+  "sizeHintMensPants": "على سبيل المثال 30، 32، 34 (الخصر\")",
+  "sizeHintMensShirts": "على سبيل المثال 15, 38, م",
+  "sizeHintMensShoes": "على سبيل المثال 6-14، 42، 27",
+  "sizeHintMensTshirts": "على سبيل المثال س، م، ل، 48",
+  "sizeHintWomensBlouses": "على سبيل المثال 8، 38، م، XL",
+  "sizeHintWomensDresses": "على سبيل المثال 8, 38, م",
+  "sizeHintWomensPants": "على سبيل المثال 6، 10، 38، م",
+  "sizeHintWomensShoes": "على سبيل المثال 5-12، 39، 25",
+  "sizeHintWomensTshirts": "على سبيل المثال XS، م، 38",
+  "sizeHintBoysShoes": "على سبيل المثال 11ج، 3ص، 32، 21",
+  "sizeHintGirlsShoes": "على سبيل المثال 10ج، 2ص، 33، 20",
+  "sizeHintBoysTshirts": "على سبيل المثال 6، 8، م، XS",
+  "sizeHintBoysPants": "على سبيل المثال 6، 8، 10 (أطفال الولايات المتحدة)",
+  "sizeHintGirlsTshirts": "على سبيل المثال 6، 8، م، س",
+  "sizeHintGirlsPants": "على سبيل المثال 6، 8، 10 (أطفال الولايات المتحدة)",
+  "sizeHintGirlsDressesKids": "على سبيل المثال 4، 6، 8، 104",
+  "sizeNoMatchEmpty": "أدخل الحجم المطبوع على ملابسك أو حذائك.",
+  "sizeNoMatchRow": "لا يوجد صف حجم مطابق لهذه الفئة. جرّب أرقام الولايات المتحدة أو المملكة المتحدة أو الاتحاد الأوروبي أو JP أو الحرف (S، M، L) حيثما أمكن ذلك.",
+  "sizeTipJeansCombo": "مثال الولايات المتحدة 38×32: الخصر ≈ الاتحاد الأوروبي 48، علامة الخصر JP غالبًا ~96-97 سم؛ درزة داخلية 32\" ≈ ~81 سم. تختلف العلامات التجارية - استخدم هذا كنقطة بداية.",
+  "sizeTipJeansInseam": "التماس الداخلي هو طول الساق من الداخل بالبوصة (على سبيل المثال 32). قد تظهر اليابان حوالي 81 سم للدرزة الداخلية مقاس 32 بوصة. النوع 38×32 — نستخدم 32 للدرزة الداخلية.",
+  "sizeTipJeansWaist": "غالبًا ما يكون الرقم الموجود على العلامة الآسيوية هو الخصر: إما سنتيمتر (38\" ≈ 96-97 سم) أو بوصة الخصر الأمريكية (38). قارنه بشريط القياس. يمكنك كتابة 38×32 هنا - نستخدم 38 للخصر.",
+  "timezonePickerEmpty": "لا توجد مباريات",
+  "timezonePickerHint": "البحث عن اسم IANA (على سبيل المثال، أوروبا وطوكيو)",
+  "timezonePickerTitle": "اختر منطقة زمنية",
+  "timezoneSheetCountZones": "{shown} من مناطق {total}",
+  "timezoneSheetSearchHint": "البحث عن اسم IANA (على سبيل المثال، أوروبا وطوكيو)",
+  "timezoneSheetTitle": "حدد المنطقة الزمنية",
+  "tipAmount": "مبلغ النصيحة",
+  "tipAppBarSubtitle": "نصيحة وفاتورة",
+  "tipBillHint": "على سبيل المثال 1,250,000.00 دولار",
+  "tipCountryBrazil": "البرازيل",
+  "tipCountryChina": "الصين",
+  "tipCountryColombia": "كولومبيا",
+  "tipCountryDominicanRepublic": "جمهورية الدومينيكان",
+  "tipCountryEgypt": "مصر",
+  "tipCountryFrance": "فرنسا",
+  "tipCountryGermany": "ألمانيا",
+  "tipCountryHongKong": "هونج كونج",
+  "tipCountryIndonesia": "أندونيسيا",
+  "tipCountryItaly": "إيطاليا",
+  "tipCountryJapan": "اليابان",
+  "tipCountryMexico": "المكسيك",
+  "tipCountryMorocco": "المغرب",
+  "tipCountryPortugal": "البرتغال",
+  "tipCountrySingapore": "سنغافورة",
+  "tipCountrySpain": "إسبانيا",
+  "tipCountryThailand": "تايلاند",
+  "tipCountryTurkey": "ديك رومى",
+  "tipCountryUae": "الإمارات العربية المتحدة (دبي)",
+  "tipCountryUnitedKingdom": "المملكة المتحدة",
+  "tipCountryUsa": "الولايات المتحدة",
+  "tipZeroReasonChina": "البقشيش ليس أمرًا معتادًا في الصين القارية ويمكن رفضه أو اعتباره أمرًا غريبًا في العديد من الأماكن.",
+  "tipZeroReasonFrance": "تتضمن فواتير المطاعم عادةً رسوم خدمة بنسبة 15% (رسوم الخدمة). البقشيش الإضافي اختياري للخدمة الاستثنائية.",
+  "tipZeroReasonJapan": "البقشيش لا يُمارس في اليابان ويمكن أن يسبب ارتباكًا أو إساءة.",
+  "tipZeroReasonSingapore": "البقشيش غير متوقع؛ تضيف العديد من الأماكن رسوم خدمة بنسبة 10٪ إلى الفاتورة.",
+  "tipZeroReasonGeneric": "نصيحة 0٪ نموذجية هنا. لا يزال بإمكانك إضافة إكرامية للخدمة المتميزة.",
+  "tipZeroReasonTitle": "لماذا 0%؟",
+  "tipCurrentCountry": "البلد الحالي",
+  "tipPeople": "الناس",
+  "tipPerPerson": "المبلغ للشخص الواحد",
+  "tipPercentHint": "اكتب الإكرامية % (على سبيل المثال 15 أو 27.5)",
+  "tipPercentLabel": "نصيحة ٪",
+  "tipResults": "نتائج",
+  "tipSmartHeader": "نصيحة ذكية",
+  "tipTotalBill": "إجمالي مبلغ الفاتورة",
+  "tipTotalWithTip": "المجموع مع معلومات سرية",
+  "toolBrainstorm": "العصف الذهني",
+  "toolBudget": "ميزانية",
+  "toolBudgetSubtitle": "تخطيط ميزانية الرحلة وتتبع النفقات",
+  "toolBudgetTitle": "ميزانية",
+  "toolItinerarySubtitle": "الرحلات الجوية والفنادق والخطط يوميا",
+  "toolItineraryTitle": "خط سير الرحلة",
+  "toolCrypto": "تشفير",
+  "toolCryptoSubtitle": "قيم USD عبر العملات الشائعة",
+  "toolCryptoTitle": "تشفير",
+  "toolDocumentVault": "قبو الوثيقة",
+  "toolMindMapSubtitle": "أفكار على لوحة قماشية لا حصر لها · غير متصل بالإنترنت",
+  "toolMindMapTitle": "خريطة العصف الذهني",
+  "toolPacking": "التعبئة",
+  "toolPackingSubtitle": "قوائم التعبئة الذكية حسب الرحلة",
+  "toolPackingTitle": "التعبئة",
+  "toolSchedulerSubtitle": "المناطق الزمنية المزدوجة · التخطيط لاضطراب الرحلات الجوية الطويلة",
+  "toolSchedulerTitle": "الوقت والتاريخ",
+  "toolSettingsAboutSubtitle": "الإعلانات والمساعدة والخصوصية والشروط",
+  "toolSettingsAboutTitle": "الإعدادات وحول",
+  "toolSettingsInfo": "الإعدادات والمعلومات",
+  "toolSizeSubtitle": "الولايات المتحدة · المملكة المتحدة · الاتحاد الأوروبي · اليابان (اليابان)",
+  "toolSizeTitle": "تحويل حجم الملابس",
+  "toolTimeDate": "الوقت والتاريخ",
+  "toolTipSubtitle": "معايير معلومات الدولة · تقسيم ما يصل إلى 20 شخصًا",
+  "toolTipTitle": "نصيحة ذكية وفاصل الفاتورة",
+  "toolUnits": "الوحدات",
+  "toolUnitsSubtitle": "الطول، الوزن، درجة الحرارة، الحجم",
+  "toolUnitsTitle": "الوحدات",
+  "toolVaultSubtitle": "تخزين غير متصل لوثائق السفر الحيوية",
+  "toolVaultTitle": "قبو الوثيقة",
+  "unitAcres": "فدان",
+  "unitCategoryArea": "منطقة",
+  "unitCategoryDistance": "مسافة",
+  "unitCategoryLength": "طول",
+  "unitCategoryTemperature": "درجة حرارة",
+  "unitCategoryVolume": "مقدار",
+  "unitCategoryWeight": "وزن",
+  "unitCelsius": "مئوية",
+  "unitCentimeters": "سنتيمترات",
+  "unitFahrenheit": "فهرنهايت",
+  "unitFeet": "قدم",
+  "unitGrams": "غرام",
+  "unitHectares": "هكتار",
+  "unitInches": "بوصة",
+  "unitKilograms": "كيلوغرامات",
+  "unitKilometers": "كيلومترات",
+  "unitLiters": "لتر",
+  "unitMeters": "متر",
+  "unitMiles": "مايلز",
+  "unitMilliliters": "ملليلتر",
+  "unitOunces": "أوقية",
+  "unitPounds": "جنيه",
+  "unitSquareCentimeters": "سنتيمترات مربعة",
+  "unitSquareFeet": "قدم مربع",
+  "unitSquareInches": "بوصة مربعة",
+  "unitSquareKilometers": "كيلومتر مربع",
+  "unitSquareMeters": "متر مربع",
+  "unitSquareYards": "ياردة مربعة",
+  "unitUsFluidOunces": "أوقية السوائل الأمريكية",
+  "unitUsGallons": "جالون أمريكي",
+  "unitYards": "ياردة",
+  "unitsHeader": "الوحدات",
+  "vaultCategoryArrivalCard": "بطاقة الوصول",
+  "vaultCategoryHotelReservation": "حجز الفندق",
+  "vaultCategoryOther": "آخر",
+  "vaultCategoryPassportCopy": "نسخة من جواز السفر",
+  "vaultCategoryReturnFlight": "رحلة العودة",
+  "vaultCategoryVisa": "فيزا",
+  "vaultDocumentTitle": "وثيقة",
+  "vaultIntro": "قم بتخزين مستندات السفر الحيوية بشكل آمن للوصول إليها دون اتصال بالإنترنت وتقديم عرض سريع عند الهجرة.",
+  "vaultProcessFailed": "فشلت معالجة المستند: {error}",
+  "vaultTapToUpload": "انقر للتحميل",
+  "vaultTapToView": "انقر للعرض",
+  "vaultVaultWord": "قبو",
+  "bucketListTitle": "قائمة دلو",
+  "bucketListSubtitle": "الأماكن التي زرتها، والتي تريد الذهاب إليها، وما هي الخطوة التالية.",
+  "bucketListToolSubtitle": "وجهات الحلم على الخريطة وفي القوائم",
+  "bucketListViewModeList": "قائمة",
+  "bucketListViewModeMap": "رسم خريطة",
+  "bucketListViewModePopular": "شائع",
+  "bucketListPopularHint": "تم، عش، وعش، قم بتحديث خريطتك وقائمتك. المطلوب والقادم موجودان في القائمة فقط ولا يظهران أبدًا على الخريطة.",
+  "bucketListCategoryBeen": "كان",
+  "bucketListCategoryWant": "يريد",
+  "bucketListCategoryLive": "يعيش",
+  "bucketListCategoryLived": "عاش",
+  "bucketListCategoryUpcoming": "القادمة",
+  "bucketListDatesRange": "{start} - {end}",
+  "bucketListDetailCategory": "فئة",
+  "bucketListDetailDates": "بلح",
+  "bucketListMapLegend": "اضغط على علامة للحصول على التفاصيل",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "tripmetic.app",
+  "bucketListShareMapStatExplore": "{name} استكشف {worldPercent}% من العالم. سافر أكثر من {populationPercent}% من سكان العالم.",
+  "bucketListShareMapTravelerFallback": "رافائيل",
+  "bucketListShareMapStatPopulation": "سافر أكثر من {percent}% من سكان العالم",
+  "bucketListShareMapCountriesLabel": "بلدان",
+  "bucketListShareMapCitiesLabel": "المدن",
+  "bucketListEmptyCategory": "لا يوجد أماكن في هذه الفئة حتى الآن.",
+  "bucketListTravelStats": "إحصائيات السفر",
+  "bucketListStatWorld": "استكشاف العالم",
+  "bucketListStatUs": "استكشفت الولايات المتحدة",
+  "bucketListStatEurope": "استكشفت أوروبا",
+  "bucketListStatAsia": "استكشاف آسيا",
+  "bucketListStatAfrica": "تم استكشاف أفريقيا",
+  "bucketListStatRegionalCaption": "إقليمي",
+  "bucketListStatSubtitle": "{count} فريد · من {total}",
+  "bucketListAddDestination": "أضف الوجهة",
+  "bucketListEditDestination": "تحرير الوجهة",
+  "bucketListSave": "يحفظ",
+  "bucketListFieldCity": "مدينة",
+  "bucketListFieldCountry": "دولة",
+  "bucketListFieldCategory": "فئة",
+  "bucketListFieldRegionHint": "الولاية/المقاطعة (اختياري)",
+  "bucketListFieldLatitude": "خط العرض",
+  "bucketListFieldLongitude": "خط الطول",
+  "bucketListFieldStart": "تاريخ البدء",
+  "bucketListFieldEnd": "تاريخ الانتهاء",
+  "bucketListFieldTripDates": "مواعيد الرحلة",
+  "bucketListValidationRequired": "هذه الخانة مطلوبه.",
+  "bucketListValidationNumber": "أدخل رقمًا صالحًا.",
+  "bucketListValidationDates": "يجب أن يكون تاريخ الانتهاء في نفس تاريخ البدء أو بعده.",
+  "bucketListGeocodeNotFound": "تعذر العثور على هذا الموقع على الخريطة. يرجى التحقق من التهجئة.",
+  "bucketListShareSummarySubject": "قائمتي Tripmetic",
+  "bucketListShareTooltip": "مشاركة القائمة والخريطة",
+  "bucketListShareFailed": "لا يمكن المشاركة: {error}",
+  "bucketListShareNeedMap": "افتح عرض الخريطة قبل التقاط صورة الخريطة.",
+  "bucketListDeleteHint": "انتقد لإزالة",
+  "bucketListTapEditHint": "انقر للتحرير",
+  "bucketListCloudSyncFailed": "فشلت المزامنة السحابية: {error}",
+  "bucketListRetry": "أعد المحاولة",
+  "bucketListBackupTooltip": "النسخ الاحتياطي والتسجيل",
+  "bucketListBackupTitle": "النسخ الاحتياطي السحابي",
+  "bucketListBackupGuestIntro": "Tripmetic يعمل بشكل كامل بدون حساب. أضف واحدة في أي وقت إذا كنت تريد النسخ الاحتياطي السحابي لقائمة المجموعات الخاصة بك والرحلات الجماعية المشتركة.",
+  "bucketListSignedInAs": "تم تسجيل الدخول باسم {email}",
+  "bucketListBackupEmail": "بريد إلكتروني",
+  "bucketListBackupPassword": "كلمة المرور",
+  "bucketListBackupConfirmPassword": "تأكيد كلمة المرور",
+  "bucketListAuthTabSignUp": "اشتراك",
+  "bucketListAuthPasswordMismatch": "كلمات المرور غير متطابقة.",
+  "bucketListRegister": "إنشاء حساب والنسخ الاحتياطي",
+  "bucketListSignIn": "تسجيل الدخول",
+  "bucketListSignOut": "تسجيل الخروج",
+  "bucketListBackupUploading": "جارٍ التحميل إلى السحابة…",
+  "bucketListAuthSuccessSignIn": "تم تسجيل الدخول بنجاح!",
+  "bucketListAuthSuccessSignUp": "تم إنشاء الحساب بنجاح!",
+  "signUpSuccessMessage": "تم إنشاء الحساب. مرحبًا بك في Tripmetic!",
+  "signUpErrorEmailInUse": "عنوان البريد الإلكترونى هذا مسجل بالفعل. حاول تسجيل الدخول.",
+  "signUpErrorInvalidEmail": "أدخل بريدًا إلكترونيًا صالحًا.",
+  "signUpErrorWeakPassword": "كلمة المرور ضعيفة جدًا. استخدم 8 أحرف على الأقل.",
+  "signUpErrorGeneric": "تعذر التسجيل: {message}",
+  "signUpErrorEmailInUseAction": "تسجيل الدخول",
+  "bucketListAuthFailed": "تعذرت المصادقة: {error}",
+  "groupPlannerNoExtraDetails": "لا توجد ملاحظات أو روابط حتى الآن.",
+  "groupPlannerTitle": "مخطط المجموعة",
+  "groupPlannerToolTitle": "مخطط المجموعة",
+  "groupPlannerToolSubtitle": "خطط لرحلة معًا في الوقت الفعلي",
+  "groupPlannerLandingPlanTitle": "خطط لرحلة جماعية",
+  "groupPlannerLandingPlanSubtitle": "قم بإنشاء رحلة مشتركة مع الوجهة والتواريخ والميزانية.",
+  "groupPlannerLandingJoinTitle": "انضم إلى رحلة جماعية",
+  "groupPlannerLandingJoinSubtitle": "أدخل رمز الرحلة أو الرابط من دعوتك.",
+  "groupPlannerCreateTripTitle": "رحلة جماعية جديدة",
+  "groupPlannerSelectDates": "حدد النطاق الزمني للرحلة.",
+  "groupPlannerBudgetPerPersonOption": "لكل شخص",
+  "groupPlannerBudgetGroupOption": "مجموع المجموعة",
+  "groupPlannerBudgetNoneOption": "لا أحد",
+  "groupPlannerBudgetAmountLabel": "مبلغ الميزانية",
+  "groupPlannerOpenTitle": "افتح رحلة جماعية",
+  "groupPlannerOpenSubtitle": "الصق رمز الرحلة من دعوتك.",
+  "groupPlannerOpenTripCodeLabel": "رمز الرحلة",
+  "groupPlannerOpenHint": "الرمز القصير أو معرف الرحلة أو رابط الدعوة",
+  "groupPlannerOpenButton": "رحلة مفتوحة",
+  "groupPlannerDestination": "وجهة",
+  "groupPlannerDates": "بلح",
+  "groupPlannerGroupSize": "حجم المجموعة",
+  "groupPlannerBudget": "ميزانية",
+  "groupPlannerBudgetPerPerson": "للشخص الواحد: {amount}",
+  "groupPlannerBudgetGroup": "إجمالي المجموعة: {amount}",
+  "groupPlannerBudgetNone": "لم يتم تحديد الميزانية",
+  "groupPlannerInviteMembers": "دعوة الأعضاء",
+  "groupPlannerManageMembers": "إدارة الأعضاء",
+  "groupPlannerItinerary": "خط سير الرحلة",
+  "groupPlannerItineraryEditorHint": "باعتبارك مسؤول الرحلة أو منسق الرحلة، يمكنك إضافة أنشطة وتغيير الجدول الزمني.",
+  "groupPlannerItineraryViewerHint": "للقراءة فقط: التصويت على الأنشطة المقترحة بإبهام لأعلى أو لأسفل. يمكن لمسؤولي الرحلة ومنسقي الرحلة فقط إضافة العناصر أو تغييرها.",
+  "groupPlannerNoActivities": "لا توجد أنشطة حتى الآن.",
+  "groupPlannerTripNotFound": "لا يمكن تحميل هذه الرحلة.",
+  "groupPlannerSignInTitle": "تسجيل الدخول مطلوب",
+  "groupPlannerSignInBody": "قم بتسجيل الدخول ضمن قائمة الجرافات → النسخ الاحتياطي السحابي لعرض الرحلات المشتركة.",
+  "groupPlannerCreateTripSignInRequired": "يتطلب حفظ رحلة جماعية جديدة إنشاء حساب. قم بتسجيل الدخول للمتابعة — تعمل ميزات Tripmetic الأخرى بدون ميزة واحدة.",
+  "groupPlannerMembersTitle": "أعضاء",
+  "groupPlannerRoleAdmin": "مسؤل",
+  "groupPlannerRoleCoPlanner": "منسق الرحلة",
+  "groupPlannerRoleViewOnly": "للعرض فقط",
+  "groupPlannerOwner": "مالك",
+  "groupPlannerRemoveMember": "يزيل",
+  "groupPlannerRemoveMemberTitle": "إزالة العضو؟",
+  "groupPlannerRemoveMemberBody": "هل تريد إزالة {email} من هذه الرحلة؟",
+  "groupPlannerCancel": "يلغي",
+  "groupPlannerNotes": "ملحوظات",
+  "groupPlannerOpenLink": "فتح الرابط",
+  "groupPlannerNetVotes": "{count}",
+  "groupPlannerVoteError": "تعذر حفظ التصويت: {error}",
+  "groupPlannerManageError": "لا يمكن تحديث الأعضاء: {error}",
+  "groupPlannerInviteError": "تعذر فتح ورقة المشاركة: {error}",
+  "groupPlannerUnknownTripCode": "لا يمكن فتح الرحلة: {error}",
+  "groupPlannerMyTripsSectionTitle": "رحلاتك",
+  "groupPlannerMyTripsEmpty": "لا توجد رحلات بعد. إنشاء واحد أعلاه.",
+  "groupPlannerExamplesTitle": "الرحلات سبيل المثال",
+  "groupPlannerExamplesSubtitle": "نماذج من البطاقات - قم بإنشاء رحلة أعلاه لإضافة رحلتك الخاصة.",
+  "groupPlannerExampleTapBody": "هذه عينات فقط. استخدم \"التخطيط لرحلة جماعية\" لإنشاء رحلة حقيقية يمكنك مشاركتها.",
+  "groupPlannerExampleLisbonTitle": "فريق لشبونة خارج الملعب",
+  "groupPlannerExampleKyotoTitle": "جولة الربيع في كيوتو",
+  "groupPlannerAddActivity": "أضف نشاطًا",
+  "groupPlannerActivityTitleLabel": "عنوان النشاط",
+  "groupPlannerActivityWhenLabel": "التاريخ والوقت",
+  "groupPlannerActivityTripDateRangeHelp": "اختر يومًا لرحلتك، ثم وقتًا. يمكن لأي شخص يمكنه تعديل خط سير الرحلة تغيير ذلك لاحقًا.",
+  "groupPlannerActivityDateOutOfRange": "هذا التاريخ خارج هذه الرحلة. اختر يومًا بين بداية الرحلة وانتهائها.",
+  "groupPlannerActivityTitleRequired": "أدخل عنوان النشاط.",
+  "groupPlannerActivityDateUnset": "لم يتم ضبط التاريخ - انقر فوق \"تحرير\" للجدولة.",
+  "groupPlannerPeopleCount": "{count} الناس",
+  "groupPlannerEditActivity": "تحرير النشاط",
+  "groupPlannerDeleteActivity": "يمسح",
+  "groupPlannerDeleteActivityTitle": "هل تريد حذف النشاط؟",
+  "groupPlannerDeleteActivityBody": "هل تريد إزالة \"{title}\" من خط سير الرحلة؟ لا يمكن التراجع عن هذا.",
+  "groupPlannerActivityDeleteError": "تعذر حذف النشاط: {error}",
+  "groupPlannerActivityEditError": "تعذر تحديث النشاط: {error}",
+  "groupPlannerEditTripTitle": "تحرير الرحلة",
+  "groupPlannerEditTripAction": "تحرير الرحلة",
+  "groupPlannerDeleteTripTitle": "هل تريد حذف الرحلة؟",
+  "groupPlannerDeleteTripBody": "هل تريد إزالة الرحلة \"{destination}\" وخط سيرها للجميع نهائيًا؟ لا يمكن التراجع عن هذا.",
+  "groupPlannerDeleteTripAction": "حذف الرحلة",
+  "groupPlannerTripDeleted": "تمت إزالة الرحلة.",
+  "groupPlannerTripDeleteError": "تعذر حذف الرحلة: {error}",
+  "groupPlannerTripUpdateError": "تعذر تحديث الرحلة: {error}",
+  "widgetInstructionTitle": "القطعة على مدار الساعة المزدوجة",
+  "widgetInstructionSubtitle": "تتبع المناطق الزمنية الرئيسية والوجهة مباشرة من شاشة القفل أو الشاشة الرئيسية.",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "قفل الشاشة",
+  "widgetInstructionIosLockScreenStep1": "اضغط لفترة طويلة على شاشة القفل ثم اضغط على \"تخصيص\".",
+  "widgetInstructionIosLockScreenStep2": "حدد معاينة \"شاشة القفل\".",
+  "widgetInstructionIosLockScreenStep3": "اضغط على منطقة القطعة مباشرة أسفل الوقت.",
+  "widgetInstructionIosLockScreenStep4": "قم بالتمرير لأسفل، وحدد Tripmetic، ثم انقر لإضافة الأداة.",
+  "widgetInstructionIosHomeScreenTitle": "الشاشة الرئيسية",
+  "widgetInstructionIosHomeScreenStep1": "اضغط لفترة طويلة على مساحة فارغة على شاشتك الرئيسية.",
+  "widgetInstructionIosHomeScreenStep2": "اضغط على أيقونة + في الزاوية العلوية اليسرى.",
+  "widgetInstructionIosHomeScreenStep3": "ابحث عن \"Tripmetic\".",
+  "widgetInstructionIosHomeScreenStep4": "حدد حجم الأداة المفضلة لديك وانقر فوق \"إضافة القطعة\".",
+  "widgetInstructionAndroidStep1": "انتقل إلى شاشتك الرئيسية واضغط لفترة طويلة على منطقة فارغة.",
+  "widgetInstructionAndroidStep2": "اضغط على \"الحاجيات\".",
+  "widgetInstructionAndroidStep3": "قم بالتمرير لأسفل إلى Tripmetic.",
+  "widgetInstructionAndroidStep4": "اضغط مطولاً على أداة الساعة المزدوجة، ثم اسحبها إلى شاشتك.",
+  "widgetInstructionAndroidLockScreenHint": "لرؤية الساعتين على شاشة القفل: افتح الإعدادات ← ابحث عن \"شاشة القفل\" أو \"الأدوات\"، وأضف Tripmetic هناك إذا كان هاتفك يوفر أدوات لشاشة القفل (ليس كل الأجهزة تفعل ذلك).",
+  "widgetInstructionConfigureCta": "تكوين مدن القطعة",
+  "currencyWidgetInstructionTitle": "القطعة تحويل العملات",
+  "currencyWidgetInstructionSubtitle": "قم بتثبيت العملات الأساسية والعملات المستهدفة على شاشتك الرئيسية Android. تتم مزامنة الأسعار كلما استخدمت المحول في Tripmetic.",
+  "currencyWidgetInstructionAndroidTitle": "أضف إلى الشاشة الرئيسية",
+  "currencyWidgetInstructionAndroidStep1": "افتح أداة العملة مرة واحدة وقم بتعيين أول عملتين (الأساسية والهدف).",
+  "currencyWidgetInstructionAndroidStep2": "انتقل إلى شاشتك الرئيسية واضغط لفترة طويلة على منطقة فارغة.",
+  "currencyWidgetInstructionAndroidStep3": "اضغط على \"الأدوات\"، وقم بالتمرير إلى Tripmetic، واختر \"محول العملات\".",
+  "currencyWidgetInstructionAndroidStep4": "اسحب الأداة إلى شاشتك الرئيسية، أو انقر فوق \"إضافة\" إذا كان المشغل الخاص بك يدعمها.",
+  "currencyWidgetInstructionUsageTitle": "باستخدام القطعة",
+  "currencyWidgetInstructionUsageStep1": "اضغط على تغيير (أو نص الأداة) لفتح تحديد العملة في Tripmetic.",
+  "currencyWidgetInstructionUsageStep2": "انقر فوق ↻ تحديث لتحديث الأسعار على الأداة في الخلفية (لا يفتح التطبيق).",
+  "currencyWidgetInstructionUsageStep3": "يتم تحديث المبالغ تلقائيًا عند قيامك بتحرير العملات أو القيم في التطبيق.",
+  "currencyWidgetInstructionPinCta": "إضافة القطعة إلى الشاشة الرئيسية",
+  "currencyWidgetInstructionOpenCurrencyCta": "تغيير عملات القطعة",
+  "currencyWidgetInstructionIosHint": "أداة الشاشة الرئيسية للعملة متاحة على Android. على iPhone، استخدم أداة العملة داخل التطبيق.",
+  "currencyWidgetPinUnsupported": "لا يدعم المشغل الخاص بك إضافة هذه الأداة من التطبيق. اضغط لفترة طويلة على شاشتك الرئيسية واختر Widgets بدلاً من ذلك.",
+  "currencyWidgetPinFailed": "تعذر فتح منتقي الأدوات. أضف الأداة يدويًا من شاشتك الرئيسية.",
+  "dualClockScreenTitle": "القطعة على مدار الساعة المزدوجة",
+  "dualClockConfigTitle": "تكوين المدن",
+  "dualClockConfigSubtitle": "اختر مدينتين ومنطقتين زمنيتين. تتم مزامنة اختياراتك مع أداة الشاشة الرئيسية Tripmetic (Android) وأداة شاشة القفل (iOS).",
+  "dualClockCity1Label": "المدينة الأولى",
+  "dualClockCity2Label": "المدينة الثانية",
+  "dualClockSave": "حفظ وتحديث القطعة",
+  "dualClockSaved": "تم تحديث القطعة.",
+  "dualClockSaveError": "لا يمكن حفظ بيانات القطعة. يرجى المحاولة مرة أخرى.",
+  "dualClockAppearanceTitle": "مظهر القطعة",
+  "dualClockAppearanceHint": "تخصيص حجم النص والألوان وخلفية الشاشة الرئيسية. تستخدم شاشة القفل حجم الخط (والألوان التي يسمح بها النظام).",
+  "dualClockFontScaleLabel": "حجم النص",
+  "dualClockColorCity": "أسماء المدن",
+  "dualClockColorTime": "مرات",
+  "dualClockColorDate": "بلح",
+  "dualClockColorBackground": "خلفية المنزل",
+  "dualClockShadowLabel": "ظل النص",
+  "dualClockShadowSubtitle": "يضيف تباينًا على خلفيات الصور المزدحمة أو المزدحمة.",
+  "moreToolsDualClockBannerTitle": "القطعة على مدار الساعة المزدوجة",
+  "moreToolsDualClockBannerSubtitle": "شاهد منطقتين زمنيتين على شاشة القفل أو الشاشة الرئيسية - انقر للإعداد.",
+  "moreToolsDualClockBannerCta": "يثبت",
+  "settingsDualClockWidgetTitle": "القطعة على مدار الساعة المزدوجة",
+  "settingsDualClockWidgetSubtitle": "أضف القطعة واختر مدنك",
+  "widgetNewFeatureBadge": "جديد",
+  "globalNavAccountCloudSyncTooltip": "الحساب والنسخ الاحتياطي السحابي",
+  "exchangeRatesForceRefreshTooltip": "جلب أحدث أسعار الصرف",
+  "exchangeRatesRefreshedOk": "تم تحديث أسعار الصرف.",
+  "exchangeRatesRefreshFailed": "تعذر تحديث أسعار الصرف.",
+  "bucketListStatUsTerritories": "الأراضي الأمريكية",
+  "bucketListAuthErrUserNotFound": "لم يتم العثور على حساب لهذا البريد الإلكتروني.",
+  "bucketListAuthErrWrongPassword": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "bucketListAuthErrEmailInUse": "يوجد حساب بالفعل لهذا البريد الإلكتروني.",
+  "bucketListAuthErrInvalidEmail": "عنوان البريد الإلكتروني غير صالح.",
+  "bucketListAuthErrWeakPassword": "كلمة المرور ضعيفة جدًا.",
+  "bucketListAuthErrUserDisabled": "لقد تم تعطيل هذا الحساب.",
+  "bucketListAuthErrTooManyRequests": "محاولات كثيرة جدًا. حاول مرة أخرى لاحقًا.",
+  "bucketListAuthErrOperationNotAllowed": "لم يتم تمكين تسجيل الدخول بالبريد الإلكتروني/كلمة المرور.",
+  "bucketListAuthErrDetail": "{detail}",
+  "bucketListAuthValidationInvalidEmail": "عنوان البريد الإلكتروني غير صالح.",
+  "bucketListAuthValidationPasswordShort": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.",
+  "bucketListAuthValidationPasswordRequired": "أدخل كلمة المرور الخاصة بك.",
+  "currencyWidgetAppearanceTitle": "مظهر",
+  "currencyWidgetAppearanceHint": "تخصيص حجم الخط وألوان النص وخلفية الشاشة الرئيسية. تحافظ الأدوات الرئيسية على حجم ثابت، بحيث يتم احتواء الخطوط الكبيرة تلقائيًا بحيث تظل جميع الصفوف مرئية. تستخدم شاشة القفل حجم الخط (والألوان التي يسمح بها النظام).",
+  "currencyWidgetFontScaleLabel": "حجم الخط",
+  "currencyWidgetColorPrimary": "النص الأساسي (المبالغ / القاعدة)",
+  "currencyWidgetColorAccent": "نص مميز (تسميات الزوج/السلم)",
+  "currencyWidgetColorCaption": "نص التسمية التوضيحية (خط السعر)",
+  "currencyWidgetColorBackground": "خلفية المنزل",
+  "currencyWidgetSaveAppearance": "حفظ المظهر",
+  "currencyWidgetAppearanceSaved": "تم حفظ مظهر أداة العملة",
+  "currencyWidgetAppearanceSaveFailed": "لا يمكن حفظ مظهر القطعة",
+  "currencyWidgetInstructionIosTitle": "iPhone",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalForTrip": {
+    "description": "Budget summary line; {code} is a currency code such as USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}

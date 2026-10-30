@@ -1,0 +1,6 @@
+// Pure SwiftUI WidgetKit extension — must NOT link Flutter.framework or plugins.
+// Only pull version macros for Info.plist substitution.
+#include "../Flutter/Generated.xcconfig"
+
+// Drop any inherited -framework Flutter / plugin flags from the main app target chain.
+OTHER_LDFLAGS =

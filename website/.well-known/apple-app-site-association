@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "B6J6M54N7G.com.tripmetic.app",
+        "paths": [ "/group-trip/*" ]
+      }
+    ]
+  }
+}

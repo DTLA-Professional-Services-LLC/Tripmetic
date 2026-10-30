@@ -1,0 +1,1335 @@
+{
+  "@@locale": "es",
+  "@@context": "Interfaz de la app de viajes Tripmetic. Conserva los marcadores entre llaves exactamente (p. ej. {name}, {code}). Mantén sin traducir los nombres Tripmetic, RevenueCat, Android, iOS, Google Play y los códigos de moneda ISO (USD, EUR), salvo que el texto lo explique por completo.",
+  "addItineraryEnterTitle": "Introduce un título",
+  "addItineraryFieldLocation": "Ubicación",
+  "addItineraryFieldNotes": "Notas / confirmación",
+  "addItineraryFieldTitle": "Título",
+  "addItineraryHintLocation": "Aeropuerto, dirección del hotel…",
+  "addItineraryHintNotes": "Localizador, enlaces…",
+  "addItineraryHintTitle": "Vuelo a Lisboa",
+  "addItinerarySave": "Guardar evento",
+  "addItineraryTitle": "Añadir evento al itinerario",
+  "addPackingAddToList": "Añadir a la lista",
+  "addPackingEnterName": "Introduce el nombre del artículo",
+  "addPackingFieldCategory": "Categoría",
+  "addPackingFieldItemName": "Nombre del artículo",
+  "addPackingHint": "p. ej. Adaptador de corriente",
+  "addPackingIcon": "Icono",
+  "addPackingQuantity": "Cantidad",
+  "addPackingTitle": "Añadir al equipaje",
+  "announcementsLatest": "Novedades",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "DIVISA BASE",
+  "budgetCategoryDialogHint": "p. ej. Recuerdos",
+  "budgetCategoryNameExists": "El nombre ya existe",
+  "budgetCategoryNameMax": "Máximo 40 caracteres",
+  "budgetDailyFood": "Comida diaria",
+  "budgetDestinationSearchHint": "Buscar país o código de divisa",
+  "budgetDestinationTitle": "Añadir destino",
+  "budgetDialogAdd": "Añadir",
+  "budgetDialogNewCategory": "Nueva categoría de gasto",
+  "budgetDialogRemoveBody": "¿Eliminar \"{name}\" y su importe?",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetDialogRemoveTitle": "Eliminar categoría",
+  "budgetDialogRename": "Renombrar",
+  "budgetDialogRenameCategory": "Renombrar categoría",
+  "budgetEdit": "Editar presupuesto",
+  "budgetExpenseDailyFood": "Comida diaria",
+  "budgetExpenseEatingOut": "Comer fuera",
+  "budgetExpenseEntertainment": "Ocio",
+  "budgetExpenseFlights": "Vuelos",
+  "budgetExpenseGrocery": "Comestibles",
+  "budgetExpenseHotels": "Hoteles",
+  "budgetExpenseMisc": "Varios",
+  "budgetExpensePhoneService": "Telefonía",
+  "budgetExpenseShopping": "Compras",
+  "budgetExpenseTourism": "Turismo",
+  "budgetExpenseTransportation": "Transporte",
+  "budgetExpenseTravelInsurance": "Seguro de viaje",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3.000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "En tus destinos",
+  "budgetNoCategories": "Aún no hay categorías de gasto",
+  "budgetOtherExpenses": "OTROS GASTOS ({code})",
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetPerDayEstimate": "Por día (estimación)",
+  "budgetPerDayValue": "≈ {amount} / día",
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetRemainingAfter": "Restante tras gastos · {code}",
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetSave": "Guardar presupuesto",
+  "budgetSpendingPower": "Poder adquisitivo",
+  "budgetSpentVsBudget": "Gastado vs presupuesto",
+  "budgetTotalBudget": "PRESUPUESTO TOTAL ({code})",
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetTotalForTrip": "Total del viaje ({code})",
+  "@budgetTotalForTrip": {
+    "description": "Línea de resumen del presupuesto; {code} es un código de moneda como USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetTripDashboard": "panel",
+  "budgetTripLengthDays": "Duración del viaje (días)",
+  "budgetTripTitle": "Presupuesto del viaje",
+  "commonAdd": "Añadir",
+  "commonCancel": "Cancelar",
+  "commonDelete": "Borrar",
+  "commonOk": "Vale",
+  "commonRemove": "Eliminar",
+  "commonRename": "Renombrar",
+  "commonSave": "Guardar",
+  "commonKeyboardDone": "Listo",
+  "countryCountriesCount": "{count} países",
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "countryPickerTitle": "Seleccionar país",
+  "countrySheetSearchHint": "Buscar país o código ISO",
+  "countrySheetTitle": "País / región base",
+  "cryptoHeader": "CRIPTOS",
+  "cryptoMockPerUnit": "Simulación ~{price} / unidad",
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "cryptoPickerTitle": "Elegir moneda",
+  "cryptoSheetTitle": "Seleccionar criptomoneda",
+  "currencyPickerSearchHint": "Buscar ticker o nombre",
+  "currencyPickerTitle": "Elegir divisa",
+  "currencySheetCountShown": "{shown} de {total} mostradas",
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "currencySheetSearchHint": "Buscar código, nombre o ISO numérico",
+  "currencySheetTitle": "Seleccionar divisa",
+  "exchangeBaseSuffix": " · Base",
+  "exchangeCouldNotLoad": "No se pudieron cargar los tipos\n{error}",
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeHeader": "Cambio",
+  "exchangeLastUpdated": "Actualizado hace {mins} min",
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeLastUpdatedOffline": "Actualizado hace {mins} min (sin conexión)",
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "exchangeResetOne": "Restablecer a 1 (base USD)",
+  "exchangeResetTooltip": "Restablecer importes",
+  "exchangeResetZero": "Borrar a 0",
+  "itineraryDayPrefix": "Día {day}: {date}",
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryEmpty": "Aún no hay eventos.\nToca + para añadir vuelos, hoteles y planes.",
+  "itineraryHeader": "ITINERARIO",
+  "itineraryHiveError": "No se pudieron abrir los datos del itinerario guardado.\nAún puedes añadir eventos; es posible que no persistan.\n({error})",
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "itineraryOpenOnMap": "Abrir en el mapa",
+  "mapAddToTrip": "Añadir al viaje",
+  "mapClearRoute": "Borrar ruta y guía",
+  "mapClearTooltip": "Borrar",
+  "mapDisplayCurrentViewport": "Vista actual",
+  "mapDisplaySavedSearch": "Búsqueda guardada",
+  "mapDisplayTripDestination": "Destino del viaje",
+  "mapDownloadAll": "Descargar todo",
+  "mapDownloadCurrentRegion": "Descargar región actual para uso sin conexión",
+  "mapDownloadThisDestination": "Descargar este destino",
+  "mapDownloadedRegions": "Regiones descargadas",
+  "mapDownloadingRegion": "Descargando región...",
+  "mapDownloadingTitle": "Descargando {title}...",
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapFromItinerary": "Desde tu itinerario",
+  "mapItineraryEmptyHint": "Añade destinos al itinerario para pre-descargarlos aquí.",
+  "mapLoadingRegions": "Cargando regiones sin conexión…",
+  "mapLocatingQuery": "Localizando {query}...",
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapMarkCategoryBody": "Elige cómo etiquetar este pin sin conexión.",
+  "mapMarkCategoryTitle": "Categoría de este marcador",
+  "mapMarkFood": "Comida",
+  "mapMarkHotel": "Hotel",
+  "mapMarkLandmark": "Punto de interés",
+  "mapMarkOther": "Otro",
+  "mapNextInstruction": "Siguiente instrucción ({current}/{total})",
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "mapNoLocationSet": "Sin ubicación",
+  "mapNoRegionsYet": "Aún no has descargado ninguna región.",
+  "mapOfflineIntro": "Guarda la región visible o descarga destinos del viaje para navegar sin cobertura.",
+  "mapOfflineMapsTitle": "Mapas sin conexión",
+  "mapRefreshTooltip": "Actualizar",
+  "mapRemovePinTooltip": "Quitar marcador",
+  "mapSaveOffline": "Guardar sin conexión",
+  "mapSavePinToMap": "Guardar pin en el mapa",
+  "mapSavedPinsBody": "Marcadores guardados desde la búsqueda. Toca eliminar para quitar uno del mapa.",
+  "mapSavedPinsTitle": "Marcadores guardados",
+  "mapSearchHint": "Buscar ciudad, dirección o punto de interés…",
+  "mapSnackAddedOfflineMark": "{title} añadido a tus marcas sin conexión.",
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackArrived": "Has llegado.",
+  "mapSnackCouldNotFind": "No se encontró \"{query}\".",
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDeleteFailed": "Error al eliminar: {error}",
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadFailed": "Error al descargar sin conexión: {error}",
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackDownloadedEvent": "Descargado \"{title}\".",
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackEventNoLocation": "\"{title}\" no tiene ubicación.",
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackFinishedBatch": "Descarga finalizada: {count} región(es) del itinerario.",
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLoadRegionsFailed": "No se pudieron cargar regiones sin conexión: {error}",
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackLocationOff": "El servicio de ubicación está desactivado. Actívalo para la navegación.",
+  "mapSnackLocationPermission": "Se requiere permiso de ubicación para giro a giro.",
+  "mapSnackLocationDeniedForMap": "Se requiere permiso de ubicación para centrar el mapa en ti.",
+  "mapSnackLocateFail": "No se pudo obtener tu ubicación en este momento.",
+  "mapLocateMeTooltip": "Ir a mi ubicación",
+  "mapSnackMapNotReady": "El mapa aún no está listo. Espera un momento.",
+  "mapSnackNavStartFail": "No se puede iniciar la navegación ahora.",
+  "mapSnackNavStopped": "Navegación detenida.",
+  "mapSnackNoItineraryLocations": "Ningún evento del itinerario tiene ubicación o punto en el mapa para descargar.",
+  "mapSnackNoManeuver": "Este paso no tiene punto de maniobra preciso.",
+  "mapSnackNoRoute": "No hay ruta; mostrando destino.",
+  "mapSnackRegionDownloaded": "¡Región descargada! Ya puedes navegar sin conexión.",
+  "mapSnackRemovedPin": "Marcador eliminado.",
+  "mapSnackRemovedRegion": "Se eliminó la región sin conexión \"{name}\".",
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackRouteCleared": "Ruta y guía borradas.",
+  "mapSnackRoutingFailed": "Error al calcular la ruta: {error}",
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapSnackSearchFailed": "Error en la búsqueda: {error}",
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mapStartNavigation": "Iniciar navegación",
+  "mapStartingNav": "Iniciando navegación...",
+  "mapStopNavigation": "Detener navegación",
+  "mapTravelDriving": "En coche",
+  "mapTravelWalking": "A pie",
+  "mapTurnByTurn": "Giro a giro ({mode})",
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCaptureFail": "No se pudo capturar el mapa mental. Inténtalo de nuevo.",
+  "mindMapClearBody": "Elimina todos los nodos y restaura el mapa de demostración centrado.",
+  "mindMapClearTitle": "¿Borrar el lienzo?",
+  "mindMapClearTooltip": "Borrar / Restablecer",
+  "mindMapCouldNotSave": "No se pudo guardar: {error}",
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapCouldNotSaveType": "No se pudo guardar: {type}",
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapEmailShare": "Correo / Compartir",
+  "mindMapEmptyNode": "Nodo vacío",
+  "mindMapHelpHint": "Pellizca para zoom · arrastra el lienzo · arrastra tarjetas · toca para editar · + añade hijo",
+  "mindMapNodeAddLeftTooltip": "Añadir hijo a la izquierda",
+  "mindMapNodeAddRightTooltip": "Añadir hijo a la derecha",
+  "mindMapNodeDeleteTooltip": "Eliminar nodo",
+  "mindMapNodeEditTitle": "Editar nodo",
+  "mindMapNodeHint": "Etiqueta breve",
+  "mindMapPhotoAccess": "Se necesita acceso a la galería para guardar la imagen.",
+  "mindMapReset": "Restablecer",
+  "mindMapSavePhoto": "Guardar como foto",
+  "mindMapSavedPhotos": "Guardado en Fotos",
+  "mindMapShareCaptureFail": "No se pudo capturar el mapa mental para compartir.",
+  "mindMapShareCompleted": "Compartido",
+  "mindMapShareFailed": "Error al compartir: {error}",
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "mindMapShareReady": "Imagen lista — elige una app para compartir",
+  "mindMapShareSheetClosed": "Hoja de compartir cerrada",
+  "mindMapShareSubject": "Tripmetic — Mapa mental",
+  "mindMapShareText": "Exportación de mapa mental desde Tripmetic",
+  "mindMapTapToEdit": "Toca para editar",
+  "moreToolsHeader": "MÁS HERRAMIENTAS",
+  "moreToolsSubtitle": "Utilidades de viaje",
+  "navCurrency": "Divisa",
+  "navItinerary": "Itinerario",
+  "navMoreTools": "Más herramientas",
+  "navOfflineMap": "Mapa sin conexión",
+  "navDashboard": "Panel",
+  "navMoreMenu": "Más",
+  "navEditNavigation": "Editar navegación",
+  "navDoneEditing": "Listo",
+  "navSelectSlotHint": "Toca un hueco y luego una herramienta para asignarla.",
+  "navSavePins": "Guardar",
+  "navPinnedSectionTitle": "Anclado a la barra inferior",
+  "navAvailableSectionTitle": "Funciones disponibles",
+  "navEmptySlot": "Vacío — añade desde abajo",
+  "navPinFullHint": "Los cuatro huecos están llenos. Quita uno para añadir otro.",
+  "navEditPinnedHint": "Usa − para liberar un hueco, + para rellenarlo o arrastra para reordenar. Guarda cuando los cuatro estén llenos.",
+  "navAddToPinned": "Añadir a la barra",
+  "navRemoveFromPinned": "Quitar de la barra",
+  "navFeatureBadgeFree": "Gratis",
+  "navFeatureBadgePro": "PRO",
+  "moreMenuSectionFree": "Funciones gratuitas",
+  "moreMenuSectionPro": "Tripmetic Pro",
+  "ourAppsMenuTitle": "Nuestras apps",
+  "ourAppsMenuSubtitle": "Más software del equipo p1.do",
+  "ourAppsScreenTitle": "Nuestras apps",
+  "ourAppsIntro": "Software del equipo p1.do: toca una app activa para abrir su sitio. Stream CRM llega pronto.",
+  "ourAppsBadgeLive": "Disponible",
+  "ourAppsBadgeSoon": "Próximamente",
+  "ourAppsBadgeThisApp": "Esta app",
+  "ourAppsViewOnline": "Ver todo en p1.do",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "Web · Móvil",
+  "ourAppsPlatformWebTabletMobile": "Web · Tablet · Móvil",
+  "ourAppsTravelRecapTagline": "Rutas de viaje con IA y resúmenes con fotos",
+  "ourAppsTravelRecapSummary": "Planifica viajes con varias paradas en un mapa interactivo, genera rutas con IA, añade destinos y exporta resúmenes de viaje pulidos a partir de tus fotos.",
+  "ourAppsP1doTagline": "Link-in-bio y CRM para creadores",
+  "ourAppsP1doSummary": "Link-in-bio para creadores que capturan leads de CRM, además de Premium Selling y reserva de citas, sin un recorte extra de tus ganancias además de la cuota mensual.",
+  "ourAppsDockTxtTagline": "Bloc de notas anclado al borde en macOS y diff exacto",
+  "ourAppsDockTxtSummary": "Un cajón flotante nativo gratuito para macOS: bloc de texto, limpieza de espacios, embellecido de JSON y diffs a nivel de carácter.",
+  "ourAppsTripmeticTagline": "Kit de viaje global y planificador de presupuesto",
+  "ourAppsTripmeticSummary": "Un panel para listas de deseos, mapas sin conexión, itinerarios grupales, presupuestos de varios países, widgets de zona horaria, listas de equipaje y conversiones.",
+  "ourAppsPayxtTagline": "Facturas de pago por mensaje en segundos",
+  "ourAppsPayxtSummary": "Convierte un mensaje de texto en una factura segura con enlaces de pago de Stripe y PayPal para profesionales móviles.",
+  "ourAppsPermitMobileTagline": "Seguimiento de permisos de obra para remodeladores",
+  "ourAppsPermitMobileSummary": "Consulta el estado de permisos municipales desde la obra: números, direcciones y actualizaciones de aprobación desde los portales de la ciudad.",
+  "ourAppsTrackkrTagline": "Gestión de paquetes en apartamentos",
+  "ourAppsTrackkrSummary": "Registra paquetes en segundos, avisa a los inquilinos por correo (y SMS opcional) y gestiona unidades ilimitadas con un plan base gratuito para siempre.",
+  "ourAppsKeyForecastsTagline": "Controller fraccional para líderes HVAC",
+  "ourAppsKeyForecastsSummary": "Inteligencia financiera ejecutiva para HVAC y construcción: costos por trabajo, previsión de flujo de caja estacional e informes listos para escalar.",
+  "ourAppsStreamCrmTagline": "Seguimiento de regalos en TikTok Live y CRM de donantes",
+  "ourAppsStreamCrmSummary": "Sigue regalos de TikTok Live en tiempo real, separa el gasto de los fans de tus ingresos y cultiva a tus mejores apoyos con perfiles de donantes.",
+  "proGlassTeaserTitle": "Función Tripmetic Pro",
+  "dashboardWorldExplorerSection": "Explorador mundial",
+  "dashboardWorldExplorerCountriesLabel": "Países visitados",
+  "dashboardWorldExplorerPercentLabel": "Del mundo explorado",
+  "dashboardWorldExplorerPercentValue": "{percent} %",
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListDisplayNameLabel": "Nombre para mostrar",
+  "bucketListMapUnavailable": "El mapa no está disponible porque no se configuró ningún token de acceso de Mapbox.",
+  "bucketListAuthValidationDisplayName": "Introduce tu nombre",
+  "authSignUpScreenTitle": "Crea tu cuenta Tripmetic",
+  "authSignUpScreenSubtitle": "Opcional: solo si quieres copia en la nube. Puedes usar todas las herramientas en este dispositivo sin registrarte.",
+  "authSignInScreenTitle": "Iniciar sesión en Tripmetic",
+  "authSignInScreenSubtitle": "Opcional: para sincronizar tu lista y los viajes en grupo en la nube. El resto de Tripmetic funciona sin cuenta.",
+  "authForgotPassword": "¿Olvidaste la contraseña?",
+  "authPasswordResetConfirmation": "Si existe una cuenta con ese correo, recibirás un enlace para restablecer la contraseña.",
+  "authUnexpectedError": "Algo salió mal. Inténtalo de nuevo.",
+  "authBackupBulletBucketList": "Los destinos de la lista se guardan en la nube y se combinan al iniciar sesión.",
+  "authBackupBulletGroupTrips": "Los viajes en grupo que creas o a los que te unes quedan asociados a tu cuenta.",
+  "authBackupBulletMultiDevice": "Inicia sesión en otro dispositivo para recuperar tus datos sincronizados.",
+  "authLinkAlreadyHaveAccount": "¿Ya tienes cuenta? Iniciar sesión",
+  "authLinkNeedAccount": "¿Necesitas cuenta? Crear una",
+  "authFullSignUpCta": "Abrir registro completo",
+  "authFullSignInCta": "Abrir inicio de sesión completo",
+  "dashboardGreeting": "Hola, {name}",
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardGuestName": "Viajero",
+  "dashboardWelcomeSubtitle": "Planifica en grupo, mantén el orden y abre herramientas al instante.",
+  "dashboardPlanGroupTrip": "Planificar un viaje en grupo",
+  "dashboardAddBucketList": "Añadir a la lista de deseos",
+  "dashboardActiveTripSection": "Tu próximo viaje",
+  "dashboardNoUpcomingTripTitle": "Sin viaje en grupo próximo",
+  "dashboardNoUpcomingTripBody": "Cuando planifiques con amigos, aquí verás un resumen del viaje.",
+  "dashboardQuickToolsSection": "Accesos rápidos",
+  "dashboardCountdownStartsIn": "Empieza en {days} días",
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardCountdownEndsIn": "Termina en {days} días",
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "navDashboardBody": "Tu centro del viaje: abre herramientas desde la barra o el menú Más.",
+  "appSettings": "Ajustes de la app",
+  "settingsSectionTripmeticPro": "Tripmetic Pro",
+  "settingsSubscriptionActive": "Suscripción activa",
+  "settingsSubscriptionLifetime": "Acceso de por vida",
+  "settingsSubscriptionFree": "Plan gratuito",
+  "settingsManageBilling": "Gestionar facturación",
+  "settingsTestModeSectionTitle": "Modo de prueba",
+  "settingsTestModeProTitle": "Probar como Tripmetic Pro",
+  "settingsTestModeProSubtitle": "Anulación local para pruebas; ignora RevenueCat.",
+  "settingsTestModeProCaption": "Cuando está activado, este dispositivo desbloquea todas las funciones Pro de forma local. Solo para pruebas internas: no modifica tu suscripción real.",
+  "settingsUnitsTitle": "Unidades de medida",
+  "settingsLanguageTitle": "Idioma",
+  "settingsThemeTitle": "Tema",
+  "settingsClockWidgetTitle": "Widget de reloj",
+  "settingsCurrencyWidgetTitle": "Widget de divisas",
+  "settingsCurrencyWidgetSubtitle": "Inicio y bloqueo: 1, 20 y 100 de tu moneda base",
+  "settingsThemeSystem": "Sistema",
+  "settingsThemeLight": "Claro",
+  "settingsThemeDark": "Oscuro",
+  "settingsLanguageSystem": "Predeterminado del sistema",
+  "settingsLanguageEnglish": "Inglés",
+  "settingsLanguageSpanish": "Español",
+  "settingsProfileTitle": "Perfil y sincronización",
+  "settingsLogout": "Cerrar sesión",
+  "settingsLogoutConfirm": "¿Cerrar sesión en esta cuenta?",
+  "settingsDeleteAccount": "Eliminar cuenta",
+  "settingsDeleteAccountBody": "La eliminación de cuenta la gestiona el soporte. Puedes cerrar sesión abajo.",
+  "settingsSectionAccount": "Cuenta",
+  "accountManagementListTitle": "Gestionar cuenta",
+  "accountManagementListSubtitle": "Actualiza tu nombre, correo y contraseña",
+  "accountManagementTitle": "Gestión de cuenta",
+  "accountSectionProfile": "Perfil",
+  "accountSectionSignIn": "Inicio de sesión",
+  "accountFieldDisplayName": "Nombre para mostrar",
+  "accountFieldEmail": "Correo electrónico",
+  "accountFieldCurrentPassword": "Contraseña actual",
+  "accountFieldNewPassword": "Nueva contraseña",
+  "accountSaveName": "Guardar nombre",
+  "accountChangeEmail": "Enviar verificación y cambiar correo",
+  "accountChangePassword": "Cambiar contraseña",
+  "accountSignedOutMessage": "Debes iniciar sesión para gestionar tu cuenta.",
+  "accountSignInCta": "Iniciar sesión",
+  "accountNameSaved": "Nombre actualizado",
+  "accountEmailVerificationSent": "Enlace de verificación enviado a {email}. Confírmalo para cambiar tu correo de acceso.",
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "accountPasswordChanged": "Contraseña actualizada",
+  "accountReauthRequired": "Por seguridad, vuelve a iniciar sesión para cambiar tu {field}.",
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "accountFieldLabelEmail": "correo",
+  "accountFieldLabelPassword": "contraseña",
+  "accountErrorGeneric": "No se pudo actualizar {field}: {error}",
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "accountReauthAction": "Iniciar sesión de nuevo",
+  "accountValidationEmailRequired": "Introduce tu correo",
+  "accountValidationEmailInvalid": "Introduce un correo válido",
+  "accountValidationNameRequired": "Introduce tu nombre",
+  "accountValidationPasswordTooShort": "Usa al menos 8 caracteres",
+  "accountCurrentEmailLabel": "Correo actual: {email}",
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "proPaywallTitle": "Tripmetic Pro",
+  "proPaywallSubtitle": "Desbloquea mapas sin conexión, herramientas avanzadas y colaboración.",
+  "proPaywallBenefits": "Mapas sin conexión y descargas de regiones\nItinerario, presupuesto, bóveda y equipaje\nPlanificador grupal y sincronización en tiempo real",
+  "proPaywallBullets": "Mapas sin conexión y descargas de regiones|Itinerario, presupuesto, bóveda y equipaje|Planificador grupal y sincronización en tiempo real",
+  "proPaywallUpgradeRevenueCat": "Mejorar con RevenueCat",
+  "upgradeNow": "Mejorar ahora",
+  "packingCatClothing": "ROPA",
+  "packingCatDocuments": "DOCUMENTOS",
+  "packingCatMedications": "MEDICAMENTOS",
+  "packingCatMisc": "VARIOS",
+  "packingCatReservations": "RESERVAS",
+  "packingEmpty": "Tu lista está vacía.\nToca + para añadir artículos.",
+  "packingEmptyHidden": "No queda nada por empacar — o desactiva \"Ocultar completados\" para ver lo hecho.",
+  "packingHeader": "EQUIPAJE Y LOGÍSTICA",
+  "packingHideCompleted": "Ocultar completados",
+  "packingHideCompletedSubtitle": "Los completados se guardan; solo se ocultan aquí",
+  "packingStarterPassport": "Pasaporte",
+  "packingStarterShirts": "Camisas",
+  "packingStarterSocks": "Calcetines",
+  "packingStarterTickets": "Billetes de avión",
+  "packingStarterToothbrush": "Cepillo de dientes",
+  "paywallDisabledBody": "El paywall de RevenueCat está deshabilitado temporalmente para revisar la UI.",
+  "paywallDisabledTitle": "Paywall deshabilitado",
+  "presentationDeleteBody": "¿Seguro que quieres quitar este documento de la bóveda?",
+  "presentationDeleteTitle": "¿Eliminar documento?",
+  "presentationImageLoadFail": "No se pudo cargar la imagen",
+  "proActive": "Activo",
+  "proManageHintFree": "Desbloquea funciones Pro con una suscripción mensual.",
+  "proManageHintPro": "Gestiona tu suscripción o restaura compras.",
+  "proManageSubscription": "Gestionar suscripción",
+  "proName": "Tripmetic Pro",
+  "proPaywallError": "No se pudo mostrar el paywall. Revisa tu oferta en RevenueCat.",
+  "proPaywallNotConfigured": "Las suscripciones no están disponibles en esta instalación. Instala Tripmetic desde Google Play para obtener Pro.",
+  "proRestoreFailed": "Error al restaurar: {message}",
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "proTrialCta": "Empieza tu prueba gratis de 3 días",
+  "proWelcome": "Bienvenido a Tripmetic Pro",
+  "schedulerAvailabilityGood": "Bueno",
+  "schedulerAvailabilityOffHours": "Fuera de horario",
+  "schedulerAvailabilityOk": "Aceptable",
+  "schedulerBaseLocation": "Ubicación base",
+  "schedulerBaseTooltip": "La fecha, la hora y el control se aplican al reloj base ({zone}). Cada fila muestra el mismo instante en esa zona.",
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "schedulerConvertedCities": "Ciudades convertidas",
+  "schedulerDayNext": "+1 día",
+  "schedulerDayPrevious": "-1 día",
+  "schedulerDaySame": "Mismo día",
+  "schedulerMeetingTime": "Hora de la reunión",
+  "schedulerSubtitle": "Solapamiento de reuniones",
+  "schedulerTitle": "Planificador global",
+  "settingsAndInfo": "Ajustes e información",
+  "settingsContact": "Contáctanos",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "No se pudo abrir el enlace",
+  "settingsHelpFaq": "Ayuda y preguntas frecuentes",
+  "settingsPrivacy": "Política de privacidad",
+  "settingsSupportLegal": "Soporte y legal",
+  "settingsTerms": "Términos de uso",
+  "settingsMapboxAttributionTitle": "Datos del mapa (Mapbox)",
+  "settingsMapboxAttributionBody": "Tripmetic usa mapas de Mapbox. © Mapbox, © OpenStreetMap y otros colaboradores. El logo y el control de atribución en el mapa están ocultos para un diseño más claro y menos toques accidentales; este aviso cumple los requisitos de Mapbox.",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — Acerca de los mapas",
+  "sizeCatBelts": "Cinturones",
+  "sizeCatMensJeansCombo": "Vaqueros hombre — W×L (US)",
+  "sizeCatMensJeansInseam": "Vaqueros hombre — largo (L)",
+  "sizeCatMensJeansWaist": "Vaqueros hombre — cintura (W)",
+  "sizeCatMensPants": "Pantalones hombre",
+  "sizeCatMensShirts": "Camisas hombre",
+  "sizeCatMensShoes": "Calzado hombre",
+  "sizeCatMensTshirts": "Camisetas hombre",
+  "sizeCatWomensBlouses": "Blusas mujer",
+  "sizeCatWomensDresses": "Vestidos mujer",
+  "sizeCatWomensPants": "Pantalones mujer",
+  "sizeCatWomensShoes": "Calzado mujer",
+  "sizeCatWomensTshirts": "Camisetas mujer",
+  "sizeCatBoysShoes": "Calzado niño",
+  "sizeCatGirlsShoes": "Calzado niña",
+  "sizeCatBoysTshirts": "Camisetas / tops niño",
+  "sizeCatBoysPants": "Pantalones niño",
+  "sizeCatGirlsTshirts": "Camisetas / tops niña",
+  "sizeCatGirlsPants": "Pantalones niña",
+  "sizeCatGirlsDressesKids": "Vestidos niña",
+  "sizeColumnPrimaryEu": "Principal: UE",
+  "sizeColumnPrimaryJp": "Principal: JP",
+  "sizeColumnPrimaryMixed": "Principal: mixto (UE→US→UK→JP)",
+  "sizeColumnPrimaryUk": "Principal: UK",
+  "sizeColumnPrimaryUs": "Principal: US",
+  "sizeConverterAppBarSubtitle": "Ropa y calzado",
+  "sizeConverterCategory": "Categoría",
+  "sizeConverterHeader": "ROPA Y CALZADO",
+  "sizeConverterTapToChange": "{code} · toca para cambiar",
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "sizeConverterYourBaseSize": "Tu talla base (en la etiqueta)",
+  "sizeConverterYourCountry": "Tu país / región",
+  "sizeEquivalentSizesHeader": "TALLAS EQUIVALENTES",
+  "sizeHintBelts": "p. ej. 32, 34, 85, 90",
+  "sizeHintMensJeansCombo": "p. ej. 38x32 o 38×32",
+  "sizeHintMensJeansInseam": "p. ej. 32 (largo\") o 38x32 → usa largo 32",
+  "sizeHintMensJeansWaist": "p. ej. 38 (cintura\") o 38x32 → usa cintura 38",
+  "sizeHintMensPants": "p. ej. 30, 32, 34 (cintura\")",
+  "sizeHintMensShirts": "p. ej. 15, 38, M",
+  "sizeHintMensShoes": "p. ej. 6–14, 42, 27",
+  "sizeHintMensTshirts": "p. ej. S, M, L, 48",
+  "sizeHintWomensBlouses": "p. ej. 8, 38, M, XL",
+  "sizeHintWomensDresses": "p. ej. 8, 38, M",
+  "sizeHintWomensPants": "p. ej. 6, 10, 38, M",
+  "sizeHintWomensShoes": "p. ej. 5–12, 39, 25",
+  "sizeHintWomensTshirts": "p. ej. XS, M, 38",
+  "sizeHintBoysShoes": "p. ej. 11C, 3Y, 32, 21",
+  "sizeHintGirlsShoes": "p. ej. 10C, 2Y, 33, 20",
+  "sizeHintBoysTshirts": "p. ej. 6, 8, M, XS",
+  "sizeHintBoysPants": "p. ej. 6, 8, 10 (niño US)",
+  "sizeHintGirlsTshirts": "p. ej. 6, 8, M, S",
+  "sizeHintGirlsPants": "p. ej. 6, 8, 10 (niña US)",
+  "sizeHintGirlsDressesKids": "p. ej. 4, 6, 8, 104",
+  "sizeNoMatchEmpty": "Introduce la talla de la etiqueta de tu prenda o zapato.",
+  "sizeNoMatchRow": "No hay fila de tallas para esta categoría. Prueba números US, UK, UE, JP o letra (S, M, L) si aplica.",
+  "sizeTipJeansCombo": "Ejemplo US 38×32: cintura ≈ UE 48; etiqueta JP a menudo ~96–97 cm; largo 32\" ≈ ~81 cm. Las marcas varían: orientativo.",
+  "sizeTipJeansInseam": "Largo interior en pulgadas (p. ej. 32). Japón puede mostrar ~81 cm para 32\". Escribe 38×32; usamos 32 para largo.",
+  "sizeTipJeansWaist": "En etiquetas asiáticas un número suele ser cintura: centímetros (38\" ≈ 96–97 cm) o pulgadas US (38). Comprueba con cinta métrica. Puedes escribir 38×32; usamos 38 para cintura.",
+  "timezonePickerEmpty": "Sin coincidencias",
+  "timezonePickerHint": "Buscar nombre IANA (p. ej. Europe, Tokyo)",
+  "timezonePickerTitle": "Elegir zona horaria",
+  "timezoneSheetCountZones": "{shown} de {total} zonas",
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "timezoneSheetSearchHint": "Buscar nombre IANA (p. ej. Europe, Tokyo)",
+  "timezoneSheetTitle": "Seleccionar zona horaria",
+  "tipAmount": "Importe de propina",
+  "tipAppBarSubtitle": "Propina y cuenta",
+  "tipBillHint": "p. ej. 1.250.000,00 $",
+  "tipCountryBrazil": "Brasil",
+  "tipCountryChina": "China",
+  "tipCountryColombia": "Colombia",
+  "tipCountryDominicanRepublic": "República Dominicana",
+  "tipCountryEgypt": "Egipto",
+  "tipCountryFrance": "Francia",
+  "tipCountryGermany": "Alemania",
+  "tipCountryHongKong": "Hong Kong",
+  "tipCountryIndonesia": "Indonesia",
+  "tipCountryItaly": "Italia",
+  "tipCountryJapan": "Japón",
+  "tipCountryMexico": "México",
+  "tipCountryMorocco": "Marruecos",
+  "tipCountryPortugal": "Portugal",
+  "tipCountrySingapore": "Singapur",
+  "tipCountrySpain": "España",
+  "tipCountryThailand": "Tailandia",
+  "tipCountryTurkey": "Turquía",
+  "tipCountryUae": "Emiratos Árabes Unidos (Dubái)",
+  "tipCountryUnitedKingdom": "Reino Unido",
+  "tipCountryUsa": "Estados Unidos",
+  "tipZeroReasonChina": "La propina no es habitual en China continental y en muchos lugares puede rechazarse o resultar extraña.",
+  "tipZeroReasonFrance": "En restaurantes suele incluirse un 15% de servicio (service compris). La propina extra es opcional por un servicio excepcional.",
+  "tipZeroReasonJapan": "En Japón no se deja propina y puede causar confusión u ofender.",
+  "tipZeroReasonSingapore": "No se espera propina; muchos locales añaden un 10% de servicio a la cuenta.",
+  "tipZeroReasonGeneric": "Aquí lo habitual es 0% de propina. Puedes añadir algo si el servicio fue excelente.",
+  "tipZeroReasonTitle": "¿Por qué 0%?",
+  "tipCurrentCountry": "País actual",
+  "tipPeople": "Personas",
+  "tipPerPerson": "Importe por persona",
+  "tipPercentHint": "Escribe la propina % (p. ej. 15 o 27,5)",
+  "tipPercentLabel": "Propina %",
+  "tipResults": "RESULTADOS",
+  "tipSmartHeader": "PROPINA INTELIGENTE",
+  "tipTotalBill": "Importe total de la cuenta",
+  "tipTotalWithTip": "Total con propina",
+  "toolBrainstorm": "Lluvia de ideas",
+  "toolBudget": "Presupuesto",
+  "toolBudgetSubtitle": "Planificación del presupuesto y seguimiento de gastos",
+  "toolBudgetTitle": "Presupuesto",
+  "toolItinerarySubtitle": "Vuelos, hoteles y planes por día",
+  "toolItineraryTitle": "Itinerario",
+  "toolCrypto": "Cripto",
+  "toolCryptoSubtitle": "Valores en USD de monedas populares",
+  "toolCryptoTitle": "Cripto",
+  "toolDocumentVault": "Bóveda de documentos",
+  "toolMindMapSubtitle": "Ideas en un lienzo infinito · sin conexión",
+  "toolMindMapTitle": "Mapa mental",
+  "toolPacking": "Equipaje",
+  "toolPackingSubtitle": "Listas de equipaje por viaje",
+  "toolPackingTitle": "Equipaje",
+  "toolSchedulerSubtitle": "Dos zonas horarias · jet lag",
+  "toolSchedulerTitle": "Hora y fecha",
+  "toolSettingsAboutSubtitle": "Avisos, ayuda, privacidad y términos",
+  "toolSettingsAboutTitle": "Ajustes y acerca de",
+  "toolSettingsInfo": "Ajustes e información",
+  "toolSizeSubtitle": "EE. UU. · Reino Unido · UE · Japón (JP)",
+  "toolSizeTitle": "Conversor de tallas de ropa",
+  "toolTimeDate": "Hora y fecha",
+  "toolTipSubtitle": "Normas por país · hasta 20 personas",
+  "toolTipTitle": "Propinas y división de cuenta",
+  "toolUnits": "Unidades",
+  "toolUnitsSubtitle": "Longitud, peso, temperatura, volumen",
+  "toolUnitsTitle": "Unidades",
+  "toolVaultSubtitle": "Almacenamiento sin conexión de documentos importantes",
+  "toolVaultTitle": "Bóveda de documentos",
+  "unitAcres": "Acres",
+  "unitCategoryArea": "Superficie",
+  "unitCategoryDistance": "Distancia",
+  "unitCategoryLength": "Longitud",
+  "unitCategoryTemperature": "Temperatura",
+  "unitCategoryVolume": "Volumen",
+  "unitCategoryWeight": "Peso",
+  "unitCelsius": "Celsius",
+  "unitCentimeters": "Centímetros",
+  "unitFahrenheit": "Fahrenheit",
+  "unitFeet": "Pies",
+  "unitGrams": "Gramos",
+  "unitHectares": "Hectáreas",
+  "unitInches": "Pulgadas",
+  "unitKilograms": "Kilogramos",
+  "unitKilometers": "Kilómetros",
+  "unitLiters": "Litros",
+  "unitMeters": "Metros",
+  "unitMiles": "Millas",
+  "unitMilliliters": "Mililitros",
+  "unitOunces": "Onzas",
+  "unitPounds": "Libras",
+  "unitSquareCentimeters": "Centímetros cuadrados",
+  "unitSquareFeet": "Pies cuadrados",
+  "unitSquareInches": "Pulgadas cuadradas",
+  "unitSquareKilometers": "Kilómetros cuadrados",
+  "unitSquareMeters": "Metros cuadrados",
+  "unitSquareYards": "Yardas cuadradas",
+  "unitUsFluidOunces": "Onzas líquidas US",
+  "unitUsGallons": "Galones US",
+  "unitYards": "Yardas",
+  "unitsHeader": "UNIDADES",
+  "vaultCategoryArrivalCard": "Tarjeta de llegada",
+  "vaultCategoryHotelReservation": "Reserva de hotel",
+  "vaultCategoryOther": "Otro",
+  "vaultCategoryPassportCopy": "Copia del pasaporte",
+  "vaultCategoryReturnFlight": "Vuelo de vuelta",
+  "vaultCategoryVisa": "Visado",
+  "vaultDocumentTitle": "Documento",
+  "vaultIntro": "Guarda documentos de viaje importantes sin conexión y preséntalos rápido en inmigración.",
+  "vaultProcessFailed": "Error al procesar el documento: {error}",
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vaultTapToUpload": "Toca para subir",
+  "vaultTapToView": "Toca para ver",
+  "vaultVaultWord": "bóveda",
+  "bucketListTitle": "Lista de deseos",
+  "bucketListSubtitle": "Lugares donde has estado, quieres ir y lo que viene.",
+  "bucketListToolSubtitle": "Destinos soñados en mapa y en listas",
+  "bucketListViewModeList": "Lista",
+  "bucketListViewModeMap": "Mapa",
+  "bucketListViewModePopular": "Populares",
+  "bucketListPopularHint": "Visitado, Vivo y Viví actualizan el mapa y la lista. Deseo y Próximo solo están en la lista — nunca en el mapa.",
+  "bucketListCategoryBeen": "Visitado",
+  "bucketListCategoryWant": "Deseo",
+  "bucketListCategoryLive": "Vivo",
+  "bucketListCategoryLived": "Viví",
+  "bucketListCategoryUpcoming": "Próximo",
+  "bucketListDatesRange": "{start} – {end}",
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListDetailCategory": "Categoría",
+  "bucketListDetailDates": "Fechas",
+  "bucketListMapLegend": "Toca un marcador para detalles",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "tripmetic.app",
+  "bucketListShareMapStatExplore": "{name} ha explorado el {worldPercent}% del mundo. Ha viajado más que el {populationPercent}% de la población mundial.",
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "bucketListShareMapTravelerFallback": "Rafael",
+  "bucketListShareMapStatPopulation": "Ha viajado más que el {percent}% de la población mundial",
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "bucketListShareMapCountriesLabel": "Países",
+  "bucketListShareMapCitiesLabel": "Ciudades",
+  "bucketListEmptyCategory": "Aún no hay lugares en esta categoría.",
+  "bucketListTravelStats": "Estadísticas de viaje",
+  "bucketListStatWorld": "Mundo explorado",
+  "bucketListStatUs": "EE. UU. explorados",
+  "bucketListStatEurope": "Europa explorada",
+  "bucketListStatAsia": "Asia explorada",
+  "bucketListStatAfrica": "África explorada",
+  "bucketListStatRegionalCaption": "Regional",
+  "bucketListStatSubtitle": "{count} únicos · de {total}",
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "bucketListAddDestination": "Añadir destino",
+  "bucketListEditDestination": "Editar destino",
+  "bucketListSave": "Guardar",
+  "bucketListFieldCity": "Ciudad",
+  "bucketListFieldCountry": "País",
+  "bucketListFieldCategory": "Categoría",
+  "bucketListFieldRegionHint": "Estado / provincia (opcional)",
+  "bucketListFieldLatitude": "Latitud",
+  "bucketListFieldLongitude": "Longitud",
+  "bucketListFieldStart": "Fecha de inicio",
+  "bucketListFieldEnd": "Fecha de fin",
+  "bucketListFieldTripDates": "Fechas del viaje",
+  "bucketListValidationRequired": "Este campo es obligatorio.",
+  "bucketListValidationNumber": "Introduce un número válido.",
+  "bucketListValidationDates": "La fecha de fin debe ser igual o posterior a la de inicio.",
+  "bucketListGeocodeNotFound": "No se encontró esta ubicación en el mapa. Revisa la ortografía.",
+  "bucketListShareSummarySubject": "Mi lista Tripmetic",
+  "bucketListShareTooltip": "Compartir lista y mapa",
+  "bucketListShareFailed": "No se pudo compartir: {error}",
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListShareNeedMap": "Abre la vista Mapa antes de capturar la imagen del mapa.",
+  "bucketListDeleteHint": "Desliza para eliminar",
+  "bucketListTapEditHint": "Toca para editar",
+  "bucketListCloudSyncFailed": "Error de sincronización: {error}",
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListRetry": "Reintentar",
+  "bucketListBackupTooltip": "Copia y registro",
+  "bucketListBackupTitle": "Copia en la nube",
+  "bucketListBackupGuestIntro": "Tripmetic funciona por completo sin cuenta. Añade una cuando quieras copia en la nube de tu lista y viajes en grupo compartidos.",
+  "bucketListSignedInAs": "Sesión: {email}",
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListBackupEmail": "Correo",
+  "bucketListBackupPassword": "Contraseña",
+  "bucketListBackupConfirmPassword": "Confirmar contraseña",
+  "bucketListAuthTabSignUp": "Registrarse",
+  "bucketListAuthPasswordMismatch": "Las contraseñas no coinciden.",
+  "bucketListRegister": "Crear cuenta y respaldar",
+  "bucketListSignIn": "Iniciar sesión",
+  "bucketListSignOut": "Cerrar sesión",
+  "bucketListBackupUploading": "Subiendo a la nube…",
+  "bucketListAuthSuccessSignIn": "¡Sesión iniciada correctamente!",
+  "bucketListAuthSuccessSignUp": "¡Cuenta creada correctamente!",
+  "signUpSuccessMessage": "Cuenta creada. ¡Bienvenido a Tripmetic!",
+  "signUpErrorEmailInUse": "Este correo ya está registrado. Intenta iniciar sesión.",
+  "signUpErrorInvalidEmail": "Introduce un correo válido.",
+  "signUpErrorWeakPassword": "La contraseña es demasiado débil. Usa al menos 8 caracteres.",
+  "signUpErrorGeneric": "No se pudo crear la cuenta: {message}",
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "signUpErrorEmailInUseAction": "Iniciar sesión",
+  "bucketListAuthFailed": "No se pudo autenticar: {error}",
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerNoExtraDetails": "Aún no hay notas ni enlaces.",
+  "groupPlannerTitle": "Planificador de grupo",
+  "groupPlannerToolTitle": "Planificador de grupo",
+  "groupPlannerToolSubtitle": "Planifica un viaje juntos en tiempo real",
+  "groupPlannerLandingPlanTitle": "Planificar un viaje en grupo",
+  "groupPlannerLandingPlanSubtitle": "Crea un viaje compartido con destino, fechas y presupuesto.",
+  "groupPlannerLandingJoinTitle": "Unirse a un viaje en grupo",
+  "groupPlannerLandingJoinSubtitle": "Introduce el código o enlace de la invitación.",
+  "groupPlannerCreateTripTitle": "Nuevo viaje en grupo",
+  "groupPlannerSelectDates": "Selecciona el rango de fechas del viaje.",
+  "groupPlannerBudgetPerPersonOption": "Por persona",
+  "groupPlannerBudgetGroupOption": "Grupo",
+  "groupPlannerBudgetNoneOption": "Ninguno",
+  "groupPlannerBudgetAmountLabel": "Importe del presupuesto",
+  "groupPlannerOpenTitle": "Abrir un viaje en grupo",
+  "groupPlannerOpenSubtitle": "Pega el código de invitación.",
+  "groupPlannerOpenTripCodeLabel": "Código de viaje",
+  "groupPlannerOpenHint": "Código corto, ID del viaje o enlace de invitación",
+  "groupPlannerOpenButton": "Abrir viaje",
+  "groupPlannerDestination": "Destino",
+  "groupPlannerDates": "Fechas",
+  "groupPlannerGroupSize": "Tamaño del grupo",
+  "groupPlannerBudget": "Presupuesto",
+  "groupPlannerBudgetPerPerson": "Por persona: {amount}",
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerBudgetGroup": "Total del grupo: {amount}",
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerBudgetNone": "Sin presupuesto",
+  "groupPlannerInviteMembers": "Invitar miembros",
+  "groupPlannerManageMembers": "Gestionar miembros",
+  "groupPlannerItinerary": "Itinerario",
+  "groupPlannerItineraryEditorHint": "Como administrador o coordinador del viaje, puedes añadir actividades y cambiar el calendario.",
+  "groupPlannerItineraryViewerHint": "Solo lectura: vota en las actividades propuestas con pulgar arriba o abajo. Solo los administradores y coordinadores del viaje pueden añadir o cambiar elementos.",
+  "groupPlannerNoActivities": "Aún no hay actividades.",
+  "groupPlannerTripNotFound": "No se pudo cargar este viaje.",
+  "groupPlannerSignInTitle": "Inicia sesión",
+  "groupPlannerSignInBody": "Inicia sesión en Lista → Copia en la nube para ver viajes compartidos.",
+  "groupPlannerCreateTripSignInRequired": "Guardar un viaje en grupo nuevo requiere una cuenta. Inicia sesión para continuar — el resto de Tripmetic funciona sin cuenta.",
+  "groupPlannerMembersTitle": "Miembros",
+  "groupPlannerRoleAdmin": "Admin",
+  "groupPlannerRoleCoPlanner": "Coordinador del viaje",
+  "groupPlannerRoleViewOnly": "Solo lectura",
+  "groupPlannerOwner": "Propietario",
+  "groupPlannerRemoveMember": "Eliminar",
+  "groupPlannerRemoveMemberTitle": "¿Eliminar miembro?",
+  "groupPlannerRemoveMemberBody": "¿Quitar a {email} de este viaje?",
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerCancel": "Cancelar",
+  "groupPlannerNotes": "Notas",
+  "groupPlannerOpenLink": "Abrir enlace",
+  "groupPlannerNetVotes": "{count}",
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerVoteError": "No se pudo guardar el voto: {error}",
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerManageError": "No se pudo actualizar miembros: {error}",
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerInviteError": "No se pudo compartir: {error}",
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerUnknownTripCode": "No se pudo abrir el viaje: {error}",
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerMyTripsSectionTitle": "Tus viajes",
+  "groupPlannerMyTripsEmpty": "Aún no hay viajes. Crea uno arriba.",
+  "groupPlannerExamplesTitle": "Ejemplos de viajes",
+  "groupPlannerExamplesSubtitle": "Tarjetas de muestra — crea un viaje arriba para añadir el tuyo.",
+  "groupPlannerExampleTapBody": "Son solo ejemplos. Usa «Planificar un viaje en grupo» para crear un viaje real que puedas compartir.",
+  "groupPlannerExampleLisbonTitle": "Retiro de equipo en Lisboa",
+  "groupPlannerExampleKyotoTitle": "Tour de primavera en Kioto",
+  "groupPlannerAddActivity": "Añadir actividad",
+  "groupPlannerActivityTitleLabel": "Título de la actividad",
+  "groupPlannerActivityWhenLabel": "Fecha y hora",
+  "groupPlannerActivityTripDateRangeHelp": "Elige un día dentro del viaje y una hora. Quien pueda editar el itinerario puede cambiarlo después.",
+  "groupPlannerActivityDateOutOfRange": "Esa fecha está fuera del viaje. Elige un día entre el inicio y el fin del viaje.",
+  "groupPlannerActivityTitleRequired": "Escribe un título para la actividad.",
+  "groupPlannerActivityDateUnset": "Sin fecha — toca Editar para programar.",
+  "groupPlannerPeopleCount": "{count} personas",
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerEditActivity": "Editar actividad",
+  "groupPlannerDeleteActivity": "Eliminar",
+  "groupPlannerDeleteActivityTitle": "¿Eliminar actividad?",
+  "groupPlannerDeleteActivityBody": "¿Quitar «{title}» del itinerario? No se puede deshacer.",
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerActivityDeleteError": "No se pudo eliminar la actividad: {error}",
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerActivityEditError": "No se pudo actualizar la actividad: {error}",
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerEditTripTitle": "Editar viaje",
+  "groupPlannerEditTripAction": "Editar viaje",
+  "groupPlannerDeleteTripTitle": "¿Eliminar viaje?",
+  "groupPlannerDeleteTripBody": "¿Eliminar para siempre el viaje «{destination}» y su itinerario para todos? No se puede deshacer.",
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerDeleteTripAction": "Eliminar viaje",
+  "groupPlannerTripDeleted": "Viaje eliminado.",
+  "groupPlannerTripDeleteError": "No se pudo eliminar el viaje: {error}",
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "groupPlannerTripUpdateError": "No se pudo actualizar el viaje: {error}",
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "widgetInstructionTitle": "Widget de doble reloj",
+  "widgetInstructionSubtitle": "Consulta tu ciudad de origen y destino desde la pantalla de bloqueo o la pantalla de inicio.",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "Pantalla de bloqueo",
+  "widgetInstructionIosLockScreenStep1": "Mantén pulsada la pantalla de bloqueo y toca \"Personalizar\".",
+  "widgetInstructionIosLockScreenStep2": "Selecciona la vista previa de \"Pantalla de bloqueo\".",
+  "widgetInstructionIosLockScreenStep3": "Toca el área de widgets justo debajo de la hora.",
+  "widgetInstructionIosLockScreenStep4": "Desplázate, selecciona Tripmetic y tócalo para añadir el widget.",
+  "widgetInstructionIosHomeScreenTitle": "Pantalla de inicio",
+  "widgetInstructionIosHomeScreenStep1": "Mantén pulsado un espacio vacío en la pantalla de inicio.",
+  "widgetInstructionIosHomeScreenStep2": "Toca el icono + en la esquina superior izquierda.",
+  "widgetInstructionIosHomeScreenStep3": "Busca \"Tripmetic\".",
+  "widgetInstructionIosHomeScreenStep4": "Elige el tamaño del widget que prefieras y toca \"Añadir widget\".",
+  "widgetInstructionAndroidStep1": "Ve a la pantalla de inicio y mantén pulsado un espacio vacío.",
+  "widgetInstructionAndroidStep2": "Toca \"Widgets\".",
+  "widgetInstructionAndroidStep3": "Desplázate hasta Tripmetic.",
+  "widgetInstructionAndroidStep4": "Mantén pulsado el widget de doble reloj y arrástralo a la pantalla.",
+  "widgetInstructionAndroidLockScreenHint": "Para ver ambos relojes en la pantalla de bloqueo: abre Ajustes y busca “pantalla de bloqueo” o “widgets”; añade Tripmetic si tu móvil permite widgets en la pantalla de bloqueo (no todos lo permiten).",
+  "widgetInstructionConfigureCta": "Configurar ciudades del widget",
+  "currencyWidgetInstructionTitle": "Widget convertidor de divisas",
+  "currencyWidgetInstructionSubtitle": "Muestra tu moneda base y local con conversiones de 1, 20 y 100. Disponible en la pantalla de inicio y de bloqueo.",
+  "currencyWidgetInstructionAndroidTitle": "Añadir a la pantalla de inicio",
+  "currencyWidgetInstructionAndroidStep1": "Abre Ajustes → Widget de divisas → Cambiar monedas del widget y elige la moneda base y la de destino.",
+  "currencyWidgetInstructionAndroidStep2": "Ve a la pantalla de inicio y mantén pulsado un espacio vacío.",
+  "currencyWidgetInstructionAndroidStep3": "Toca \"Widgets\", desplázate hasta Tripmetic y elige \"Currency converter\".",
+  "currencyWidgetInstructionAndroidStep4": "Arrastra el widget a la pantalla de inicio, o toca Añadir si tu launcher lo permite.",
+  "currencyWidgetInstructionUsageTitle": "Usar el widget",
+  "currencyWidgetInstructionUsageStep1": "Arriba verás moneda base → local. Debajo, conversiones de 1, 20 y 100 de la moneda base.",
+  "currencyWidgetInstructionUsageStep2": "Toca Cambiar (o el widget) para elegir monedas. En Android, ↻ Actualizar refresca tipos sin abrir la app.",
+  "currencyWidgetInstructionUsageStep3": "Los tipos se actualizan automáticamente al usar Divisas en Tripmetic.",
+  "currencyWidgetInstructionPinCta": "Añadir widget a la pantalla de inicio",
+  "currencyWidgetInstructionOpenCurrencyCta": "Cambiar divisas del widget",
+  "currencyWidgetInstructionIosHint": "En iPhone: mantén pulsada la pantalla de inicio o de bloqueo → Editar → Añadir widget → Tripmetic → Currency converter. Abre la app una vez para sincronizar tipos.",
+  "currencyWidgetPinUnsupported": "Tu launcher no permite añadir este widget desde la app. Mantén pulsada la pantalla de inicio y elige Widgets.",
+  "currencyWidgetPinFailed": "No se pudo abrir el selector de widgets. Añádelo manualmente desde la pantalla de inicio.",
+  "dualClockScreenTitle": "Widget de doble reloj",
+  "dualClockConfigTitle": "Configurar ciudades",
+  "dualClockConfigSubtitle": "Elige dos ciudades y zonas horarias. Se sincronizan con el widget de inicio (Android) y el de pantalla de bloqueo (iOS).",
+  "dualClockCity1Label": "Primera ciudad",
+  "dualClockCity2Label": "Segunda ciudad",
+  "dualClockSave": "Guardar y actualizar widget",
+  "dualClockSaved": "Widget actualizado.",
+  "dualClockSaveError": "No se pudieron guardar los datos. Inténtalo de nuevo.",
+  "dualClockAppearanceTitle": "Apariencia del widget",
+  "dualClockAppearanceHint": "Personaliza el tamaño de texto, los colores y el fondo de la pantalla de inicio. La pantalla de bloqueo usa el tamaño de fuente (y los colores donde el sistema lo permite).",
+  "dualClockFontScaleLabel": "Tamaño del texto",
+  "dualClockColorCity": "Nombres de ciudad",
+  "dualClockColorTime": "Horas",
+  "dualClockColorDate": "Fechas",
+  "dualClockColorBackground": "Fondo de inicio",
+  "dualClockShadowLabel": "Sombra del texto",
+  "dualClockShadowSubtitle": "Mejora el contraste con fondos con foto o muy cargados.",
+  "moreToolsDualClockBannerTitle": "Widget de doble reloj",
+  "moreToolsDualClockBannerSubtitle": "Dos zonas horarias en la pantalla de bloqueo o inicio — toca para configurar.",
+  "moreToolsDualClockBannerCta": "Configurar",
+  "settingsDualClockWidgetTitle": "Widget de doble reloj",
+  "settingsDualClockWidgetSubtitle": "Añade el widget y elige tus ciudades",
+  "widgetNewFeatureBadge": "Novedad",
+  "globalNavAccountCloudSyncTooltip": "Cuenta y copia en la nube",
+  "exchangeRatesForceRefreshTooltip": "Obtener tipos de cambio actualizados",
+  "exchangeRatesRefreshedOk": "Tipos de cambio actualizados.",
+  "exchangeRatesRefreshFailed": "No se pudieron actualizar los tipos de cambio.",
+  "bucketListStatUsTerritories": "Territorios de EE. UU.",
+  "bucketListAuthErrUserNotFound": "No hay cuenta con este correo.",
+  "bucketListAuthErrWrongPassword": "Correo o contraseña incorrectos.",
+  "bucketListAuthErrEmailInUse": "Ya existe una cuenta con este correo.",
+  "bucketListAuthErrInvalidEmail": "Correo no válido.",
+  "bucketListAuthErrWeakPassword": "La contraseña es demasiado débil.",
+  "bucketListAuthErrUserDisabled": "Esta cuenta está desactivada.",
+  "bucketListAuthErrTooManyRequests": "Demasiados intentos. Prueba más tarde.",
+  "bucketListAuthErrOperationNotAllowed": "El inicio de sesión por correo no está habilitado.",
+  "bucketListAuthErrDetail": "{detail}",
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "bucketListAuthValidationInvalidEmail": "Correo no válido.",
+  "bucketListAuthValidationPasswordShort": "La contraseña debe tener al menos 6 caracteres.",
+  "bucketListAuthValidationPasswordRequired": "Introduce tu contraseña.",
+  "currencyWidgetAppearanceTitle": "Apariencia",
+  "currencyWidgetAppearanceHint": "Personaliza el tamaño de fuente, los colores del texto y el fondo de la pantalla de inicio. Los widgets de inicio tienen un tamaño fijo, así que las fuentes grandes se ajustan para que todas las filas sigan visibles. La pantalla de bloqueo usa el tamaño de fuente (y los colores donde el sistema lo permite).",
+  "currencyWidgetFontScaleLabel": "Tamaño de fuente",
+  "currencyWidgetColorPrimary": "Texto principal (importes / base)",
+  "currencyWidgetColorAccent": "Texto de acento (par / etiquetas de escala)",
+  "currencyWidgetColorCaption": "Texto de pie (línea de tipo de cambio)",
+  "currencyWidgetColorBackground": "Fondo de inicio",
+  "currencyWidgetSaveAppearance": "Guardar apariencia",
+  "currencyWidgetAppearanceSaved": "Apariencia del widget de divisas guardada",
+  "currencyWidgetAppearanceSaveFailed": "No se pudo guardar la apariencia del widget",
+  "currencyWidgetInstructionIosTitle": "iPhone"
+}

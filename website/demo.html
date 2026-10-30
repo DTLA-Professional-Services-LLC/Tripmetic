@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5JX5ZVKNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S5JX5ZVKNB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Demo & Screenshots | Tripmetic</title>
+    <meta name="description" content="View the Tripmetic app in action. Explore our gallery of multi-currency budgets, timezone schedulers, and travel logistics tools.">
+    <link rel="canonical" href="https://tripmetic.app/demo">
+    <meta name="theme-color" content="#0B1F3A">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tripmetic">
+    <meta property="og:title" content="App Demo &amp; Screenshots | Tripmetic">
+    <meta property="og:description" content="View the Tripmetic app in action. Explore our gallery of multi-currency budgets, timezone schedulers, and travel logistics tools.">
+    <meta property="og:url" content="https://tripmetic.app/demo">
+    <meta property="og:image" content="https://tripmetic.app/logo/og-image.png">
+    <meta property="og:image:alt" content="Tripmetic app logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="App Demo &amp; Screenshots | Tripmetic">
+    <meta name="twitter:description" content="View the Tripmetic app in action. Explore our gallery of multi-currency budgets, timezone schedulers, and travel logistics tools.">
+    <meta name="twitter:image" content="https://tripmetic.app/logo/og-image.png">
+
+    <meta name="keywords" content="Tripmetic app demo, travel app screenshots, budgeting app interface, digital nomad tools">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" sizes="any" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="shortcut icon" type="image/png" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="apple-touch-icon" href="logo/tripmetic-logo-new-app-01-1188x1188px.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Tripmetic App Screenshots",
+      "description": "A visual gallery demonstrating the interface and features of the Tripmetic travel and finance app.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tripmetic"
+      }
+    }
+    </script>
+
+    <style>
+        .page-header { background-color: var(--navy); color: white; padding: 80px 0 60px; text-align: center; }
+        .page-header h1 { font-size: 3rem; margin-bottom: 15px; color: var(--gold); }
+        .page-header p { color: #b0b8d1; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        /* Gallery Grid Setup */
+        .gallery-section { padding: 60px 0 100px; }
+        .gallery-grid {
+            display: grid;
+            /* Auto-fit creates responsive columns based on screen size */
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        /* Individual Image Cards */
+        .gallery-item {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--gold);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+            /* Forces vertical aspect ratio rendering */
+            aspect-ratio: auto; 
+        }
+
+        /* Lightbox (Modal) Styles */
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 19, 43, 0.95); /* Deep navy transparent background */
+            backdrop-filter: blur(5px);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85vh; /* Prevents vertical images from going off screen */
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--white);
+            font-size: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-btn:hover, .close-btn:focus { color: var(--gold); }
+
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
+            .lightbox-content { max-width: 95%; max-height: 80vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-placeholder"></div>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>App Demo & Features</h1>
+            <p>Click any screenshot to explore the Tripmetic interface in high resolution.</p>
+        </div>
+    </header>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-01.png" alt="Tripmetic Currency Dashboard" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-02.png" alt="Tripmetic Crypto Conversion" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-03.png" alt="Global Timezone Scheduler" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-04.png" alt="Multi-Country Budget Setup" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-05.png" alt="Spending Power Calculator" class="gallery-img" loading="lazy" decoding="async"></div>
+                
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-06.png" alt="Packing List Categories" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/tripmetic-app-google-play-1080x1920px-07.png" alt="Packing Add Item Modal" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105546Tripmetic.png" alt="Trip Itinerary Timeline" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105511Tripmetic.png" alt="Smart Tipping & Bill Splitter" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105443Tripmetic.png" alt="Clothing & Shoe Size Converter" class="gallery-img" loading="lazy" decoding="async"></div>
+                
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105431Tripmetic.png" alt="Unit Converter Metric to Imperial" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105357Tripmetic.png" alt="More Tools Menu" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/GIF-tripmatic-video-1080x1920px-video-01.gif" alt="App Settings and Customization" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105341Tripmetic.png" alt="App Settings and Customization" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Screenshot_20260415-105331Tripmetic.png" alt="Expense Tracking Breakdown" class="gallery-img" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="screenshots/Brainstorming-Mind-Map-travel-tripmetic-image-06.png" alt="Tripmetic Dark Mode Interface" class="gallery-img" loading="lazy" decoding="async"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="expandedImg" loading="lazy" decoding="async">
+    </div>
+
+    <script>
+        var modalBox = document.getElementById("imageLightbox");
+        var modalImg = document.getElementById("expandedImg");
+        var images = document.querySelectorAll(".gallery-img");
+        
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modalBox.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        span.onclick = function() { 
+            modalBox.style.display = "none";
+        }
+
+        modalBox.onclick = function(e) {
+            if (e.target !== modalImg) {
+                modalBox.style.display = "none";
+            }
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Fetch the Top Menu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading menu:', error));
+
+        // Fetch the Footer (which contains the Modal)
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+
+                // Activate the Modal logic ONLY after footer is loaded
+                const downloadModal = document.getElementById('downloadModal');
+                if (downloadModal) {
+                    const closeBtn = downloadModal.querySelector('.close-modal');
+
+                    // Listen for clicks on ANY link that points to #download
+                    document.body.addEventListener('click', function(e) {
+                        const downloadLink = e.target.closest('a[href="#download"]');
+                        if (downloadLink) {
+                            e.preventDefault();
+                            downloadModal.style.display = 'flex';
+                        }
+                    });
+
+                    // Close the modal when the "X" is clicked
+                    closeBtn.addEventListener('click', function() {
+                        downloadModal.style.display = 'none';
+                    });
+
+                    // Close the modal when clicking the dark background outside the box
+                    window.addEventListener('click', function(e) {
+                        if (e.target === downloadModal) {
+                            downloadModal.style.display = 'none';
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+<script src="/site.js" defer></script>
+</body>
+</html>

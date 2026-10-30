@@ -1,0 +1,122 @@
+.site-nav {
+  background-color: #0b132b;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 40;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.site-nav .nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 16px;
+}
+
+.site-nav .logo {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-nav .nav-links a {
+  color: #faf9f6;
+  margin-left: 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.site-nav .nav-links a:hover {
+  color: #d4af37;
+}
+
+.site-nav .nav-cta {
+  background-color: #ff5252;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.site-nav .nav-cta:hover {
+  background-color: #e04848;
+}
+
+.site-nav .nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  position: relative;
+}
+
+.site-nav .nav-toggle span,
+.site-nav .nav-toggle span::before,
+.site-nav .nav-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #faf9f6;
+  position: absolute;
+  left: 11px;
+}
+
+.site-nav .nav-toggle span {
+  top: 21px;
+}
+
+.site-nav .nav-toggle span::before,
+.site-nav .nav-toggle span::after {
+  content: "";
+}
+
+.site-nav .nav-toggle span::before {
+  top: -7px;
+}
+
+.site-nav .nav-toggle span::after {
+  top: 7px;
+}
+
+@media (max-width: 768px) {
+  .site-nav .nav-toggle {
+    display: block;
+  }
+
+  .site-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0b132b;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  html.nav-open .site-nav .nav-links {
+    display: flex;
+  }
+
+  .site-nav .nav-links a {
+    margin: 8px 0 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}

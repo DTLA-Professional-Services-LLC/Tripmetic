@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ (API 31) backup / device-transfer rules.
+
+  Tripmetic stores user data (itineraries, vault documents, bucket list,
+  preferences). None of it should leave the device via cloud backup or
+  device-to-device transfer, so every data source is excluded explicitly.
+
+  `allowBackup="false"` in AndroidManifest.xml already disables cloud backup;
+  these rules additionally block device-to-device transfer, which Android 12+
+  treats as a separate path.
+
+  See https://developer.android.com/about/versions/12/backup-restore
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="root" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+        <exclude domain="file" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+        <exclude domain="file" />
+    </device-transfer>
+</data-extraction-rules>

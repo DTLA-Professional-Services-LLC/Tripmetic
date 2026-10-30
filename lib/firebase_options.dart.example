@@ -1,0 +1,49 @@
+// TEMPLATE ONLY — mock values, safe to commit.
+//
+// Copy to `lib/firebase_options.dart` and replace every `YOUR_…` value with
+// the real ones from Firebase Console → Project settings → Your apps.
+//
+//   cp lib/firebase_options.dart.example lib/firebase_options.dart
+//
+// The generated file is git-ignored and must never be committed.
+//
+// NOTE: this project normally drives Firebase through `--dart-define` values
+// (see lib/core/config/firebase_config.dart) rather than this file. Use this
+// template only if you prefer the Firebase CLI's generated options.
+//
+// To generate a filled-in file automatically:
+//   dart pub global activate flutterfire_cli
+//   flutterfire configure
+//
+// ignore_for_file: prefer_const_constructors
+
+import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
+
+/// The [FirebaseOptions] for the current platform.
+class DefaultFirebaseOptions {
+  const DefaultFirebaseOptions._();
+
+  static FirebaseOptions get currentPlatform {
+    if (FirebaseOptions.instance == null) {
+      throw UnsupportedError(
+        'DefaultFirebaseOptions are not available for this platform. '
+        'Copy lib/firebase_options.dart.example to lib/firebase_options.dart '
+        'and fill in your own Firebase values.',
+      );
+    }
+    return FirebaseOptions.instance!;
+  }
+}
+
+/// Placeholder Firebase options — replace every value with your own.
+extension FirebaseOptionsMock on FirebaseOptions {
+  static FirebaseOptions get instance {
+    return const FirebaseOptions(
+      apiKey: 'YOUR_FIREBASE_API_KEY',
+      appId: 'YOUR_FIREBASE_APP_ID',
+      messagingSenderId: 'YOUR_FIREBASE_MESSAGING_SENDER_ID',
+      projectId: 'YOUR_FIREBASE_PROJECT_ID',
+      storageBucket: 'YOUR_FIREBASE_STORAGE_BUCKET',
+    );
+  }
+}

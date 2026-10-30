@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5JX5ZVKNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S5JX5ZVKNB');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Meeting Scheduler Guide | Tripmetic</title>
+    <meta name="description" content="Learn how to use the Tripmetic global meeting scheduler. Sync timezones, find overlapping business hours, and manage remote team scheduling effortlessly.">
+    <link rel="canonical" href="https://tripmetic.app/global-meeting-scheduler">
+    <meta name="theme-color" content="#0B1F3A">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tripmetic">
+    <meta property="og:title" content="Global Meeting Scheduler Guide | Tripmetic">
+    <meta property="og:description" content="Learn how to use the Tripmetic global meeting scheduler. Sync timezones, find overlapping business hours, and manage remote team scheduling effortlessly.">
+    <meta property="og:url" content="https://tripmetic.app/global-meeting-scheduler">
+    <meta property="og:image" content="https://tripmetic.app/logo/og-image.png">
+    <meta property="og:image:alt" content="Tripmetic app logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Global Meeting Scheduler Guide | Tripmetic">
+    <meta name="twitter:description" content="Learn how to use the Tripmetic global meeting scheduler. Sync timezones, find overlapping business hours, and manage remote team scheduling effortlessly.">
+    <meta name="twitter:image" content="https://tripmetic.app/logo/og-image.png">
+
+    <meta name="keywords" content="global meeting scheduler, remote team scheduling, timezone overlap, timezone converter app, digital nomad meeting planner, schedule across timezones">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" sizes="any" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="shortcut icon" type="image/png" href="logo/compass-tripmetic-logo-new-app-01-1188x1188px.png">
+    <link rel="apple-touch-icon" href="logo/tripmetic-logo-new-app-01-1188x1188px.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "HowTo",
+          "name": "How to Use the Tripmetic Global Meeting Scheduler",
+          "description": "A comprehensive guide to visualizing timezone overlaps and scheduling meetings for remote, globally distributed teams.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Access the Scheduler",
+              "text": "Navigate to the More Tools menu and launch the Meeting Scheduler."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Set Your Base Location",
+              "text": "Ensure the primary top row is set to your current physical timezone."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Add Participant Cities",
+              "text": "Use the search function to add the specific cities where your clients or team members are located."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Find the Sweet Spot",
+              "text": "Drag the slider across the timeline to visually align daytime hours across all selected locations."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does the scheduler auto-adjust for Daylight Saving Time?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The scheduler utilizes the global IANA timezone database, which automatically calculates regional DST shifts to ensure your meeting times are strictly accurate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the Meeting Scheduler work offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Aside from searching for highly obscure, un-cached map regions, the core logic for the Global Meeting Scheduler lives natively on your device."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .page-header { background-color: var(--navy); color: white; padding: 60px 0 40px; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold); }
+        .page-header p { color: #b0b8d1; font-size: 1.1rem; }
+
+        .content-box { background: white; padding: 60px; margin: -20px auto 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .content-box h2 { color: var(--navy); font-size: 1.6rem; margin: 40px 0 15px; border-bottom: 2px solid var(--light-gray); padding-bottom: 10px; }
+        .content-box h2:first-of-type { margin-top: 0; }
+        .content-box p { margin-bottom: 15px; }
+        .content-box ul, .content-box ol { margin-bottom: 20px; padding-left: 20px; }
+        .content-box li { margin-bottom: 10px; }
+        
+        .step-block { background: rgba(2, 136, 209, 0.05); border: 1px solid rgba(2, 136, 209, 0.15); padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+        .step-block h3 { margin-top: 0; color: var(--navy); display: flex; align-items: center; margin-bottom: 15px; }
+        .step-block h3 span { background: var(--teal); color: white; width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; margin-right: 15px; font-size: 1rem; }
+
+        .guide-image-container { text-align: center; margin: 30px 0; }
+        .guide-img { 
+            max-width: 280px; 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: auto;
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+            border: 1px solid rgba(0,0,0,0.05); 
+            cursor: pointer; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .guide-img:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); border-color: var(--gold); }
+        .guide-caption { font-size: 0.9rem; color: #666; margin-top: 15px; font-style: italic; }
+
+        .alert-box { background-color: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        
+        .faq-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--light-gray); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; color: var(--navy); font-size: 1.1rem; margin-bottom: 8px; }
+
+        .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(11, 19, 43, 0.95); backdrop-filter: blur(5px); }
+        .lightbox-content { margin: auto; display: block; max-height: 85vh; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); animation: zoomIn 0.3s ease; }
+        .close-btn { position: absolute; top: 20px; right: 35px; color: var(--white); font-size: 50px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .close-btn:hover, .close-btn:focus { color: var(--gold); }
+
+        @keyframes zoomIn {
+            from {transform:scale(0.9); opacity: 0;}
+            to {transform:scale(1); opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 36px 0 28px; }
+            .page-header h1 { font-size: clamp(1.55rem, 6vw, 2rem); }
+            .content-box { padding: 24px 16px; margin-top: 0; border-radius: 0; box-shadow: none; }
+            .step-block { padding: 20px 16px; }
+            .guide-img, .guide-img.guide-img-wide { max-width: min(100%, 360px); }
+            .store-row { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu-placeholder"></div>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Global Meeting Scheduler Guide</h1>
+            <p>Visually synchronize remote teams across international time zones.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-box">
+            
+            <p>One of the largest frictions of remote work is timezone math. Trying to schedule a simple conference call between Los Angeles, London, and Tokyo usually results in frantic Google searches and someone inevitably showing up to a meeting at 3:00 AM.</p>
+            
+            <p>The Tripmetic <strong>Global Meeting Scheduler</strong> eliminates the mental math. By utilizing a visual heatmap timeline, it allows you to instantly identify the optimal overlap for business hours across the globe. Here is how to configure it.</p>
+
+            <div class="step-block">
+                <h3><span>1</span> Access the Scheduler</h3>
+                <p>Open the Tripmetic app, navigate to the <strong>More Tools</strong> section on your bottom navigation bar, and tap on <strong>Meeting Scheduler</strong>. You will be presented with a stacked timeline interface.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/meeting-01.webp" alt="Tripmetic Global Meeting Scheduler Time and date screen with Los Angeles base timezone" class="guide-img" width="550" height="1050" loading="eager" decoding="async" fetchpriority="high">
+                    <div class="guide-caption">Click to expand: Locating the Meeting Scheduler within the Tripmetic toolset.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>2</span> Set Your Base Location</h3>
+                <p>The top row of the timeline represents your physical location (the "Base"). Ensure this is set to your current city. When you move the slider on this row, it acts as the anchor point, and all other timezones will shift in sync.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/meeting-02.webp" alt="Tripmetic meeting scheduler setting America Los Angeles as the base timezone with meeting time slider" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Configuring your anchor timezone.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>3</span> Add Participant Cities</h3>
+                <p>Tap the 'Add City' button below your base location to search for the specific locations of your clients or remote team members. You can stack multiple cities on top of each other. The tool uses a color-coded heatmap: bright areas represent daytime working hours, while dark areas represent nighttime.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/meeting-03.webp" alt="Tripmetic converted cities list for Manila Ho Chi Minh and New York with Good and Off-hours indicators" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Stacking participant cities to generate a timezone heatmap.</div>
+                </div>
+            </div>
+
+            <div class="step-block">
+                <h3><span>4</span> Find the Sweet Spot</h3>
+                <p>Instead of doing math, simply tap and drag the timeline slider left or right. As you move the slider on your base location, the time blocks for all connected cities will update instantly. Slide until you find a vertical column where the visual blocks for all participants fall into the bright, daytime hours.</p>
+                
+                <div class="guide-image-container">
+                    <img src="screenshots/optimized/meeting-04.webp" alt="Tripmetic global scheduler aligning overlapping business hours across multiple timezones" class="guide-img" width="550" height="1050" loading="lazy" decoding="async">
+                    <div class="guide-caption">Click to expand: Visually aligning the slider to find overlapping business hours.</div>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <strong>Pro Tip:</strong> Look for the overlapping visual blocks. If you are struggling to find a perfect 9-to-5 overlap for three extreme time zones (e.g., California, Europe, and Asia), the slider helps you quickly identify the "least painful" compromise, such as an early morning for you and an early evening for your client.
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Does the scheduler auto-adjust for Daylight Saving Time?</div>
+                <p>Yes. The scheduler utilizes the global IANA timezone database, which automatically calculates regional DST shifts (spring forward/fall back) to ensure your meeting times are strictly accurate regardless of the time of year.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does the Meeting Scheduler work offline?</div>
+                <p>Yes. Aside from searching for highly obscure, un-cached map regions, the core logic for the Global Meeting Scheduler lives natively on your device. You can adjust sliders and check overlaps while in Airplane Mode.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="expandedImg" loading="lazy" decoding="async">
+    </div>
+
+    <script>
+        var modalBox = document.getElementById("imageLightbox");
+        var modalImg = document.getElementById("expandedImg");
+        var images = document.querySelectorAll(".guide-img");
+        
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modalBox.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        span.onclick = function() { 
+            modalBox.style.display = "none";
+        }
+
+        modalBox.onclick = function(e) {
+            if (e.target !== modalImg) {
+                modalBox.style.display = "none";
+            }
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Fetch the Top Menu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading menu:', error));
+
+        // Fetch the Footer (which contains the Modal)
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+
+                // Activate the Modal logic ONLY after footer is loaded
+                const downloadModal = document.getElementById('downloadModal');
+                if (downloadModal) {
+                    const closeBtn = downloadModal.querySelector('.close-modal');
+
+                    // Listen for clicks on ANY link that points to #download
+                    document.body.addEventListener('click', function(e) {
+                        const downloadLink = e.target.closest('a[href="#download"]');
+                        if (downloadLink) {
+                            e.preventDefault();
+                            downloadModal.style.display = 'flex';
+                        }
+                    });
+
+                    // Close the modal when the "X" is clicked
+                    closeBtn.addEventListener('click', function() {
+                        downloadModal.style.display = 'none';
+                    });
+
+                    // Close the modal when clicking the dark background outside the box
+                    window.addEventListener('click', function(e) {
+                        if (e.target === downloadModal) {
+                            downloadModal.style.display = 'none';
+                        }
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+<script src="/site.js" defer></script>
+</body>
+</html>

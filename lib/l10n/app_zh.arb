@@ -1,0 +1,1335 @@
+{
+  "@@locale": "zh",
+  "@@context": "Tripmetic 旅行应用程序用户界面。准确保留大括号占位符（例如 {name}、{code}）。除非字符串具有完全解释性，否则请勿翻译品牌名称 Tripmetic、RevenueCat、Android、iOS、Google Play 和 ISO 货币代码（USD、EUR）。",
+  "addItineraryEnterTitle": "请输入标题",
+  "addItineraryFieldLocation": "地点",
+  "addItineraryFieldNotes": "备注/确认",
+  "addItineraryFieldTitle": "标题",
+  "addItineraryHintLocation": "机场、酒店地址……",
+  "addItineraryHintNotes": "记录定位器、链接...",
+  "addItineraryHintTitle": "飞往 里斯本 的航班",
+  "addItinerarySave": "保存事件",
+  "addItineraryTitle": "添加行程事件",
+  "addPackingAddToList": "添加到列表",
+  "addPackingEnterName": "请输入商品名称",
+  "addPackingFieldCategory": "类别",
+  "addPackingFieldItemName": "商品名称",
+  "addPackingHint": "例如电源适配器",
+  "addPackingIcon": "图标",
+  "addPackingQuantity": "数量",
+  "addPackingTitle": "添加包装项目",
+  "announcementsLatest": "最新更新",
+  "appTitle": "Tripmetic.app",
+  "budgetBaseCurrency": "基础货币",
+  "budgetCategoryDialogHint": "例如纪念品",
+  "budgetCategoryNameExists": "名称已存在",
+  "budgetCategoryNameMax": "最多 40 个字符",
+  "budgetDailyFood": "日常饮食",
+  "budgetDestinationSearchHint": "搜索国家或货币代码",
+  "budgetDestinationTitle": "添加目的地",
+  "budgetDialogAdd": "添加",
+  "budgetDialogNewCategory": "新的费用类别",
+  "budgetDialogRemoveBody": "删除“{name}”及其金额？",
+  "budgetDialogRemoveTitle": "删除类别",
+  "budgetDialogRename": "重命名",
+  "budgetDialogRenameCategory": "重命名类别",
+  "budgetEdit": "编辑预算",
+  "budgetExpenseDailyFood": "日常饮食",
+  "budgetExpenseEatingOut": "外出就餐",
+  "budgetExpenseEntertainment": "娱乐",
+  "budgetExpenseFlights": "航班",
+  "budgetExpenseGrocery": "杂货店",
+  "budgetExpenseHotels": "酒店",
+  "budgetExpenseMisc": "杂项",
+  "budgetExpensePhoneService": "电话服务",
+  "budgetExpenseShopping": "购物",
+  "budgetExpenseTourism": "旅游",
+  "budgetExpenseTransportation": "运输",
+  "budgetExpenseTravelInsurance": "旅游保险",
+  "budgetHintDays": "7",
+  "budgetHintTotal": "3,000",
+  "budgetHintZero": "0",
+  "budgetInDestinations": "在您的目的地",
+  "budgetNoCategories": "还没有费用类别",
+  "budgetOtherExpenses": "其他费用 ({code})",
+  "budgetPerDayEstimate": "每天（估计）",
+  "budgetPerDayValue": "≈ {amount} / 天",
+  "budgetRemainingAfter": "费用后剩余 · {code}",
+  "budgetSave": "节省预算",
+  "budgetSpendingPower": "消费能力",
+  "budgetSpentVsBudget": "支出与预算",
+  "budgetTotalBudget": "总预算 ({code})",
+  "budgetTotalForTrip": "行程总计 ({code})",
+  "budgetTripDashboard": "仪表板",
+  "budgetTripLengthDays": "行程长度（天）",
+  "budgetTripTitle": "旅行预算",
+  "commonAdd": "添加",
+  "commonCancel": "取消",
+  "commonDelete": "删除",
+  "commonOk": "好的",
+  "commonRemove": "消除",
+  "commonRename": "重命名",
+  "commonSave": "节省",
+  "commonKeyboardDone": "完毕",
+  "countryCountriesCount": "{count} 国家",
+  "countryPickerTitle": "选择国家",
+  "countrySheetSearchHint": "搜索国家/地区名称或 ISO 代码",
+  "countrySheetTitle": "基准国家/地区",
+  "cryptoHeader": "加密货币",
+  "cryptoMockPerUnit": "模拟 ~{price} / 单位",
+  "cryptoPickerTitle": "选择一枚硬币",
+  "cryptoSheetTitle": "选择加密货币",
+  "currencyPickerSearchHint": "搜索股票代码或名称",
+  "currencyPickerTitle": "选择货币",
+  "currencySheetCountShown": "显示 {total} 的 {shown}",
+  "currencySheetSearchHint": "搜索代码、名称或数字 ISO",
+  "currencySheetTitle": "选择货币",
+  "exchangeBaseSuffix": "· 根据",
+  "exchangeCouldNotLoad": "无法加载速率\n{error}",
+  "exchangeHeader": "交换",
+  "exchangeLastUpdated": "上次更新于 {mins} 分钟前",
+  "exchangeLastUpdatedOffline": "最后更新于 {mins} 分钟前（离线）",
+  "exchangeResetOne": "重置为 1（USD 基）",
+  "exchangeResetTooltip": "重置金额",
+  "exchangeResetZero": "清零",
+  "itineraryDayPrefix": "{day} 日：{date}",
+  "itineraryEmpty": "还没有活动。\n点击 + 添加航班、酒店和计划。",
+  "itineraryHeader": "行程",
+  "itineraryHiveError": "无法打开保存的行程数据。\n您仍然可以尝试添加事件 - 它们可能不会持续存在。\n({error})",
+  "itineraryOpenOnMap": "在地图上打开",
+  "mapAddToTrip": "添加到行程",
+  "mapClearRoute": "清晰的路线和指导",
+  "mapClearTooltip": "清除",
+  "mapDisplayCurrentViewport": "当前视口",
+  "mapDisplaySavedSearch": "已保存的搜索",
+  "mapDisplayTripDestination": "旅行目的地",
+  "mapDownloadAll": "下载全部",
+  "mapDownloadCurrentRegion": "下载当前区域以供离线使用",
+  "mapDownloadThisDestination": "下载这个目的地",
+  "mapDownloadedRegions": "下载区域",
+  "mapDownloadingRegion": "正在下载区域...",
+  "mapDownloadingTitle": "正在下载 {title}...",
+  "mapFromItinerary": "从你的行程来看",
+  "mapItineraryEmptyHint": "添加行程目的地以在此处预先下载。",
+  "mapLoadingRegions": "正在加载离线区域...",
+  "mapLocatingQuery": "正在定位 {query}...",
+  "mapMarkCategoryBody": "选择如何标记该离线图钉。",
+  "mapMarkCategoryTitle": "该标记的类别",
+  "mapMarkFood": "食物",
+  "mapMarkHotel": "酒店",
+  "mapMarkLandmark": "地标",
+  "mapMarkOther": "其他",
+  "mapNextInstruction": "下一条指令 ({current}/{total})",
+  "mapNoLocationSet": "未设置位置",
+  "mapNoRegionsYet": "您尚未下载任何区域。",
+  "mapOfflineIntro": "保存当前可见的区域，或预先下载您的旅行目的地，以便在离网时进行导航。",
+  "mapOfflineMapsTitle": "离线地图",
+  "mapRefreshTooltip": "刷新",
+  "mapRemovePinTooltip": "移除销钉",
+  "mapSaveOffline": "离线保存",
+  "mapSavePinToMap": "将图钉保存到地图",
+  "mapSavedPinsBody": "您通过搜索保存的 Pin 图。点击删除即可从地图中删除一个。",
+  "mapSavedPinsTitle": "保存的地图图钉",
+  "mapSearchHint": "搜索城市、地址或地标......",
+  "mapSnackAddedOfflineMark": "{title} 添加到您的离线标记中。",
+  "mapSnackArrived": "你已经到了。",
+  "mapSnackCouldNotFind": "找不到“{query}”。",
+  "mapSnackDeleteFailed": "删除失败：{error}",
+  "mapSnackDownloadFailed": "离线下载失败：{error}",
+  "mapSnackDownloadedEvent": "下载“{title}”。",
+  "mapSnackEventNoLocation": "“{title}”未设置位置。",
+  "mapSnackFinishedBatch": "已完成 {count} 行程地区的下载。",
+  "mapSnackLoadRegionsFailed": "无法加载离线区域：{error}",
+  "mapSnackLocationOff": "定位服务已关闭。启用它即可开始导航。",
+  "mapSnackLocationPermission": "逐向导航需要位置许可。",
+  "mapSnackLocationDeniedForMap": "需要位置权限才能使地图以您为中心。",
+  "mapSnackLocateFail": "目前无法获取您的位置。",
+  "mapLocateMeTooltip": "前往我的位置",
+  "mapSnackMapNotReady": "地图还没有准备好。请稍等。",
+  "mapSnackNavStartFail": "现在无法开始导航。",
+  "mapSnackNavStopped": "导航停止了。",
+  "mapSnackNoItineraryLocations": "没有任何行程活动有可供下载的位置或地图点。",
+  "mapSnackNoManeuver": "这一步没有精确的机动点。",
+  "mapSnackNoRoute": "找不到路线；显示目的地。",
+  "mapSnackRegionDownloaded": "地区下载成功！您现在可以离线导航。",
+  "mapSnackRemovedPin": "删除了保存的引脚。",
+  "mapSnackRemovedRegion": "删除了离线区域“{name}”。",
+  "mapSnackRouteCleared": "路线和指导已清除。",
+  "mapSnackRoutingFailed": "路由失败：{error}",
+  "mapSnackSearchFailed": "搜索失败：{error}",
+  "mapStartNavigation": "开始导航",
+  "mapStartingNav": "开始导航...",
+  "mapStopNavigation": "停止导航",
+  "mapTravelDriving": "驾驶",
+  "mapTravelWalking": "步行",
+  "mapTurnByTurn": "逐向 ({mode})",
+  "mindMapCaptureFail": "无法捕获思维导图。再试一次。",
+  "mindMapClearBody": "这将删除所有节点并恢复演示思维导图（居中示例）。",
+  "mindMapClearTitle": "透明画布？",
+  "mindMapClearTooltip": "清除/重置",
+  "mindMapCouldNotSave": "无法保存：{error}",
+  "mindMapCouldNotSaveType": "无法保存：{type}",
+  "mindMapEmailShare": "电子邮件/分享",
+  "mindMapEmptyNode": "空节点",
+  "mindMapHelpHint": "捏合缩放·拖动画布·拖动卡片·点击卡片进行编辑·+添加子项",
+  "mindMapNodeAddLeftTooltip": "添加左孩子",
+  "mindMapNodeAddRightTooltip": "添加右孩子",
+  "mindMapNodeDeleteTooltip": "删除节点",
+  "mindMapNodeEditTitle": "编辑节点",
+  "mindMapNodeHint": "输入短标签",
+  "mindMapPhotoAccess": "需要访问照片库才能保存图像。",
+  "mindMapReset": "重置",
+  "mindMapSavePhoto": "另存为照片",
+  "mindMapSavedPhotos": "保存到照片",
+  "mindMapShareCaptureFail": "无法捕获思维导图以供共享。",
+  "mindMapShareCompleted": "分享完成",
+  "mindMapShareFailed": "共享失败：{error}",
+  "mindMapShareReady": "图像准备就绪 - 选择要共享的应用程序",
+  "mindMapShareSheetClosed": "共享表已关闭",
+  "mindMapShareSubject": "Tripmetic — 思维导图",
+  "mindMapShareText": "从 Tripmetic 导出思维导图",
+  "mindMapTapToEdit": "点击进行编辑",
+  "moreToolsHeader": "更多工具",
+  "moreToolsSubtitle": "旅行公用事业",
+  "navCurrency": "货币",
+  "navItinerary": "行程",
+  "navMoreTools": "更多工具",
+  "navOfflineMap": "离线地图",
+  "navDashboard": "仪表板",
+  "navMoreMenu": "更多的",
+  "navEditNavigation": "编辑导航",
+  "navDoneEditing": "完毕",
+  "navSelectSlotHint": "点击一个插槽，然后点击一个工具来分配它。",
+  "navSavePins": "节省",
+  "navPinnedSectionTitle": "固定到底部栏",
+  "navAvailableSectionTitle": "可用功能",
+  "navEmptySlot": "空 — 从下面添加",
+  "navPinFullHint": "四个插槽均已满。删除一个以添加另一个。",
+  "navEditPinnedHint": "使用 - 释放插槽，使用 + 填充插槽，或拖动以重新排序。四个都填满后保存。",
+  "navAddToPinned": "添加到底部栏",
+  "navRemoveFromPinned": "从底部栏移除",
+  "navFeatureBadgeFree": "自由的",
+  "navFeatureBadgePro": "专业版",
+  "moreMenuSectionFree": "免费功能",
+  "moreMenuSectionPro": "Tripmetic 专业版",
+  "ourAppsMenuTitle": "我们的应用程序",
+  "ourAppsMenuSubtitle": "p1.do 团队提供的更多软件",
+  "ourAppsScreenTitle": "我们的应用程序",
+  "ourAppsIntro": "p1.do 团队的软件 — 点击实时应用程序即可打开其网站。 Stream CRM 即将推出。",
+  "ourAppsBadgeLive": "已上线",
+  "ourAppsBadgeSoon": "即将推出",
+  "ourAppsBadgeThisApp": "这个应用程序",
+  "ourAppsViewOnline": "在 p1.do 上查看全部内容",
+  "ourAppsPlatformWeb": "Web",
+  "ourAppsPlatformMacos": "macOS",
+  "ourAppsPlatformIosAndroid": "iOS · Android",
+  "ourAppsPlatformIosAndroidWeb": "iOS · Android · Web",
+  "ourAppsPlatformWebMobile": "网络 · 移动",
+  "ourAppsPlatformWebTabletMobile": "网络 · 平板电脑 · 移动设备",
+  "ourAppsTravelRecapTagline": "AI 旅行路线和照片回顾",
+  "ourAppsTravelRecapSummary": "在交互式地图上规划多站旅行，使用 AI 生成路线，添加目的地，并从照片中导出精美的旅行回顾。",
+  "ourAppsP1doTagline": "生物链接和创建者 CRM",
+  "ourAppsP1doSummary": "为获得 CRM 潜在客户（加上 Premium Selling 和预约）的创作者提供链接生物，除月费外，您无需额外抽取利润。",
+  "ourAppsDockTxtTagline": "macOS 边缘固定暂存器和精确差异",
+  "ourAppsDockTxtSummary": "一个免费的原生 macOS 浮动抽屉，用于纯文本草稿本工作、空白清理、JSON 美化和字符级差异。",
+  "ourAppsTripmeticTagline": "全球旅行工具包和预算规划器",
+  "ourAppsTripmeticSummary": "一个仪表板，包含愿望清单、离线地图、团体行程、多国预算、时区小部件、装箱单和转换器。",
+  "ourAppsPayxtTagline": "几秒钟内短信付款发票",
+  "ourAppsPayxtSummary": "通过为移动专业人士提供 Stripe- 和 PayPal 支持的结帐链接，将短信转换为安全的付费发票。",
+  "ourAppsPermitMobileTagline": "改造商的建筑许可证跟踪器",
+  "ourAppsPermitMobileSummary": "从工作现场监控市政建筑许可证状态——来自城市门户的号码、地址和审批更新。",
+  "ourAppsTrackkrTagline": "公寓地块管理",
+  "ourAppsTrackkrSummary": "在几秒钟内记录传入的包裹，通过电子邮件（和可选的SMS）通知租户，并在永久免费的基本计划中管理无限的单位。",
+  "ourAppsKeyForecastsTagline": "HVAC 领导者的分数控制器",
+  "ourAppsKeyForecastsSummary": "HVAC 和建筑业的执行财务情报 — 作业成本核算、季节性现金流量预测和可扩展的报告。",
+  "ourAppsStreamCrmTagline": "TikTok 实时礼物追踪和捐赠者 CRM",
+  "ourAppsStreamCrmSummary": "实时跟踪 TikTok 实时礼物，将礼物赠送者的支出与您的收入分开，并通过捐赠者资料培养顶级支持者。",
+  "proGlassTeaserTitle": "Tripmetic 专业功能",
+  "dashboardWorldExplorerSection": "世界探索者",
+  "dashboardWorldExplorerCountriesLabel": "访问过的国家",
+  "dashboardWorldExplorerPercentLabel": "探索过的世界",
+  "dashboardWorldExplorerPercentValue": "{percent}%",
+  "bucketListDisplayNameLabel": "显示名称",
+  "bucketListMapUnavailable": "未配置 Mapbox 访问令牌，因此无法显示地图。",
+  "bucketListAuthValidationDisplayName": "输入你的名字",
+  "authSignUpScreenTitle": "创建您的 Tripmetic 帐户",
+  "authSignUpScreenSubtitle": "可选 - 仅当您需要云备份时。您无需注册即可继续使用该设备上的所有工具。",
+  "authSignInScreenTitle": "登录 Tripmetic",
+  "authSignInScreenSubtitle": "可选 - 用于同步您的愿望清单和云团体旅行。 Tripmetic 的其余部分无需帐户即可工作。",
+  "authForgotPassword": "忘记密码？",
+  "authPasswordResetConfirmation": "如果该电子邮件帐户存在，您将收到一个重置密码的链接。",
+  "authUnexpectedError": "出了点问题。请再试一次。",
+  "authBackupBulletBucketList": "遗愿清单目的地将保存到云端并在您登录时合并。",
+  "authBackupBulletGroupTrips": "您创建或加入的团体旅行存储在您的帐户下。",
+  "authBackupBulletMultiDevice": "在另一台设备上登录以恢复您的同步数据。",
+  "authLinkAlreadyHaveAccount": "已经有帐户？登入",
+  "authLinkNeedAccount": "需要帐户吗？创建一个",
+  "authFullSignUpCta": "使用完整的注册屏幕",
+  "authFullSignInCta": "使用完整的登录屏幕",
+  "dashboardGreeting": "你好，{name}",
+  "dashboardGuestName": "游客",
+  "dashboardWelcomeSubtitle": "一起计划、保持井井有条，并一键使用工具。",
+  "dashboardPlanGroupTrip": "计划新的团体旅行",
+  "dashboardAddBucketList": "添加到遗愿清单",
+  "dashboardActiveTripSection": "活动行程快照",
+  "dashboardNoUpcomingTripTitle": "没有即将进行的团体旅行",
+  "dashboardNoUpcomingTripBody": "当您与朋友一起计划时，您的下一次旅行摘要将显示在此处。",
+  "dashboardQuickToolsSection": "快速工具",
+  "dashboardCountdownStartsIn": "{days} 天后开始",
+  "dashboardCountdownEndsIn": "{days} 天后结束",
+  "navDashboardBody": "您的旅行中心 - 从栏或更多菜单中打开工具。",
+  "appSettings": "应用程序设置",
+  "settingsSectionTripmeticPro": "Tripmetic 专业版",
+  "settingsSubscriptionActive": "活跃订阅",
+  "settingsSubscriptionLifetime": "终身访问",
+  "settingsSubscriptionFree": "免费计划",
+  "settingsManageBilling": "管理账单",
+  "settingsTestModeSectionTitle": "测试模式",
+  "settingsTestModeProTitle": "作为 Tripmetic Pro 进行测试",
+  "settingsTestModeProSubtitle": "本地覆盖进行测试；忽略 RevenueCat。",
+  "settingsTestModeProCaption": "启用后，该设备会在本地解锁所有 Pro 功能。仅用于内部测试 - 它不会改变您的实际订阅。",
+  "settingsUnitsTitle": "测量单位",
+  "settingsLanguageTitle": "语言",
+  "settingsThemeTitle": "主题",
+  "settingsClockWidgetTitle": "时钟小部件",
+  "settingsCurrencyWidgetTitle": "货币小部件",
+  "settingsCurrencyWidgetSubtitle": "主屏幕和锁定屏幕：1、20、100 的基础货币",
+  "settingsThemeSystem": "系统",
+  "settingsThemeLight": "光",
+  "settingsThemeDark": "黑暗的",
+  "settingsLanguageSystem": "系统默认",
+  "settingsLanguageEnglish": "英语",
+  "settingsLanguageSpanish": "西班牙语",
+  "settingsProfileTitle": "个人资料和云同步",
+  "settingsLogout": "退出",
+  "settingsLogoutConfirm": "退出该帐户？",
+  "settingsDeleteAccount": "删除帐户",
+  "settingsDeleteAccountBody": "帐户删除由支持人员处理。您可以在下面退出。",
+  "settingsSectionAccount": "帐户",
+  "accountManagementListTitle": "管理账户",
+  "accountManagementListSubtitle": "更新您的姓名、电子邮件和密码",
+  "accountManagementTitle": "账户管理",
+  "accountSectionProfile": "轮廓",
+  "accountSectionSignIn": "登入",
+  "accountFieldDisplayName": "显示名称",
+  "accountFieldEmail": "电子邮件",
+  "accountFieldCurrentPassword": "当前密码",
+  "accountFieldNewPassword": "新密码",
+  "accountSaveName": "保存名称",
+  "accountChangeEmail": "发送验证并更改电子邮件",
+  "accountChangePassword": "更改密码",
+  "accountSignedOutMessage": "您必须登录才能管理您的帐户。",
+  "accountSignInCta": "登入",
+  "accountNameSaved": "名称已更新",
+  "accountEmailVerificationSent": "验证链接已发送至 {email}。确认后即可切换您的登录地址。",
+  "accountPasswordChanged": "密码已更新",
+  "accountReauthRequired": "为了安全起见，请重新登录以更改您的 {field}。",
+  "accountFieldLabelEmail": "电子邮件",
+  "accountFieldLabelPassword": "密码",
+  "accountErrorGeneric": "无法更新 {field}：{error}",
+  "accountReauthAction": "重新登录",
+  "accountValidationEmailRequired": "输入您的电子邮件",
+  "accountValidationEmailInvalid": "输入有效的电子邮件",
+  "accountValidationNameRequired": "输入你的名字",
+  "accountValidationPasswordTooShort": "至少使用 8 个字符",
+  "accountCurrentEmailLabel": "当前电子邮件：{email}",
+  "proPaywallTitle": "Tripmetic 专业版",
+  "proPaywallSubtitle": "解锁离线地图、深度旅行工具和协作。",
+  "proPaywallBenefits": "离线地图和地区下载\n行程、预算、保管库和包装\n团体计划和实时同步",
+  "proPaywallBullets": "离线地图和地区下载|行程、预算、保管库和包装|团体计划和实时同步",
+  "proPaywallUpgradeRevenueCat": "通过 RevenueCat 升级",
+  "upgradeNow": "立即升级",
+  "packingCatClothing": "衣服",
+  "packingCatDocuments": "文件",
+  "packingCatMedications": "药物治疗",
+  "packingCatMisc": "管理信息中心",
+  "packingCatReservations": "预订",
+  "packingEmpty": "您的列表是空的。\n点击 + 添加项目。",
+  "packingEmptyHidden": "没有剩余的东西可以打包 - 或者关闭“隐藏已完成”以查看已完成的项目。",
+  "packingHeader": "包装与物流",
+  "packingHideCompleted": "隐藏完成",
+  "packingHideCompletedSubtitle": "已完成的项目将被保存；仅在此视图中隐藏",
+  "packingStarterPassport": "护照",
+  "packingStarterShirts": "衬衫",
+  "packingStarterSocks": "袜子",
+  "packingStarterTickets": "机票",
+  "packingStarterToothbrush": "牙刷",
+  "paywallDisabledBody": "RevenueCat 付费专区已暂时禁用以供 UI 审核。",
+  "paywallDisabledTitle": "付费墙已禁用",
+  "presentationDeleteBody": "您确定要从保管库中删除此文档吗？",
+  "presentationDeleteTitle": "删除文档？",
+  "presentationImageLoadFail": "加载图像失败",
+  "proActive": "积极的",
+  "proManageHintFree": "通过按月订阅解锁专业版功能。",
+  "proManageHintPro": "管理您的订阅或恢复购买。",
+  "proManageSubscription": "管理订阅",
+  "proName": "Tripmetic 专业版",
+  "proPaywallError": "无法显示付费专区。检查您的 RevenueCat 产品。",
+  "proPaywallNotConfigured": "此安装中不提供订阅。从 Google Play 安装 Tripmetic 以升级到 Pro。",
+  "proRestoreFailed": "恢复失败：{message}",
+  "proTrialCta": "开始 3 天免费试用",
+  "proWelcome": "欢迎使用 Tripmetic 专业版",
+  "schedulerAvailabilityGood": "好的",
+  "schedulerAvailabilityOffHours": "下班时间",
+  "schedulerAvailabilityOk": "好的",
+  "schedulerBaseLocation": "基地位置",
+  "schedulerBaseTooltip": "日期、时间和滑块适用于基准时钟 ({zone})。每个城市行显示该区域中的同一时刻。",
+  "schedulerConvertedCities": "转换的城市",
+  "schedulerDayNext": "+1 天",
+  "schedulerDayPrevious": "-1天",
+  "schedulerDaySame": "同一天",
+  "schedulerMeetingTime": "集合时间",
+  "schedulerSubtitle": "会议重叠",
+  "schedulerTitle": "全局调度器",
+  "settingsAndInfo": "设置和信息",
+  "settingsContact": "联系我们",
+  "settingsCopyright": "© 2026 Tripmetic.app",
+  "settingsCouldNotOpenLink": "无法打开链接",
+  "settingsHelpFaq": "帮助和常见问题解答",
+  "settingsPrivacy": "隐私政策",
+  "settingsSupportLegal": "支持与法律",
+  "settingsTerms": "使用条款",
+  "settingsMapboxAttributionTitle": "地图数据（Mapbox）",
+  "settingsMapboxAttributionBody": "Tripmetic 使用 Mapbox 地图。 © Mapbox、© OpenStreetMap 和其他数据贡献者。地图上的徽标和归属控制隐藏在应用程序中，布局更清晰，误触次数更少；该通知满足Mapbox显示要求。",
+  "settingsMapboxAttributionMapboxLink": "Mapbox — 关于地图",
+  "sizeCatBelts": "腰带",
+  "sizeCatMensJeansCombo": "男士牛仔裤 — 宽×长（美国）",
+  "sizeCatMensJeansInseam": "男士牛仔裤 — 内缝 (L)",
+  "sizeCatMensJeansWaist": "男士牛仔裤 — 腰围 (W)",
+  "sizeCatMensPants": "男士长裤",
+  "sizeCatMensShirts": "男士衬衫",
+  "sizeCatMensShoes": "男鞋",
+  "sizeCatMensTshirts": "男士 T 恤",
+  "sizeCatWomensBlouses": "女式衬衫",
+  "sizeCatWomensDresses": "女装连衣裙",
+  "sizeCatWomensPants": "女裤",
+  "sizeCatWomensShoes": "女鞋",
+  "sizeCatWomensTshirts": "女式 T 恤",
+  "sizeCatBoysShoes": "男童鞋（儿童）",
+  "sizeCatGirlsShoes": "女童鞋（儿童）",
+  "sizeCatBoysTshirts": "男童上衣/T 恤",
+  "sizeCatBoysPants": "男童裤子",
+  "sizeCatGirlsTshirts": "女童上衣/T 恤",
+  "sizeCatGirlsPants": "女童裤子",
+  "sizeCatGirlsDressesKids": "女童连衣裙（童装）",
+  "sizeColumnPrimaryEu": "主要：欧盟",
+  "sizeColumnPrimaryJp": "主要：JP",
+  "sizeColumnPrimaryMixed": "主要：混合（欧盟→美国→英国→日本）",
+  "sizeColumnPrimaryUk": "主要：英国",
+  "sizeColumnPrimaryUs": "主要：美国",
+  "sizeConverterAppBarSubtitle": "服装鞋履",
+  "sizeConverterCategory": "类别",
+  "sizeConverterHeader": "服装鞋履",
+  "sizeConverterTapToChange": "{code} · 点击即可更改",
+  "sizeConverterYourBaseSize": "您的基本尺寸（标签上）",
+  "sizeConverterYourCountry": "您所在的国家/地区",
+  "sizeEquivalentSizesHeader": "同等尺寸",
+  "sizeHintBelts": "例如32、34、85、90",
+  "sizeHintMensJeansCombo": "例如38x32 或 38×32",
+  "sizeHintMensJeansInseam": "例如32（内缝”）或 38x32 → 使用内缝 32",
+  "sizeHintMensJeansWaist": "例如38（腰围”）或 38x32 → 使用腰围 38",
+  "sizeHintMensPants": "例如30、32、34（腰围”）",
+  "sizeHintMensShirts": "例如15、38、男",
+  "sizeHintMensShoes": "例如6–14, 42, 27",
+  "sizeHintMensTshirts": "例如小号、中号、大号、48",
+  "sizeHintWomensBlouses": "例如8、38、M、XL",
+  "sizeHintWomensDresses": "例如8、38、男",
+  "sizeHintWomensPants": "例如6、10、38、中号",
+  "sizeHintWomensShoes": "例如5–12, 39, 25",
+  "sizeHintWomensTshirts": "例如XS、M、38",
+  "sizeHintBoysShoes": "例如11C、3Y、32、21",
+  "sizeHintGirlsShoes": "例如10C、2Y、33、20",
+  "sizeHintBoysTshirts": "例如6、8、中号、超小号",
+  "sizeHintBoysPants": "例如6、8、10（美国儿童）",
+  "sizeHintGirlsTshirts": "例如6、8、中、小",
+  "sizeHintGirlsPants": "例如6、8、10（美国儿童）",
+  "sizeHintGirlsDressesKids": "例如4、6、8、104",
+  "sizeNoMatchEmpty": "输入印在您衣服或鞋子上的尺码。",
+  "sizeNoMatchRow": "此类别没有匹配的尺寸行。尝试使用美国、英国、欧盟、日本号码或字母（S、M、L）（如果适用）。",
+  "sizeTipJeansCombo": "例如美国 38×32：腰围 ≈ 欧盟 48，日本腰围标签通常约为 96–97 厘米；内缝 32\" ≈ ~81 厘米。品牌不同 - 以此为起点。",
+  "sizeTipJeansInseam": "内缝是腿部内侧的长度，以英寸为单位（例如 32）。日本可能会显示 32 英寸内缝的 ~81 厘米。类型 38×32 — 我们使用 32 表示内缝。",
+  "sizeTipJeansWaist": "亚洲标签上的一个数字通常是腰围：厘米 (38\" ≈ 96–97 cm) 或美国腰围英寸 (38)。与卷尺相比。您可以在此处输入 38×32 — 我们使用 38 表示腰围。",
+  "timezonePickerEmpty": "没有匹配项",
+  "timezonePickerHint": "搜索 IANA 名称（例如欧洲、东京）",
+  "timezonePickerTitle": "选择时区",
+  "timezoneSheetCountZones": "{total} 区域中的 {shown}",
+  "timezoneSheetSearchHint": "搜索 IANA 名称（例如欧洲、东京）",
+  "timezoneSheetTitle": "选择时区",
+  "tipAmount": "小费金额",
+  "tipAppBarSubtitle": "小费和账单",
+  "tipBillHint": "例如1,250,000.00 美元",
+  "tipCountryBrazil": "巴西",
+  "tipCountryChina": "中国",
+  "tipCountryColombia": "哥伦比亚",
+  "tipCountryDominicanRepublic": "多明尼加共和国",
+  "tipCountryEgypt": "埃及",
+  "tipCountryFrance": "法国",
+  "tipCountryGermany": "德国",
+  "tipCountryHongKong": "香港",
+  "tipCountryIndonesia": "印度尼西亚",
+  "tipCountryItaly": "意大利",
+  "tipCountryJapan": "日本",
+  "tipCountryMexico": "墨西哥",
+  "tipCountryMorocco": "摩洛哥",
+  "tipCountryPortugal": "葡萄牙",
+  "tipCountrySingapore": "新加坡",
+  "tipCountrySpain": "西班牙",
+  "tipCountryThailand": "泰国",
+  "tipCountryTurkey": "火鸡",
+  "tipCountryUae": "阿拉伯联合酋长国（迪拜）",
+  "tipCountryUnitedKingdom": "英国",
+  "tipCountryUsa": "美国",
+  "tipZeroReasonChina": "在中国大陆，给小费并无惯例，在许多地方，给小费可能会被拒绝，或者被视为奇怪的行为。",
+  "tipZeroReasonFrance": "餐厅账单通常包含15%的服务费（service compris）。为了获得卓越的服务，可以选择额外支付小费。",
+  "tipZeroReasonJapan": "日本不实行给小费的做法，这可能会引起混乱或冒犯。",
+  "tipZeroReasonSingapore": "无需支付小费；许多场所在账单上加收10%的服务费。",
+  "tipZeroReasonGeneric": "这里的小费通常是 0%。您仍然可以为出色的服务添加小费。",
+  "tipZeroReasonTitle": "为什么是0%？",
+  "tipCurrentCountry": "当前国家/地区",
+  "tipPeople": "人们",
+  "tipPerPerson": "每人金额",
+  "tipPercentHint": "输入小费 %（例如 15 或 27.5）",
+  "tipPercentLabel": "提示 ％",
+  "tipResults": "结果",
+  "tipSmartHeader": "智能提示",
+  "tipTotalBill": "账单总金额",
+  "tipTotalWithTip": "总计（含小费）",
+  "toolBrainstorm": "头脑风暴",
+  "toolBudget": "预算",
+  "toolBudgetSubtitle": "旅行预算规划和费用跟踪",
+  "toolBudgetTitle": "预算",
+  "toolItinerarySubtitle": "每日航班、酒店和计划",
+  "toolItineraryTitle": "行程",
+  "toolCrypto": "加密货币",
+  "toolCryptoSubtitle": "USD 流行硬币的价值",
+  "toolCryptoTitle": "加密货币",
+  "toolDocumentVault": "文件库",
+  "toolMindMapSubtitle": "无限画布上的想法·离线",
+  "toolMindMapTitle": "头脑风暴思维导图",
+  "toolPacking": "包装",
+  "toolPackingSubtitle": "按行程列出的智能行李清单",
+  "toolPackingTitle": "包装",
+  "toolSchedulerSubtitle": "双时区·时差规划",
+  "toolSchedulerTitle": "时间和日期",
+  "toolSettingsAboutSubtitle": "公告、帮助、隐私和条款",
+  "toolSettingsAboutTitle": "设置及关于",
+  "toolSettingsInfo": "设置和信息",
+  "toolSizeSubtitle": "美国·英国·欧盟·日本（JP）",
+  "toolSizeTitle": "服装尺码转换器",
+  "toolTimeDate": "时间和日期",
+  "toolTipSubtitle": "国家小费规范 · 最多 20 人",
+  "toolTipTitle": "智能小费和账单分割器",
+  "toolUnits": "单位",
+  "toolUnitsSubtitle": "长度、重量、温度、体积",
+  "toolUnitsTitle": "单位",
+  "toolVaultSubtitle": "重要旅行证件的离线存储",
+  "toolVaultTitle": "文件库",
+  "unitAcres": "英亩",
+  "unitCategoryArea": "区域",
+  "unitCategoryDistance": "距离",
+  "unitCategoryLength": "长度",
+  "unitCategoryTemperature": "温度",
+  "unitCategoryVolume": "体积",
+  "unitCategoryWeight": "重量",
+  "unitCelsius": "摄氏度",
+  "unitCentimeters": "厘米",
+  "unitFahrenheit": "华氏度",
+  "unitFeet": "脚",
+  "unitGrams": "克",
+  "unitHectares": "公顷",
+  "unitInches": "英寸",
+  "unitKilograms": "公斤",
+  "unitKilometers": "公里",
+  "unitLiters": "升",
+  "unitMeters": "米",
+  "unitMiles": "英里",
+  "unitMilliliters": "毫升",
+  "unitOunces": "盎司",
+  "unitPounds": "磅",
+  "unitSquareCentimeters": "平方厘米",
+  "unitSquareFeet": "平方英尺",
+  "unitSquareInches": "平方英寸",
+  "unitSquareKilometers": "平方公里",
+  "unitSquareMeters": "平方米",
+  "unitSquareYards": "平方码",
+  "unitUsFluidOunces": "美式液量盎司",
+  "unitUsGallons": "美制加仑",
+  "unitYards": "码数",
+  "unitsHeader": "单位",
+  "vaultCategoryArrivalCard": "入境卡",
+  "vaultCategoryHotelReservation": "酒店预订",
+  "vaultCategoryOther": "其他",
+  "vaultCategoryPassportCopy": "护照复印件",
+  "vaultCategoryReturnFlight": "回程航班",
+  "vaultCategoryVisa": "签证",
+  "vaultDocumentTitle": "文档",
+  "vaultIntro": "安全地存储重要的旅行证件，以便离线访问并在移民时快速出示。",
+  "vaultProcessFailed": "处理文档失败：{error}",
+  "vaultTapToUpload": "点击上传",
+  "vaultTapToView": "点击查看",
+  "vaultVaultWord": "拱顶",
+  "bucketListTitle": "遗愿清单",
+  "bucketListSubtitle": "你去过的地方、想去的地方以及接下来要去的地方。",
+  "bucketListToolSubtitle": "地图和列表中的梦想目的地",
+  "bucketListViewModeList": "列表",
+  "bucketListViewModeMap": "地图",
+  "bucketListViewModePopular": "受欢迎的",
+  "bucketListPopularHint": "Been、Live 和 Lived 更新您的地图和列表。想要和即将到来的只是列表，永远不会出现在地图上。",
+  "bucketListCategoryBeen": "到过",
+  "bucketListCategoryWant": "想",
+  "bucketListCategoryLive": "居住",
+  "bucketListCategoryLived": "住过",
+  "bucketListCategoryUpcoming": "即将推出",
+  "bucketListDatesRange": "{start} – {end}",
+  "bucketListDetailCategory": "类别",
+  "bucketListDetailDates": "枣子",
+  "bucketListMapLegend": "点击标记查看详细信息",
+  "bucketListShareMapWatermarkLarge": "Tripmetic",
+  "bucketListShareMapWatermarkUrl": "Tripmetic.app",
+  "bucketListShareMapStatExplore": "{name} 探索了世界 {worldPercent}%。旅行过世界上超过 {populationPercent}% 的人口。",
+  "bucketListShareMapTravelerFallback": "拉斐尔",
+  "bucketListShareMapStatPopulation": "旅行过世界上超过 {percent}% 的人口",
+  "bucketListShareMapCountriesLabel": "国家",
+  "bucketListShareMapCitiesLabel": "城市",
+  "bucketListEmptyCategory": "此类别中还没有地方。",
+  "bucketListTravelStats": "旅行统计",
+  "bucketListStatWorld": "探索的世界",
+  "bucketListStatUs": "美国探索",
+  "bucketListStatEurope": "欧洲探索",
+  "bucketListStatAsia": "探索亚洲",
+  "bucketListStatAfrica": "探索非洲",
+  "bucketListStatRegionalCaption": "区域性",
+  "bucketListStatSubtitle": "{total} {count} 独特·",
+  "bucketListAddDestination": "添加目的地",
+  "bucketListEditDestination": "编辑目的地",
+  "bucketListSave": "节省",
+  "bucketListFieldCity": "城市",
+  "bucketListFieldCountry": "国家",
+  "bucketListFieldCategory": "类别",
+  "bucketListFieldRegionHint": "州/省（可选）",
+  "bucketListFieldLatitude": "纬度",
+  "bucketListFieldLongitude": "经度",
+  "bucketListFieldStart": "开始日期",
+  "bucketListFieldEnd": "结束日期",
+  "bucketListFieldTripDates": "旅行日期",
+  "bucketListValidationRequired": "此字段是必需的。",
+  "bucketListValidationNumber": "输入有效号码。",
+  "bucketListValidationDates": "结束日期必须在开始日期当天或之后。",
+  "bucketListGeocodeNotFound": "在地图上找不到这个位置。请检查拼写。",
+  "bucketListShareSummarySubject": "我的 Tripmetic 愿望清单",
+  "bucketListShareTooltip": "分享列表和地图",
+  "bucketListShareFailed": "无法共享：{error}",
+  "bucketListShareNeedMap": "在捕获地图图像之前打开地图视图。",
+  "bucketListDeleteHint": "滑动即可删除",
+  "bucketListTapEditHint": "点击进行编辑",
+  "bucketListCloudSyncFailed": "云同步失败：{error}",
+  "bucketListRetry": "重试",
+  "bucketListBackupTooltip": "备份与注册",
+  "bucketListBackupTitle": "云备份",
+  "bucketListBackupGuestIntro": "Tripmetic 无需帐户即可完全运行。如果您想要为您的愿望清单和共享团体旅行进行云备份，请随时添加一个。",
+  "bucketListSignedInAs": "以 {email} 身份登录",
+  "bucketListBackupEmail": "电子邮件",
+  "bucketListBackupPassword": "密码",
+  "bucketListBackupConfirmPassword": "确认密码",
+  "bucketListAuthTabSignUp": "报名",
+  "bucketListAuthPasswordMismatch": "密码不匹配。",
+  "bucketListRegister": "创建帐户并备份",
+  "bucketListSignIn": "登入",
+  "bucketListSignOut": "登出",
+  "bucketListBackupUploading": "正在上传至云端...",
+  "bucketListAuthSuccessSignIn": "登录成功！",
+  "bucketListAuthSuccessSignUp": "账户创建成功！",
+  "signUpSuccessMessage": "帐户已创建。欢迎来到Tripmetic！",
+  "signUpErrorEmailInUse": "此邮箱号已被注册。尝试登录。",
+  "signUpErrorInvalidEmail": "输入有效的电子邮件。",
+  "signUpErrorWeakPassword": "密码太弱。至少使用 8 个字符。",
+  "signUpErrorGeneric": "无法注册：{message}",
+  "signUpErrorEmailInUseAction": "登入",
+  "bucketListAuthFailed": "无法验证：{error}",
+  "groupPlannerNoExtraDetails": "还没有注释或链接。",
+  "groupPlannerTitle": "团体策划师",
+  "groupPlannerToolTitle": "团体策划师",
+  "groupPlannerToolSubtitle": "实时一起计划旅行",
+  "groupPlannerLandingPlanTitle": "计划团体旅行",
+  "groupPlannerLandingPlanSubtitle": "创建包含目的地、日期和预算的共享旅行。",
+  "groupPlannerLandingJoinTitle": "参加团体旅行",
+  "groupPlannerLandingJoinSubtitle": "输入邀请中的行程代码或链接。",
+  "groupPlannerCreateTripTitle": "新的团体旅行",
+  "groupPlannerSelectDates": "选择行程日期范围。",
+  "groupPlannerBudgetPerPersonOption": "每人",
+  "groupPlannerBudgetGroupOption": "团体总计",
+  "groupPlannerBudgetNoneOption": "没有任何",
+  "groupPlannerBudgetAmountLabel": "预算金额",
+  "groupPlannerOpenTitle": "开启团体旅行",
+  "groupPlannerOpenSubtitle": "粘贴邀请中的旅行代码。",
+  "groupPlannerOpenTripCodeLabel": "行程代码",
+  "groupPlannerOpenHint": "短代码、行程 ID 或邀请链接",
+  "groupPlannerOpenButton": "开启行程",
+  "groupPlannerDestination": "目的地",
+  "groupPlannerDates": "枣子",
+  "groupPlannerGroupSize": "团体规模",
+  "groupPlannerBudget": "预算",
+  "groupPlannerBudgetPerPerson": "每人：{amount}",
+  "groupPlannerBudgetGroup": "团体总数：{amount}",
+  "groupPlannerBudgetNone": "未设定预算",
+  "groupPlannerInviteMembers": "邀请会员",
+  "groupPlannerManageMembers": "管理会员",
+  "groupPlannerItinerary": "行程",
+  "groupPlannerItineraryEditorHint": "作为旅行管理员或旅行协调员，您可以添加活动并更改日程安排。",
+  "groupPlannerItineraryViewerHint": "只读：对建议的活动进行投票（赞成或反对）。只有旅行管理员和旅行协调员可以添加或更改项目。",
+  "groupPlannerNoActivities": "还没有活动。",
+  "groupPlannerTripNotFound": "无法加载此行程。",
+  "groupPlannerSignInTitle": "需要登录",
+  "groupPlannerSignInBody": "在“存储桶列表”→“云备份”下登录以查看共享行程。",
+  "groupPlannerCreateTripSignInRequired": "保存新的团体旅行需要一个帐户。登录以继续 — 其他 Tripmetic 功能无需任何功能即可工作。",
+  "groupPlannerMembersTitle": "会员",
+  "groupPlannerRoleAdmin": "行政",
+  "groupPlannerRoleCoPlanner": "旅行协调员",
+  "groupPlannerRoleViewOnly": "仅供查看",
+  "groupPlannerOwner": "所有者",
+  "groupPlannerRemoveMember": "消除",
+  "groupPlannerRemoveMemberTitle": "删除会员？",
+  "groupPlannerRemoveMemberBody": "从这次行程中删除 {email} 吗？",
+  "groupPlannerCancel": "取消",
+  "groupPlannerNotes": "笔记",
+  "groupPlannerOpenLink": "打开链接",
+  "groupPlannerNetVotes": "{count}",
+  "groupPlannerVoteError": "无法保存投票：{error}",
+  "groupPlannerManageError": "无法更新成员：{error}",
+  "groupPlannerInviteError": "无法打开共享表：{error}",
+  "groupPlannerUnknownTripCode": "无法打开行程：{error}",
+  "groupPlannerMyTripsSectionTitle": "你的旅行",
+  "groupPlannerMyTripsEmpty": "还没有旅行。在上面创建一个。",
+  "groupPlannerExamplesTitle": "行程示例",
+  "groupPlannerExamplesSubtitle": "示例卡 — 在上面创建一次旅行以添加您自己的旅行。",
+  "groupPlannerExampleTapBody": "这些只是示例。使用“计划团体旅行”来创建您可以分享的真实旅行。",
+  "groupPlannerExampleLisbonTitle": "里斯本团队场外",
+  "groupPlannerExampleKyotoTitle": "京都春游",
+  "groupPlannerAddActivity": "添加活动",
+  "groupPlannerActivityTitleLabel": "活动标题",
+  "groupPlannerActivityWhenLabel": "日期和时间",
+  "groupPlannerActivityTripDateRangeHelp": "选择旅行的一天，然后选择时间。任何可以编辑行程的人都可以稍后更改。",
+  "groupPlannerActivityDateOutOfRange": "该日期不在本次旅行之内。选择旅行开始和结束之间的一天。",
+  "groupPlannerActivityTitleRequired": "输入活动标题。",
+  "groupPlannerActivityDateUnset": "日期未设置 — 点击“编辑”进行安排。",
+  "groupPlannerPeopleCount": "{count} 人",
+  "groupPlannerEditActivity": "编辑活动",
+  "groupPlannerDeleteActivity": "删除",
+  "groupPlannerDeleteActivityTitle": "删除活动？",
+  "groupPlannerDeleteActivityBody": "从行程中删除“{title}”吗？此操作无法撤消。",
+  "groupPlannerActivityDeleteError": "无法删除活动：{error}",
+  "groupPlannerActivityEditError": "无法更新活动：{error}",
+  "groupPlannerEditTripTitle": "编辑行程",
+  "groupPlannerEditTripAction": "编辑行程",
+  "groupPlannerDeleteTripTitle": "删除行程？",
+  "groupPlannerDeleteTripBody": "为所有人永久删除行程“{destination}”及其行程吗？此操作无法撤消。",
+  "groupPlannerDeleteTripAction": "删除行程",
+  "groupPlannerTripDeleted": "行程已删除。",
+  "groupPlannerTripDeleteError": "无法删除行程：{error}",
+  "groupPlannerTripUpdateError": "无法更新行程：{error}",
+  "widgetInstructionTitle": "双时钟小部件",
+  "widgetInstructionSubtitle": "直接从锁定屏幕或主屏幕跟踪您的居住地和目的地时区。",
+  "widgetInstructionTabIos": "iOS",
+  "widgetInstructionTabAndroid": "Android",
+  "widgetInstructionIosLockScreenTitle": "锁屏",
+  "widgetInstructionIosLockScreenStep1": "长按锁定屏幕并点击“自定义”。",
+  "widgetInstructionIosLockScreenStep2": "选择“锁定屏幕”预览。",
+  "widgetInstructionIosLockScreenStep3": "点击时间正下方的小部件区域。",
+  "widgetInstructionIosLockScreenStep4": "向下滚动，选择 Tripmetic，然后点击以添加小部件。",
+  "widgetInstructionIosHomeScreenTitle": "主屏幕",
+  "widgetInstructionIosHomeScreenStep1": "长按主屏幕上的空白区域。",
+  "widgetInstructionIosHomeScreenStep2": "点击左上角的 + 图标。",
+  "widgetInstructionIosHomeScreenStep3": "搜索“Tripmetic”。",
+  "widgetInstructionIosHomeScreenStep4": "选择您喜欢的小部件尺寸，然后点击“添加小部件”。",
+  "widgetInstructionAndroidStep1": "转到主屏幕并长按空白区域。",
+  "widgetInstructionAndroidStep2": "点击“小部件”。",
+  "widgetInstructionAndroidStep3": "向下滚动到 Tripmetic。",
+  "widgetInstructionAndroidStep4": "点击并按住双时钟小部件，然后将其拖到屏幕上。",
+  "widgetInstructionAndroidLockScreenHint": "要在锁定屏幕上查看两个时钟：打开“设置”→ 搜索“锁定屏幕”或“小部件”，如果您的手机提供锁屏小部件（并非所有设备都提供），则在其中添加 Tripmetic。",
+  "widgetInstructionConfigureCta": "配置小部件城市",
+  "currencyWidgetInstructionTitle": "货币转换器小工具",
+  "currencyWidgetInstructionSubtitle": "将您的基础货币和目标货币固定到 Android 主屏幕。每当您使用 Tripmetic 中的转换器时，费率都会同步。",
+  "currencyWidgetInstructionAndroidTitle": "添加到主屏幕",
+  "currencyWidgetInstructionAndroidStep1": "打开货币工具一次并设置前两种货币（基础货币和目标货币）。",
+  "currencyWidgetInstructionAndroidStep2": "转到主屏幕并长按空白区域。",
+  "currencyWidgetInstructionAndroidStep3": "点击“小部件”，滚动到 Tripmetic，然后选择“货币转换器”。",
+  "currencyWidgetInstructionAndroidStep4": "将小部件拖到主屏幕上，或者如果您的启动器支持，请点击“添加”。",
+  "currencyWidgetInstructionUsageTitle": "使用小部件",
+  "currencyWidgetInstructionUsageStep1": "点击更改（或小部件主体）以在 Tripmetic 中打开货币选择。",
+  "currencyWidgetInstructionUsageStep2": "点击 ↻ 刷新可在后台更新小部件上的费率（应用程序不会打开）。",
+  "currencyWidgetInstructionUsageStep3": "当您在应用程序中编辑货币或值时，金额会自动更新。",
+  "currencyWidgetInstructionPinCta": "将小部件添加到主屏幕",
+  "currencyWidgetInstructionOpenCurrencyCta": "更改小部件货币",
+  "currencyWidgetInstructionIosHint": "货币主屏幕小部件可在 Android 上找到。在 iPhone 上，使用应用内货币工具。",
+  "currencyWidgetPinUnsupported": "您的启动器不支持从应用程序添加此小部件。长按主屏幕并选择小部件。",
+  "currencyWidgetPinFailed": "无法打开小部件选择器。从主屏幕手动添加小部件。",
+  "dualClockScreenTitle": "双时钟小部件",
+  "dualClockConfigTitle": "配置城市",
+  "dualClockConfigSubtitle": "选择两个城市和时区。您的选择会同步到 Tripmetic 主屏幕小部件 (Android) 和锁定屏幕小部件 (iOS)。",
+  "dualClockCity1Label": "第一城市",
+  "dualClockCity2Label": "第二城市",
+  "dualClockSave": "保存并更新小部件",
+  "dualClockSaved": "小部件已更新。",
+  "dualClockSaveError": "无法保存小部件数据。请再试一次。",
+  "dualClockAppearanceTitle": "小部件外观",
+  "dualClockAppearanceHint": "自定义文本大小、颜色和主屏幕背景。锁定屏幕使用字体大小（以及系统允许的颜色）。",
+  "dualClockFontScaleLabel": "文字大小",
+  "dualClockColorCity": "城市名称",
+  "dualClockColorTime": "时代",
+  "dualClockColorDate": "枣子",
+  "dualClockColorBackground": "首页背景",
+  "dualClockShadowLabel": "文字阴影",
+  "dualClockShadowSubtitle": "添加繁忙或照片壁纸的对比度。",
+  "moreToolsDualClockBannerTitle": "双时钟小部件",
+  "moreToolsDualClockBannerSubtitle": "在锁定屏幕或主屏幕上查看两个时区 - 点击进行设置。",
+  "moreToolsDualClockBannerCta": "设置",
+  "settingsDualClockWidgetTitle": "双时钟小部件",
+  "settingsDualClockWidgetSubtitle": "添加小部件并选择您的城市",
+  "widgetNewFeatureBadge": "新的",
+  "globalNavAccountCloudSyncTooltip": "账户及云备份",
+  "exchangeRatesForceRefreshTooltip": "获取最新汇率",
+  "exchangeRatesRefreshedOk": "汇率已更新。",
+  "exchangeRatesRefreshFailed": "无法刷新汇率。",
+  "bucketListStatUsTerritories": "美国领土",
+  "bucketListAuthErrUserNotFound": "找不到此电子邮件的帐户。",
+  "bucketListAuthErrWrongPassword": "电子邮件或密码不正确。",
+  "bucketListAuthErrEmailInUse": "该电子邮件的帐户已存在。",
+  "bucketListAuthErrInvalidEmail": "电子邮件地址无效。",
+  "bucketListAuthErrWeakPassword": "密码太弱。",
+  "bucketListAuthErrUserDisabled": "该帐户已被禁用。",
+  "bucketListAuthErrTooManyRequests": "尝试次数太多。稍后再试。",
+  "bucketListAuthErrOperationNotAllowed": "未启用电子邮件/密码登录。",
+  "bucketListAuthErrDetail": "{detail}",
+  "bucketListAuthValidationInvalidEmail": "电子邮件地址无效。",
+  "bucketListAuthValidationPasswordShort": "密码必须至少包含 6 个字符。",
+  "bucketListAuthValidationPasswordRequired": "输入您的密码。",
+  "currencyWidgetAppearanceTitle": "外貌",
+  "currencyWidgetAppearanceHint": "自定义字体大小、文本颜色和主屏幕背景。主页小部件保持固定大小，因此大字体会自动调整，因此所有行都保持可见。锁定屏幕使用字体大小（以及系统允许的颜色）。",
+  "currencyWidgetFontScaleLabel": "字体大小",
+  "currencyWidgetColorPrimary": "主要文本（数量/基数）",
+  "currencyWidgetColorAccent": "强调文本（对/梯形标签）",
+  "currencyWidgetColorCaption": "标题文本（速率线）",
+  "currencyWidgetColorBackground": "首页背景",
+  "currencyWidgetSaveAppearance": "保存外观",
+  "currencyWidgetAppearanceSaved": "货币小部件外观已保存",
+  "currencyWidgetAppearanceSaveFailed": "无法保存小部件外观",
+  "currencyWidgetInstructionIosTitle": "iPhone",
+  "@budgetDialogRemoveBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetOtherExpenses": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetPerDayValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetRemainingAfter": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalBudget": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@budgetTotalForTrip": {
+    "description": "Budget summary line; {code} is a currency code such as USD.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@countryCountriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@cryptoMockPerUnit": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "@currencySheetCountShown": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeCouldNotLoad": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdated": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@exchangeLastUpdatedOffline": {
+    "placeholders": {
+      "mins": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryDayPrefix": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@itineraryHiveError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapDownloadingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapLocatingQuery": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapNextInstruction": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackAddedOfflineMark": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackCouldNotFind": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackDownloadedEvent": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackEventNoLocation": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackFinishedBatch": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackLoadRegionsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRemovedRegion": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackRoutingFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapSnackSearchFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mapTurnByTurn": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSave": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapCouldNotSaveType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "@mindMapShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardWorldExplorerPercentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownStartsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@dashboardCountdownEndsIn": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountEmailVerificationSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountReauthRequired": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountErrorGeneric": {
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@accountCurrentEmailLabel": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@proRestoreFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@schedulerBaseTooltip": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "@sizeConverterTapToChange": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "@timezoneSheetCountZones": {
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@vaultProcessFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListDatesRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListShareMapStatExplore": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "worldPercent": {
+        "type": "String"
+      },
+      "populationPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareMapStatPopulation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListStatSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bucketListShareFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListCloudSyncFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListSignedInAs": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@signUpErrorGeneric": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetPerPerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerBudgetGroup": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerRemoveMemberBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerNetVotes": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerVoteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerManageError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerInviteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerUnknownTripCode": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerPeopleCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteActivityBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerActivityEditError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerDeleteTripBody": {
+    "placeholders": {
+      "destination": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripDeleteError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@groupPlannerTripUpdateError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@bucketListAuthErrDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}

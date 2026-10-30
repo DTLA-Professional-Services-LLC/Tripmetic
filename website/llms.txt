@@ -1,0 +1,48 @@
+# Tripmetic
+
+> Tripmetic is a free travel app for iOS and Android. It helps travelers plan and manage trips with multi-currency budgets, a smart currency converter (live + offline rates), dual clock widgets, an interactive bucket map, packing lists, offline maps, document vault, and group trip planning—in one download.
+
+Tripmetic is a DBA of DTLA Professional Services, LLC (Los Angeles, CA). Website: https://tripmetic.app
+
+Download:
+- App Store: https://apps.apple.com/us/app/tripmetic/id6765632920
+- Google Play: https://play.google.com/store/apps/details?id=com.tripmetic.app
+
+## Primary pages
+
+- [Home](https://tripmetic.app/): Product overview and download links
+- [Features](https://tripmetic.app/features): Full feature catalog
+- [Pricing](https://tripmetic.app/pricing): Tripmetic Pro — monthly $4.99, 1-year $59.88, lifetime $199.99
+- [Introductory Offer](https://tripmetic.app/introductory-offer): Free first-year App Store intro pricing by country/region
+- [About](https://tripmetic.app/about): Company and product background
+- [Demo](https://tripmetic.app/demo): App screenshots and product tour
+- [Support](https://tripmetic.app/support): Help center and user guides
+- [Contact](https://tripmetic.app/contact): Support contact
+
+## Feature pages (travel tools)
+
+- [Smart Currency Converter](https://tripmetic.app/smart-currency-converter): Live and offline currency conversion for travel
+- [Currency Calculator](https://tripmetic.app/currency-calculator): Public travel calculator using Tripmetic's live and cached exchange rates
+- [Dual Clock Widget](https://tripmetic.app/clock-widget): Home vs destination timezone widget
+- [Bucket Map / Travel Bucket List](https://tripmetic.app/bucket-list-app): Interactive map of been / lived / want destinations
+- [Multi-Country Budget](https://tripmetic.app/multi-country-budget): Track expenses across countries with live FX
+- [Global Meeting Scheduler](https://tripmetic.app/global-meeting-scheduler): Find overlapping business hours across timezones
+- [Document Vault](https://tripmetic.app/document-vault): Offline storage for passports, visas, and flights
+- [Bill Splitter & Smart Gratuity](https://tripmetic.app/bill-splitter-smart-gratuity): Culture-aware tipping and bill splitting
+- [Cryptocurrency Converter](https://tripmetic.app/cryptocurrency-converter): Crypto to fiat conversion for travel
+- [Brainstorming Mind Map](https://tripmetic.app/brainstorming-mind-map): Visual trip planning canvas
+- [Group Trip Planner](https://tripmetic.app/group-trip-planner): Collaborative itineraries and shared budgets
+- [International Size Converter](https://tripmetic.app/international-size-converter): Clothing and shoe sizes across regions
+- [Packing List](https://tripmetic.app/packing-list): Offline zen packing checklists
+- [Unit Converter](https://tripmetic.app/unit-converter): Metric and imperial conversions
+- [Offline Map Guide](https://tripmetic.app/offline-map-guide): Download regions and navigate offline
+
+## Localized
+
+- [Spanish home](https://tripmetic.app/es): Spanish-language landing page
+
+## Optional
+
+- [Sitemap](https://tripmetic.app/sitemap.xml)
+- [Privacy Policy](https://tripmetic.app/privacy)
+- [Terms of Service](https://tripmetic.app/terms)

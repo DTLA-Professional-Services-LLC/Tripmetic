@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tripmetic — Group trip invite</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 24px; background: #0f1419; color: #f5f5f5; }
+    h1 { font-size: 1.25rem; margin: 0 0 8px; }
+    p { color: #b0b8c1; line-height: 1.5; margin: 0 0 16px; }
+    .code { font-size: 1.1rem; letter-spacing: 0.04em; color: #7ecbff; word-break: break-all; }
+    .btn { display: block; width: 100%; max-width: 360px; margin: 10px 0; padding: 14px 18px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; }
+    .primary { background: #1e88e5; color: #fff; }
+    .secondary { background: #263238; color: #e3f2fd; border: 1px solid #37474f; }
+    .danger { background: transparent; color: #90a4ae; font-size: 0.9rem; padding: 8px; }
+    footer { margin-top: 28px; font-size: 0.8rem; color: #78909c; }
+  </style>
+</head>
+<body>
+  <h1>Open this trip in Tripmetic</h1>
+  <p>Trip code:</p>
+  <p class="code" id="code">—</p>
+  <p>If Tripmetic is installed, use <strong>Open in app</strong>. Otherwise install from your store.</p>
+
+  <a class="btn primary" id="openApp" href="#">Open in Tripmetic</a>
+  <a class="btn secondary" id="androidIntent" href="#" style="display:none">Open on Android (app or Play Store)</a>
+  <a class="btn secondary" href="https://apps.apple.com/us/app/tripmetic/id6765632920">Download on the App Store</a>
+  <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.tripmetic.app">Get it on Google Play</a>
+
+  <footer>Hosted at tripmetic.app — configure your server so all <code>/group-trip/*</code> URLs serve this file (see repo docs/GROUP_TRIP_LINKS.md).</footer>
+
+  <script>
+    (function () {
+      var parts = window.location.pathname.split("/").filter(Boolean);
+      var idx = parts.indexOf("group-trip");
+      var code = idx >= 0 && parts[idx + 1] ? decodeURIComponent(parts[idx + 1]) : "";
+      if (!code) {
+        document.getElementById("code").textContent = "(missing code in URL)";
+        document.getElementById("openApp").style.display = "none";
+        return;
+      }
+      document.getElementById("code").textContent = code;
+
+      var custom = "tripmetic://group-trip/" + encodeURIComponent(code);
+      var openBtn = document.getElementById("openApp");
+      openBtn.href = custom;
+
+      var ua = navigator.userAgent || "";
+      var isAndroid = /Android/i.test(ua);
+      var play = "https://play.google.com/store/apps/details?id=com.tripmetic.app";
+      var pathTail = encodeURIComponent(code);
+      var fallback = encodeURIComponent(play);
+      var intent =
+        "intent://group-trip/" + pathTail +
+        "#Intent;scheme=tripmetic;package=com.tripmetic.app;S.browser_fallback_url=" +
+        fallback + ";end";
+
+      if (isAndroid) {
+        var ai = document.getElementById("androidIntent");
+        ai.href = intent;
+        ai.style.display = "block";
+      }
+    })();
+  </script>
+</body>
+</html>

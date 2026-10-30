@@ -1,0 +1,73 @@
+{
+  "de": {
+    "addItinerarySave": "Eintrag speichern",
+    "addItineraryTitle": "Reiseeintrag hinzufügen",
+    "addPackingTitle": "Packlisteneintrag hinzufügen",
+    "itineraryEmpty": "Noch keine Einträge.\nTippe auf +, um Flüge, Hotels und Pläne hinzuzufügen.",
+    "packingHeader": "PACKLISTE & LOGISTIK",
+    "proPaywallBenefits": "Offline-Karten und Region-Downloads\nReiseplan, Budget, Tresor und Packliste\nGruppenplaner und Echtzeit-Sync",
+    "proPaywallBullets": "Offline-Karten und Region-Downloads|Reiseplan, Budget, Tresor und Packliste|Gruppenplaner und Echtzeit-Sync",
+    "currencyWidgetInstructionAndroidStep1": "Öffne Einstellungen → Währungs-Widget → Widget-Währungen ändern und wähle Basis- und Zielwährung.",
+    "currencyWidgetInstructionOpenCurrencyCta": "Widget-Währungen ändern"
+  },
+  "fr": {
+    "addPackingTitle": "Ajouter un article à la liste de bagages",
+    "packingHeader": "BAGAGES & LOGISTIQUE",
+    "proPaywallBenefits": "Cartes hors ligne et téléchargements de régions\nItinéraire, budget, coffre-fort et bagages\nPlanificateur de groupe et synchronisation en temps réel",
+    "proPaywallBullets": "Cartes hors ligne et téléchargements de régions|Itinéraire, budget, coffre-fort et bagages|Planificateur de groupe et synchronisation en temps réel",
+    "currencyWidgetInstructionAndroidStep1": "Ouvrez Réglages → Widget devises → Changer les devises du widget, puis choisissez la devise de base et la devise cible.",
+    "proPaywallError": "Impossible d'afficher le paywall. Vérifiez votre offre RevenueCat."
+  },
+  "zh": {
+    "addPackingTitle": "添加行李清单项目",
+    "packingHeader": "行李清单与物流",
+    "proPaywallBenefits": "离线地图与地区下载\n行程、预算、保险库与行李清单\n团体规划与实时同步",
+    "proPaywallBullets": "离线地图与地区下载|行程、预算、保险库与行李清单|团体规划与实时同步",
+    "currencyWidgetInstructionTitle": "货币换算小组件",
+    "currencyWidgetInstructionAndroidStep3": "点按“小组件”，滚动到 Tripmetic，然后选择“货币换算”。",
+    "currencyWidgetInstructionAndroidStep1": "打开设置 → 货币小组件 → 更改小组件货币，选择基础货币和目标货币。",
+    "currencyWidgetInstructionUsageTitle": "使用小组件",
+    "currencyWidgetInstructionUsageStep1": "点按更改（或小组件主体）在 Tripmetic 中打开货币选择。",
+    "currencyWidgetInstructionUsageStep2": "点按 ↻ 刷新可在后台更新小组件汇率（不会打开应用）。",
+    "currencyWidgetInstructionPinCta": "将小组件添加到主屏幕",
+    "currencyWidgetInstructionOpenCurrencyCta": "更改小组件货币"
+  },
+  "ja": {
+    "addPackingTitle": "パッキングリストに追加",
+    "packingHeader": "パッキングとロジスティクス",
+    "proPaywallBenefits": "オフラインマップと地域のダウンロード\n旅程、予算、金庫、パッキングリスト\nグループプランナーとリアルタイム同期",
+    "proPaywallBullets": "オフラインマップと地域のダウンロード|旅程、予算、金庫、パッキングリスト|グループプランナーとリアルタイム同期",
+    "currencyWidgetInstructionAndroidStep1": "設定 → 通貨ウィジェット → ウィジェットの通貨を変更 を開き、基準通貨と対象通貨を選択します。"
+  },
+  "pt": {
+    "addPackingTitle": "Adicionar item à lista de bagagem",
+    "packingHeader": "BAGAGEM E LOGÍSTICA",
+    "proPaywallBenefits": "Mapas offline e downloads de regiões\nItinerário, orçamento, cofre e lista de bagagem\nPlanejador de grupo e sincronização em tempo real",
+    "proPaywallBullets": "Mapas offline e downloads de regiões|Itinerário, orçamento, cofre e lista de bagagem|Planejador de grupo e sincronização em tempo real",
+    "currencyWidgetInstructionAndroidStep1": "Abra Configurações → Widget de moedas → Alterar moedas do widget e escolha a moeda base e a de destino."
+  },
+  "ko": {
+    "settingsLanguageSpanish": "스페인어",
+    "addPackingTitle": "짐 싸기 항목 추가",
+    "packingHeader": "짐 싸기 및 물류",
+    "proPaywallBenefits": "오프라인 지도 및 지역 다운로드\n일정, 예산, 보관함 및 짐 싸기\n그룹 플래너 및 실시간 동기화",
+    "proPaywallBullets": "오프라인 지도 및 지역 다운로드|일정, 예산, 보관함 및 짐 싸기|그룹 플래너 및 실시간 동기화",
+    "currencyWidgetInstructionAndroidStep1": "설정 → 통화 위젯 → 위젯 통화 변경을 열고 기준 통화와 대상 통화를 선택하세요."
+  },
+  "hi": {
+    "addPackingTitle": "पैकिंग सूची में आइटम जोड़ें",
+    "packingHeader": "पैकिंग और लॉजिस्टिक्स",
+    "currencyWidgetInstructionAndroidStep1": "सेटिंग्स → मुद्रा विजेट → विजेट मुद्राएँ बदलें खोलें और आधार व लक्ष्य मुद्रा चुनें।"
+  },
+  "ar": {
+    "addPackingTitle": "إضافة عنصر إلى قائمة التعبئة",
+    "packingHeader": "التعبئة واللوجستيات",
+    "currencyWidgetInstructionAndroidStep1": "افتح الإعدادات → أداة العملات → تغيير عملات الأداة، ثم اختر العملة الأساسية والعملة المستهدفة."
+  },
+  "en": {
+    "currencyWidgetInstructionAndroidStep1": "Open Settings → Currency widget → Change widget currencies, and pick your base and target currencies."
+  },
+  "es": {
+    "currencyWidgetInstructionAndroidStep1": "Abre Ajustes → Widget de divisas → Cambiar monedas del widget y elige la moneda base y la de destino."
+  }
+}
