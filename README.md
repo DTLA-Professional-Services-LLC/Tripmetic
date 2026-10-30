@@ -1,5 +1,7 @@
 # Tripmetic
 
+[![Secret scan](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml)
+
 **Tripmetic** is a Flutter travel companion: live currency tools, offline maps, multi-country budgets, packing lists, a global time scheduler, document vault, group planner, and more.
 
 **Tripmetic Pro** is an auto-renewing monthly subscription (3-day free trial where eligible) that unlocks premium tools. A small set of features stays free without a subscription — see [Free vs Pro](#free-vs-pro) below.
