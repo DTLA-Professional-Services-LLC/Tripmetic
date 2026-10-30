@@ -255,6 +255,7 @@ def batch_read_blobs(items: Sequence[tuple[str, str]]) -> Iterator[tuple[str, by
                     content = output.read(size)
                 else:
                     content = b""
+                    output.seek(size, os.SEEK_CUR)
                 output.read(1)  # Git's trailing record separator.
                 yield path, content
             else:

@@ -2,11 +2,14 @@
 """Unit tests for the value-safe secret scanner."""
 
 from pathlib import Path
+import subprocess
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import scan_for_secrets  # noqa: E402
 from scan_for_secrets import Finding, scan_bytes  # noqa: E402
 
 
@@ -50,6 +53,33 @@ class SecretScannerTests(unittest.TestCase):
             "android/key.properties.example",
         ):
             self.assertEqual(scan_bytes(path, b"{}"), [])
+
+    def test_history_scan_remains_aligned_after_large_blob(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"], cwd=root, check=True
+            )
+            subprocess.run(["git", "config", "user.name", "Test"], cwd=root, check=True)
+            (root / "large.txt").write_bytes(b"x" * (5 * 1024 * 1024 + 1))
+            (root / "secret.txt").write_text(
+                "AIza" + ("A" * 35) + "\n", encoding="utf-8"
+            )
+            subprocess.run(["git", "add", "."], cwd=root, check=True)
+            subprocess.run(["git", "commit", "-qm", "fixture"], cwd=root, check=True)
+
+            original_root = scan_for_secrets.ROOT
+            scan_for_secrets.ROOT = root
+            try:
+                findings: list[Finding] = []
+                for path, content in scan_for_secrets.history_blobs():
+                    findings.extend(scan_for_secrets.scan_bytes(path, content))
+            finally:
+                scan_for_secrets.ROOT = original_root
+
+            self.assertIn("google-api-key", {finding.rule for finding in findings})
+            self.assertTrue(any(finding.path.endswith("secret.txt") for finding in findings))
 
     def test_finding_rendering_contains_no_value(self) -> None:
         finding = Finding("secret.txt", 7, "google-api-key")
