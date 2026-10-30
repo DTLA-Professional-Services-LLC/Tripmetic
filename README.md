@@ -1,36 +1,32 @@
 # Tripmetic
 
+[![Flutter](https://img.shields.io/badge/Flutter-3.44.0-02569B?logo=flutter&logoColor=white)](https://docs.flutter.dev/)
+[![Dart](https://img.shields.io/badge/Dart-3.12.0-0175C2?logo=dart&logoColor=white)](https://dart.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-22-5FA04E?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2F6F5E.svg)](LICENSE)
 [![Secret scan](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/ralf206/tripmetic/actions/workflows/secret-scan.yml)
 
-**Tripmetic** is a Flutter travel companion: live currency tools, offline maps, multi-country budgets, packing lists, a global time scheduler, document vault, group planner, and more.
+**Tripmetic** is a Flutter travel companion with live currency tools, offline maps, multi-country budgets, packing lists, a global time scheduler, document vault, and group planning.
 
-**Tripmetic Pro** is an auto-renewing monthly subscription (3-day free trial where eligible) that unlocks premium tools. A small set of features stays free without a subscription — see [Free vs Pro](#free-vs-pro) below.
+**Tripmetic Pro** is an auto-renewing monthly subscription (with a 3-day free trial where eligible) that unlocks premium tools. A small set of features remains free — see [Free vs Pro](#free-vs-pro).
 
 ## Open source
 
-Tripmetic is an **open-source project provided by [DTLA Professional Services, LLC](https://dtlaprofessionalservices.com/)**. You are welcome to read the source, build it, self-host it, and contribute.
+Tripmetic is an **open-source project maintained and released by [DTLA Professional Services, LLC](https://dtlaprofessionalservices.com/)**. You are welcome to read the source, build it, self-host it, and contribute.
 
-If you fork this project, please keep the attribution in place and note that the upstream project and its trademark are not granted by the license — see [License](#license).
+If you fork this project, please retain this attribution. The upstream project and its trademark are not granted by the license — see [License](#license).
 
-### Security and credentials
+### Maintainer & business details
 
-No real credential is stored in this repository. Secrets such as the RevenueCat REST API key, Firebase Admin service-account key, Mapbox secret downloads token, App Store Connect `.p8` key, and Android signing keystore must be supplied through your CI secret store or local environment.
-
-Firebase Web API keys, Mapbox **public** tokens, and RevenueCat **public** SDK keys are client identifiers rather than confidential credentials. They are intentionally absent from source control and injected at build time; anyone can extract them from a shipped app binary, so restrict them to your own domains/apps and rotate them if abused.
-
-Before publishing or committing changes, run the repository scanner:
-
-```bash
-python3 scripts/scan_for_secrets.py
-```
-
-It reports only a file, line, and rule name—never the matched value. See
-[SECURITY.md](SECURITY.md) for rotation and vulnerability-reporting guidance.
+- **Maintained & Released by:** [DTLA Professional Services, LLC](https://dtlaprofessionalservices.com/)
+- **Address:** 770 S Grand Ave, Los Angeles, CA 90017
+- **Business Contact:** [info&#64;dtlaprofessionalservices.com](mailto:info%40dtlaprofessionalservices.com) | [(213) 444-2224](tel:+12134442224)
+- **Affiliated Brands:** [Key Forecasts (keyforecasts.com)](https://keyforecasts.com) · [LeadRM (leadrm.app)](https://leadrm.app) · [PayXT (payxt.app)](https://payxt.app)
 
 ## Features
 
 | Area | Description |
-|------|-------------|
+| --- | --- |
 | **Dashboard** | Trip hub — pinned tools and quick access from the bottom bar or More menu. |
 | **Currency** | In-app converter with live fiat rates (Firestore + Frankfurter fallback). **Pro** in the main app; the **Android home-screen widget** is free. |
 | **Itinerary** | Trip events and planning (Hive + Firestore where configured). |
@@ -48,12 +44,12 @@ Navigation uses **go_router** with a bottom shell; many tools open full-screen r
 
 ## Free vs Pro
 
-**Free (no subscription)**
+### Free (no subscription)
 
 - Dashboard, Settings, Units converter, Dual Clock (in-app + widget setup)
 - **Currency home-screen widget** on Android — change currencies and refresh rates via `/currency-widget/*` deep links (does not require opening the Pro in-app Currency tool)
 
-**Tripmetic Pro**
+### Tripmetic Pro
 
 - Currency converter (in-app), itinerary, offline map, budget, packing, scheduler, vault, bucket list, group planner, crypto, tip calculator, size converter, mind map, and related Pro routes
 
@@ -64,7 +60,7 @@ Access is enforced via **RevenueCat** entitlements and `ProGlassOverlay` on indi
 The app supports **10 locales** (Settings → Language, or system default):
 
 | Code | Language |
-|------|----------|
+| --- | --- |
 | `en` | English |
 | `es` | Español |
 | `zh` | 简体中文 |
@@ -81,7 +77,7 @@ Strings live in `lib/l10n/app_*.arb`. Generated code is in `lib/l10n/generated/`
 ## Tech stack
 
 | Area | Packages / notes |
-|------|------------------|
+| --- | --- |
 | UI & state | Flutter 3, **Riverpod**, Material 3 |
 | Routing | **go_router** |
 | i18n | **flutter_localizations**, ARB files, `l10n.yaml` |
@@ -95,51 +91,47 @@ Strings live in `lib/l10n/app_*.arb`. Generated code is in `lib/l10n/generated/`
 
 ## Prerequisites
 
-- Flutter SDK **^3.11.4** (see `version:` in `pubspec.yaml`).
-- **Mapbox** — an account with a **public** access token (`pk.…`) for the map
-  and geocoding, plus a **secret** downloads token (`sk.…`) for the Android
-  Maven artifacts. Both come from [Mapbox → Account → Access tokens](https://account.mapbox.com/access-tokens/).
-- **RevenueCat** — a Tripmetic Pro product, entitlement and current offering
-  in the [RevenueCat dashboard](https://app.revenuecat.com). Link Google Play
-  and the App Store, then copy the **public** SDK keys (`goog.…` / `appl.…`).
-  Use public keys in the app only — the secret key stays in Cloud Functions.
-- **Firebase** — a project with an Android app and an iOS app, so you can
-  download `google-services.json` and `GoogleService-Info.plist`.
-- **iOS** — an Apple developer team for signing, and App Store Connect
-  metadata for the subscriptions.
-- **Android widgets** — after changing widget `PendingIntent` handlers or
-  providers, users may need to remove and re-add the widget on the home
-  screen.
+- **Flutter SDK 3.44.0 (stable)** with **Dart 3.12.0** included.
+- **Node.js 22** with npm for the web app and Cloud Functions.
+- Git and Python 3 for the repository tooling.
+- Xcode and CocoaPods, or Android Studio and the Android SDK, for native builds.
 
-### 1. Create your local config files
+Optional service accounts unlock the full feature set: Mapbox access tokens, RevenueCat products, and a Firebase project. The app still builds without them, with the affected features disabled.
 
-No credential is committed to this repository. Every config file ships as a
-`*.example` template, and the real file is git-ignored. Generate the local
-copies with:
+### Clone and install
 
 ```bash
-./scripts/setup_local_config.sh
+git clone https://github.com/ralf206/tripmetic.git
+cd tripmetic
+flutter pub get
 ```
 
-That creates (skipping any that already exist):
+For web app or Cloud Functions work, install the locked Node dependencies:
 
-| File | Fill it with |
-|------|---------------|
-| `android/app/google-services.json` | Firebase Console → Project settings → Your apps → **Android** → `google-services.json` |
-| `ios/Runner/GoogleService-Info.plist` | Firebase Console → Project settings → Your apps → **iOS** → `GoogleService-Info.plist` |
-| `webapp/.env.local` | Firebase Console → Project settings → Your apps → **Web** → SDK setup → config values |
-| `.env` | Reference copy of `.env.example` (see [Configuration](#configuration)) |
+```bash
+npm ci --prefix webapp
+npm ci --prefix functions
+```
 
-Prefer to paste the files by hand? Equivalent commands:
+### Configure local environments
+
+Create local environment files and fill them with **local test values only**:
+
+```bash
+cp .env.example .env
+cp webapp/.env.example webapp/.env
+```
+
+Both destination files are git-ignored. The Flutter app does not load the root `.env` automatically; pass values with `--dart-define` as shown in [Configuration](#configuration).
+
+For native Firebase projects, also copy the platform templates:
 
 ```bash
 cp android/app/google-services.json.example android/app/google-services.json
 cp ios/Runner/GoogleService-Info.plist.example ios/Runner/GoogleService-Info.plist
-cp webapp/.env.example webapp/.env.local
 ```
 
-If you would rather not create the native files at all, pass the Firebase
-values as `--dart-define` instead — see [Configuration](#configuration).
+Alternatively, `./scripts/setup_local_config.sh` creates all local config files in one step.
 
 ### 2. Pass your keys at compile time
 
@@ -154,7 +146,7 @@ flutter run \
 ```
 
 | Variable | Where it comes from | If it is missing |
-|----------|--------------------|------------------|
+| --- | --- | --- |
 | `MAPBOX_ACCESS_TOKEN` | Mapbox → Access tokens → **Public** token | Map views render a neutral surface; geocoding and directions stay off. |
 | `REVENUECAT_APPLE_KEY` | RevenueCat → API keys → **App Store** (`appl.…`) | Subscriptions unavailable; the app stays usable. |
 | `REVENUECAT_GOOGLE_KEY` | RevenueCat → API keys → **Google Play** (`goog.…`) | Same as above. |
@@ -217,9 +209,7 @@ export MAPBOX_DOWNLOADS_TOKEN=sk.xxxxx
 
 ### Web app
 
-```bash
-cp webapp/.env.example webapp/.env.local
-```
+The web app loads Firebase Web SDK values from `webapp/.env`. A git-ignored `webapp/.env.local` may be used for local overrides.
 
 `NEXT_PUBLIC_*` values are inlined into the client bundle at build time. They
 are public identifiers rather than secrets — restrict the Firebase API key by
@@ -247,21 +237,38 @@ node scripts/create_admin_users.js
 Admin email addresses are intentionally not stored in the repository. See
 [`scripts/README.md`](scripts/README.md).
 
-### Secret scanning and commit hook
+## Contributor guide
 
-The dependency-free scanner checks tracked files for common credential formats:
+### Security requirements
 
-```bash
-python3 scripts/scan_for_secrets.py
-```
+- **Never commit API keys, service account JSON files, or production secrets.**
+- Ensure pre-commit secret scans pass before submitting pull requests.
+- **PR checks enforce zero vulnerabilities and passing test suites.**
 
-To enforce the same check before each local commit:
+Enable the repository's pre-commit scanner once:
 
 ```bash
 git config core.hooksPath .githooks
 ```
 
-GitHub Actions runs the scanner on every push and pull request.
+Run the same scan manually before pushing:
+
+```bash
+python3 scripts/scan_for_secrets.py
+```
+
+The scanner reports only a file, line, and rule name — never the matched value. See [SECURITY.md](SECURITY.md) for credential rotation and vulnerability reporting.
+
+### Local validation
+
+Run the relevant checks before opening a pull request:
+
+```bash
+flutter analyze
+flutter test
+npm --prefix webapp run build
+npm --prefix functions run build
+```
 
 ## Run the app
 
@@ -313,10 +320,9 @@ repo root — it reads the same variables from the CI environment.
 flutter build apk --release
 ```
 
-
 ## Project layout
 
-```
+```text
 lib/
   app_bootstrap.dart       # Firebase, Hive, RevenueCat, home_widget callback
   tripmetic_app.dart       # MaterialApp, locale override, theme
@@ -366,41 +372,13 @@ Language names in Settings use native script labels from `lib/core/locale/suppor
 
 ## Development notes
 
-- Never commit credentials: Mapbox tokens, RevenueCat **secret** keys, Firebase Admin service-account files, keystores, `.p8` files, or `.env` values. Everything is injected at build time — see [Configuration](#configuration).
-- Run `python3 scripts/scan_for_secrets.py` before committing. If it finds a real value, remove it from the file, **rotate/revoke it with the provider**, and purge it from Git history before publishing.
-- After native permission or widget manifest changes, do a full restart on device.
-- **RevenueCat:** Dashboard → Customers; bootstrap logs offering id when configure succeeds.
-- **Currency widget:** Keys in `WidgetService` must match `CurrencyWidgetProvider.kt`. Free routes: `/currency-widget/select`, `/currency-widget/refresh`, `/currency-widget` (instructions).
-- **Debug Pro locally:** Non-release builds can enable “Test as Tripmetic Pro” in Settings (ignored in release).
+- After native permission or widget manifest changes, fully restart the app on the device.
+- **RevenueCat:** Dashboard → Customers; bootstrap logs the offering ID when configuration succeeds.
+- **Currency widget:** Keys in `WidgetService` must match `CurrencyWidgetProvider.kt`.
+- **Debug Pro locally:** Non-release builds can enable “Test as Tripmetic Pro” in Settings.
 
 ## License
 
-Released under the **MIT License** — see [LICENSE](LICENSE).
+Tripmetic is released under the **MIT License**. See [LICENSE](LICENSE).
 
-```
-MIT License
-
-Copyright (c) 2026 DTLA Professional Services, LLC
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-Third-party dependencies remain under their own licenses (Flutter and the
-Dart SDK — BSD-3-Clause; Mapbox SDK — Mapbox Terms of Service; Firebase,
-RevenueCat, and the other pub.dev packages — their respective licenses).
+Third-party dependencies remain under their own licenses (Flutter and the Dart SDK — BSD-3-Clause; Mapbox SDK — Mapbox Terms of Service; Firebase, RevenueCat, and other pub.dev packages — their respective licenses).
